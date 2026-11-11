@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TanXin</string>
+    <string name="biz_title_system_share">Share to TanXin</string>
+
+    <string name="biz_text_rule">0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
+    <string name="biz_tips_empty_tab_page">This page cannot be found~</string>
+    <string name="biz_tips_empty_feature_page">Feature under development~</string>
+
+    <string name="biz_permission_not_granted">Permission not granted</string>
+    <string name="biz_need_permission_to_use">The following permissions are required to continue</string>
+    <string name="biz_open_setting_to_grant_permission">Go to settings to enable the following permissions to continue</string>
+    <string name="biz_tips">Tips</string>
+    <string name="logout_tip">Security Warning</string>
+    <string name="biz_save">Save</string>
+    <string name="biz_acknowledge">Got it</string>
+    <string name="biz_confirm">Confirm</string>
+    <string name="biz_cancel">Cancel</string>
+    <string name="biz_copy">Copy</string>
+    <string name="biz_delete">Delete</string>
+    <string name="biz_skip">Skip</string>
+
+    <string name="biz_layout_list_empty">No data</string>
+    <string name="biz_layout_error_service">Server error, please try again later!</string>
+    <string name="biz_layout_error_network">Please check your network connection and tap to retry</string>
+    <string name="biz_layout_data_loading">Loading…</string>
+    <string name="biz_logout_message">After logging out, the account can only be recovered via mnemonic phrase. Are you sure you want to log out?</string>
+
+    <string name="biz_tips_search_friends">Enter address</string>
+    <string name="biz_search_list_empty">No matching results</string>
+
+    <string name="biz_tips_qr_unrecongnize">Unable to process result, copied to clipboard</string>
+    <string name="biz_tips_shared_fail">Resource sharing failed</string>
+    <string name="biz_tips_resource_fail">Resource retrieval failed</string>
+    <string name="biz_tips_send_empty_file_error">Cannot send an empty file</string>
+
+    <!--WebView-->
+    <string name="biz_error_image_format">Invalid image format</string>
+    <string name="biz_tips_image_save_success">Image saved successfully</string>
+    <string name="biz_tips_image_save_fail">Image save failed</string>
+    <!--H5 host object window.__tanxinHost-->
+    <string name="biz_tanxin_host_user_not_found">No Tanxin account found for this address</string>
+
+    <!--Image-->
+    <string name="biz_error_image_not_exist">Image does not exist</string>
+
+    <!--OA-->
+    <string name="biz_oa_team_empty">Team cannot be empty</string>
+    <string name="biz_oa_team_name_empty">Team name cannot be empty</string>
+    <string name="biz_oa_team_server_empty">Team server cannot be empty</string>
+
+    <!--Wallet Coin Management-->
+    <string name="wallet_home_coins">Home Coins</string>
+
+    <!--Layout Labels-->
+    <string name="biz_label_request_use">Request to Use</string>
+    <string name="biz_label_get_permissions">Get the following permissions</string>
+    <string name="biz_label_reject">Reject</string>
+    <string name="biz_label_authorize">Authorize</string>
+</resources>

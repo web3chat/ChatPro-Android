@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 发红包页头部：数字资产行胶囊（半透明白） -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <corners android:radius="15dp" />
+    <solid android:color="#2BFFFFFF" />
+</shape>

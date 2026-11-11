@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 添加图片格：虚线边框 + 大圆角（发布页九宫格末尾） -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#FAFBFC" />
+    <corners android:radius="12dp" />
+    <stroke
+        android:width="1dp"
+        android:dashGap="4dp"
+        android:dashWidth="5dp"
+        android:color="#D3D9E2" />
+</shape>

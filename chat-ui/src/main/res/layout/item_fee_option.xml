@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 网络费选项 Item -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:background="@drawable/bg_fee_option"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground"
+    android:orientation="horizontal"
+    android:padding="14dp">
+
+    <!-- 选中图标 -->
+    <ImageView
+        android:id="@+id/iv_fee_option_check"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_gravity="top"
+        android:layout_marginTop="2dp"
+        android:src="@drawable/ic_fee_option_unchecked" />
+
+    <!-- 中间信息区域 -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <!-- 选项名称行：名称 + 预计时间（右上角） -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_fee_option_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/biz_text_grey_dark"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                tools:text="快速" />
+
+            <TextView
+                android:id="@+id/tv_fee_option_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/biz_text_grey_light"
+                android:textSize="11sp"
+                tools:text="预计15秒内" />
+        </LinearLayout>
+
+        <!-- 预估费用行 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/estimated_fee"
+                android:textColor="@color/biz_text_grey_light"
+                android:textSize="12sp" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/tv_fee_option_estimated"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/biz_text_grey_dark"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                tools:text="$0.001120" />
+
+            <TextView
+                android:id="@+id/tv_fee_option_estimated_crypto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:textColor="@color/biz_text_grey_light"
+                android:textSize="10sp"
+                tools:text="0.001 BNB" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- AI 客服页：App 不做原生顶栏，页面自身提供「返回 / 标题 / 会话历史」顶栏（对接文档 §4） -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/biz_color_primary">
+
+    <WebView
+        android:id="@+id/web_cs"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/biz_color_primary"
+        android:overScrollMode="never" />
+
+    <ProgressBar
+        android:id="@+id/progress_cs"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_gravity="top"
+        android:indeterminate="false"
+        android:max="100"
+        android:progressTint="@color/biz_color_accent" />
+</FrameLayout>

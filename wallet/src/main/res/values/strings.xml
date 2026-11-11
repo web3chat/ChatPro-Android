@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="wallet_remote_note_tips">信息上链，可以在链上查询</string>
+    <string name="wallet_local_note_tips">信息不上链，保存在本地，卸载重装或更换手机后无法查看</string>
+    <string name="wallet_extract_tips">红包账户有余额， 可提取至资产！</string>
+    <string name="wallet_extract_one_key_action">一键提取</string>
+
+    <string name="wallet_title_add_coins">添加资产</string>
+    <string name="wallet_tips_search_coins">搜索资产</string>
+    <string name="add_cus_coin">添加代币</string>
+
+    <!--添加代币验证-->
+    <string name="wallet_hint_input_contract_address">请输入合约地址</string>
+    <string name="wallet_hint_input_symbol">请输入Symbol</string>
+    <string name="wallet_hint_input_decimal">请输入Decimal</string>
+    <string name="wallet_error_contract_address_format">合约地址格式错误</string>
+    <string name="wallet_error_symbol_format">Symbol格式错误</string>
+    <string name="wallet_error_decimal_format">Decimal格式错误</string>
+
+    <!--资产列表-->
+    <string name="wallet_confirm_delete">确定删除？</string>
+    <string name="wallet_main_chain_cannot_delete">主链不可删除!</string>
+
+    <!--交易详情-->
+    <string name="wallet_transaction_not_found">找不到交易记录</string>
+    <string name="wallet_transaction_failed">交易失败</string>
+    <string name="wallet_transaction_confirming">确认中</string>
+    <string name="wallet_transaction_completed">交易完成</string>
+    <string name="wallet_transaction_none">无</string>
+    <string name="wallet_transfer_address_copied">转账地址已复制到剪贴板</string>
+    <string name="wallet_receive_address_copied">收款地址已复制到剪贴板</string>
+    <string name="wallet_hash_copied">交易哈希已复制到剪贴板</string>
+
+    <!--交易列表状态-->
+    <string name="wallet_status_failed">失败</string>
+    <string name="wallet_status_confirming">确认中</string>
+    <string name="wallet_status_completed">完成</string>
+
+    <!--转账-->
+    <string name="wallet_cannot_transfer_self">不能给自己转账</string>
+    <string name="wallet_transfer_format">%1$s转账</string>
+    <string name="wallet_confirm_transfer">确认转账</string>
+    <string name="wallet_recipient_address_not_found">找不到对方的%1$s地址</string>
+    <string name="wallet_fee_fetch_fail">%1$s手续费获取失败</string>
+    <string name="wallet_transfer_success">转账成功</string>
+    <string name="wallet_balance_format">余额：%1$s %2$s</string>
+    <string name="wallet_hint_input_receive_address">请输入收款地址</string>
+    <string name="wallet_hint_input_amount">请输入数量</string>
+    <string name="wallet_hint_get_fee_first">请先获取手续费</string>
+    <string name="wallet_insufficient_fee">%1$s手续费不足</string>
+
+    <!--交易列表-->
+    <string name="wallet_tab_all">全部</string>
+    <string name="wallet_tab_transfer">转账</string>
+    <string name="wallet_tab_receive">收款</string>
+    <string name="wallet_address_copied">地址已复制到剪贴板</string>
+    <string name="wallet_not_open_yet">暂未开放</string>
+
+    <!--资产页-->
+    <string name="wallet_tab_assets">资产</string>
+    <string name="wallet_tab_nft">NFT</string>
+    <string name="wallet_withdraw_submitted">已提交提币申请，请稍后查看</string>
+
+    <!--钱包服务-->
+    <string name="wallet_mnemonic_empty">助记词不能为空</string>
+    <string name="wallet_name_empty">钱包名称不能为空</string>
+    <string name="wallet_password_empty">钱包密码不能为空</string>
+    <string name="wallet_mnemonic_not_exist">助记词不存在</string>
+    <string name="wallet_mnemonic_duplicate">助记词重复</string>
+    <string name="wallet_password_error">密码输入错误</string>
+    <string name="wallet_private_key_fail">私钥获取失败</string>
+    <string name="wallet_sign_transaction_fail">签名交易失败</string>
+    <string name="wallet_result_fail_check_browser">获取结果失败，请至区块链浏览器查看</string>
+    <string name="wallet_user_info_empty">用户信息为空</string>
+    <string name="wallet_nft_developing">正在开发中，暂不支持NFT</string>
+
+    <!--布局标签-->
+    <string name="wallet_transfer_btn">转账</string>
+    <string name="wallet_receipt_btn">收款</string>
+    <string name="wallet_shop_transfer">划转至商城</string>
+    <string name="wallet_transaction_record">交易记录</string>
+    <string name="wallet_transaction_detail_title">交易详情</string>
+    <string name="wallet_tx_address_label">转账地址</string>
+    <string name="wallet_tx_receive_address_label">收款地址</string>
+    <string name="wallet_tx_hash_label">交易哈希</string>
+    <string name="wallet_tx_time_label">交易时间</string>
+    <string name="wallet_tx_remote_note_label">上链备注</string>
+    <string name="wallet_tx_local_note_label">本地备注</string>
+    <string name="wallet_nickname_label">昵称</string>
+    <string name="wallet_receiver_label">收款方</string>
+    <string name="wallet_transfer_amount_label">转账数额</string>
+    <string name="wallet_balance_default">余额：--</string>
+    <string name="wallet_fee_label">手续费</string>
+    <string name="wallet_amount_hint">请输入数量</string>
+    <string name="wallet_optional_label">(选填)</string>
+    <string name="wallet_scan_to_transfer">扫二维码向我转账</string>
+    <string name="wallet_copy_address_btn">复制地址</string>
+    <string name="wallet_select_chain">选择主链</string>
+    <string name="wallet_contract_address">代币合约地址</string>
+    <string name="wallet_confirm_btn">确定</string>
+    <string name="wallet_select_asset">选择资产</string>
+    <string name="wallet_asset_label">资产</string>
+    <string name="wallet_no_assets">暂无对应的资产</string>
+    <string name="wallet_tx_none_label">无</string>
+    <string name="wallet_my_assets">我的资产</string>
+    <string name="wallet_custom">自定义</string>
+    <string name="wallet_custom_token">自定义代币</string>
+    <string name="wallet_add_cus_tip">填写合约地址后，将自动读取币种名称与精度</string>
+    <string name="wallet_cus_symbol_hint">如：USDT</string>
+    <string name="wallet_cus_decimal_hint">如：18</string>
+    <string name="wallet_cus_contract_warn">请确认合约地址准确无误，添加错误的代币合约可能造成资产损失</string>
+
+</resources>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TanXin</string>
+
+    <string name="app_tab_session">ข้อความ</string>
+    <string name="app_tab_contact">รายชื่อติดต่อ</string>
+    <string name="app_tab_find">ค้นพบ</string>
+    <string name="app_tab_shop">ร้านค้า</string>
+    <string name="app_tab_wallet">สินทรัพย์</string>
+    <string name="app_tab_account">ของฉัน</string>
+
+    <string name="app_splash_tips">แอปส่งข้อความหลายศูนย์กลาง\nแอปจัดเก็บข้อมูลแบบกระจาย</string>
+    <string name="app_skip_bind_tips">คุณยังไม่ได้สำรองวลีช่วยจำ คุณสามารถเข้ารหัสและอัปโหลดไปยังเซิร์ฟเวอร์ทางการได้โดยผูกโทรศัพท์/อีเมลและรหัสผ่านแชทลับ เพื่อใช้บริการกู้คืนวลีช่วยจำ เพื่อความปลอดภัยของบัญชีของคุณ กรุณาสำรองหรืออัปโหลดวลีช่วยจำที่เข้ารหัสด้วยตนเอง หรือไปที่ [การจัดการความปลอดภัย]</string>
+    <string name="app_skip_bind_phone">ผูกโทรศัพท์</string>
+    <string name="app_skip_bind_email">ผูกอีเมล</string>
+
+    <string name="app_ai_qa">ถามตอบ AI</string>
+    <string name="app_ai_cs_entry">บริการช่วยเหลือ AI</string>
+    <string name="app_close">ปิด</string>
+    <string name="app_back">กลับ</string>
+    <string name="app_send">ส่ง</string>
+    <string name="app_ai_qa_hint">พิมพ์คำถามของคุณ…</string>
+
+    <!--คลังคำถาม AI-->
+    <string name="app_ai_question1">จะสำรองวลีช่วยจำได้อย่างไร?</string>
+    <string name="app_ai_question2">จะโอนเงินให้เพื่อนได้อย่างไร?</string>
+    <string name="app_ai_question3">แชทลับกับแชททั่วไปต่างกันอย่างไร?</string>
+    <string name="app_ai_question4">จะสร้างกลุ่มได้อย่างไร?</string>
+    <string name="app_ai_question5">อั่งเปารองรับเหรียญอะไรบ้าง?</string>
+    <string name="app_ai_question6">ลืมรหัสผ่านแชทลับทำอย่างไร?</string>
+
+    <!--นำเข้าเพื่อน-->
+    <string name="app_import_friends_title">นำเข้าเพื่อน</string>
+    <string name="app_import_friends_content">ตรวจพบเพื่อนที่สำรองไว้จากบัญชีเดิมบนอุปกรณ์นี้ ต้องการนำเข้าเพื่อนไปยังบัญชีใหม่หรือไม่?</string>
+    <string name="app_message_empty">เนื้อหาข้อความต้องไม่ว่าง</string>
+    <string name="app_import_success">นำเข้าสำเร็จ</string>
+
+    <!--ข้อผิดพลาด AI-->
+    <string name="app_ai_unavailable">ขออภัย บริการ AI ไม่พร้อมใช้งานชั่วคราว กรุณาลองใหม่ในภายหลัง</string>
+    <string name="app_ai_system_prompt">คุณคือผู้ช่วยอัจฉริยะ "小C" ของ ChatPro กรุณาตอบคำถามผู้ใช้เกี่ยวกับแชท กระเป๋าเงิน อั่งเปา และฟีเจอร์อื่น ๆ อย่างกระชับและเป็นมิตร</string>
+    <string name="app_ai_network_error">ขออภัย การเชื่อมต่อเครือข่ายล้มเหลว กรุณาลองใหม่ในภายหลัง</string>
+    <string name="app_ai_api_error">ข้อผิดพลาด API: %1$s</string>
+
+    <!--ป้ายกำกับเลย์เอาต์-->
+    <string name="app_label_ask_me">คุณสามารถถามฉันได้:</string>
+    <string name="app_label_refresh_questions">เปลี่ยนคำถาม ⟳</string>
+    <string name="app_label_import_old_account">ตรวจพบเพื่อนที่สำรองไว้จากบัญชีเดิมบนอุปกรณ์นี้ ต้องการนำเข้าไปยังบัญชีใหม่หรือไม่?</string>
+    <string name="app_label_send_add_msg">ส่งข้อความเพิ่มเพื่อนพร้อมกัน</string>
+
+</resources>

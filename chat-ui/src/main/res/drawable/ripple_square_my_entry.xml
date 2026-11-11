@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 「我的」入口：品牌蓝渐变圆（左上亮→右下深），按压水波裁剪在圆内 -->
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="#40FFFFFF">
+    <item android:id="@android:id/mask">
+        <shape android:shape="oval">
+            <solid android:color="#FFFFFF" />
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="oval">
+            <gradient
+                android:angle="315"
+                android:endColor="#1B8FE3"
+                android:startColor="#32B2F7"
+                android:type="linear" />
+        </shape>
+    </item>
+</ripple>

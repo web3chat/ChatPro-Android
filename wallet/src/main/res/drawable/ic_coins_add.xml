@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 添加币种 + 号：线性风格（细描边圆环 + 细线条加号），与 MainActivity 底部 tab 线性图标一致 -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="25dp"
+    android:height="25dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- 细圆环 -->
+    <path
+        android:pathData="M12,12m-9.6,0a9.6,9.6 0,1 1,19.2 0a9.6,9.6 0,1 1,-19.2 0"
+        android:strokeColor="@color/biz_color_accent"
+        android:strokeWidth="1.5" />
+    <!-- 细加号 -->
+    <path
+        android:pathData="M12,8.4 L12,15.6 M8.4,12 L15.6,12"
+        android:strokeColor="@color/biz_color_accent"
+        android:strokeWidth="1.8"
+        android:strokeLineCap="round" />
+</vector>
+

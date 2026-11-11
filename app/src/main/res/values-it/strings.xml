@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TanXin</string>
+
+    <string name="app_tab_session">Messaggi</string>
+    <string name="app_tab_contact">Contatti</string>
+    <string name="app_tab_find">Scopri</string>
+    <string name="app_tab_shop">Negozio</string>
+    <string name="app_tab_wallet">Patrimonio</string>
+    <string name="app_tab_account">Il mio</string>
+
+    <string name="app_splash_tips">IM collaborativo multi-centro\nApp di archiviazione distribuita</string>
+    <string name="app_skip_bind_tips">Non hai eseguito il backup della frase mnemonica. Puoi crittografarla e caricarla sul server ufficiale collegando telefono/email e password chat segreta per il servizio di recupero. Per la sicurezza del tuo account, esegui il backup o carica crittografata la frase mnemonica, oppure vai su [Gestione sicurezza].</string>
+    <string name="app_skip_bind_phone">Collega telefono</string>
+    <string name="app_skip_bind_email">Collega email</string>
+
+    <string name="app_ai_qa">Domande IA</string>
+    <string name="app_ai_cs_entry">Supporto IA</string>
+    <string name="app_close">Chiudi</string>
+    <string name="app_back">Indietro</string>
+    <string name="app_send">Invia</string>
+    <string name="app_ai_qa_hint">Inserisci la tua domanda…</string>
+
+    <!--Libreria domande IA-->
+    <string name="app_ai_question1">Come eseguire il backup della frase mnemonica?</string>
+    <string name="app_ai_question2">Come trasferire a un amico?</string>
+    <string name="app_ai_question3">Qual è la differenza tra chat segreta e chat normale?</string>
+    <string name="app_ai_question4">Come creare un gruppo?</string>
+    <string name="app_ai_question5">Quali monete supporta la busta rossa?</string>
+    <string name="app_ai_question6">Password chat segreta dimenticata?</string>
+
+    <!--Importazione amici-->
+    <string name="app_import_friends_title">Importa amici</string>
+    <string name="app_import_friends_content">Sono stati rilevati amici con backup dell\'account originale su questo dispositivo. Importare gli amici nel nuovo account?</string>
+    <string name="app_message_empty">Il contenuto del messaggio non può essere vuoto</string>
+    <string name="app_import_success">Importazione riuscita</string>
+
+    <!--Errori IA-->
+    <string name="app_ai_unavailable">Spiacenti, il servizio IA è temporaneamente non disponibile. Riprova più tardi.</string>
+    <string name="app_ai_system_prompt">Sei l\'assistente intelligente "XiaoC" di ChatPro. Rispondi alle domande degli utenti su chat, portafoglio, busta rossa e altre funzioni in modo conciso e amichevole.</string>
+    <string name="app_ai_network_error">Spiacenti, la connessione di rete è fallita. Riprova più tardi.</string>
+    <string name="app_ai_api_error">Errore API: %1$s</string>
+
+    <!--Etichette layout-->
+    <string name="app_label_ask_me">Puoi chiedermi:</string>
+    <string name="app_label_refresh_questions">Altre domande ⟳</string>
+    <string name="app_label_import_old_account">Sono stati rilevati amici con backup dell\'account originale su questo dispositivo. Importare nel nuovo account?</string>
+    <string name="app_label_send_add_msg">Invia anche il messaggio di aggiunta amico</string>
+
+</resources>

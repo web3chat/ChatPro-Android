@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 圆角半径，可根据需求调整 -->
+    <corners android:radius="16dp" />
+    <!-- 弹窗背景色 -->
+    <solid android:color="@android:color/white" />
+    <!-- 可选：添加边框 -->
+    <stroke
+        android:width="1dp"
+        android:color="#EEEEEE" />
+</shape>

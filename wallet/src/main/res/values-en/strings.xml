@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="wallet_remote_note_tips">Information is on-chain and can be queried on the blockchain</string>
+    <string name="wallet_local_note_tips">Information is not uploaded to chain, saved locally. Cannot be viewed after reinstalling or switching devices.</string>
+    <string name="wallet_extract_tips">Red packet account has balance, can be withdrawn to assets!</string>
+    <string name="wallet_extract_one_key_action">One-Click Withdraw</string>
+
+    <string name="wallet_title_add_coins">Add Asset</string>
+    <string name="wallet_tips_search_coins">Search Assets</string>
+    <string name="add_cus_coin">Add Token</string>
+
+    <!--Add Token Validation-->
+    <string name="wallet_hint_input_contract_address">Please enter contract address</string>
+    <string name="wallet_hint_input_symbol">Please enter Symbol</string>
+    <string name="wallet_hint_input_decimal">Please enter Decimal</string>
+    <string name="wallet_error_contract_address_format">Invalid contract address format</string>
+    <string name="wallet_error_symbol_format">Invalid Symbol format</string>
+    <string name="wallet_error_decimal_format">Invalid Decimal format</string>
+
+    <!--Asset List-->
+    <string name="wallet_confirm_delete">Confirm delete?</string>
+    <string name="wallet_main_chain_cannot_delete">Main chain cannot be deleted!</string>
+
+    <!--Transaction Detail-->
+    <string name="wallet_transaction_not_found">Transaction record not found</string>
+    <string name="wallet_transaction_failed">Transaction Failed</string>
+    <string name="wallet_transaction_confirming">Confirming</string>
+    <string name="wallet_transaction_completed">Transaction Completed</string>
+    <string name="wallet_transaction_none">None</string>
+    <string name="wallet_transfer_address_copied">Transfer address copied to clipboard</string>
+    <string name="wallet_receive_address_copied">Receiving address copied to clipboard</string>
+    <string name="wallet_hash_copied">Transaction hash copied to clipboard</string>
+
+    <!--Transaction List Status-->
+    <string name="wallet_status_failed">Failed</string>
+    <string name="wallet_status_confirming">Confirming</string>
+    <string name="wallet_status_completed">Completed</string>
+
+    <!--Transfer-->
+    <string name="wallet_cannot_transfer_self">Cannot transfer to yourself</string>
+    <string name="wallet_transfer_format">%1$s Transfer</string>
+    <string name="wallet_confirm_transfer">Confirm Transfer</string>
+    <string name="wallet_recipient_address_not_found">Cannot find the recipient\'s %1$s address</string>
+    <string name="wallet_fee_fetch_fail">Failed to get %1$s fee</string>
+    <string name="wallet_transfer_success">Transfer successful</string>
+    <string name="wallet_balance_format">Balance: %1$s %2$s</string>
+    <string name="wallet_hint_input_receive_address">Please enter receiving address</string>
+    <string name="wallet_hint_input_amount">Please enter amount</string>
+    <string name="wallet_hint_get_fee_first">Please get the fee first</string>
+    <string name="wallet_insufficient_fee">Insufficient %1$s fee</string>
+
+    <!--Transaction Tabs-->
+    <string name="wallet_tab_all">All</string>
+    <string name="wallet_tab_transfer">Transfer</string>
+    <string name="wallet_tab_receive">Receive</string>
+    <string name="wallet_address_copied">Address copied to clipboard</string>
+    <string name="wallet_not_open_yet">Not available yet</string>
+
+    <!--Asset Page-->
+    <string name="wallet_tab_assets">Assets</string>
+    <string name="wallet_tab_nft">NFT</string>
+    <string name="wallet_withdraw_submitted">Withdrawal request submitted, please check later</string>
+
+    <!--Wallet Service-->
+    <string name="wallet_mnemonic_empty">Mnemonic cannot be empty</string>
+    <string name="wallet_name_empty">Wallet name cannot be empty</string>
+    <string name="wallet_password_empty">Wallet password cannot be empty</string>
+    <string name="wallet_mnemonic_not_exist">Mnemonic does not exist</string>
+    <string name="wallet_mnemonic_duplicate">Duplicate mnemonic</string>
+    <string name="wallet_password_error">Incorrect password</string>
+    <string name="wallet_private_key_fail">Private key retrieval failed</string>
+    <string name="wallet_sign_transaction_fail">Transaction signing failed</string>
+    <string name="wallet_result_fail_check_browser">Failed to get result, please check on the blockchain explorer</string>
+    <string name="wallet_user_info_empty">User information is empty</string>
+    <string name="wallet_nft_developing">Under development, NFT not supported yet</string>
+
+    <!--Layout Labels-->
+    <string name="wallet_transfer_btn">Transfer</string>
+    <string name="wallet_receipt_btn">Receive</string>
+    <string name="wallet_shop_transfer">Transfer to Shop</string>
+    <string name="wallet_transaction_record">Transaction History</string>
+    <string name="wallet_transaction_detail_title">Transaction Details</string>
+    <string name="wallet_tx_address_label">Sender Address</string>
+    <string name="wallet_tx_receive_address_label">Recipient Address</string>
+    <string name="wallet_tx_hash_label">Tx Hash</string>
+    <string name="wallet_tx_time_label">Tx Time</string>
+    <string name="wallet_tx_remote_note_label">On-chain Note</string>
+    <string name="wallet_tx_local_note_label">Local Note</string>
+    <string name="wallet_nickname_label">Nickname</string>
+    <string name="wallet_receiver_label">Recipient</string>
+    <string name="wallet_transfer_amount_label">Amount</string>
+    <string name="wallet_balance_default">Balance: --</string>
+    <string name="wallet_fee_label">Fee</string>
+    <string name="wallet_amount_hint">Enter amount</string>
+    <string name="wallet_optional_label">(Optional)</string>
+    <string name="wallet_scan_to_transfer">Scan QR code to transfer</string>
+    <string name="wallet_copy_address_btn">Copy Address</string>
+    <string name="wallet_select_chain">Select Chain</string>
+    <string name="wallet_contract_address">Token Contract Address</string>
+    <string name="wallet_confirm_btn">Confirm</string>
+    <string name="wallet_select_asset">Select Asset</string>
+    <string name="wallet_asset_label">Asset</string>
+    <string name="wallet_no_assets">No corresponding assets</string>
+    <string name="wallet_tx_none_label">None</string>
+    <string name="wallet_my_assets">My Assets</string>
+    <string name="wallet_custom">Custom</string>
+    <string name="wallet_custom_token">Custom Token</string>
+    <string name="wallet_add_cus_tip">The token name and decimals will be read automatically after you enter the contract address</string>
+    <string name="wallet_cus_symbol_hint">e.g. USDT</string>
+    <string name="wallet_cus_decimal_hint">e.g. 18</string>
+    <string name="wallet_cus_contract_warn">Please make sure the contract address is correct. Adding a wrong token contract may cause asset loss</string>
+</resources>

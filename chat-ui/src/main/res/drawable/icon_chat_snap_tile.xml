@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  聊天输入 "+" 面板：阅后即焚按钮图标（火焰，Google Material local_fire_department，Apache-2.0）
+  与 icon_chat_file 等贴片图标同款：60dp 浅暖橙圆角底块 + 红橙火焰（外焰 + 白色内焰）
+  配色：底 #FFE9D2 / 外焰 #F4511E（红橙） / 内焰 #FFFFFF
+  注意：火焰 path 已把“放大 1.3 倍并居中(30,30)”直接烘焙进坐标（无 group），
+       尺寸对齐同面板图标（文件 46x41/120 量级），以免 VectorDrawable group
+       的 pivot/translate 语义在部分真机上出现偏移。
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="60dp"
+    android:height="60dp"
+    android:viewportWidth="60"
+    android:viewportHeight="60">
+
+    <!-- 圆角底块 -->
+    <path
+        android:fillColor="#FFE9D2"
+        android:pathData="M60,47 A13,13 0 0 1 47,60 L13,60 A13,13 0 0 1 0,47 L0,13 A13,13 0 0 1 13,0 L47,0 A13,13 0 0 1 60,13 Z" />
+
+    <!-- 外焰（扁平化坐标，s=1.3） -->
+    <path
+        android:fillColor="#F4511E"
+        android:pathData="M35.2,23.5 l-0.572,0.715 C33.094,26.126 30,25.047 30,22.59 V18.3 c0,0 -10.4,5.2 -10.4,14.3 0,3.796 2.028,7.111 5.057,8.918 C23.929,40.491 23.5,39.23 23.5,37.878 c0,-1.716 0.676,-3.328 1.911,-4.55 L30,28.83 l4.589,4.511 c1.235,1.209 1.911,2.821 1.911,4.55 0,1.326 -0.403,2.548 -1.105,3.575 2.457,-1.495 4.277,-3.978 4.823,-6.89 C41.076,29.961 38.827,25.606 35.2,23.5 Z" />
+
+    <!-- 白色内焰（扁平化坐标，s=1.3） -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M30,32.47 l-2.769,2.717 C26.503,35.915 26.1,36.864 26.1,37.878 26.1,39.984 27.855,41.7 30,41.7 s3.9,-1.716 3.9,-3.822 c0,-1.014 -0.403,-1.976 -1.131,-2.691 L30,32.47 Z" />
+</vector>

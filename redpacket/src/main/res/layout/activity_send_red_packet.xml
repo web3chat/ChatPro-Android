@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--发红包页：红色渐变头部（资产 / 余额 / 金额概览）+ 白色表单卡片 + 渐变主按钮-->
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/packet_drawer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/biz_color_primary_dark"
+        android:orientation="vertical">
+
+        <com.fzm.widget.CustomTitleBar
+            android:id="@+id/ctb_title"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/redpacket_red_top"
+            app:left_icon="@drawable/biz_ic_back_white"
+            app:right_text="红包记录"
+            app:right_text_color="@color/redpacket_gold"
+            app:right_text_size="14sp"
+            app:title_text="发红包"
+            app:title_text_color="@android:color/white" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:fillViewport="true"
+            android:overScrollMode="never"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="24dp">
+
+                <!--========== 头部：浅红 → 深红渐变（底部圆角，顶部与标题栏无缝）==========-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/redpacket_bg_send_header"
+                    android:orientation="vertical"
+                    android:paddingStart="16dp"
+                    android:paddingTop="8dp"
+                    android:paddingEnd="16dp"
+                    android:paddingBottom="44dp">
+
+                    <!--数字资产：整行可点，打开右侧资产抽屉-->
+                    <RelativeLayout
+                        android:id="@+id/rl_asset"
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:background="@drawable/redpacket_bg_send_pill"
+                        android:paddingStart="14dp"
+                        android:paddingEnd="14dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:text="@string/red_packet_digital_asset"
+                            android:textColor="#E6FFFFFF"
+                            android:textSize="14sp" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentEnd="true"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tv_selected_token"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@android:color/white"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                tools:text="CHAT" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:src="@drawable/ic_packet_arrow" />
+                        </LinearLayout>
+                    </RelativeLayout>
+
+                    <!--本群人数 / 可用余额-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_group_num"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:background="@drawable/redpacket_bg_send_chip"
+                            android:paddingHorizontal="10dp"
+                            android:paddingVertical="4dp"
+                            android:textColor="#F2FFFFFF"
+                            android:textSize="11sp"
+                            tools:text="本群共12人" />
+
+                        <TextView
+                            android:id="@+id/tv_balance"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/redpacket_bg_send_chip"
+                            android:paddingHorizontal="10dp"
+                            android:paddingVertical="4dp"
+                            android:textColor="@color/redpacket_gold"
+                            android:textSize="11sp"
+                            tools:text="可用 1234.12CHAT" />
+                    </LinearLayout>
+
+                    <!--金额概览（实时跟随输入）-->
+                    <TextView
+                        android:id="@+id/tv_total"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="14dp"
+                        android:fontFamily="@font/specialtext"
+                        android:shadowColor="#33000000"
+                        android:shadowDx="0"
+                        android:shadowDy="2"
+                        android:shadowRadius="6"
+                        android:text="0.0"
+                        android:textColor="@android:color/white"
+                        android:textSize="46sp" />
+
+                    <TextView
+                        android:id="@+id/tv_token"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="2dp"
+                        android:textColor="#CCFFFFFF"
+                        android:textSize="13sp"
+                        tools:text="CHAT" />
+                </LinearLayout>
+
+                <!--========== 表单卡片（向上叠在渐变头部上）==========-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="-24dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/redpacket_shape_send_card"
+                    android:elevation="8dp"
+                    android:orientation="vertical">
+
+                    <!--金额：类型图标 + 标签 + 输入 + 币种-->
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp">
+
+                        <ImageView
+                            android:id="@+id/iv_packet_type"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="8dp"
+                            android:scaleType="fitCenter"
+                            android:src="@mipmap/icon_packet_type_lucky" />
+
+                        <TextView
+                            android:id="@+id/tv_amount_tips"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toEndOf="@+id/iv_packet_type"
+                            android:drawablePadding="4dp"
+                            android:text="@string/red_packet_total_amount"
+                            android:textColor="@color/biz_text_grey_dark"
+                            android:textSize="15sp" />
+
+                        <EditText
+                            android:id="@+id/et_amount"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="8dp"
+                            android:layout_toStartOf="@+id/tv_token_name"
+                            android:layout_toEndOf="@+id/tv_amount_tips"
+                            android:background="@null"
+                            android:gravity="end|center_vertical"
+                            android:hint="0.00"
+                            android:inputType="numberDecimal"
+                            android:textColor="@color/biz_text_grey_dark"
+                            android:textColorHint="@color/biz_text_grey_light"
+                            android:textCursorDrawable="@drawable/ic_cursor_accent"
+                            android:textSize="17sp" />
+
+                        <TextView
+                            android:id="@+id/tv_token_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="6dp"
+                            android:textColor="@color/biz_text_grey_dark"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            tools:text="CHAT" />
+                    </RelativeLayout>
+
+                    <!--红包个数（单人红包隐藏）-->
+                    <LinearLayout
+                        android:id="@+id/sl_packet_num"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginStart="16dp"
+                            android:background="@color/biz_color_divider" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="56dp"
+                            android:paddingStart="16dp"
+                            android:paddingEnd="16dp">
+
+                            <TextView
+                                android:id="@+id/tv_packet_num_tips"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerVertical="true"
+                                android:drawablePadding="5dp"
+                                android:text="@string/red_packet_count_label"
+                                android:textColor="@color/biz_text_grey_dark"
+                                android:textSize="15sp" />
+
+                            <TextView
+                                android:id="@+id/tv_packet_num"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:text="@string/red_packet_count_unit"
+                                android:textColor="@color/biz_text_grey_dark"
+                                android:textSize="15sp" />
+
+                            <EditText
+                                android:id="@+id/et_packet_num"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="8dp"
+                                android:layout_toStartOf="@+id/tv_packet_num"
+                                android:layout_toEndOf="@+id/tv_packet_num_tips"
+                                android:background="@null"
+                                android:gravity="end|center_vertical"
+                                android:hint="输入数量"
+                                android:inputType="number"
+                                android:maxLength="4"
+                                android:textColor="@color/biz_text_grey_dark"
+                                android:textColorHint="@color/biz_text_grey_light"
+                                android:textCursorDrawable="@drawable/ic_cursor_accent"
+                                android:textSize="17sp" />
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <!--指定领取人（仅群红包，默认所有人可领）-->
+                    <LinearLayout
+                        android:id="@+id/ll_receivers"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone"
+                        tools:visibility="visible">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:layout_marginStart="16dp"
+                            android:background="@color/biz_color_divider" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="56dp"
+                            android:paddingStart="16dp"
+                            android:paddingEnd="16dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerVertical="true"
+                                android:text="@string/red_packet_receivers_label"
+                                android:textColor="@color/biz_text_grey_dark"
+                                android:textSize="15sp" />
+
+                            <TextView
+                                android:id="@+id/tv_receivers"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:drawablePadding="10dp"
+                                android:text="@string/red_packet_receivers_all"
+                                android:textColor="@color/biz_text_grey_light"
+                                android:textSize="15sp"
+                                app:drawableEndCompat="@drawable/ic_arrow_dark" />
+                        </RelativeLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!--========== 留言卡片 ==========-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/redpacket_shape_send_card"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="46dp"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp">
+
+                        <TextView
+                            android:id="@+id/tv_chain_remark"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:text="@string/red_packet_remote_note_label"
+                            android:textColor="@color/biz_text_grey_dark"
+                            android:textSize="15sp" />
+
+                        <ImageView
+                            android:id="@+id/iv_remark_help"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="5dp"
+                            android:layout_toEndOf="@+id/tv_chain_remark"
+                            android:src="@drawable/ic_help" />
+
+                        <TextView
+                            android:id="@+id/tv_remark_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:text="0/20"
+                            android:textColor="@color/biz_text_grey_light"
+                            android:textSize="12sp" />
+                    </RelativeLayout>
+
+                    <EditText
+                        android:id="@+id/et_remark"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:background="@drawable/redpacket_bg_send_input"
+                        android:gravity="top|start"
+                        android:hint="恭喜发财，大吉大利！"
+                        android:maxLength="20"
+                        android:minHeight="76dp"
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="10dp"
+                        android:textColor="@color/biz_text_grey_dark"
+                        android:textColorHint="@color/biz_text_grey_light"
+                        android:textCursorDrawable="@drawable/ic_cursor_accent"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <!--========== 主按钮 ==========-->
+                <TextView
+                    android:id="@+id/send_red_packet"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="22dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/redpacket_bg_send_btn"
+                    android:elevation="6dp"
+                    android:gravity="center"
+                    android:text="@string/red_packet_confirm_send"
+                    android:textColor="@android:color/white"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="14dp"
+                    android:drawablePadding="4dp"
+                    android:text="@string/red_packet_refund_tips"
+                    android:textColor="@color/biz_text_grey_light"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fcv_container"
+        android:layout_width="290dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:fitsSystemWindows="true" />
+</androidx.drawerlayout.widget.DrawerLayout>

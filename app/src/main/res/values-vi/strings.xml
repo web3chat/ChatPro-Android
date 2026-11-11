@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TanXin</string>
+
+    <string name="app_tab_session">Tin nhắn</string>
+    <string name="app_tab_contact">Danh bạ</string>
+    <string name="app_tab_find">Khám phá</string>
+    <string name="app_tab_shop">Cửa hàng</string>
+    <string name="app_tab_wallet">Tài sản</string>
+    <string name="app_tab_account">Của tôi</string>
+
+    <string name="app_splash_tips">Ứng dụng nhắn tin cộng tác đa trung tâm\nỨng dụng lưu trữ phân tán</string>
+    <string name="app_skip_bind_tips">Bạn chưa sao lưu cụm từ ghi nhớ. Bạn có thể mã hóa và tải lên máy chủ chính thức bằng cách liên kết điện thoại/email và mật khẩu chat bí mật để sử dụng dịch vụ khôi phục. Vì sự an toàn của tài khoản, hãy tự sao lưu hoặc tải lên cụm từ ghi nhớ đã mã hóa, hoặc thực hiện tại [Quản lý bảo mật].</string>
+    <string name="app_skip_bind_phone">Liên kết điện thoại</string>
+    <string name="app_skip_bind_email">Liên kết email</string>
+
+    <string name="app_ai_qa">Hỏi đáp AI</string>
+    <string name="app_ai_cs_entry">Hỗ trợ AI</string>
+    <string name="app_close">Đóng</string>
+    <string name="app_back">Quay lại</string>
+    <string name="app_send">Gửi</string>
+    <string name="app_ai_qa_hint">Nhập câu hỏi của bạn…</string>
+
+    <!--Kho câu hỏi AI-->
+    <string name="app_ai_question1">Làm thế nào để sao lưu cụm từ ghi nhớ?</string>
+    <string name="app_ai_question2">Làm thế nào để chuyển tiền cho bạn bè?</string>
+    <string name="app_ai_question3">Chat bí mật và chat thường khác nhau thế nào?</string>
+    <string name="app_ai_question4">Làm thế nào để tạo nhóm?</string>
+    <string name="app_ai_question5">Bao lì xì hỗ trợ những loại coin nào?</string>
+    <string name="app_ai_question6">Quên mật khẩu chat bí mật thì sao?</string>
+
+    <!--Nhập bạn bè-->
+    <string name="app_import_friends_title">Nhập bạn bè</string>
+    <string name="app_import_friends_content">Đã phát hiện bạn bè được sao lưu từ tài khoản cũ trên thiết bị này. Bạn có muốn nhập bạn bè vào tài khoản mới không?</string>
+    <string name="app_message_empty">Nội dung tin nhắn không được để trống</string>
+    <string name="app_import_success">Nhập thành công</string>
+
+    <!--Lỗi AI-->
+    <string name="app_ai_unavailable">Xin lỗi, dịch vụ AI tạm thời không khả dụng. Vui lòng thử lại sau.</string>
+    <string name="app_ai_system_prompt">Bạn là trợ lý thông minh "XiaoC" của ChatPro. Hãy trả lời các câu hỏi của người dùng về chat, ví, bao lì xì và các tính năng khác một cách ngắn gọn và thân thiện.</string>
+    <string name="app_ai_network_error">Xin lỗi, kết nối mạng thất bại. Vui lòng thử lại sau.</string>
+    <string name="app_ai_api_error">Lỗi API: %1$s</string>
+
+    <!--Nhãn bố cục-->
+    <string name="app_label_ask_me">Bạn có thể hỏi tôi:</string>
+    <string name="app_label_refresh_questions">Câu hỏi khác ⟳</string>
+    <string name="app_label_import_old_account">Đã phát hiện bạn bè được sao lưu từ tài khoản cũ trên thiết bị này. Nhập vào tài khoản mới?</string>
+    <string name="app_label_send_add_msg">Đồng thời gửi tin nhắn thêm bạn</string>
+
+</resources>

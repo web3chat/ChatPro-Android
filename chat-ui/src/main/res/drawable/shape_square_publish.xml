@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 广场主按钮：品牌蓝渐变胶囊（官方页 / 详情发评论 / 举报页共用） -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <gradient
+        android:angle="0"
+        android:endColor="#1B8FE3"
+        android:startColor="#32B2F7"
+        android:type="linear" />
+    <corners android:radius="22dp" />
+</shape>

@@ -1,0 +1,978 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Nội dung tính năng mới (bằng values/strings.xml)-->
+    <string name="chat_chain_sync_fail">Không đồng bộ được địa chỉ tài khoản, vui lòng thử lại sau</string>
+    <string name="chat_account_menu_chain_sync">Địa chỉ tài khoản</string>
+    <string name="chat_chain_sync_success">Đã đồng bộ địa chỉ tài khoản</string>
+    <string name="chat_chain_sync_pending">Nhấn để đồng bộ địa chỉ tài khoản</string>
+    <string name="chat_chain_sync_failed">Đồng bộ thất bại, nhấn để thử lại</string>
+    <string name="chat_find_recent">Truy cập gần đây</string>
+    <string name="chat_find_empty_title">Chưa có lịch sử</string>
+    <string name="chat_find_empty_sub">Nhập URL hoặc quét mã QR để bắt đầu khám phá</string>
+    <string name="chat_tips_input_burn_mode">Đã bật tự hủy sau khi đọc, tin nhắn sẽ hủy sau khi đọc</string>
+    <string name="chat_tips_burn_type_denied">Không hỗ trợ ở chế độ tự hủy sau khi đọc</string>
+    <string name="chat_title_burn_detail">Tự hủy sau khi đọc</string>
+    <string name="chat_burn_placeholder_tips">Nhấn để xem tin nhắn tự hủy</string>
+    <string name="chat_burn_detail_tips">Sẽ tự hủy sau khi đóng</string>
+    <string name="chat_burn_play">Phát âm thanh</string>
+    <string name="chat_burn_open">Mở tệp</string>
+    <string name="chat_burn_audio">Tin nhắn thoại</string>
+    <string name="qr_login_title">Đăng nhập bằng mã QR</string>
+    <string name="qr_login_icon">💻</string>
+    <string name="qr_login_device_desc">Bản web yêu cầu đăng nhập vào tài khoản của bạn</string>
+    <string name="qr_login_session_hint">Mã QR có hiệu lực 5 phút, vui lòng xác nhận sớm</string>
+    <string name="qr_login_confirm">Xác nhận đăng nhập</string>
+    <string name="qr_login_cancel">Hủy</string>
+    <string name="qr_login_wrong_password">Sai mật khẩu</string>
+    <string name="qr_login_invalid_qr">Mã QR đăng nhập không hợp lệ</string>
+    <string name="qr_login_private_key_failed">Không lấy được khóa riêng</string>
+    <string name="qr_login_encrypt_failed">Mã hóa thất bại, vui lòng thử lại</string>
+    <string name="qr_login_confirm_success">Đã xác nhận, vui lòng tiếp tục trên máy tính</string>
+    <string name="qr_login_risk_title">Cảnh báo rủi ro</string>
+    <string name="qr_login_risk_warning">Phát hiện tài sản trong tài khoản của bạn. Vui lòng xác nhận môi trường thiết bị an toàn trước khi đăng nhập.</string>
+    <string name="qr_login_risk_continue">Tiếp tục</string>
+    <string name="chat_label_current">Hiện tại</string>
+    <string name="chat_title_square">Quảng trường</string>
+    <string name="square_filter_all">Tất cả</string>
+    <string name="square_filter_person">Cá nhân</string>
+    <string name="square_filter_official">Chính thức</string>
+    <string name="square_action_publish">Đăng bài</string>
+    <string name="square_action_delete">Xóa</string>
+    <string name="square_action_edit">Chỉnh sửa</string>
+    <string name="square_action_share">Chia sẻ</string>
+    <string name="square_share_chooser">Chia sẻ tới</string>
+    <string name="square_share_card_slogan">Mã hóa đầu cuối · An toàn và riêng tư</string>
+    <string name="square_share_card_footer">Từ %1$s</string>
+    <string name="square_share_card_qr_tip">Tải %1$s</string>
+    <string name="square_action_send">Gửi</string>
+    <string name="square_sending">Đang gửi…</string>
+    <string name="square_action_success">Thành công</string>
+    <string name="square_publish_title">Bài đăng mới</string>
+    <string name="square_publish_hint">Bạn đang nghĩ gì…</string>
+    <string name="square_md_bold">Đậm</string>
+    <string name="square_md_italic">Nghiêng</string>
+    <string name="square_md_strike">Gạch ngang</string>
+    <string name="square_md_heading">Tiêu đề</string>
+    <string name="square_md_bullet_list">Danh sách dấu đầu dòng</string>
+    <string name="square_md_number_list">Danh sách đánh số</string>
+    <string name="square_md_quote">Trích dẫn</string>
+    <string name="square_md_code">Mã</string>
+    <string name="square_md_link">Liên kết</string>
+    <string name="square_md_divider">Đường phân cách</string>
+    <string name="square_md_preview">Xem trước</string>
+    <string name="square_md_edit">Chỉnh sửa</string>
+    <string name="square_md_preview_empty">Không có nội dung để xem trước</string>
+    <string name="square_detail_title">Chi tiết bài đăng</string>
+    <string name="square_edit_expired">Hết thời gian chỉnh sửa</string>
+    <string name="square_edit_success">Đã cập nhật</string>
+    <string name="square_edit_title">Chỉnh sửa bài viết</string>
+    <string name="square_comments_title">Bình luận</string>
+    <string name="square_comments_count">Bình luận (%1$d)</string>
+    <string name="square_reply_label">Trả lời</string>
+    <string name="square_reply_to">Trả lời @%1$s</string>
+    <string name="square_reply_cancel">Hủy</string>
+    <string name="square_reply_more">Xem thêm %1$d câu trả lời</string>
+    <string name="square_reply_success">Đã gửi trả lời</string>
+    <string name="square_comment_deleted">Bình luận gốc đã bị xóa</string>
+    <string name="square_tips_reply_invalid">Không thể trả lời bình luận này</string>
+    <string name="square_inbox_title">Bình luận</string>
+    <string name="square_inbox_empty">Chưa có bình luận hoặc trả lời</string>
+    <string name="square_inbox_all_read">Đánh dấu tất cả đã đọc</string>
+    <string name="square_inbox_floor">đã bình luận bài viết của bạn</string>
+    <string name="square_inbox_reply">đã trả lời bạn</string>
+    <string name="square_inbox_unavailable">Bình luận này không còn xem được</string>
+    <string name="square_inbox_no_unread">Không có tin nhắn chưa đọc</string>
+    <string name="square_comment_hint">Viết bình luận…</string>
+    <string name="square_no_comment">Chưa có bình luận</string>
+    <string name="square_comments_closed">Đã tắt bình luận</string>
+    <string name="square_allow_comment">Cho phép bình luận</string>
+    <string name="square_cannot_post">Tài khoản của bạn không thể đăng bài</string>
+    <string name="square_closed">Quảng trường đã đóng</string>
+    <string name="square_official_tag">Chính thức</string>
+    <string name="square_status_auditing">Đang duyệt</string>
+    <string name="square_status_rejected">Bị từ chối</string>
+    <string name="square_tag_activity">Sự kiện</string>
+    <string name="square_tag_announcement">Thông báo</string>
+    <string name="square_tag_message">Tin nhắn</string>
+    <string name="square_image_index">%1$d / %2$d</string>
+    <string name="square_time_just_now">Vừa xong</string>
+    <string name="square_time_minutes">%1$d phút trước</string>
+    <string name="square_time_hours">%1$d giờ trước</string>
+    <string name="square_time_yesterday">Hôm qua</string>
+    <string name="square_empty">Chưa có gì, hãy đăng bài đầu tiên</string>
+    <string name="square_tips_pending">Đã gửi, sẽ hiển thị sau khi được duyệt</string>
+    <string name="square_tips_rejected">Nội dung không hợp lệ</string>
+    <string name="square_tips_rate_limited">Thao tác quá nhiều, vui lòng thử lại sau</string>
+    <string name="square_tips_sign_invalid">Chữ ký không hợp lệ hoặc đã hết hạn, vui lòng đăng nhập lại</string>
+    <string name="square_tips_param_error">Tham số không hợp lệ</string>
+    <string name="square_tips_no_permission">Không có quyền</string>
+    <string name="square_tips_not_found">Nội dung không tồn tại hoặc đã bị xóa</string>
+    <string name="square_tips_banned">Tài khoản chính thức này đã bị khóa, vui lòng liên hệ hỗ trợ</string>
+    <string name="square_tips_comment_closed">Đã tắt bình luận</string>
+    <string name="square_tips_apply_pending">Có yêu cầu đang chờ duyệt, xem Tài khoản chính thức của tôi</string>
+    <string name="square_tips_network">Lỗi mạng, vui lòng kiểm tra kết nối</string>
+    <string name="square_tips_failed">Thao tác thất bại, vui lòng thử lại sau</string>
+    <string name="square_tips_comment_pending">Đã gửi bình luận, hiển thị sau khi được duyệt</string>
+    <string name="square_publish_success">Đã đăng</string>
+    <string name="square_comment_success">Đã bình luận</string>
+    <string name="square_delete_confirm">Xóa bài đăng này?</string>
+    <string name="square_delete_comment_confirm">Xóa bình luận này?</string>
+    <string name="square_delete_success">Đã xóa</string>
+    <string name="square_upload_failed">Tải ảnh thất bại, vui lòng thử lại</string>
+    <string name="square_content_empty">Vui lòng nhập nội dung</string>
+    <string name="square_max_images">Tối đa 9 ảnh</string>
+    <string name="square_my_official">Tài khoản chính thức của tôi</string>
+    <string name="square_my_profile">Trang cá nhân của tôi</string>
+    <string name="square_user_posts">Bài đăng</string>
+    <string name="square_user_empty">Chưa có bài đăng</string>
+    <string name="square_official_apply">Yêu cầu tài khoản chính thức</string>
+    <string name="square_official_state_none">Chưa yêu cầu</string>
+    <string name="square_official_state_pending">Đang duyệt</string>
+    <string name="square_official_state_approved">Đã xác minh</string>
+    <string name="square_official_state_rejected">Bị từ chối</string>
+    <string name="square_official_state_banned">Bị khóa</string>
+    <string name="square_official_tip_none">Sau khi được duyệt, bài đăng từ địa chỉ này sẽ hiển thị là bài chính thức (hiện tên, có thể tắt bình luận).</string>
+    <string name="square_official_tip_pending">Yêu cầu của bạn đang được duyệt, vui lòng chờ.</string>
+    <string name="square_official_tip_approved">Tài khoản chính thức đã xác minh: %1$s. Bài đăng sẽ hiển thị tên này.</string>
+    <string name="square_official_tip_rejected">Yêu cầu bị từ chối, bạn có thể sửa và gửi lại.</string>
+    <string name="square_official_tip_reason"> (Lý do: %1$s)</string>
+    <string name="square_official_tip_banned">Tài khoản chính thức này đã bị khóa. Không thể đăng bài, bình luận hoặc thích. Vui lòng liên hệ hỗ trợ.</string>
+    <string name="square_official_avatar_hint">Nhấn để đặt ảnh đại diện (tùy chọn)</string>
+    <string name="square_official_avatar_change">Nhấn để đổi ảnh đại diện</string>
+    <string name="square_official_avatar_clear">Xóa ảnh đại diện</string>
+    <string name="square_official_save">Lưu</string>
+    <string name="square_official_updated">Đã cập nhật hồ sơ</string>
+    <string name="square_pinned">Đã ghim</string>
+    <string name="square_platform_official_tag">Nền tảng</string>
+    <string name="square_official_avatar_set">Đã tải ảnh đại diện, nhấn để đổi</string>
+    <string name="square_official_name_hint">Tên tài khoản chính thức (bắt buộc, tối đa 32 ký tự)</string>
+    <string name="square_official_reapply">Đăng ký lại</string>
+    <string name="square_official_intro_hint">Giới thiệu (tùy chọn, tối đa 200 ký tự)</string>
+    <string name="square_official_name_empty">Vui lòng nhập tên tài khoản chính thức</string>
+    <string name="square_official_submit">Gửi yêu cầu</string>
+    <string name="square_official_applied">Đã gửi yêu cầu, vui lòng chờ duyệt</string>
+    <string name="square_feed_latest">Mới nhất</string>
+    <string name="square_feed_hot">Nổi bật</string>
+    <string name="square_feed_following">Đang theo dõi</string>
+    <string name="square_follow">Theo dõi</string>
+    <string name="square_followed">Đã theo dõi</string>
+    <string name="square_follow_success">Đã theo dõi</string>
+    <string name="square_unfollow_success">Đã bỏ theo dõi</string>
+    <string name="square_follow_tips_self">Không thể theo dõi chính mình</string>
+    <string name="square_my_follows">Đang theo dõi</string>
+    <string name="square_my_followers">Người theo dõi tôi</string>
+    <string name="square_user_follow_count">Đang theo dõi %1$d</string>
+    <string name="square_user_follower_count">Người theo dõi %1$d</string>
+    <string name="square_user_followers_title">Người theo dõi</string>
+    <string name="square_follow_empty">Chưa theo dõi ai</string>
+    <string name="square_followers_empty">Chưa có người theo dõi</string>
+    <string name="square_gold_empty">Chưa có tài khoản chính thức vàng</string>
+    <string name="square_gold_stat">%1$d người theo dõi · %2$d bài viết</string>
+    <string name="square_gold_title">Tài khoản chính thức vàng</string>
+    <string name="square_my_posts_title">Bài đăng của tôi</string>
+    <string name="square_my_posts_traffic">Lượt xem bài đăng của tôi</string>
+    <string name="square_traffic_posts">Bài đăng</string>
+    <string name="square_traffic_views">Lượt xem</string>
+    <string name="square_traffic_likes">Lượt thích</string>
+    <string name="square_traffic_comments">Bình luận</string>
+    <string name="square_report">Báo cáo</string>
+    <string name="square_report_content">Nội dung bị báo cáo</string>
+    <string name="square_report_detail_counter">%1$d/%2$d</string>
+    <string name="square_report_detail_hint">Mô tả lý do (không bắt buộc)</string>
+    <string name="square_report_detail_tip">Không bắt buộc, tối đa 500 ký tự</string>
+    <string name="square_report_title">Lý do báo cáo</string>
+    <string name="square_report_type">Loại báo cáo</string>
+    <string name="square_report_type_required">Vui lòng chọn loại báo cáo</string>
+    <string name="square_report_reason_spam">Spam</string>
+    <string name="square_report_reason_porn">Khiêu dâm</string>
+    <string name="square_report_reason_scam">Lừa đảo</string>
+    <string name="square_report_reason_abuse">Xúc phạm</string>
+    <string name="square_report_reason_other">Khác</string>
+    <string name="square_report_success">Đã gửi báo cáo, cảm ơn phản hồi</string>
+    <string name="square_report_reported">Đã báo cáo trước đó</string>
+    <string name="square_report_select">Vui lòng chọn</string>
+    <string name="square_report_submit">Gửi báo cáo</string>
+    <string name="square_report_submitting">Đang gửi…</string>
+
+    <!--登录相关-->
+    <string name="chat_login_choose_server">Chọn máy chủ</string>
+    <string name="chat_login_chat_server_tips">1. Người dùng mới cần chọn hoặc thêm một máy chủ làm máy chủ mặc định để nhận tin nhắn trò chuyện từ bạn bè;\n2. Tài khoản đã đăng ký sẽ tiếp tục sử dụng máy chủ mặc định hiện có.</string>
+    <string name="chat_login_contract_server_tips">1. Cần chọn hoặc thêm một máy chủ làm nút blockchain mặc định để tải lên và lấy thông tin tài khoản;\n2. Có thể chuyển đổi tại [Của tôi]-[Máy chủ].</string>
+    <string name="chat_login_edit_chat_server">Chỉnh sửa máy chủ trò chuyện</string>
+    <string name="chat_login_add_chat_server">Thêm máy chủ trò chuyện</string>
+    <string name="chat_login_edit_contract_server">Chỉnh sửa nút blockchain</string>
+    <string name="chat_login_add_contract_server">Thêm nút blockchain</string>
+    <string name="chat_tips_edit_server_name">Tên máy chủ</string>
+    <string name="chat_hint_edit_server_name">Vui lòng nhập tên máy chủ</string>
+    <string name="chat_tips_edit_server_address">Địa chỉ máy chủ</string>
+    <string name="chat_hint_edit_server_address">Vui lòng nhập địa chỉ máy chủ</string>
+    <string name="chat_tip_add_server_success">Thêm máy chủ thành công</string>
+    <string name="chat_tip_edit_server_success">Sửa máy chủ thành công</string>
+    <string name="chat_tip_del_server_success">Xóa máy chủ thành công</string>
+    <string name="chat_tip_confirm_to_del_server">Bạn có chắc chắn muốn xóa máy chủ này không?</string>
+    <string name="chat_click_again_to_exit">Nhấn lần nữa để thoát ứng dụng</string>
+
+    <string name="chat_login_type_words">Tài khoản cụm từ ghi nhớ</string>
+    <string name="chat_login_create_account">Tạo tài khoản</string>
+    <string name="chat_login_import_account">Nhập tài khoản</string>
+    <string name="chat_login_type_account">Số điện thoại/Email</string>
+    <string name="chat_login_find_mnem_words">Khôi phục bằng một phần cụm từ ghi nhớ</string>
+
+    <string name="chat_login_tips_agree_protocol">Vui lòng đồng ý với điều khoản trước</string>
+    <string name="chat_login_tips_choose_server">Vui lòng chọn máy chủ trước</string>
+    <string name="chat_login_tips_agreement">Tôi đã đọc và đồng ý với Thỏa thuận dịch vụ người dùng TanXin</string>
+
+    <string name="chat_login_tips_choose_chat_server">Chọn máy chủ nhận tin nhắn trò chuyện</string>
+    <string name="chat_login_tips_choose_contract_server">Chọn nút blockchain để tải lên thông tin tài khoản</string>
+    <string name="chat_title_chat_server">Địa chỉ máy chủ</string>
+    <string name="chat_title_contract_server">Nút blockchain</string>
+
+    <string name="chat_title_official_server">Địa chỉ chính thức</string>
+    <string name="chat_title_custom_server">Địa chỉ tùy chỉnh</string>
+    <string name="chat_title_chat_server_group">Dịch vụ trò chuyện</string>
+    <string name="chat_login_edit_chat_server_group">Chỉnh sửa nhóm máy chủ</string>
+    <string name="chat_login_add_chat_server_group">Thêm nhóm máy chủ</string>
+    <string name="chat_tip_add_server_group_success">Thêm nhóm máy chủ thành công, vui lòng chờ và kiểm tra kết quả sau…</string>
+    <string name="chat_tip_del_server_group_success">Xóa nhóm máy chủ thành công, vui lòng chờ và kiểm tra kết quả sau…</string>
+    <string name="chat_tip_edit_server_group_success">Sửa nhóm máy chủ thành công, vui lòng chờ và kiểm tra kết quả sau…</string>
+    <string name="chat_tip_cant_del_default_server">Không thể xóa nhóm máy chủ mặc định</string>
+    <string name="chat_tip_wrong_server_protocol">Giao thức máy chủ phải là http hoặc https</string>
+    <string name="chat_tip_wrong_server_port">Cổng máy chủ sai</string>
+    <string name="chat_tip_wrong_server_format">Sai định dạng địa chỉ máy chủ</string>
+    <string name="chat_tip_confirm_to_del_server_group">Bạn có chắc chắn muốn xóa nhóm máy chủ này không?</string>
+
+    <string name="chat_login_title_create_mnem">Sao lưu cụm từ ghi nhớ</string>
+    <string name="chat_login_mnem_chinese">中文</string>
+    <string name="chat_login_mnem_english">English</string>
+    <string name="chat_login_tips_remember_mnem">Vui lòng ghi lại cụm từ ghi nhớ, sau khi xác nhận sẽ tiến hành kiểm tra</string>
+    <string name="chat_login_warn_secure_mnem">Lưu ý: Không chụp màn hình! Nếu người khác lấy được cụm từ ghi nhớ của bạn sẽ trực tiếp lấy được tài sản của bạn! Hãy ghi lại cụm từ ghi nhớ và lưu giữ ở nơi an toàn, chúng tôi sẽ kiểm tra ở màn hình tiếp theo.</string>
+    <string name="chat_login_change_mnem">Đổi cụm từ ghi nhớ</string>
+    <string name="chat_login_backup_mnem">Bắt đầu sao lưu</string>
+    <string name="chat_login_backup_skip">Bỏ qua sao lưu</string>
+    <string name="chat_login_validate_mnem">Xác minh cụm từ ghi nhớ bạn đã sao lưu</string>
+    <string name="chat_login_click_correct_order">Vui lòng nhấn từng từ theo đúng thứ tự</string>
+    <string name="chat_login_mnem_wrong">Cụm từ ghi nhớ không đúng</string>
+    <string name="chat_login_mnem_backup_fail">Sao lưu cụm từ ghi nhớ thất bại</string>
+    <string name="chat_login_mnem_backup_success">Sao lưu cụm từ ghi nhớ thành công</string>
+
+    <string name="chat_login_title_import_account">Nhập tài khoản</string>
+
+    <string name="chat_login_import_mnem_hint">Vui lòng nhập cụm từ ghi nhớ</string>
+    <string name="chat_login_import_mnem_support_tips">Hỗ trợ nhập tất cả cụm từ ghi nhớ được tạo theo tiêu chuẩn BIP</string>
+    <string name="chat_login_import_private_key_chain">Chuỗi chính:</string>
+    <string name="chat_login_import_private_key_chain_bty">BTY</string>
+    <string name="chat_login_import_private_key_hint">Vui lòng nhập khóa riêng tư hoặc quét mã QR chứa khóa riêng tư</string>
+
+    <string name="chat_login_start_import_account">Bắt đầu nhập</string>
+    <string name="chat_login_mnem_import_fail">Nhập cụm từ ghi nhớ thất bại</string>
+    <string name="chat_login_mnem_import_success">Nhập cụm từ ghi nhớ thành công</string>
+    <string name="chat_login_mnem_recover_success">Tự động khôi phục cụm từ ghi nhớ thành công, vui lòng đặt lại mật khẩu</string>
+
+    <!--首页-->
+    <string name="chat_home_action_scan">Quét</string>
+    <string name="chat_home_action_create_group">Tạo nhóm</string>
+    <string name="chat_home_action_search">Thêm bạn bè/Nhóm</string>
+    <string name="chat_home_action_my_qr_code">Mã QR của tôi</string>
+    <string name="chat_home_action_create_company">Tạo đội</string>
+    <string name="chat_home_action_okr">OKR</string>
+    <string name="chat_title_main_contact">Danh bạ</string>
+    <string name="chat_title_black_list">Danh sách đen</string>
+    <string name="chat_title_friend_list">Bạn bè</string>
+    <string name="chat_title_group_list">Nhóm</string>
+    <string name="chat_home_server_disconnect">Kết nối máy chủ bất thường, nhấn để xem</string>
+    <string name="chat_title_private_chat">Cá nhân</string>
+    <string name="chat_title_group_chat">Nhóm</string>
+    <string name="chat_tips_unread_num">[%1$d tin]%2$s</string>
+    <string name="chat_tips_sender_me">Tôi: %1$s</string>
+
+    <!--空列表-->
+    <string name="chat_common_empty_list">Không có dữ liệu</string>
+    <string name="chat_black_list_empty">Chưa có danh sách đen</string>
+    <string name="chat_friend_list_empty">Chưa có bạn bè</string>
+    <string name="chat_invite_friend">Mời bạn bè</string>
+    <string name="chat_friend_message_list_empty">Chưa có tin nhắn từ bạn bè</string>
+    <string name="chat_start_chat">Bắt đầu trò chuyện</string>
+    <string name="chat_room_list_empty">Chưa có nhóm</string>
+    <string name="chat_suggest_group">Nhóm gợi ý</string>
+    <string name="chat_room_message_list_empty">Chưa có tin nhắn nhóm</string>
+    <string name="chat_contact_list_empty">Chưa có liên hệ</string>
+    <string name="chat_promote_list_empty">Chưa có bản ghi</string>
+
+    <!--扫一扫-->
+    <string name="chat_action_open_photo">Thư viện ảnh</string>
+
+    <string name="chat_account_menu_wallet">Ví của tôi</string>
+    <string name="chat_account_menu_red_packet">Lịch sử lì xì</string>
+    <string name="chat_account_menu_server">Máy chủ</string>
+    <string name="chat_account_menu_share">Tải ứng dụng</string>
+    <string name="chat_account_menu_security">Quản lý bảo mật</string>
+    <string name="chat_account_menu_setting">Trung tâm cài đặt</string>
+    <string name="chat_account_menu_feedback">Phản hồi người dùng</string>
+    <string name="chat_account_menu_update">Kiểm tra cập nhật</string>
+    <string name="chat_action_logout">Đăng xuất tài khoản</string>
+
+    <!--多语言-->
+    <string name="language_select_title">Đa ngôn ngữ</string>
+    <string name="language_chinese">中文</string>
+    <string name="language_english">English</string>
+    <string name="chat_account_menu_language">Đa ngôn ngữ</string>
+
+    <!--搜索选项-->
+    <string name="chat_action_search_scan">Quét</string>
+    <string name="chat_action_search_scan_tips">Quét mã QR danh thiếp</string>
+    <string name="chat_action_search_import_friends">Nhập bạn bè</string>
+    <string name="chat_action_search_import_friends_tips">Chỉ hỗ trợ bạn bè của các tài khoản đã đăng nhập trên thiết bị này</string>
+
+    <!--修改昵称-->
+    <string name="chat_title_edit_nickname">Sửa biệt danh</string>
+    <string name="chat_tip_nickname">Biệt danh</string>
+    <string name="chat_tip_nickname_edit_success">Sửa biệt danh thành công, vui lòng chờ và kiểm tra kết quả sau…</string>
+    <string name="chat_tip_nickname_empty">Biệt danh không được để trống</string>
+    <string name="chat_tip_avatar">Ảnh đại diện</string>
+    <string name="chat_tip_avatar_edit_success">Sửa ảnh đại diện thành công, vui lòng chờ và kiểm tra kết quả sau…</string>
+
+    <!--安全管理-->
+    <string name="chat_title_security_setting">Quản lý bảo mật</string>
+    <string name="chat_tips_export_words">Xuất cụm từ ghi nhớ</string>
+    <string name="chat_tips_export_s2">Xuất S2</string>
+    <string name="chat_tips_export_private">Xuất khóa riêng tư</string>
+    <string name="chat_tips_phone">Số điện thoại</string>
+    <string name="chat_tips_email">Email</string>
+    <string name="chat_tips_encrypt_key">Mật khẩu trò chuyện bí mật</string>
+    <string name="chat_tips_action1">Đổi mật khẩu</string>
+    <string name="chat_tips_action2">Đặt mật khẩu</string>
+    <string name="chat_tips_action3">Đi liên kết</string>
+    <string name="chat_security_setting_tip1">Cụm từ ghi nhớ được dùng để mã hóa tin nhắn trò chuyện và tệp trò chuyện. Khi đổi thiết bị đăng nhập cần nhập cùng một cụm từ ghi nhớ mới có thể xem tin nhắn mã hóa lịch sử, hãy kịp thời xuất cụm từ ghi nhớ và lưu giữ ở nơi an toàn!</string>
+    <string name="chat_security_setting_tip2">Cụm từ ghi nhớ có thể được mã hóa và tải lên máy chủ chính thức thông qua số điện thoại/email và mật khẩu trò chuyện bí mật, cung cấp dịch vụ khôi phục cụm từ ghi nhớ.</string>
+    <string name="chat_save_words_tip">Vui lòng ghi lại cụm từ ghi nhớ và lưu giữ ở nơi an toàn. Nếu cụm từ ghi nhớ bị mất, khi cài lại hoặc đổi thiết bị đăng nhập sẽ không thể xem tin nhắn mã hóa lịch sử! Và không thể đặt lại mật khẩu trò chuyện bí mật! Nếu cụm từ ghi nhớ bị người khác lấy được, họ có thể lấy được thông tin của bạn!</string>
+    <string name="chat_save_words_tips2">Vui lòng ghi lại và lưu giữ ở nơi an toàn!</string>
+    <string name="chat_tips_chat_pwd_error">Sai mật khẩu trò chuyện bí mật</string>
+    <string name="chat_tips_mnem_export_fail">Xuất cụm từ ghi nhớ thất bại</string>
+    <string name="chat_tips_private_export_fail">Xuất khóa riêng tư thất bại</string>
+    <string name="chat_title_bind_phone">Liên kết số điện thoại</string>
+    <string name="chat_title_bind_email">Liên kết email</string>
+    <string name="chat_tips_bind_phone_tips">Sau khi liên kết số điện thoại có thể đăng nhập bằng số điện thoại</string>
+    <string name="chat_tips_bind_email_tips">Sau khi liên kết email có thể đăng nhập bằng email</string>
+    <string name="chat_hint_input_phone">Vui lòng nhập số điện thoại</string>
+    <string name="chat_hint_input_email">Vui lòng nhập email</string>
+    <string name="chat_action_bind_send_code">Lấy mã xác minh</string>
+    <string name="chat_tips_bind_account_success">Liên kết thành công</string>
+    <string name="chat_action_unbind_and_rebind">Hủy liên kết và liên kết lại</string>
+    <string name="chat_action_unbind_phone_login">Đăng nhập bằng số điện thoại</string>
+    <string name="chat_action_unbind_import_mnem">Nhập cụm từ ghi nhớ</string>
+    <string name="chat_tips_override_bind">Số điện thoại/email đã liên kết với tài khoản cụm từ ghi nhớ khác, có hủy liên kết ban đầu và liên kết lại với tài khoản cụm từ ghi nhớ cục bộ không?</string>
+    <string name="chat_tips_override_bind2">Nếu tài khoản gốc có tài sản, sẽ không thể khôi phục qua số điện thoại, có nguy cơ mất mát, hãy cẩn thận khi hủy liên kết!</string>
+    <string name="chat_tips_phone_forget_password">Quên mật khẩu trò chuyện bí mật sẽ không thể khôi phục tài khoản gốc qua số điện thoại! Bạn có thể:\n1. Nhập cụm từ ghi nhớ để đăng nhập (có thể đổi mật khẩu);\n2. Hủy liên kết ban đầu, tạo tài khoản mới và liên kết với số điện thoại này.</string>
+    <string name="chat_tips_email_forget_password">Quên mật khẩu trò chuyện bí mật sẽ không thể khôi phục tài khoản gốc qua email! Bạn có thể:\n1. Nhập cụm từ ghi nhớ để đăng nhập (có thể đổi mật khẩu);\n2. Thử đăng nhập bằng số điện thoại để khôi phục, hoặc dùng chức năng quên mật khẩu khi đăng nhập bằng số điện thoại để thực hiện thao tác hủy liên kết và liên kết lại</string>
+    <string name="chat_tips_override_forget_password2">Hủy liên kết ban đầu sẽ làm mất thông tin và tài sản của tài khoản gốc, hãy cẩn thận khi hủy liên kết!</string>
+
+    <!--设置中心-->
+    <string name="chat_title_setting_center">Trung tâm cài đặt</string>
+    <string name="chat_tips_app_notify_switch">Công tắc thông báo ứng dụng</string>
+    <string name="chat_tips_new_msg_notify">Nhận thông báo tin nhắn mới</string>
+    <string name="chat_tips_rtc_call_notify">Nhận thông báo mời gọi thoại và video</string>
+    <string name="chat_tips_system_sound_and_vibrate">Âm thanh và rung hệ thống</string>
+    <string name="chat_tips_new_msg_sys_notify">Thông báo hệ thống tin nhắn mới</string>
+    <string name="chat_tips_rtc_call_sys_notify">Nhắc gọi thoại và video</string>
+    <string name="chat_tips_go_sys_notify_settings">Đi tới cài đặt hệ thống</string>
+
+    <string name="chat_set_chat_password">Vui lòng đặt mật khẩu trò chuyện bí mật</string>
+    <string name="chat_input_chat_password">Vui lòng nhập mật khẩu trò chuyện bí mật</string>
+    <string name="chat_encrypt_password_hint">Kết hợp 8–16 ký tự số, chữ cái hoặc ký hiệu</string>
+    <!--修改助记词密码-->
+    <string name="chat_title_set_encrypt_password">Đặt mật khẩu trò chuyện bí mật</string>
+    <string name="chat_title_encrypt_password">Đổi mật khẩu trò chuyện bí mật</string>
+    <string name="chat_tips_old_encrypt_pwd">Mật khẩu cũ</string>
+    <string name="chat_tips_old_encrypt_pwd_hint">Vui lòng nhập mật khẩu cũ</string>
+    <string name="chat_tips_first_encrypt_pwd_hint">Vui lòng đặt mật khẩu</string>
+    <string name="chat_tips_second_encrypt_pwd_hint">Vui lòng nhập lại mật khẩu</string>
+    <string name="chat_tips_forget_password">Quên mật khẩu</string>
+    <string name="chat_tips_new_encrypt_pwd">Mật khẩu mới</string>
+    <string name="chat_tips_new_encrypt_pwd_hint">Vui lòng nhập lại mật khẩu mới</string>
+    <string name="chat_tips_update_encrypt_pwd1">Đổi mật khẩu trò chuyện bí mật thành công</string>
+    <string name="chat_tips_update_encrypt_pwd2">Sai mật khẩu</string>
+    <string name="chat_tips_update_encrypt_pwd3">Vui lòng nhập 8–16 ký tự</string>
+    <string name="chat_tips_update_encrypt_pwd4">Vui lòng nhập kết hợp số, chữ cái hoặc ký hiệu</string>
+    <string name="chat_tips_update_encrypt_pwd5">Vui lòng đặt kết hợp 8–16 ký tự số, chữ cái hoặc ký hiệu</string>
+    <string name="chat_tips_update_encrypt_pwd6">Hai lần nhập mật khẩu không khớp</string>
+    <string name="chat_tips_update_encrypt_pwd7">Đặt mật khẩu trò chuyện bí mật thành công</string>
+
+    <!--联系人信息-->
+    <string name="chat_title_contact_info">Thông tin chi tiết</string>
+    <string name="chat_action_send_msg">Gửi tin nhắn</string>
+    <string name="chat_action_transfer">Chuyển tiền</string>
+    <string name="chat_action_delete_friend">Xóa bạn bè</string>
+    <string name="chat_action_add_friend">Thêm bạn bè</string>
+    <string name="chat_tips_modify_group_success">Sửa máy chủ thành công</string>
+    <string name="chat_tips_add_friend_success">Thêm bạn bè thành công</string>
+    <string name="chat_tips_delete_friend_success">Xóa bạn bè thành công</string>
+    <string name="chat_tips_nickname_placeholder">Biệt danh: %1$s</string>
+    <string name="chat_tips_group_nickname_placeholder">Biệt danh nhóm: %1$s</string>
+    <string name="chat_tips_address_placeholder">Tài khoản: %1$s</string>
+    <string name="chat_dialog_delete_friend">Sau khi xóa, tin nhắn trò chuyện với liên hệ này cũng sẽ bị xóa, bạn có chắc chắn xóa liên hệ &lt;font color="%1$s"&gt;%2$s&lt;/font&gt; không?</string>
+
+    <string name="chat_title_edit_group_name">Sửa tên nhóm</string>
+    <string name="chat_tip_group_name">Tên nhóm mã hóa</string>
+    <string name="chat_tip_group_pub_name">Tên nhóm công khai</string>
+    <string name="chat_title_edit_nickname_in_group">Biệt danh của tôi trong nhóm này</string>
+    <string name="chat_tip_nickname_in_group">Biệt danh nhóm</string>
+    <string name="chat_tip_group_name_empty">Tên nhóm không được để trống</string>
+    <string name="chat_tip_group_pub_name_empty">Tên nhóm công khai không được để trống</string>
+    <string name="chat_tip_edit_group_name_success">Sửa tên nhóm thành công</string>
+    <string name="chat_tip_edit_group_nickname_success">Sửa biệt danh trong nhóm thành công</string>
+    <string name="chat_tip_group_avatar">Ảnh đại diện nhóm</string>
+    <string name="chat_tips_nickname_in_group">Biệt danh của tôi trong nhóm này</string>
+    <string name="chat_log_in_chat_history">Tìm kiếm lịch sử trò chuyện</string>
+    <string name="chat_file_in_chat_history">Tệp trò chuyện</string>
+    <string name="chat_detail_no_disturb">Không làm phiền</string>
+    <string name="chat_detail_stick_top">Ghim trò chuyện</string>
+    <string name="chat_detail_group_type_tips">Loại nhóm</string>
+    <string name="chat_detail_group_type0">Nhóm thường</string>
+    <string name="chat_detail_group_type1">Nhóm toàn thể</string>
+    <string name="chat_detail_group_type2">Nhóm phòng ban</string>
+    <string name="chat_detail_belong_server_group">Máy chủ nhận tin nhắn của TA</string>
+    <string name="chat_detail_belong_server_group2">Máy chủ trực thuộc</string>
+    <string name="chat_detail_choose_server_group">Chọn máy chủ</string>
+    <string name="chat_detail_edit_server_group">Quản lý</string>
+    <string name="chat_add_black_list">Thêm vào danh sách đen</string>
+    <string name="chat_remove_black_list">Xóa khỏi danh sách đen</string>
+    <string name="chat_user_black_message">Không còn nhận tin nhắn từ đối phương</string>
+    <string name="chat_add_black_warn">Sau khi thêm vào danh sách đen, bạn sẽ không còn nhận được tin nhắn từ đối phương, bạn có chắc chắn chuyển liên hệ &lt;font color="%1$s"&gt;%2$s&lt;/font&gt; vào danh sách đen không?</string>
+    <string name="chat_add_black_success">Đã thêm đối phương vào danh sách đen!</string>
+    <string name="chat_add_black_fail">Thêm vào danh sách đen thất bại!</string>
+    <string name="chat_remove_black_success">Đã xóa đối phương khỏi danh sách đen!</string>
+    <string name="chat_remove_black_fail">Xóa khỏi danh sách đen thất bại!</string>
+    <string name="chat_group_mute_time">Cấm nói</string>
+
+    <string name="chat_title_contact_remark">Thông tin ghi chú</string>
+    <string name="chat_tip_remark">Ghi chú</string>
+    <string name="chat_tip_remark_edit_success">Sửa thành công</string>
+
+    <!--群信息-->
+    <string name="chat_action_exit_group">Rời khỏi nhóm</string>
+    <string name="chat_action_disband_group">Giải tán nhóm</string>
+
+    <!--本地搜索-->
+    <string name="chat_tips_search_history">Lịch sử tìm kiếm</string>
+    <string name="chat_tips_search_clear_history">Xóa lịch sử</string>
+    <string name="chat_tips_search_hint">Tìm bạn bè, lịch sử trò chuyện, v.v.</string>
+    <string name="chat_tips_search_hint1">Tìm bạn bè</string>
+    <string name="chat_tips_search_hint2">Tìm nhóm</string>
+    <string name="chat_tips_search_hint3">Tìm lịch sử trò chuyện</string>
+    <string name="chat_tips_search_type1">Liên hệ</string>
+    <string name="chat_tips_search_type2">Nhóm</string>
+    <string name="chat_tips_search_type3">Lịch sử trò chuyện</string>
+    <string name="chat_tips_search_result_more">Xem thêm</string>
+    <string name="chat_tips_search_log_target">Bản ghi của \"%1$s\"</string>
+    <string name="chat_tips_search_log_count">%1$d bản ghi trò chuyện liên quan</string>
+
+    <!-- 聊天-->
+    <string name="chat_tips_chat_operate1">Hủy cấm nói thành công</string>
+    <string name="chat_tips_chat_operate2">Đã chuyển sang chế độ tai nghe</string>
+    <string name="chat_tips_chat_operate3">Đã chuyển sang chế độ loa ngoài</string>
+    <string name="chat_tips_chat_operate4">Đã sao chép vào bộ nhớ tạm</string>
+    <string name="chat_tips_chat_operate5">Tin nhắn không phải dạng văn bản không thể sao chép</string>
+    <string name="chat_tips_chat_operate6">Đã thu hồi một tin nhắn</string>
+    <string name="chat_top_operate">Ghim trò chuyện</string>
+    <string name="chat_top_cancel">Hủy ghim</string>
+    <string name="chat_disturb_operate">Không làm phiền</string>
+    <string name="chat_disturb_cancel">Hủy không làm phiền</string>
+    <string name="chat_message_delete">Xóa trò chuyện</string>
+    <string name="chat_dialog_delete_session">Bạn có chắc chắn xóa trò chuyện với &lt;font color="%1$s"&gt;%2$s&lt;/font&gt; không?</string>
+    <string name="chat_dialog_delete_message">Bạn có chắc chắn muốn xóa tin nhắn này không?</string>
+    <string name="chat_dialog_delete_messages">Bạn có chắc chắn muốn xóa các tin nhắn đã chọn không?</string>
+    <string name="chat_tips_servers_empty">Không tìm thấy địa chỉ máy chủ của đối phương</string>
+    <string name="chat_tips_server_not_exist">Chưa kết nối máy chủ trò chuyện nhóm hiện tại, không thể gửi/nhận tin nhắn</string>
+    <string name="chat_tips_add_group_chat_server">Thêm máy chủ</string>
+
+    <string name="chat_popup_option_copy">Sao chép</string>
+    <string name="chat_popup_option_translate">Dịch</string>
+    <string name="chat_popup_option_view_original">Xem bản gốc</string>
+    <string name="chat_popup_option_forward">Chuyển tiếp</string>
+    <string name="chat_popup_option_reference">Trích dẫn</string>
+    <string name="chat_popup_option_focus">Theo dõi</string>
+    <string name="chat_popup_option_revoke">Thu hồi</string>
+    <string name="chat_popup_option_delete">Xóa</string>
+    <string name="chat_popup_option_mute">Cấm nói</string>
+    <string name="chat_popup_option_audio_channel_speaker">Phát qua loa ngoài</string>
+    <string name="chat_popup_option_audio_channel_receiver">Phát qua tai nghe</string>
+    <string name="chat_popup_option_multiple_choose">Chọn nhiều</string>
+
+    <string name="chat_tips_switch_to_speaker">Đã chuyển sang phát qua loa ngoài</string>
+    <string name="chat_tips_switch_to_receiver">Đã chuyển sang phát qua tai nghe</string>
+
+    <!--聊天输入框-->
+    <string name="chat_tips_input_msg1">Không thể gửi tin nhắn trống</string>
+    <string name="chat_tips_input_msg2">Tin nhắn hệ thống chỉ có thể gửi văn bản</string>
+    <string name="chat_tips_input_msg3">Không phát hiện thẻ SD</string>
+
+    <string name="chat_tips_input_send">Gửi</string>
+    <string name="chat_tips_input_say_sth">Bạn muốn nói gì</string>
+    <string name="chat_tips_input_media">Ảnh/Video</string>
+    <string name="chat_tips_input_shoot">Chụp</string>
+    <string name="chat_tips_input_snap_msg">Xem xong tự hủy</string>
+    <string name="chat_tips_input_file">Tệp</string>
+    <string name="chat_tips_input_rtc">Gọi video</string>
+    <string name="chat_tips_input_red_packet">Lì xì</string>
+    <string name="chat_tips_input_red_packet_only">Lì xì độc quyền</string>
+    <string name="chat_tips_input_text_packet">Tin nhắn lì xì</string>
+    <string name="chat_tips_input_transfer">Chuyển tiền</string>
+    <string name="chat_tips_input_contact_card">Danh thiếp</string>
+
+    <string name="chat_call_menu_voice">Gọi thoại</string>
+    <string name="chat_call_menu_video">Gọi video</string>
+    <string name="chat_call_invite_title_voice">Gọi thoại</string>
+    <string name="chat_call_invite_title_video">Gọi video</string>
+    <string name="chat_call_invite_desc">Nhấn để tham gia · Phòng %1$s</string>
+    <string name="chat_call_invite_text">Lời mời trò chuyện thoại, nhấn vào liên kết để tham gia: %1$s</string>
+    <string name="chat_call_confirm_content">Sẽ tạo phòng thoại và gửi lời mời cho đối phương. Bắt đầu trò chuyện thoại?</string>
+    <string name="chat_call_creating">Đang tạo phòng gọi…</string>
+    <string name="chat_call_create_failed">Tạo cuộc gọi thất bại, vui lòng thử lại sau</string>
+    <string name="chat_call_busy_title">Thông báo</string>
+    <string name="chat_call_busy_content">Bạn đang trong cuộc gọi. Kết thúc và bắt đầu cuộc gọi mới?</string>
+    <string name="chat_call_window_hangup">Kết thúc</string>
+    <string name="chat_call_window_minimize">Thu nhỏ</string>
+    <string name="chat_call_window_expand">Toàn màn hình</string>
+    <string name="chat_call_window_minimized_tips">Cuộc gọi đã thu nhỏ. Nhấn vào cửa sổ nhỏ để khôi phục</string>
+    <string name="chat_call_copy_link">Sao chép liên kết cuộc gọi</string>
+    <string name="chat_call_link_copied">Đã sao chép liên kết cuộc gọi</string>
+    <string name="chat_call_webview_error">Không thể tải trang cuộc gọi. Kiểm tra mạng và thử lại</string>
+
+    <string name="chat_record_state_prepared">Giữ để nói</string>
+    <string name="chat_record_state_recording">Thả ra để kết thúc</string>
+    <string name="chat_record_state_want_cancel">Thả ngón tay để hủy gửi</string>
+    <string name="chat_record_slide_to_cancel">Trượt ngón tay lên để hủy gửi</string>
+    <string name="chat_record_tips_too_short">Thời gian ghi âm quá ngắn</string>
+    <string name="chat_speak_time_remain">Còn nói được %1$d giây</string>
+
+    <!--聊天消息-->
+    <string name="chat_unfold">Thu gọn</string>
+    <string name="chat_fold">Mở rộng</string>
+
+    <string name="chat_tips_num_3">%1$d/3</string>
+    <string name="chat_tips_num_15">%1$d/15</string>
+    <string name="chat_tips_num_20">%1$d/20</string>
+    <string name="chat_tips_num_50">%1$d/50</string>
+    <string name="chat_tips_num_400">%1$d/400</string>
+    <string name="chat_tips_num_500">%1$d/500</string>
+
+    <string name="chat_time_tips_yesterday">Hôm qua %1$s</string>
+    <string name="chat_time_tips_week1">Chủ nhật %1$s</string>
+    <string name="chat_time_tips_week2">Thứ hai %1$s</string>
+    <string name="chat_time_tips_week3">Thứ ba %1$s</string>
+    <string name="chat_time_tips_week4">Thứ tư %1$s</string>
+    <string name="chat_time_tips_week5">Thứ năm %1$s</string>
+    <string name="chat_time_tips_week6">Thứ sáu %1$s</string>
+    <string name="chat_time_tips_week7">Thứ bảy %1$s</string>
+
+    <string name="chat_file_size">Tệp %1$s</string>
+    <string name="chat_find_ai_cs">Hỗ trợ AI</string>
+    <string name="chat_tips_copy_message_content">Đã sao chép nội dung tin nhắn</string>
+    <string name="chat_tips_translate_failed">Dịch thất bại, vui lòng thử lại sau</string>
+
+    <string name="chat_message_system_msg_type">Thông báo</string>
+    <string name="chat_message_unsupported_msg_type">Tạm thời không hỗ trợ tin nhắn này, vui lòng nâng cấp lên phiên bản mới nhất</string>
+    <string name="chat_tips_file_not_exist">Tệp không tồn tại</string>
+
+    <string name="chat_tips_search_my_account">Tài khoản của tôi: %1$s</string>
+    <string name="chat_tips_search_type_user">Người dùng</string>
+    <string name="chat_title_my_qr_code">Mã QR của tôi</string>
+    <string name="chat_tips_qr_code_friend">Quét mã QR để thêm tôi làm bạn trên %1$s</string>
+    <string name="chat_action_copy_address">Sao chép tài khoản</string>
+    <string name="chat_action_copy_group_num">Sao chép số nhóm</string>
+    <string name="chat_tips_copy_download_url">Đã sao chép liên kết tải xuống vào bộ nhớ tạm</string>
+    <string name="chat_tips_copy_address">Đã sao chép vào bộ nhớ tạm</string>
+    <string name="chat_tips_copy_group_num">Đã sao chép số nhóm vào bộ nhớ tạm</string>
+    <string name="chat_tips_qr_share_chat">TanXin</string>
+    <string name="chat_tips_qr_save">Lưu</string>
+    <string name="chat_tips_img_saved">Đã lưu ảnh</string>
+    <string name="chat_tips_img_not_exist">Ảnh không tồn tại</string>
+    <string name="chat_tips_vid_not_exist">Video không tồn tại</string>
+    <string name="chat_tips_img_zip_fail">Nén ảnh thất bại</string>
+    <string name="chat_tips_not_contain_qr_code">Không nhận diện được mã QR</string>
+    <string name="chat_action_recognize_qrcode">Nhận diện mã QR trong ảnh</string>
+
+    <string name="chat_tips_start_download">Bắt đầu tải xuống…</string>
+    <string name="chat_tips_is_downloading">Đang tải xuống…</string>
+    <string name="chat_tips_image_download_to">Ảnh đã tải xuống tại %1$s</string>
+    <string name="chat_tips_video_download_to">Video đã tải xuống tại %1$s</string>
+    <string name="chat_tips_file_download_to">Tệp đã tải xuống tại %1$s</string>
+    <string name="chat_tips_download_fail">Tải xuống thất bại, %1$s</string>
+
+    <!--文件详情页面-->
+    <string name="chat_tips_download_file">Nhận tệp</string>
+    <string name="chat_tips_can_not_open">%1$s tạm thời không hỗ trợ mở loại tệp này, bạn có thể mở bằng ứng dụng khác</string>
+    <string name="chat_tips_open_with">Mở bằng ứng dụng khác</string>
+    <string name="chat_tips_select_open_type">Vui lòng chọn ứng dụng phù hợp để mở tệp này</string>
+    <string name="chat_tips_unsupported_file_type">Loại tệp không được hỗ trợ</string>
+
+    <!--聊天文件管理-->
+    <string name="chat_title_file_management">Tệp trò chuyện</string>
+    <string name="chat_action_file_select">Chọn</string>
+    <string name="chat_title_chat_file">Tệp</string>
+    <string name="chat_title_chat_media">Ảnh/Video</string>
+    <string name="chat_file_empty">Chưa có tệp</string>
+    <string name="chat_media_empty">Chưa có ảnh/video</string>
+    <string name="chat_file_search_hint">Nhập tên tệp</string>
+    <string name="chat_action_file_download">Tải xuống</string>
+    <string name="chat_action_file_delete">Xóa</string>
+    <string name="chat_dialog_tips_delete_chat_files">Sau khi xóa sẽ không xuất hiện trong lịch sử tin nhắn của bạn</string>
+
+    <!--删除私聊记录 / 自动删除-->
+    <string name="chat_contact_clean_private">Xóa lịch sử trò chuyện</string>
+    <string name="chat_contact_auto_delete">Tự động xóa lịch sử trò chuyện</string>
+    <string name="chat_private_clean_confirm_title">Xóa lịch sử trò chuyện</string>
+    <string name="chat_private_clean_confirm_message">Sẽ xóa tin nhắn trò chuyện riêng của cả hai bên theo khoảng thời gian đã chọn (lấy theo máy chủ), có tiếp tục không?</string>
+    <string name="chat_private_clean_success">Thao tác thành công, máy chủ đã xóa %1$d tin nhắn</string>
+    <string name="chat_private_clean_custom_invalid">Thời gian kết thúc không được sớm hơn thời gian bắt đầu</string>
+    <string name="chat_private_clean_last_1d">1 ngày gần đây</string>
+    <string name="chat_private_clean_last_3d">3 ngày gần đây</string>
+    <string name="chat_private_clean_last_7d">7 ngày gần đây</string>
+    <string name="chat_private_clean_last_30d">30 ngày gần đây</string>
+    <string name="chat_private_clean_last_90d">90 ngày gần đây</string>
+    <string name="chat_private_clean_last_180d">180 ngày gần đây</string>
+    <string name="chat_private_clean_last_365d">365 ngày gần đây</string>
+    <string name="chat_private_clean_all">Toàn bộ lịch sử</string>
+    <string name="chat_private_clean_custom">Ngày tùy chỉnh…</string>
+    <string name="chat_private_clean_pick_start">Chọn ngày bắt đầu</string>
+    <string name="chat_private_clean_pick_end">Chọn ngày kết thúc</string>
+    <string name="chat_private_auto_off">Tắt</string>
+    <string name="chat_private_auto_day_1">Quá 1 ngày</string>
+    <string name="chat_private_auto_day_3">Quá 3 ngày</string>
+    <string name="chat_private_auto_day_7">Quá 7 ngày</string>
+    <string name="chat_private_auto_day_30">Quá 30 ngày</string>
+    <string name="chat_private_auto_day_180">Quá 180 ngày</string>
+    <string name="chat_private_auto_pick_title">Tự động xóa</string>
+
+    <!--登录-->
+    <string name="login_tips_login_success">Đăng nhập thành công</string>
+    <string name="login_tips_register_success">Đăng ký thành công</string>
+    <string name="login_tips_code_sent">Gửi mã xác minh thành công</string>
+
+    <string name="login_tips_correct_email">Vui lòng nhập email đúng</string>
+    <string name="login_tips_correct_phone">Vui lòng nhập số điện thoại đúng</string>
+    <string name="login_tips_correct_code">Vui lòng nhập đầy đủ mã xác minh</string>
+    <string name="login_tips_code_count">Đã gửi (%1$ds)</string>
+
+    <string name="login_tips_input_email">Vui lòng nhập email</string>
+    <string name="login_tips_input_phone">Vui lòng nhập số điện thoại</string>
+    <string name="login_tips_input_code">Vui lòng nhập mã xác minh</string>
+    <string name="login_tips_input_s2">Vui lòng nhập S2</string>
+    <string name="login_action_send_code">Lấy mã xác minh</string>
+    <string name="login_action_login">Đăng nhập</string>
+    <string name="login_use_email">Đăng nhập bằng email</string>
+    <string name="login_use_email_tips">Khôi phục một phần cụm từ ghi nhớ bằng email để đăng nhập</string>
+    <string name="login_use_phone">Đăng nhập bằng số điện thoại</string>
+    <string name="login_use_phone_tips">Số điện thoại chưa liên kết tài khoản sẽ tự động tạo tài khoản</string>
+    <string name="login_tips_unbind_yet">Số điện thoại/email chưa liên kết với tài khoản cụm từ ghi nhớ, vui lòng chọn cách khác để vào trò chuyện.</string>
+
+    <string name="chat_dialog_action_take_photo">Chụp ảnh</string>
+    <string name="chat_dialog_action_select_picture">Chọn từ thư viện</string>
+
+    <!--App更新对话框-->
+    <string name="chat_update_checking_update">Đang kiểm tra cập nhật…</string>
+    <string name="chat_update_latest_version">Đã là phiên bản mới nhất</string>
+    <string name="chat_update_title">Đã phát hiện phiên bản mới</string>
+    <string name="chat_update_tips_version">V%1$s</string>
+    <string name="chat_update_downloading">Đang tải xuống…</string>
+    <string name="chat_update_begin_download">Đang chuẩn bị tải xuống…</string>
+    <string name="chat_update_download_success">Tải xuống hoàn tất, nhấn để cài đặt</string>
+    <string name="chat_update_action_retry">Thử lại</string>
+    <string name="chat_update_action_install">Nhấn để cài đặt</string>
+    <string name="chat_update_action_update">Cập nhật</string>
+    <string name="chat_update_action_ignore_update">Để sau</string>
+
+    <!--群聊-->
+    <string name="chat_title_create_group">Tạo nhóm</string>
+    <string name="chat_title_invite_members_type">Chọn thành viên</string>
+    <string name="chat_title_invite_group_members">Thêm thành viên mới</string>
+    <string name="chat_tips_group_members">Thành viên nhóm</string>
+    <string name="chat_title_create_group_select_server">Chọn máy chủ</string>
+    <string name="chat_tips_create_group_manage_server">Quản lý</string>
+    <string name="chat_tips_choose_group_server">Chọn máy chủ trò chuyện thuộc về nhóm</string>
+    <string name="chat_tips_invite_group_members">Chọn thành viên nhóm</string>
+    <string name="chat_tips_group_members_friends">Chọn thành viên từ danh sách bạn bè</string>
+    <string name="chat_tips_group_members_oa">Chọn thành viên từ cơ cấu tổ chức</string>
+    <string name="chat_action_create_group">Tạo</string>
+    <string name="chat_tips_somebody_create_group">Nhóm do %1$s tạo</string>
+    <string name="chat_tips_group_member_num">Tổng %1$d người</string>
+    <string name="chat_action_invite">Mời</string>
+    <string name="chat_action_remove">Xóa</string>
+    <string name="chat_action_group_copy_mark_id">Sao chép số nhóm</string>
+    <string name="chat_title_group_info">Chi tiết nhóm</string>
+    <string name="chat_title_group_qrcode">Mã QR nhóm</string>
+    <string name="chat_tips_group_mark_id">Số nhóm %1$s</string>
+    <string name="chat_tips_group_pub_name">Tên nhóm công khai: %1$s</string>
+    <string name="chat_tips_group_qr_code">Quét mã QR để tham gia nhóm</string>
+    <string name="chat_tips_group_forbid_join">Nhóm này cấm tham gia</string>
+    <string name="chat_tips_group_copy_mark_id">Đã sao chép số nhóm vào bộ nhớ tạm</string>
+    <string name="chat_tips_group_join_invalid_qrcode">Mã QR tham gia nhóm đã hết hạn</string>
+    <string name="tips_invite_group_members_success">Mời thành công</string>
+
+    <string name="chat_title_group_user">Thành viên nhóm</string>
+    <string name="chat_action_add_group_user">Thêm thành viên</string>
+    <string name="chat_action_del_group_user">Xóa thành viên</string>
+    <string name="chat_action_set_group_admin">Đặt làm quản trị viên</string>
+    <string name="chat_tips_set_nickname_in_group">Tại đây bạn có thể đặt biệt danh của mình trong &lt;font color="%1$s"&gt;%2$s&lt;/font&gt;, biệt danh này chỉ hiển thị trong nhóm này</string>
+    <string name="chat_tips_search_group_friend_hint">Tìm kiếm thành viên nhóm</string>
+    <string name="chat_tips_member_type">Chủ nhóm, quản trị viên</string>
+    <string name="chat_tips_member_type_owner">Chủ nhóm</string>
+    <string name="chat_tips_member_type_admin">Quản trị viên</string>
+    <string name="chat_tips_select_invite_users">Vui lòng chọn bạn bè để mời</string>
+    <string name="chat_tips_select_delete_users">Vui lòng chọn thành viên nhóm để xóa</string>
+    <string name="chat_dialog_tips_exit_group">Bạn có chắc chắn rời khỏi &lt;font color="%1$s"&gt;%2$s&lt;/font&gt; không?</string>
+    <string name="chat_dialog_tips_disband_group">Bạn có chắc chắn giải tán &lt;font color="%1$s"&gt;%2$s&lt;/font&gt; không?</string>
+
+    <string name="chat_group_admin_setting">Cài đặt quản trị viên</string>
+    <string name="chat_group_owner_setting">Chuyển quyền chủ nhóm</string>
+    <string name="chat_group_join_limit">Hạn chế tham gia nhóm</string>
+    <string name="chat_group_add_limit">Hạn chế thêm bạn bè</string>
+    <string name="chat_group_mute_all">Cấm nói toàn thể</string>
+    <string name="chat_group_mute_list">Danh sách cấm nói</string>
+    <string name="chat_group_join_limit1">Không cần phê duyệt</string>
+    <string name="chat_group_join_limit_sub1">Tham gia nhóm không cần sự đồng ý của chủ nhóm hoặc quản trị viên</string>
+    <string name="chat_group_join_limit2">Cấm tham gia nhóm</string>
+    <string name="chat_group_join_limit_sub2">Không cho phép bất kỳ ai tham gia nhóm ngoài lời mời của chủ nhóm và quản trị viên</string>
+    <string name="chat_group_join_limit3">Chủ nhóm phê duyệt</string>
+    <string name="chat_group_join_limit_sub3">Cần chủ nhóm hoặc quản trị viên đồng ý để tham gia nhóm</string>
+    <string name="chat_group_apply_list">Yêu cầu tham gia nhóm</string>
+    <string name="chat_group_apply_title">Yêu cầu tham gia nhóm</string>
+    <string name="chat_group_apply_empty">Chưa có yêu cầu tham gia</string>
+    <string name="chat_tip_apply_num">%1$d yêu cầu</string>
+    <string name="chat_action_apply_accept">Đồng ý</string>
+    <string name="chat_action_apply_reject">Từ chối</string>
+    <string name="chat_tips_apply_accepted">Đã đồng ý cho tham gia nhóm</string>
+    <string name="chat_tips_apply_rejected">Đã từ chối yêu cầu</string>
+    <string name="chat_action_apply_join_group">Xin tham gia</string>
+    <string name="chat_action_apply_join_pending">Đã gửi đơn, chờ duyệt</string>
+    <string name="chat_tips_apply_join_submitted">Đã gửi yêu cầu, vui lòng chờ phê duyệt</string>
+    <string name="chat_tips_invite_apply_submitted">Đã gửi lời mời, vui lòng chờ phê duyệt</string>
+    <string name="chat_tips_address_copied">Đã sao chép địa chỉ</string>
+    <string name="chat_group_add_limit1">Có thể thêm bạn bè trong nhóm</string>
+    <string name="chat_group_add_limit2">Cấm thêm bạn bè trong nhóm</string>
+
+    <string name="chat_group_join_title">Thông tin chi tiết</string>
+    <string name="chat_action_join_group">Vào trò chuyện nhóm</string>
+    <string name="chat_action_can_not_join">Cấm tham gia nhóm</string>
+    <string name="chat_action_chat_message">Gửi đến trò chuyện</string>
+    <string name="chat_tips_join_member_number">Thành viên nhóm %1$d người</string>
+
+    <string name="chat_title_group_mute_list">Danh sách cấm nói</string>
+    <string name="chat_action_group_cancel_mute">Hủy cấm nói toàn bộ</string>
+    <string name="chat_tip_no_group_user_muted">Không có thành viên nhóm cần hủy cấm nói</string>
+    <string name="chat_tip_mute_forever">Cấm nói vĩnh viễn</string>
+    <string name="chat_tip_mute_to_time">Đã bị cấm nói đến %1$s</string>
+    <string name="chat_tip_mute_user_num">%1$d thành viên bị cấm nói</string>
+    <string name="chat_action_forbid_add_friend">Nhóm này cấm thêm bạn bè</string>
+    <string name="chat_tips_mute_state1">Có thể phát biểu</string>
+    <string name="chat_tips_mute_state2">Cấm nói toàn thể</string>
+    <string name="chat_tips_mute_state3">Đang bị cấm nói&#160;%1$s</string>
+    <string name="chat_tips_mute_state4">Cấm nói vĩnh viễn</string>
+    <string name="chat_tips_can_not_mute">Quản trị viên hoặc chủ nhóm không thể bị cấm nói</string>
+
+    <string name="chat_confirm_mute">Bạn có chắc chắn cấm nói không?</string>
+    <string name="chat_mute_cancel">Hủy cấm nói</string>
+    <string name="chat_select_mute_time">Chọn thời gian cấm nói</string>
+    <string name="chat_change_mute_time">Sửa thời gian cấm nói</string>
+    <string name="chat_forever">Vĩnh viễn</string>
+    <string name="chat_24_hour">24 giờ</string>
+    <string name="chat_10_hour">10 giờ</string>
+    <string name="chat_2_hour">2 giờ</string>
+    <string name="chat_30_minute">30 phút</string>
+    <string name="chat_10_minute">10 phút</string>
+
+    <string name="chat_title_admin_setting">Cài đặt quản trị viên</string>
+    <string name="chat_title_change_owner">Chuyển quyền chủ nhóm</string>
+    <string name="chat_title_add_admin">Thêm quản trị viên</string>
+    <string name="chat_tips_group_owner">Chủ nhóm</string>
+    <string name="chat_tips_group_admin_num">Quản trị viên (%1$d/10)</string>
+    <string name="chat_action_add_group_admin">Thêm quản trị viên</string>
+    <string name="chat_tips_change_group_owner">Bạn có chắc chắn chuyển quyền chủ nhóm cho &lt;font color="%1$s"&gt;%2$s&lt;/font&gt; không?</string>
+
+    <string name="chat_tips_new_msg">%1$s tin nhắn mới</string>
+
+    <string name="chat_ait_default">[Có người @ tôi]</string>
+
+    <!--转发-->
+    <string name="chat_forward_msg_summary">Lịch sử trò chuyện Tổng %1$d tin nhắn</string>
+    <string name="chat_forward_source_tips">Chuyển tiếp: %1$s</string>
+    <string name="chat_forward_source_me_and_others">Trò chuyện giữa tôi và [%1$s]</string>
+    <string name="chat_forward_source_others_and_others">Trò chuyện giữa [%1$s] và [%2$s]</string>
+    <string name="chat_forward_source_group">Trò chuyện của nhóm [%1$s]</string>
+    <string name="chat_forward_title_others_and_others">Lịch sử trò chuyện của [%1$s] và [%2$s]</string>
+    <string name="chat_forward_title_group">Lịch sử trò chuyện nhóm</string>
+    <string name="chat_action_forward">Chuyển tiếp</string>
+    <string name="chat_action_forward_single">Chuyển tiếp từng tin</string>
+    <string name="chat_action_forward_multiple">Chuyển tiếp gộp</string>
+    <string name="chat_action_msg_star">Yêu thích</string>
+    <string name="chat_action_msg_delete">Xóa</string>
+    <string name="chat_action_revoke">Thu hồi</string>
+    <string name="chat_dialog_revoke_messages">Bạn có chắc chắn thu hồi %d tin nhắn đã chọn không?</string>
+    <string name="chat_tips_revoke_empty">Tin nhắn đã chọn không thể thu hồi</string>
+    <string name="chat_tips_revoke_partial">Thành công %1$d tin nhắn, thất bại %2$d tin nhắn</string>
+    <string name="chat_title_contact_select">Chọn liên hệ</string>
+    <string name="chat_tips_forward_contact_tag1">Trò chuyện gần đây</string>
+    <string name="chat_tips_forward_contact_tag2">Liên hệ</string>
+    <string name="chat_tips_forward_contact_tag3">Nhóm</string>
+    <string name="chat_tips_search_contact">Tìm bạn bè, nhóm</string>
+    <string name="chat_tips_search_friends">Tìm bạn bè</string>
+    <string name="chat_tips_search_groups">Tìm nhóm</string>
+    <string name="chat_tips_oa_select">Chọn thành viên từ cơ cấu tổ chức</string>
+    <string name="chat_tips_selected_message_empty">Vui lòng chọn tin nhắn hợp lệ trước</string>
+    <string name="chat_tips_reach_max_msg_select_num">Chỉ có thể chọn tối đa %1$d tin nhắn</string>
+    <string name="chat_tips_forward_msg_empty">Tin nhắn chuyển tiếp trống</string>
+    <string name="chat_tips_can_not_forward_group">Nhóm hiện tại không thể chuyển tiếp!</string>
+    <string name="chat_tips_can_not_forward_self">Không thể chuyển tiếp cho chính mình</string>
+    <string name="chat_tips_can_not_forward_no_server">Không tìm thấy máy chủ của đối phương, không thể chuyển tiếp</string>
+    <string name="chat_tips_can_not_forward_group_no_server">Chưa kết nối máy chủ trò chuyện nhóm hiện tại, không thể gửi/nhận tin nhắn</string>
+    <string name="cancel">Hủy</string>
+    <string name="ok">Đồng ý</string>
+    <string name="explore_title">Tuyên bố trách nhiệm</string>
+    <string name="explore_disclaimer">Bạn sắp sử dụng liên kết bên thứ ba, xác nhận tức là đồng ý với Chính sách quyền riêng tư và Thỏa thuận người dùng của bên thứ ba. Mọi hành vi và việc sử dụng của bạn trong liên kết này đều do nhà cung cấp liên kết đó chịu trách nhiệm.</string>
+    <string name="no_dotip">Không nhắc lại</string>
+    <string name="del_str">Xóa</string>
+    <string name="del_tip_str">Có xóa không?</string>
+    <string name="input_www">Vui lòng nhập địa chỉ web</string>
+    <string name="wc_get_addr">Cho phép lấy địa chỉ ví hiện tại</string>
+    <string name="wc_sign_str">Cho phép yêu cầu ký từ ví hiện tại</string>
+    <string name="wc_at">Dịch vụ này được hỗ trợ bởi giao thức WalletConnect</string>
+    <string name="wc_w_addr">Địa chỉ ví</string>
+    <string name="wc_cnet">Mạng hiện tại</string>
+    <string name="wc_dis">Ngắt kết nối</string>
+    <string name="wc_pay_de">Chi tiết thanh toán</string>
+    <string name="wc_pay_me">Thông tin thanh toán</string>
+    <string name="wc_pay_address">Địa chỉ thanh toán</string>
+    <string name="wc_fee">Phí thợ đào</string>
+    <string name="wc_next">Bước tiếp theo</string>
+    <string name="wc_con">WalletConnect đang kết nối với ví của bạn</string>
+    <string name="wc_coned">Đã kết nối với các ví sau</string>
+    <string name="home_receipt_address">Địa chỉ nhận tiền</string>
+    <string name="home_transfer">Chuyển tiền</string>
+    <string name="tip_fee_high">Phí thợ đào bạn đặt quá cao, vui lòng chọn phí thợ đào phù hợp</string>
+    <string name="tip_init_fee">Đang khởi tạo phí thợ đào...</string>
+    <string name="dapp_sign_re">Dapp gửi yêu cầu ký</string>
+    <string name="signme">Thông tin ký</string>
+    <string name="i_wallet">Ví của tôi</string>
+    <string name="my_wallet_detail_password">Vui lòng nhập mật khẩu tài khoản</string>
+    <string name="my_wallet_password_tips">Vui lòng nhập mật khẩu</string>
+    <string name="pwd_fail_str">Sai mật khẩu</string>
+    <string name="high_str">Nhanh nhất</string>
+    <string name="standard_str">Tiêu chuẩn</string>
+    <string name="low_str">Kinh tế</string>
+    <string name="custom_str">Tùy chỉnh</string>
+    <string name="exp_str">Trình duyệt</string>
+    <string name="send_suc_str">Gửi thành công!</string>
+    <string name="basic_error_send">Gửi thất bại, vui lòng thử lại</string>
+    <string name="chat_send_fail_title">Gửi tin nhắn thất bại</string>
+    <string name="chat_send_fail_network">Không có mạng, vui lòng kiểm tra kết nối</string>
+    <string name="chat_send_fail_timeout">Quá thời gian mạng, gửi thất bại</string>
+    <string name="chat_send_fail_connect">Không thể kết nối máy chủ, vui lòng kiểm tra mạng</string>
+    <string name="chat_send_fail_upload">Tải tệp lên thất bại, vui lòng kiểm tra mạng</string>
+    <string name="chat_send_fail_server">Lỗi máy chủ: %1$s</string>
+    <string name="chat_send_fail_server_empty">Lỗi máy chủ, gửi thất bại</string>
+    <string name="chat_send_fail_resend">Gửi lại</string>
+
+
+
+
+    <string name="tian_str">Đề xuất</string>
+    <string name="tp_str">Bỏ phiếu</string>
+    <string name="tp_error">Sự kiện quá sôi động, vui lòng thử lại sau</string>
+    <string name="fee_setting">Cài đặt phí thợ đào</string>
+    <string name="enter_str">Vui lòng nhập</string>
+    <string name="switch_account_str">Chuyển tài khoản</string>
+    <string name="chat_no_nickname">Vui lòng đặt biệt danh</string>
+    <string name="c_entrance">Lối vào thuận tiện</string>
+    <string name="n_yopen">Chưa mở</string>
+    <string name="save_suc">Lưu thành công</string>
+    <string name="like_str">Yêu thích</string>
+    <string name="collect_suc_str">Yêu thích thành công!</string>
+    <string name="my_collect_str">Yêu thích của tôi</string>
+    <string name="ref_str">Làm mới</string>
+    <string name="copy_url_str">Sao chép liên kết</string>
+    <string name="ex_open">Mở bằng trình duyệt</string>
+    <string name="exit_str">Thoát</string>
+    <string name="copy_success">Sao chép thành công</string>
+    <string name="dapp_approve">Ủy quyền hợp đồng</string>
+    <string name="dapp_out">Địa chỉ khởi tạo</string>
+    <string name="dapp_nonono">Ủy quyền token</string>
+    <string name="meta_approve">Ủy quyền sử dụng token</string>
+    <string name="select_network_fee">Chọn phí mạng</string>
+    <string name="fee_fast">Nhanh</string>
+    <string name="fee_recommended">Khuyến nghị</string>
+    <string name="fee_slow">Chậm</string>
+    <string name="fee_custom">Tùy chỉnh</string>
+    <string name="fee_estimated_time">Dự kiến trong %s</string>
+    <string name="estimated_fee">Phí ước tính</string>
+
+    <!--安全设置相关硬编码-->
+    <string name="chat_hint_input_wechat">Vui lòng nhập số WeChat</string>
+    <string name="chat_hint_input_xiaohongshu">Vui lòng nhập số Xiaohongshu</string>
+    <string name="chat_hint_input_douyin">Vui lòng nhập số Douyin</string>
+
+    <!--群相关硬编码-->
+    <string name="chat_group_type_all">Toàn thể</string>
+    <string name="chat_group_type_dept">Phòng ban</string>
+    <string name="chat_group_qrcode_tips">Nhóm này thuộc nhóm %1$s của đội, chỉ thành viên nội bộ tổ chức mới có thể tham gia. Nếu người bên ngoài tổ chức muốn tham gia nhóm, cần đăng ký tham gia tổ chức đó trước</string>
+
+    <!--转发相关-->
+    <string name="chat_forward_multiple_messages">[Chuyển tiếp từng tin] Tổng %1$d tin nhắn</string>
+    <string name="chat_forward_sent_count">Đã chuyển tiếp đến %1$d cuộc trò chuyện</string>
+
+    <!--私钥创建-->
+    <string name="chat_error_private_key_create">Tạo khóa riêng tư thất bại</string>
+
+    <!--编辑群头像-->
+    <string name="chat_error_crop_unknown">Cắt ảnh thất bại, lỗi không xác định</string>
+
+    <!--Dapp相关-->
+    <string name="chat_dapp_error_password">Sai mật khẩu</string>
+
+    <!--布局标签-->
+    <string name="chat_label_add_friend_msg">Tin nhắn thêm bạn bè</string>
+    <string name="chat_label_remark_other">Ghi chú của đối phương</string>
+    <string name="chat_label_send">Gửi</string>
+    <string name="chat_label_account_manage">Quản lý tài khoản</string>
+    <string name="chat_label_audio_call">Cuộc gọi thoại</string>
+    <string name="chat_label_video_call">Cuộc gọi video</string>
+    <string name="chat_label_create_wallet">Tạo ví</string>
+    <string name="chat_label_customer_service">Chăm sóc khách hàng</string>
+    <string name="chat_label_scan_add_cs">Quét mã QR để thêm chăm sóc khách hàng làm bạn bè</string>
+    <string name="chat_label_group_exit_tips">Nhóm toàn thể/nhóm phòng ban chỉ có thể rời nhóm bằng cách rời khỏi tổ chức/phòng ban. Rời khỏi tổ chức/phòng ban sẽ tự động rời khỏi nhóm tương ứng!</string>
+    <string name="chat_label_search">Tìm kiếm</string>
+    <string name="chat_label_search_history">Lịch sử tìm kiếm</string>
+    <string name="chat_label_phone">Số điện thoại</string>
+    <string name="chat_label_wechat">Số WeChat</string>
+    <string name="chat_label_xiaohongshu">Số Xiaohongshu</string>
+    <string name="chat_label_douyin">Số Douyin</string>
+    <string name="chat_label_select_at">Chọn người để @</string>
+    <string name="chat_label_everyone">Mọi người</string>
+    <string name="chat_label_input_hint">Vui lòng nhập</string>
+    <string name="chat_label_confirm">Xác nhận</string>
+    <string name="chat_label_forgot_password">Quên mật khẩu</string>
+    <string name="chat_label_send_to">Gửi cho:</string>
+    <string name="chat_label_mnem_verify">Xác minh cụm từ ghi nhớ</string>
+    <string name="chat_label_phone_verify">Xác minh số điện thoại</string>
+    <string name="chat_label_email_verify">Xác minh email</string>
+    <string name="chat_label_group_owner">Chủ nhóm</string>
+    <string name="chat_label_member_info">Thông tin thành viên</string>
+    <string name="chat_label_name">Họ tên</string>
+    <string name="chat_label_team">Đội</string>
+    <string name="chat_label_short_number">Số ngắn</string>
+    <string name="chat_label_email">Email</string>
+    <string name="chat_label_dept">Phòng ban</string>
+    <string name="chat_label_position">Chức vụ</string>
+    <string name="chat_label_personal_card">Danh thiếp cá nhân</string>
+    <string name="chat_label_red_packet_default">Cung hỷ phát tài, đại cát đại lợi</string>
+    <string name="chat_label_exclusive_received">Lì xì độc quyền đã nhận</string>
+    <string name="chat_label_tx_mismatch">Thông tin giao dịch không khớp, nhấn để xem</string>
+    <string name="chat_label_my_qr">Mã QR của tôi</string>
+    <string name="chat_label_scan_add_me">Quét mã QR để thêm tôi làm bạn bè</string>
+    <string name="chat_label_scan_transfer_add">Quét mã QR để chuyển tiền và thêm bạn bè cho tôi</string>
+    <string name="chat_label_manage">Quản lý</string>
+    <string name="chat_label_org_structure">Cơ cấu tổ chức</string>
+    <string name="chat_label_current_account">Tài khoản hiện tại</string>
+    <string name="chat_add_friend_default_msg">Xin chào, tôi là %1$s, đã thêm bạn làm bạn bè!</string>
+
+</resources>

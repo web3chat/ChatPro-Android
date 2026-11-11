@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 红包领取凭证页：白色信息卡 -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/biz_color_primary" />
+    <corners android:radius="18dp" />
+</shape>

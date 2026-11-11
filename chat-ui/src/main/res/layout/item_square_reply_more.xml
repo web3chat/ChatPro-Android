@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--「展开 N 条回复」：点击后按楼拉取全部可见回复-->
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tv_more_replies"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:paddingStart="58dp"
+    android:paddingTop="7dp"
+    android:paddingEnd="15dp"
+    android:paddingBottom="10dp"
+    android:textColor="@color/biz_color_accent"
+    android:textSize="13sp"
+    tools:text="展开 5 条回复" />

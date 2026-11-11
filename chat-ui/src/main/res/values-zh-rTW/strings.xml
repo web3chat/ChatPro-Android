@@ -1,0 +1,977 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--新增功能文案（与 values/strings.xml 对齐）-->
+    <string name="chat_chain_sync_fail">帳戶地址同步失敗，請稍後重試</string>
+    <string name="chat_account_menu_chain_sync">帳戶地址</string>
+    <string name="chat_chain_sync_success">帳戶地址已同步</string>
+    <string name="chat_chain_sync_pending">點擊同步帳戶地址</string>
+    <string name="chat_chain_sync_failed">同步失敗，點此重試</string>
+    <string name="chat_find_recent">最近訪問</string>
+    <string name="chat_find_empty_title">暫無訪問記錄</string>
+    <string name="chat_find_empty_sub">輸入網址或掃碼，開啟去中心化探索</string>
+    <string name="chat_tips_input_burn_mode">閱後即焚已開啟，訊息發送後閱後即焚</string>
+    <string name="chat_tips_burn_type_denied">閱後即焚模式下不支援該操作</string>
+    <string name="chat_title_burn_detail">閱後即焚</string>
+    <string name="chat_burn_placeholder_tips">點擊查看閱後即焚訊息</string>
+    <string name="chat_burn_detail_tips">關閉後將自動焚毀</string>
+    <string name="chat_burn_play">播放語音</string>
+    <string name="chat_burn_open">打開檔案</string>
+    <string name="chat_burn_audio">語音訊息</string>
+    <string name="qr_login_title">掃碼登入</string>
+    <string name="qr_login_icon">💻</string>
+    <string name="qr_login_device_desc">網頁版請求登入你的帳號</string>
+    <string name="qr_login_session_hint">二維碼有效期 5 分鐘，請盡快確認</string>
+    <string name="qr_login_confirm">確認登入</string>
+    <string name="qr_login_cancel">取消</string>
+    <string name="qr_login_wrong_password">密碼錯誤</string>
+    <string name="qr_login_invalid_qr">無效的登入二維碼</string>
+    <string name="qr_login_private_key_failed">取得私鑰失敗</string>
+    <string name="qr_login_encrypt_failed">加密失敗，請重試</string>
+    <string name="qr_login_confirm_success">已確認，請在電腦上繼續</string>
+    <string name="qr_login_risk_title">風險提示</string>
+    <string name="qr_login_risk_warning">檢測到您帳戶有資產，請確認設備環境安全再登錄。</string>
+    <string name="qr_login_risk_continue">繼續登錄</string>
+    <string name="chat_label_current">當前</string>
+    <string name="chat_title_square">廣場</string>
+    <string name="square_filter_all">全部</string>
+    <string name="square_filter_person">個人</string>
+    <string name="square_filter_official">公眾號</string>
+    <string name="square_action_publish">發帖</string>
+    <string name="square_action_delete">刪除</string>
+    <string name="square_action_edit">編輯</string>
+    <string name="square_action_share">分享</string>
+    <string name="square_share_chooser">分享到</string>
+    <string name="square_share_card_slogan">端對端加密 · 安全私密</string>
+    <string name="square_share_card_footer">來自「%1$s」</string>
+    <string name="square_share_card_qr_tip">掃碼下載「%1$s」</string>
+    <string name="square_action_send">傳送</string>
+    <string name="square_sending">傳送中…</string>
+    <string name="square_action_success">操作成功</string>
+    <string name="square_publish_title">發布動態</string>
+    <string name="square_publish_hint">這一刻的想法…</string>
+    <string name="square_md_bold">粗體</string>
+    <string name="square_md_italic">斜體</string>
+    <string name="square_md_strike">刪除線</string>
+    <string name="square_md_heading">標題</string>
+    <string name="square_md_bullet_list">無序清單</string>
+    <string name="square_md_number_list">有序清單</string>
+    <string name="square_md_quote">引用</string>
+    <string name="square_md_code">程式碼</string>
+    <string name="square_md_link">連結</string>
+    <string name="square_md_divider">分隔線</string>
+    <string name="square_md_preview">預覽</string>
+    <string name="square_md_edit">編輯</string>
+    <string name="square_md_preview_empty">暫無可預覽的內容</string>
+    <string name="square_detail_title">動態詳情</string>
+    <string name="square_edit_expired">超過可編輯時間</string>
+    <string name="square_edit_success">修改成功</string>
+    <string name="square_edit_title">編輯動態</string>
+    <string name="square_comments_title">評論</string>
+    <string name="square_comments_count">評論 (%1$d)</string>
+    <string name="square_reply_label">回覆</string>
+    <string name="square_reply_to">回覆 @%1$s</string>
+    <string name="square_reply_cancel">取消</string>
+    <string name="square_reply_more">展開 %1$d 則回覆</string>
+    <string name="square_reply_success">回覆成功</string>
+    <string name="square_comment_deleted">原評論已刪除</string>
+    <string name="square_tips_reply_invalid">無法回覆該評論</string>
+    <string name="square_inbox_title">評論與回覆</string>
+    <string name="square_inbox_empty">暫無評論或回覆</string>
+    <string name="square_inbox_all_read">全部已讀</string>
+    <string name="square_inbox_floor">評論了你的動態</string>
+    <string name="square_inbox_reply">回覆了你</string>
+    <string name="square_inbox_unavailable">該評論已無法查看</string>
+    <string name="square_inbox_no_unread">沒有未讀訊息</string>
+    <string name="square_comment_hint">說點什麼…</string>
+    <string name="square_no_comment">還沒有評論，快來搶沙發</string>
+    <string name="square_comments_closed">評論已關閉</string>
+    <string name="square_allow_comment">允許評論</string>
+    <string name="square_cannot_post">當前帳號暫不能發文</string>
+    <string name="square_closed">廣場功能已關閉</string>
+    <string name="square_official_tag">公眾號</string>
+    <string name="square_status_auditing">待審核</string>
+    <string name="square_status_rejected">未通過</string>
+    <string name="square_tag_activity">活動</string>
+    <string name="square_tag_announcement">公告</string>
+    <string name="square_tag_message">訊息</string>
+    <string name="square_image_index">%1$d / %2$d</string>
+    <string name="square_time_just_now">剛剛</string>
+    <string name="square_time_minutes">%1$d 分鐘前</string>
+    <string name="square_time_hours">%1$d 小時前</string>
+    <string name="square_time_yesterday">昨天</string>
+    <string name="square_empty">暫無內容，發布第一條動態吧</string>
+    <string name="square_tips_pending">已提交，審核通過後將出現在廣場</string>
+    <string name="square_tips_rejected">內容不合規，無法發布</string>
+    <string name="square_tips_rate_limited">操作過於頻繁，請稍後再試</string>
+    <string name="square_tips_sign_invalid">簽名無效或已過期，請重新登入後再試</string>
+    <string name="square_tips_param_error">參數有誤</string>
+    <string name="square_tips_no_permission">無權操作</string>
+    <string name="square_tips_not_found">內容不存在或已刪除</string>
+    <string name="square_tips_banned">公眾號已被封禁，請聯繫營運</string>
+    <string name="square_tips_comment_closed">評論已關閉</string>
+    <string name="square_tips_apply_pending">已有待審申請，請到「我的公眾號」查看</string>
+    <string name="square_tips_network">網路錯誤，請檢查網路後重試</string>
+    <string name="square_tips_failed">操作失敗，請稍後再試</string>
+    <string name="square_tips_comment_pending">評論已提交，審核通過後可見</string>
+    <string name="square_publish_success">發布成功</string>
+    <string name="square_comment_success">評論成功</string>
+    <string name="square_delete_confirm">確定刪除這條動態？</string>
+    <string name="square_delete_comment_confirm">確定刪除這條評論？</string>
+    <string name="square_delete_success">已刪除</string>
+    <string name="square_upload_failed">圖片上傳失敗，請重試</string>
+    <string name="square_content_empty">請輸入內容</string>
+    <string name="square_max_images">最多上傳 9 張圖片</string>
+    <string name="square_my_official">我的公眾號</string>
+    <string name="square_my_profile">個人資訊</string>
+    <string name="square_user_posts">TA 的動態</string>
+    <string name="square_user_empty">TA 還沒有發布動態</string>
+    <string name="square_official_apply">申請公眾號</string>
+    <string name="square_official_state_none">未申請</string>
+    <string name="square_official_state_pending">審核中</string>
+    <string name="square_official_state_approved">已認證</string>
+    <string name="square_official_state_rejected">未通過</string>
+    <string name="square_official_state_banned">已封禁</string>
+    <string name="square_official_tip_none">申請通過後，該地址發帖將顯示為公眾號帖（公眾號名稱、可關閉評論）。</string>
+    <string name="square_official_tip_pending">申請審核中，請耐心等待營運審核。</string>
+    <string name="square_official_tip_approved">已認證公眾號：%1$s，發帖將顯示公眾號名稱。</string>
+    <string name="square_official_tip_rejected">申請未通過，可修改後重新提交。</string>
+    <string name="square_official_tip_reason">（原因：%1$s）</string>
+    <string name="square_official_tip_banned">公眾號已被封禁，無法發帖、評論、點讚，請聯繫營運。</string>
+    <string name="square_official_avatar_hint">點擊設定頭像（選填）</string>
+    <string name="square_official_avatar_change">點擊更換頭像</string>
+    <string name="square_official_avatar_clear">清除頭像</string>
+    <string name="square_official_save">儲存</string>
+    <string name="square_official_updated">資料已更新</string>
+    <string name="square_pinned">置頂</string>
+    <string name="square_platform_official_tag">官方號</string>
+    <string name="square_official_avatar_set">頭像已上傳，點擊可重新選擇</string>
+    <string name="square_official_name_hint">公眾號名稱（必填，32 字以內）</string>
+    <string name="square_official_reapply">重新申請</string>
+    <string name="square_official_intro_hint">簡介（選填，200 字以內）</string>
+    <string name="square_official_name_empty">請輸入公眾號名稱</string>
+    <string name="square_official_submit">提交申請</string>
+    <string name="square_official_applied">申請已提交，請等待審核</string>
+    <string name="square_feed_latest">最新</string>
+    <string name="square_feed_hot">熱門</string>
+    <string name="square_feed_following">追蹤</string>
+    <string name="square_follow">追蹤</string>
+    <string name="square_followed">已追蹤</string>
+    <string name="square_follow_success">已追蹤</string>
+    <string name="square_unfollow_success">已取消追蹤</string>
+    <string name="square_follow_tips_self">不能追蹤自己</string>
+    <string name="square_my_follows">我的追蹤</string>
+    <string name="square_my_followers">我的粉絲</string>
+    <string name="square_user_follow_count">關注 %1$d</string>
+    <string name="square_user_follower_count">粉絲 %1$d</string>
+    <string name="square_user_followers_title">TA 的粉絲</string>
+    <string name="square_follow_empty">還沒有追蹤的人</string>
+    <string name="square_followers_empty">還沒有粉絲</string>
+    <string name="square_gold_empty">暫無金標公眾號</string>
+    <string name="square_gold_stat">粉絲 %1$d · 貼文 %2$d</string>
+    <string name="square_gold_title">金標公眾號</string>
+    <string name="square_my_posts_title">我的動態</string>
+    <string name="square_my_posts_traffic">我的動態流量</string>
+    <string name="square_traffic_posts">動態</string>
+    <string name="square_traffic_views">閱讀</string>
+    <string name="square_traffic_likes">按讚</string>
+    <string name="square_traffic_comments">評論</string>
+    <string name="square_report">檢舉</string>
+    <string name="square_report_content">被檢舉內容</string>
+    <string name="square_report_detail_counter">%1$d/%2$d</string>
+    <string name="square_report_detail_hint">請描述檢舉理由（選填）</string>
+    <string name="square_report_detail_tip">選填，最多500字</string>
+    <string name="square_report_title">檢舉理由</string>
+    <string name="square_report_type">檢舉類型</string>
+    <string name="square_report_type_required">請選擇檢舉類型</string>
+    <string name="square_report_reason_spam">垃圾廣告</string>
+    <string name="square_report_reason_porn">色情低俗</string>
+    <string name="square_report_reason_scam">詐騙資訊</string>
+    <string name="square_report_reason_abuse">辱罵攻擊</string>
+    <string name="square_report_reason_other">其他</string>
+    <string name="square_report_success">檢舉成功，感謝回饋</string>
+    <string name="square_report_reported">已檢舉</string>
+    <string name="square_report_select">請選擇</string>
+    <string name="square_report_submit">提交檢舉</string>
+    <string name="square_report_submitting">提交中…</string>
+    <!--登录相关-->
+    <string name="chat_login_choose_server">選擇伺服器</string>
+    <string name="chat_login_chat_server_tips">1.新用戶需選擇或添加一台伺服器為預設伺服器，用於接收好友聊天訊息；\n2.若為已註冊帳戶，將繼續使用原有的預設伺服器。</string>
+    <string name="chat_login_contract_server_tips">1.需選擇或添加一台伺服器為預設區塊鏈節點，用於上傳和獲取帳戶資訊；\n2.可前往[我的]-[伺服器]頁面切換。</string>
+    <string name="chat_login_edit_chat_server">編輯聊天伺服器</string>
+    <string name="chat_login_add_chat_server">新增聊天伺服器</string>
+    <string name="chat_login_edit_contract_server">編輯區塊鏈節點</string>
+    <string name="chat_login_add_contract_server">新增區塊鏈節點</string>
+    <string name="chat_tips_edit_server_name">伺服器名稱</string>
+    <string name="chat_hint_edit_server_name">請輸入伺服器名稱</string>
+    <string name="chat_tips_edit_server_address">伺服器位址</string>
+    <string name="chat_hint_edit_server_address">請輸入伺服器位址</string>
+    <string name="chat_tip_add_server_success">新增伺服器成功</string>
+    <string name="chat_tip_edit_server_success">修改伺服器成功</string>
+    <string name="chat_tip_del_server_success">刪除伺服器成功</string>
+    <string name="chat_tip_confirm_to_del_server">確定要刪除這個伺服器嗎？</string>
+    <string name="chat_click_again_to_exit">再按一次退出應用</string>
+
+    <string name="chat_login_type_words">助記詞帳戶</string>
+    <string name="chat_login_create_account">建立帳戶</string>
+    <string name="chat_login_import_account">匯入帳戶</string>
+    <string name="chat_login_type_account">手機號/信箱</string>
+    <string name="chat_login_find_mnem_words">找回部分助記詞登入</string>
+
+    <string name="chat_login_tips_agree_protocol">請先勾選協議</string>
+    <string name="chat_login_tips_choose_server">請先選擇伺服器</string>
+    <string name="chat_login_tips_agreement">我已閱讀並同意《談信用戶服務協議》</string>
+
+    <string name="chat_login_tips_choose_chat_server">選擇接收聊天訊息的伺服器</string>
+    <string name="chat_login_tips_choose_contract_server">選擇上傳帳戶資訊的區塊鏈節點</string>
+    <string name="chat_title_chat_server">伺服器位址</string>
+    <string name="chat_title_contract_server">區塊鏈節點</string>
+
+    <string name="chat_title_official_server">官方位址</string>
+    <string name="chat_title_custom_server">自訂位址</string>
+    <string name="chat_title_chat_server_group">聊天服務</string>
+    <string name="chat_login_edit_chat_server_group">編輯伺服器分組</string>
+    <string name="chat_login_add_chat_server_group">新增伺服器分組</string>
+    <string name="chat_tip_add_server_group_success">新增伺服器分組成功，請耐心等待，稍後查看結果…</string>
+    <string name="chat_tip_del_server_group_success">刪除伺服器分組成功，請耐心等待，稍後查看結果…</string>
+    <string name="chat_tip_edit_server_group_success">修改伺服器分組成功，請耐心等待，稍後查看結果…</string>
+    <string name="chat_tip_cant_del_default_server">預設伺服器分組不能刪除</string>
+    <string name="chat_tip_wrong_server_protocol">伺服器協議必須為http或https</string>
+    <string name="chat_tip_wrong_server_port">伺服器連接埠錯誤</string>
+    <string name="chat_tip_wrong_server_format">伺服器位址格式錯誤</string>
+    <string name="chat_tip_confirm_to_del_server_group">確定要刪除這個伺服器分組嗎？</string>
+
+    <string name="chat_login_title_create_mnem">備份助記詞</string>
+    <string name="chat_login_mnem_chinese">中文</string>
+    <string name="chat_login_mnem_english">English</string>
+    <string name="chat_login_tips_remember_mnem">請務必抄下助記詞，確定之後將進行驗證</string>
+    <string name="chat_login_warn_secure_mnem">提示：請勿截圖！如果有人取得你的助記詞將直接取得你的資產！請抄寫下助記詞並存放在安全的地方，我們會在下一屏進行驗證。</string>
+    <string name="chat_login_change_mnem">更換助記詞</string>
+    <string name="chat_login_backup_mnem">開始備份</string>
+    <string name="chat_login_backup_skip">跳過備份</string>
+    <string name="chat_login_validate_mnem">驗證您備份的助記詞</string>
+    <string name="chat_login_click_correct_order">請按照正確的順序點擊每個單詞</string>
+    <string name="chat_login_mnem_wrong">助記詞不正確</string>
+    <string name="chat_login_mnem_backup_fail">助記詞備份失敗</string>
+    <string name="chat_login_mnem_backup_success">助記詞備份成功</string>
+
+    <string name="chat_login_title_import_account">匯入帳戶</string>
+
+    <string name="chat_login_import_mnem_hint">請輸入助記詞</string>
+    <string name="chat_login_import_mnem_support_tips">支援匯入所有遵循BIP標準產生的助記詞</string>
+    <string name="chat_login_import_private_key_chain">主鏈：</string>
+    <string name="chat_login_import_private_key_chain_bty">BTY</string>
+    <string name="chat_login_import_private_key_hint">請輸入私鑰或掃描私鑰產生的二維碼錄入</string>
+
+    <string name="chat_login_start_import_account">開始匯入</string>
+    <string name="chat_login_mnem_import_fail">助記詞匯入失敗</string>
+    <string name="chat_login_mnem_import_success">助記詞匯入成功</string>
+    <string name="chat_login_mnem_recover_success">助記詞自動恢復成功，請重新設定密碼</string>
+
+    <!--首页-->
+    <string name="chat_home_action_scan">掃一掃</string>
+    <string name="chat_home_action_create_group">建立群聊</string>
+    <string name="chat_home_action_search">新增朋友/群</string>
+    <string name="chat_home_action_my_qr_code">我的二維碼</string>
+    <string name="chat_home_action_create_company">建立團隊</string>
+    <string name="chat_home_action_okr">OKR</string>
+    <string name="chat_title_main_contact">通訊錄</string>
+    <string name="chat_title_black_list">黑名單</string>
+    <string name="chat_title_friend_list">好友</string>
+    <string name="chat_title_group_list">群聊</string>
+    <string name="chat_home_server_disconnect">伺服器連線異常，點擊查看</string>
+    <string name="chat_title_private_chat">私聊</string>
+    <string name="chat_title_group_chat">群聊</string>
+    <string name="chat_tips_unread_num">[%1$d條]%2$s</string>
+    <string name="chat_tips_sender_me">我:%1$s</string>
+
+    <!--空列表-->
+    <string name="chat_common_empty_list">暫無資料</string>
+    <string name="chat_black_list_empty">暫無黑名單</string>
+    <string name="chat_friend_list_empty">暫無好友</string>
+    <string name="chat_invite_friend">邀請好友</string>
+    <string name="chat_friend_message_list_empty">暫無好友訊息</string>
+    <string name="chat_start_chat">開啟聊天</string>
+    <string name="chat_room_list_empty">暫無群聊</string>
+    <string name="chat_suggest_group">推薦群聊</string>
+    <string name="chat_room_message_list_empty">暫無群訊息</string>
+    <string name="chat_contact_list_empty">暫無聯絡人</string>
+    <string name="chat_promote_list_empty">暫無記錄</string>
+
+    <!--扫一扫-->
+    <string name="chat_action_open_photo">相簿</string>
+
+    <string name="chat_account_menu_wallet">我的錢包</string>
+    <string name="chat_account_menu_red_packet">紅包記錄</string>
+    <string name="chat_account_menu_server">伺服器</string>
+    <string name="chat_account_menu_share">應用下載</string>
+    <string name="chat_account_menu_security">安全管理</string>
+    <string name="chat_account_menu_setting">設定中心</string>
+    <string name="chat_account_menu_feedback">用戶回饋</string>
+    <string name="chat_account_menu_update">檢查更新</string>
+    <string name="chat_action_logout">退出帳號</string>
+
+    <!--多语言-->
+    <string name="language_select_title">多語言</string>
+    <string name="language_chinese">中文</string>
+    <string name="language_english">English</string>
+    <string name="chat_account_menu_language">多語言</string>
+
+    <!--搜索选项-->
+    <string name="chat_action_search_scan">掃一掃</string>
+    <string name="chat_action_search_scan_tips">掃碼二維碼名片</string>
+    <string name="chat_action_search_import_friends">匯入好友</string>
+    <string name="chat_action_search_import_friends_tips">僅支援本裝置登入過的帳號的好友</string>
+
+    <!--修改昵称-->
+    <string name="chat_title_edit_nickname">修改暱稱</string>
+    <string name="chat_tip_nickname">暱稱</string>
+    <string name="chat_tip_nickname_edit_success">暱稱修改成功，請耐心等待，稍後查看結果…</string>
+    <string name="chat_tip_nickname_empty">暱稱不能為空</string>
+    <string name="chat_tip_avatar">頭像</string>
+    <string name="chat_tip_avatar_edit_success">頭像修改成功，請耐心等待，稍後查看結果…</string>
+
+    <!--安全管理-->
+    <string name="chat_title_security_setting">安全管理</string>
+    <string name="chat_tips_export_words">匯出助記詞</string>
+    <string name="chat_tips_export_s2">匯出S2</string>
+    <string name="chat_tips_export_private">匯出私鑰</string>
+    <string name="chat_tips_phone">手機號</string>
+    <string name="chat_tips_email">信箱</string>
+    <string name="chat_tips_encrypt_key">密聊密碼</string>
+    <string name="chat_tips_action1">修改密碼</string>
+    <string name="chat_tips_action2">設定密碼</string>
+    <string name="chat_tips_action3">去綁定</string>
+    <string name="chat_security_setting_tip1">助記詞用於加密聊天訊息以及聊天檔案，更換裝置登入時需匯入同一助記詞才可查看歷史加密訊息，請及時匯出助記詞保存至安全的地方！</string>
+    <string name="chat_security_setting_tip2">助記詞可透過手機/信箱和密聊密碼加密上傳至官方伺服器，提供助記詞找回服務。</string>
+    <string name="chat_save_words_tip">請務必抄下助記詞並存放至安全的地方，若助記詞遺失，重裝或換裝置登入時將無法查看歷史加密訊息！並無法重置密聊密碼！若助記詞被他人取得，將可能取得你的資訊！</string>
+    <string name="chat_save_words_tips2">請務必抄下並存放至安全的地方！</string>
+    <string name="chat_tips_chat_pwd_error">密聊密碼錯誤</string>
+    <string name="chat_tips_mnem_export_fail">助記詞匯出失敗</string>
+    <string name="chat_tips_private_export_fail">私鑰匯出失敗</string>
+    <string name="chat_title_bind_phone">綁定手機</string>
+    <string name="chat_title_bind_email">綁定信箱</string>
+    <string name="chat_tips_bind_phone_tips">綁定手機後可用手機登入</string>
+    <string name="chat_tips_bind_email_tips">綁定信箱後可用信箱登入</string>
+    <string name="chat_hint_input_phone">請輸入手機號</string>
+    <string name="chat_hint_input_email">請輸入信箱</string>
+    <string name="chat_action_bind_send_code">取得驗證碼</string>
+    <string name="chat_tips_bind_account_success">綁定成功</string>
+    <string name="chat_action_unbind_and_rebind">解除並綁定</string>
+    <string name="chat_action_unbind_phone_login">手機號登入</string>
+    <string name="chat_action_unbind_import_mnem">匯入助記詞</string>
+    <string name="chat_tips_override_bind">手機號/信箱已綁定過其他助記詞帳戶，是否解除原綁定並重新綁定本機助記詞帳戶？</string>
+    <string name="chat_tips_override_bind2">若原帳號有資產，將無法透過手機號找回，有遺失風險，請謹慎解綁！</string>
+    <string name="chat_tips_phone_forget_password">忘記密聊密碼將無法透過手機號找回原帳號！您可以透過：\n1、匯入助記詞登入（可修改密碼）；\n2、解除原綁定，重新產生新帳號並綁定本手機號。</string>
+    <string name="chat_tips_email_forget_password">忘記密聊密碼將無法透過信箱找回原帳號！您可以透過：\n1、匯入助記詞登入（可修改密碼）；\n2、手機號登入嘗試找回，或手機號登入的忘記密碼，進行「解除並綁定」的操作</string>
+    <string name="chat_tips_override_forget_password2">解除原綁定將遺失原帳號資訊和資產，請謹慎解綁！</string>
+
+    <!--设置中心-->
+    <string name="chat_title_setting_center">設定中心</string>
+    <string name="chat_tips_app_notify_switch">應用通知開關</string>
+    <string name="chat_tips_new_msg_notify">接收新訊息通知</string>
+    <string name="chat_tips_rtc_call_notify">接收語音和視訊通話邀請提醒</string>
+    <string name="chat_tips_system_sound_and_vibrate">系統聲音與震動</string>
+    <string name="chat_tips_new_msg_sys_notify">新訊息系統通知</string>
+    <string name="chat_tips_rtc_call_sys_notify">語音和視訊通話提醒</string>
+    <string name="chat_tips_go_sys_notify_settings">前往系統設定</string>
+
+    <string name="chat_set_chat_password">請設定密聊密碼</string>
+    <string name="chat_input_chat_password">請輸入密聊密碼</string>
+    <string name="chat_encrypt_password_hint">8–16位數字、字母或符號組合</string>
+    <!--修改助记词密码-->
+    <string name="chat_title_set_encrypt_password">設定密聊密碼</string>
+    <string name="chat_title_encrypt_password">修改密聊密碼</string>
+    <string name="chat_tips_old_encrypt_pwd">舊密碼</string>
+    <string name="chat_tips_old_encrypt_pwd_hint">請輸入舊密碼</string>
+    <string name="chat_tips_first_encrypt_pwd_hint">請設定密碼</string>
+    <string name="chat_tips_second_encrypt_pwd_hint">請再次輸入密碼</string>
+    <string name="chat_tips_forget_password">忘記密碼</string>
+    <string name="chat_tips_new_encrypt_pwd">新密碼</string>
+    <string name="chat_tips_new_encrypt_pwd_hint">請再次輸入新密碼</string>
+    <string name="chat_tips_update_encrypt_pwd1">密聊密碼修改成功</string>
+    <string name="chat_tips_update_encrypt_pwd2">密碼錯誤</string>
+    <string name="chat_tips_update_encrypt_pwd3">請輸入8–16位字元</string>
+    <string name="chat_tips_update_encrypt_pwd4">請輸入數字、字母或者符號組合</string>
+    <string name="chat_tips_update_encrypt_pwd5">請設定8–16位數字、字母或符號組合</string>
+    <string name="chat_tips_update_encrypt_pwd6">兩次密碼不一致</string>
+    <string name="chat_tips_update_encrypt_pwd7">密聊密碼設定成功</string>
+
+    <!--联系人信息-->
+    <string name="chat_title_contact_info">詳細資料</string>
+    <string name="chat_action_send_msg">發訊息</string>
+    <string name="chat_action_transfer">轉帳</string>
+    <string name="chat_action_delete_friend">刪除好友</string>
+    <string name="chat_action_add_friend">新增好友</string>
+    <string name="chat_tips_modify_group_success">修改伺服器成功</string>
+    <string name="chat_tips_add_friend_success">新增好友成功</string>
+    <string name="chat_tips_delete_friend_success">刪除好友成功</string>
+    <string name="chat_tips_nickname_placeholder">暱稱：%1$s</string>
+    <string name="chat_tips_group_nickname_placeholder">群暱稱：%1$s</string>
+    <string name="chat_tips_address_placeholder">帳號：%1$s</string>
+    <string name="chat_dialog_delete_friend">刪除後，將同時刪除與該聯絡人的聊天訊息，確定刪除聯絡人 &lt;font color="%1$s"&gt;%2$s&lt;/font&gt; 嗎？</string>
+
+    <string name="chat_title_edit_group_name">修改群名</string>
+    <string name="chat_tip_group_name">加密群名</string>
+    <string name="chat_tip_group_pub_name">公開群名</string>
+    <string name="chat_title_edit_nickname_in_group">我在本群的暱稱</string>
+    <string name="chat_tip_nickname_in_group">群暱稱</string>
+    <string name="chat_tip_group_name_empty">群名不能為空</string>
+    <string name="chat_tip_group_pub_name_empty">公開群名不能為空</string>
+    <string name="chat_tip_edit_group_name_success">群名修改成功</string>
+    <string name="chat_tip_edit_group_nickname_success">群內暱稱修改成功</string>
+    <string name="chat_tip_group_avatar">群頭像</string>
+    <string name="chat_tips_nickname_in_group">我在本群的暱稱</string>
+    <string name="chat_log_in_chat_history">尋找聊天記錄</string>
+    <string name="chat_file_in_chat_history">聊天檔案</string>
+    <string name="chat_detail_no_disturb">訊息免打擾</string>
+    <string name="chat_detail_stick_top">置頂聊天</string>
+    <string name="chat_detail_group_type_tips">群類型</string>
+    <string name="chat_detail_group_type0">普通群</string>
+    <string name="chat_detail_group_type1">全員群</string>
+    <string name="chat_detail_group_type2">部門群</string>
+    <string name="chat_detail_belong_server_group">接收TA訊息的伺服器</string>
+    <string name="chat_detail_belong_server_group2">歸屬伺服器</string>
+    <string name="chat_detail_choose_server_group">選擇伺服器</string>
+    <string name="chat_detail_edit_server_group">管理</string>
+    <string name="chat_add_black_list">加入黑名單</string>
+    <string name="chat_remove_black_list">移出黑名單</string>
+    <string name="chat_user_black_message">已不再接收對方訊息</string>
+    <string name="chat_add_black_warn">加入黑名單後，你將不再接收到對方的訊息，確定將聯絡人 &lt;font color="%1$s"&gt;%2$s&lt;/font&gt; 移至黑名單嗎？</string>
+    <string name="chat_add_black_success">已將對方加入黑名單！</string>
+    <string name="chat_add_black_fail">加入黑名單失敗！</string>
+    <string name="chat_remove_black_success">已將對方移出黑名單！</string>
+    <string name="chat_remove_black_fail">移出黑名單失敗！</string>
+    <string name="chat_group_mute_time">禁言</string>
+
+    <string name="chat_title_contact_remark">備註資訊</string>
+    <string name="chat_tip_remark">備註</string>
+    <string name="chat_tip_remark_edit_success">修改成功</string>
+
+    <!--群信息-->
+    <string name="chat_action_exit_group">退出群聊</string>
+    <string name="chat_action_disband_group">解散群聊</string>
+
+    <!--本地搜索-->
+    <string name="chat_tips_search_history">搜尋歷史</string>
+    <string name="chat_tips_search_clear_history">清空歷史</string>
+    <string name="chat_tips_search_hint">搜尋好友、聊天記錄等</string>
+    <string name="chat_tips_search_hint1">搜尋好友</string>
+    <string name="chat_tips_search_hint2">搜尋群</string>
+    <string name="chat_tips_search_hint3">搜尋聊天記錄</string>
+    <string name="chat_tips_search_type1">聯絡人</string>
+    <string name="chat_tips_search_type2">群聊</string>
+    <string name="chat_tips_search_type3">聊天記錄</string>
+    <string name="chat_tips_search_result_more">查看更多</string>
+    <string name="chat_tips_search_log_target">\"%1$s\"的記錄</string>
+    <string name="chat_tips_search_log_count">%1$d條相關聊天記錄</string>
+
+    <!-- 聊天-->
+    <string name="chat_tips_chat_operate1">解除禁言成功</string>
+    <string name="chat_tips_chat_operate2">已切換為聽筒模式</string>
+    <string name="chat_tips_chat_operate3">已切換為擴音器模式</string>
+    <string name="chat_tips_chat_operate4">已複製到剪貼簿</string>
+    <string name="chat_tips_chat_operate5">非文字資訊不可複製</string>
+    <string name="chat_tips_chat_operate6">已撤回一則訊息</string>
+    <string name="chat_top_operate">置頂聊天</string>
+    <string name="chat_top_cancel">取消置頂</string>
+    <string name="chat_disturb_operate">訊息免打擾</string>
+    <string name="chat_disturb_cancel">取消免打擾</string>
+    <string name="chat_message_delete">刪除聊天</string>
+    <string name="chat_dialog_delete_session">確定刪除 &lt;font color="%1$s"&gt;%2$s&lt;/font&gt; 的聊天嗎？</string>
+    <string name="chat_dialog_delete_message">確定要刪除這則訊息嗎？</string>
+    <string name="chat_dialog_delete_messages">確定要刪除選取的訊息嗎？</string>
+    <string name="chat_tips_servers_empty">找不到對方伺服器位址</string>
+    <string name="chat_tips_server_not_exist">未連線目前群聊伺服器，無法收發訊息</string>
+    <string name="chat_tips_add_group_chat_server">新增伺服器</string>
+
+    <string name="chat_popup_option_copy">複製</string>
+    <string name="chat_popup_option_translate">翻譯</string>
+    <string name="chat_popup_option_view_original">查看原文</string>
+    <string name="chat_popup_option_forward">轉發</string>
+    <string name="chat_popup_option_reference">引用</string>
+    <string name="chat_popup_option_focus">關注</string>
+    <string name="chat_popup_option_revoke">撤回</string>
+    <string name="chat_popup_option_delete">刪除</string>
+    <string name="chat_popup_option_mute">禁言</string>
+    <string name="chat_popup_option_audio_channel_speaker">擴音器播放</string>
+    <string name="chat_popup_option_audio_channel_receiver">聽筒播放</string>
+    <string name="chat_popup_option_multiple_choose">多選</string>
+
+    <string name="chat_tips_switch_to_speaker">已切換至擴音器播放</string>
+    <string name="chat_tips_switch_to_receiver">已切換至聽筒播放</string>
+
+    <!--聊天输入框-->
+    <string name="chat_tips_input_msg1">不能發送空白訊息</string>
+    <string name="chat_tips_input_msg2">系統訊息只能發文字資訊</string>
+    <string name="chat_tips_input_msg3">未偵測到SD卡</string>
+
+    <string name="chat_tips_input_send">發送</string>
+    <string name="chat_tips_input_say_sth">想說點什麼</string>
+    <string name="chat_tips_input_media">圖片/影片</string>
+    <string name="chat_tips_input_shoot">拍攝</string>
+    <string name="chat_tips_input_snap_msg">閱後即焚</string>
+    <string name="chat_tips_input_file">檔案</string>
+    <string name="chat_tips_input_rtc">視訊通話</string>
+    <string name="chat_tips_input_red_packet">紅包</string>
+    <string name="chat_tips_input_red_packet_only">專屬紅包</string>
+    <string name="chat_tips_input_text_packet">紅包訊息</string>
+    <string name="chat_tips_input_transfer">轉帳</string>
+    <string name="chat_tips_input_contact_card">名片</string>
+
+    <string name="chat_call_menu_voice">語音通話</string>
+    <string name="chat_call_menu_video">視訊通話</string>
+    <string name="chat_call_invite_title_voice">語音通話</string>
+    <string name="chat_call_invite_title_video">視訊通話</string>
+    <string name="chat_call_invite_desc">點擊加入通話 · 房間 %1$s</string>
+    <string name="chat_call_invite_text">語音聊天邀請，點擊連結加入：%1$s</string>
+    <string name="chat_call_confirm_content">將建立語音房間並發送邀請給對方，確認發起語音聊天？</string>
+    <string name="chat_call_creating">正在建立通話房間…</string>
+    <string name="chat_call_create_failed">建立通話失敗，請稍後重試</string>
+    <string name="chat_call_busy_title">提示</string>
+    <string name="chat_call_busy_content">正在通話中，是否結束目前通話並開始新通話？</string>
+    <string name="chat_call_window_hangup">掛斷</string>
+    <string name="chat_call_window_minimize">最小化</string>
+    <string name="chat_call_window_expand">全螢幕</string>
+    <string name="chat_call_window_minimized_tips">通話已最小化，點擊小視窗可恢復</string>
+    <string name="chat_call_copy_link">複製通話連結</string>
+    <string name="chat_call_link_copied">通話連結已複製</string>
+    <string name="chat_call_webview_error">通話頁面載入失敗，請檢查網路後重試</string>
+
+    <string name="chat_record_state_prepared">按住 說話</string>
+    <string name="chat_record_state_recording">放開 結束</string>
+    <string name="chat_record_state_want_cancel">放開手指，取消發送</string>
+    <string name="chat_record_slide_to_cancel">手指上滑，取消發送</string>
+    <string name="chat_record_tips_too_short">錄音時間過短</string>
+    <string name="chat_speak_time_remain">還可以說%1$d秒</string>
+
+    <!--聊天消息-->
+    <string name="chat_unfold">收起</string>
+    <string name="chat_fold">展開</string>
+
+    <string name="chat_tips_num_3">%1$d/3</string>
+    <string name="chat_tips_num_15">%1$d/15</string>
+    <string name="chat_tips_num_20">%1$d/20</string>
+    <string name="chat_tips_num_50">%1$d/50</string>
+    <string name="chat_tips_num_400">%1$d/400</string>
+    <string name="chat_tips_num_500">%1$d/500</string>
+
+    <string name="chat_time_tips_yesterday">昨天 %1$s</string>
+    <string name="chat_time_tips_week1">週日 %1$s</string>
+    <string name="chat_time_tips_week2">週一 %1$s</string>
+    <string name="chat_time_tips_week3">週二 %1$s</string>
+    <string name="chat_time_tips_week4">週三 %1$s</string>
+    <string name="chat_time_tips_week5">週四 %1$s</string>
+    <string name="chat_time_tips_week6">週五 %1$s</string>
+    <string name="chat_time_tips_week7">週六 %1$s</string>
+
+    <string name="chat_file_size">檔案 %1$s</string>
+    <string name="chat_find_ai_cs">AI 客服</string>
+    <string name="chat_tips_copy_message_content">已複製訊息內容</string>
+    <string name="chat_tips_translate_failed">翻譯失敗，請稍後重試</string>
+
+    <string name="chat_message_system_msg_type">公告</string>
+    <string name="chat_message_unsupported_msg_type">暫不支援此訊息，請升級到最新版本</string>
+    <string name="chat_tips_file_not_exist">檔案不存在</string>
+
+    <string name="chat_tips_search_my_account">我的帳號：%1$s</string>
+    <string name="chat_tips_search_type_user">用戶</string>
+    <string name="chat_title_my_qr_code">我的二維碼</string>
+    <string name="chat_tips_qr_code_friend">掃描二維碼加我%1$s好友</string>
+    <string name="chat_action_copy_address">複製帳號</string>
+    <string name="chat_action_copy_group_num">複製群號</string>
+    <string name="chat_tips_copy_download_url">下載連結已複製到剪貼簿</string>
+    <string name="chat_tips_copy_address">已複製到剪貼簿</string>
+    <string name="chat_tips_copy_group_num">群號已複製到剪貼簿</string>
+    <string name="chat_tips_qr_share_chat">談信</string>
+    <string name="chat_tips_qr_save">儲存</string>
+    <string name="chat_tips_img_saved">圖片已儲存</string>
+    <string name="chat_tips_img_not_exist">圖片不存在</string>
+    <string name="chat_tips_vid_not_exist">影片不存在</string>
+    <string name="chat_tips_img_zip_fail">圖片壓縮失敗</string>
+    <string name="chat_tips_not_contain_qr_code">未辨識到二維碼</string>
+    <string name="chat_action_recognize_qrcode">辨識圖中二維碼</string>
+
+    <string name="chat_tips_start_download">開始下載…</string>
+    <string name="chat_tips_is_downloading">正在下載…</string>
+    <string name="chat_tips_image_download_to">圖片已下載至%1$s</string>
+    <string name="chat_tips_video_download_to">影片已下載至%1$s</string>
+    <string name="chat_tips_file_download_to">檔案已下載至%1$s</string>
+    <string name="chat_tips_download_fail">下載失敗，%1$s</string>
+
+    <!--文件详情页面-->
+    <string name="chat_tips_download_file">接收檔案</string>
+    <string name="chat_tips_can_not_open">%1$s暫不支援開啟此類檔案，你可使用其他應用開啟</string>
+    <string name="chat_tips_open_with">用其他應用開啟</string>
+    <string name="chat_tips_select_open_type">請選擇對應的軟體開啟該檔案</string>
+    <string name="chat_tips_unsupported_file_type">不支援的檔案類型</string>
+
+    <!--聊天文件管理-->
+    <string name="chat_title_file_management">聊天檔案</string>
+    <string name="chat_action_file_select">選擇</string>
+    <string name="chat_title_chat_file">檔案</string>
+    <string name="chat_title_chat_media">圖片/影片</string>
+    <string name="chat_file_empty">暫無檔案</string>
+    <string name="chat_media_empty">暫無圖片/影片</string>
+    <string name="chat_file_search_hint">輸入檔案名稱</string>
+    <string name="chat_action_file_download">下載</string>
+    <string name="chat_action_file_delete">刪除</string>
+    <string name="chat_dialog_tips_delete_chat_files">刪除後將不會出現在你的訊息記錄中</string>
+
+    <!--删除私聊记录 / 自动删除-->
+    <string name="chat_contact_clean_private">刪除聊天記錄</string>
+    <string name="chat_contact_auto_delete">自動刪除聊天記錄</string>
+    <string name="chat_private_clean_confirm_title">刪除聊天記錄</string>
+    <string name="chat_private_clean_confirm_message">將按所選時間範圍刪除雙方私聊訊息（以伺服器端為準），是否繼續？</string>
+    <string name="chat_private_clean_success">操作成功，伺服器端刪除 %1$d 條</string>
+    <string name="chat_private_clean_custom_invalid">結束時間不能早於開始時間</string>
+    <string name="chat_private_clean_last_1d">最近 1 天</string>
+    <string name="chat_private_clean_last_3d">最近 3 天</string>
+    <string name="chat_private_clean_last_7d">最近 7 天</string>
+    <string name="chat_private_clean_last_30d">最近 30 天</string>
+    <string name="chat_private_clean_last_90d">最近 90 天</string>
+    <string name="chat_private_clean_last_180d">最近 180 天</string>
+    <string name="chat_private_clean_last_365d">最近 365 天</string>
+    <string name="chat_private_clean_all">全部歷史</string>
+    <string name="chat_private_clean_custom">自訂日期…</string>
+    <string name="chat_private_clean_pick_start">選擇開始日期</string>
+    <string name="chat_private_clean_pick_end">選擇結束日期</string>
+    <string name="chat_private_auto_off">關閉</string>
+    <string name="chat_private_auto_day_1">超過 1 天</string>
+    <string name="chat_private_auto_day_3">超過 3 天</string>
+    <string name="chat_private_auto_day_7">超過 7 天</string>
+    <string name="chat_private_auto_day_30">超過 30 天</string>
+    <string name="chat_private_auto_day_180">超過 180 天</string>
+    <string name="chat_private_auto_pick_title">自動刪除</string>
+
+    <!--登录-->
+    <string name="login_tips_login_success">登入成功</string>
+    <string name="login_tips_register_success">註冊成功</string>
+    <string name="login_tips_code_sent">驗證碼發送成功</string>
+
+    <string name="login_tips_correct_email">請輸入正確的信箱</string>
+    <string name="login_tips_correct_phone">請輸入正確的手機號</string>
+    <string name="login_tips_correct_code">請輸入完整驗證碼</string>
+    <string name="login_tips_code_count">已發送(%1$ds)</string>
+
+    <string name="login_tips_input_email">請輸入信箱</string>
+    <string name="login_tips_input_phone">請輸入手機號</string>
+    <string name="login_tips_input_code">請輸入驗證碼</string>
+    <string name="login_tips_input_s2">請輸入S2</string>
+    <string name="login_action_send_code">取得驗證碼</string>
+    <string name="login_action_login">登入</string>
+    <string name="login_use_email">信箱登入</string>
+    <string name="login_use_email_tips">信箱找回部分助記詞登入</string>
+    <string name="login_use_phone">手機登入</string>
+    <string name="login_use_phone_tips">手機號未綁定帳號將自動產生帳號</string>
+    <string name="login_tips_unbind_yet">手機號/信箱還未綁定過助記詞帳戶，請選擇其他方式進入聊天。</string>
+
+    <string name="chat_dialog_action_take_photo">拍照</string>
+    <string name="chat_dialog_action_select_picture">從相簿選擇</string>
+
+    <!--App更新对话框-->
+    <string name="chat_update_checking_update">正在偵測更新…</string>
+    <string name="chat_update_latest_version">目前已是最新版本</string>
+    <string name="chat_update_title">發現新版本</string>
+    <string name="chat_update_tips_version">V%1$s</string>
+    <string name="chat_update_downloading">下載中…</string>
+    <string name="chat_update_begin_download">準備下載…</string>
+    <string name="chat_update_download_success">下載完成，點擊安裝</string>
+    <string name="chat_update_action_retry">重試</string>
+    <string name="chat_update_action_install">點擊安裝</string>
+    <string name="chat_update_action_update">更新</string>
+    <string name="chat_update_action_ignore_update">暫不更新</string>
+
+    <!--群聊-->
+    <string name="chat_title_create_group">建立群聊</string>
+    <string name="chat_title_invite_members_type">選擇成員</string>
+    <string name="chat_title_invite_group_members">新增新成員</string>
+    <string name="chat_tips_group_members">群成員</string>
+    <string name="chat_title_create_group_select_server">選擇伺服器</string>
+    <string name="chat_tips_create_group_manage_server">管理</string>
+    <string name="chat_tips_choose_group_server">選擇群聊所屬的聊天伺服器</string>
+    <string name="chat_tips_invite_group_members">選擇群聊成員</string>
+    <string name="chat_tips_group_members_friends">從好友清單選擇成員</string>
+    <string name="chat_tips_group_members_oa">從組織架構選擇成員</string>
+    <string name="chat_action_create_group">建立</string>
+    <string name="chat_tips_somebody_create_group">%1$s建立的群聊</string>
+    <string name="chat_tips_group_member_num">共%1$d人</string>
+    <string name="chat_action_invite">邀請</string>
+    <string name="chat_action_remove">移除</string>
+    <string name="chat_action_group_copy_mark_id">複製群號</string>
+    <string name="chat_title_group_info">群聊詳情</string>
+    <string name="chat_title_group_qrcode">群二維碼</string>
+    <string name="chat_tips_group_mark_id">群號 %1$s</string>
+    <string name="chat_tips_group_pub_name">公開群名：%1$s</string>
+    <string name="chat_tips_group_qr_code">掃描二維碼加入群聊</string>
+    <string name="chat_tips_group_forbid_join">此群禁止加群</string>
+    <string name="chat_tips_group_copy_mark_id">群號已複製到剪貼簿</string>
+    <string name="chat_tips_group_join_invalid_qrcode">加群二維碼已過有效期</string>
+    <string name="tips_invite_group_members_success">邀請成功</string>
+
+    <string name="chat_title_group_user">群成員</string>
+    <string name="chat_action_add_group_user">新增成員</string>
+    <string name="chat_action_del_group_user">刪除成員</string>
+    <string name="chat_action_set_group_admin">設定管理員</string>
+    <string name="chat_tips_set_nickname_in_group">在這裡可以設定你在 &lt;font color="%1$s"&gt;%2$s&lt;/font&gt; 的暱稱，這個暱稱只會在此群內顯示</string>
+    <string name="chat_tips_search_group_friend_hint">搜尋群成員</string>
+    <string name="chat_tips_member_type">群主、管理員</string>
+    <string name="chat_tips_member_type_owner">群主</string>
+    <string name="chat_tips_member_type_admin">管理員</string>
+    <string name="chat_tips_select_invite_users">請選擇要邀請的好友</string>
+    <string name="chat_tips_select_delete_users">請選擇要刪除的群成員</string>
+    <string name="chat_dialog_tips_exit_group">確定退出 &lt;font color="%1$s"&gt;%2$s&lt;/font&gt; 嗎？</string>
+    <string name="chat_dialog_tips_disband_group">確定解散 &lt;font color="%1$s"&gt;%2$s&lt;/font&gt; 嗎？</string>
+
+    <string name="chat_group_admin_setting">管理員設定</string>
+    <string name="chat_group_owner_setting">轉讓群主</string>
+    <string name="chat_group_join_limit">加群限制</string>
+    <string name="chat_group_add_limit">加好友限制</string>
+    <string name="chat_group_mute_all">全員禁言</string>
+    <string name="chat_group_mute_list">禁言名單</string>
+    <string name="chat_group_join_limit1">無需審核</string>
+    <string name="chat_group_join_limit_sub1">加群無需群主或管理員同意</string>
+    <string name="chat_group_join_limit2">禁止加群</string>
+    <string name="chat_group_join_limit_sub2">除群主和管理員邀請外不允許任何人加群</string>
+    <string name="chat_group_join_limit3">群主審批</string>
+    <string name="chat_group_join_limit_sub3">加入群聊需群主或管理員同意</string>
+    <string name="chat_group_apply_list">加群申請</string>
+    <string name="chat_group_apply_title">加群申請</string>
+    <string name="chat_group_apply_empty">暫無加群申請</string>
+    <string name="chat_tip_apply_num">%1$d條申請</string>
+    <string name="chat_action_apply_accept">同意</string>
+    <string name="chat_action_apply_reject">拒絕</string>
+    <string name="chat_tips_apply_accepted">已同意入群</string>
+    <string name="chat_tips_apply_rejected">已拒絕該申請</string>
+    <string name="chat_action_apply_join_group">申請加入</string>
+    <string name="chat_action_apply_join_pending">已申請，等待審核</string>
+    <string name="chat_tips_apply_join_submitted">申請已提交，請等待群主或管理員審批</string>
+    <string name="chat_tips_invite_apply_submitted">邀請已提交，等待群主或管理員審批</string>
+    <string name="chat_tips_address_copied">地址已複製到剪貼簿</string>
+    <string name="chat_group_add_limit1">群內可加好友</string>
+    <string name="chat_group_add_limit2">群內禁止加好友</string>
+
+    <string name="chat_group_join_title">詳細資料</string>
+    <string name="chat_action_join_group">進入群聊</string>
+    <string name="chat_action_can_not_join">禁止加群</string>
+    <string name="chat_action_chat_message">發送到聊天</string>
+    <string name="chat_tips_join_member_number">群成員 %1$d人</string>
+
+    <string name="chat_title_group_mute_list">禁言名單</string>
+    <string name="chat_action_group_cancel_mute">全部解禁</string>
+    <string name="chat_tip_no_group_user_muted">沒有需要解禁的群成員</string>
+    <string name="chat_tip_mute_forever">永久禁言</string>
+    <string name="chat_tip_mute_to_time">已禁言至%1$s</string>
+    <string name="chat_tip_mute_user_num">%1$d名成員禁言</string>
+    <string name="chat_action_forbid_add_friend">該群禁止加好友</string>
+    <string name="chat_tips_mute_state1">可發言</string>
+    <string name="chat_tips_mute_state2">全員禁言</string>
+    <string name="chat_tips_mute_state3">禁言中&#160;%1$s</string>
+    <string name="chat_tips_mute_state4">永久禁言</string>
+    <string name="chat_tips_can_not_mute">管理員或群主無法被禁言</string>
+
+    <string name="chat_confirm_mute">確定禁言嗎？</string>
+    <string name="chat_mute_cancel">解除禁言</string>
+    <string name="chat_select_mute_time">選擇禁言時間</string>
+    <string name="chat_change_mute_time">修改禁言時間</string>
+    <string name="chat_forever">永遠</string>
+    <string name="chat_24_hour">24小時</string>
+    <string name="chat_10_hour">10小時</string>
+    <string name="chat_2_hour">2小時</string>
+    <string name="chat_30_minute">30分鐘</string>
+    <string name="chat_10_minute">10分鐘</string>
+
+    <string name="chat_title_admin_setting">管理員設定</string>
+    <string name="chat_title_change_owner">轉讓群主</string>
+    <string name="chat_title_add_admin">新增管理員</string>
+    <string name="chat_tips_group_owner">群主</string>
+    <string name="chat_tips_group_admin_num">管理員（%1$d/10）</string>
+    <string name="chat_action_add_group_admin">新增管理員</string>
+    <string name="chat_tips_change_group_owner">確定轉讓群主給 &lt;font color="%1$s"&gt;%2$s&lt;/font&gt; 嗎？</string>
+
+    <string name="chat_tips_new_msg">%1$s條新訊息</string>
+
+    <string name="chat_ait_default">[有人@我]</string>
+
+    <!--转发-->
+    <string name="chat_forward_msg_summary">聊天記錄 共%1$d條</string>
+    <string name="chat_forward_source_tips">轉發：%1$s</string>
+    <string name="chat_forward_source_me_and_others">我與[%1$s]的聊天</string>
+    <string name="chat_forward_source_others_and_others">[%1$s]與[%2$s]的聊天</string>
+    <string name="chat_forward_source_group">群聊[%1$s]的聊天</string>
+    <string name="chat_forward_title_others_and_others">[%1$s]與[%2$s]的聊天記錄</string>
+    <string name="chat_forward_title_group">群聊的聊天記錄</string>
+    <string name="chat_action_forward">轉發</string>
+    <string name="chat_action_forward_single">逐條轉發</string>
+    <string name="chat_action_forward_multiple">合併轉發</string>
+    <string name="chat_action_msg_star">收藏</string>
+    <string name="chat_action_msg_delete">刪除</string>
+    <string name="chat_action_revoke">撤回</string>
+    <string name="chat_dialog_revoke_messages">確定撤回選取的 %d 則訊息？</string>
+    <string name="chat_tips_revoke_empty">所選訊息無法撤回</string>
+    <string name="chat_tips_revoke_partial">成功 %1$d 條，失敗 %2$d 條</string>
+    <string name="chat_title_contact_select">選擇聯絡人</string>
+    <string name="chat_tips_forward_contact_tag1">最近聊天</string>
+    <string name="chat_tips_forward_contact_tag2">聯絡人</string>
+    <string name="chat_tips_forward_contact_tag3">群聊</string>
+    <string name="chat_tips_search_contact">搜尋好友、群</string>
+    <string name="chat_tips_search_friends">搜尋好友</string>
+    <string name="chat_tips_search_groups">搜尋群</string>
+    <string name="chat_tips_oa_select">從組織架構選擇成員</string>
+    <string name="chat_tips_selected_message_empty">請先選擇有效訊息</string>
+    <string name="chat_tips_reach_max_msg_select_num">最多只能選擇%1$d則訊息</string>
+    <string name="chat_tips_forward_msg_empty">轉發訊息為空</string>
+    <string name="chat_tips_can_not_forward_group">目前群聊無法轉發！</string>
+    <string name="chat_tips_can_not_forward_self">不能給自己轉發</string>
+    <string name="chat_tips_can_not_forward_no_server">找不到對方伺服器，無法轉發</string>
+    <string name="chat_tips_can_not_forward_group_no_server">未連線目前群聊伺服器，無法收發訊息</string>
+    <string name="cancel">取消</string>
+    <string name="ok">確定</string>
+    <string name="explore_title">責任聲明</string>
+    <string name="explore_disclaimer">您即將使用第三方連結，確定即同意第三方的《隱私政策》和《用戶協議》，您在這一連結中的所有行為和使用情況，均由該連結的供應商負責。</string>
+    <string name="no_dotip">不再提醒</string>
+    <string name="del_str">刪除</string>
+    <string name="del_tip_str">是否刪除?</string>
+    <string name="input_www">請輸入網址</string>
+    <string name="wc_get_addr">允許取得目前錢包位址</string>
+    <string name="wc_sign_str">允許向目前錢包請求簽名</string>
+    <string name="wc_at">該服務由 WalletConnect 協議支援</string>
+    <string name="wc_w_addr">錢包位址</string>
+    <string name="wc_cnet">目前網路</string>
+    <string name="wc_dis">斷開連線</string>
+    <string name="wc_pay_de">支付詳情</string>
+    <string name="wc_pay_me">支付資訊</string>
+    <string name="wc_pay_address">付款位址</string>
+    <string name="wc_fee">礦工費</string>
+    <string name="wc_next">下一步</string>
+    <string name="wc_con">WalletConnect正在連線你的錢包</string>
+    <string name="wc_coned">已經與下列錢包建立連線</string>
+    <string name="home_receipt_address">收款位址</string>
+    <string name="home_transfer">轉帳</string>
+    <string name="tip_fee_high">您設定的礦工費太高，請選擇合適的礦工費</string>
+    <string name="tip_init_fee">正在初始化礦工費...</string>
+    <string name="dapp_sign_re">Dapp發起簽名請求</string>
+    <string name="signme">簽名資訊</string>
+    <string name="i_wallet">我的錢包</string>
+    <string name="my_wallet_detail_password">請輸入帳戶密碼</string>
+    <string name="my_wallet_password_tips">請輸入密碼</string>
+    <string name="pwd_fail_str">密碼錯誤</string>
+    <string name="high_str">最快</string>
+    <string name="standard_str">標準</string>
+    <string name="low_str">經濟</string>
+    <string name="custom_str">自訂</string>
+    <string name="exp_str">瀏覽器</string>
+    <string name="send_suc_str">發送成功!</string>
+    <string name="basic_error_send">發送失敗，請重試</string>
+    <string name="chat_send_fail_title">訊息發送失敗</string>
+    <string name="chat_send_fail_network">網路不可用，請檢查網路連線</string>
+    <string name="chat_send_fail_timeout">網路連線逾時，發送失敗</string>
+    <string name="chat_send_fail_connect">無法連線伺服器，請檢查網路後重試</string>
+    <string name="chat_send_fail_upload">檔案上傳失敗，請檢查網路後重試</string>
+    <string name="chat_send_fail_server">伺服器回傳錯誤：%1$s</string>
+    <string name="chat_send_fail_server_empty">伺服器回傳錯誤，發送失敗</string>
+    <string name="chat_send_fail_resend">重新發送</string>
+
+
+
+
+
+    <string name="tian_str">提案</string>
+    <string name="tp_str">投票</string>
+    <string name="tp_error">活動太火爆了，請稍後重試</string>
+    <string name="fee_setting">礦工費設定</string>
+    <string name="enter_str">請輸入</string>
+    <string name="switch_account_str">切換帳號</string>
+    <string name="chat_no_nickname">請設定暱稱</string>
+    <string name="c_entrance">便捷入口</string>
+    <string name="n_yopen">暫未開放</string>
+    <string name="save_suc">儲存成功</string>
+    <string name="like_str">收藏</string>
+    <string name="collect_suc_str">收藏成功！</string>
+    <string name="my_collect_str">我的收藏</string>
+    <string name="ref_str">重新整理</string>
+    <string name="copy_url_str">複製連結</string>
+    <string name="ex_open">瀏覽器開啟</string>
+    <string name="exit_str">退出</string>
+    <string name="copy_success">複製成功</string>
+    <string name="dapp_approve">授權合約</string>
+    <string name="dapp_out">發起位址</string>
+    <string name="dapp_nonono">代幣授權</string>
+    <string name="meta_approve">授權使用代幣</string>
+    <string name="select_network_fee">選擇網路費</string>
+    <string name="fee_fast">快速</string>
+    <string name="fee_recommended">推薦</string>
+    <string name="fee_slow">慢</string>
+    <string name="fee_custom">自訂</string>
+    <string name="fee_estimated_time">預計%s內</string>
+    <string name="estimated_fee">預估費用</string>
+
+    <!--安全设置相关硬编码-->
+    <string name="chat_hint_input_wechat">請輸入微信號</string>
+    <string name="chat_hint_input_xiaohongshu">請輸入小紅書號</string>
+    <string name="chat_hint_input_douyin">請輸入抖音號</string>
+
+    <!--群相关硬编码-->
+    <string name="chat_group_type_all">全員</string>
+    <string name="chat_group_type_dept">部門</string>
+    <string name="chat_group_qrcode_tips">此群屬於團隊%1$s群，僅組織內部成員可加入，如果組織外部人員要加入群，需要先申請加入該組織</string>
+
+    <!--转发相关-->
+    <string name="chat_forward_multiple_messages">[逐條轉發]共%1$d則訊息</string>
+    <string name="chat_forward_sent_count">已轉發到 %1$d 個會話</string>
+
+    <!--私钥创建-->
+    <string name="chat_error_private_key_create">私鑰建立失敗</string>
+
+    <!--编辑群头像-->
+    <string name="chat_error_crop_unknown">裁剪失敗，未知錯誤</string>
+
+    <!--Dapp相关-->
+    <string name="chat_dapp_error_password">密碼錯誤</string>
+
+    <!--布局标签-->
+    <string name="chat_label_add_friend_msg">加好友訊息</string>
+    <string name="chat_label_remark_other">對方備註</string>
+    <string name="chat_label_send">發送</string>
+    <string name="chat_label_account_manage">帳號管理</string>
+    <string name="chat_label_audio_call">音訊通話</string>
+    <string name="chat_label_video_call">視訊通話</string>
+    <string name="chat_label_create_wallet">建立錢包</string>
+    <string name="chat_label_customer_service">客服</string>
+    <string name="chat_label_scan_add_cs">掃碼二維碼加客服好友</string>
+    <string name="chat_label_group_exit_tips">全員群/部門群只能透過退出組織/部門才能退出群聊，退出組織/部門將自動退出對應群！</string>
+    <string name="chat_label_search">搜尋</string>
+    <string name="chat_label_search_history">搜尋歷史</string>
+    <string name="chat_label_phone">手機號</string>
+    <string name="chat_label_wechat">微信號</string>
+    <string name="chat_label_xiaohongshu">小紅書號</string>
+    <string name="chat_label_douyin">抖音號</string>
+    <string name="chat_label_select_at">選擇要@的人</string>
+    <string name="chat_label_everyone">所有人</string>
+    <string name="chat_label_input_hint">請輸入</string>
+    <string name="chat_label_confirm">確定</string>
+    <string name="chat_label_forgot_password">忘記密碼</string>
+    <string name="chat_label_send_to">發送給：</string>
+    <string name="chat_label_mnem_verify">助記詞驗證</string>
+    <string name="chat_label_phone_verify">手機號驗證</string>
+    <string name="chat_label_email_verify">信箱驗證</string>
+    <string name="chat_label_group_owner">群主</string>
+    <string name="chat_label_member_info">成員資訊</string>
+    <string name="chat_label_name">姓名</string>
+    <string name="chat_label_team">團隊</string>
+    <string name="chat_label_short_number">短號</string>
+    <string name="chat_label_email">信箱</string>
+    <string name="chat_label_dept">部門</string>
+    <string name="chat_label_position">職位</string>
+    <string name="chat_label_personal_card">個人名片</string>
+    <string name="chat_label_red_packet_default">恭喜發財，大吉大利</string>
+    <string name="chat_label_exclusive_received">專屬紅包已領取</string>
+    <string name="chat_label_tx_mismatch">交易資訊不匹配，點擊查看</string>
+    <string name="chat_label_my_qr">我的二維碼</string>
+    <string name="chat_label_scan_add_me">掃二維碼加我好友</string>
+    <string name="chat_label_scan_transfer_add">掃二維碼向我轉帳、加我好友</string>
+    <string name="chat_label_manage">管理</string>
+    <string name="chat_label_org_structure">組織架構</string>
+    <string name="chat_label_current_account">目前帳戶</string>
+    <string name="chat_add_friend_default_msg">你好，我是%1$s，已新增你為好友！</string>
+
+</resources>

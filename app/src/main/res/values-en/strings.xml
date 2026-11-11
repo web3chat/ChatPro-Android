@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TanXin</string>
+
+    <string name="app_tab_session">Messages</string>
+    <string name="app_tab_contact">Contacts</string>
+    <string name="app_tab_find">Discover</string>
+    <string name="app_tab_shop">Shop</string>
+    <string name="app_tab_wallet">Assets</string>
+    <string name="app_tab_account">My</string>
+
+    <string name="app_splash_tips">Multi-center Collaborative IM\nDistributed Storage App</string>
+    <string name="app_skip_bind_tips">You have not backed up your mnemonic phrase. You can encrypt and upload it to the official server by binding your phone/email and chat password for mnemonic recovery service. For your account security, please be sure to back up or encrypt and upload your mnemonic phrase yourself, or go to [Security Management] to operate.</string>
+    <string name="app_skip_bind_phone">Bind Phone</string>
+    <string name="app_skip_bind_email">Bind Email</string>
+
+    <string name="app_ai_qa">AI QA</string>
+    <string name="app_ai_cs_entry">AI Support</string>
+    <string name="app_close">Close</string>
+    <string name="app_back">Back</string>
+    <string name="app_send">Send</string>
+    <string name="app_ai_qa_hint">Enter your question…</string>
+
+    <!--AI Questions (ChatPro-relevant guided questions)-->
+    <string name="app_ai_question1">How to backup mnemonic phrase?</string>
+    <string name="app_ai_question2">How to transfer to a friend?</string>
+    <string name="app_ai_question3">What\'s the difference between encrypted chat and normal chat?</string>
+    <string name="app_ai_question4">How to create a group?</string>
+    <string name="app_ai_question5">What coins does Red Packet support?</string>
+    <string name="app_ai_question6">Forgot encrypted chat password?</string>
+
+    <!--Friend Import-->
+    <string name="app_import_friends_title">Import Friends</string>
+    <string name="app_import_friends_content">Found backed up friends from the original account on this device. Import friends to the new account?</string>
+    <string name="app_message_empty">Message content cannot be empty</string>
+    <string name="app_import_success">Import successful</string>
+
+    <!--AI Errors-->
+    <string name="app_ai_unavailable">Sorry, AI service is temporarily unavailable. Please try again later.</string>
+    <string name="app_ai_system_prompt">You are ChatPro\'s AI assistant \"XiaoC\". Answer questions about chat, wallet, red packet and other features in a concise and friendly way.</string>
+    <string name="app_ai_network_error">Sorry, network connection failed. Please try again later.</string>
+    <string name="app_ai_api_error">API Error: %1$s</string>
+
+    <!--Layout Labels-->
+    <string name="app_label_ask_me">You can ask me:</string>
+    <string name="app_label_refresh_questions">Refresh questions ⟳</string>
+    <string name="app_label_import_old_account">Found backed up friends from the original account on this device. Import to the new account?</string>
+    <string name="app_label_send_add_msg">Also send add friend message</string>
+</resources>

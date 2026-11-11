@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 发红包页主按钮：红色渐变（按压加深 / 禁用降饱和） -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_enabled="false">
+        <shape android:shape="rectangle">
+            <corners android:radius="25dp" />
+            <solid android:color="@color/redpacket_send_btn_disabled" />
+        </shape>
+    </item>
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <corners android:radius="25dp" />
+            <gradient
+                android:angle="270"
+                android:endColor="#C0403A"
+                android:startColor="#D9564E"
+                android:type="linear" />
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="25dp" />
+            <gradient
+                android:angle="270"
+                android:endColor="@color/redpacket_red_deep"
+                android:startColor="#EE8A82"
+                android:type="linear" />
+        </shape>
+    </item>
+</selector>

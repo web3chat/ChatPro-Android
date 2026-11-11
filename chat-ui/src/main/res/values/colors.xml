@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#2F86F2</color>
+    <color name="colorPrimaryDark">#54ACF7</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="color_f0f3ff">#f0f3ff</color>
+    <color name="color_333649">#333649</color>
+    <color name="color_7190ff">#7190ff</color>
+    <color name="gray_8e">#8E92A3</color>
+    <color name="color_D9DCE9">#D9DCE9</color>
+    <color name="lineColor">#ECECEC</color>
+    <color name="color_8E92A3">#8E92A3</color>
+    <color name="color_EA2551">#EA2551</color>
+    <color name="color_2B292F">#2B292F</color>
+    <color name="wallet_button_press_word_color">#7190FF</color>
+    <color name="color_7190FF">#7190FF</color>
+    <color name="gray_99">#999999</color>
+    <color name="gray_33">#333333</color>
+    <color name="color_9EA2AD">#9EA2AD</color>
+    <color name="wallet_button_word_color">#5D6377</color>
+    <color name="color_f8f8fa">#f8f8fa</color>
+    <color name="gray_349">#333649</color>
+    <color name="color_cc3939">#cc3939</color>
+    <color name="gray_f8">#F8F8FA</color>
+    <color name="red_common">#EA2551</color>
+    <color name="color_8e92a3">#8e92a3</color>
+    <color name="gray_66">#666666</color>
+    <color name="color_DD2E41">#DD2E41</color>
+    <color name="color_80ffffff">#80ffffff</color>
+    <color name="color_bg">#F8F8FA</color>
+    <color name="color_ex">#8093A7</color>
+    <color name="color_ex_value">#516379</color>
+    <color name="color_333649_CC">#CC333649</color>
+    <color name="color37">#37AEC4</color>
+</resources>

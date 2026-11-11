@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 红包记录页顶部（标题 / Tab / 日期）：浅红 → 中间红（与下方统计区渐变无缝衔接） -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <gradient
+        android:angle="270"
+        android:endColor="#E4716D"
+        android:startColor="@color/redpacket_red_top"
+        android:type="linear" />
+</shape>

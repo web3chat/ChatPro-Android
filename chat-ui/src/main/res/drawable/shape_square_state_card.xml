@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 状态卡：品牌浅蓝渐变（左上浓、右下淡），用于「我的公众号」页顶部状态区 -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <gradient
+        android:angle="315"
+        android:endColor="#F7FCFF"
+        android:startColor="#EAF6FF"
+        android:type="linear" />
+    <corners android:radius="16dp" />
+</shape>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 广场筛选 chip 文字色：选中白色（配渐变底），未选中灰 -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:color="@android:color/white" android:state_selected="true" />
+    <item android:color="@color/color_8E92A3" />
+</selector>

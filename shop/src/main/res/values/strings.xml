@@ -1,0 +1,15 @@
+<resources>
+    <string name="shop_transfer_complete">划转完成</string>
+    <string name="shop_bind_first">划转前需要先绑定商城帐号</string>
+    <string name="shop_go_bind">去绑定</string>
+    <string name="shop_transferable_format">可划转 %1$s %2$s</string>
+    <string name="shop_title_suffix">商城</string>
+    <string name="shop_asset_transfer">资产划转</string>
+    <string name="shop_asset_label">资产</string>
+    <string name="shop_from_label">从</string>
+    <string name="shop_chat_account">聊天账户</string>
+    <string name="shop_shop_account">商城账户</string>
+    <string name="shop_transfer_amount_label">划转数量</string>
+    <string name="shop_transfer_all">全部</string>
+    <string name="shop_transfer_btn">划转</string>
+</resources>

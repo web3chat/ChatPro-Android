@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TanXin</string>
+
+    <string name="app_tab_session">Mesajlar</string>
+    <string name="app_tab_contact">Kişiler</string>
+    <string name="app_tab_find">Keşfet</string>
+    <string name="app_tab_shop">Mağaza</string>
+    <string name="app_tab_wallet">Varlıklar</string>
+    <string name="app_tab_account">Benim</string>
+
+    <string name="app_splash_tips">Çok merkezli işbirlikçi mesajlaşma\nDağıtık depolama uygulaması</string>
+    <string name="app_skip_bind_tips">Anımsatıcı ifadenizi yedeklemediniz. Telefon/e-posta ve gizli sohbet şifresini bağlayarak şifreleyip resmi sunucuya yükleyebilir, anımsatıcı kurtarma hizmetini kullanabilirsiniz. Hesabınızın güvenliği için anımsatıcı ifadenizi mutlaka kendiniz yedekleyin veya şifreli olarak yükleyin, ya da [Güvenlik Yönetimi] bölümünden yapın.</string>
+    <string name="app_skip_bind_phone">Telefonu bağla</string>
+    <string name="app_skip_bind_email">E-postayı bağla</string>
+
+    <string name="app_ai_qa">AI Soru-Cevap</string>
+    <string name="app_ai_cs_entry">AI Destek</string>
+    <string name="app_close">Kapat</string>
+    <string name="app_back">Geri</string>
+    <string name="app_send">Gönder</string>
+    <string name="app_ai_qa_hint">Sorunuzu yazın…</string>
+
+    <!--AI soru bankası-->
+    <string name="app_ai_question1">Anımsatıcı ifade nasıl yedeklenir?</string>
+    <string name="app_ai_question2">Bir arkadaşa nasıl para transfer edilir?</string>
+    <string name="app_ai_question3">Gizli sohbet ile normal sohbet arasındaki fark nedir?</string>
+    <string name="app_ai_question4">Grup nasıl oluşturulur?</string>
+    <string name="app_ai_question5">Kırmızı zarf hangi coinleri destekler?</string>
+    <string name="app_ai_question6">Gizli sohbet şifresi unutulursa ne yapılır?</string>
+
+    <!--Arkadaş içe aktarma-->
+    <string name="app_import_friends_title">Arkadaşları içe aktar</string>
+    <string name="app_import_friends_content">Bu cihazda orijinal hesabın yedeklenmiş arkadaşları bulundu. Arkadaşlar yeni hesaba aktarılsın mı?</string>
+    <string name="app_message_empty">Mesaj içeriği boş olamaz</string>
+    <string name="app_import_success">İçe aktarma başarılı</string>
+
+    <!--AI hataları-->
+    <string name="app_ai_unavailable">Üzgünüz, AI hizmeti geçici olarak kullanılamıyor. Lütfen daha sonra tekrar deneyin.</string>
+    <string name="app_ai_system_prompt">Sen ChatPro\'nun akıllı asistanı "XiaoC"sun. Kullanıcıların sohbet, cüzdan, kırmızı zarf ve diğer özelliklerle ilgili sorularını kısa ve samimi bir şekilde yanıtla.</string>
+    <string name="app_ai_network_error">Üzgünüz, ağ bağlantısı başarısız oldu. Lütfen daha sonra tekrar deneyin.</string>
+    <string name="app_ai_api_error">API hatası: %1$s</string>
+
+    <!--Düzen etiketleri-->
+    <string name="app_label_ask_me">Bana sorabilirsiniz:</string>
+    <string name="app_label_refresh_questions">Başka sorular ⟳</string>
+    <string name="app_label_import_old_account">Bu cihazda orijinal hesabın yedeklenmiş arkadaşları bulundu. Yeni hesaba aktarılsın mı?</string>
+    <string name="app_label_send_add_msg">Arkadaş ekleme mesajını da gönder</string>
+
+</resources>

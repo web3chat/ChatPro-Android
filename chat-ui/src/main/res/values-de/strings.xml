@@ -1,0 +1,979 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Texte neuer Funktionen (identisch zu values/strings.xml)-->
+    <string name="chat_chain_sync_fail">Kontoadresse konnte nicht synchronisiert werden, bitte später erneut versuchen</string>
+    <string name="chat_account_menu_chain_sync">Kontoadresse</string>
+    <string name="chat_chain_sync_success">Kontoadresse synchronisiert</string>
+    <string name="chat_chain_sync_pending">Tippen, um die Kontoadresse zu synchronisieren</string>
+    <string name="chat_chain_sync_failed">Synchronisierung fehlgeschlagen, tippen zum Wiederholen</string>
+    <string name="chat_find_recent">Zuletzt besucht</string>
+    <string name="chat_find_empty_title">Noch kein Verlauf</string>
+    <string name="chat_find_empty_sub">URL eingeben oder QR-Code scannen, um zu starten</string>
+    <string name="chat_tips_input_burn_mode">Selbstzerstörung aktiv, Nachrichten werden nach dem Lesen gelöscht</string>
+    <string name="chat_tips_burn_type_denied">Im Selbstzerstörungsmodus nicht möglich</string>
+    <string name="chat_title_burn_detail">Selbstzerstörung</string>
+    <string name="chat_burn_placeholder_tips">Tippen, um die Nachricht anzuzeigen</string>
+    <string name="chat_burn_detail_tips">Wird nach dem Schließen automatisch gelöscht</string>
+    <string name="chat_burn_play">Sprachnachricht abspielen</string>
+    <string name="chat_burn_open">Datei öffnen</string>
+    <string name="chat_burn_audio">Sprachnachricht</string>
+    <string name="qr_login_title">Per QR-Code anmelden</string>
+    <string name="qr_login_icon">💻</string>
+    <string name="qr_login_device_desc">Die Webversion möchte sich in deinem Konto anmelden</string>
+    <string name="qr_login_session_hint">Der QR-Code gilt 5 Minuten, bitte bald bestätigen</string>
+    <string name="qr_login_confirm">Anmeldung bestätigen</string>
+    <string name="qr_login_cancel">Abbrechen</string>
+    <string name="qr_login_wrong_password">Falsches Passwort</string>
+    <string name="qr_login_invalid_qr">Ungültiger Anmelde-QR-Code</string>
+    <string name="qr_login_private_key_failed">Privater Schlüssel konnte nicht geladen werden</string>
+    <string name="qr_login_encrypt_failed">Verschlüsselung fehlgeschlagen, bitte erneut versuchen</string>
+    <string name="qr_login_confirm_success">Bestätigt, bitte am Computer fortfahren</string>
+    <string name="qr_login_risk_title">Sicherheitshinweis</string>
+    <string name="qr_login_risk_warning">In Ihrem Konto wurden Vermögenswerte festgestellt. Bitte bestätigen Sie vor der Anmeldung, dass die Geräteumgebung sicher ist.</string>
+    <string name="qr_login_risk_continue">Weiter</string>
+    <string name="chat_label_current">Aktuell</string>
+    <string name="chat_title_square">Platz</string>
+    <string name="square_filter_all">Alle</string>
+    <string name="square_filter_person">Privat</string>
+    <string name="square_filter_official">Offiziell</string>
+    <string name="square_action_publish">Posten</string>
+    <string name="square_action_delete">Löschen</string>
+    <string name="square_action_edit">Bearbeiten</string>
+    <string name="square_action_share">Teilen</string>
+    <string name="square_share_chooser">Teilen mit</string>
+    <string name="square_share_card_slogan">Ende-zu-Ende-verschlüsselt · Sicher &amp; privat</string>
+    <string name="square_share_card_footer">Von %1$s</string>
+    <string name="square_share_card_qr_tip">%1$s herunterladen</string>
+    <string name="square_action_send">Senden</string>
+    <string name="square_sending">Wird gesendet…</string>
+    <string name="square_action_success">Erfolgreich</string>
+    <string name="square_publish_title">Neuer Beitrag</string>
+    <string name="square_publish_hint">Was denkst du gerade…</string>
+    <string name="square_md_bold">Fett</string>
+    <string name="square_md_italic">Kursiv</string>
+    <string name="square_md_strike">Durchgestrichen</string>
+    <string name="square_md_heading">Überschrift</string>
+    <string name="square_md_bullet_list">Aufzählung</string>
+    <string name="square_md_number_list">Nummerierte Liste</string>
+    <string name="square_md_quote">Zitat</string>
+    <string name="square_md_code">Code</string>
+    <string name="square_md_link">Link</string>
+    <string name="square_md_divider">Trennlinie</string>
+    <string name="square_md_preview">Vorschau</string>
+    <string name="square_md_edit">Bearbeiten</string>
+    <string name="square_md_preview_empty">Keine Vorschau verfügbar</string>
+    <string name="square_detail_title">Beitragsdetails</string>
+    <string name="square_edit_expired">Bearbeitungszeit abgelaufen</string>
+    <string name="square_edit_success">Aktualisiert</string>
+    <string name="square_edit_title">Beitrag bearbeiten</string>
+    <string name="square_comments_title">Kommentare</string>
+    <string name="square_comments_count">Kommentare (%1$d)</string>
+    <string name="square_reply_label">Antworten</string>
+    <string name="square_reply_to">Auf @%1$s antworten</string>
+    <string name="square_reply_cancel">Abbrechen</string>
+    <string name="square_reply_more">%1$d weitere Antworten anzeigen</string>
+    <string name="square_reply_success">Antwort gesendet</string>
+    <string name="square_comment_deleted">Ursprünglicher Kommentar gelöscht</string>
+    <string name="square_tips_reply_invalid">Auf diesen Kommentar kann nicht geantwortet werden</string>
+    <string name="square_inbox_title">Kommentare</string>
+    <string name="square_inbox_empty">Noch keine Kommentare oder Antworten</string>
+    <string name="square_inbox_all_read">Alle als gelesen markieren</string>
+    <string name="square_inbox_floor">hat deinen Beitrag kommentiert</string>
+    <string name="square_inbox_reply">hat dir geantwortet</string>
+    <string name="square_inbox_unavailable">Dieser Kommentar ist nicht mehr verfügbar</string>
+    <string name="square_inbox_no_unread">Keine ungelesenen Nachrichten</string>
+    <string name="square_comment_hint">Kommentar schreiben…</string>
+    <string name="square_no_comment">Noch keine Kommentare</string>
+    <string name="square_comments_closed">Kommentare deaktiviert</string>
+    <string name="square_allow_comment">Kommentare erlauben</string>
+    <string name="square_cannot_post">Ihr Konto kann derzeit nicht posten</string>
+    <string name="square_closed">Platz ist geschlossen</string>
+    <string name="square_official_tag">Offiziell</string>
+    <string name="square_status_auditing">In Prüfung</string>
+    <string name="square_status_rejected">Abgelehnt</string>
+    <string name="square_tag_activity">Event</string>
+    <string name="square_tag_announcement">Ankündigung</string>
+    <string name="square_tag_message">Nachrichten</string>
+    <string name="square_image_index">%1$d / %2$d</string>
+    <string name="square_time_just_now">Gerade eben</string>
+    <string name="square_time_minutes">Vor %1$d Min.</string>
+    <string name="square_time_hours">Vor %1$d Std.</string>
+    <string name="square_time_yesterday">Gestern</string>
+    <string name="square_empty">Noch nichts hier, sei der Erste</string>
+    <string name="square_tips_pending">Eingereicht, erscheint nach Freigabe</string>
+    <string name="square_tips_rejected">Inhalt verstößt gegen die Regeln</string>
+    <string name="square_tips_rate_limited">Zu viele Aktionen, bitte später erneut versuchen</string>
+    <string name="square_tips_sign_invalid">Ungültige Signatur oder abgelaufen, bitte neu anmelden</string>
+    <string name="square_tips_param_error">Ungültige Parameter</string>
+    <string name="square_tips_no_permission">Keine Berechtigung</string>
+    <string name="square_tips_not_found">Inhalt existiert nicht oder wurde gelöscht</string>
+    <string name="square_tips_banned">Dieses offizielle Konto wurde gesperrt, bitte Support kontaktieren</string>
+    <string name="square_tips_comment_closed">Kommentare deaktiviert</string>
+    <string name="square_tips_apply_pending">Eine Anfrage ist offen, siehe Mein offizielles Konto</string>
+    <string name="square_tips_network">Netzwerkfehler, bitte Verbindung prüfen</string>
+    <string name="square_tips_failed">Aktion fehlgeschlagen, bitte später erneut versuchen</string>
+    <string name="square_tips_comment_pending">Kommentar eingereicht, nach Freigabe sichtbar</string>
+    <string name="square_publish_success">Veröffentlicht</string>
+    <string name="square_comment_success">Kommentiert</string>
+    <string name="square_delete_confirm">Diesen Beitrag löschen?</string>
+    <string name="square_delete_comment_confirm">Diesen Kommentar löschen?</string>
+    <string name="square_delete_success">Gelöscht</string>
+    <string name="square_upload_failed">Bild konnte nicht hochgeladen werden, bitte erneut versuchen</string>
+    <string name="square_content_empty">Bitte Inhalt eingeben</string>
+    <string name="square_max_images">Maximal 9 Bilder</string>
+    <string name="square_my_official">Mein offizielles Konto</string>
+    <string name="square_my_profile">Mein Profil</string>
+    <string name="square_user_posts">Beiträge</string>
+    <string name="square_user_empty">Noch keine Beiträge</string>
+    <string name="square_official_apply">Offizielles Konto beantragen</string>
+    <string name="square_official_state_none">Nicht beantragt</string>
+    <string name="square_official_state_pending">In Prüfung</string>
+    <string name="square_official_state_approved">Verifiziert</string>
+    <string name="square_official_state_rejected">Abgelehnt</string>
+    <string name="square_official_state_banned">Gesperrt</string>
+    <string name="square_official_tip_none">Nach der Freigabe werden Beiträge dieser Adresse als offizielle Beiträge angezeigt (Name, Kommentare deaktivierbar).</string>
+    <string name="square_official_tip_pending">Deine Anfrage wird geprüft, bitte warten.</string>
+    <string name="square_official_tip_approved">Verifiziertes offizielles Konto: %1$s. Beiträge zeigen diesen Namen.</string>
+    <string name="square_official_tip_rejected">Anfrage abgelehnt, du kannst sie bearbeiten und erneut senden.</string>
+    <string name="square_official_tip_reason"> (Grund: %1$s)</string>
+    <string name="square_official_tip_banned">Dieses offizielle Konto wurde gesperrt. Posten, Kommentieren und Liken sind nicht möglich. Bitte Support kontaktieren.</string>
+    <string name="square_official_avatar_hint">Tippen, um ein Profilbild zu wählen (optional)</string>
+    <string name="square_official_avatar_change">Tippen, um das Profilbild zu ändern</string>
+    <string name="square_official_avatar_clear">Profilbild entfernen</string>
+    <string name="square_official_save">Speichern</string>
+    <string name="square_official_updated">Profil aktualisiert</string>
+    <string name="square_pinned">Angeheftet</string>
+    <string name="square_platform_official_tag">Plattform</string>
+    <string name="square_official_avatar_set">Profilbild hochgeladen, tippen zum Ändern</string>
+    <string name="square_official_name_hint">Name des offiziellen Kontos (erforderlich, max. 32 Zeichen)</string>
+    <string name="square_official_reapply">Erneut beantragen</string>
+    <string name="square_official_intro_hint">Beschreibung (optional, max. 200 Zeichen)</string>
+    <string name="square_official_name_empty">Bitte den Namen des Kontos eingeben</string>
+    <string name="square_official_submit">Anfrage senden</string>
+    <string name="square_official_applied">Anfrage gesendet, bitte auf Prüfung warten</string>
+    <string name="square_feed_latest">Neueste</string>
+    <string name="square_feed_hot">Beliebt</string>
+    <string name="square_feed_following">Gefolgt</string>
+    <string name="square_follow">Folgen</string>
+    <string name="square_followed">Gefolgt</string>
+    <string name="square_follow_success">Gefolgt</string>
+    <string name="square_unfollow_success">Nicht mehr gefolgt</string>
+    <string name="square_follow_tips_self">Sie können sich nicht selbst folgen</string>
+    <string name="square_my_follows">Meine Abonnements</string>
+    <string name="square_my_followers">Meine Follower</string>
+    <string name="square_user_follow_count">Folgt %1$d</string>
+    <string name="square_user_follower_count">Follower %1$d</string>
+    <string name="square_user_followers_title">Follower</string>
+    <string name="square_follow_empty">Sie folgen noch niemandem</string>
+    <string name="square_followers_empty">Noch keine Follower</string>
+    <string name="square_gold_empty">Keine Gold-Offizialkonten</string>
+    <string name="square_gold_stat">%1$d Follower · %2$d Beiträge</string>
+    <string name="square_gold_title">Gold-Offizialkonten</string>
+    <string name="square_my_posts_title">Meine Beiträge</string>
+    <string name="square_my_posts_traffic">Aufrufe meiner Beiträge</string>
+    <string name="square_traffic_posts">Beiträge</string>
+    <string name="square_traffic_views">Aufrufe</string>
+    <string name="square_traffic_likes">Likes</string>
+    <string name="square_traffic_comments">Kommentare</string>
+    <string name="square_report">Melden</string>
+    <string name="square_report_content">Gemeldeter Inhalt</string>
+    <string name="square_report_detail_counter">%1$d/%2$d</string>
+    <string name="square_report_detail_hint">Grund angeben (optional)</string>
+    <string name="square_report_detail_tip">Optional, max. 500 Zeichen</string>
+    <string name="square_report_title">Meldegrund</string>
+    <string name="square_report_type">Meldetyp</string>
+    <string name="square_report_type_required">Bitte einen Meldetyp auswählen</string>
+    <string name="square_report_reason_spam">Spam</string>
+    <string name="square_report_reason_porn">Pornografie</string>
+    <string name="square_report_reason_scam">Betrug</string>
+    <string name="square_report_reason_abuse">Beleidigung</string>
+    <string name="square_report_reason_other">Sonstiges</string>
+    <string name="square_report_success">Gemeldet, danke für Ihr Feedback</string>
+    <string name="square_report_reported">Bereits gemeldet</string>
+    <string name="square_report_select">Bitte auswählen</string>
+    <string name="square_report_submit">Meldung absenden</string>
+    <string name="square_report_submitting">Wird gesendet…</string>
+
+    <!--登录相关-->
+    <string name="chat_login_choose_server">Server auswählen</string>
+    <string name="chat_login_chat_server_tips">1. Neue Benutzer müssen einen Server auswählen oder hinzufügen, der als Standard-Server für den Empfang von Freundschafts-Chatnachrichten dient;\n2. Bei registrierten Konten wird weiterhin der bisherige Standard-Server verwendet.</string>
+    <string name="chat_login_contract_server_tips">1. Sie müssen einen Server als Standard-Blockchain-Knoten auswählen oder hinzufügen, um Kontoinformationen hochzuladen und abzurufen;\n2. Sie können unter [Mein Profil]-[Server] wechseln.</string>
+    <string name="chat_login_edit_chat_server">Chat-Server bearbeiten</string>
+    <string name="chat_login_add_chat_server">Chat-Server hinzufügen</string>
+    <string name="chat_login_edit_contract_server">Blockchain-Knoten bearbeiten</string>
+    <string name="chat_login_add_contract_server">Blockchain-Knoten hinzufügen</string>
+    <string name="chat_tips_edit_server_name">Servername</string>
+    <string name="chat_hint_edit_server_name">Servernamen eingeben</string>
+    <string name="chat_tips_edit_server_address">Serveradresse</string>
+    <string name="chat_hint_edit_server_address">Serveradresse eingeben</string>
+    <string name="chat_tip_add_server_success">Server erfolgreich hinzugefügt</string>
+    <string name="chat_tip_edit_server_success">Server erfolgreich geändert</string>
+    <string name="chat_tip_del_server_success">Server erfolgreich gelöscht</string>
+    <string name="chat_tip_confirm_to_del_server">Diesen Server wirklich löschen?</string>
+    <string name="chat_click_again_to_exit">Erneut drücken, um die App zu beenden</string>
+
+    <string name="chat_login_type_words">Mnemonic-Konto</string>
+    <string name="chat_login_create_account">Konto erstellen</string>
+    <string name="chat_login_import_account">Konto importieren</string>
+    <string name="chat_login_type_account">Telefon/E-Mail</string>
+    <string name="chat_login_find_mnem_words">Mit Teil-Mnemonic anmelden</string>
+
+    <string name="chat_login_tips_agree_protocol">Bitte zuerst den Bedingungen zustimmen</string>
+    <string name="chat_login_tips_choose_server">Bitte zuerst einen Server auswählen</string>
+    <string name="chat_login_tips_agreement">Ich habe die TanXin-Nutzungsbedingungen gelesen und stimme ihnen zu</string>
+
+    <string name="chat_login_tips_choose_chat_server">Server für den Empfang von Chatnachrichten auswählen</string>
+    <string name="chat_login_tips_choose_contract_server">Blockchain-Knoten zum Hochladen von Kontoinformationen auswählen</string>
+    <string name="chat_title_chat_server">Serveradresse</string>
+    <string name="chat_title_contract_server">Blockchain-Knoten</string>
+
+    <string name="chat_title_official_server">Offizielle Adresse</string>
+    <string name="chat_title_custom_server">Benutzerdefinierte Adresse</string>
+    <string name="chat_title_chat_server_group">Chat-Dienst</string>
+    <string name="chat_login_edit_chat_server_group">Servergruppe bearbeiten</string>
+    <string name="chat_login_add_chat_server_group">Servergruppe hinzufügen</string>
+    <string name="chat_tip_add_server_group_success">Servergruppe erfolgreich hinzugefügt. Bitte warten Sie, das Ergebnis wird gleich angezeigt…</string>
+    <string name="chat_tip_del_server_group_success">Servergruppe erfolgreich gelöscht. Bitte warten Sie, das Ergebnis wird gleich angezeigt…</string>
+    <string name="chat_tip_edit_server_group_success">Servergruppe erfolgreich geändert. Bitte warten Sie, das Ergebnis wird gleich angezeigt…</string>
+    <string name="chat_tip_cant_del_default_server">Die Standard-Servergruppe kann nicht gelöscht werden</string>
+    <string name="chat_tip_wrong_server_protocol">Das Serverprotokoll muss http oder https sein</string>
+    <string name="chat_tip_wrong_server_port">Falscher Serverport</string>
+    <string name="chat_tip_wrong_server_format">Falsches Format der Serveradresse</string>
+    <string name="chat_tip_confirm_to_del_server_group">Diese Servergruppe wirklich löschen?</string>
+
+    <string name="chat_login_title_create_mnem">Mnemonic sichern</string>
+    <string name="chat_login_mnem_chinese">中文</string>
+    <string name="chat_login_mnem_english">English</string>
+    <string name="chat_login_tips_remember_mnem">Bitte schreiben Sie das Mnemonic unbedingt auf. Danach wird es verifiziert</string>
+    <string name="chat_login_warn_secure_mnem">Hinweis: Bitte keine Screenshots machen! Wenn jemand Ihr Mnemonic erhält, hat er direkten Zugriff auf Ihre Vermögenswerte! Bitte schreiben Sie das Mnemonic auf und bewahren Sie es sicher auf. Wir werden es auf dem nächsten Bildschirm verifizieren.</string>
+    <string name="chat_login_change_mnem">Mnemonic ändern</string>
+    <string name="chat_login_backup_mnem">Sicherung starten</string>
+    <string name="chat_login_backup_skip">Sicherung überspringen</string>
+    <string name="chat_login_validate_mnem">Gesichertes Mnemonic verifizieren</string>
+    <string name="chat_login_click_correct_order">Bitte klicken Sie jedes Wort in der richtigen Reihenfolge an</string>
+    <string name="chat_login_mnem_wrong">Das Mnemonic ist falsch</string>
+    <string name="chat_login_mnem_backup_fail">Sicherung des Mnemonics fehlgeschlagen</string>
+    <string name="chat_login_mnem_backup_success">Sicherung des Mnemonics erfolgreich</string>
+
+    <string name="chat_login_title_import_account">Konto importieren</string>
+
+    <string name="chat_login_import_mnem_hint">Mnemonic eingeben</string>
+    <string name="chat_login_import_mnem_support_tips">Unterstützt den Import aller Mnemonics, die nach dem BIP-Standard erstellt wurden</string>
+    <string name="chat_login_import_private_key_chain">Hauptkette:</string>
+    <string name="chat_login_import_private_key_chain_bty">BTY</string>
+    <string name="chat_login_import_private_key_hint">Bitte privaten Schlüssel eingeben oder den QR-Code des privaten Schlüssels scannen</string>
+
+    <string name="chat_login_start_import_account">Import starten</string>
+    <string name="chat_login_mnem_import_fail">Import des Mnemonics fehlgeschlagen</string>
+    <string name="chat_login_mnem_import_success">Import des Mnemonics erfolgreich</string>
+    <string name="chat_login_mnem_recover_success">Mnemonic automatisch wiederhergestellt. Bitte Passwort neu festlegen</string>
+
+    <!--首页-->
+    <string name="chat_home_action_scan">Scannen</string>
+    <string name="chat_home_action_create_group">Gruppe erstellen</string>
+    <string name="chat_home_action_search">Freunde/Gruppe hinzufügen</string>
+    <string name="chat_home_action_my_qr_code">Mein QR-Code</string>
+    <string name="chat_home_action_create_company">Team erstellen</string>
+    <string name="chat_home_action_okr">OKR</string>
+    <string name="chat_title_main_contact">Kontakte</string>
+    <string name="chat_title_black_list">Schwarze Liste</string>
+    <string name="chat_title_friend_list">Freunde</string>
+    <string name="chat_title_group_list">Gruppen</string>
+    <string name="chat_home_server_disconnect">Serververbindung fehlgeschlagen, tippen zum Anzeigen</string>
+    <string name="chat_title_private_chat">Privat</string>
+    <string name="chat_title_group_chat">Gruppen</string>
+    <string name="chat_tips_unread_num">[%1$d]%2$s</string>
+    <string name="chat_tips_sender_me">Ich:%1$s</string>
+
+    <!--空列表-->
+    <string name="chat_common_empty_list">Keine Daten</string>
+    <string name="chat_black_list_empty">Keine schwarze Liste</string>
+    <string name="chat_friend_list_empty">Keine Freunde</string>
+    <string name="chat_invite_friend">Freunde einladen</string>
+    <string name="chat_friend_message_list_empty">Keine Freundesnachrichten</string>
+    <string name="chat_start_chat">Chat starten</string>
+    <string name="chat_room_list_empty">Keine Gruppen</string>
+    <string name="chat_suggest_group">Empfohlene Gruppen</string>
+    <string name="chat_room_message_list_empty">Keine Gruppennachrichten</string>
+    <string name="chat_contact_list_empty">Keine Kontakte</string>
+    <string name="chat_promote_list_empty">Keine Einträge</string>
+
+    <!--扫一扫-->
+    <string name="chat_action_open_photo">Album</string>
+
+    <string name="chat_account_menu_wallet">Meine Wallet</string>
+    <string name="chat_account_menu_red_packet">Roter Umschlag-Verlauf</string>
+    <string name="chat_account_menu_server">Server</string>
+    <string name="chat_account_menu_share">App-Download</string>
+    <string name="chat_account_menu_security">Sicherheitsverwaltung</string>
+    <string name="chat_account_menu_setting">Einstellungen</string>
+    <string name="chat_account_menu_feedback">Benutzerfeedback</string>
+    <string name="chat_account_menu_update">Auf Updates prüfen</string>
+    <string name="chat_action_logout">Abmelden</string>
+
+    <!--多语言-->
+    <string name="language_select_title">Mehrsprachigkeit</string>
+    <string name="language_chinese">中文</string>
+    <string name="language_english">English</string>
+    <string name="chat_account_menu_language">Mehrsprachigkeit</string>
+
+    <!--搜索选项-->
+    <string name="chat_action_search_scan">Scannen</string>
+    <string name="chat_action_search_scan_tips">QR-Code-Visitenkarte scannen</string>
+    <string name="chat_action_search_import_friends">Freunde importieren</string>
+    <string name="chat_action_search_import_friends_tips">Unterstützt nur Freunde von Konten, die auf diesem Gerät angemeldet waren</string>
+
+    <!--修改昵称-->
+    <string name="chat_title_edit_nickname">Spitznamen ändern</string>
+    <string name="chat_tip_nickname">Spitzname</string>
+    <string name="chat_tip_nickname_edit_success">Spitzname erfolgreich geändert. Bitte warten Sie, das Ergebnis wird gleich angezeigt…</string>
+    <string name="chat_tip_nickname_empty">Der Spitzname darf nicht leer sein</string>
+    <string name="chat_tip_avatar">Profilbild</string>
+    <string name="chat_tip_avatar_edit_success">Profilbild erfolgreich geändert. Bitte warten Sie, das Ergebnis wird gleich angezeigt…</string>
+
+    <!--安全管理-->
+    <string name="chat_title_security_setting">Sicherheitsverwaltung</string>
+    <string name="chat_tips_export_words">Mnemonic exportieren</string>
+    <string name="chat_tips_export_s2">S2 exportieren</string>
+    <string name="chat_tips_export_private">Privaten Schlüssel exportieren</string>
+    <string name="chat_tips_phone">Telefonnummer</string>
+    <string name="chat_tips_email">E-Mail</string>
+    <string name="chat_tips_encrypt_key">Chat-Passwort</string>
+    <string name="chat_tips_action1">Passwort ändern</string>
+    <string name="chat_tips_action2">Passwort festlegen</string>
+    <string name="chat_tips_action3">Binden</string>
+    <string name="chat_security_setting_tip1">Das Mnemonic dient zur Verschlüsselung von Chatnachrichten und Chatdateien. Beim Wechsel des Geräts müssen Sie dasselbe Mnemonic importieren, um frühere verschlüsselte Nachrichten anzuzeigen. Exportieren Sie das Mnemonic und bewahren Sie es sicher auf!</string>
+    <string name="chat_security_setting_tip2">Das Mnemonic kann über Telefon/E-Mail und das Chat-Passwort verschlüsselt auf den offiziellen Server hochgeladen werden, um die Wiederherstellung des Mnemonics zu ermöglichen.</string>
+    <string name="chat_save_words_tip">Bitte schreiben Sie das Mnemonic unbedingt auf und bewahren Sie es sicher auf. Wenn das Mnemonic verloren geht, können Sie nach einer Neuinstallation oder einem Gerätewechsel keine früheren verschlüsselten Nachrichten mehr anzeigen! Auch das Chat-Passwort kann dann nicht zurückgesetzt werden! Wenn andere Ihr Mnemonic erhalten, können sie auf Ihre Informationen zugreifen!</string>
+    <string name="chat_save_words_tips2">Bitte unbedingt aufschreiben und sicher aufbewahren!</string>
+    <string name="chat_tips_chat_pwd_error">Falsches Chat-Passwort</string>
+    <string name="chat_tips_mnem_export_fail">Export des Mnemonics fehlgeschlagen</string>
+    <string name="chat_tips_private_export_fail">Export des privaten Schlüssels fehlgeschlagen</string>
+    <string name="chat_title_bind_phone">Telefon binden</string>
+    <string name="chat_title_bind_email">E-Mail binden</string>
+    <string name="chat_tips_bind_phone_tips">Nach dem Binden der Telefonnummer können Sie sich mit dem Telefon anmelden</string>
+    <string name="chat_tips_bind_email_tips">Nach dem Binden der E-Mail können Sie sich mit der E-Mail anmelden</string>
+    <string name="chat_hint_input_phone">Telefonnummer eingeben</string>
+    <string name="chat_hint_input_email">E-Mail eingeben</string>
+    <string name="chat_action_bind_send_code">Code anfordern</string>
+    <string name="chat_tips_bind_account_success">Bindung erfolgreich</string>
+    <string name="chat_action_unbind_and_rebind">Entbinden und neu binden</string>
+    <string name="chat_action_unbind_phone_login">Telefon-Login</string>
+    <string name="chat_action_unbind_import_mnem">Mnemonic importieren</string>
+    <string name="chat_tips_override_bind">Die Telefonnummer/E-Mail wurde bereits an ein anderes Mnemonic-Konto gebunden. Möchten Sie die ursprüngliche Bindung aufheben und das lokale Mnemonic-Konto neu binden?</string>
+    <string name="chat_tips_override_bind2">Wenn das ursprüngliche Konto Vermögenswerte hat, können diese nicht über die Telefonnummer wiederhergestellt werden. Bitte entbinden Sie vorsichtig!</string>
+    <string name="chat_tips_phone_forget_password">Wenn Sie das Chat-Passwort vergessen, kann das ursprüngliche Konto nicht über die Telefonnummer wiederhergestellt werden! Sie können:\n1. Mit dem Mnemonic anmelden (Passwort kann geändert werden);\n2. Die ursprüngliche Bindung aufheben, ein neues Konto erstellen und diese Telefonnummer binden.</string>
+    <string name="chat_tips_email_forget_password">Wenn Sie das Chat-Passwort vergessen, kann das ursprüngliche Konto nicht über die E-Mail wiederhergestellt werden! Sie können:\n1. Mit dem Mnemonic anmelden (Passwort kann geändert werden);\n2. Über den Telefon-Login die Wiederherstellung versuchen oder bei „Passwort vergessen“ des Telefon-Logins „Entbinden und neu binden“ ausführen.</string>
+    <string name="chat_tips_override_forget_password2">Durch das Entbinden gehen die ursprünglichen Kontoinformationen und Vermögenswerte verloren. Bitte entbinden Sie vorsichtig!</string>
+
+    <!--设置中心-->
+    <string name="chat_title_setting_center">Einstellungen</string>
+    <string name="chat_tips_app_notify_switch">App-Benachrichtigungsschalter</string>
+    <string name="chat_tips_new_msg_notify">Benachrichtigungen über neue Nachrichten empfangen</string>
+    <string name="chat_tips_rtc_call_notify">Einladungen zu Sprach- und Videoanrufen empfangen</string>
+    <string name="chat_tips_system_sound_and_vibrate">Systemton und Vibration</string>
+    <string name="chat_tips_new_msg_sys_notify">Systembenachrichtigung für neue Nachrichten</string>
+    <string name="chat_tips_rtc_call_sys_notify">Sprach- und Videoanruf-Benachrichtigung</string>
+    <string name="chat_tips_go_sys_notify_settings">Zu den Systemeinstellungen gehen</string>
+
+    <string name="chat_set_chat_password">Bitte Chat-Passwort festlegen</string>
+    <string name="chat_input_chat_password">Bitte Chat-Passwort eingeben</string>
+    <string name="chat_encrypt_password_hint">8–16 Zeichen aus Ziffern, Buchstaben oder Symbolen</string>
+    <!--修改助记词密码-->
+    <string name="chat_title_set_encrypt_password">Chat-Passwort festlegen</string>
+    <string name="chat_title_encrypt_password">Chat-Passwort ändern</string>
+    <string name="chat_tips_old_encrypt_pwd">Altes Passwort</string>
+    <string name="chat_tips_old_encrypt_pwd_hint">Altes Passwort eingeben</string>
+    <string name="chat_tips_first_encrypt_pwd_hint">Passwort festlegen</string>
+    <string name="chat_tips_second_encrypt_pwd_hint">Passwort erneut eingeben</string>
+    <string name="chat_tips_forget_password">Passwort vergessen</string>
+    <string name="chat_tips_new_encrypt_pwd">Neues Passwort</string>
+    <string name="chat_tips_new_encrypt_pwd_hint">Neues Passwort erneut eingeben</string>
+    <string name="chat_tips_update_encrypt_pwd1">Chat-Passwort erfolgreich geändert</string>
+    <string name="chat_tips_update_encrypt_pwd2">Falsches Passwort</string>
+    <string name="chat_tips_update_encrypt_pwd3">Bitte 8–16 Zeichen eingeben</string>
+    <string name="chat_tips_update_encrypt_pwd4">Bitte Ziffern, Buchstaben oder Symbole eingeben</string>
+    <string name="chat_tips_update_encrypt_pwd5">Bitte 8–16 Zeichen aus Ziffern, Buchstaben oder Symbolen festlegen</string>
+    <string name="chat_tips_update_encrypt_pwd6">Die Passwörter stimmen nicht überein</string>
+    <string name="chat_tips_update_encrypt_pwd7">Chat-Passwort erfolgreich festgelegt</string>
+
+    <!--联系人信息-->
+    <string name="chat_title_contact_info">Details</string>
+    <string name="chat_action_send_msg">Nachricht senden</string>
+    <string name="chat_action_transfer">Überweisen</string>
+    <string name="chat_action_delete_friend">Freund löschen</string>
+    <string name="chat_action_add_friend">Freund hinzufügen</string>
+    <string name="chat_tips_modify_group_success">Server erfolgreich geändert</string>
+    <string name="chat_tips_add_friend_success">Freund erfolgreich hinzugefügt</string>
+    <string name="chat_tips_delete_friend_success">Freund erfolgreich gelöscht</string>
+    <string name="chat_tips_nickname_placeholder">Spitzname: %1$s</string>
+    <string name="chat_tips_group_nickname_placeholder">Gruppenspitzname: %1$s</string>
+    <string name="chat_tips_address_placeholder">Konto: %1$s</string>
+    <string name="chat_dialog_delete_friend">Beim Löschen werden auch die Chatnachrichten mit diesem Kontakt gelöscht. Kontakt &lt;font color="%1$s"&gt;%2$s&lt;/font&gt; wirklich löschen?</string>
+
+    <string name="chat_title_edit_group_name">Gruppennamen ändern</string>
+    <string name="chat_tip_group_name">Verschlüsselter Gruppenname</string>
+    <string name="chat_tip_group_pub_name">Öffentlicher Gruppenname</string>
+    <string name="chat_title_edit_nickname_in_group">Mein Spitzname in dieser Gruppe</string>
+    <string name="chat_tip_nickname_in_group">Gruppenspitzname</string>
+    <string name="chat_tip_group_name_empty">Der Gruppenname darf nicht leer sein</string>
+    <string name="chat_tip_group_pub_name_empty">Der öffentliche Gruppenname darf nicht leer sein</string>
+    <string name="chat_tip_edit_group_name_success">Gruppenname erfolgreich geändert</string>
+    <string name="chat_tip_edit_group_nickname_success">Gruppenspitzname erfolgreich geändert</string>
+    <string name="chat_tip_group_avatar">Gruppenbild</string>
+    <string name="chat_tips_nickname_in_group">Mein Spitzname in dieser Gruppe</string>
+    <string name="chat_log_in_chat_history">Chatverlauf suchen</string>
+    <string name="chat_file_in_chat_history">Chatdateien</string>
+    <string name="chat_detail_no_disturb">Nicht stören</string>
+    <string name="chat_detail_stick_top">Chat anpinnen</string>
+    <string name="chat_detail_group_type_tips">Gruppentyp</string>
+    <string name="chat_detail_group_type0">Normale Gruppe</string>
+    <string name="chat_detail_group_type1">Gesamtgruppe</string>
+    <string name="chat_detail_group_type2">Abteilungsgruppe</string>
+    <string name="chat_detail_belong_server_group">Server für den Empfang seiner/ihrer Nachrichten</string>
+    <string name="chat_detail_belong_server_group2">Zugehöriger Server</string>
+    <string name="chat_detail_choose_server_group">Server auswählen</string>
+    <string name="chat_detail_edit_server_group">Verwalten</string>
+    <string name="chat_add_black_list">Zur schwarzen Liste hinzufügen</string>
+    <string name="chat_remove_black_list">Von der schwarzen Liste entfernen</string>
+    <string name="chat_user_black_message">Sie erhalten keine Nachrichten mehr von dieser Person</string>
+    <string name="chat_add_black_warn">Nach dem Hinzufügen zur schwarzen Liste erhalten Sie keine Nachrichten mehr von dieser Person. Kontakt &lt;font color="%1$s"&gt;%2$s&lt;/font&gt; zur schwarzen Liste hinzufügen?</string>
+    <string name="chat_add_black_success">Diese Person wurde zur schwarzen Liste hinzugefügt!</string>
+    <string name="chat_add_black_fail">Hinzufügen zur schwarzen Liste fehlgeschlagen!</string>
+    <string name="chat_remove_black_success">Diese Person wurde von der schwarzen Liste entfernt!</string>
+    <string name="chat_remove_black_fail">Entfernen von der schwarzen Liste fehlgeschlagen!</string>
+    <string name="chat_group_mute_time">Stummschalten</string>
+
+    <string name="chat_title_contact_remark">Notizinformationen</string>
+    <string name="chat_tip_remark">Notiz</string>
+    <string name="chat_tip_remark_edit_success">Erfolgreich geändert</string>
+
+    <!--群信息-->
+    <string name="chat_action_exit_group">Gruppe verlassen</string>
+    <string name="chat_action_disband_group">Gruppe auflösen</string>
+
+    <!--本地搜索-->
+    <string name="chat_tips_search_history">Suchverlauf</string>
+    <string name="chat_tips_search_clear_history">Verlauf löschen</string>
+    <string name="chat_tips_search_hint">Freunde, Chatverlauf usw. suchen</string>
+    <string name="chat_tips_search_hint1">Freunde suchen</string>
+    <string name="chat_tips_search_hint2">Gruppen suchen</string>
+    <string name="chat_tips_search_hint3">Chatverlauf suchen</string>
+    <string name="chat_tips_search_type1">Kontakte</string>
+    <string name="chat_tips_search_type2">Gruppen</string>
+    <string name="chat_tips_search_type3">Chatverlauf</string>
+    <string name="chat_tips_search_result_more">Mehr anzeigen</string>
+    <string name="chat_tips_search_log_target">Einträge zu \"%1$s\"</string>
+    <string name="chat_tips_search_log_count">%1$d zugehörige Chatverlaufseinträge</string>
+
+    <!-- 聊天-->
+    <string name="chat_tips_chat_operate1">Stummschaltung erfolgreich aufgehoben</string>
+    <string name="chat_tips_chat_operate2">Auf Hörermodus gewechselt</string>
+    <string name="chat_tips_chat_operate3">Auf Lautsprechermodus gewechselt</string>
+    <string name="chat_tips_chat_operate4">In die Zwischenablage kopiert</string>
+    <string name="chat_tips_chat_operate5">Nicht-Textnachrichten können nicht kopiert werden</string>
+    <string name="chat_tips_chat_operate6">Eine Nachricht wurde zurückgerufen</string>
+    <string name="chat_top_operate">Chat anpinnen</string>
+    <string name="chat_top_cancel">Anpinnen aufheben</string>
+    <string name="chat_disturb_operate">Nicht stören</string>
+    <string name="chat_disturb_cancel">Nicht stören aufheben</string>
+    <string name="chat_message_delete">Chat löschen</string>
+    <string name="chat_dialog_delete_session">Chat mit &lt;font color="%1$s"&gt;%2$s&lt;/font&gt; löschen?</string>
+    <string name="chat_dialog_delete_message">Diese Nachricht löschen?</string>
+    <string name="chat_dialog_delete_messages">Die ausgewählten Nachrichten löschen?</string>
+    <string name="chat_tips_servers_empty">Die Serveradresse der anderen Person wurde nicht gefunden</string>
+    <string name="chat_tips_server_not_exist">Nicht mit dem aktuellen Gruppenserver verbunden. Nachrichten können nicht gesendet oder empfangen werden</string>
+    <string name="chat_tips_add_group_chat_server">Server hinzufügen</string>
+
+    <string name="chat_popup_option_copy">Kopieren</string>
+    <string name="chat_popup_option_translate">Übersetzen</string>
+    <string name="chat_popup_option_view_original">Original anzeigen</string>
+    <string name="chat_popup_option_forward">Weiterleiten</string>
+    <string name="chat_popup_option_reference">Zitieren</string>
+    <string name="chat_popup_option_focus">Folgen</string>
+    <string name="chat_popup_option_revoke">Zurückrufen</string>
+    <string name="chat_popup_option_delete">Löschen</string>
+    <string name="chat_popup_option_mute">Stummschalten</string>
+    <string name="chat_popup_option_audio_channel_speaker">Über Lautsprecher</string>
+    <string name="chat_popup_option_audio_channel_receiver">Über Hörer</string>
+    <string name="chat_popup_option_multiple_choose">Mehrfachauswahl</string>
+
+    <string name="chat_tips_switch_to_speaker">Auf Lautsprecherwiedergabe gewechselt</string>
+    <string name="chat_tips_switch_to_receiver">Auf Hörerwiedergabe gewechselt</string>
+
+    <!--聊天输入框-->
+    <string name="chat_tips_input_msg1">Eine leere Nachricht kann nicht gesendet werden</string>
+    <string name="chat_tips_input_msg2">Systemnachrichten können nur als Text gesendet werden</string>
+    <string name="chat_tips_input_msg3">Keine SD-Karte erkannt</string>
+
+    <string name="chat_tips_input_send">Senden</string>
+    <string name="chat_tips_input_say_sth">Schreiben Sie etwas</string>
+    <string name="chat_tips_input_media">Bild/Video</string>
+    <string name="chat_tips_input_shoot">Aufnehmen</string>
+    <string name="chat_tips_input_snap_msg">Nach dem Lesen gelöscht</string>
+    <string name="chat_tips_input_file">Datei</string>
+    <string name="chat_tips_input_rtc">Videoanruf</string>
+    <string name="chat_tips_input_red_packet">Roter Umschlag</string>
+    <string name="chat_tips_input_red_packet_only">Exklusiver roter Umschlag</string>
+    <string name="chat_tips_input_text_packet">Roter Umschlag-Nachricht</string>
+    <string name="chat_tips_input_transfer">Überweisen</string>
+    <string name="chat_tips_input_contact_card">Visitenkarte</string>
+
+    <string name="chat_call_menu_voice">Sprachanruf</string>
+    <string name="chat_call_menu_video">Videoanruf</string>
+    <string name="chat_call_invite_title_voice">Sprachanruf</string>
+    <string name="chat_call_invite_title_video">Videoanruf</string>
+    <string name="chat_call_invite_desc">Zum Beitreten tippen · Raum %1$s</string>
+    <string name="chat_call_invite_text">Sprachanruf-Einladung, zum Beitreten auf den Link tippen: %1$s</string>
+    <string name="chat_call_confirm_content">Es wird ein Sprachraum erstellt und eine Einladung an die Gegenseite gesendet. Sprachanruf starten?</string>
+    <string name="chat_call_creating">Anrufraum wird erstellt…</string>
+    <string name="chat_call_create_failed">Anruf konnte nicht erstellt werden, bitte später erneut versuchen</string>
+    <string name="chat_call_busy_title">Hinweis</string>
+    <string name="chat_call_busy_content">Sie befinden sich in einem Anruf. Diesen beenden und einen neuen starten?</string>
+    <string name="chat_call_window_hangup">Auflegen</string>
+    <string name="chat_call_window_minimize">Minimieren</string>
+    <string name="chat_call_window_expand">Vollbild</string>
+    <string name="chat_call_window_minimized_tips">Anruf minimiert. Tippen Sie auf das schwebende Fenster, um fortzufahren</string>
+    <string name="chat_call_copy_link">Anruflink kopieren</string>
+    <string name="chat_call_link_copied">Anruflink kopiert</string>
+    <string name="chat_call_webview_error">Anrufseite konnte nicht geladen werden. Prüfen Sie das Netzwerk und versuchen Sie es erneut</string>
+
+    <string name="chat_record_state_prepared">Gedrückt halten zum Sprechen</string>
+    <string name="chat_record_state_recording">Loslassen zum Beenden</string>
+    <string name="chat_record_state_want_cancel">Finger loslassen, um das Senden abzubrechen</string>
+    <string name="chat_record_slide_to_cancel">Nach oben wischen, um abzubrechen</string>
+    <string name="chat_record_tips_too_short">Aufnahme zu kurz</string>
+    <string name="chat_speak_time_remain">Noch %1$d Sekunden</string>
+
+    <!--聊天消息-->
+    <string name="chat_unfold">Einklappen</string>
+    <string name="chat_fold">Aufklappen</string>
+
+    <string name="chat_tips_num_3">%1$d/3</string>
+    <string name="chat_tips_num_15">%1$d/15</string>
+    <string name="chat_tips_num_20">%1$d/20</string>
+    <string name="chat_tips_num_50">%1$d/50</string>
+    <string name="chat_tips_num_400">%1$d/400</string>
+    <string name="chat_tips_num_500">%1$d/500</string>
+
+    <string name="chat_time_tips_yesterday">Gestern %1$s</string>
+    <string name="chat_time_tips_week1">Sonntag %1$s</string>
+    <string name="chat_time_tips_week2">Montag %1$s</string>
+    <string name="chat_time_tips_week3">Dienstag %1$s</string>
+    <string name="chat_time_tips_week4">Mittwoch %1$s</string>
+    <string name="chat_time_tips_week5">Donnerstag %1$s</string>
+    <string name="chat_time_tips_week6">Freitag %1$s</string>
+    <string name="chat_time_tips_week7">Samstag %1$s</string>
+
+    <string name="chat_file_size">Datei %1$s</string>
+    <string name="chat_find_ai_cs">KI-Support</string>
+    <string name="chat_tips_copy_message_content">Nachrichteninhalt kopiert</string>
+    <string name="chat_tips_translate_failed">Übersetzung fehlgeschlagen, bitte später erneut versuchen</string>
+
+    <string name="chat_message_system_msg_type">Ankündigung</string>
+    <string name="chat_message_unsupported_msg_type">Dieser Nachrichtentyp wird nicht unterstützt. Bitte aktualisieren Sie auf die neueste Version</string>
+    <string name="chat_tips_file_not_exist">Datei nicht vorhanden</string>
+
+    <string name="chat_tips_search_my_account">Mein Konto: %1$s</string>
+    <string name="chat_tips_search_type_user">Benutzer</string>
+    <string name="chat_title_my_qr_code">Mein QR-Code</string>
+    <string name="chat_tips_qr_code_friend">QR-Code scannen, um mich auf %1$s als Freund hinzuzufügen</string>
+    <string name="chat_action_copy_address">Konto kopieren</string>
+    <string name="chat_action_copy_group_num">Gruppennummer kopieren</string>
+    <string name="chat_tips_copy_download_url">Download-Link in die Zwischenablage kopiert</string>
+    <string name="chat_tips_copy_address">In die Zwischenablage kopiert</string>
+    <string name="chat_tips_copy_group_num">Gruppennummer in die Zwischenablage kopiert</string>
+    <string name="chat_tips_qr_share_chat">TanXin</string>
+    <string name="chat_tips_qr_save">Speichern</string>
+    <string name="chat_tips_img_saved">Bild gespeichert</string>
+    <string name="chat_tips_img_not_exist">Bild nicht vorhanden</string>
+    <string name="chat_tips_vid_not_exist">Video nicht vorhanden</string>
+    <string name="chat_tips_img_zip_fail">Bildkomprimierung fehlgeschlagen</string>
+    <string name="chat_tips_not_contain_qr_code">Kein QR-Code erkannt</string>
+    <string name="chat_action_recognize_qrcode">QR-Code im Bild erkennen</string>
+
+    <string name="chat_tips_start_download">Download starten…</string>
+    <string name="chat_tips_is_downloading">Wird heruntergeladen…</string>
+    <string name="chat_tips_image_download_to">Bild heruntergeladen nach %1$s</string>
+    <string name="chat_tips_video_download_to">Video heruntergeladen nach %1$s</string>
+    <string name="chat_tips_file_download_to">Datei heruntergeladen nach %1$s</string>
+    <string name="chat_tips_download_fail">Download fehlgeschlagen, %1$s</string>
+
+    <!--文件详情页面-->
+    <string name="chat_tips_download_file">Datei empfangen</string>
+    <string name="chat_tips_can_not_open">%1$s unterstützt das Öffnen dieses Dateityps nicht. Sie können ihn mit einer anderen App öffnen</string>
+    <string name="chat_tips_open_with">Mit anderer App öffnen</string>
+    <string name="chat_tips_select_open_type">Bitte wählen Sie die passende App zum Öffnen der Datei</string>
+    <string name="chat_tips_unsupported_file_type">Nicht unterstützter Dateityp</string>
+
+    <!--聊天文件管理-->
+    <string name="chat_title_file_management">Chatdateien</string>
+    <string name="chat_action_file_select">Auswählen</string>
+    <string name="chat_title_chat_file">Dateien</string>
+    <string name="chat_title_chat_media">Bilder/Videos</string>
+    <string name="chat_file_empty">Keine Dateien</string>
+    <string name="chat_media_empty">Keine Bilder/Videos</string>
+    <string name="chat_file_search_hint">Dateinamen eingeben</string>
+    <string name="chat_action_file_download">Herunterladen</string>
+    <string name="chat_action_file_delete">Löschen</string>
+    <string name="chat_dialog_tips_delete_chat_files">Gelöschte Dateien erscheinen nicht mehr in Ihrem Nachrichtenverlauf</string>
+
+    <!--删除私聊记录 / 自动删除-->
+    <string name="chat_contact_clean_private">Chatverlauf löschen</string>
+    <string name="chat_contact_auto_delete">Chatverlauf automatisch löschen</string>
+    <string name="chat_private_clean_confirm_title">Chatverlauf löschen</string>
+    <string name="chat_private_clean_confirm_message">Die privaten Nachrichten beider Seiten werden im gewählten Zeitraum gelöscht (serverseitig). Fortfahren?</string>
+    <string name="chat_private_clean_success">Vorgang erfolgreich, %1$d Nachrichten serverseitig gelöscht</string>
+    <string name="chat_private_clean_custom_invalid">Die Endzeit darf nicht vor der Startzeit liegen</string>
+    <string name="chat_private_clean_last_1d">Letzter 1 Tag</string>
+    <string name="chat_private_clean_last_3d">Letzte 3 Tage</string>
+    <string name="chat_private_clean_last_7d">Letzte 7 Tage</string>
+    <string name="chat_private_clean_last_30d">Letzte 30 Tage</string>
+    <string name="chat_private_clean_last_90d">Letzte 90 Tage</string>
+    <string name="chat_private_clean_last_180d">Letzte 180 Tage</string>
+    <string name="chat_private_clean_last_365d">Letzte 365 Tage</string>
+    <string name="chat_private_clean_all">Gesamter Verlauf</string>
+    <string name="chat_private_clean_custom">Benutzerdefiniertes Datum…</string>
+    <string name="chat_private_clean_pick_start">Startdatum wählen</string>
+    <string name="chat_private_clean_pick_end">Enddatum wählen</string>
+    <string name="chat_private_auto_off">Aus</string>
+    <string name="chat_private_auto_day_1">Über 1 Tag</string>
+    <string name="chat_private_auto_day_3">Über 3 Tage</string>
+    <string name="chat_private_auto_day_7">Über 7 Tage</string>
+    <string name="chat_private_auto_day_30">Über 30 Tage</string>
+    <string name="chat_private_auto_day_180">Über 180 Tage</string>
+    <string name="chat_private_auto_pick_title">Automatisches Löschen</string>
+
+    <!--登录-->
+    <string name="login_tips_login_success">Anmeldung erfolgreich</string>
+    <string name="login_tips_register_success">Registrierung erfolgreich</string>
+    <string name="login_tips_code_sent">Verifizierungscode gesendet</string>
+
+    <string name="login_tips_correct_email">Bitte eine gültige E-Mail eingeben</string>
+    <string name="login_tips_correct_phone">Bitte eine gültige Telefonnummer eingeben</string>
+    <string name="login_tips_correct_code">Bitte den vollständigen Verifizierungscode eingeben</string>
+    <string name="login_tips_code_count">Gesendet (%1$ds)</string>
+
+    <string name="login_tips_input_email">Bitte E-Mail eingeben</string>
+    <string name="login_tips_input_phone">Bitte Telefonnummer eingeben</string>
+    <string name="login_tips_input_code">Bitte Verifizierungscode eingeben</string>
+    <string name="login_tips_input_s2">Bitte S2 eingeben</string>
+    <string name="login_action_send_code">Code anfordern</string>
+    <string name="login_action_login">Anmelden</string>
+    <string name="login_use_email">E-Mail-Login</string>
+    <string name="login_use_email_tips">Teil-Mnemonic per E-Mail wiederherstellen</string>
+    <string name="login_use_phone">Telefon-Login</string>
+    <string name="login_use_phone_tips">Wenn keine Telefonnummer gebunden ist, wird automatisch ein Konto erstellt</string>
+    <string name="login_tips_unbind_yet">Die Telefonnummer/E-Mail wurde noch nicht an ein Mnemonic-Konto gebunden. Bitte wählen Sie einen anderen Weg, um den Chat zu betreten.</string>
+
+    <string name="chat_dialog_action_take_photo">Foto aufnehmen</string>
+    <string name="chat_dialog_action_select_picture">Aus Album wählen</string>
+
+    <!--App更新对话框-->
+    <string name="chat_update_checking_update">Auf Updates wird geprüft…</string>
+    <string name="chat_update_latest_version">Sie haben die neueste Version</string>
+    <string name="chat_update_title">Neue Version gefunden</string>
+    <string name="chat_update_tips_version">V%1$s</string>
+    <string name="chat_update_downloading">Wird heruntergeladen…</string>
+    <string name="chat_update_begin_download">Download wird vorbereitet…</string>
+    <string name="chat_update_download_success">Download abgeschlossen, tippen zum Installieren</string>
+    <string name="chat_update_action_retry">Erneut versuchen</string>
+    <string name="chat_update_action_install">Tippen zum Installieren</string>
+    <string name="chat_update_action_update">Aktualisieren</string>
+    <string name="chat_update_action_ignore_update">Später</string>
+
+    <!--群聊-->
+    <string name="chat_title_create_group">Gruppe erstellen</string>
+    <string name="chat_title_invite_members_type">Mitglieder auswählen</string>
+    <string name="chat_title_invite_group_members">Neue Mitglieder hinzufügen</string>
+    <string name="chat_tips_group_members">Gruppenmitglieder</string>
+    <string name="chat_title_create_group_select_server">Server auswählen</string>
+    <string name="chat_tips_create_group_manage_server">Verwalten</string>
+    <string name="chat_tips_choose_group_server">Chat-Server für die Gruppe auswählen</string>
+    <string name="chat_tips_invite_group_members">Gruppenmitglieder auswählen</string>
+    <string name="chat_tips_group_members_friends">Mitglieder aus der Freundesliste auswählen</string>
+    <string name="chat_tips_group_members_oa">Mitglieder aus der Organisationsstruktur auswählen</string>
+    <string name="chat_action_create_group">Erstellen</string>
+    <string name="chat_tips_somebody_create_group">Von %1$s erstellte Gruppe</string>
+    <string name="chat_tips_group_member_num">Insgesamt %1$d Personen</string>
+    <string name="chat_action_invite">Einladen</string>
+    <string name="chat_action_remove">Entfernen</string>
+    <string name="chat_action_group_copy_mark_id">Gruppennummer kopieren</string>
+    <string name="chat_title_group_info">Gruppendetails</string>
+    <string name="chat_title_group_qrcode">Gruppen-QR-Code</string>
+    <string name="chat_tips_group_mark_id">Gruppennummer %1$s</string>
+    <string name="chat_tips_group_pub_name">Öffentlicher Name: %1$s</string>
+    <string name="chat_tips_group_qr_code">QR-Code scannen, um der Gruppe beizutreten</string>
+    <string name="chat_tips_group_forbid_join">Der Beitritt zu dieser Gruppe ist verboten</string>
+    <string name="chat_tips_group_copy_mark_id">Gruppennummer in die Zwischenablage kopiert</string>
+    <string name="chat_tips_group_join_invalid_qrcode">Der QR-Code zum Gruppenbeitritt ist abgelaufen</string>
+    <string name="tips_invite_group_members_success">Einladung erfolgreich</string>
+
+    <string name="chat_title_group_user">Gruppenmitglieder</string>
+    <string name="chat_action_add_group_user">Mitglied hinzufügen</string>
+    <string name="chat_action_del_group_user">Mitglied entfernen</string>
+    <string name="chat_action_set_group_admin">Als Administrator festlegen</string>
+    <string name="chat_tips_set_nickname_in_group">Hier können Sie Ihren Spitznamen in &lt;font color="%1$s"&gt;%2$s&lt;/font&gt; festlegen. Dieser Spitzname wird nur in dieser Gruppe angezeigt</string>
+    <string name="chat_tips_search_group_friend_hint">Gruppenmitglieder suchen</string>
+    <string name="chat_tips_member_type">Gruppenbesitzer, Administrator</string>
+    <string name="chat_tips_member_type_owner">Gruppenbesitzer</string>
+    <string name="chat_tips_member_type_admin">Administrator</string>
+    <string name="chat_tips_select_invite_users">Bitte wählen Sie die einzuladenden Freunde</string>
+    <string name="chat_tips_select_delete_users">Bitte wählen Sie die zu entfernenden Gruppenmitglieder</string>
+    <string name="chat_dialog_tips_exit_group">&lt;font color="%1$s"&gt;%2$s&lt;/font&gt; wirklich verlassen?</string>
+    <string name="chat_dialog_tips_disband_group">&lt;font color="%1$s"&gt;%2$s&lt;/font&gt; wirklich auflösen?</string>
+
+    <string name="chat_group_admin_setting">Administrator-Einstellungen</string>
+    <string name="chat_group_owner_setting">Gruppenbesitzer übertragen</string>
+    <string name="chat_group_join_limit">Beitrittsbeschränkungen</string>
+    <string name="chat_group_add_limit">Beschränkung zum Hinzufügen von Freunden</string>
+    <string name="chat_group_mute_all">Alle stummschalten</string>
+    <string name="chat_group_mute_list">Stummschaltungsliste</string>
+    <string name="chat_group_join_limit1">Keine Genehmigung</string>
+    <string name="chat_group_join_limit_sub1">Beitritt ohne Genehmigung des Gruppenbesitzers oder Administrators</string>
+    <string name="chat_group_join_limit2">Beitritt verboten</string>
+    <string name="chat_group_join_limit_sub2">Niemand darf der Gruppe beitreten, außer auf Einladung des Gruppenbesitzers oder Administrators</string>
+    <string name="chat_group_join_limit3">Bestätigung durch den Eigentümer</string>
+    <string name="chat_group_join_limit_sub3">Der Beitritt zur Gruppe erfordert die Zustimmung des Eigentümers oder Administrators</string>
+    <string name="chat_group_apply_list">Beitrittsanfragen</string>
+    <string name="chat_group_apply_title">Beitrittsanfragen</string>
+    <string name="chat_group_apply_empty">Keine Beitrittsanfragen</string>
+    <string name="chat_tip_apply_num">%1$d Anfragen</string>
+    <string name="chat_action_apply_accept">Annehmen</string>
+    <string name="chat_action_apply_reject">Ablehnen</string>
+    <string name="chat_tips_apply_accepted">Anfrage angenommen</string>
+    <string name="chat_tips_apply_rejected">Anfrage abgelehnt</string>
+    <string name="chat_action_apply_join_group">Beitritt beantragen</string>
+    <string name="chat_action_apply_join_pending">Beantragt, Überprüfung ausstehend</string>
+    <string name="chat_tips_apply_join_submitted">Anfrage gesendet. Warten auf Zustimmung</string>
+    <string name="chat_tips_invite_apply_submitted">Einladung gesendet. Warten auf Zustimmung</string>
+    <string name="chat_tips_address_copied">Adresse in die Zwischenablage kopiert</string>
+    <string name="chat_group_add_limit1">In der Gruppe können Freunde hinzugefügt werden</string>
+    <string name="chat_group_add_limit2">In der Gruppe dürfen keine Freunde hinzugefügt werden</string>
+
+    <string name="chat_group_join_title">Details</string>
+    <string name="chat_action_join_group">Gruppe beitreten</string>
+    <string name="chat_action_can_not_join">Beitritt verboten</string>
+    <string name="chat_action_chat_message">In den Chat senden</string>
+    <string name="chat_tips_join_member_number">Gruppenmitglieder %1$d Personen</string>
+
+    <string name="chat_title_group_mute_list">Stummschaltungsliste</string>
+    <string name="chat_action_group_cancel_mute">Alle aufheben</string>
+    <string name="chat_tip_no_group_user_muted">Es gibt keine Gruppenmitglieder zum Entstummen</string>
+    <string name="chat_tip_mute_forever">Dauerhaft stummschalten</string>
+    <string name="chat_tip_mute_to_time">Bis %1$s stummgeschaltet</string>
+    <string name="chat_tip_mute_user_num">%1$d Mitglieder stummgeschaltet</string>
+    <string name="chat_action_forbid_add_friend">In dieser Gruppe dürfen keine Freunde hinzugefügt werden</string>
+    <string name="chat_tips_mute_state1">Darf sprechen</string>
+    <string name="chat_tips_mute_state2">Alle stummgeschaltet</string>
+    <string name="chat_tips_mute_state3">Stummgeschaltet&#160;%1$s</string>
+    <string name="chat_tips_mute_state4">Dauerhaft stummgeschaltet</string>
+    <string name="chat_tips_can_not_mute">Administrator oder Gruppenbesitzer kann nicht stummgeschaltet werden</string>
+
+    <string name="chat_confirm_mute">Stummschalten bestätigen?</string>
+    <string name="chat_mute_cancel">Stummschaltung aufheben</string>
+    <string name="chat_select_mute_time">Stummschaltungsdauer wählen</string>
+    <string name="chat_change_mute_time">Stummschaltungsdauer ändern</string>
+    <string name="chat_forever">Dauerhaft</string>
+    <string name="chat_24_hour">24 Stunden</string>
+    <string name="chat_10_hour">10 Stunden</string>
+    <string name="chat_2_hour">2 Stunden</string>
+    <string name="chat_30_minute">30 Minuten</string>
+    <string name="chat_10_minute">10 Minuten</string>
+
+    <string name="chat_title_admin_setting">Administrator-Einstellungen</string>
+    <string name="chat_title_change_owner">Gruppenbesitzer übertragen</string>
+    <string name="chat_title_add_admin">Administrator hinzufügen</string>
+    <string name="chat_tips_group_owner">Gruppenbesitzer</string>
+    <string name="chat_tips_group_admin_num">Administrator (%1$d/10)</string>
+    <string name="chat_action_add_group_admin">Administrator hinzufügen</string>
+    <string name="chat_tips_change_group_owner">&lt;font color="%1$s"&gt;%2$s&lt;/font&gt; den Gruppenbesitzer übertragen?</string>
+
+    <string name="chat_tips_new_msg">%1$s neue Nachrichten</string>
+
+    <string name="chat_ait_default">[@Mich]</string>
+
+    <!--转发-->
+    <string name="chat_forward_msg_summary">Chatverlauf, insgesamt %1$d Einträge</string>
+    <string name="chat_forward_source_tips">Weiterleitung: %1$s</string>
+    <string name="chat_forward_source_me_and_others">Chat mit [%1$s]</string>
+    <string name="chat_forward_source_others_and_others">Chat von [%1$s] und [%2$s]</string>
+    <string name="chat_forward_source_group">Chat der Gruppe [%1$s]</string>
+    <string name="chat_forward_title_others_and_others">Chatverlauf von [%1$s] und [%2$s]</string>
+    <string name="chat_forward_title_group">Chatverlauf der Gruppe</string>
+    <string name="chat_action_forward">Weiterleiten</string>
+    <string name="chat_action_forward_single">Einzeln weiterleiten</string>
+    <string name="chat_action_forward_multiple">Zusammen weiterleiten</string>
+    <string name="chat_action_msg_star">Favorit</string>
+    <string name="chat_action_msg_delete">Löschen</string>
+    <string name="chat_action_revoke">Zurückrufen</string>
+    <string name="chat_dialog_revoke_messages">Die ausgewählten %d Nachrichten zurückrufen?</string>
+    <string name="chat_tips_revoke_empty">Die ausgewählten Nachrichten können nicht zurückgerufen werden</string>
+    <string name="chat_tips_revoke_partial">%1$d erfolgreich, %2$d fehlgeschlagen</string>
+    <string name="chat_title_contact_select">Kontakt auswählen</string>
+    <string name="chat_tips_forward_contact_tag1">Letzte Chats</string>
+    <string name="chat_tips_forward_contact_tag2">Kontakte</string>
+    <string name="chat_tips_forward_contact_tag3">Gruppen</string>
+    <string name="chat_tips_search_contact">Freunde, Gruppen suchen</string>
+    <string name="chat_tips_search_friends">Freunde suchen</string>
+    <string name="chat_tips_search_groups">Gruppen suchen</string>
+    <string name="chat_tips_oa_select">Mitglieder aus der Organisationsstruktur auswählen</string>
+    <string name="chat_tips_selected_message_empty">Bitte wählen Sie zuerst gültige Nachrichten aus</string>
+    <string name="chat_tips_reach_max_msg_select_num">Es können maximal %1$d Nachrichten ausgewählt werden</string>
+    <string name="chat_tips_forward_msg_empty">Keine Nachrichten zum Weiterleiten</string>
+    <string name="chat_tips_can_not_forward_group">Aus dieser Gruppe kann nicht weitergeleitet werden!</string>
+    <string name="chat_tips_can_not_forward_self">Sie können nicht an sich selbst weiterleiten</string>
+    <string name="chat_tips_can_not_forward_no_server">Der Server der anderen Person wurde nicht gefunden. Weiterleitung nicht möglich</string>
+    <string name="chat_tips_can_not_forward_group_no_server">Nicht mit dem aktuellen Gruppenserver verbunden. Nachrichten können nicht gesendet oder empfangen werden</string>
+    <string name="cancel">Abbrechen</string>
+    <string name="ok">OK</string>
+    <string name="explore_title">Haftungsausschluss</string>
+    <string name="explore_disclaimer">Sie sind im Begriff, einen Link eines Drittanbieters zu verwenden. Mit der Bestätigung stimmen Sie der Datenschutzerklärung und den Nutzungsbedingungen des Drittanbieters zu. Alle Handlungen und Nutzungen über diesen Link liegen in der Verantwortung des Anbieters des Links.</string>
+    <string name="no_dotip">Nicht mehr erinnern</string>
+    <string name="del_str">Löschen</string>
+    <string name="del_tip_str">Löschen?</string>
+    <string name="input_www">URL eingeben</string>
+    <string name="wc_get_addr">Zugriff auf die Wallet-Adresse erlauben</string>
+    <string name="wc_sign_str">Signaturanfragen an die Wallet erlauben</string>
+    <string name="wc_at">Dieser Dienst wird vom WalletConnect-Protokoll unterstützt</string>
+    <string name="wc_w_addr">Wallet-Adresse</string>
+    <string name="wc_cnet">Aktuelles Netzwerk</string>
+    <string name="wc_dis">Verbindung trennen</string>
+    <string name="wc_pay_de">Zahlungsdetails</string>
+    <string name="wc_pay_me">Zahlungsinformationen</string>
+    <string name="wc_pay_address">Zahleradresse</string>
+    <string name="wc_fee">Miner-Gebühr</string>
+    <string name="wc_next">Weiter</string>
+    <string name="wc_con">WalletConnect verbindet sich mit Ihrer Wallet</string>
+    <string name="wc_coned">Verbindung mit der folgenden Wallet hergestellt</string>
+    <string name="home_receipt_address">Empfangsadresse</string>
+    <string name="home_transfer">Überweisen</string>
+    <string name="tip_fee_high">Die eingestellte Miner-Gebühr ist zu hoch. Bitte wählen Sie eine angemessene Gebühr</string>
+    <string name="tip_init_fee">Miner-Gebühr wird initialisiert...</string>
+    <string name="dapp_sign_re">DApp hat eine Signaturanfrage gestellt</string>
+    <string name="signme">Signaturinformationen</string>
+    <string name="i_wallet">Meine Wallet</string>
+    <string name="my_wallet_detail_password">Kontopasswort eingeben</string>
+    <string name="my_wallet_password_tips">Passwort eingeben</string>
+    <string name="pwd_fail_str">Falsches Passwort</string>
+    <string name="high_str">Am schnellsten</string>
+    <string name="standard_str">Standard</string>
+    <string name="low_str">Günstig</string>
+    <string name="custom_str">Benutzerdefiniert</string>
+    <string name="exp_str">Browser</string>
+    <string name="send_suc_str">Gesendet!</string>
+    <string name="basic_error_send">Senden fehlgeschlagen, bitte erneut versuchen</string>
+    <string name="chat_send_fail_title">Nachricht konnte nicht gesendet werden</string>
+    <string name="chat_send_fail_network">Kein Netzwerk verfügbar, bitte Verbindung prüfen</string>
+    <string name="chat_send_fail_timeout">Netzwerk-Zeitüberschreitung, Senden fehlgeschlagen</string>
+    <string name="chat_send_fail_connect">Keine Verbindung zum Server, bitte Netzwerk prüfen</string>
+    <string name="chat_send_fail_upload">Datei-Upload fehlgeschlagen, bitte Netzwerk prüfen</string>
+    <string name="chat_send_fail_server">Serverfehler: %1$s</string>
+    <string name="chat_send_fail_server_empty">Serverfehler, Senden fehlgeschlagen</string>
+    <string name="chat_send_fail_resend">Erneut senden</string>
+
+
+
+
+
+    <string name="tian_str">Vorschlag</string>
+    <string name="tp_str">Abstimmung</string>
+    <string name="tp_error">Die Aktivität ist zu beliebt. Bitte versuchen Sie es später erneut</string>
+    <string name="fee_setting">Miner-Gebühr-Einstellungen</string>
+    <string name="enter_str">Bitte eingeben</string>
+    <string name="switch_account_str">Konto wechseln</string>
+    <string name="chat_no_nickname">Bitte einen Spitznamen festlegen</string>
+    <string name="c_entrance">Schnellzugriff</string>
+    <string name="n_yopen">Noch nicht verfügbar</string>
+    <string name="save_suc">Erfolgreich gespeichert</string>
+    <string name="like_str">Favorit</string>
+    <string name="collect_suc_str">Zu Favoriten hinzugefügt!</string>
+    <string name="my_collect_str">Meine Favoriten</string>
+    <string name="ref_str">Aktualisieren</string>
+    <string name="copy_url_str">Link kopieren</string>
+    <string name="ex_open">Im Browser öffnen</string>
+    <string name="exit_str">Beenden</string>
+    <string name="copy_success">Erfolgreich kopiert</string>
+    <string name="dapp_approve">Vertrag autorisieren</string>
+    <string name="dapp_out">Absenderadresse</string>
+    <string name="dapp_nonono">Token-Autorisierung</string>
+    <string name="meta_approve">Token-Nutzung autorisieren</string>
+    <string name="select_network_fee">Netzwerkgebühr auswählen</string>
+    <string name="fee_fast">Schnell</string>
+    <string name="fee_recommended">Empfohlen</string>
+    <string name="fee_slow">Langsam</string>
+    <string name="fee_custom">Benutzerdefiniert</string>
+    <string name="fee_estimated_time">Voraussichtlich in %s</string>
+    <string name="estimated_fee">Geschätzte Gebühr</string>
+
+    <!--安全设置相关硬编码-->
+    <string name="chat_hint_input_wechat">WeChat-ID eingeben</string>
+    <string name="chat_hint_input_xiaohongshu">RED-ID eingeben</string>
+    <string name="chat_hint_input_douyin">TikTok-ID eingeben</string>
+
+    <!--群相关硬编码-->
+    <string name="chat_group_type_all">Alle</string>
+    <string name="chat_group_type_dept">Abteilung</string>
+    <string name="chat_group_qrcode_tips">Diese Gruppe gehört zur Team-%1$s-Gruppe. Nur interne Mitglieder der Organisation können beitreten. Wenn externe Personen der Gruppe beitreten möchten, müssen sie zuerst die Mitgliedschaft in der Organisation beantragen</string>
+
+    <!--转发相关-->
+    <string name="chat_forward_multiple_messages">[Einzeln weitergeleitet] insgesamt %1$d Nachrichten</string>
+    <string name="chat_forward_sent_count">An %1$d Chats weitergeleitet</string>
+
+    <!--私钥创建-->
+    <string name="chat_error_private_key_create">Erstellung des privaten Schlüssels fehlgeschlagen</string>
+
+    <!--编辑群头像-->
+    <string name="chat_error_crop_unknown">Zuschneiden fehlgeschlagen, unbekannter Fehler</string>
+
+    <!--Dapp相关-->
+    <string name="chat_dapp_error_password">Falsches Passwort</string>
+
+    <!--布局标签-->
+    <string name="chat_label_add_friend_msg">Freundschaftsanfrage-Nachricht</string>
+    <string name="chat_label_remark_other">Notiz des anderen</string>
+    <string name="chat_label_send">Senden</string>
+    <string name="chat_label_account_manage">Kontoverwaltung</string>
+    <string name="chat_label_audio_call">Sprachanruf</string>
+    <string name="chat_label_video_call">Videoanruf</string>
+    <string name="chat_label_create_wallet">Wallet erstellen</string>
+    <string name="chat_label_customer_service">Kundendienst</string>
+    <string name="chat_label_scan_add_cs">QR-Code scannen, um den Kundendienst als Freund hinzuzufügen</string>
+    <string name="chat_label_group_exit_tips">Gesamtgruppen/Abteilungsgruppen können nur durch Verlassen der Organisation/Abteilung verlassen werden. Beim Verlassen der Organisation/Abteilung werden Sie automatisch aus der entsprechenden Gruppe entfernt!</string>
+    <string name="chat_label_search">Suchen</string>
+    <string name="chat_label_search_history">Suchverlauf</string>
+    <string name="chat_label_phone">Telefonnummer</string>
+    <string name="chat_label_wechat">WeChat-ID</string>
+    <string name="chat_label_xiaohongshu">RED-ID</string>
+    <string name="chat_label_douyin">TikTok-ID</string>
+    <string name="chat_label_select_at">Personen zum Erwähnen auswählen</string>
+    <string name="chat_label_everyone">Alle</string>
+    <string name="chat_label_input_hint">Bitte eingeben</string>
+    <string name="chat_label_confirm">Bestätigen</string>
+    <string name="chat_label_forgot_password">Passwort vergessen</string>
+    <string name="chat_label_send_to">Senden an:</string>
+    <string name="chat_label_mnem_verify">Mnemonic-Verifizierung</string>
+    <string name="chat_label_phone_verify">Telefon-Verifizierung</string>
+    <string name="chat_label_email_verify">E-Mail-Verifizierung</string>
+    <string name="chat_label_group_owner">Gruppenbesitzer</string>
+    <string name="chat_label_member_info">Mitgliederinformationen</string>
+    <string name="chat_label_name">Name</string>
+    <string name="chat_label_team">Team</string>
+    <string name="chat_label_short_number">Durchwahl</string>
+    <string name="chat_label_email">E-Mail</string>
+    <string name="chat_label_dept">Abteilung</string>
+    <string name="chat_label_position">Position</string>
+    <string name="chat_label_personal_card">Persönliche Visitenkarte</string>
+    <string name="chat_label_red_packet_default">Viel Glück und Wohlstand</string>
+    <string name="chat_label_exclusive_received">Exklusiver roter Umschlag erhalten</string>
+    <string name="chat_label_tx_mismatch">Transaktionsinformationen stimmen nicht überein, tippen zum Anzeigen</string>
+    <string name="chat_label_my_qr">Mein QR-Code</string>
+    <string name="chat_label_scan_add_me">QR-Code scannen, um mich als Freund hinzuzufügen</string>
+    <string name="chat_label_scan_transfer_add">QR-Code scannen, um mir zu überweisen und mich hinzuzufügen</string>
+    <string name="chat_label_manage">Verwalten</string>
+    <string name="chat_label_org_structure">Organisationsstruktur</string>
+    <string name="chat_label_current_account">Aktuelles Konto</string>
+    <string name="chat_add_friend_default_msg">Hallo, ich bin %1$s und habe Sie als Freund hinzugefügt!</string>
+
+</resources>

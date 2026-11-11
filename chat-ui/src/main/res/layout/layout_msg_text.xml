@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/img_chat_send"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:lineSpacingExtra="2dp"
+        android:maxWidth="240dp"
+        android:minHeight="40dp"
+        android:paddingLeft="15dp"
+        android:paddingTop="9dp"
+        android:paddingRight="15dp"
+        android:paddingBottom="9dp"
+        android:textDirection="locale"
+        android:textSize="16sp"
+        tools:text="这里是文本消息，当对方没 有点击查看时，就一直显示 锁的图标，对方开始倒计时 发送就消失" />
+
+    <!-- 微信样式：译文块，显示在原文下方 -->
+    <LinearLayout
+        android:id="@+id/ll_translate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingBottom="9dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tv_translate_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/chat_popup_option_translate"
+            android:textColor="@color/color_8E92A3"
+            android:textSize="11sp" />
+
+        <TextView
+            android:id="@+id/tv_translation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_translate_block_receive"
+            android:lineSpacingExtra="2dp"
+            android:maxWidth="210dp"
+            android:padding="8dp"
+            android:textColor="@color/gray_33"
+            android:textDirection="locale"
+            android:textSize="16sp"
+            tools:text="This is the translated message content." />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_action"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingEnd="15dp"
+        android:paddingBottom="10dp"
+        android:text="@string/chat_fold"
+        android:textColor="@color/biz_color_accent"
+        android:visibility="gone" />
+</LinearLayout>

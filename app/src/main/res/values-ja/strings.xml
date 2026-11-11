@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TanXin</string>
+
+    <string name="app_tab_session">メッセージ</string>
+    <string name="app_tab_contact">連絡先</string>
+    <string name="app_tab_find">発見</string>
+    <string name="app_tab_shop">ショップ</string>
+    <string name="app_tab_wallet">資産</string>
+    <string name="app_tab_account">マイページ</string>
+
+    <string name="app_splash_tips">マルチセンター協働インスタントメッセージング\n分散型ストレージアプリ</string>
+    <string name="app_skip_bind_tips">ニーモニックフレーズをバックアップしていません。電話/メールと秘密チャットのパスワードを連携することで、公式サーバーに暗号化してアップロードし、ニーモニックフレーズの復元サービスを利用できます。アカウントの安全のため、必ずご自身でバックアップするか暗号化してアップロードしてください。【安全管理】からも操作できます。</string>
+    <string name="app_skip_bind_phone">電話を連携</string>
+    <string name="app_skip_bind_email">メールを連携</string>
+
+    <string name="app_ai_qa">AI質問</string>
+    <string name="app_ai_cs_entry">AIサポート</string>
+    <string name="app_close">閉じる</string>
+    <string name="app_back">戻る</string>
+    <string name="app_send">送信</string>
+    <string name="app_ai_qa_hint">質問を入力…</string>
+
+    <!--AI質問庫-->
+    <string name="app_ai_question1">ニーモニックフレーズをバックアップするには？</string>
+    <string name="app_ai_question2">友達に送金するには？</string>
+    <string name="app_ai_question3">秘密チャットと通常チャットの違いは？</string>
+    <string name="app_ai_question4">グループを作成するには？</string>
+    <string name="app_ai_question5">赤パケットはどの通貨に対応していますか？</string>
+    <string name="app_ai_question6">秘密チャットのパスワードを忘れたら？</string>
+
+    <!--友達インポート-->
+    <string name="app_import_friends_title">友達をインポート</string>
+    <string name="app_import_friends_content">元のアカウントの友達がこの端末にバックアップされています。新しいアカウントに友達をインポートしますか？</string>
+    <string name="app_message_empty">メッセージの内容は空にできません</string>
+    <string name="app_import_success">インポート成功</string>
+
+    <!--AIエラー-->
+    <string name="app_ai_unavailable">申し訳ありません、AIサービスは一時的に利用できません。後でもう一度お試しください。</string>
+    <string name="app_ai_system_prompt">あなたはChatProのスマートアシスタント「小C」です。チャット、ウォレット、赤パケットなどの機能について、簡潔で親しみやすい方法で回答してください。</string>
+    <string name="app_ai_network_error">申し訳ありません、ネットワーク接続に失敗しました。後でもう一度お試しください。</string>
+    <string name="app_ai_api_error">APIエラー: %1$s</string>
+
+    <!--レイアウトラベル-->
+    <string name="app_label_ask_me">質問できます：</string>
+    <string name="app_label_refresh_questions">別の質問 ⟳</string>
+    <string name="app_label_import_old_account">元のアカウントの友達がこの端末にバックアップされています。新しいアカウントにインポートしますか？</string>
+    <string name="app_label_send_add_msg">友達追加メッセージも同時に送信</string>
+
+</resources>

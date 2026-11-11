@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 红包详情页头部：浅红 → 品牌红渐变（底部色与 img_receive_info_top 波浪图顶部红色无缝衔接） -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <gradient
+        android:angle="270"
+        android:endColor="@color/biz_red_tips"
+        android:startColor="@color/redpacket_red_top"
+        android:type="linear" />
+</shape>

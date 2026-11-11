@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:color="@color/biz_color_accent" android:state_checked="true" />
+    <!-- 未选中文字改为纯黑，与未选中图标线条一致 -->
+    <item android:color="#000000" android:state_checked="false" />
+</selector>

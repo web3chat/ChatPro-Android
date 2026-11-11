@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 发红包页头部：浅红 → 深红渐变（顶部色与标题栏 / 状态栏一致，无缝衔接），底部圆角 -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <gradient
+        android:angle="270"
+        android:centerColor="#E2706A"
+        android:endColor="@color/redpacket_red_deep"
+        android:startColor="@color/redpacket_red_top"
+        android:type="linear" />
+    <corners
+        android:bottomLeftRadius="28dp"
+        android:bottomRightRadius="28dp" />
+</shape>

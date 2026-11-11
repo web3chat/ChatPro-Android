@@ -1,0 +1,19 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="52dp"
+    android:height="52dp"
+    android:viewportWidth="52"
+    android:viewportHeight="52">
+    <!-- 撤回图标 - 弯曲箭头 -->
+    <path
+        android:fillColor="#61C7FF"
+        android:fillType="evenOdd"
+        android:pathData="M26,6C14.954,6 6,14.954 6,26s8.954,20 20,20 20,-8.954 20,-20S37.046,6 26,6zM26,9c9.389,0 17,7.611 17,17s-7.611,17 -17,17 -17,-7.611 -17,-17S16.611,9 26,9z"
+        android:strokeWidth="1"
+        android:strokeColor="#00000000" />
+    <path
+        android:fillColor="#61C7FF"
+        android:fillType="evenOdd"
+        android:pathData="M18.5,23L18.5,16.134L24.366,22L21.683,22C23.566,27.03 28.434,27.03 30.317,22L27.634,22L33.5,16.134L33.5,23L31,23L31,29C31,32.594 28.078,35.5 24.5,35.5L27.5,35.5C23.922,35.5 21,32.594 21,29L21,23L18.5,23Z"
+        android:strokeWidth="1"
+        android:strokeColor="#00000000" />
+</vector>

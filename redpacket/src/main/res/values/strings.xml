@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="red_packet_remote_remark_tips">信息上链，可以在链上查询</string>
+    <string name="red_packet_total_amount_tips">普通红包为均分红包，若无法均分时，余数将随机分配</string>
+    <string name="red_packet_empty_record_tips">暂无红包记录</string>
+    <string name="red_packet_id_format">红包ID %1$s</string>
+    <string name="red_packet_withdraw_surplus">申请退回剩余红包</string>
+
+    <!--红包发送-->
+    <string name="red_packet_send_format">发了一个%1$s红包</string>
+    <string name="red_packet_chain_require_android7">链上红包需要 Android 7.0 及以上系统</string>
+    <string name="red_packet_error_unknown">未知错误</string>
+    <string name="red_packet_loading_query">查询中…</string>
+    <string name="red_packet_loading_receiving">红包领取中…</string>
+    <string name="red_packet_loading_chain_receiving">链上领取中…</string>
+    <string name="red_packet_loading_asset_transfer">资产转移中…</string>
+    <string name="red_packet_loading_on_chain">上链中…</string>
+    <string name="red_packet_send_target_empty">红包发送对象不能为空</string>
+    <string name="red_packet_send_private_only_single">私聊只能发单人红包</string>
+    <string name="red_packet_send_group_no_single">群聊不能发单人红包</string>
+    <string name="red_packet_single_amount">单个数额</string>
+    <string name="red_packet_total_amount">总数额</string>
+    <string name="red_packet_group_member_count">本群共%1$d人</string>
+    <string name="red_packet_send_fail">红包发送失败</string>
+    <string name="red_packet_loading_connect_wallet">正在连接链路与解锁钱包…</string>
+    <string name="red_packet_loading_verify_amount">正在校验红包金额与精度…</string>
+    <string name="red_packet_loading_check_approve">正在检查代币授权…</string>
+    <string name="red_packet_loading_approve_token">正在授权代币，等待链上确认…</string>
+    <string name="red_packet_loading_sign_send">正在签名并发送创建红包…</string>
+    <string name="red_packet_loading_wait_confirm">等待交易确认…</string>
+    <string name="red_packet_loading_send_msg">正在发送红包消息…</string>
+    <string name="red_packet_available_balance">可用 %1$s %2$s</string>
+    <string name="red_packet_count_exceed">红包个数不能超过%1$d个</string>
+    <string name="red_packet_amount_below_min">单份红包不能小于最小精度</string>
+    <string name="red_packet_default_remark">恭喜发财，大吉大利！</string>
+
+    <!--指定领取人（群红包白名单）-->
+    <string name="red_packet_receivers_label">指定领取人</string>
+    <string name="red_packet_receivers_all">所有人可领</string>
+    <string name="red_packet_receivers_count">已选 %1$d 人</string>
+    <string name="red_packet_receivers_title">选择领取人</string>
+    <string name="red_packet_receivers_search_hint">搜索昵称或地址</string>
+    <string name="red_packet_receivers_empty">没有找到成员</string>
+    <string name="red_packet_receivers_selected_tips">仅选中的成员可以领取该红包</string>
+    <string name="red_packet_receivers_missing_address">成员 %1$s 未同步钱包收款地址，无法指定领取</string>
+    <string name="red_packet_receivers_resolve_fail">获取领取人钱包地址失败，请重试</string>
+    <string name="red_packet_loading_receivers">正在获取领取人钱包地址…</string>
+
+    <!--红包领取状态-->
+    <string name="red_packet_status_received">红包已领取</string>
+    <string name="red_packet_status_expired">红包已过期</string>
+    <string name="red_packet_status_finished">红包已领完</string>
+    <string name="red_packet_status_refunded">红包已退回</string>
+    <string name="red_packet_status_unknown">未知的红包状态</string>
+    <string name="red_packet_query_fail">红包记录查询失败</string>
+    <string name="red_packet_receive_extract_fail">红包领取成功，未能提取到钱包：%1$s</string>
+    <string name="red_packet_chain_not_found">链上未找到该红包</string>
+    <string name="red_packet_invalid_id">无效的红包编号</string>
+    <string name="red_packet_chain_query_fail">链上查询失败</string>
+    <string name="red_packet_insufficient_refund">可退回余额不足</string>
+    <string name="red_packet_mnemonic_fail">助记词获取失败</string>
+    <string name="red_packet_contract_refund_fail">合约退回失败</string>
+    <string name="red_packet_not_exist">红包不存在</string>
+    <string name="red_packet_contract_receive_fail">合约领取失败</string>
+
+    <!--红包详情页-->
+    <string name="red_packet_asset_insufficient">红包资产不足</string>
+    <string name="red_packet_status_success">成功</string>
+    <string name="red_packet_status_failed_str">失败</string>
+    <string name="red_packet_browser_empty">区块链浏览器地址为空</string>
+    <string name="red_packet_browser_fail">区块链浏览器地址获取失败</string>
+    <string name="red_packet_browser_title">区块链浏览器</string>
+    <string name="red_packet_sender_format">%1$s的红包</string>
+    <string name="red_packet_receiver_label">领取人</string>
+    <string name="red_packet_receive_time_label">领取时间</string>
+    <string name="red_packet_receive_count">已领取%1$d/%2$d，剩%3$d个</string>
+    <string name="red_packet_single_total">一个红包共%1$s%2$s</string>
+    <string name="red_packet_wait_receive">等待对方领取</string>
+    <string name="red_packet_filter_all_year">全年</string>
+    <string name="red_packet_filter_all_coin">全部</string>
+
+    <!--布局标签-->
+    <string name="red_packet_digital_asset">数字资产</string>
+    <string name="red_packet_count_label">红包个数</string>
+    <string name="red_packet_count_unit">个</string>
+    <string name="red_packet_remote_note_label">上链备注</string>
+    <string name="red_packet_confirm_send">塞进红包</string>
+    <string name="red_packet_refund_tips">未领取的红包，24小时后可申请退回</string>
+    <string name="red_packet_saved_to_wallet">已存入钱包</string>
+    <string name="red_packet_all_label">全部</string>
+    <string name="red_packet_lucky_label">拼</string>
+    <string name="red_packet_time_filter">时间</string>
+    <string name="red_packet_coin_filter">币种</string>
+    <string name="red_packet_reset_btn">重置</string>
+    <string name="red_packet_confirm_btn">确定</string>
+
+</resources>

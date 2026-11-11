@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.fzm.shop">
+
+    <application>
+        <activity
+            android:name="com.lbt.shop.ui.ShopWebActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/BizTransparent"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="com.lbt.shop.ui.ShopTransferActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+    </application>
+</manifest>

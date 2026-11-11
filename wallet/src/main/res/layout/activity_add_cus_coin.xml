@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/biz_color_primary_dark"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <com.fzm.widget.CustomTitleBar
+        android:id="@+id/ctb_title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:left_icon="@drawable/biz_ic_back_dark"
+        app:title_text="@string/wallet_custom_token" />
+
+    <!-- 网络选择卡片 -->
+    <com.fzm.widget.ShadowLayout
+        android:id="@+id/ll_sel_chain"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="12dp"
+        android:background="@color/biz_color_primary"
+        android:clickable="true"
+        android:focusable="true"
+        app:sl_radius="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:paddingStart="16dp"
+            android:paddingEnd="10dp">
+
+            <TextView
+                android:id="@+id/tv_chain"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="start|center_vertical"
+                android:text="@string/wallet_select_chain"
+                android:textColor="@color/biz_text_grey_light"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="8dp"
+                android:src="@drawable/ic_chain_arrow_down" />
+        </LinearLayout>
+    </com.fzm.widget.ShadowLayout>
+
+    <!-- 自动读取提示 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="3dp"
+            android:layout_height="14dp"
+            android:background="@drawable/bg_dot_chain_accent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:includeFontPadding="false"
+            android:text="@string/wallet_add_cus_tip"
+            android:textColor="@color/biz_text_grey_light"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <!-- 表单卡片 -->
+    <com.fzm.widget.ShadowLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/biz_color_primary"
+        app:sl_radius="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="16dp"
+            android:paddingTop="14dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="14dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/wallet_contract_address"
+                android:textColor="@color/biz_text_grey_light"
+                android:textSize="13sp" />
+
+            <EditText
+                android:id="@+id/et_contract_address"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:hint="@string/wallet_hint_input_contract_address"
+                android:inputType="textNoSuggestions"
+                android:maxLines="1"
+                android:textColor="@color/biz_text_grey_dark"
+                android:textColorHint="#FFB4BCC6"
+                android:textSize="16sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/biz_color_divider" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:text="Symbol"
+                android:textColor="@color/biz_text_grey_light"
+                android:textSize="13sp" />
+
+            <EditText
+                android:id="@+id/et_symbol"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:hint="@string/wallet_cus_symbol_hint"
+                android:inputType="textCapCharacters|textNoSuggestions"
+                android:maxLines="1"
+                android:textColor="@color/biz_text_grey_dark"
+                android:textColorHint="#FFB4BCC6"
+                android:textSize="16sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/biz_color_divider" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:text="Decimal"
+                android:textColor="@color/biz_text_grey_light"
+                android:textSize="13sp" />
+
+            <EditText
+                android:id="@+id/et_decimal"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:hint="@string/wallet_cus_decimal_hint"
+                android:inputType="number"
+                android:maxLength="10"
+                android:maxLines="1"
+                android:textColor="@color/biz_text_grey_dark"
+                android:textColorHint="#FFB4BCC6"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </com.fzm.widget.ShadowLayout>
+
+    <!-- 安全提示 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="12dp"
+        android:gravity="center"
+        android:lineSpacingExtra="2dp"
+        android:text="@string/wallet_cus_contract_warn"
+        android:textColor="@color/biz_text_grey_light"
+        android:textSize="11sp" />
+
+    <Button
+        android:id="@+id/btn_ok_add"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/bg_btn_accent_round"
+        android:stateListAnimator="@null"
+        android:text="@string/wallet_confirm_btn"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+</LinearLayout>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 头像圆角底（配合 clipToOutline 裁剪头像；无图时作浅灰占位） -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#F2F4F7" />
+    <corners android:radius="16dp" />
+</shape>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_root"
+    android:fitsSystemWindows="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.fzm.widget.CustomTitleBar
+            android:id="@+id/ctb_title"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:left_icon="@drawable/biz_ic_back_black"
+            app:title_text_color="#333649"
+            app:title_text_size="18sp" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:overScrollMode="always"
+            android:scrollbars="none">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                tools:context="com.fzm.wallet.ui.activity.CreateWalletActivity">
+
+                <TextView
+                    android:id="@+id/tv_large_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="50dp"
+                    android:text="@string/chat_label_create_wallet"
+                    android:textColor="@color/color_333649"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/et_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="50dp"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:hint="请设置密聊密码"
+                    android:inputType="textPassword"
+                    android:maxLength="16"
+                    android:text=""
+                    android:textColor="@color/color_333649"
+                    android:textColorHint="@color/color_D9DCE9"
+                    android:textCursorDrawable="@drawable/edit_text_cursor"
+                    android:textSize="18sp" />
+
+                <include
+                    android:id="@+id/line_password"
+                    layout="@layout/layout_line" />
+
+
+                <EditText
+                    android:id="@+id/et_password_again"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:hint="请再次设置密聊密码"
+                    android:inputType="textPassword"
+                    android:maxLength="16"
+                    android:text=""
+                    android:textColor="@color/color_333649"
+                    android:textColorHint="@color/color_D9DCE9"
+                    android:textCursorDrawable="@drawable/edit_text_cursor"
+                    android:textSize="18sp" />
+
+                <include
+                    android:id="@+id/line_password_again"
+                    layout="@layout/layout_line" />
+
+
+            </LinearLayout>
+        </ScrollView>
+
+        <Button
+            android:id="@+id/btn_ok"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="30dp"
+            android:gravity="center"
+            android:text="@string/biz_confirm"
+            android:textColor="@android:color/white"
+            android:textSize="17sp"
+            app:bl_corners_radius="5dp"
+            app:bl_enabled_solid_color="@color/biz_color_accent"
+            app:bl_unEnabled_solid_color="#5D6377"
+            tools:ignore="MissingPrefix" />
+    </LinearLayout>
+</RelativeLayout>

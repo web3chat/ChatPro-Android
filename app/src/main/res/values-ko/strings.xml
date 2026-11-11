@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TanXin</string>
+
+    <string name="app_tab_session">메시지</string>
+    <string name="app_tab_contact">연락처</string>
+    <string name="app_tab_find">발견</string>
+    <string name="app_tab_shop">쇼핑몰</string>
+    <string name="app_tab_wallet">자산</string>
+    <string name="app_tab_account">마이페이지</string>
+
+    <string name="app_splash_tips">멀티센터 협업 인스턴트 메시징\n분산 스토리지 앱</string>
+    <string name="app_skip_bind_tips">니모닉 문구를 백업하지 않았습니다. 휴대폰/이메일과 비밀 채팅 비밀번호를 연동하여 공식 서버에 암호화 업로드하면 니모닉 문구 복구 서비스를 이용할 수 있습니다. 계정 보안을 위해 반드시 직접 백업하거나 암호화 업로드하세요. [보안 관리]에서도 작업할 수 있습니다.</string>
+    <string name="app_skip_bind_phone">휴대폰 연동</string>
+    <string name="app_skip_bind_email">이메일 연동</string>
+
+    <string name="app_ai_qa">AI 질문</string>
+    <string name="app_ai_cs_entry">AI 상담</string>
+    <string name="app_close">닫기</string>
+    <string name="app_back">뒤로</string>
+    <string name="app_send">보내기</string>
+    <string name="app_ai_qa_hint">질문을 입력하세요…</string>
+
+    <!--AI 질문 목록-->
+    <string name="app_ai_question1">니모닉 문구를 백업하는 방법은?</string>
+    <string name="app_ai_question2">친구에게 송금하는 방법은?</string>
+    <string name="app_ai_question3">비밀 채팅과 일반 채팅의 차이점은?</string>
+    <string name="app_ai_question4">그룹을 만드는 방법은?</string>
+    <string name="app_ai_question5">빨간 봉투는 어떤 코인을 지원하나요?</string>
+    <string name="app_ai_question6">비밀 채팅 비밀번호를 잊어버리면?</string>
+
+    <!--친구 가져오기-->
+    <string name="app_import_friends_title">친구 가져오기</string>
+    <string name="app_import_friends_content">원래 계정의 친구가 이 기기에 백업되어 있습니다. 새 계정으로 친구를 가져올까요?</string>
+    <string name="app_message_empty">메시지 내용은 비어 있을 수 없습니다</string>
+    <string name="app_import_success">가져오기 성공</string>
+
+    <!--AI 오류-->
+    <string name="app_ai_unavailable">죄송합니다. AI 서비스를 일시적으로 사용할 수 없습니다. 나중에 다시 시도해 주세요.</string>
+    <string name="app_ai_system_prompt">당신은 ChatPro의 스마트 어시스턴트 "小C"입니다. 채팅, 지갑, 빨간 봉투 등 기능에 대해 간결하고 친근한 방식으로 답변해 주세요.</string>
+    <string name="app_ai_network_error">죄송합니다. 네트워크 연결에 실패했습니다. 나중에 다시 시도해 주세요.</string>
+    <string name="app_ai_api_error">API 오류: %1$s</string>
+
+    <!--레이아웃 라벨-->
+    <string name="app_label_ask_me">저에게 물어볼 수 있습니다:</string>
+    <string name="app_label_refresh_questions">다른 질문 보기 ⟳</string>
+    <string name="app_label_import_old_account">원래 계정의 친구가 이 기기에 백업되어 있습니다. 새 계정으로 가져올까요?</string>
+    <string name="app_label_send_add_msg">친구 추가 메시지도 함께 보내기</string>
+
+</resources>

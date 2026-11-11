@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TanXin</string>
+
+    <string name="app_tab_session">Messages</string>
+    <string name="app_tab_contact">Contacts</string>
+    <string name="app_tab_find">Découvrir</string>
+    <string name="app_tab_shop">Boutique</string>
+    <string name="app_tab_wallet">Actifs</string>
+    <string name="app_tab_account">Mon</string>
+
+    <string name="app_splash_tips">IM collaboratif multi-centres\nApplication de stockage distribué</string>
+    <string name="app_skip_bind_tips">Vous n\'avez pas sauvegardé votre phrase mnémonique. Vous pouvez la chiffrer et la téléverser sur le serveur officiel en liant téléphone/e-mail et mot de passe de chat secret pour bénéficier du service de récupération. Pour la sécurité de votre compte, veuillez sauvegarder ou téléverser votre phrase mnémonique vous-même, ou via [Gestion de la sécurité].</string>
+    <string name="app_skip_bind_phone">Lier le téléphone</string>
+    <string name="app_skip_bind_email">Lier l\'e-mail</string>
+
+    <string name="app_ai_qa">Questions IA</string>
+    <string name="app_ai_cs_entry">Assistance IA</string>
+    <string name="app_close">Fermer</string>
+    <string name="app_back">Retour</string>
+    <string name="app_send">Envoyer</string>
+    <string name="app_ai_qa_hint">Saisissez votre question…</string>
+
+    <!--Bibliothèque de questions IA-->
+    <string name="app_ai_question1">Comment sauvegarder la phrase mnémonique ?</string>
+    <string name="app_ai_question2">Comment transférer à un ami ?</string>
+    <string name="app_ai_question3">Quelle est la différence entre le chat secret et le chat normal ?</string>
+    <string name="app_ai_question4">Comment créer un groupe ?</string>
+    <string name="app_ai_question5">Quelles pièces l\'enveloppe rouge prend-elle en charge ?</string>
+    <string name="app_ai_question6">Mot de passe de chat secret oublié ?</string>
+
+    <!--Importation d\'amis-->
+    <string name="app_import_friends_title">Importer des amis</string>
+    <string name="app_import_friends_content">Des amis sauvegardés du compte d\'origine ont été détectés sur cet appareil. Importer les amis dans le nouveau compte ?</string>
+    <string name="app_message_empty">Le contenu du message ne peut pas être vide</string>
+    <string name="app_import_success">Importation réussie</string>
+
+    <!--Erreurs IA-->
+    <string name="app_ai_unavailable">Désolé, le service IA est temporairement indisponible. Veuillez réessayer plus tard.</string>
+    <string name="app_ai_system_prompt">Vous êtes l\'assistant intelligent "XiaoC" de ChatPro. Répondez aux questions des utilisateurs sur le chat, le portefeuille, l\'enveloppe rouge et d\'autres fonctions de manière concise et conviviale.</string>
+    <string name="app_ai_network_error">Désolé, la connexion réseau a échoué. Veuillez réessayer plus tard.</string>
+    <string name="app_ai_api_error">Erreur API : %1$s</string>
+
+    <!--Étiquettes de mise en page-->
+    <string name="app_label_ask_me">Vous pouvez me demander :</string>
+    <string name="app_label_refresh_questions">Autres questions ⟳</string>
+    <string name="app_label_import_old_account">Des amis sauvegardés du compte d\'origine ont été détectés sur cet appareil. Importer dans le nouveau compte ?</string>
+    <string name="app_label_send_add_msg">Envoyer aussi le message d\'ajout d\'ami</string>
+
+</resources>

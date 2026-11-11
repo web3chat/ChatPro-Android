@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 启动页背景：品牌主蓝，铺满全屏 -->
+    <item android:drawable="@color/biz_color_accent" />
+
+    <!-- 中央"谈信"白色大字 -->
+    <item
+        android:width="300dp"
+        android:height="90dp"
+        android:gravity="center">
+        <bitmap
+            android:src="@drawable/ic_splash_title"
+            android:gravity="fill" />
+    </item>
+
+    <!-- 底部 slogan（白色，随 windowBackground 立即显示） -->
+    <item
+        android:width="280dp"
+        android:height="58dp"
+        android:bottom="60dp"
+        android:gravity="bottom|center_horizontal">
+        <bitmap
+            android:src="@drawable/ic_splash_slogan"
+            android:gravity="fill" />
+    </item>
+</layer-list>

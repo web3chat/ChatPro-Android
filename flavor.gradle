@@ -1,0 +1,68 @@
+def keystore = file("../sign/chat-pro.jks")
+def signProperties = file("../sign/sign.properties")
+
+android {
+    signingConfigs {
+
+        debug {
+            if (keystore.exists() && signProperties.exists()) {
+                Properties props = new Properties()
+                props.load(new FileInputStream(signProperties))
+                keyAlias props['KEY_ALIAS']
+                keyPassword props['KEY_PASSWORD']
+                storeFile keystore
+                storePassword props['STORE_PASSWORD']
+            }
+
+        }
+
+        release {
+            if (keystore.exists() && signProperties.exists()) {
+                Properties props = new Properties()
+                props.load(new FileInputStream(signProperties))
+                keyAlias props['KEY_ALIAS']
+                keyPassword props['KEY_PASSWORD']
+                storeFile keystore
+                storePassword props['STORE_PASSWORD']
+            }
+
+        }
+
+    }
+
+    buildTypes {
+        debug {
+            versionNameSuffix "-debug"
+            //禁用PNG压缩
+            crunchPngs false
+        }
+        release {
+            signingConfig signingConfigs.release
+            zipAlignEnabled true
+            //启用代码压缩，混淆，优化
+            /*if (isIndependent()) {
+                //启用资源压缩
+                shrinkResources true
+            }*/
+            minifyEnabled false
+            //ProGuard规则文件
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            consumerProguardFiles 'consumer-rules.pro'
+        }
+    }
+
+//    lintOptions {
+//        abortOnError false
+//    }
+}
+
+def isIndependent() {
+    //是app module
+    if (this.name == "app") {
+        println("application module , this.name = ${this.name}")
+        return true
+    } else {
+        println("library module , this.name = ${this.name}")
+        return false
+    }
+}

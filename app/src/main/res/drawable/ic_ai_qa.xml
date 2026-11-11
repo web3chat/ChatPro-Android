@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Q版 AI 机器人：主蓝圆底 + 白色圆润机器人（眼睛与嘴巴用主蓝色呈现镂空感） -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="28dp"
+    android:height="28dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- 左天线球 -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M8.3,4.5m-1.6,0a1.6,1.6 0,1 1,3.2 0a1.6,1.6 0,1 1,-3.2 0" />
+    <!-- 右天线球 -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M15.7,4.5m-1.6,0a1.6,1.6 0,1 1,3.2 0a1.6,1.6 0,1 1,-3.2 0" />
+    <!-- 圆润大脸 -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M5,9.8a3.5,3.5 0,0 1,3.5 -3.6h7a3.5,3.5 0,0 1,3.5 3.6v4.4a3.5,3.5 0,0 1,-3.5 3.6h-7a3.5,3.5 0,0 1,-3.5 -3.6z" />
+    <!-- 左眼 -->
+    <path
+        android:fillColor="@color/biz_color_accent"
+        android:pathData="M9,12.6m-1.5,0a1.5,1.5 0,1 1,3 0a1.5,1.5 0,1 1,-3 0" />
+    <!-- 右眼 -->
+    <path
+        android:fillColor="@color/biz_color_accent"
+        android:pathData="M15,12.6m-1.5,0a1.5,1.5 0,1 1,3 0a1.5,1.5 0,1 1,-3 0" />
+    <!-- 左眼高光 -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M8.55,12.1m-0.55,0a0.55,0.55 0,1 1,1.1 0a0.55,0.55 0,1 1,-1.1 0" />
+    <!-- 右眼高光 -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M14.55,12.1m-0.55,0a0.55,0.55 0,1 1,1.1 0a0.55,0.55 0,1 1,-1.1 0" />
+    <!-- 微笑嘴 -->
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M9.7,16.1Q12,18.3 14.3,16.1"
+        android:strokeColor="@color/biz_color_accent"
+        android:strokeWidth="1.3"
+        android:strokeLineCap="round" />
+</vector>
+

@@ -1,0 +1,979 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--신규 기능 문구（values/strings.xml 정렬）-->
+    <string name="chat_chain_sync_fail">계정 주소 동기화에 실패했습니다. 나중에 다시 시도해 주세요</string>
+    <string name="chat_account_menu_chain_sync">계정 주소</string>
+    <string name="chat_chain_sync_success">계정 주소가 동기화되었습니다</string>
+    <string name="chat_chain_sync_pending">탭하여 계정 주소 동기화</string>
+    <string name="chat_chain_sync_failed">동기화 실패, 탭하여 다시 시도</string>
+    <string name="chat_find_recent">최근 방문</string>
+    <string name="chat_find_empty_title">방문 기록이 없습니다</string>
+    <string name="chat_find_empty_sub">URL을 입력하거나 QR 코드를 스캔하여 탐색을 시작하세요</string>
+    <string name="chat_tips_input_burn_mode">열람 후 소멸이 켜졌습니다. 메시지는 열람 후 소멸됩니다</string>
+    <string name="chat_tips_burn_type_denied">열람 후 소멸 모드에서는 이 작업을 할 수 없습니다</string>
+    <string name="chat_title_burn_detail">열람 후 소멸</string>
+    <string name="chat_burn_placeholder_tips">탭하여 열람 후 소멸 메시지 보기</string>
+    <string name="chat_burn_detail_tips">닫으면 자동으로 소멸됩니다</string>
+    <string name="chat_burn_play">음성 재생</string>
+    <string name="chat_burn_open">파일 열기</string>
+    <string name="chat_burn_audio">음성 메시지</string>
+    <string name="qr_login_title">QR 코드 로그인</string>
+    <string name="qr_login_icon">💻</string>
+    <string name="qr_login_device_desc">웹 버전에서 계정 로그인을 요청합니다</string>
+    <string name="qr_login_session_hint">QR 코드는 5분간 유효합니다. 빠르게 확인해 주세요</string>
+    <string name="qr_login_confirm">로그인 확인</string>
+    <string name="qr_login_cancel">취소</string>
+    <string name="qr_login_wrong_password">비밀번호 오류</string>
+    <string name="qr_login_invalid_qr">유효하지 않은 로그인 QR 코드</string>
+    <string name="qr_login_private_key_failed">개인 키를 가져오지 못했습니다</string>
+    <string name="qr_login_encrypt_failed">암호화에 실패했습니다. 다시 시도해 주세요</string>
+    <string name="qr_login_confirm_success">확인되었습니다. 컴퓨터에서 계속해 주세요</string>
+    <string name="qr_login_risk_title">위험 경고</string>
+    <string name="qr_login_risk_warning">계정에 자산이 감지되었습니다. 기기 환경이 안전한지 확인한 후 로그인하세요.</string>
+    <string name="qr_login_risk_continue">계속</string>
+    <string name="chat_label_current">현재</string>
+    <string name="chat_title_square">광장</string>
+    <string name="square_filter_all">전체</string>
+    <string name="square_filter_person">개인</string>
+    <string name="square_filter_official">공식</string>
+    <string name="square_action_publish">게시</string>
+    <string name="square_action_delete">삭제</string>
+    <string name="square_action_edit">편집</string>
+    <string name="square_action_share">공유</string>
+    <string name="square_share_chooser">공유 대상</string>
+    <string name="square_share_card_slogan">종단간 암호화 · 안전하고 개인적</string>
+    <string name="square_share_card_footer">%1$s 에서</string>
+    <string name="square_share_card_qr_tip">%1$s 다운로드</string>
+    <string name="square_action_send">전송</string>
+    <string name="square_sending">전송 중…</string>
+    <string name="square_action_success">성공했습니다</string>
+    <string name="square_publish_title">새 게시물</string>
+    <string name="square_publish_hint">지금 무슨 생각을…</string>
+    <string name="square_md_bold">굵게</string>
+    <string name="square_md_italic">기울임</string>
+    <string name="square_md_strike">취소선</string>
+    <string name="square_md_heading">제목</string>
+    <string name="square_md_bullet_list">글머리 기호</string>
+    <string name="square_md_number_list">번호 목록</string>
+    <string name="square_md_quote">인용</string>
+    <string name="square_md_code">코드</string>
+    <string name="square_md_link">링크</string>
+    <string name="square_md_divider">구분선</string>
+    <string name="square_md_preview">미리보기</string>
+    <string name="square_md_edit">편집</string>
+    <string name="square_md_preview_empty">미리 볼 내용 없음</string>
+    <string name="square_detail_title">게시물 상세</string>
+    <string name="square_edit_expired">편집 가능 시간이 지났습니다</string>
+    <string name="square_edit_success">수정되었습니다</string>
+    <string name="square_edit_title">게시물 편집</string>
+    <string name="square_comments_title">댓글</string>
+    <string name="square_comments_count">댓글 (%1$d)</string>
+    <string name="square_reply_label">답글</string>
+    <string name="square_reply_to">@%1$s에게 답글</string>
+    <string name="square_reply_cancel">취소</string>
+    <string name="square_reply_more">답글 %1$d개 더 보기</string>
+    <string name="square_reply_success">답글을 보냈습니다</string>
+    <string name="square_comment_deleted">원본 댓글이 삭제되었습니다</string>
+    <string name="square_tips_reply_invalid">이 댓글에는 답글을 남길 수 없습니다</string>
+    <string name="square_inbox_title">댓글</string>
+    <string name="square_inbox_empty">아직 댓글이나 답글이 없습니다</string>
+    <string name="square_inbox_all_read">모두 읽음으로 표시</string>
+    <string name="square_inbox_floor">님이 회원님의 게시물에 댓글을 남겼습니다</string>
+    <string name="square_inbox_reply">님이 회원님에게 답글을 남겼습니다</string>
+    <string name="square_inbox_unavailable">이 댓글은 더 이상 볼 수 없습니다</string>
+    <string name="square_inbox_no_unread">읽지 않은 메시지가 없습니다</string>
+    <string name="square_comment_hint">댓글을 입력하세요…</string>
+    <string name="square_no_comment">아직 댓글이 없습니다</string>
+    <string name="square_comments_closed">댓글이 닫혔습니다</string>
+    <string name="square_allow_comment">댓글 허용</string>
+    <string name="square_cannot_post">현재 게시할 수 없습니다</string>
+    <string name="square_closed">광장이 닫혔습니다</string>
+    <string name="square_official_tag">공식</string>
+    <string name="square_status_auditing">검토 중</string>
+    <string name="square_status_rejected">반려됨</string>
+    <string name="square_tag_activity">이벤트</string>
+    <string name="square_tag_announcement">공지</string>
+    <string name="square_tag_message">메시지</string>
+    <string name="square_image_index">%1$d / %2$d</string>
+    <string name="square_time_just_now">방금</string>
+    <string name="square_time_minutes">%1$d분 전</string>
+    <string name="square_time_hours">%1$d시간 전</string>
+    <string name="square_time_yesterday">어제</string>
+    <string name="square_empty">아직 내용이 없습니다. 첫 게시물을 올려보세요</string>
+    <string name="square_tips_pending">제출되었습니다. 승인되면 광장에 표시됩니다</string>
+    <string name="square_tips_rejected">규정에 맞지 않아 게시할 수 없습니다</string>
+    <string name="square_tips_rate_limited">작업이 너무 많습니다. 잠시 후 다시 시도해 주세요</string>
+    <string name="square_tips_sign_invalid">서명이 유효하지 않거나 만료되었습니다. 다시 로그인해 주세요</string>
+    <string name="square_tips_param_error">잘못된 매개변수입니다</string>
+    <string name="square_tips_no_permission">권한이 없습니다</string>
+    <string name="square_tips_not_found">콘텐츠가 없거나 삭제되었습니다</string>
+    <string name="square_tips_banned">공식 계정이 정지되었습니다. 운영팀에 문의해 주세요</string>
+    <string name="square_tips_comment_closed">댓글이 닫혔습니다</string>
+    <string name="square_tips_apply_pending">대기 중인 신청이 있습니다. 내 공식 계정을 확인해 주세요</string>
+    <string name="square_tips_network">네트워크 오류입니다. 연결을 확인해 주세요</string>
+    <string name="square_tips_failed">작업에 실패했습니다. 나중에 다시 시도해 주세요</string>
+    <string name="square_tips_comment_pending">댓글이 제출되었습니다. 승인 후 표시됩니다</string>
+    <string name="square_publish_success">게시되었습니다</string>
+    <string name="square_comment_success">댓글을 남겼습니다</string>
+    <string name="square_delete_confirm">이 게시물을 삭제할까요?</string>
+    <string name="square_delete_comment_confirm">이 댓글을 삭제할까요?</string>
+    <string name="square_delete_success">삭제되었습니다</string>
+    <string name="square_upload_failed">이미지 업로드에 실패했습니다. 다시 시도해 주세요</string>
+    <string name="square_content_empty">내용을 입력해 주세요</string>
+    <string name="square_max_images">이미지는 최대 9장</string>
+    <string name="square_my_official">내 공식 계정</string>
+    <string name="square_my_profile">내 정보</string>
+    <string name="square_user_posts">게시물</string>
+    <string name="square_user_empty">아직 게시물이 없습니다</string>
+    <string name="square_official_apply">공식 계정 신청</string>
+    <string name="square_official_state_none">미신청</string>
+    <string name="square_official_state_pending">검토 중</string>
+    <string name="square_official_state_approved">인증됨</string>
+    <string name="square_official_state_rejected">반려됨</string>
+    <string name="square_official_state_banned">정지됨</string>
+    <string name="square_official_tip_none">승인되면 이 주소의 게시물이 공식 계정 게시물로 표시됩니다(이름 표시, 댓글 끄기 가능).</string>
+    <string name="square_official_tip_pending">신청을 검토 중입니다. 잠시만 기다려 주세요.</string>
+    <string name="square_official_tip_approved">인증된 공식 계정: %1$s. 게시물에 이 이름이 표시됩니다.</string>
+    <string name="square_official_tip_rejected">신청이 반려되었습니다. 수정 후 다시 제출할 수 있습니다.</string>
+    <string name="square_official_tip_reason">(사유: %1$s)</string>
+    <string name="square_official_tip_banned">정지된 공식 계정입니다. 게시, 댓글, 좋아요를 할 수 없습니다. 운영팀에 문의해 주세요.</string>
+    <string name="square_official_avatar_hint">탭하여 프로필 사진 설정(선택)</string>
+    <string name="square_official_avatar_change">탭하여 프로필 사진 변경</string>
+    <string name="square_official_avatar_clear">프로필 사진 삭제</string>
+    <string name="square_official_save">저장</string>
+    <string name="square_official_updated">프로필이 업데이트되었습니다</string>
+    <string name="square_pinned">고정</string>
+    <string name="square_platform_official_tag">운영</string>
+    <string name="square_official_avatar_set">프로필 사진이 업로드되었습니다. 탭하여 변경</string>
+    <string name="square_official_name_hint">공식 계정 이름(필수, 32자 이내)</string>
+    <string name="square_official_reapply">재신청</string>
+    <string name="square_official_intro_hint">소개(선택, 200자 이내)</string>
+    <string name="square_official_name_empty">공식 계정 이름을 입력해 주세요</string>
+    <string name="square_official_submit">신청 제출</string>
+    <string name="square_official_applied">신청이 제출되었습니다. 검토를 기다려 주세요</string>
+    <string name="square_feed_latest">최신</string>
+    <string name="square_feed_hot">인기</string>
+    <string name="square_feed_following">팔로잉</string>
+    <string name="square_follow">팔로우</string>
+    <string name="square_followed">팔로잉</string>
+    <string name="square_follow_success">팔로우했습니다</string>
+    <string name="square_unfollow_success">팔로우를 취소했습니다</string>
+    <string name="square_follow_tips_self">자신을 팔로우할 수 없습니다</string>
+    <string name="square_my_follows">내 팔로잉</string>
+    <string name="square_my_followers">내 팔로워</string>
+    <string name="square_user_follow_count">팔로잉 %1$d</string>
+    <string name="square_user_follower_count">팔로워 %1$d</string>
+    <string name="square_user_followers_title">팔로워</string>
+    <string name="square_follow_empty">아직 팔로우한 사용자가 없습니다</string>
+    <string name="square_followers_empty">아직 팔로워가 없습니다</string>
+    <string name="square_gold_empty">골드 공식 계정이 없습니다</string>
+    <string name="square_gold_stat">팔로워 %1$d · 게시물 %2$d</string>
+    <string name="square_gold_title">골드 공식 계정</string>
+    <string name="square_my_posts_title">내 게시물</string>
+    <string name="square_my_posts_traffic">내 게시물 조회수</string>
+    <string name="square_traffic_posts">게시물</string>
+    <string name="square_traffic_views">조회</string>
+    <string name="square_traffic_likes">좋아요</string>
+    <string name="square_traffic_comments">댓글</string>
+    <string name="square_report">신고</string>
+    <string name="square_report_content">신고 대상 콘텐츠</string>
+    <string name="square_report_detail_counter">%1$d/%2$d</string>
+    <string name="square_report_detail_hint">신고 사유 입력 (선택)</string>
+    <string name="square_report_detail_tip">선택 사항, 최대 500자</string>
+    <string name="square_report_title">신고 사유</string>
+    <string name="square_report_type">신고 유형</string>
+    <string name="square_report_type_required">신고 유형을 선택해 주세요</string>
+    <string name="square_report_reason_spam">스팸</string>
+    <string name="square_report_reason_porn">음란물</string>
+    <string name="square_report_reason_scam">사기</string>
+    <string name="square_report_reason_abuse">욕설</string>
+    <string name="square_report_reason_other">기타</string>
+    <string name="square_report_success">신고가 접수되었습니다. 감사합니다</string>
+    <string name="square_report_reported">이미 신고됨</string>
+    <string name="square_report_select">선택해 주세요</string>
+    <string name="square_report_submit">신고 제출</string>
+    <string name="square_report_submitting">제출 중…</string>
+
+    <!--登录相关-->
+    <string name="chat_login_choose_server">서버 선택</string>
+    <string name="chat_login_chat_server_tips">1.신규 사용자는 친구 채팅 메시지를 받을 기본 서버를 선택하거나 추가해야 합니다.\n2.이미 가입한 계정의 경우 기존 기본 서버를 계속 사용합니다.</string>
+    <string name="chat_login_contract_server_tips">1.계정 정보를 업로드하고 가져올 기본 블록체인 노드를 선택하거나 추가해야 합니다.\n2.[내 정보]-[서버] 페이지에서 전환할 수 있습니다.</string>
+    <string name="chat_login_edit_chat_server">채팅 서버 편집</string>
+    <string name="chat_login_add_chat_server">채팅 서버 추가</string>
+    <string name="chat_login_edit_contract_server">블록체인 노드 편집</string>
+    <string name="chat_login_add_contract_server">블록체인 노드 추가</string>
+    <string name="chat_tips_edit_server_name">서버 이름</string>
+    <string name="chat_hint_edit_server_name">서버 이름을 입력하세요</string>
+    <string name="chat_tips_edit_server_address">서버 주소</string>
+    <string name="chat_hint_edit_server_address">서버 주소를 입력하세요</string>
+    <string name="chat_tip_add_server_success">서버 추가 성공</string>
+    <string name="chat_tip_edit_server_success">서버 수정 성공</string>
+    <string name="chat_tip_del_server_success">서버 삭제 성공</string>
+    <string name="chat_tip_confirm_to_del_server">이 서버를 삭제하시겠습니까?</string>
+    <string name="chat_click_again_to_exit">한 번 더 누르면 앱이 종료됩니다</string>
+
+    <string name="chat_login_type_words">니모닉 계정</string>
+    <string name="chat_login_create_account">계정 생성</string>
+    <string name="chat_login_import_account">계정 가져오기</string>
+    <string name="chat_login_type_account">휴대폰/이메일</string>
+    <string name="chat_login_find_mnem_words">니모닉 일부 복구로 로그인</string>
+
+    <string name="chat_login_tips_agree_protocol">먼저 약관에 동의해 주세요</string>
+    <string name="chat_login_tips_choose_server">먼저 서버를 선택해 주세요</string>
+    <string name="chat_login_tips_agreement">TanXin 이용약관을 읽고 동의했습니다</string>
+
+    <string name="chat_login_tips_choose_chat_server">채팅 메시지를 받을 서버 선택</string>
+    <string name="chat_login_tips_choose_contract_server">계정 정보를 업로드할 블록체인 노드 선택</string>
+    <string name="chat_title_chat_server">서버 주소</string>
+    <string name="chat_title_contract_server">블록체인 노드</string>
+
+    <string name="chat_title_official_server">공식 주소</string>
+    <string name="chat_title_custom_server">사용자 지정 주소</string>
+    <string name="chat_title_chat_server_group">채팅 서비스</string>
+    <string name="chat_login_edit_chat_server_group">서버 그룹 편집</string>
+    <string name="chat_login_add_chat_server_group">서버 그룹 추가</string>
+    <string name="chat_tip_add_server_group_success">서버 그룹 추가 성공. 잠시 기다린 후 결과를 확인해 주세요…</string>
+    <string name="chat_tip_del_server_group_success">서버 그룹 삭제 성공. 잠시 기다린 후 결과를 확인해 주세요…</string>
+    <string name="chat_tip_edit_server_group_success">서버 그룹 수정 성공. 잠시 기다린 후 결과를 확인해 주세요…</string>
+    <string name="chat_tip_cant_del_default_server">기본 서버 그룹은 삭제할 수 없습니다</string>
+    <string name="chat_tip_wrong_server_protocol">서버 프로토콜은 http 또는 https여야 합니다</string>
+    <string name="chat_tip_wrong_server_port">서버 포트 오류</string>
+    <string name="chat_tip_wrong_server_format">서버 주소 형식 오류</string>
+    <string name="chat_tip_confirm_to_del_server_group">이 서버 그룹을 삭제하시겠습니까?</string>
+
+    <string name="chat_login_title_create_mnem">니모닉 백업</string>
+    <string name="chat_login_mnem_chinese">中文</string>
+    <string name="chat_login_mnem_english">English</string>
+    <string name="chat_login_tips_remember_mnem">니모닉을 반드시 적어 두세요. 확인 후 검증이 진행됩니다</string>
+    <string name="chat_login_warn_secure_mnem">알림: 스크린샷을 찍지 마세요! 다른 사람이 니모닉을 획득하면 자산에 직접 접근할 수 있습니다! 니모닉을 적어 안전한 곳에 보관하세요. 다음 화면에서 검증합니다.</string>
+    <string name="chat_login_change_mnem">니모닉 변경</string>
+    <string name="chat_login_backup_mnem">백업 시작</string>
+    <string name="chat_login_backup_skip">백업 건너뛰기</string>
+    <string name="chat_login_validate_mnem">백업한 니모닉 검증</string>
+    <string name="chat_login_click_correct_order">올바른 순서로 각 단어를 클릭하세요</string>
+    <string name="chat_login_mnem_wrong">니모닉이 올바르지 않습니다</string>
+    <string name="chat_login_mnem_backup_fail">니모닉 백업 실패</string>
+    <string name="chat_login_mnem_backup_success">니모닉 백업 성공</string>
+
+    <string name="chat_login_title_import_account">계정 가져오기</string>
+
+    <string name="chat_login_import_mnem_hint">니모닉을 입력하세요</string>
+    <string name="chat_login_import_mnem_support_tips">BIP 표준에 따라 생성된 모든 니모닉 가져오기를 지원합니다</string>
+    <string name="chat_login_import_private_key_chain">메인 체인:</string>
+    <string name="chat_login_import_private_key_chain_bty">BTY</string>
+    <string name="chat_login_import_private_key_hint">개인 키를 입력하거나 개인 키 QR 코드를 스캔하여 입력하세요</string>
+
+    <string name="chat_login_start_import_account">가져오기 시작</string>
+    <string name="chat_login_mnem_import_fail">니모닉 가져오기 실패</string>
+    <string name="chat_login_mnem_import_success">니모닉 가져오기 성공</string>
+    <string name="chat_login_mnem_recover_success">니모닉 자동 복구 성공. 비밀번호를 다시 설정하세요</string>
+
+    <!--首页-->
+    <string name="chat_home_action_scan">스캔</string>
+    <string name="chat_home_action_create_group">그룹 채팅 만들기</string>
+    <string name="chat_home_action_search">친구/그룹 추가</string>
+    <string name="chat_home_action_my_qr_code">내 QR 코드</string>
+    <string name="chat_home_action_create_company">팀 만들기</string>
+    <string name="chat_home_action_okr">OKR</string>
+    <string name="chat_title_main_contact">연락처</string>
+    <string name="chat_title_black_list">블랙리스트</string>
+    <string name="chat_title_friend_list">친구</string>
+    <string name="chat_title_group_list">그룹 채팅</string>
+    <string name="chat_home_server_disconnect">서버 연결 오류, 탭하여 확인</string>
+    <string name="chat_title_private_chat">1:1 채팅</string>
+    <string name="chat_title_group_chat">그룹 채팅</string>
+    <string name="chat_tips_unread_num">[%1$d개]%2$s</string>
+    <string name="chat_tips_sender_me">나:%1$s</string>
+
+    <!--空列表-->
+    <string name="chat_common_empty_list">데이터 없음</string>
+    <string name="chat_black_list_empty">블랙리스트 없음</string>
+    <string name="chat_friend_list_empty">친구 없음</string>
+    <string name="chat_invite_friend">친구 초대</string>
+    <string name="chat_friend_message_list_empty">친구 메시지 없음</string>
+    <string name="chat_start_chat">채팅 시작</string>
+    <string name="chat_room_list_empty">그룹 채팅 없음</string>
+    <string name="chat_suggest_group">추천 그룹 채팅</string>
+    <string name="chat_room_message_list_empty">그룹 메시지 없음</string>
+    <string name="chat_contact_list_empty">연락처 없음</string>
+    <string name="chat_promote_list_empty">기록 없음</string>
+
+    <!--扫一扫-->
+    <string name="chat_action_open_photo">앨범</string>
+
+    <string name="chat_account_menu_wallet">내 지갑</string>
+    <string name="chat_account_menu_red_packet">레드 패킷 기록</string>
+    <string name="chat_account_menu_server">서버</string>
+    <string name="chat_account_menu_share">앱 다운로드</string>
+    <string name="chat_account_menu_security">보안 관리</string>
+    <string name="chat_account_menu_setting">설정 센터</string>
+    <string name="chat_account_menu_feedback">사용자 피드백</string>
+    <string name="chat_account_menu_update">업데이트 확인</string>
+    <string name="chat_action_logout">계정 로그아웃</string>
+
+    <!--多语言-->
+    <string name="language_select_title">다국어</string>
+    <string name="language_chinese">中文</string>
+    <string name="language_english">English</string>
+    <string name="chat_account_menu_language">다국어</string>
+
+    <!--搜索选项-->
+    <string name="chat_action_search_scan">스캔</string>
+    <string name="chat_action_search_scan_tips">QR 코드 명함 스캔</string>
+    <string name="chat_action_search_import_friends">친구 가져오기</string>
+    <string name="chat_action_search_import_friends_tips">이 기기에서 로그인한 계정의 친구만 지원합니다</string>
+
+    <!--修改昵称-->
+    <string name="chat_title_edit_nickname">닉네임 수정</string>
+    <string name="chat_tip_nickname">닉네임</string>
+    <string name="chat_tip_nickname_edit_success">닉네임 수정 성공. 잠시 기다린 후 결과를 확인해 주세요…</string>
+    <string name="chat_tip_nickname_empty">닉네임은 비워 둘 수 없습니다</string>
+    <string name="chat_tip_avatar">프로필 사진</string>
+    <string name="chat_tip_avatar_edit_success">프로필 사진 수정 성공. 잠시 기다린 후 결과를 확인해 주세요…</string>
+
+    <!--安全管理-->
+    <string name="chat_title_security_setting">보안 관리</string>
+    <string name="chat_tips_export_words">니모닉 내보내기</string>
+    <string name="chat_tips_export_s2">S2 내보내기</string>
+    <string name="chat_tips_export_private">개인 키 내보내기</string>
+    <string name="chat_tips_phone">휴대폰 번호</string>
+    <string name="chat_tips_email">이메일</string>
+    <string name="chat_tips_encrypt_key">비밀 채팅 비밀번호</string>
+    <string name="chat_tips_action1">비밀번호 변경</string>
+    <string name="chat_tips_action2">비밀번호 설정</string>
+    <string name="chat_tips_action3">바인딩하러 가기</string>
+    <string name="chat_security_setting_tip1">니모닉은 채팅 메시지와 채팅 파일을 암호화하는 데 사용됩니다. 기기를 바꿔 로그인할 때 동일한 니모닉을 가져와야 과거 암호화 메시지를 볼 수 있습니다. 니모닉을 내보내 안전한 곳에 보관하세요!</string>
+    <string name="chat_security_setting_tip2">니모닉은 휴대폰/이메일과 비밀 채팅 비밀번호를 통해 암호화되어 공식 서버에 업로드되며, 니모닉 복구 서비스를 제공합니다.</string>
+    <string name="chat_save_words_tip">니모닉을 반드시 적어 안전한 곳에 보관하세요. 니모닉을 분실하면 재설치하거나 기기를 바꿔 로그인할 때 과거 암호화 메시지를 볼 수 없습니다! 비밀 채팅 비밀번호도 재설정할 수 없습니다! 니모닉이 타인에게 노출되면 개인 정보가 유출될 수 있습니다!</string>
+    <string name="chat_save_words_tips2">반드시 적어 안전한 곳에 보관하세요!</string>
+    <string name="chat_tips_chat_pwd_error">비밀 채팅 비밀번호 오류</string>
+    <string name="chat_tips_mnem_export_fail">니모닉 내보내기 실패</string>
+    <string name="chat_tips_private_export_fail">개인 키 내보내기 실패</string>
+    <string name="chat_title_bind_phone">휴대폰 바인딩</string>
+    <string name="chat_title_bind_email">이메일 바인딩</string>
+    <string name="chat_tips_bind_phone_tips">휴대폰을 바인딩하면 휴대폰으로 로그인할 수 있습니다</string>
+    <string name="chat_tips_bind_email_tips">이메일을 바인딩하면 이메일로 로그인할 수 있습니다</string>
+    <string name="chat_hint_input_phone">휴대폰 번호를 입력하세요</string>
+    <string name="chat_hint_input_email">이메일을 입력하세요</string>
+    <string name="chat_action_bind_send_code">인증 코드 받기</string>
+    <string name="chat_tips_bind_account_success">바인딩 성공</string>
+    <string name="chat_action_unbind_and_rebind">해제 후 바인딩</string>
+    <string name="chat_action_unbind_phone_login">휴대폰 번호 로그인</string>
+    <string name="chat_action_unbind_import_mnem">니모닉 가져오기</string>
+    <string name="chat_tips_override_bind">휴대폰 번호/이메일이 다른 니모닉 계정에 바인딩되어 있습니다. 기존 바인딩을 해제하고 로컬 니모닉 계정을 다시 바인딩하시겠습니까?</string>
+    <string name="chat_tips_override_bind2">기존 계정에 자산이 있으면 휴대폰 번호로 복구할 수 없어 분실 위험이 있습니다. 신중하게 바인딩을 해제하세요!</string>
+    <string name="chat_tips_phone_forget_password">비밀 채팅 비밀번호를 잊어버리면 휴대폰 번호로 원래 계정을 복구할 수 없습니다! 다음 방법을 사용할 수 있습니다:\n1. 니모닉을 가져와 로그인(비밀번호 변경 가능);\n2. 기존 바인딩을 해제하고 새 계정을 생성한 후 이 휴대폰 번호를 바인딩합니다.</string>
+    <string name="chat_tips_email_forget_password">비밀 채팅 비밀번호를 잊어버리면 이메일로 원래 계정을 복구할 수 없습니다! 다음 방법을 사용할 수 있습니다:\n1. 니모닉을 가져와 로그인(비밀번호 변경 가능);\n2. 휴대폰 번호 로그인으로 복구를 시도하거나, 휴대폰 번호 로그인의 비밀번호 찾기에서 "해제 후 바인딩" 작업을 진행합니다.</string>
+    <string name="chat_tips_override_forget_password2">기존 바인딩을 해제하면 원래 계정 정보와 자산이 손실됩니다. 신중하게 바인딩을 해제하세요!</string>
+
+    <!--设置中心-->
+    <string name="chat_title_setting_center">설정 센터</string>
+    <string name="chat_tips_app_notify_switch">앱 알림 스위치</string>
+    <string name="chat_tips_new_msg_notify">새 메시지 알림 받기</string>
+    <string name="chat_tips_rtc_call_notify">음성 및 영상 통화 초대 알림 받기</string>
+    <string name="chat_tips_system_sound_and_vibrate">시스템 사운드 및 진동</string>
+    <string name="chat_tips_new_msg_sys_notify">새 메시지 시스템 알림</string>
+    <string name="chat_tips_rtc_call_sys_notify">음성 및 영상 통화 알림</string>
+    <string name="chat_tips_go_sys_notify_settings">시스템 설정으로 이동</string>
+
+    <string name="chat_set_chat_password">비밀 채팅 비밀번호를 설정하세요</string>
+    <string name="chat_input_chat_password">비밀 채팅 비밀번호를 입력하세요</string>
+    <string name="chat_encrypt_password_hint">8–16자리 숫자, 문자 또는 기호 조합</string>
+    <!--修改助记词密码-->
+    <string name="chat_title_set_encrypt_password">비밀 채팅 비밀번호 설정</string>
+    <string name="chat_title_encrypt_password">비밀 채팅 비밀번호 변경</string>
+    <string name="chat_tips_old_encrypt_pwd">기존 비밀번호</string>
+    <string name="chat_tips_old_encrypt_pwd_hint">기존 비밀번호를 입력하세요</string>
+    <string name="chat_tips_first_encrypt_pwd_hint">비밀번호를 설정하세요</string>
+    <string name="chat_tips_second_encrypt_pwd_hint">비밀번호를 다시 입력하세요</string>
+    <string name="chat_tips_forget_password">비밀번호 찾기</string>
+    <string name="chat_tips_new_encrypt_pwd">새 비밀번호</string>
+    <string name="chat_tips_new_encrypt_pwd_hint">새 비밀번호를 다시 입력하세요</string>
+    <string name="chat_tips_update_encrypt_pwd1">비밀 채팅 비밀번호 변경 성공</string>
+    <string name="chat_tips_update_encrypt_pwd2">비밀번호 오류</string>
+    <string name="chat_tips_update_encrypt_pwd3">8–16자리 문자를 입력하세요</string>
+    <string name="chat_tips_update_encrypt_pwd4">숫자, 문자 또는 기호 조합을 입력하세요</string>
+    <string name="chat_tips_update_encrypt_pwd5">8–16자리 숫자, 문자 또는 기호 조합을 설정하세요</string>
+    <string name="chat_tips_update_encrypt_pwd6">두 번 입력한 비밀번호가 일치하지 않습니다</string>
+    <string name="chat_tips_update_encrypt_pwd7">비밀 채팅 비밀번호 설정 성공</string>
+
+    <!--联系人信息-->
+    <string name="chat_title_contact_info">상세 정보</string>
+    <string name="chat_action_send_msg">메시지 보내기</string>
+    <string name="chat_action_transfer">송금</string>
+    <string name="chat_action_delete_friend">친구 삭제</string>
+    <string name="chat_action_add_friend">친구 추가</string>
+    <string name="chat_tips_modify_group_success">서버 수정 성공</string>
+    <string name="chat_tips_add_friend_success">친구 추가 성공</string>
+    <string name="chat_tips_delete_friend_success">친구 삭제 성공</string>
+    <string name="chat_tips_nickname_placeholder">닉네임: %1$s</string>
+    <string name="chat_tips_group_nickname_placeholder">그룹 닉네임: %1$s</string>
+    <string name="chat_tips_address_placeholder">계정: %1$s</string>
+    <string name="chat_dialog_delete_friend">삭제하면 해당 연락처와의 채팅 메시지도 함께 삭제됩니다. 연락처 &lt;font color="%1$s"&gt;%2$s&lt;/font&gt; 님을 삭제하시겠습니까?</string>
+
+    <string name="chat_title_edit_group_name">그룹 이름 수정</string>
+    <string name="chat_tip_group_name">암호화 그룹 이름</string>
+    <string name="chat_tip_group_pub_name">공개 그룹 이름</string>
+    <string name="chat_title_edit_nickname_in_group">이 그룹에서의 내 닉네임</string>
+    <string name="chat_tip_nickname_in_group">그룹 닉네임</string>
+    <string name="chat_tip_group_name_empty">그룹 이름은 비워 둘 수 없습니다</string>
+    <string name="chat_tip_group_pub_name_empty">공개 그룹 이름은 비워 둘 수 없습니다</string>
+    <string name="chat_tip_edit_group_name_success">그룹 이름 수정 성공</string>
+    <string name="chat_tip_edit_group_nickname_success">그룹 내 닉네임 수정 성공</string>
+    <string name="chat_tip_group_avatar">그룹 프로필 사진</string>
+    <string name="chat_tips_nickname_in_group">이 그룹에서의 내 닉네임</string>
+    <string name="chat_log_in_chat_history">채팅 기록 검색</string>
+    <string name="chat_file_in_chat_history">채팅 파일</string>
+    <string name="chat_detail_no_disturb">메시지 방해 금지</string>
+    <string name="chat_detail_stick_top">채팅 상단 고정</string>
+    <string name="chat_detail_group_type_tips">그룹 유형</string>
+    <string name="chat_detail_group_type0">일반 그룹</string>
+    <string name="chat_detail_group_type1">전체 그룹</string>
+    <string name="chat_detail_group_type2">부서 그룹</string>
+    <string name="chat_detail_belong_server_group">상대 메시지를 받는 서버</string>
+    <string name="chat_detail_belong_server_group2">소속 서버</string>
+    <string name="chat_detail_choose_server_group">서버 선택</string>
+    <string name="chat_detail_edit_server_group">관리</string>
+    <string name="chat_add_black_list">블랙리스트 추가</string>
+    <string name="chat_remove_black_list">블랙리스트 해제</string>
+    <string name="chat_user_black_message">더 이상 상대 메시지를 받지 않습니다</string>
+    <string name="chat_add_black_warn">블랙리스트에 추가하면 더 이상 상대의 메시지를 받지 않습니다. 연락처 &lt;font color="%1$s"&gt;%2$s&lt;/font&gt; 님을 블랙리스트로 이동하시겠습니까?</string>
+    <string name="chat_add_black_success">상대를 블랙리스트에 추가했습니다!</string>
+    <string name="chat_add_black_fail">블랙리스트 추가 실패!</string>
+    <string name="chat_remove_black_success">상대를 블랙리스트에서 해제했습니다!</string>
+    <string name="chat_remove_black_fail">블랙리스트 해제 실패!</string>
+    <string name="chat_group_mute_time">뮤트</string>
+
+    <string name="chat_title_contact_remark">메모 정보</string>
+    <string name="chat_tip_remark">메모</string>
+    <string name="chat_tip_remark_edit_success">수정 성공</string>
+
+    <!--群信息-->
+    <string name="chat_action_exit_group">그룹 채팅 나가기</string>
+    <string name="chat_action_disband_group">그룹 채팅 해산</string>
+
+    <!--本地搜索-->
+    <string name="chat_tips_search_history">검색 기록</string>
+    <string name="chat_tips_search_clear_history">기록 지우기</string>
+    <string name="chat_tips_search_hint">친구, 채팅 기록 등 검색</string>
+    <string name="chat_tips_search_hint1">친구 검색</string>
+    <string name="chat_tips_search_hint2">그룹 검색</string>
+    <string name="chat_tips_search_hint3">채팅 기록 검색</string>
+    <string name="chat_tips_search_type1">연락처</string>
+    <string name="chat_tips_search_type2">그룹 채팅</string>
+    <string name="chat_tips_search_type3">채팅 기록</string>
+    <string name="chat_tips_search_result_more">더 보기</string>
+    <string name="chat_tips_search_log_target">\"%1$s\"의 기록</string>
+    <string name="chat_tips_search_log_count">관련 채팅 기록 %1$d개</string>
+
+    <!-- 聊天-->
+    <string name="chat_tips_chat_operate1">뮤트 해제 성공</string>
+    <string name="chat_tips_chat_operate2">수신기 모드로 전환됨</string>
+    <string name="chat_tips_chat_operate3">스피커 모드로 전환됨</string>
+    <string name="chat_tips_chat_operate4">클립보드에 복사됨</string>
+    <string name="chat_tips_chat_operate5">텍스트가 아닌 메시지는 복사할 수 없습니다</string>
+    <string name="chat_tips_chat_operate6">메시지 하나를 철회했습니다</string>
+    <string name="chat_top_operate">채팅 상단 고정</string>
+    <string name="chat_top_cancel">상단 고정 해제</string>
+    <string name="chat_disturb_operate">메시지 방해 금지</string>
+    <string name="chat_disturb_cancel">방해 금지 해제</string>
+    <string name="chat_message_delete">채팅 삭제</string>
+    <string name="chat_dialog_delete_session">&lt;font color="%1$s"&gt;%2$s&lt;/font&gt; 님과의 채팅을 삭제하시겠습니까?</string>
+    <string name="chat_dialog_delete_message">이 메시지를 삭제하시겠습니까?</string>
+    <string name="chat_dialog_delete_messages">선택한 메시지를 삭제하시겠습니까?</string>
+    <string name="chat_tips_servers_empty">상대 서버 주소를 찾을 수 없습니다</string>
+    <string name="chat_tips_server_not_exist">현재 그룹 채팅 서버에 연결되어 있지 않아 메시지를 주고받을 수 없습니다</string>
+    <string name="chat_tips_add_group_chat_server">서버 추가</string>
+
+    <string name="chat_popup_option_copy">복사</string>
+    <string name="chat_popup_option_translate">번역</string>
+    <string name="chat_popup_option_view_original">원문 보기</string>
+    <string name="chat_popup_option_forward">전달</string>
+    <string name="chat_popup_option_reference">인용</string>
+    <string name="chat_popup_option_focus">팔로우</string>
+    <string name="chat_popup_option_revoke">철회</string>
+    <string name="chat_popup_option_delete">삭제</string>
+    <string name="chat_popup_option_mute">뮤트</string>
+    <string name="chat_popup_option_audio_channel_speaker">스피커 재생</string>
+    <string name="chat_popup_option_audio_channel_receiver">수신기 재생</string>
+    <string name="chat_popup_option_multiple_choose">다중 선택</string>
+
+    <string name="chat_tips_switch_to_speaker">스피커 재생으로 전환됨</string>
+    <string name="chat_tips_switch_to_receiver">수신기 재생으로 전환됨</string>
+
+    <!--聊天输入框-->
+    <string name="chat_tips_input_msg1">빈 메시지를 보낼 수 없습니다</string>
+    <string name="chat_tips_input_msg2">시스템 메시지는 텍스트만 보낼 수 있습니다</string>
+    <string name="chat_tips_input_msg3">SD 카드가 감지되지 않았습니다</string>
+
+    <string name="chat_tips_input_send">보내기</string>
+    <string name="chat_tips_input_say_sth">메시지를 입력하세요</string>
+    <string name="chat_tips_input_media">사진/동영상</string>
+    <string name="chat_tips_input_shoot">촬영</string>
+    <string name="chat_tips_input_snap_msg">읽은 후 삭제</string>
+    <string name="chat_tips_input_file">파일</string>
+    <string name="chat_tips_input_rtc">영상 통화</string>
+    <string name="chat_tips_input_red_packet">레드 패킷</string>
+    <string name="chat_tips_input_red_packet_only">전용 레드 패킷</string>
+    <string name="chat_tips_input_text_packet">레드 패킷 메시지</string>
+    <string name="chat_tips_input_transfer">송금</string>
+    <string name="chat_tips_input_contact_card">명함</string>
+
+    <string name="chat_call_menu_voice">음성 통화</string>
+    <string name="chat_call_menu_video">영상 통화</string>
+    <string name="chat_call_invite_title_voice">음성 통화</string>
+    <string name="chat_call_invite_title_video">영상 통화</string>
+    <string name="chat_call_invite_desc">탭하여 참여 · 방 %1$s</string>
+    <string name="chat_call_invite_text">음성 채팅 초대, 링크를 눌러 참여하세요: %1$s</string>
+    <string name="chat_call_confirm_content">음성 방을 만들고 상대방에게 초대를 보냅니다. 음성 채팅을 시작할까요?</string>
+    <string name="chat_call_creating">통화방을 생성하는 중…</string>
+    <string name="chat_call_create_failed">통화 생성에 실패했습니다. 나중에 다시 시도해 주세요</string>
+    <string name="chat_call_busy_title">알림</string>
+    <string name="chat_call_busy_content">통화 중입니다. 현재 통화를 종료하고 새 통화를 시작할까요?</string>
+    <string name="chat_call_window_hangup">통화 종료</string>
+    <string name="chat_call_window_minimize">최소화</string>
+    <string name="chat_call_window_expand">전체 화면</string>
+    <string name="chat_call_window_minimized_tips">통화가 최소화되었습니다. 작은 창을 탭하면 복원됩니다</string>
+    <string name="chat_call_copy_link">통화 링크 복사</string>
+    <string name="chat_call_link_copied">통화 링크가 복사되었습니다</string>
+    <string name="chat_call_webview_error">통화 페이지를 불러오지 못했습니다. 네트워크를 확인하고 다시 시도해 주세요</string>
+
+    <string name="chat_record_state_prepared">길게 눌러 말하기</string>
+    <string name="chat_record_state_recording">놓아서 끝내기</string>
+    <string name="chat_record_state_want_cancel">손가락을 놓으면 전송 취소</string>
+    <string name="chat_record_slide_to_cancel">위로 밀어 전송 취소</string>
+    <string name="chat_record_tips_too_short">녹음 시간이 너무 짧습니다</string>
+    <string name="chat_speak_time_remain">%1$d초 더 말할 수 있습니다</string>
+
+    <!--聊天消息-->
+    <string name="chat_unfold">접기</string>
+    <string name="chat_fold">펼치기</string>
+
+    <string name="chat_tips_num_3">%1$d/3</string>
+    <string name="chat_tips_num_15">%1$d/15</string>
+    <string name="chat_tips_num_20">%1$d/20</string>
+    <string name="chat_tips_num_50">%1$d/50</string>
+    <string name="chat_tips_num_400">%1$d/400</string>
+    <string name="chat_tips_num_500">%1$d/500</string>
+
+    <string name="chat_time_tips_yesterday">어제 %1$s</string>
+    <string name="chat_time_tips_week1">일요일 %1$s</string>
+    <string name="chat_time_tips_week2">월요일 %1$s</string>
+    <string name="chat_time_tips_week3">화요일 %1$s</string>
+    <string name="chat_time_tips_week4">수요일 %1$s</string>
+    <string name="chat_time_tips_week5">목요일 %1$s</string>
+    <string name="chat_time_tips_week6">금요일 %1$s</string>
+    <string name="chat_time_tips_week7">토요일 %1$s</string>
+
+    <string name="chat_file_size">파일 %1$s</string>
+    <string name="chat_find_ai_cs">AI 상담</string>
+    <string name="chat_tips_copy_message_content">메시지 내용이 복사되었습니다</string>
+    <string name="chat_tips_translate_failed">번역에 실패했습니다. 잠시 후 다시 시도해 주세요</string>
+
+    <string name="chat_message_system_msg_type">공지</string>
+    <string name="chat_message_unsupported_msg_type">이 메시지는 아직 지원되지 않습니다. 최신 버전으로 업그레이드하세요</string>
+    <string name="chat_tips_file_not_exist">파일이 존재하지 않습니다</string>
+
+    <string name="chat_tips_search_my_account">내 계정: %1$s</string>
+    <string name="chat_tips_search_type_user">사용자</string>
+    <string name="chat_title_my_qr_code">내 QR 코드</string>
+    <string name="chat_tips_qr_code_friend">QR 코드를 스캔하여 %1$s에서 친구로 추가하세요</string>
+    <string name="chat_action_copy_address">계정 복사</string>
+    <string name="chat_action_copy_group_num">그룹 번호 복사</string>
+    <string name="chat_tips_copy_download_url">다운로드 링크가 클립보드에 복사되었습니다</string>
+    <string name="chat_tips_copy_address">클립보드에 복사되었습니다</string>
+    <string name="chat_tips_copy_group_num">그룹 번호가 클립보드에 복사되었습니다</string>
+    <string name="chat_tips_qr_share_chat">TanXin</string>
+    <string name="chat_tips_qr_save">저장</string>
+    <string name="chat_tips_img_saved">이미지가 저장되었습니다</string>
+    <string name="chat_tips_img_not_exist">이미지가 존재하지 않습니다</string>
+    <string name="chat_tips_vid_not_exist">동영상이 존재하지 않습니다</string>
+    <string name="chat_tips_img_zip_fail">이미지 압축 실패</string>
+    <string name="chat_tips_not_contain_qr_code">QR 코드가 인식되지 않았습니다</string>
+    <string name="chat_action_recognize_qrcode">이미지에서 QR 코드 인식</string>
+
+    <string name="chat_tips_start_download">다운로드 시작…</string>
+    <string name="chat_tips_is_downloading">다운로드 중…</string>
+    <string name="chat_tips_image_download_to">이미지가 %1$s에 다운로드되었습니다</string>
+    <string name="chat_tips_video_download_to">동영상이 %1$s에 다운로드되었습니다</string>
+    <string name="chat_tips_file_download_to">파일이 %1$s에 다운로드되었습니다</string>
+    <string name="chat_tips_download_fail">다운로드 실패, %1$s</string>
+
+    <!--文件详情页面-->
+    <string name="chat_tips_download_file">파일 받기</string>
+    <string name="chat_tips_can_not_open">%1$s 은(는) 이 유형의 파일 열기를 지원하지 않습니다. 다른 앱으로 열 수 있습니다</string>
+    <string name="chat_tips_open_with">다른 앱으로 열기</string>
+    <string name="chat_tips_select_open_type">해당 파일을 열 앱을 선택하세요</string>
+    <string name="chat_tips_unsupported_file_type">지원하지 않는 파일 유형</string>
+
+    <!--聊天文件管理-->
+    <string name="chat_title_file_management">채팅 파일</string>
+    <string name="chat_action_file_select">선택</string>
+    <string name="chat_title_chat_file">파일</string>
+    <string name="chat_title_chat_media">사진/동영상</string>
+    <string name="chat_file_empty">파일 없음</string>
+    <string name="chat_media_empty">사진/동영상 없음</string>
+    <string name="chat_file_search_hint">파일 이름 입력</string>
+    <string name="chat_action_file_download">다운로드</string>
+    <string name="chat_action_file_delete">삭제</string>
+    <string name="chat_dialog_tips_delete_chat_files">삭제 후 메시지 기록에 표시되지 않습니다</string>
+
+    <!--删除私聊记录 / 自动删除-->
+    <string name="chat_contact_clean_private">채팅 기록 삭제</string>
+    <string name="chat_contact_auto_delete">채팅 기록 자동 삭제</string>
+    <string name="chat_private_clean_confirm_title">채팅 기록 삭제</string>
+    <string name="chat_private_clean_confirm_message">선택한 기간 내 양측의 1:1 메시지를 삭제합니다(서버 기준). 계속하시겠습니까?</string>
+    <string name="chat_private_clean_success">작업 성공, 서버에서 %1$d개 삭제</string>
+    <string name="chat_private_clean_custom_invalid">종료 시간은 시작 시간보다 빠를 수 없습니다</string>
+    <string name="chat_private_clean_last_1d">최근 1일</string>
+    <string name="chat_private_clean_last_3d">최근 3일</string>
+    <string name="chat_private_clean_last_7d">최근 7일</string>
+    <string name="chat_private_clean_last_30d">최근 30일</string>
+    <string name="chat_private_clean_last_90d">최근 90일</string>
+    <string name="chat_private_clean_last_180d">최근 180일</string>
+    <string name="chat_private_clean_last_365d">최근 365일</string>
+    <string name="chat_private_clean_all">전체 기록</string>
+    <string name="chat_private_clean_custom">사용자 지정 날짜…</string>
+    <string name="chat_private_clean_pick_start">시작 날짜 선택</string>
+    <string name="chat_private_clean_pick_end">종료 날짜 선택</string>
+    <string name="chat_private_auto_off">끄기</string>
+    <string name="chat_private_auto_day_1">1일 초과</string>
+    <string name="chat_private_auto_day_3">3일 초과</string>
+    <string name="chat_private_auto_day_7">7일 초과</string>
+    <string name="chat_private_auto_day_30">30일 초과</string>
+    <string name="chat_private_auto_day_180">180일 초과</string>
+    <string name="chat_private_auto_pick_title">자동 삭제</string>
+
+    <!--登录-->
+    <string name="login_tips_login_success">로그인 성공</string>
+    <string name="login_tips_register_success">가입 성공</string>
+    <string name="login_tips_code_sent">인증 코드 전송 성공</string>
+
+    <string name="login_tips_correct_email">올바른 이메일을 입력하세요</string>
+    <string name="login_tips_correct_phone">올바른 휴대폰 번호를 입력하세요</string>
+    <string name="login_tips_correct_code">전체 인증 코드를 입력하세요</string>
+    <string name="login_tips_code_count">전송됨(%1$ds)</string>
+
+    <string name="login_tips_input_email">이메일을 입력하세요</string>
+    <string name="login_tips_input_phone">휴대폰 번호를 입력하세요</string>
+    <string name="login_tips_input_code">인증 코드를 입력하세요</string>
+    <string name="login_tips_input_s2">S2를 입력하세요</string>
+    <string name="login_action_send_code">인증 코드 받기</string>
+    <string name="login_action_login">로그인</string>
+    <string name="login_use_email">이메일 로그인</string>
+    <string name="login_use_email_tips">이메일로 니모닉 일부 복구 로그인</string>
+    <string name="login_use_phone">휴대폰 로그인</string>
+    <string name="login_use_phone_tips">휴대폰 번호가 바인딩되지 않은 경우 계정이 자동으로 생성됩니다</string>
+    <string name="login_tips_unbind_yet">휴대폰 번호/이메일이 아직 니모닉 계정에 바인딩되지 않았습니다. 다른 방법으로 채팅에 입장하세요.</string>
+
+    <string name="chat_dialog_action_take_photo">촬영</string>
+    <string name="chat_dialog_action_select_picture">앨범에서 선택</string>
+
+    <!--App更新对话框-->
+    <string name="chat_update_checking_update">업데이트 확인 중…</string>
+    <string name="chat_update_latest_version">현재 최신 버전입니다</string>
+    <string name="chat_update_title">새 버전 발견</string>
+    <string name="chat_update_tips_version">V%1$s</string>
+    <string name="chat_update_downloading">다운로드 중…</string>
+    <string name="chat_update_begin_download">다운로드 준비 중…</string>
+    <string name="chat_update_download_success">다운로드 완료, 탭하여 설치</string>
+    <string name="chat_update_action_retry">다시 시도</string>
+    <string name="chat_update_action_install">탭하여 설치</string>
+    <string name="chat_update_action_update">업데이트</string>
+    <string name="chat_update_action_ignore_update">나중에</string>
+
+    <!--群聊-->
+    <string name="chat_title_create_group">그룹 채팅 만들기</string>
+    <string name="chat_title_invite_members_type">구성원 선택</string>
+    <string name="chat_title_invite_group_members">새 구성원 추가</string>
+    <string name="chat_tips_group_members">그룹 구성원</string>
+    <string name="chat_title_create_group_select_server">서버 선택</string>
+    <string name="chat_tips_create_group_manage_server">관리</string>
+    <string name="chat_tips_choose_group_server">그룹 채팅이 속할 채팅 서버 선택</string>
+    <string name="chat_tips_invite_group_members">그룹 채팅 구성원 선택</string>
+    <string name="chat_tips_group_members_friends">친구 목록에서 구성원 선택</string>
+    <string name="chat_tips_group_members_oa">조직 구조에서 구성원 선택</string>
+    <string name="chat_action_create_group">만들기</string>
+    <string name="chat_tips_somebody_create_group">%1$s 님이 만든 그룹 채팅</string>
+    <string name="chat_tips_group_member_num">총 %1$d명</string>
+    <string name="chat_action_invite">초대</string>
+    <string name="chat_action_remove">제거</string>
+    <string name="chat_action_group_copy_mark_id">그룹 번호 복사</string>
+    <string name="chat_title_group_info">그룹 채팅 상세 정보</string>
+    <string name="chat_title_group_qrcode">그룹 QR 코드</string>
+    <string name="chat_tips_group_mark_id">그룹 번호 %1$s</string>
+    <string name="chat_tips_group_pub_name">공개 그룹 이름: %1$s</string>
+    <string name="chat_tips_group_qr_code">QR 코드를 스캔하여 그룹 채팅 참여</string>
+    <string name="chat_tips_group_forbid_join">이 그룹은 가입이 금지되어 있습니다</string>
+    <string name="chat_tips_group_copy_mark_id">그룹 번호가 클립보드에 복사되었습니다</string>
+    <string name="chat_tips_group_join_invalid_qrcode">그룹 가입 QR 코드가 만료되었습니다</string>
+    <string name="tips_invite_group_members_success">초대 성공</string>
+
+    <string name="chat_title_group_user">그룹 구성원</string>
+    <string name="chat_action_add_group_user">구성원 추가</string>
+    <string name="chat_action_del_group_user">구성원 삭제</string>
+    <string name="chat_action_set_group_admin">관리자 설정</string>
+    <string name="chat_tips_set_nickname_in_group">여기에서 &lt;font color="%1$s"&gt;%2$s&lt;/font&gt; 그룹에서 사용할 닉네임을 설정할 수 있습니다. 이 닉네임은 이 그룹에서만 표시됩니다</string>
+    <string name="chat_tips_search_group_friend_hint">그룹 구성원 검색</string>
+    <string name="chat_tips_member_type">그룹장, 관리자</string>
+    <string name="chat_tips_member_type_owner">그룹장</string>
+    <string name="chat_tips_member_type_admin">관리자</string>
+    <string name="chat_tips_select_invite_users">초대할 친구를 선택하세요</string>
+    <string name="chat_tips_select_delete_users">삭제할 그룹 구성원을 선택하세요</string>
+    <string name="chat_dialog_tips_exit_group">&lt;font color="%1$s"&gt;%2$s&lt;/font&gt; 그룹에서 나가시겠습니까?</string>
+    <string name="chat_dialog_tips_disband_group">&lt;font color="%1$s"&gt;%2$s&lt;/font&gt; 그룹을 해산하시겠습니까?</string>
+
+    <string name="chat_group_admin_setting">관리자 설정</string>
+    <string name="chat_group_owner_setting">그룹장 양도</string>
+    <string name="chat_group_join_limit">그룹 가입 제한</string>
+    <string name="chat_group_add_limit">친구 추가 제한</string>
+    <string name="chat_group_mute_all">전체 뮤트</string>
+    <string name="chat_group_mute_list">뮤트 목록</string>
+    <string name="chat_group_join_limit1">승인 불필요</string>
+    <string name="chat_group_join_limit_sub1">그룹장이나 관리자의 승인 없이 가입 가능</string>
+    <string name="chat_group_join_limit2">가입 금지</string>
+    <string name="chat_group_join_limit_sub2">그룹장과 관리자의 초대 외에는 아무도 가입할 수 없습니다</string>
+    <string name="chat_group_join_limit3">방장 승인</string>
+    <string name="chat_group_join_limit_sub3">그룹 참여 시 방장 또는 관리자의 승인이 필요합니다</string>
+    <string name="chat_group_apply_list">그룹 가입 신청</string>
+    <string name="chat_group_apply_title">그룹 가입 신청</string>
+    <string name="chat_group_apply_empty">가입 신청이 없습니다</string>
+    <string name="chat_tip_apply_num">%1$d건의 신청</string>
+    <string name="chat_action_apply_accept">수락</string>
+    <string name="chat_action_apply_reject">거절</string>
+    <string name="chat_tips_apply_accepted">가입을 승인했습니다</string>
+    <string name="chat_tips_apply_rejected">신청을 거절했습니다</string>
+    <string name="chat_action_apply_join_group">가입 신청</string>
+    <string name="chat_action_apply_join_pending">신청됨, 검토 대기 중</string>
+    <string name="chat_tips_apply_join_submitted">신청이 제출되었습니다. 승인을 기다려 주세요</string>
+    <string name="chat_tips_invite_apply_submitted">초대가 제출되었습니다. 승인을 기다려 주세요</string>
+    <string name="chat_tips_address_copied">주소가 클립보드에 복사되었습니다</string>
+    <string name="chat_group_add_limit1">그룹 내 친구 추가 가능</string>
+    <string name="chat_group_add_limit2">그룹 내 친구 추가 금지</string>
+
+    <string name="chat_group_join_title">상세 정보</string>
+    <string name="chat_action_join_group">그룹 채팅 입장</string>
+    <string name="chat_action_can_not_join">가입 금지</string>
+    <string name="chat_action_chat_message">채팅으로 보내기</string>
+    <string name="chat_tips_join_member_number">그룹 구성원 %1$d명</string>
+
+    <string name="chat_title_group_mute_list">뮤트 목록</string>
+    <string name="chat_action_group_cancel_mute">전체 해제</string>
+    <string name="chat_tip_no_group_user_muted">뮤트를 해제할 그룹 구성원이 없습니다</string>
+    <string name="chat_tip_mute_forever">영구 뮤트</string>
+    <string name="chat_tip_mute_to_time">%1$s까지 뮤트됨</string>
+    <string name="chat_tip_mute_user_num">%1$d명의 구성원이 뮤트됨</string>
+    <string name="chat_action_forbid_add_friend">이 그룹은 친구 추가가 금지되어 있습니다</string>
+    <string name="chat_tips_mute_state1">발언 가능</string>
+    <string name="chat_tips_mute_state2">전체 뮤트</string>
+    <string name="chat_tips_mute_state3">뮤트 중&#160;%1$s</string>
+    <string name="chat_tips_mute_state4">영구 뮤트</string>
+    <string name="chat_tips_can_not_mute">관리자나 그룹장은 뮤트할 수 없습니다</string>
+
+    <string name="chat_confirm_mute">뮤트하시겠습니까?</string>
+    <string name="chat_mute_cancel">뮤트 해제</string>
+    <string name="chat_select_mute_time">뮤트 시간 선택</string>
+    <string name="chat_change_mute_time">뮤트 시간 변경</string>
+    <string name="chat_forever">영구</string>
+    <string name="chat_24_hour">24시간</string>
+    <string name="chat_10_hour">10시간</string>
+    <string name="chat_2_hour">2시간</string>
+    <string name="chat_30_minute">30분</string>
+    <string name="chat_10_minute">10분</string>
+
+    <string name="chat_title_admin_setting">관리자 설정</string>
+    <string name="chat_title_change_owner">그룹장 양도</string>
+    <string name="chat_title_add_admin">관리자 추가</string>
+    <string name="chat_tips_group_owner">그룹장</string>
+    <string name="chat_tips_group_admin_num">관리자(%1$d/10)</string>
+    <string name="chat_action_add_group_admin">관리자 추가</string>
+    <string name="chat_tips_change_group_owner">&lt;font color="%1$s"&gt;%2$s&lt;/font&gt; 님에게 그룹장을 양도하시겠습니까?</string>
+
+    <string name="chat_tips_new_msg">새 메시지 %1$s개</string>
+
+    <string name="chat_ait_default">[@나]</string>
+
+    <!--转发-->
+    <string name="chat_forward_msg_summary">채팅 기록 총 %1$d개</string>
+    <string name="chat_forward_source_tips">전달: %1$s</string>
+    <string name="chat_forward_source_me_and_others">[%1$s] 님과의 채팅</string>
+    <string name="chat_forward_source_others_and_others">[%1$s] 님과 [%2$s] 님의 채팅</string>
+    <string name="chat_forward_source_group">그룹 채팅[%1$s]의 채팅</string>
+    <string name="chat_forward_title_others_and_others">[%1$s] 님과 [%2$s] 님의 채팅 기록</string>
+    <string name="chat_forward_title_group">그룹 채팅의 채팅 기록</string>
+    <string name="chat_action_forward">전달</string>
+    <string name="chat_action_forward_single">개별 전달</string>
+    <string name="chat_action_forward_multiple">병합 전달</string>
+    <string name="chat_action_msg_star">즐겨찾기</string>
+    <string name="chat_action_msg_delete">삭제</string>
+    <string name="chat_action_revoke">철회</string>
+    <string name="chat_dialog_revoke_messages">선택한 %d개 메시지를 철회하시겠습니까?</string>
+    <string name="chat_tips_revoke_empty">선택한 메시지는 철회할 수 없습니다</string>
+    <string name="chat_tips_revoke_partial">성공 %1$d개, 실패 %2$d개</string>
+    <string name="chat_title_contact_select">연락처 선택</string>
+    <string name="chat_tips_forward_contact_tag1">최근 채팅</string>
+    <string name="chat_tips_forward_contact_tag2">연락처</string>
+    <string name="chat_tips_forward_contact_tag3">그룹 채팅</string>
+    <string name="chat_tips_search_contact">친구, 그룹 검색</string>
+    <string name="chat_tips_search_friends">친구 검색</string>
+    <string name="chat_tips_search_groups">그룹 검색</string>
+    <string name="chat_tips_oa_select">조직 구조에서 구성원 선택</string>
+    <string name="chat_tips_selected_message_empty">먼저 유효한 메시지를 선택하세요</string>
+    <string name="chat_tips_reach_max_msg_select_num">최대 %1$d개 메시지까지 선택할 수 있습니다</string>
+    <string name="chat_tips_forward_msg_empty">전달할 메시지가 없습니다</string>
+    <string name="chat_tips_can_not_forward_group">현재 그룹 채팅은 전달할 수 없습니다!</string>
+    <string name="chat_tips_can_not_forward_self">자신에게는 전달할 수 없습니다</string>
+    <string name="chat_tips_can_not_forward_no_server">상대 서버를 찾을 수 없어 전달할 수 없습니다</string>
+    <string name="chat_tips_can_not_forward_group_no_server">현재 그룹 채팅 서버에 연결되어 있지 않아 메시지를 주고받을 수 없습니다</string>
+    <string name="cancel">취소</string>
+    <string name="ok">확인</string>
+    <string name="explore_title">책임 고지</string>
+    <string name="explore_disclaimer">제3자 링크를 사용하려고 합니다. 확인하면 제3자의 개인정보 처리방침과 이용약관에 동의하게 되며, 이 링크에서의 모든 행동과 사용은 해당 링크 제공업체의 책임입니다.</string>
+    <string name="no_dotip">다시 알림 안 함</string>
+    <string name="del_str">삭제</string>
+    <string name="del_tip_str">삭제하시겠습니까?</string>
+    <string name="input_www">URL을 입력하세요</string>
+    <string name="wc_get_addr">현재 지갑 주소 접근 허용</string>
+    <string name="wc_sign_str">현재 지갑에 서명 요청 허용</string>
+    <string name="wc_at">이 서비스는 WalletConnect 프로토콜로 지원됩니다</string>
+    <string name="wc_w_addr">지갑 주소</string>
+    <string name="wc_cnet">현재 네트워크</string>
+    <string name="wc_dis">연결 끊기</string>
+    <string name="wc_pay_de">결제 상세</string>
+    <string name="wc_pay_me">결제 정보</string>
+    <string name="wc_pay_address">결제 주소</string>
+    <string name="wc_fee">채굴 수수료</string>
+    <string name="wc_next">다음</string>
+    <string name="wc_con">WalletConnect가 지갑에 연결 중입니다</string>
+    <string name="wc_coned">아래 지갑과 연결되었습니다</string>
+    <string name="home_receipt_address">수금 주소</string>
+    <string name="home_transfer">송금</string>
+    <string name="tip_fee_high">설정한 채굴 수수료가 너무 높습니다. 적절한 채굴 수수료를 선택하세요</string>
+    <string name="tip_init_fee">채굴 수수료 초기화 중...</string>
+    <string name="dapp_sign_re">Dapp이 서명 요청을 시작했습니다</string>
+    <string name="signme">서명 정보</string>
+    <string name="i_wallet">내 지갑</string>
+    <string name="my_wallet_detail_password">계정 비밀번호를 입력하세요</string>
+    <string name="my_wallet_password_tips">비밀번호를 입력하세요</string>
+    <string name="pwd_fail_str">비밀번호 오류</string>
+    <string name="high_str">가장 빠름</string>
+    <string name="standard_str">표준</string>
+    <string name="low_str">경제</string>
+    <string name="custom_str">사용자 지정</string>
+    <string name="exp_str">브라우저</string>
+    <string name="send_suc_str">전송 성공!</string>
+    <string name="basic_error_send">전송 실패, 다시 시도하세요</string>
+    <string name="chat_send_fail_title">메시지 전송 실패</string>
+    <string name="chat_send_fail_network">네트워크를 사용할 수 없습니다. 연결을 확인하세요</string>
+    <string name="chat_send_fail_timeout">네트워크 시간 초과로 전송에 실패했습니다</string>
+    <string name="chat_send_fail_connect">서버에 연결할 수 없습니다. 네트워크를 확인하세요</string>
+    <string name="chat_send_fail_upload">파일 업로드에 실패했습니다. 네트워크를 확인하세요</string>
+    <string name="chat_send_fail_server">서버 오류: %1$s</string>
+    <string name="chat_send_fail_server_empty">서버 오류로 전송에 실패했습니다</string>
+    <string name="chat_send_fail_resend">다시 보내기</string>
+
+
+
+
+
+    <string name="tian_str">제안</string>
+    <string name="tp_str">투표</string>
+    <string name="tp_error">활동이 너무 활발합니다. 잠시 후 다시 시도하세요</string>
+    <string name="fee_setting">채굴 수수료 설정</string>
+    <string name="enter_str">입력하세요</string>
+    <string name="switch_account_str">계정 전환</string>
+    <string name="chat_no_nickname">닉네임을 설정하세요</string>
+    <string name="c_entrance">빠른 입구</string>
+    <string name="n_yopen">아직 오픈되지 않음</string>
+    <string name="save_suc">저장 성공</string>
+    <string name="like_str">즐겨찾기</string>
+    <string name="collect_suc_str">즐겨찾기에 추가되었습니다!</string>
+    <string name="my_collect_str">내 즐겨찾기</string>
+    <string name="ref_str">새로고침</string>
+    <string name="copy_url_str">링크 복사</string>
+    <string name="ex_open">브라우저에서 열기</string>
+    <string name="exit_str">종료</string>
+    <string name="copy_success">복사 성공</string>
+    <string name="dapp_approve">계약 승인</string>
+    <string name="dapp_out">발신 주소</string>
+    <string name="dapp_nonono">토큰 승인</string>
+    <string name="meta_approve">토큰 사용 승인</string>
+    <string name="select_network_fee">네트워크 수수료 선택</string>
+    <string name="fee_fast">빠름</string>
+    <string name="fee_recommended">권장</string>
+    <string name="fee_slow">느림</string>
+    <string name="fee_custom">사용자 지정</string>
+    <string name="fee_estimated_time">%s 이내 예상</string>
+    <string name="estimated_fee">예상 수수료</string>
+
+    <!--安全设置相关硬编码-->
+    <string name="chat_hint_input_wechat">WeChat ID를 입력하세요</string>
+    <string name="chat_hint_input_xiaohongshu">RED ID를 입력하세요</string>
+    <string name="chat_hint_input_douyin">TikTok ID를 입력하세요</string>
+
+    <!--群相关硬编码-->
+    <string name="chat_group_type_all">전체</string>
+    <string name="chat_group_type_dept">부서</string>
+    <string name="chat_group_qrcode_tips">이 그룹은 팀 %1$s 그룹에 속하며 조직 내부 구성원만 가입할 수 있습니다. 조직 외부 인원이 가입하려면 먼저 해당 조직에 가입 신청해야 합니다</string>
+
+    <!--转发相关-->
+    <string name="chat_forward_multiple_messages">[개별 전달] 총 %1$d개 메시지</string>
+    <string name="chat_forward_sent_count">%1$d개 채팅으로 전달했습니다</string>
+
+    <!--私钥创建-->
+    <string name="chat_error_private_key_create">개인 키 생성 실패</string>
+
+    <!--编辑群头像-->
+    <string name="chat_error_crop_unknown">자르기 실패, 알 수 없는 오류</string>
+
+    <!--Dapp相关-->
+    <string name="chat_dapp_error_password">비밀번호 오류</string>
+
+    <!--布局标签-->
+    <string name="chat_label_add_friend_msg">친구 추가 메시지</string>
+    <string name="chat_label_remark_other">상대 메모</string>
+    <string name="chat_label_send">보내기</string>
+    <string name="chat_label_account_manage">계정 관리</string>
+    <string name="chat_label_audio_call">음성 통화</string>
+    <string name="chat_label_video_call">영상 통화</string>
+    <string name="chat_label_create_wallet">지갑 만들기</string>
+    <string name="chat_label_customer_service">고객 서비스</string>
+    <string name="chat_label_scan_add_cs">QR 코드를 스캔하여 고객 서비스 친구 추가</string>
+    <string name="chat_label_group_exit_tips">전체 그룹/부서 그룹은 조직/부서에서 나가야만 그룹 채팅을 나갈 수 있습니다. 조직/부서에서 나가면 해당 그룹에서 자동으로 나가집니다!</string>
+    <string name="chat_label_search">검색</string>
+    <string name="chat_label_search_history">검색 기록</string>
+    <string name="chat_label_phone">휴대폰 번호</string>
+    <string name="chat_label_wechat">WeChat ID</string>
+    <string name="chat_label_xiaohongshu">RED ID</string>
+    <string name="chat_label_douyin">TikTok ID</string>
+    <string name="chat_label_select_at">@할 사람 선택</string>
+    <string name="chat_label_everyone">모두</string>
+    <string name="chat_label_input_hint">입력하세요</string>
+    <string name="chat_label_confirm">확인</string>
+    <string name="chat_label_forgot_password">비밀번호 찾기</string>
+    <string name="chat_label_send_to">보낼 대상:</string>
+    <string name="chat_label_mnem_verify">니모닉 검증</string>
+    <string name="chat_label_phone_verify">휴대폰 번호 검증</string>
+    <string name="chat_label_email_verify">이메일 검증</string>
+    <string name="chat_label_group_owner">그룹장</string>
+    <string name="chat_label_member_info">구성원 정보</string>
+    <string name="chat_label_name">이름</string>
+    <string name="chat_label_team">팀</string>
+    <string name="chat_label_short_number">내선 번호</string>
+    <string name="chat_label_email">이메일</string>
+    <string name="chat_label_dept">부서</string>
+    <string name="chat_label_position">직위</string>
+    <string name="chat_label_personal_card">개인 명함</string>
+    <string name="chat_label_red_packet_default">대박 나세요, 행운을 빕니다</string>
+    <string name="chat_label_exclusive_received">전용 레드 패킷을 받았습니다</string>
+    <string name="chat_label_tx_mismatch">거래 정보가 일치하지 않습니다. 탭하여 확인</string>
+    <string name="chat_label_my_qr">내 QR 코드</string>
+    <string name="chat_label_scan_add_me">QR 코드를 스캔하여 친구 추가</string>
+    <string name="chat_label_scan_transfer_add">QR 코드를 스캔하여 송금 및 친구 추가</string>
+    <string name="chat_label_manage">관리</string>
+    <string name="chat_label_org_structure">조직 구조</string>
+    <string name="chat_label_current_account">현재 계정</string>
+    <string name="chat_add_friend_default_msg">안녕하세요, 저는 %1$s 입니다. 친구로 추가했습니다!</string>
+
+</resources>

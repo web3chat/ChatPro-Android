@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="shop_transfer_complete">Transfer completed</string>
+    <string name="shop_bind_first">You need to bind a shop account before transferring</string>
+    <string name="shop_go_bind">Go to Bind</string>
+    <string name="shop_transferable_format">Transferable %1$s %2$s</string>
+    <string name="shop_title_suffix">Shop</string>
+    <string name="shop_asset_transfer">Asset Transfer</string>
+    <string name="shop_asset_label">Asset</string>
+    <string name="shop_from_label">From</string>
+    <string name="shop_chat_account">Chat Account</string>
+    <string name="shop_shop_account">Shop Account</string>
+    <string name="shop_transfer_amount_label">Transfer Amount</string>
+    <string name="shop_transfer_all">All</string>
+    <string name="shop_transfer_btn">Transfer</string>
+</resources>

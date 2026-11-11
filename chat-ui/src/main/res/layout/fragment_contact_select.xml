@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/biz_color_primary"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/ctl_select_oa"
+        layout="@layout/layout_select_member_oa"
+        android:visibility="gone"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_session_contact"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:overScrollMode="never" />
+
+    <!-- 转发多选模式下的批量发送按钮（默认隐藏，仅 ForwardSelectFragment 多选时显示） -->
+    <TextView
+        android:id="@+id/tv_multi_send"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/biz_color_accent"
+        android:gravity="center"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:visibility="gone"
+        tools:text="转发(3)" />
+</LinearLayout>

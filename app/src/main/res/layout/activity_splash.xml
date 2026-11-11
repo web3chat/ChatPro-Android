@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 启动页内容层：背景、App Logo、slogan 全部由 SplashTheme 的
+     windowBackground(splash_window_bg) 提供，冷启动即整体显示、消除白屏；
+     本布局保持透明空壳 -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" />
+

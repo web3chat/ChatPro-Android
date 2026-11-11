@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">谈信</string>
+
+    <string name="app_tab_session">消息</string>
+    <string name="app_tab_contact">通讯录</string>
+    <string name="app_tab_find">发现</string>
+    <string name="app_tab_shop">商城</string>
+    <string name="app_tab_wallet">资产</string>
+    <string name="app_tab_account">我的</string>
+
+    <string name="app_splash_tips">多中心协作即时通讯\n分布式存储应用</string>
+    <string name="app_skip_bind_tips">您没有备份助记词，可通过绑定手机/邮箱和密聊密码加密上传至官方服务器，提供助记词找回服务。 为了您的账户安全，请务必自行备份或加密上传助记词，也可前往【安全管理】进行操作。</string>
+    <string name="app_skip_bind_phone">绑定手机</string>
+    <string name="app_skip_bind_email">绑定邮箱</string>
+
+    <string name="app_ai_qa">AI问答</string>
+    <string name="app_ai_cs_entry">AI 客服</string>
+    <string name="app_close">关闭</string>
+    <string name="app_back">返回</string>
+    <string name="app_send">发送</string>
+    <string name="app_ai_qa_hint">输入你的问题…</string>
+
+    <!--AI问题库（与 ChatPro 功能相关的引导问题）-->
+    <string name="app_ai_question1">如何备份助记词？</string>
+    <string name="app_ai_question2">怎么给好友转账？</string>
+    <string name="app_ai_question3">密聊和普通聊天有什么区别？</string>
+    <string name="app_ai_question4">如何创建群聊？</string>
+    <string name="app_ai_question5">红包支持哪些币种？</string>
+    <string name="app_ai_question6">忘记密聊密码怎么办？</string>
+
+    <!--好友导入-->
+    <string name="app_import_friends_title">导入好友</string>
+    <string name="app_import_friends_content">检测到原账号在本设备有备份的好友，是否导入好友至新账号？</string>
+    <string name="app_message_empty">消息内容不能为空</string>
+    <string name="app_import_success">导入成功</string>
+
+    <!--AI错误-->
+    <string name="app_ai_unavailable">抱歉，AI服务暂时不可用，请稍后重试。</string>
+    <string name="app_ai_system_prompt">你是 ChatPro 的智能助手「小C」，请用简洁、友好的方式回答用户关于聊天、钱包、红包等功能的疑问。</string>
+    <string name="app_ai_network_error">抱歉，网络连接失败，请稍后重试。</string>
+    <string name="app_ai_api_error">API错误: %1$s</string>
+
+    <!--布局标签-->
+    <string name="app_label_ask_me">你可以问我：</string>
+    <string name="app_label_refresh_questions">换一批问题 ⟳</string>
+    <string name="app_label_import_old_account">检测到原账号在本设备有备份的好友，是否导入好友至新账号？</string>
+    <string name="app_label_send_add_msg">同时发送添加好友消息</string>
+
+</resources>

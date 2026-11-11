@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TanXin</string>
+
+    <string name="app_tab_session">Pesan</string>
+    <string name="app_tab_contact">Kontak</string>
+    <string name="app_tab_find">Temukan</string>
+    <string name="app_tab_shop">Toko</string>
+    <string name="app_tab_wallet">Aset</string>
+    <string name="app_tab_account">Saya</string>
+
+    <string name="app_splash_tips">IM kolaborasi multi-pusat\nAplikasi penyimpanan terdistribusi</string>
+    <string name="app_skip_bind_tips">Anda belum mencadangkan frasa mnemonik. Anda dapat mengenkripsi dan mengunggahnya ke server resmi dengan mengikatkan telepon/email dan kata sandi chat rahasia untuk layanan pemulihan. Demi keamanan akun Anda, harap cadangkan atau unggah frasa mnemonik yang dienkripsi sendiri, atau lakukan di [Manajemen Keamanan].</string>
+    <string name="app_skip_bind_phone">Ikat telepon</string>
+    <string name="app_skip_bind_email">Ikat email</string>
+
+    <string name="app_ai_qa">Tanya Jawab AI</string>
+    <string name="app_ai_cs_entry">Dukungan AI</string>
+    <string name="app_close">Tutup</string>
+    <string name="app_back">Kembali</string>
+    <string name="app_send">Kirim</string>
+    <string name="app_ai_qa_hint">Masukkan pertanyaan Anda…</string>
+
+    <!--Bank pertanyaan AI-->
+    <string name="app_ai_question1">Bagaimana cara mencadangkan frasa mnemonik?</string>
+    <string name="app_ai_question2">Bagaimana cara transfer ke teman?</string>
+    <string name="app_ai_question3">Apa perbedaan chat rahasia dan chat biasa?</string>
+    <string name="app_ai_question4">Bagaimana cara membuat grup?</string>
+    <string name="app_ai_question5">Koin apa saja yang didukung angpao?</string>
+    <string name="app_ai_question6">Lupa kata sandi chat rahasia?</string>
+
+    <!--Impor teman-->
+    <string name="app_import_friends_title">Impor teman</string>
+    <string name="app_import_friends_content">Terdeteksi teman cadangan dari akun asli di perangkat ini. Impor teman ke akun baru?</string>
+    <string name="app_message_empty">Isi pesan tidak boleh kosong</string>
+    <string name="app_import_success">Impor berhasil</string>
+
+    <!--Kesalahan AI-->
+    <string name="app_ai_unavailable">Maaf, layanan AI untuk sementara tidak tersedia. Silakan coba lagi nanti.</string>
+    <string name="app_ai_system_prompt">Anda adalah asisten cerdas "XiaoC" dari ChatPro. Jawab pertanyaan pengguna tentang chat, dompet, angpao, dan fitur lainnya dengan cara yang ringkas dan ramah.</string>
+    <string name="app_ai_network_error">Maaf, koneksi jaringan gagal. Silakan coba lagi nanti.</string>
+    <string name="app_ai_api_error">Kesalahan API: %1$s</string>
+
+    <!--Label tata letak-->
+    <string name="app_label_ask_me">Anda dapat bertanya kepada saya:</string>
+    <string name="app_label_refresh_questions">Pertanyaan lain ⟳</string>
+    <string name="app_label_import_old_account">Terdeteksi teman cadangan dari akun asli di perangkat ini. Impor ke akun baru?</string>
+    <string name="app_label_send_add_msg">Kirim juga pesan tambah teman</string>
+
+</resources>

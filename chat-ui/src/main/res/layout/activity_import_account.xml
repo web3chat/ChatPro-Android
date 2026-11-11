@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <com.fzm.widget.CustomTitleBar
+        android:id="@+id/ctb_title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:left_icon="@drawable/biz_ic_back_black"
+        app:right_icon="@drawable/icon_home_scan"
+        app:title_text="@string/chat_login_title_import_account"
+        app:title_text_color="#333649"
+        app:title_text_size="18sp" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/et_mnem"
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="19dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/chat_login_import_mnem_hint"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"
+            android:textColor="#333649"
+            android:textColorHint="#8E92A3"
+            android:textCursorDrawable="@drawable/ic_cursor_accent"
+            android:textSize="16sp"
+            app:bl_corners_radius="6dp"
+            app:bl_solid_color="#F8F8FA" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_starts_words"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="@string/chat_login_import_mnem_support_tips"
+            android:textColor="@color/biz_color_accent" />
+
+
+        <EditText
+            android:id="@+id/et_wallet_password"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="16dp"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:hint="请设置密聊密码"
+            android:inputType="textPassword"
+            android:maxLength="16"
+            android:textColor="#ff333649"
+            android:textColorHint="#8E92A3"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginStart="16dp"
+            android:background="#D9DCE9" />
+
+
+        <EditText
+            android:id="@+id/et_wallet_password_again"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="16dp"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:hint="请再次设置密聊密码"
+            android:inputType="textPassword"
+            android:maxLength="16"
+            android:textColor="#ff333649"
+            android:textColorHint="#8E92A3"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginStart="16dp"
+            android:background="#D9DCE9" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_import"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="50dp"
+        android:gravity="center"
+        android:text="@string/chat_login_start_import_account"
+        android:textColor="@android:color/white"
+        android:textSize="17sp"
+        app:bl_corners_radius="6dp"
+        app:bl_enabled_solid_color="@color/biz_color_accent"
+        app:bl_unEnabled_solid_color="@color/biz_color_disabled" />
+</LinearLayout>

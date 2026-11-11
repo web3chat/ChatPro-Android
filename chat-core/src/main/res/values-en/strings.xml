@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Common error codes-->
+    <string name="core_error_unknown">Unknown error</string>
+    <string name="core_error_decrypt_fail">Decryption failed</string>
+    <string name="core_error_encrypt_fail">Encryption failed</string>
+    <string name="core_error_create_words_fail">Mnemonic creation failed</string>
+    <string name="core_error_save_words_fail">Mnemonic save failed</string>
+
+    <string name="core_channel_notification">Other Notifications</string>
+    <string name="core_channel_notification_desc">Notification category for downloads and other scenarios</string>
+    <string name="core_channel_message">New Message Notification</string>
+    <string name="core_channel_message_desc">Notification category for receiving new messages</string>
+    <string name="core_channel_rtc">Voice/Video Call Invitation Notification</string>
+    <string name="core_channel_rtc_desc">Notification category for receiving voice/video call invitations</string>
+
+    <!--Message types-->
+    <string name="core_msg_type1">[Announcement]</string>
+    <string name="core_msg_type2">[Voice]</string>
+    <string name="core_msg_type3">[Image]</string>
+    <string name="core_msg_type4">[Red Packet]</string>
+    <string name="core_msg_type5">[Video]</string>
+    <string name="core_msg_type6">[File]</string>
+    <string name="core_msg_type7">[Notice]</string>
+    <string name="core_msg_type8">[Chat History]</string>
+    <string name="core_msg_type9_1">[Voice Call]</string>
+    <string name="core_msg_type9_2">[Video Call]</string>
+    <string name="core_msg_type9_invite_voice">[Voice Call Invitation]</string>
+    <string name="core_msg_type9_invite_video">[Video Call Invitation]</string>
+    <string name="core_msg_type10">[Transfer]</string>
+    <string name="core_msg_type11">[Receipt]</string>
+    <string name="core_msg_type12">[Red Packet]</string>
+    <string name="core_msg_type13_1">[Personal Card]</string>
+    <string name="core_msg_type13_2">[Group Card]</string>
+    <string name="core_msg_type13_3">[Team Card]</string>
+    <string name="core_msg_type13_11">[Group Red Packet]</string>
+    <string name="core_msg_type_special">[Special Message]</string>
+    <string name="core_msg_type_unknown">[Unsupported Message Type]</string>
+    <string name="core_msg_type_burn">[Burn-after-reading]</string>
+    <string name="core_msg_type_burned">[Burned after reading]</string>
+    <string name="core_msg_type_transfer_out">Transferred to you</string>
+    <string name="core_msg_type_transfer_in">Transfer to you</string>
+    <string name="core_msg_type_receipt_out">Requested payment from you</string>
+    <string name="core_msg_type_receipt_in">Requesting payment from you</string>
+
+    <string name="core_forward_title_others_and_others">Chat history of [%1$s] and [%2$s]</string>
+    <string name="core_forward_title_group">Group chat history</string>
+
+    <string name="core_notification_unread_number">[%1$d]</string>
+
+    <!--Group notification text-->
+    <string name="core_group_notify_rename">%1$s changed the group name to %2$s</string>
+    <string name="core_group_notify_members_enter">and %1$d others entered the group</string>
+    <string name="core_group_notify_enter">entered the group</string>
+    <string name="core_group_notify_invited">%1$s invited</string>
+    <string name="core_group_notify_created">%1$s created the group</string>
+    <string name="core_group_notify_quit">%1$s left the group</string>
+    <string name="core_group_notify_removed_you">You have been removed from the group</string>
+    <string name="core_group_notify_members_removed">and %1$d others were removed from the group</string>
+    <string name="core_group_notify_removed">was removed from the group</string>
+    <string name="core_group_notify_disbanded">This group has been disbanded</string>
+    <string name="core_group_notify_mute_all">%1$s muted all members</string>
+    <string name="core_group_notify_unmute_all">%1$s allowed all members to speak</string>
+    <string name="core_group_notify_members_muted">and %1$d others have been muted</string>
+    <string name="core_group_notify_muted">has been muted</string>
+    <string name="core_group_notify_new_owner">%1$s is now the new group owner</string>
+
+    <!--Recall notices-->
+    <string name="core_revoke_you">You</string>
+    <string name="core_revoke_other">other party\'s message</string>
+    <string name="core_revoke_member">member\'s message</string>
+    <string name="core_revoke_message">message</string>
+    <string name="core_revoke_format">%1$s recalled a %2$s</string>
+
+    <!--Signature related-->
+    <string name="core_error_sign_failed">Signature failed: %1$s</string>
+    <string name="core_error_query_hash_empty">Query failed, original transaction hash is empty</string>
+</resources>

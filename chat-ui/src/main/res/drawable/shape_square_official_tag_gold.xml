@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 平台官方号标识（金色渐变圆角胶囊，与普通公众号的蓝色标识区分） -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <gradient
+        android:angle="0"
+        android:endColor="#F09A16"
+        android:startColor="#FFC53D"
+        android:type="linear" />
+    <corners android:radius="9dp" />
+</shape>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 发红包页留言输入框：默认浅灰填充，聚焦时白底 + 红包红描边 -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_focused="true">
+        <shape>
+            <solid android:color="@android:color/white" />
+            <corners android:radius="12dp" />
+            <stroke
+                android:width="1.5dp"
+                android:color="@color/redpacket_red_top" />
+        </shape>
+    </item>
+    <item>
+        <shape>
+            <solid android:color="#F5F6F8" />
+            <corners android:radius="12dp" />
+        </shape>
+    </item>
+</selector>

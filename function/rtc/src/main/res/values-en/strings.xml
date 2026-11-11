@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="rtc_dialog_confirm_hangup">Are you sure you want to end the call?</string>
+    <string name="rtc_tips_waiting_for_answer">Waiting for the other party to accept…</string>
+    <string name="rtc_tips_audio_call_incoming">Inviting you to a voice call…</string>
+    <string name="rtc_tips_video_call_incoming">Inviting you to a video call…</string>
+
+    <string name="rtc_action_hangup">Hang Up</string>
+    <string name="rtc_action_accept">Accept</string>
+    <string name="rtc_action_reject">Reject</string>
+    <string name="rtc_action_mic_mute">Mute</string>
+    <string name="rtc_action_hands_free">Speaker</string>
+    <string name="rtc_action_switch_audio">Switch to Voice Call</string>
+    <string name="rtc_action_switch_camera">Switch Camera</string>
+
+    <!--Call Status-->
+    <string name="rtc_status_call_ended">Call ended</string>
+    <string name="rtc_status_connecting">Connecting…</string>
+    <string name="rtc_status_connected">Connected</string>
+    <string name="rtc_status_rejected">Rejected by the other party</string>
+    <string name="rtc_status_hangup">The other party hung up, call ended</string>
+    <string name="rtc_status_no_response">No response from the other party</string>
+    <string name="rtc_status_busy">The other party is busy</string>
+    <string name="rtc_status_cancelled">Call cancelled</string>
+    <string name="rtc_status_timeout">Call timed out</string>
+
+    <!--Notification Text-->
+    <string name="rtc_type_video">Video</string>
+    <string name="rtc_type_audio">Voice</string>
+    <string name="rtc_notify_invite">is inviting you to a %1$s call</string>
+    <string name="rtc_notify_ongoing">%1$s call in progress, tap to return</string>
+
+    <!--Errors-->
+    <string name="rtc_error_room_assign">Room assignment failed</string>
+    <string name="rtc_error_answer_fail">Answer failed</string>
+</resources>

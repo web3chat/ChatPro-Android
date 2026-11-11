@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <!-- 接收方气泡（白色）内的译文块背景：浅灰色，与微信一致 -->
+    <solid android:color="#F2F2F2" />
+    <corners android:radius="4dp" />
+</shape>

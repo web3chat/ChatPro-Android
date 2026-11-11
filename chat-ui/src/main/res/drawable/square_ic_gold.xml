@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 金标公众号标识：橙色圆底 + 白色五角星（列表 / 详情 / 金标墙三处共用） -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="14dp"
+    android:height="14dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:fillColor="#FF9500"
+        android:pathData="M12,12 m-11,0 a11,11 0 1,0 22,0 a11,11 0 1,0 -22,0" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M12,5 L13.65,9.73 L18.66,9.84 L14.66,12.87 L16.11,17.66 L12,14.8 L7.89,17.66 L9.34,12.87 L5.34,9.84 L10.35,9.73 Z" />
+</vector>

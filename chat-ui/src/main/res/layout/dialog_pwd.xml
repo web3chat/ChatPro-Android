@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_re_white"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="25dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="@string/my_wallet_detail_password"
+                android:textColor="#333649"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/iv_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingTop="16dp"
+                android:paddingRight="25dp"
+                android:paddingBottom="16dp"
+                android:src="@mipmap/icon_close" />
+
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="45dp"
+            android:layout_height="4dp"
+            android:layout_marginLeft="25dp"
+            android:background="#7190FF" />
+
+
+        <EditText
+            android:id="@+id/et_input"
+            android:inputType="textPassword"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="25dp"
+            android:background="#F8F8FA"
+            android:maxLength="16"
+            android:paddingLeft="10dp"
+            android:textColor="#333333"
+            android:textColorHint="#8E92A3"
+            android:textSize="17sp" />
+
+        <Button
+            android:id="@+id/btn_ok"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="18dp"
+            android:background="@drawable/bg_shape_button"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/ok"
+            android:textColor="@android:color/white"
+            android:textSize="17sp" />
+    </LinearLayout>
+</LinearLayout>

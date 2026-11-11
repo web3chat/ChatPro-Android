@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- 发现：罗盘（粗环 + 指针） -->
+    <path
+        android:pathData="M12,2A10,10 0 1 0 12,22A10,10 0 1 0 12,2ZM12,5A7,7 0 1 1 12,19A7,7 0 1 1 12,5Z"
+        android:fillColor="@color/biz_color_accent"
+        android:fillType="evenOdd" />
+    <path
+        android:pathData="M16,8L13.2,13.2L8,16L10.8,10.8Z"
+        android:fillColor="@color/biz_color_accent"
+        android:fillType="nonZero" />
+</vector>

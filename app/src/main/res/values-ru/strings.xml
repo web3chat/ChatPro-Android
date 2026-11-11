@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TanXin</string>
+
+    <string name="app_tab_session">Сообщения</string>
+    <string name="app_tab_contact">Контакты</string>
+    <string name="app_tab_find">Обзор</string>
+    <string name="app_tab_shop">Магазин</string>
+    <string name="app_tab_wallet">Активы</string>
+    <string name="app_tab_account">Мой</string>
+
+    <string name="app_splash_tips">Многопользовательский обмен сообщениями\nПриложение с распределенным хранилищем</string>
+    <string name="app_skip_bind_tips">Вы не сохранили мнемоническую фразу. Вы можете зашифровать и загрузить ее на официальный сервер, привязав телефон/email и пароль секретного чата, для получения услуги восстановления. Для безопасности вашего аккаунта обязательно сохраните или зашифруйте мнемоническую фразу самостоятельно, либо сделайте это в [Управлении безопасностью].</string>
+    <string name="app_skip_bind_phone">Привязать телефон</string>
+    <string name="app_skip_bind_email">Привязать email</string>
+
+    <string name="app_ai_qa">Вопросы ИИ</string>
+    <string name="app_ai_cs_entry">ИИ-поддержка</string>
+    <string name="app_close">Закрыть</string>
+    <string name="app_back">Назад</string>
+    <string name="app_send">Отправить</string>
+    <string name="app_ai_qa_hint">Введите ваш вопрос…</string>
+
+    <!--База вопросов ИИ-->
+    <string name="app_ai_question1">Как сохранить мнемоническую фразу?</string>
+    <string name="app_ai_question2">Как перевести средства другу?</string>
+    <string name="app_ai_question3">В чем разница между секретным и обычным чатом?</string>
+    <string name="app_ai_question4">Как создать группу?</string>
+    <string name="app_ai_question5">Какие монеты поддерживает красный конверт?</string>
+    <string name="app_ai_question6">Забыли пароль секретного чата?</string>
+
+    <!--Импорт друзей-->
+    <string name="app_import_friends_title">Импортировать друзей</string>
+    <string name="app_import_friends_content">На этом устройстве обнаружены друзья с резервной копией исходного аккаунта. Импортировать друзей в новый аккаунт?</string>
+    <string name="app_message_empty">Содержимое сообщения не может быть пустым</string>
+    <string name="app_import_success">Импорт выполнен успешно</string>
+
+    <!--Ошибки ИИ-->
+    <string name="app_ai_unavailable">Извините, сервис ИИ временно недоступен. Попробуйте позже.</string>
+    <string name="app_ai_system_prompt">Вы — умный помощник «小C» приложения ChatPro. Отвечайте на вопросы пользователей о чате, кошельке, красных конвертах и других функциях кратко и дружелюбно.</string>
+    <string name="app_ai_network_error">Извините, сетевое соединение не удалось. Попробуйте позже.</string>
+    <string name="app_ai_api_error">Ошибка API: %1$s</string>
+
+    <!--Метки макета-->
+    <string name="app_label_ask_me">Вы можете спросить меня:</string>
+    <string name="app_label_refresh_questions">Другие вопросы ⟳</string>
+    <string name="app_label_import_old_account">На этом устройстве обнаружены друзья с резервной копией исходного аккаунта. Импортировать в новый аккаунт?</string>
+    <string name="app_label_send_add_msg">Также отправить сообщение о добавлении друга</string>
+
+</resources>

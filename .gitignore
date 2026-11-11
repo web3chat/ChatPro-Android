@@ -1,0 +1,79 @@
+# ============================================================
+# Chat33Pro .gitignore
+#
+# 约定：凡是「服务器地址 / 私钥 / 签名 / 第三方密钥」只留在本机，
+#       仓库里只提交 *.example.properties 模板（照着模板在本地建真实文件）。
+# ============================================================
+
+# ---------- 1. 签名库与口令 ----------
+/sign/*.jks
+/sign/*.keystore
+/sign/*.properties
+!/sign/*.example.properties
+*.jks
+*.keystore
+*.p12
+*.pem
+*.key
+
+# ---------- 2. Gradle 本地环境与私有密钥表 ----------
+local.properties
+local.secrets.properties
+!local.example.properties
+!local.secrets.example.properties
+
+# ---------- 3. 各模块 assets 下的本地配置 ----------
+# 覆盖 main / 各渠道（assets/assets、zhchat 等）以及任意层级的 *.properties：
+# 服务器地址、友盟/小米/华为推送密钥、OSS appId、钱包 exchange token、
+# 红包 RPC、商城/企业 H5 地址、chat-pro 里的代扣私钥等都在这里。
+**/src/*/assets/*.properties
+**/src/*/assets/**/*.properties
+!**/*.example.properties
+
+# ---------- 4. 构建产物与缓存 ----------
+build/
+.gradle/
+.kotlin/
+captures/
+.externalNativeBuild/
+.cxx/
+*.apk
+*.aab
+*.log
+# 私有钱包 SDK（82 MB）：不随仓库分发，构建前自行放入 chat-core/libs/
+chat-core/libs/walletapi.aar
+/app/build/
+/chat-oss/build
+/rtc/build
+/lib-push/build
+/update/build
+/lives/appzb/build
+
+# ---------- 5. IDE / 编辑器 / 本地历史 ----------
+.idea/
+*.iml
+.vscode/
+.DS_Store
+# VS Code Local History：里有上面所有敏感文件的历史副本
+.history/
+# 手工备份目录（整份工程副本，含密钥）
+_bak/
+.venv/
+
+# ---------- 6. 本地打包 / 调试脚本 ----------
+# 这些 .ps1 含本机绝对路径、APK 输出目录、调试口令等，不进仓库
+*.ps1
+
+
+# ---------- 7. Markdown 文档 ----------
+# 默认不提交 .md（doc/ 下的对接文档含服务器地址与 IP，
+# douyin.md / contract-api.md / AGENTS.md 等含内部信息）
+*.md
+# 只放行仓库门面 README.md
+!README.md
+
+# SECURITY.md：说明哪些配置不入库、哪些凭据已泄露，只留本机，不进仓库也不进历史
+SECURITY.md
+
+# ---------- 8. 构建产物：多渠道 release 输出元数据 ----------
+app/*/release/

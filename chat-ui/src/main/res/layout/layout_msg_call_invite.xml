@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="230dp"
+    android:layout_height="70dp"
+    app:bl_corners_radius="5dp"
+    app:bl_solid_color="@color/biz_color_primary"
+    app:bl_stroke_color="@color/biz_color_divider"
+    app:bl_stroke_width="0.5dp">
+
+    <ImageView
+        android:id="@+id/iv_call_icon"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="14dp"
+        android:src="@mipmap/icon_chat_call_voice"
+        tools:ignore="ContentDescription" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="14dp"
+        android:layout_toEndOf="@id/iv_call_icon"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_call_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textColor="@color/biz_text_grey_dark"
+            android:textSize="16sp"
+            tools:text="语音通话" />
+
+        <TextView
+            android:id="@+id/tv_call_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textColor="@color/biz_text_grey_light"
+            android:textSize="12sp"
+            tools:text="点击加入通话 · 房间 abc234" />
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 广场筛选 chip：选中=品牌蓝渐变胶囊（配白字加粗）；未选中=柔和浅灰胶囊（无描边） -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_selected="true">
+        <shape>
+            <gradient
+                android:angle="0"
+                android:endColor="#1B8FE3"
+                android:startColor="#32B2F7"
+                android:type="linear" />
+            <corners android:radius="14dp" />
+        </shape>
+    </item>
+    <item>
+        <shape>
+            <solid android:color="#F2F3F6" />
+            <corners android:radius="14dp" />
+        </shape>
+    </item>
+</selector>

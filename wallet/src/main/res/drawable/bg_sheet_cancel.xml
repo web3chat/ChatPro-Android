@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 弹层取消按钮：浅灰胶囊 -->
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="#14000000">
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#FFF2F4F7" />
+            <corners android:radius="22dp" />
+        </shape>
+    </item>
+</ripple>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">谈信</string>
+    <string name="biz_title_system_share">分享到谈信</string>
+
+    <string name="biz_text_rule">0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
+    <string name="biz_tips_empty_tab_page">找不到这个页面了~</string>
+    <string name="biz_tips_empty_feature_page">功能正在开发中~</string>
+
+    <string name="biz_permission_not_granted">权限未授予</string>
+    <string name="biz_need_permission_to_use">需要授予下列权限后才能继续使用</string>
+    <string name="biz_open_setting_to_grant_permission">前往设置打开下列权限后才能继续使用</string>
+    <string name="biz_tips">提示</string>
+    <string name="logout_tip">安全警告</string>
+    <string name="biz_save">保存</string>
+    <string name="biz_acknowledge">知道了</string>
+    <string name="biz_confirm">确定</string>
+    <string name="biz_cancel">取消</string>
+    <string name="biz_copy">复制</string>
+    <string name="biz_delete">删除</string>
+    <string name="biz_skip">跳过</string>
+
+    <string name="biz_layout_list_empty">暂无数据</string>
+    <string name="biz_layout_error_service">服务器了些问题，请稍后重试！</string>
+    <string name="biz_layout_error_network">请检查您的网络连接，点击重试</string>
+    <string name="biz_layout_data_loading">加载中…</string>
+    <string name="biz_logout_message">退出账户仅能通过助记词找回，是否确定退出该账户</string>
+
+    <string name="biz_tips_search_friends">请输入地址</string>
+    <string name="biz_search_list_empty">没有匹配的对象</string>
+
+    <string name="biz_tips_qr_unrecongnize">无法处理结果，已复制到剪贴板</string>
+    <string name="biz_tips_shared_fail">资源分享失败</string>
+    <string name="biz_tips_resource_fail">资源获取失败</string>
+    <string name="biz_tips_send_empty_file_error">不能发送空文件</string>
+
+    <!--WebView相关-->
+    <string name="biz_error_image_format">图片格式错误</string>
+    <string name="biz_tips_image_save_success">图片保存成功</string>
+    <string name="biz_tips_image_save_fail">图片保存失败</string>
+    <!--H5 宿主对象 window.__tanxinHost-->
+    <string name="biz_tanxin_host_user_not_found">未找到该地址对应的谈信账号</string>
+
+    <!--图片相关-->
+    <string name="biz_error_image_not_exist">图片不存在</string>
+
+    <!--OA相关-->
+    <string name="biz_oa_team_empty">团队不能为空</string>
+    <string name="biz_oa_team_name_empty">团队名称不能为空</string>
+    <string name="biz_oa_team_server_empty">团队服务器不能为空</string>
+
+    <!--钱包币种管理-->
+    <string name="wallet_home_coins">首页币种</string>
+
+    <!--布局标签-->
+    <string name="biz_label_request_use">申请使用</string>
+    <string name="biz_label_get_permissions">获取以下权限</string>
+    <string name="biz_label_reject">拒绝</string>
+    <string name="biz_label_authorize">授权</string>
+
+</resources>

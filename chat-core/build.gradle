@@ -1,0 +1,94 @@
+apply plugin: 'com.android.library'
+apply from: common
+apply plugin: 'com.google.protobuf'
+
+kapt {
+    arguments {
+        arg("room.schemaLocation", "$projectDir/schemas".toString())
+    }
+}
+
+protobuf {
+    //配置protoc编译器
+    protoc {
+        artifact = deps.protoc
+    }
+    //这里配置生成目录，编译后会在build的目录下生成对应的java文件
+    generateProtoTasks {
+        all().each { task ->
+            task.builtins {
+                remove java
+            }
+            task.builtins {
+                java {}
+            }
+        }
+    }
+}
+
+// 本机私有凭证：真实值只存放在根目录 local.secrets.properties（已在 .gitignore 中忽略）
+def localSecrets = new Properties()
+def localSecretsFile = rootProject.file('local.secrets.properties')
+if (localSecretsFile.exists()) {
+    localSecretsFile.withInputStream { localSecrets.load(it) }
+}
+
+android {
+
+    defaultConfig {
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx .test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+        // 本地加密默认口令：真实值由 local.secrets.properties 注入，不入库
+        buildConfigField "String", "DEFAULT_CIPHER_PASSWORD",
+                "\"${localSecrets.getProperty('DEFAULT_CIPHER_PASSWORD', '')}\""
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = ["room.schemaLocation": "$projectDir/schemas".toString()]
+            }
+        }
+    }
+    sourceSets {
+        // 将数据库schemas文件包含到assets中
+        androidTest.assets.srcDirs += files("$projectDir/schemas".toString())
+        androidTest.java.srcDirs += files("$projectDir/src/main/proto".toString())
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    testImplementation 'junit:junit:4.13.1'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    implementation deps.arch.core
+    implementation project(':router')
+    api project(':connection')
+
+    api (deps.wallet.sdk) {
+        exclude group: 'com.github.ppledd', module: 'walletapi-and'
+    }
+    api(name: 'walletapi', ext: 'aar')
+    kapt deps.arouter.compiler
+    implementation files('libs/pinyin4j-2.5.0.jar')
+
+    api deps.room.runtime
+    api deps.room.room_ktx
+    api deps.room.wcdb
+    kapt deps.room.compiler
+    api deps.proto
+    api deps.lifecycle.savedstate
+    api "com.alibaba:fastjson:1.1.68.android"
+    api "com.github.kongzue.DialogX:DialogX:0.0.48"
+
+    kapt deps.glide.compiler
+
+    // https://mvnrepository.com/artifact/com.madgag.spongycastle/prov
+    api 'com.madgag.spongycastle:prov:1.58.0.0'
+    api 'org.bitcoinj:bitcoinj-core:0.14.7'
+    // 提供一个空的listenablefuture，防止com.google.guava:listenablefuture与com.google.guava:guava冲突
+    implementation("com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava")
+    api 'org.web3j:core:4.8.8-android'
+}

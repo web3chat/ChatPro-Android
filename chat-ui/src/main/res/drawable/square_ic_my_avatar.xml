@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 白色人形（广场右上角「我的」入口，配品牌蓝渐变圆底） -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="28dp"
+    android:height="28dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M12,6.4a3.4,3.4 0 1,0 0,6.8a3.4,3.4 0 1,0 0,-6.8z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M12,14.2c-3.6,0 -6.5,1.9 -6.5,4.3v0.3h13v-0.3c0,-2.4 -2.9,-4.3 -6.5,-4.3z" />
+</vector>

@@ -1,0 +1,979 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--新規機能の文言（values/strings.xml と同数）-->
+    <string name="chat_chain_sync_fail">アカウントアドレスの同期に失敗しました。後でもう一度お試しください</string>
+    <string name="chat_account_menu_chain_sync">アカウントアドレス</string>
+    <string name="chat_chain_sync_success">アカウントアドレスを同期しました</string>
+    <string name="chat_chain_sync_pending">タップしてアカウントアドレスを同期</string>
+    <string name="chat_chain_sync_failed">同期に失敗しました。タップして再試行</string>
+    <string name="chat_find_recent">最近のアクセス</string>
+    <string name="chat_find_empty_title">アクセス履歴はありません</string>
+    <string name="chat_find_empty_sub">URLを入力するかQRコードをスキャンして探索を始めましょう</string>
+    <string name="chat_tips_input_burn_mode">閲覧後消去がオンです。メッセージは閲覧後に消去されます</string>
+    <string name="chat_tips_burn_type_denied">閲覧後消去モードではこの操作はできません</string>
+    <string name="chat_title_burn_detail">閲覧後消去</string>
+    <string name="chat_burn_placeholder_tips">タップして閲覧後消去メッセージを表示</string>
+    <string name="chat_burn_detail_tips">閉じると自動的に消去されます</string>
+    <string name="chat_burn_play">音声を再生</string>
+    <string name="chat_burn_open">ファイルを開く</string>
+    <string name="chat_burn_audio">音声メッセージ</string>
+    <string name="qr_login_title">QRコードでログイン</string>
+    <string name="qr_login_icon">💻</string>
+    <string name="qr_login_device_desc">Web版がアカウントへのログインを要求しています</string>
+    <string name="qr_login_session_hint">QRコードの有効期限は5分です。お早めに確認してください</string>
+    <string name="qr_login_confirm">ログインを確認</string>
+    <string name="qr_login_cancel">キャンセル</string>
+    <string name="qr_login_wrong_password">パスワードが違います</string>
+    <string name="qr_login_invalid_qr">無効なログインQRコード</string>
+    <string name="qr_login_private_key_failed">秘密鍵の取得に失敗しました</string>
+    <string name="qr_login_encrypt_failed">暗号化に失敗しました。再試行してください</string>
+    <string name="qr_login_confirm_success">確認しました。パソコン側で続行してください</string>
+    <string name="qr_login_risk_title">リスク警告</string>
+    <string name="qr_login_risk_warning">アカウントに資産が検出されました。デバイス環境の安全性を確認してからログインしてください。</string>
+    <string name="qr_login_risk_continue">続行</string>
+    <string name="chat_label_current">現在</string>
+    <string name="chat_title_square">広場</string>
+    <string name="square_filter_all">すべて</string>
+    <string name="square_filter_person">個人</string>
+    <string name="square_filter_official">公式</string>
+    <string name="square_action_publish">投稿</string>
+    <string name="square_action_delete">削除</string>
+    <string name="square_action_edit">編集</string>
+    <string name="square_action_share">分享</string>
+    <string name="square_share_chooser">共有先</string>
+    <string name="square_share_card_slogan">エンドツーエンド暗号化 · 安全でプライベート</string>
+    <string name="square_share_card_footer">%1$s より</string>
+    <string name="square_share_card_qr_tip">%1$s をダウンロード</string>
+    <string name="square_action_send">送信</string>
+    <string name="square_sending">送信中…</string>
+    <string name="square_action_success">操作に成功しました</string>
+    <string name="square_publish_title">新規投稿</string>
+    <string name="square_publish_hint">今の気持ちを…</string>
+    <string name="square_md_bold">太字</string>
+    <string name="square_md_italic">斜体</string>
+    <string name="square_md_strike">取り消し線</string>
+    <string name="square_md_heading">見出し</string>
+    <string name="square_md_bullet_list">箇条書き</string>
+    <string name="square_md_number_list">番号付きリスト</string>
+    <string name="square_md_quote">引用</string>
+    <string name="square_md_code">コード</string>
+    <string name="square_md_link">リンク</string>
+    <string name="square_md_divider">区切り線</string>
+    <string name="square_md_preview">プレビュー</string>
+    <string name="square_md_edit">編集</string>
+    <string name="square_md_preview_empty">プレビューできる内容がありません</string>
+    <string name="square_detail_title">投稿の詳細</string>
+    <string name="square_edit_expired">編集期限を過ぎました</string>
+    <string name="square_edit_success">更新しました</string>
+    <string name="square_edit_title">投稿を編集</string>
+    <string name="square_comments_title">コメント</string>
+    <string name="square_comments_count">コメント (%1$d)</string>
+    <string name="square_reply_label">返信</string>
+    <string name="square_reply_to">@%1$s に返信</string>
+    <string name="square_reply_cancel">キャンセル</string>
+    <string name="square_reply_more">返信をさらに%1$d件表示</string>
+    <string name="square_reply_success">返信しました</string>
+    <string name="square_comment_deleted">元のコメントは削除されました</string>
+    <string name="square_tips_reply_invalid">このコメントには返信できません</string>
+    <string name="square_inbox_title">コメント</string>
+    <string name="square_inbox_empty">コメントや返信はまだありません</string>
+    <string name="square_inbox_all_read">すべて既読にする</string>
+    <string name="square_inbox_floor">があなたの投稿にコメントしました</string>
+    <string name="square_inbox_reply">があなたに返信しました</string>
+    <string name="square_inbox_unavailable">このコメントは表示できません</string>
+    <string name="square_inbox_no_unread">未読メッセージはありません</string>
+    <string name="square_comment_hint">コメントを入力…</string>
+    <string name="square_no_comment">まだコメントはありません</string>
+    <string name="square_comments_closed">コメントはオフです</string>
+    <string name="square_allow_comment">コメントを許可</string>
+    <string name="square_cannot_post">現在は投稿できません</string>
+    <string name="square_closed">広場は閉鎖されています</string>
+    <string name="square_official_tag">公式</string>
+    <string name="square_status_auditing">審査中</string>
+    <string name="square_status_rejected">却下</string>
+    <string name="square_tag_activity">イベント</string>
+    <string name="square_tag_announcement">お知らせ</string>
+    <string name="square_tag_message">メッセージ</string>
+    <string name="square_image_index">%1$d / %2$d</string>
+    <string name="square_time_just_now">たった今</string>
+    <string name="square_time_minutes">%1$d 分前</string>
+    <string name="square_time_hours">%1$d 時間前</string>
+    <string name="square_time_yesterday">昨日</string>
+    <string name="square_empty">まだ何もありません。最初の投稿をしましょう</string>
+    <string name="square_tips_pending">送信しました。承認後に広場に表示されます</string>
+    <string name="square_tips_rejected">内容が規定に違反しているため投稿できません</string>
+    <string name="square_tips_rate_limited">操作が多すぎます。しばらくしてからお試しください</string>
+    <string name="square_tips_sign_invalid">署名が無効または期限切れです。再度ログインしてください</string>
+    <string name="square_tips_param_error">パラメータが正しくありません</string>
+    <string name="square_tips_no_permission">権限がありません</string>
+    <string name="square_tips_not_found">コンテンツが存在しないか削除されています</string>
+    <string name="square_tips_banned">公式アカウントは停止されています。サポートにお問い合わせください</string>
+    <string name="square_tips_comment_closed">コメントはオフです</string>
+    <string name="square_tips_apply_pending">審査中の申請があります。「マイ公式アカウント」をご確認ください</string>
+    <string name="square_tips_network">ネットワークエラーです。接続を確認してください</string>
+    <string name="square_tips_failed">操作に失敗しました。後でもう一度お試しください</string>
+    <string name="square_tips_comment_pending">コメントを送信しました。承認後に表示されます</string>
+    <string name="square_publish_success">投稿しました</string>
+    <string name="square_comment_success">コメントしました</string>
+    <string name="square_delete_confirm">この投稿を削除しますか？</string>
+    <string name="square_delete_comment_confirm">このコメントを削除しますか？</string>
+    <string name="square_delete_success">削除しました</string>
+    <string name="square_upload_failed">画像のアップロードに失敗しました。再試行してください</string>
+    <string name="square_content_empty">内容を入力してください</string>
+    <string name="square_max_images">画像は最大9枚まで</string>
+    <string name="square_my_official">マイ公式アカウント</string>
+    <string name="square_my_profile">プロフィール</string>
+    <string name="square_user_posts">投稿一覧</string>
+    <string name="square_user_empty">まだ投稿がありません</string>
+    <string name="square_official_apply">公式アカウントを申請</string>
+    <string name="square_official_state_none">未申請</string>
+    <string name="square_official_state_pending">審査中</string>
+    <string name="square_official_state_approved">認証済み</string>
+    <string name="square_official_state_rejected">却下</string>
+    <string name="square_official_state_banned">停止中</string>
+    <string name="square_official_tip_none">承認されると、このアドレスの投稿は公式アカウントの投稿として表示されます（名前表示・コメントのオフ可）。</string>
+    <string name="square_official_tip_pending">申請を審査中です。しばらくお待ちください。</string>
+    <string name="square_official_tip_approved">認証済み公式アカウント：%1$s。投稿にはこの名前が表示されます。</string>
+    <string name="square_official_tip_rejected">申請は却下されました。編集して再送信できます。</string>
+    <string name="square_official_tip_reason">（理由：%1$s）</string>
+    <string name="square_official_tip_banned">公式アカウントは停止されています。投稿・コメント・いいねはできません。サポートにお問い合わせください。</string>
+    <string name="square_official_avatar_hint">タップしてアイコンを設定（任意）</string>
+    <string name="square_official_avatar_change">タップしてアイコンを変更</string>
+    <string name="square_official_avatar_clear">アイコンを削除</string>
+    <string name="square_official_save">保存</string>
+    <string name="square_official_updated">プロフィールを更新しました</string>
+    <string name="square_pinned">ピン留め</string>
+    <string name="square_platform_official_tag">運営</string>
+    <string name="square_official_avatar_set">アイコンをアップロードしました。タップして変更</string>
+    <string name="square_official_name_hint">公式アカウント名（必須、32文字以内）</string>
+    <string name="square_official_reapply">再申請</string>
+    <string name="square_official_intro_hint">紹介文（任意、200文字以内）</string>
+    <string name="square_official_name_empty">公式アカウント名を入力してください</string>
+    <string name="square_official_submit">申請を送信</string>
+    <string name="square_official_applied">申請を送信しました。審査をお待ちください</string>
+    <string name="square_feed_latest">最新</string>
+    <string name="square_feed_hot">人気</string>
+    <string name="square_feed_following">フォロー中</string>
+    <string name="square_follow">フォロー</string>
+    <string name="square_followed">フォロー済み</string>
+    <string name="square_follow_success">フォローしました</string>
+    <string name="square_unfollow_success">フォローを解除しました</string>
+    <string name="square_follow_tips_self">自分自身はフォローできません</string>
+    <string name="square_my_follows">フォロー中</string>
+    <string name="square_my_followers">フォロワー</string>
+    <string name="square_user_follow_count">フォロー %1$d</string>
+    <string name="square_user_follower_count">フォロワー %1$d</string>
+    <string name="square_user_followers_title">フォロワー</string>
+    <string name="square_follow_empty">まだ誰もフォローしていません</string>
+    <string name="square_followers_empty">フォロワーはまだいません</string>
+    <string name="square_gold_empty">ゴールド公認アカウントはありません</string>
+    <string name="square_gold_stat">フォロワー %1$d ・ 投稿 %2$d</string>
+    <string name="square_gold_title">ゴールド公認</string>
+    <string name="square_my_posts_title">自分の投稿</string>
+    <string name="square_my_posts_traffic">投稿のアクセス状況</string>
+    <string name="square_traffic_posts">投稿</string>
+    <string name="square_traffic_views">閲覧</string>
+    <string name="square_traffic_likes">いいね</string>
+    <string name="square_traffic_comments">コメント</string>
+    <string name="square_report">通報</string>
+    <string name="square_report_content">通報対象の内容</string>
+    <string name="square_report_detail_counter">%1$d/%2$d</string>
+    <string name="square_report_detail_hint">通報理由を入力（任意）</string>
+    <string name="square_report_detail_tip">任意、最大500文字</string>
+    <string name="square_report_title">通報理由</string>
+    <string name="square_report_type">通報の種類</string>
+    <string name="square_report_type_required">通報の種類を選択してください</string>
+    <string name="square_report_reason_spam">スパム</string>
+    <string name="square_report_reason_porn">ポルノ</string>
+    <string name="square_report_reason_scam">詐欺</string>
+    <string name="square_report_reason_abuse">誹謗中傷</string>
+    <string name="square_report_reason_other">その他</string>
+    <string name="square_report_success">通報しました。ご協力ありがとうございます</string>
+    <string name="square_report_reported">通報済みです</string>
+    <string name="square_report_select">選択してください</string>
+    <string name="square_report_submit">通報を送信</string>
+    <string name="square_report_submitting">送信中…</string>
+
+    <!--登录相关-->
+    <string name="chat_login_choose_server">サーバーを選択</string>
+    <string name="chat_login_chat_server_tips">1.新規ユーザーは、友達のチャットメッセージを受信するためのデフォルトサーバーを選択または追加する必要があります。\n2.登録済みアカウントの場合、既存のデフォルトサーバーが引き続き使用されます。</string>
+    <string name="chat_login_contract_server_tips">1.アカウント情報のアップロードと取得に使用するデフォルトのブロックチェーンノードを選択または追加する必要があります。\n2.[マイページ]-[サーバー]で切り替えることができます。</string>
+    <string name="chat_login_edit_chat_server">チャットサーバーを編集</string>
+    <string name="chat_login_add_chat_server">チャットサーバーを追加</string>
+    <string name="chat_login_edit_contract_server">ブロックチェーンノードを編集</string>
+    <string name="chat_login_add_contract_server">ブロックチェーンノードを追加</string>
+    <string name="chat_tips_edit_server_name">サーバー名</string>
+    <string name="chat_hint_edit_server_name">サーバー名を入力してください</string>
+    <string name="chat_tips_edit_server_address">サーバーアドレス</string>
+    <string name="chat_hint_edit_server_address">サーバーアドレスを入力してください</string>
+    <string name="chat_tip_add_server_success">サーバーを追加しました</string>
+    <string name="chat_tip_edit_server_success">サーバーを変更しました</string>
+    <string name="chat_tip_del_server_success">サーバーを削除しました</string>
+    <string name="chat_tip_confirm_to_del_server">このサーバーを削除しますか？</string>
+    <string name="chat_click_again_to_exit">もう一度押すとアプリを終了します</string>
+
+    <string name="chat_login_type_words">ニーモニックアカウント</string>
+    <string name="chat_login_create_account">アカウントを作成</string>
+    <string name="chat_login_import_account">アカウントをインポート</string>
+    <string name="chat_login_type_account">電話番号/メール</string>
+    <string name="chat_login_find_mnem_words">ニーモニックの一部でログイン</string>
+
+    <string name="chat_login_tips_agree_protocol">先に規約に同意してください</string>
+    <string name="chat_login_tips_choose_server">先にサーバーを選択してください</string>
+    <string name="chat_login_tips_agreement">「TanXin利用規約」を読み、同意しました</string>
+
+    <string name="chat_login_tips_choose_chat_server">チャットメッセージを受信するサーバーを選択</string>
+    <string name="chat_login_tips_choose_contract_server">アカウント情報をアップロードするブロックチェーンノードを選択</string>
+    <string name="chat_title_chat_server">サーバーアドレス</string>
+    <string name="chat_title_contract_server">ブロックチェーンノード</string>
+
+    <string name="chat_title_official_server">公式アドレス</string>
+    <string name="chat_title_custom_server">カスタムアドレス</string>
+    <string name="chat_title_chat_server_group">チャットサービス</string>
+    <string name="chat_login_edit_chat_server_group">サーバーグループを編集</string>
+    <string name="chat_login_add_chat_server_group">サーバーグループを追加</string>
+    <string name="chat_tip_add_server_group_success">サーバーグループを追加しました。しばらくお待ちください。後ほど結果を確認してください…</string>
+    <string name="chat_tip_del_server_group_success">サーバーグループを削除しました。しばらくお待ちください。後ほど結果を確認してください…</string>
+    <string name="chat_tip_edit_server_group_success">サーバーグループを変更しました。しばらくお待ちください。後ほど結果を確認してください…</string>
+    <string name="chat_tip_cant_del_default_server">デフォルトのサーバーグループは削除できません</string>
+    <string name="chat_tip_wrong_server_protocol">サーバープロトコルはhttpまたはhttpsである必要があります</string>
+    <string name="chat_tip_wrong_server_port">サーバーポートが正しくありません</string>
+    <string name="chat_tip_wrong_server_format">サーバーアドレスの形式が正しくありません</string>
+    <string name="chat_tip_confirm_to_del_server_group">このサーバーグループを削除しますか？</string>
+
+    <string name="chat_login_title_create_mnem">ニーモニックのバックアップ</string>
+    <string name="chat_login_mnem_chinese">中文</string>
+    <string name="chat_login_mnem_english">English</string>
+    <string name="chat_login_tips_remember_mnem">ニーモニックを必ず書き留めてください。確定後に検証が行われます</string>
+    <string name="chat_login_warn_secure_mnem">注意：スクリーンショットを撮らないでください！誰かがあなたのニーモニックを入手すると、あなたの資産に直接アクセスされる可能性があります！ニーモニックを書き留めて安全な場所に保管してください。次の画面で検証を行います。</string>
+    <string name="chat_login_change_mnem">ニーモニックを変更</string>
+    <string name="chat_login_backup_mnem">バックアップを開始</string>
+    <string name="chat_login_backup_skip">バックアップをスキップ</string>
+    <string name="chat_login_validate_mnem">バックアップしたニーモニックを検証</string>
+    <string name="chat_login_click_correct_order">正しい順序で各単語をタップしてください</string>
+    <string name="chat_login_mnem_wrong">ニーモニックが正しくありません</string>
+    <string name="chat_login_mnem_backup_fail">ニーモニックのバックアップに失敗しました</string>
+    <string name="chat_login_mnem_backup_success">ニーモニックのバックアップに成功しました</string>
+
+    <string name="chat_login_title_import_account">アカウントをインポート</string>
+
+    <string name="chat_login_import_mnem_hint">ニーモニックを入力してください</string>
+    <string name="chat_login_import_mnem_support_tips">BIP規格に準拠して生成されたすべてのニーモニックのインポートをサポートします</string>
+    <string name="chat_login_import_private_key_chain">メインチェーン：</string>
+    <string name="chat_login_import_private_key_chain_bty">BTY</string>
+    <string name="chat_login_import_private_key_hint">秘密鍵を入力するか、秘密鍵から生成されたQRコードをスキャンして入力してください</string>
+
+    <string name="chat_login_start_import_account">インポートを開始</string>
+    <string name="chat_login_mnem_import_fail">ニーモニックのインポートに失敗しました</string>
+    <string name="chat_login_mnem_import_success">ニーモニックのインポートに成功しました</string>
+    <string name="chat_login_mnem_recover_success">ニーモニックの自動復元に成功しました。パスワードを再設定してください</string>
+
+    <!--首页-->
+    <string name="chat_home_action_scan">スキャン</string>
+    <string name="chat_home_action_create_group">グループを作成</string>
+    <string name="chat_home_action_search">友達/グループを追加</string>
+    <string name="chat_home_action_my_qr_code">マイQRコード</string>
+    <string name="chat_home_action_create_company">チームを作成</string>
+    <string name="chat_home_action_okr">OKR</string>
+    <string name="chat_title_main_contact">連絡先</string>
+    <string name="chat_title_black_list">ブラックリスト</string>
+    <string name="chat_title_friend_list">友達</string>
+    <string name="chat_title_group_list">グループ</string>
+    <string name="chat_home_server_disconnect">サーバー接続に異常があります。タップして確認</string>
+    <string name="chat_title_private_chat">個人</string>
+    <string name="chat_title_group_chat">グループ</string>
+    <string name="chat_tips_unread_num">[%1$d件]%2$s</string>
+    <string name="chat_tips_sender_me">私:%1$s</string>
+
+    <!--空列表-->
+    <string name="chat_common_empty_list">データがありません</string>
+    <string name="chat_black_list_empty">ブラックリストはありません</string>
+    <string name="chat_friend_list_empty">友達がいません</string>
+    <string name="chat_invite_friend">友達を招待</string>
+    <string name="chat_friend_message_list_empty">友達のメッセージはありません</string>
+    <string name="chat_start_chat">チャットを開始</string>
+    <string name="chat_room_list_empty">グループはありません</string>
+    <string name="chat_suggest_group">おすすめグループ</string>
+    <string name="chat_room_message_list_empty">グループメッセージはありません</string>
+    <string name="chat_contact_list_empty">連絡先はありません</string>
+    <string name="chat_promote_list_empty">記録はありません</string>
+
+    <!--扫一扫-->
+    <string name="chat_action_open_photo">アルバム</string>
+
+    <string name="chat_account_menu_wallet">マイウォレット</string>
+    <string name="chat_account_menu_red_packet">紅包記録</string>
+    <string name="chat_account_menu_server">サーバー</string>
+    <string name="chat_account_menu_share">アプリのダウンロード</string>
+    <string name="chat_account_menu_security">セキュリティ管理</string>
+    <string name="chat_account_menu_setting">設定センター</string>
+    <string name="chat_account_menu_feedback">ユーザーフィードバック</string>
+    <string name="chat_account_menu_update">アップデートを確認</string>
+    <string name="chat_action_logout">ログアウト</string>
+
+    <!--多语言-->
+    <string name="language_select_title">多言語</string>
+    <string name="language_chinese">中文</string>
+    <string name="language_english">English</string>
+    <string name="chat_account_menu_language">多言語</string>
+
+    <!--搜索选项-->
+    <string name="chat_action_search_scan">スキャン</string>
+    <string name="chat_action_search_scan_tips">QRコード名刺をスキャン</string>
+    <string name="chat_action_search_import_friends">友達をインポート</string>
+    <string name="chat_action_search_import_friends_tips">このデバイスでログインしたアカウントの友達のみサポートされます</string>
+
+    <!--修改昵称-->
+    <string name="chat_title_edit_nickname">ニックネームを変更</string>
+    <string name="chat_tip_nickname">ニックネーム</string>
+    <string name="chat_tip_nickname_edit_success">ニックネームを変更しました。しばらくお待ちください。後ほど結果を確認してください…</string>
+    <string name="chat_tip_nickname_empty">ニックネームは空にできません</string>
+    <string name="chat_tip_avatar">アバター</string>
+    <string name="chat_tip_avatar_edit_success">アバターを変更しました。しばらくお待ちください。後ほど結果を確認してください…</string>
+
+    <!--安全管理-->
+    <string name="chat_title_security_setting">セキュリティ管理</string>
+    <string name="chat_tips_export_words">ニーモニックをエクスポート</string>
+    <string name="chat_tips_export_s2">S2をエクスポート</string>
+    <string name="chat_tips_export_private">秘密鍵をエクスポート</string>
+    <string name="chat_tips_phone">電話番号</string>
+    <string name="chat_tips_email">メール</string>
+    <string name="chat_tips_encrypt_key">秘密チャットパスワード</string>
+    <string name="chat_tips_action1">パスワードを変更</string>
+    <string name="chat_tips_action2">パスワードを設定</string>
+    <string name="chat_tips_action3">バインドする</string>
+    <string name="chat_security_setting_tip1">ニーモニックはチャットメッセージとチャットファイルの暗号化に使用されます。デバイスを変更してログインする場合は、同じニーモニックをインポートする必要があります。履歴の暗号化メッセージを表示するには、早めにニーモニックをエクスポートして安全な場所に保存してください！</string>
+    <string name="chat_security_setting_tip2">ニーモニックは電話番号/メールと秘密チャットパスワードで暗号化して公式サーバーにアップロードでき、ニーモニックの復元サービスを提供します。</string>
+    <string name="chat_save_words_tip">ニーモニックを必ず書き留めて安全な場所に保管してください。紛失した場合、再インストールやデバイス変更時のログインで履歴の暗号化メッセージを表示できなくなります！また、秘密チャットパスワードをリセットできません！ニーモニックが他人に取得された場合、あなたの情報が取得される可能性があります！</string>
+    <string name="chat_save_words_tips2">必ず書き留めて安全な場所に保管してください！</string>
+    <string name="chat_tips_chat_pwd_error">秘密チャットパスワードが正しくありません</string>
+    <string name="chat_tips_mnem_export_fail">ニーモニックのエクスポートに失敗しました</string>
+    <string name="chat_tips_private_export_fail">秘密鍵のエクスポートに失敗しました</string>
+    <string name="chat_title_bind_phone">電話番号をバインド</string>
+    <string name="chat_title_bind_email">メールをバインド</string>
+    <string name="chat_tips_bind_phone_tips">電話番号をバインドすると電話番号でログインできます</string>
+    <string name="chat_tips_bind_email_tips">メールをバインドするとメールでログインできます</string>
+    <string name="chat_hint_input_phone">電話番号を入力してください</string>
+    <string name="chat_hint_input_email">メールを入力してください</string>
+    <string name="chat_action_bind_send_code">認証コードを取得</string>
+    <string name="chat_tips_bind_account_success">バインドに成功しました</string>
+    <string name="chat_action_unbind_and_rebind">解除して再バインド</string>
+    <string name="chat_action_unbind_phone_login">電話番号でログイン</string>
+    <string name="chat_action_unbind_import_mnem">ニーモニックをインポート</string>
+    <string name="chat_tips_override_bind">この電話番号/メールは既に他のニーモニックアカウントにバインドされています。元のバインドを解除して、ローカルのニーモニックアカウントに再バインドしますか？</string>
+    <string name="chat_tips_override_bind2">元のアカウントに資産がある場合、電話番号では復元できず、紛失のリスクがあります。慎重にバインドを解除してください！</string>
+    <string name="chat_tips_phone_forget_password">秘密チャットパスワードを忘れると、電話番号では元のアカウントを復元できません！以下の方法があります：\n1、ニーモニックをインポートしてログイン（パスワード変更可）；\n2、元のバインドを解除して、新しいアカウントを生成し、この電話番号をバインドします。</string>
+    <string name="chat_tips_email_forget_password">秘密チャットパスワードを忘れると、メールでは元のアカウントを復元できません！以下の方法があります：\n1、ニーモニックをインポートしてログイン（パスワード変更可）；\n2、電話番号でログインして復元を試みるか、電話番号ログインのパスワード忘れから「解除して再バインド」を実行します</string>
+    <string name="chat_tips_override_forget_password2">元のバインドを解除すると、元のアカウント情報と資産が失われます。慎重にバインドを解除してください！</string>
+
+    <!--设置中心-->
+    <string name="chat_title_setting_center">設定センター</string>
+    <string name="chat_tips_app_notify_switch">アプリ通知スイッチ</string>
+    <string name="chat_tips_new_msg_notify">新着メッセージ通知を受信</string>
+    <string name="chat_tips_rtc_call_notify">音声・ビデオ通話の招待通知を受信</string>
+    <string name="chat_tips_system_sound_and_vibrate">システムサウンドと振動</string>
+    <string name="chat_tips_new_msg_sys_notify">新着メッセージのシステム通知</string>
+    <string name="chat_tips_rtc_call_sys_notify">音声・ビデオ通話の通知</string>
+    <string name="chat_tips_go_sys_notify_settings">システム設定へ</string>
+
+    <string name="chat_set_chat_password">秘密チャットパスワードを設定してください</string>
+    <string name="chat_input_chat_password">秘密チャットパスワードを入力してください</string>
+    <string name="chat_encrypt_password_hint">8–16桁の数字、文字、記号の組み合わせ</string>
+    <!--修改助记词密码-->
+    <string name="chat_title_set_encrypt_password">秘密チャットパスワードを設定</string>
+    <string name="chat_title_encrypt_password">秘密チャットパスワードを変更</string>
+    <string name="chat_tips_old_encrypt_pwd">旧パスワード</string>
+    <string name="chat_tips_old_encrypt_pwd_hint">旧パスワードを入力してください</string>
+    <string name="chat_tips_first_encrypt_pwd_hint">パスワードを設定してください</string>
+    <string name="chat_tips_second_encrypt_pwd_hint">パスワードをもう一度入力してください</string>
+    <string name="chat_tips_forget_password">パスワードを忘れた</string>
+    <string name="chat_tips_new_encrypt_pwd">新パスワード</string>
+    <string name="chat_tips_new_encrypt_pwd_hint">新しいパスワードをもう一度入力してください</string>
+    <string name="chat_tips_update_encrypt_pwd1">秘密チャットパスワードを変更しました</string>
+    <string name="chat_tips_update_encrypt_pwd2">パスワードが正しくありません</string>
+    <string name="chat_tips_update_encrypt_pwd3">8–16文字を入力してください</string>
+    <string name="chat_tips_update_encrypt_pwd4">数字、文字、記号の組み合わせを入力してください</string>
+    <string name="chat_tips_update_encrypt_pwd5">8–16桁の数字、文字、記号の組み合わせを設定してください</string>
+    <string name="chat_tips_update_encrypt_pwd6">2回入力したパスワードが一致しません</string>
+    <string name="chat_tips_update_encrypt_pwd7">秘密チャットパスワードを設定しました</string>
+
+    <!--联系人信息-->
+    <string name="chat_title_contact_info">詳細プロフィール</string>
+    <string name="chat_action_send_msg">メッセージを送信</string>
+    <string name="chat_action_transfer">送金</string>
+    <string name="chat_action_delete_friend">友達を削除</string>
+    <string name="chat_action_add_friend">友達を追加</string>
+    <string name="chat_tips_modify_group_success">サーバーを変更しました</string>
+    <string name="chat_tips_add_friend_success">友達を追加しました</string>
+    <string name="chat_tips_delete_friend_success">友達を削除しました</string>
+    <string name="chat_tips_nickname_placeholder">ニックネーム：%1$s</string>
+    <string name="chat_tips_group_nickname_placeholder">グループニックネーム：%1$s</string>
+    <string name="chat_tips_address_placeholder">アカウント：%1$s</string>
+    <string name="chat_dialog_delete_friend">削除すると、この連絡先とのチャットメッセージも削除されます。連絡先 &lt;font color="%1$s"&gt;%2$s&lt;/font&gt; を削除しますか？</string>
+
+    <string name="chat_title_edit_group_name">グループ名を変更</string>
+    <string name="chat_tip_group_name">暗号化グループ名</string>
+    <string name="chat_tip_group_pub_name">公開グループ名</string>
+    <string name="chat_title_edit_nickname_in_group">このグループでのニックネーム</string>
+    <string name="chat_tip_nickname_in_group">グループニックネーム</string>
+    <string name="chat_tip_group_name_empty">グループ名は空にできません</string>
+    <string name="chat_tip_group_pub_name_empty">公開グループ名は空にできません</string>
+    <string name="chat_tip_edit_group_name_success">グループ名を変更しました</string>
+    <string name="chat_tip_edit_group_nickname_success">グループ内のニックネームを変更しました</string>
+    <string name="chat_tip_group_avatar">グループアバター</string>
+    <string name="chat_tips_nickname_in_group">このグループでのニックネーム</string>
+    <string name="chat_log_in_chat_history">チャット履歴を検索</string>
+    <string name="chat_file_in_chat_history">チャットファイル</string>
+    <string name="chat_detail_no_disturb">通知をオフにする</string>
+    <string name="chat_detail_stick_top">チャットを固定</string>
+    <string name="chat_detail_group_type_tips">グループタイプ</string>
+    <string name="chat_detail_group_type0">通常グループ</string>
+    <string name="chat_detail_group_type1">全員グループ</string>
+    <string name="chat_detail_group_type2">部署グループ</string>
+    <string name="chat_detail_belong_server_group">相手のメッセージを受信するサーバー</string>
+    <string name="chat_detail_belong_server_group2">所属サーバー</string>
+    <string name="chat_detail_choose_server_group">サーバーを選択</string>
+    <string name="chat_detail_edit_server_group">管理</string>
+    <string name="chat_add_black_list">ブラックリストに追加</string>
+    <string name="chat_remove_black_list">ブラックリストから削除</string>
+    <string name="chat_user_black_message">相手のメッセージを受信しなくなりました</string>
+    <string name="chat_add_black_warn">ブラックリストに追加すると、相手のメッセージを受信しなくなります。連絡先 &lt;font color="%1$s"&gt;%2$s&lt;/font&gt; をブラックリストに移動しますか？</string>
+    <string name="chat_add_black_success">相手をブラックリストに追加しました！</string>
+    <string name="chat_add_black_fail">ブラックリストへの追加に失敗しました！</string>
+    <string name="chat_remove_black_success">相手をブラックリストから削除しました！</string>
+    <string name="chat_remove_black_fail">ブラックリストからの削除に失敗しました！</string>
+    <string name="chat_group_mute_time">ミュート</string>
+
+    <string name="chat_title_contact_remark">メモ情報</string>
+    <string name="chat_tip_remark">メモ</string>
+    <string name="chat_tip_remark_edit_success">変更しました</string>
+
+    <!--群信息-->
+    <string name="chat_action_exit_group">グループを退出</string>
+    <string name="chat_action_disband_group">グループを解散</string>
+
+    <!--本地搜索-->
+    <string name="chat_tips_search_history">検索履歴</string>
+    <string name="chat_tips_search_clear_history">履歴をクリア</string>
+    <string name="chat_tips_search_hint">友達、チャット履歴などを検索</string>
+    <string name="chat_tips_search_hint1">友達を検索</string>
+    <string name="chat_tips_search_hint2">グループを検索</string>
+    <string name="chat_tips_search_hint3">チャット履歴を検索</string>
+    <string name="chat_tips_search_type1">連絡先</string>
+    <string name="chat_tips_search_type2">グループ</string>
+    <string name="chat_tips_search_type3">チャット履歴</string>
+    <string name="chat_tips_search_result_more">もっと見る</string>
+    <string name="chat_tips_search_log_target">\"%1$s\"の記録</string>
+    <string name="chat_tips_search_log_count">関連するチャット履歴 %1$d件</string>
+
+    <!-- 聊天-->
+    <string name="chat_tips_chat_operate1">ミュートを解除しました</string>
+    <string name="chat_tips_chat_operate2">レシーバーモードに切り替えました</string>
+    <string name="chat_tips_chat_operate3">スピーカーモードに切り替えました</string>
+    <string name="chat_tips_chat_operate4">クリップボードにコピーしました</string>
+    <string name="chat_tips_chat_operate5">テキスト以外のメッセージはコピーできません</string>
+    <string name="chat_tips_chat_operate6">メッセージを1件取り消しました</string>
+    <string name="chat_top_operate">チャットを固定</string>
+    <string name="chat_top_cancel">固定を解除</string>
+    <string name="chat_disturb_operate">通知をオフにする</string>
+    <string name="chat_disturb_cancel">通知オフを解除</string>
+    <string name="chat_message_delete">チャットを削除</string>
+    <string name="chat_dialog_delete_session">&lt;font color="%1$s"&gt;%2$s&lt;/font&gt; とのチャットを削除しますか？</string>
+    <string name="chat_dialog_delete_message">このメッセージを削除しますか？</string>
+    <string name="chat_dialog_delete_messages">選択したメッセージを削除しますか？</string>
+    <string name="chat_tips_servers_empty">相手のサーバーアドレスが見つかりません</string>
+    <string name="chat_tips_server_not_exist">現在のグループチャットサーバーに接続していないため、メッセージを送受信できません</string>
+    <string name="chat_tips_add_group_chat_server">サーバーを追加</string>
+
+    <string name="chat_popup_option_copy">コピー</string>
+    <string name="chat_popup_option_translate">翻訳</string>
+    <string name="chat_popup_option_view_original">原文を表示</string>
+    <string name="chat_popup_option_forward">転送</string>
+    <string name="chat_popup_option_reference">引用</string>
+    <string name="chat_popup_option_focus">注目</string>
+    <string name="chat_popup_option_revoke">取り消し</string>
+    <string name="chat_popup_option_delete">削除</string>
+    <string name="chat_popup_option_mute">ミュート</string>
+    <string name="chat_popup_option_audio_channel_speaker">スピーカーで再生</string>
+    <string name="chat_popup_option_audio_channel_receiver">レシーバーで再生</string>
+    <string name="chat_popup_option_multiple_choose">複数選択</string>
+
+    <string name="chat_tips_switch_to_speaker">スピーカー再生に切り替えました</string>
+    <string name="chat_tips_switch_to_receiver">レシーバー再生に切り替えました</string>
+
+    <!--聊天输入框-->
+    <string name="chat_tips_input_msg1">空白のメッセージは送信できません</string>
+    <string name="chat_tips_input_msg2">システムメッセージはテキストのみ送信できます</string>
+    <string name="chat_tips_input_msg3">SDカードが検出されません</string>
+
+    <string name="chat_tips_input_send">送信</string>
+    <string name="chat_tips_input_say_sth">何か話しましょう</string>
+    <string name="chat_tips_input_media">画像/動画</string>
+    <string name="chat_tips_input_shoot">撮影</string>
+    <string name="chat_tips_input_snap_msg">消えるメッセージ</string>
+    <string name="chat_tips_input_file">ファイル</string>
+    <string name="chat_tips_input_rtc">ビデオ通話</string>
+    <string name="chat_tips_input_red_packet">紅包</string>
+    <string name="chat_tips_input_red_packet_only">専用紅包</string>
+    <string name="chat_tips_input_text_packet">紅包メッセージ</string>
+    <string name="chat_tips_input_transfer">送金</string>
+    <string name="chat_tips_input_contact_card">名刺</string>
+
+    <string name="chat_call_menu_voice">音声通話</string>
+    <string name="chat_call_menu_video">ビデオ通話</string>
+    <string name="chat_call_invite_title_voice">音声通話</string>
+    <string name="chat_call_invite_title_video">ビデオ通話</string>
+    <string name="chat_call_invite_desc">タップして参加 · ルーム %1$s</string>
+    <string name="chat_call_invite_text">音声チャットへの招待、リンクをタップして参加：%1$s</string>
+    <string name="chat_call_confirm_content">音声ルームを作成し、相手に招待を送信します。音声チャットを開始しますか？</string>
+    <string name="chat_call_creating">通話ルームを作成中…</string>
+    <string name="chat_call_create_failed">通話の作成に失敗しました。しばらくしてから再試行してください</string>
+    <string name="chat_call_busy_title">ヒント</string>
+    <string name="chat_call_busy_content">通話中です。現在の通話を終了して新しい通話を開始しますか？</string>
+    <string name="chat_call_window_hangup">通話終了</string>
+    <string name="chat_call_window_minimize">最小化</string>
+    <string name="chat_call_window_expand">全画面</string>
+    <string name="chat_call_window_minimized_tips">通話を最小化しました。小窓をタップすると再開できます</string>
+    <string name="chat_call_copy_link">通話リンクをコピー</string>
+    <string name="chat_call_link_copied">通話リンクをコピーしました</string>
+    <string name="chat_call_webview_error">通話ページの読み込みに失敗しました。ネットワークを確認して再試行してください</string>
+
+    <string name="chat_record_state_prepared">押して 話す</string>
+    <string name="chat_record_state_recording">離して 終了</string>
+    <string name="chat_record_state_want_cancel">指を離して、送信をキャンセル</string>
+    <string name="chat_record_slide_to_cancel">指を上にスワイプして、送信をキャンセル</string>
+    <string name="chat_record_tips_too_short">録音時間が短すぎます</string>
+    <string name="chat_speak_time_remain">あと%1$d秒話せます</string>
+
+    <!--聊天消息-->
+    <string name="chat_unfold">閉じる</string>
+    <string name="chat_fold">展開</string>
+
+    <string name="chat_tips_num_3">%1$d/3</string>
+    <string name="chat_tips_num_15">%1$d/15</string>
+    <string name="chat_tips_num_20">%1$d/20</string>
+    <string name="chat_tips_num_50">%1$d/50</string>
+    <string name="chat_tips_num_400">%1$d/400</string>
+    <string name="chat_tips_num_500">%1$d/500</string>
+
+    <string name="chat_time_tips_yesterday">昨日 %1$s</string>
+    <string name="chat_time_tips_week1">日曜日 %1$s</string>
+    <string name="chat_time_tips_week2">月曜日 %1$s</string>
+    <string name="chat_time_tips_week3">火曜日 %1$s</string>
+    <string name="chat_time_tips_week4">水曜日 %1$s</string>
+    <string name="chat_time_tips_week5">木曜日 %1$s</string>
+    <string name="chat_time_tips_week6">金曜日 %1$s</string>
+    <string name="chat_time_tips_week7">土曜日 %1$s</string>
+
+    <string name="chat_file_size">ファイル %1$s</string>
+    <string name="chat_find_ai_cs">AIサポート</string>
+    <string name="chat_tips_copy_message_content">メッセージ内容をコピーしました</string>
+    <string name="chat_tips_translate_failed">翻訳に失敗しました。しばらくしてからお試しください</string>
+
+    <string name="chat_message_system_msg_type">お知らせ</string>
+    <string name="chat_message_unsupported_msg_type">このメッセージは現在サポートされていません。最新バージョンにアップグレードしてください</string>
+    <string name="chat_tips_file_not_exist">ファイルが存在しません</string>
+
+    <string name="chat_tips_search_my_account">マイアカウント：%1$s</string>
+    <string name="chat_tips_search_type_user">ユーザー</string>
+    <string name="chat_title_my_qr_code">マイQRコード</string>
+    <string name="chat_tips_qr_code_friend">QRコードをスキャンして%1$sで友達に追加</string>
+    <string name="chat_action_copy_address">アカウントをコピー</string>
+    <string name="chat_action_copy_group_num">グループ番号をコピー</string>
+    <string name="chat_tips_copy_download_url">ダウンロードリンクをクリップボードにコピーしました</string>
+    <string name="chat_tips_copy_address">クリップボードにコピーしました</string>
+    <string name="chat_tips_copy_group_num">グループ番号をクリップボードにコピーしました</string>
+    <string name="chat_tips_qr_share_chat">TanXin</string>
+    <string name="chat_tips_qr_save">保存</string>
+    <string name="chat_tips_img_saved">画像を保存しました</string>
+    <string name="chat_tips_img_not_exist">画像が存在しません</string>
+    <string name="chat_tips_vid_not_exist">動画が存在しません</string>
+    <string name="chat_tips_img_zip_fail">画像の圧縮に失敗しました</string>
+    <string name="chat_tips_not_contain_qr_code">QRコードが認識されません</string>
+    <string name="chat_action_recognize_qrcode">画像内のQRコードを認識</string>
+
+    <string name="chat_tips_start_download">ダウンロードを開始…</string>
+    <string name="chat_tips_is_downloading">ダウンロード中…</string>
+    <string name="chat_tips_image_download_to">画像を%1$sにダウンロードしました</string>
+    <string name="chat_tips_video_download_to">動画を%1$sにダウンロードしました</string>
+    <string name="chat_tips_file_download_to">ファイルを%1$sにダウンロードしました</string>
+    <string name="chat_tips_download_fail">ダウンロードに失敗しました、%1$s</string>
+
+    <!--文件详情页面-->
+    <string name="chat_tips_download_file">ファイルを受信</string>
+    <string name="chat_tips_can_not_open">%1$sこの種類のファイルの開封は現在サポートされていません。他のアプリで開くことができます</string>
+    <string name="chat_tips_open_with">他のアプリで開く</string>
+    <string name="chat_tips_select_open_type">このファイルを開くアプリを選択してください</string>
+    <string name="chat_tips_unsupported_file_type">サポートされていないファイルタイプ</string>
+
+    <!--聊天文件管理-->
+    <string name="chat_title_file_management">チャットファイル</string>
+    <string name="chat_action_file_select">選択</string>
+    <string name="chat_title_chat_file">ファイル</string>
+    <string name="chat_title_chat_media">画像/動画</string>
+    <string name="chat_file_empty">ファイルはありません</string>
+    <string name="chat_media_empty">画像/動画はありません</string>
+    <string name="chat_file_search_hint">ファイル名を入力</string>
+    <string name="chat_action_file_download">ダウンロード</string>
+    <string name="chat_action_file_delete">削除</string>
+    <string name="chat_dialog_tips_delete_chat_files">削除後、メッセージ履歴には表示されなくなります</string>
+
+    <!--删除私聊记录 / 自动删除-->
+    <string name="chat_contact_clean_private">チャット履歴を削除</string>
+    <string name="chat_contact_auto_delete">チャット履歴を自動削除</string>
+    <string name="chat_private_clean_confirm_title">チャット履歴を削除</string>
+    <string name="chat_private_clean_confirm_message">選択した期間に基づいて双方のプライベートチャットメッセージを削除します（サーバー側が基準）。続行しますか？</string>
+    <string name="chat_private_clean_success">操作に成功しました。サーバー側で %1$d 件削除しました</string>
+    <string name="chat_private_clean_custom_invalid">終了時間は開始時間より前にはできません</string>
+    <string name="chat_private_clean_last_1d">直近 1 日</string>
+    <string name="chat_private_clean_last_3d">直近 3 日</string>
+    <string name="chat_private_clean_last_7d">直近 7 日</string>
+    <string name="chat_private_clean_last_30d">直近 30 日</string>
+    <string name="chat_private_clean_last_90d">直近 90 日</string>
+    <string name="chat_private_clean_last_180d">直近 180 日</string>
+    <string name="chat_private_clean_last_365d">直近 365 日</string>
+    <string name="chat_private_clean_all">全履歴</string>
+    <string name="chat_private_clean_custom">カスタム日付…</string>
+    <string name="chat_private_clean_pick_start">開始日を選択</string>
+    <string name="chat_private_clean_pick_end">終了日を選択</string>
+    <string name="chat_private_auto_off">オフ</string>
+    <string name="chat_private_auto_day_1">1 日以上</string>
+    <string name="chat_private_auto_day_3">3 日以上</string>
+    <string name="chat_private_auto_day_7">7 日以上</string>
+    <string name="chat_private_auto_day_30">30 日以上</string>
+    <string name="chat_private_auto_day_180">180 日以上</string>
+    <string name="chat_private_auto_pick_title">自動削除</string>
+
+    <!--登录-->
+    <string name="login_tips_login_success">ログインに成功しました</string>
+    <string name="login_tips_register_success">登録に成功しました</string>
+    <string name="login_tips_code_sent">認証コードを送信しました</string>
+
+    <string name="login_tips_correct_email">正しいメールアドレスを入力してください</string>
+    <string name="login_tips_correct_phone">正しい電話番号を入力してください</string>
+    <string name="login_tips_correct_code">完全な認証コードを入力してください</string>
+    <string name="login_tips_code_count">送信済み(%1$ds)</string>
+
+    <string name="login_tips_input_email">メールアドレスを入力してください</string>
+    <string name="login_tips_input_phone">電話番号を入力してください</string>
+    <string name="login_tips_input_code">認証コードを入力してください</string>
+    <string name="login_tips_input_s2">S2を入力してください</string>
+    <string name="login_action_send_code">認証コードを取得</string>
+    <string name="login_action_login">ログイン</string>
+    <string name="login_use_email">メールでログイン</string>
+    <string name="login_use_email_tips">メールでニーモニックの一部を復元してログイン</string>
+    <string name="login_use_phone">電話番号でログイン</string>
+    <string name="login_use_phone_tips">電話番号がバインドされていない場合、アカウントが自動生成されます</string>
+    <string name="login_tips_unbind_yet">電話番号/メールはまだニーモニックアカウントにバインドされていません。他の方法でチャットに入ってください。</string>
+
+    <string name="chat_dialog_action_take_photo">撮影</string>
+    <string name="chat_dialog_action_select_picture">アルバムから選択</string>
+
+    <!--App更新对话框-->
+    <string name="chat_update_checking_update">アップデートを確認中…</string>
+    <string name="chat_update_latest_version">現在は最新バージョンです</string>
+    <string name="chat_update_title">新しいバージョンが見つかりました</string>
+    <string name="chat_update_tips_version">V%1$s</string>
+    <string name="chat_update_downloading">ダウンロード中…</string>
+    <string name="chat_update_begin_download">ダウンロードを準備中…</string>
+    <string name="chat_update_download_success">ダウンロードが完了しました。タップしてインストール</string>
+    <string name="chat_update_action_retry">再試行</string>
+    <string name="chat_update_action_install">タップしてインストール</string>
+    <string name="chat_update_action_update">更新</string>
+    <string name="chat_update_action_ignore_update">後で</string>
+
+    <!--群聊-->
+    <string name="chat_title_create_group">グループを作成</string>
+    <string name="chat_title_invite_members_type">メンバーを選択</string>
+    <string name="chat_title_invite_group_members">新しいメンバーを追加</string>
+    <string name="chat_tips_group_members">グループメンバー</string>
+    <string name="chat_title_create_group_select_server">サーバーを選択</string>
+    <string name="chat_tips_create_group_manage_server">管理</string>
+    <string name="chat_tips_choose_group_server">グループが属するチャットサーバーを選択</string>
+    <string name="chat_tips_invite_group_members">グループメンバーを選択</string>
+    <string name="chat_tips_group_members_friends">友達リストからメンバーを選択</string>
+    <string name="chat_tips_group_members_oa">組織構造からメンバーを選択</string>
+    <string name="chat_action_create_group">作成</string>
+    <string name="chat_tips_somebody_create_group">%1$sが作成したグループ</string>
+    <string name="chat_tips_group_member_num">全%1$d人</string>
+    <string name="chat_action_invite">招待</string>
+    <string name="chat_action_remove">削除</string>
+    <string name="chat_action_group_copy_mark_id">グループ番号をコピー</string>
+    <string name="chat_title_group_info">グループ詳細</string>
+    <string name="chat_title_group_qrcode">グループQRコード</string>
+    <string name="chat_tips_group_mark_id">グループ番号 %1$s</string>
+    <string name="chat_tips_group_pub_name">公開グループ名：%1$s</string>
+    <string name="chat_tips_group_qr_code">QRコードをスキャンしてグループに参加</string>
+    <string name="chat_tips_group_forbid_join">このグループへの参加は禁止されています</string>
+    <string name="chat_tips_group_copy_mark_id">グループ番号をクリップボードにコピーしました</string>
+    <string name="chat_tips_group_join_invalid_qrcode">参加QRコードの有効期限が切れています</string>
+    <string name="tips_invite_group_members_success">招待に成功しました</string>
+
+    <string name="chat_title_group_user">グループメンバー</string>
+    <string name="chat_action_add_group_user">メンバーを追加</string>
+    <string name="chat_action_del_group_user">メンバーを削除</string>
+    <string name="chat_action_set_group_admin">管理者に設定</string>
+    <string name="chat_tips_set_nickname_in_group">ここで &lt;font color="%1$s"&gt;%2$s&lt;/font&gt; のニックネームを設定できます。このニックネームはこのグループ内でのみ表示されます</string>
+    <string name="chat_tips_search_group_friend_hint">グループメンバーを検索</string>
+    <string name="chat_tips_member_type">グループオーナー、管理者</string>
+    <string name="chat_tips_member_type_owner">グループオーナー</string>
+    <string name="chat_tips_member_type_admin">管理者</string>
+    <string name="chat_tips_select_invite_users">招待する友達を選択してください</string>
+    <string name="chat_tips_select_delete_users">削除するグループメンバーを選択してください</string>
+    <string name="chat_dialog_tips_exit_group">&lt;font color="%1$s"&gt;%2$s&lt;/font&gt; を退出しますか？</string>
+    <string name="chat_dialog_tips_disband_group">&lt;font color="%1$s"&gt;%2$s&lt;/font&gt; を解散しますか？</string>
+
+    <string name="chat_group_admin_setting">管理者設定</string>
+    <string name="chat_group_owner_setting">グループオーナーの譲渡</string>
+    <string name="chat_group_join_limit">参加制限</string>
+    <string name="chat_group_add_limit">友達追加制限</string>
+    <string name="chat_group_mute_all">全員ミュート</string>
+    <string name="chat_group_mute_list">ミュートリスト</string>
+    <string name="chat_group_join_limit1">承認不要</string>
+    <string name="chat_group_join_limit_sub1">グループオーナーまたは管理者の承認なしで参加可能</string>
+    <string name="chat_group_join_limit2">参加禁止</string>
+    <string name="chat_group_join_limit_sub2">グループオーナーと管理者の招待以外は、誰も参加できません</string>
+    <string name="chat_group_join_limit3">グループ主の承認</string>
+    <string name="chat_group_join_limit_sub3">グループへの参加にはグループ主または管理者の承認が必要です</string>
+    <string name="chat_group_apply_list">参加申請</string>
+    <string name="chat_group_apply_title">参加申請</string>
+    <string name="chat_group_apply_empty">参加申請はありません</string>
+    <string name="chat_tip_apply_num">%1$d件の申請</string>
+    <string name="chat_action_apply_accept">承認</string>
+    <string name="chat_action_apply_reject">拒否</string>
+    <string name="chat_tips_apply_accepted">参加を承認しました</string>
+    <string name="chat_tips_apply_rejected">申請を拒否しました</string>
+    <string name="chat_action_apply_join_group">参加申請</string>
+    <string name="chat_action_apply_join_pending">申請済み、審査待ち</string>
+    <string name="chat_tips_apply_join_submitted">申請を送信しました。承認をお待ちください</string>
+    <string name="chat_tips_invite_apply_submitted">招待を送信しました。承認をお待ちください</string>
+    <string name="chat_tips_address_copied">アドレスをコピーしました</string>
+    <string name="chat_group_add_limit1">グループ内で友達追加可</string>
+    <string name="chat_group_add_limit2">グループ内での友達追加禁止</string>
+
+    <string name="chat_group_join_title">詳細プロフィール</string>
+    <string name="chat_action_join_group">グループに入る</string>
+    <string name="chat_action_can_not_join">参加禁止</string>
+    <string name="chat_action_chat_message">チャットに送信</string>
+    <string name="chat_tips_join_member_number">グループメンバー %1$d人</string>
+
+    <string name="chat_title_group_mute_list">ミュートリスト</string>
+    <string name="chat_action_group_cancel_mute">すべてミュート解除</string>
+    <string name="chat_tip_no_group_user_muted">ミュートを解除するメンバーはいません</string>
+    <string name="chat_tip_mute_forever">永久ミュート</string>
+    <string name="chat_tip_mute_to_time">%1$sまでミュート</string>
+    <string name="chat_tip_mute_user_num">%1$d人のメンバーがミュート中</string>
+    <string name="chat_action_forbid_add_friend">このグループでは友達追加が禁止されています</string>
+    <string name="chat_tips_mute_state1">発言可</string>
+    <string name="chat_tips_mute_state2">全員ミュート</string>
+    <string name="chat_tips_mute_state3">ミュート中&#160;%1$s</string>
+    <string name="chat_tips_mute_state4">永久ミュート</string>
+    <string name="chat_tips_can_not_mute">管理者またはグループオーナーはミュートできません</string>
+
+    <string name="chat_confirm_mute">ミュートしますか？</string>
+    <string name="chat_mute_cancel">ミュート解除</string>
+    <string name="chat_select_mute_time">ミュート時間を選択</string>
+    <string name="chat_change_mute_time">ミュート時間を変更</string>
+    <string name="chat_forever">永久</string>
+    <string name="chat_24_hour">24時間</string>
+    <string name="chat_10_hour">10時間</string>
+    <string name="chat_2_hour">2時間</string>
+    <string name="chat_30_minute">30分</string>
+    <string name="chat_10_minute">10分</string>
+
+    <string name="chat_title_admin_setting">管理者設定</string>
+    <string name="chat_title_change_owner">グループオーナーの譲渡</string>
+    <string name="chat_title_add_admin">管理者を追加</string>
+    <string name="chat_tips_group_owner">グループオーナー</string>
+    <string name="chat_tips_group_admin_num">管理者（%1$d/10）</string>
+    <string name="chat_action_add_group_admin">管理者を追加</string>
+    <string name="chat_tips_change_group_owner">&lt;font color="%1$s"&gt;%2$s&lt;/font&gt; にグループオーナーを譲渡しますか？</string>
+
+    <string name="chat_tips_new_msg">%1$s件の新しいメッセージ</string>
+
+    <string name="chat_ait_default">[誰かが@私]</string>
+
+    <!--转发-->
+    <string name="chat_forward_msg_summary">チャット履歴 全%1$d件</string>
+    <string name="chat_forward_source_tips">転送：%1$s</string>
+    <string name="chat_forward_source_me_and_others">私と[%1$s]のチャット</string>
+    <string name="chat_forward_source_others_and_others">[%1$s]と[%2$s]のチャット</string>
+    <string name="chat_forward_source_group">グループ[%1$s]のチャット</string>
+    <string name="chat_forward_title_others_and_others">[%1$s]と[%2$s]のチャット履歴</string>
+    <string name="chat_forward_title_group">グループのチャット履歴</string>
+    <string name="chat_action_forward">転送</string>
+    <string name="chat_action_forward_single">1件ずつ転送</string>
+    <string name="chat_action_forward_multiple">まとめて転送</string>
+    <string name="chat_action_msg_star">お気に入り</string>
+    <string name="chat_action_msg_delete">削除</string>
+    <string name="chat_action_revoke">取り消し</string>
+    <string name="chat_dialog_revoke_messages">選択した %d 件のメッセージを取り消しますか？</string>
+    <string name="chat_tips_revoke_empty">選択したメッセージは取り消せません</string>
+    <string name="chat_tips_revoke_partial">成功 %1$d 件、失敗 %2$d 件</string>
+    <string name="chat_title_contact_select">連絡先を選択</string>
+    <string name="chat_tips_forward_contact_tag1">最近のチャット</string>
+    <string name="chat_tips_forward_contact_tag2">連絡先</string>
+    <string name="chat_tips_forward_contact_tag3">グループ</string>
+    <string name="chat_tips_search_contact">友達、グループを検索</string>
+    <string name="chat_tips_search_friends">友達を検索</string>
+    <string name="chat_tips_search_groups">グループを検索</string>
+    <string name="chat_tips_oa_select">組織構造からメンバーを選択</string>
+    <string name="chat_tips_selected_message_empty">有効なメッセージを選択してください</string>
+    <string name="chat_tips_reach_max_msg_select_num">最大%1$d件のメッセージを選択できます</string>
+    <string name="chat_tips_forward_msg_empty">転送するメッセージがありません</string>
+    <string name="chat_tips_can_not_forward_group">現在のグループでは転送できません！</string>
+    <string name="chat_tips_can_not_forward_self">自分自身には転送できません</string>
+    <string name="chat_tips_can_not_forward_no_server">相手のサーバーが見つからず、転送できません</string>
+    <string name="chat_tips_can_not_forward_group_no_server">現在のグループチャットサーバーに接続していないため、メッセージを送受信できません</string>
+    <string name="cancel">キャンセル</string>
+    <string name="ok">確定</string>
+    <string name="explore_title">免責事項</string>
+    <string name="explore_disclaimer">サードパーティのリンクを使用しようとしています。確定すると、サードパーティの「プライバシーポリシー」と「利用規約」に同意したことになります。このリンクでのすべての行為と利用状況は、このリンクの提供元が責任を負います。</string>
+    <string name="no_dotip">今後表示しない</string>
+    <string name="del_str">削除</string>
+    <string name="del_tip_str">削除しますか?</string>
+    <string name="input_www">URLを入力してください</string>
+    <string name="wc_get_addr">現在のウォレットアドレスの取得を許可</string>
+    <string name="wc_sign_str">現在のウォレットへの署名要求を許可</string>
+    <string name="wc_at">このサービスは WalletConnect プロトコルによってサポートされています</string>
+    <string name="wc_w_addr">ウォレットアドレス</string>
+    <string name="wc_cnet">現在のネットワーク</string>
+    <string name="wc_dis">接続を切断</string>
+    <string name="wc_pay_de">支払い詳細</string>
+    <string name="wc_pay_me">支払い情報</string>
+    <string name="wc_pay_address">支払いアドレス</string>
+    <string name="wc_fee">マイナー手数料</string>
+    <string name="wc_next">次へ</string>
+    <string name="wc_con">WalletConnectがあなたのウォレットに接続しています</string>
+    <string name="wc_coned">以下のウォレットと接続を確立しました</string>
+    <string name="home_receipt_address">受取アドレス</string>
+    <string name="home_transfer">送金</string>
+    <string name="tip_fee_high">設定したマイナー手数料が高すぎます。適切なマイナー手数料を選択してください</string>
+    <string name="tip_init_fee">マイナー手数料を初期化中...</string>
+    <string name="dapp_sign_re">Dappが署名要求を開始しました</string>
+    <string name="signme">署名情報</string>
+    <string name="i_wallet">マイウォレット</string>
+    <string name="my_wallet_detail_password">アカウントのパスワードを入力してください</string>
+    <string name="my_wallet_password_tips">パスワードを入力してください</string>
+    <string name="pwd_fail_str">パスワードが正しくありません</string>
+    <string name="high_str">最速</string>
+    <string name="standard_str">標準</string>
+    <string name="low_str">経済的</string>
+    <string name="custom_str">カスタム</string>
+    <string name="exp_str">ブラウザ</string>
+    <string name="send_suc_str">送信に成功しました!</string>
+    <string name="basic_error_send">送信に失敗しました。もう一度お試しください</string>
+    <string name="chat_send_fail_title">メッセージの送信に失敗しました</string>
+    <string name="chat_send_fail_network">ネットワークが利用できません。接続を確認してください</string>
+    <string name="chat_send_fail_timeout">ネットワークタイムアウトで送信に失敗しました</string>
+    <string name="chat_send_fail_connect">サーバーに接続できません。ネットワークを確認してください</string>
+    <string name="chat_send_fail_upload">ファイルのアップロードに失敗しました。ネットワークを確認してください</string>
+    <string name="chat_send_fail_server">サーバーエラー：%1$s</string>
+    <string name="chat_send_fail_server_empty">サーバーエラーで送信に失敗しました</string>
+    <string name="chat_send_fail_resend">再送信</string>
+
+
+
+
+
+    <string name="tian_str">提案</string>
+    <string name="tp_str">投票</string>
+    <string name="tp_error">アクティビティが混み合っています。しばらくしてからもう一度お試しください</string>
+    <string name="fee_setting">マイナー手数料設定</string>
+    <string name="enter_str">入力してください</string>
+    <string name="switch_account_str">アカウントを切り替え</string>
+    <string name="chat_no_nickname">ニックネームを設定してください</string>
+    <string name="c_entrance">便利な入口</string>
+    <string name="n_yopen">まだ開放されていません</string>
+    <string name="save_suc">保存しました</string>
+    <string name="like_str">お気に入り</string>
+    <string name="collect_suc_str">お気に入りに追加しました！</string>
+    <string name="my_collect_str">マイお気に入り</string>
+    <string name="ref_str">更新</string>
+    <string name="copy_url_str">リンクをコピー</string>
+    <string name="ex_open">ブラウザで開く</string>
+    <string name="exit_str">退出</string>
+    <string name="copy_success">コピーしました</string>
+    <string name="dapp_approve">コントラクトを承認</string>
+    <string name="dapp_out">発起アドレス</string>
+    <string name="dapp_nonono">トークン承認</string>
+    <string name="meta_approve">トークンの使用を承認</string>
+    <string name="select_network_fee">ネットワーク手数料を選択</string>
+    <string name="fee_fast">高速</string>
+    <string name="fee_recommended">推奨</string>
+    <string name="fee_slow">遅い</string>
+    <string name="fee_custom">カスタム</string>
+    <string name="fee_estimated_time">約%s以内</string>
+    <string name="estimated_fee">予想手数料</string>
+
+    <!--安全设置相关硬编码-->
+    <string name="chat_hint_input_wechat">WeChat IDを入力してください</string>
+    <string name="chat_hint_input_xiaohongshu">RED IDを入力してください</string>
+    <string name="chat_hint_input_douyin">TikTok IDを入力してください</string>
+
+    <!--群相关硬编码-->
+    <string name="chat_group_type_all">全員</string>
+    <string name="chat_group_type_dept">部署</string>
+    <string name="chat_group_qrcode_tips">このグループはチーム%1$sグループに属し、組織内のメンバーのみ参加できます。組織外の人がグループに参加するには、先にこの組織への参加を申請する必要があります</string>
+
+    <!--转发相关-->
+    <string name="chat_forward_multiple_messages">[1件ずつ転送]全%1$d件のメッセージ</string>
+    <string name="chat_forward_sent_count">%1$d 件のチャットに転送しました</string>
+
+    <!--私钥创建-->
+    <string name="chat_error_private_key_create">秘密鍵の作成に失敗しました</string>
+
+    <!--编辑群头像-->
+    <string name="chat_error_crop_unknown">切り抜きに失敗しました。不明なエラーです</string>
+
+    <!--Dapp相关-->
+    <string name="chat_dapp_error_password">パスワードが正しくありません</string>
+
+    <!--布局标签-->
+    <string name="chat_label_add_friend_msg">友達追加メッセージ</string>
+    <string name="chat_label_remark_other">相手のメモ</string>
+    <string name="chat_label_send">送信</string>
+    <string name="chat_label_account_manage">アカウント管理</string>
+    <string name="chat_label_audio_call">音声通話</string>
+    <string name="chat_label_video_call">ビデオ通話</string>
+    <string name="chat_label_create_wallet">ウォレットを作成</string>
+    <string name="chat_label_customer_service">カスタマーサービス</string>
+    <string name="chat_label_scan_add_cs">QRコードをスキャンしてカスタマーサービスの友達を追加</string>
+    <string name="chat_label_group_exit_tips">全員グループ/部署グループは、組織/部署を退出することでのみグループを退出できます。組織/部署を退出すると、対応するグループからも自動的に退出します！</string>
+    <string name="chat_label_search">検索</string>
+    <string name="chat_label_search_history">検索履歴</string>
+    <string name="chat_label_phone">電話番号</string>
+    <string name="chat_label_wechat">WeChat</string>
+    <string name="chat_label_xiaohongshu">RED</string>
+    <string name="chat_label_douyin">TikTok</string>
+    <string name="chat_label_select_at">@する人を選択</string>
+    <string name="chat_label_everyone">全員</string>
+    <string name="chat_label_input_hint">入力してください</string>
+    <string name="chat_label_confirm">確定</string>
+    <string name="chat_label_forgot_password">パスワードを忘れた</string>
+    <string name="chat_label_send_to">送信先：</string>
+    <string name="chat_label_mnem_verify">ニーモニック検証</string>
+    <string name="chat_label_phone_verify">電話番号検証</string>
+    <string name="chat_label_email_verify">メール検証</string>
+    <string name="chat_label_group_owner">グループオーナー</string>
+    <string name="chat_label_member_info">メンバー情報</string>
+    <string name="chat_label_name">氏名</string>
+    <string name="chat_label_team">チーム</string>
+    <string name="chat_label_short_number">内線番号</string>
+    <string name="chat_label_email">メール</string>
+    <string name="chat_label_dept">部署</string>
+    <string name="chat_label_position">役職</string>
+    <string name="chat_label_personal_card">個人名刺</string>
+    <string name="chat_label_red_packet_default">恭喜発財、大吉大利</string>
+    <string name="chat_label_exclusive_received">専用紅包を受け取りました</string>
+    <string name="chat_label_tx_mismatch">取引情報が一致しません。タップして確認</string>
+    <string name="chat_label_my_qr">マイQRコード</string>
+    <string name="chat_label_scan_add_me">QRコードをスキャンして友達を追加</string>
+    <string name="chat_label_scan_transfer_add">QRコードをスキャンして送金、友達追加</string>
+    <string name="chat_label_manage">管理</string>
+    <string name="chat_label_org_structure">組織構造</string>
+    <string name="chat_label_current_account">現在のアカウント</string>
+    <string name="chat_add_friend_default_msg">こんにちは、私は%1$sです。あなたを友達に追加しました！</string>
+
+</resources>

@@ -1,0 +1,100 @@
+import groovy.json.JsonSlurper
+
+/**
+ * 打包 + 上传 mapping 到 Bugly。
+ *
+ * Bugly 的 appid / appkey 属于凭证，**不写进仓库**：
+ * 放在仓库根目录的 local.secrets.properties（已在 .gitignore 中忽略），例如
+ *
+ *   BUGLY_CHAT33PRO_APPID=xxxxxxxxxx
+ *   BUGLY_CHAT33PRO_APPKEY=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+ *
+ * 没配置时只打包、跳过上传，不会让构建失败。
+ */
+def localSecrets = new Properties()
+def localSecretsFile = rootProject.file('local.secrets.properties')
+if (localSecretsFile.exists()) {
+    localSecretsFile.withInputStream { localSecrets.load(it) }
+}
+
+/** 上传 mapping；缺少凭证时打印提示并跳过 */
+def uploadMapping = { String idKey, String keyKey, String bundleId, String versionName, String mappingPath ->
+    def appId = localSecrets.getProperty(idKey, '')
+    def appKey = localSecrets.getProperty(keyKey, '')
+    if (appId?.trim() && appKey?.trim()) {
+        println "Upload $versionName mapping file to Bugly..."
+        project.exec {
+            commandLine "cmd", "/c",
+                    "java -Dfile.encoding=UTF-8 -jar ${rootDir}\\utils\\buglyqq-upload-symbol.jar " +
+                            "-appid ${appId.trim()} -appkey ${appKey.trim()} " +
+                            "-bundleid ${bundleId} -version ${versionName} -platform Android " +
+                            "-inputMapping ${mappingPath}"
+        }
+    } else {
+        println "跳过 Bugly 上传：local.secrets.properties 里没有配置 ${idKey} / ${keyKey}"
+    }
+}
+
+task packChat33Pro(description: "打包谈信正式版本，同时将mapping文件上传至Bugly", dependsOn: "assembleProductChat33proRelease") {
+    doLast {
+        def mappingDir = "${rootDir}\\app\\build\\outputs\\mapping\\productChat33proRelease"
+        def json = new JsonSlurper().parseText(
+                file("${rootDir}\\app\\build\\outputs\\apk\\productChat33pro\\release\\output-metadata.json").text)
+        def versionName = json.elements[0].versionName
+        if (versionName.size() > 0) {
+            uploadMapping("BUGLY_CHAT33PRO_APPID", "BUGLY_CHAT33PRO_APPKEY",
+                    "com.fzm.chatpro", versionName, mappingDir)
+        }
+        exec {
+            commandLine "cmd", "/c", "start ${rootDir}\\app\\build\\outputs\\apk\\productChat33pro\\release"
+        }
+    }
+}
+
+task packOrginone(description: "打包Orginone正式版本，同时将mapping文件上传至Bugly", dependsOn: "assembleProductAssetsOrgSign") {
+    doLast {
+        def mappingDir = "${rootDir}\\app\\build\\outputs\\mapping\\productAssetsOrgSign"
+        def json = new JsonSlurper().parseText(
+                file("${rootDir}\\app\\build\\outputs\\apk\\productAssets\\orgSign\\output-metadata.json").text)
+        def versionName = json.elements[0].versionName
+        if (versionName.size() > 0) {
+            uploadMapping("BUGLY_ORGINONE_APPID", "BUGLY_ORGINONE_APPKEY",
+                    "com.orginone.chat", versionName, mappingDir)
+        }
+        exec {
+            commandLine "cmd", "/c", "start ${rootDir}\\app\\build\\outputs\\apk\\productAssets\\orgSign"
+        }
+    }
+}
+
+task packPolice(description: "打包谈信公安版正式版本，同时将mapping文件上传至Bugly", dependsOn: "assembleProductPolicePoliceSign") {
+    doLast {
+        def mappingDir = "${rootDir}\\app\\build\\outputs\\mapping\\productPolicePoliceSign"
+        def json = new JsonSlurper().parseText(
+                file("${rootDir}\\app\\build\\outputs\\apk\\productPolice\\policeSign\\output-metadata.json").text)
+        def versionName = json.elements[0].versionName
+        if (versionName.size() > 0) {
+            uploadMapping("BUGLY_POLICE_APPID", "BUGLY_POLICE_APPKEY",
+                    "com.police.chat", versionName, mappingDir)
+        }
+        exec {
+            commandLine "cmd", "/c", "start ${rootDir}\\app\\build\\outputs\\apk\\productPolice\\policeSign"
+        }
+    }
+}
+
+task packZhchat(description: "打包ZH-CHAT正式版本，同时将mapping文件上传至Bugly", dependsOn: "assembleProductZhchatOrgSign") {
+    doLast {
+        def mappingDir = "${rootDir}\\app\\build\\outputs\\mapping\\productZhchatOrgSign"
+        def json = new JsonSlurper().parseText(
+                file("${rootDir}\\app\\build\\outputs\\apk\\productZhchat\\orgSign\\output-metadata.json").text)
+        def versionName = json.elements[0].versionName
+        if (versionName.size() > 0) {
+            uploadMapping("BUGLY_ZHCHAT_APPID", "BUGLY_ZHCHAT_APPKEY",
+                    "com.zhchat.chat", versionName, mappingDir)
+        }
+        exec {
+            commandLine "cmd", "/c", "start ${rootDir}\\app\\build\\outputs\\apk\\productZhchat\\orgSign"
+        }
+    }
+}

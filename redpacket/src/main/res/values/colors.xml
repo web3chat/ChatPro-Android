@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 红包详情页头部：渐变顶部色（标题栏 / 状态栏同步用此色） -->
+    <color name="redpacket_red_top">#E97F78</color>
+
+    <!-- 发红包页：头部渐变收尾色（同时作为主按钮渐变收尾色） -->
+    <color name="redpacket_red_deep">#D24B45</color>
+    <!-- 发红包页：主按钮禁用态 -->
+    <color name="redpacket_send_btn_disabled">#F0B5B1</color>
+    <!-- 发红包页：金色点缀（标题栏右侧文字 / 可用余额胶囊） -->
+    <color name="redpacket_gold">#FFDF5F</color>
+</resources>

@@ -1,0 +1,978 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Teks fitur baru (sama dengan values/strings.xml)-->
+    <string name="chat_chain_sync_fail">Gagal menyinkronkan alamat akun, coba lagi nanti</string>
+    <string name="chat_account_menu_chain_sync">Alamat akun</string>
+    <string name="chat_chain_sync_success">Alamat akun tersinkron</string>
+    <string name="chat_chain_sync_pending">Ketuk untuk menyinkronkan alamat akun</string>
+    <string name="chat_chain_sync_failed">Sinkronisasi gagal, ketuk untuk mencoba lagi</string>
+    <string name="chat_find_recent">Baru-baru ini dikunjungi</string>
+    <string name="chat_find_empty_title">Belum ada riwayat</string>
+    <string name="chat_find_empty_sub">Masukkan URL atau pindai kode QR untuk mulai menjelajah</string>
+    <string name="chat_tips_input_burn_mode">Musnah setelah dibaca aktif, pesan akan musnah setelah dibaca</string>
+    <string name="chat_tips_burn_type_denied">Tidak didukung dalam mode musnah setelah dibaca</string>
+    <string name="chat_title_burn_detail">Musnah setelah dibaca</string>
+    <string name="chat_burn_placeholder_tips">Ketuk untuk melihat pesan musnah setelah dibaca</string>
+    <string name="chat_burn_detail_tips">Akan musnah setelah ditutup</string>
+    <string name="chat_burn_play">Putar suara</string>
+    <string name="chat_burn_open">Buka file</string>
+    <string name="chat_burn_audio">Pesan suara</string>
+    <string name="qr_login_title">Masuk dengan kode QR</string>
+    <string name="qr_login_icon">💻</string>
+    <string name="qr_login_device_desc">Versi web meminta masuk ke akun Anda</string>
+    <string name="qr_login_session_hint">Kode QR berlaku 5 menit, segera konfirmasi</string>
+    <string name="qr_login_confirm">Konfirmasi masuk</string>
+    <string name="qr_login_cancel">Batal</string>
+    <string name="qr_login_wrong_password">Kata sandi salah</string>
+    <string name="qr_login_invalid_qr">Kode QR masuk tidak valid</string>
+    <string name="qr_login_private_key_failed">Gagal mendapatkan kunci pribadi</string>
+    <string name="qr_login_encrypt_failed">Enkripsi gagal, coba lagi</string>
+    <string name="qr_login_confirm_success">Dikonfirmasi, lanjutkan di komputer</string>
+    <string name="qr_login_risk_title">Peringatan Risiko</string>
+    <string name="qr_login_risk_warning">Terdeteksi aset di akun Anda. Pastikan lingkungan perangkat aman sebelum masuk.</string>
+    <string name="qr_login_risk_continue">Lanjutkan</string>
+    <string name="chat_label_current">Saat ini</string>
+    <string name="chat_title_square">Alun-alun</string>
+    <string name="square_filter_all">Semua</string>
+    <string name="square_filter_person">Pribadi</string>
+    <string name="square_filter_official">Resmi</string>
+    <string name="square_action_publish">Posting</string>
+    <string name="square_action_delete">Hapus</string>
+    <string name="square_action_edit">Edit</string>
+    <string name="square_action_share">Bagikan</string>
+    <string name="square_share_chooser">Bagikan ke</string>
+    <string name="square_share_card_slogan">Enkripsi ujung ke ujung · Aman &amp; privat</string>
+    <string name="square_share_card_footer">Dari %1$s</string>
+    <string name="square_share_card_qr_tip">Unduh %1$s</string>
+    <string name="square_action_send">Kirim</string>
+    <string name="square_sending">Mengirim…</string>
+    <string name="square_action_success">Berhasil</string>
+    <string name="square_publish_title">Postingan baru</string>
+    <string name="square_publish_hint">Apa yang Anda pikirkan…</string>
+    <string name="square_md_bold">Tebal</string>
+    <string name="square_md_italic">Miring</string>
+    <string name="square_md_strike">Coretan</string>
+    <string name="square_md_heading">Judul</string>
+    <string name="square_md_bullet_list">Daftar butir</string>
+    <string name="square_md_number_list">Daftar bernomor</string>
+    <string name="square_md_quote">Kutipan</string>
+    <string name="square_md_code">Kode</string>
+    <string name="square_md_link">Tautan</string>
+    <string name="square_md_divider">Garis pemisah</string>
+    <string name="square_md_preview">Pratinjau</string>
+    <string name="square_md_edit">Edit</string>
+    <string name="square_md_preview_empty">Tidak ada yang dapat dipratinjau</string>
+    <string name="square_detail_title">Detail postingan</string>
+    <string name="square_edit_expired">Waktu edit berakhir</string>
+    <string name="square_edit_success">Diperbarui</string>
+    <string name="square_edit_title">Edit Posting</string>
+    <string name="square_comments_title">Komentar</string>
+    <string name="square_comments_count">Komentar (%1$d)</string>
+    <string name="square_reply_label">Balas</string>
+    <string name="square_reply_to">Balas @%1$s</string>
+    <string name="square_reply_cancel">Batal</string>
+    <string name="square_reply_more">Lihat %1$d balasan lainnya</string>
+    <string name="square_reply_success">Balasan terkirim</string>
+    <string name="square_comment_deleted">Komentar asli telah dihapus</string>
+    <string name="square_tips_reply_invalid">Tidak dapat membalas komentar ini</string>
+    <string name="square_inbox_title">Komentar</string>
+    <string name="square_inbox_empty">Belum ada komentar atau balasan</string>
+    <string name="square_inbox_all_read">Tandai semua sudah dibaca</string>
+    <string name="square_inbox_floor">mengomentari postingan Anda</string>
+    <string name="square_inbox_reply">membalas Anda</string>
+    <string name="square_inbox_unavailable">Komentar ini tidak lagi tersedia</string>
+    <string name="square_inbox_no_unread">Tidak ada pesan yang belum dibaca</string>
+    <string name="square_comment_hint">Tulis komentar…</string>
+    <string name="square_no_comment">Belum ada komentar</string>
+    <string name="square_comments_closed">Komentar dinonaktifkan</string>
+    <string name="square_allow_comment">Izinkan komentar</string>
+    <string name="square_cannot_post">Akun Anda tidak dapat memposting</string>
+    <string name="square_closed">Square ditutup</string>
+    <string name="square_official_tag">Resmi</string>
+    <string name="square_status_auditing">Sedang ditinjau</string>
+    <string name="square_status_rejected">Ditolak</string>
+    <string name="square_tag_activity">Acara</string>
+    <string name="square_tag_announcement">Pengumuman</string>
+    <string name="square_tag_message">Pesan</string>
+    <string name="square_image_index">%1$d / %2$d</string>
+    <string name="square_time_just_now">Baru saja</string>
+    <string name="square_time_minutes">%1$d menit lalu</string>
+    <string name="square_time_hours">%1$d jam lalu</string>
+    <string name="square_time_yesterday">Kemarin</string>
+    <string name="square_empty">Belum ada apa pun, jadilah yang pertama</string>
+    <string name="square_tips_pending">Terkirim, muncul setelah disetujui</string>
+    <string name="square_tips_rejected">Konten melanggar aturan</string>
+    <string name="square_tips_rate_limited">Terlalu banyak operasi, coba lagi nanti</string>
+    <string name="square_tips_sign_invalid">Tanda tangan tidak valid atau kedaluwarsa, silakan masuk lagi</string>
+    <string name="square_tips_param_error">Parameter tidak valid</string>
+    <string name="square_tips_no_permission">Tidak punya izin</string>
+    <string name="square_tips_not_found">Konten tidak ada atau sudah dihapus</string>
+    <string name="square_tips_banned">Akun resmi ini telah diblokir, hubungi dukungan</string>
+    <string name="square_tips_comment_closed">Komentar dinonaktifkan</string>
+    <string name="square_tips_apply_pending">Ada pengajuan tertunda, lihat Akun Resmi Saya</string>
+    <string name="square_tips_network">Kesalahan jaringan, periksa koneksi</string>
+    <string name="square_tips_failed">Operasi gagal, coba lagi nanti</string>
+    <string name="square_tips_comment_pending">Komentar terkirim, terlihat setelah disetujui</string>
+    <string name="square_publish_success">Terkirim</string>
+    <string name="square_comment_success">Dikomentari</string>
+    <string name="square_delete_confirm">Hapus postingan ini?</string>
+    <string name="square_delete_comment_confirm">Hapus komentar ini?</string>
+    <string name="square_delete_success">Dihapus</string>
+    <string name="square_upload_failed">Gagal mengunggah gambar, coba lagi</string>
+    <string name="square_content_empty">Masukkan konten</string>
+    <string name="square_max_images">Maksimal 9 gambar</string>
+    <string name="square_my_official">Akun Resmi Saya</string>
+    <string name="square_my_profile">Profil Saya</string>
+    <string name="square_user_posts">Postingan</string>
+    <string name="square_user_empty">Belum ada postingan</string>
+    <string name="square_official_apply">Ajukan akun resmi</string>
+    <string name="square_official_state_none">Belum diajukan</string>
+    <string name="square_official_state_pending">Sedang ditinjau</string>
+    <string name="square_official_state_approved">Terverifikasi</string>
+    <string name="square_official_state_rejected">Ditolak</string>
+    <string name="square_official_state_banned">Diblokir</string>
+    <string name="square_official_tip_none">Setelah disetujui, postingan dari alamat ini akan tampil sebagai postingan resmi (nama tampil, komentar dapat dimatikan).</string>
+    <string name="square_official_tip_pending">Pengajuan Anda sedang ditinjau, harap tunggu.</string>
+    <string name="square_official_tip_approved">Akun resmi terverifikasi: %1$s. Postingan akan menampilkan nama ini.</string>
+    <string name="square_official_tip_rejected">Pengajuan ditolak, Anda dapat mengedit dan mengirim ulang.</string>
+    <string name="square_official_tip_reason"> (Alasan: %1$s)</string>
+    <string name="square_official_tip_banned">Akun resmi ini diblokir. Tidak dapat memposting, berkomentar, atau menyukai. Hubungi dukungan.</string>
+    <string name="square_official_avatar_hint">Ketuk untuk mengatur avatar (opsional)</string>
+    <string name="square_official_avatar_change">Ketuk untuk mengganti avatar</string>
+    <string name="square_official_avatar_clear">Hapus avatar</string>
+    <string name="square_official_save">Simpan</string>
+    <string name="square_official_updated">Profil diperbarui</string>
+    <string name="square_pinned">Disematkan</string>
+    <string name="square_platform_official_tag">Platform</string>
+    <string name="square_official_avatar_set">Avatar diunggah, ketuk untuk mengganti</string>
+    <string name="square_official_name_hint">Nama akun resmi (wajib, maks 32 karakter)</string>
+    <string name="square_official_reapply">Ajukan ulang</string>
+    <string name="square_official_intro_hint">Deskripsi (opsional, maks 200 karakter)</string>
+    <string name="square_official_name_empty">Masukkan nama akun resmi</string>
+    <string name="square_official_submit">Kirim pengajuan</string>
+    <string name="square_official_applied">Pengajuan terkirim, tunggu peninjauan</string>
+    <string name="square_feed_latest">Terbaru</string>
+    <string name="square_feed_hot">Trending</string>
+    <string name="square_feed_following">Diikuti</string>
+    <string name="square_follow">Ikuti</string>
+    <string name="square_followed">Diikuti</string>
+    <string name="square_follow_success">Berhasil diikuti</string>
+    <string name="square_unfollow_success">Berhenti mengikuti</string>
+    <string name="square_follow_tips_self">Anda tidak dapat mengikuti diri sendiri</string>
+    <string name="square_my_follows">Yang saya ikuti</string>
+    <string name="square_my_followers">Pengikut saya</string>
+    <string name="square_user_follow_count">Mengikuti %1$d</string>
+    <string name="square_user_follower_count">Pengikut %1$d</string>
+    <string name="square_user_followers_title">Pengikut</string>
+    <string name="square_follow_empty">Belum mengikuti siapa pun</string>
+    <string name="square_followers_empty">Belum ada pengikut</string>
+    <string name="square_gold_empty">Belum ada akun resmi emas</string>
+    <string name="square_gold_stat">%1$d pengikut · %2$d postingan</string>
+    <string name="square_gold_title">Akun Resmi Emas</string>
+    <string name="square_my_posts_title">Postingan saya</string>
+    <string name="square_my_posts_traffic">Statistik postingan saya</string>
+    <string name="square_traffic_posts">Postingan</string>
+    <string name="square_traffic_views">Dilihat</string>
+    <string name="square_traffic_likes">Suka</string>
+    <string name="square_traffic_comments">Komentar</string>
+    <string name="square_report">Laporkan</string>
+    <string name="square_report_content">Konten yang dilaporkan</string>
+    <string name="square_report_detail_counter">%1$d/%2$d</string>
+    <string name="square_report_detail_hint">Jelaskan alasannya (opsional)</string>
+    <string name="square_report_detail_tip">Opsional, maks. 500 karakter</string>
+    <string name="square_report_title">Alasan laporan</string>
+    <string name="square_report_type">Jenis laporan</string>
+    <string name="square_report_type_required">Silakan pilih jenis laporan</string>
+    <string name="square_report_reason_spam">Spam</string>
+    <string name="square_report_reason_porn">Pornografi</string>
+    <string name="square_report_reason_scam">Penipuan</string>
+    <string name="square_report_reason_abuse">Ujaran kasar</string>
+    <string name="square_report_reason_other">Lainnya</string>
+    <string name="square_report_success">Laporan terkirim, terima kasih</string>
+    <string name="square_report_reported">Sudah dilaporkan</string>
+    <string name="square_report_select">Silakan pilih</string>
+    <string name="square_report_submit">Kirim laporan</string>
+    <string name="square_report_submitting">Mengirim…</string>
+
+    <!--登录相关-->
+    <string name="chat_login_choose_server">Pilih Server</string>
+    <string name="chat_login_chat_server_tips">1. Pengguna baru perlu memilih atau menambahkan satu server sebagai server default untuk menerima pesan obrolan dari teman;\n2. Akun yang sudah terdaftar akan tetap menggunakan server default yang ada.</string>
+    <string name="chat_login_contract_server_tips">1. Perlu memilih atau menambahkan satu server sebagai node blockchain default untuk mengunggah dan mengambil informasi akun;\n2. Dapat berpindah di [Saya]-[Server].</string>
+    <string name="chat_login_edit_chat_server">Edit Server Obrolan</string>
+    <string name="chat_login_add_chat_server">Tambahkan Server Obrolan</string>
+    <string name="chat_login_edit_contract_server">Edit Node Blockchain</string>
+    <string name="chat_login_add_contract_server">Tambahkan Node Blockchain</string>
+    <string name="chat_tips_edit_server_name">Nama Server</string>
+    <string name="chat_hint_edit_server_name">Masukkan nama server</string>
+    <string name="chat_tips_edit_server_address">Alamat Server</string>
+    <string name="chat_hint_edit_server_address">Masukkan alamat server</string>
+    <string name="chat_tip_add_server_success">Server berhasil ditambahkan</string>
+    <string name="chat_tip_edit_server_success">Server berhasil diubah</string>
+    <string name="chat_tip_del_server_success">Server berhasil dihapus</string>
+    <string name="chat_tip_confirm_to_del_server">Yakin ingin menghapus server ini?</string>
+    <string name="chat_click_again_to_exit">Tekan sekali lagi untuk keluar dari aplikasi</string>
+
+    <string name="chat_login_type_words">Akun Frase Pemulihan</string>
+    <string name="chat_login_create_account">Buat Akun</string>
+    <string name="chat_login_import_account">Impor Akun</string>
+    <string name="chat_login_type_account">Nomor HP/Email</string>
+    <string name="chat_login_find_mnem_words">Pulihkan dengan Sebagian Frase Pemulihan</string>
+
+    <string name="chat_login_tips_agree_protocol">Harap setujui ketentuan terlebih dahulu</string>
+    <string name="chat_login_tips_choose_server">Harap pilih server terlebih dahulu</string>
+    <string name="chat_login_tips_agreement">Saya telah membaca dan menyetujui Perjanjian Layanan Pengguna TanXin</string>
+
+    <string name="chat_login_tips_choose_chat_server">Pilih server untuk menerima pesan obrolan</string>
+    <string name="chat_login_tips_choose_contract_server">Pilih node blockchain untuk mengunggah informasi akun</string>
+    <string name="chat_title_chat_server">Alamat Server</string>
+    <string name="chat_title_contract_server">Node Blockchain</string>
+
+    <string name="chat_title_official_server">Alamat Resmi</string>
+    <string name="chat_title_custom_server">Alamat Kustom</string>
+    <string name="chat_title_chat_server_group">Layanan Obrolan</string>
+    <string name="chat_login_edit_chat_server_group">Edit Grup Server</string>
+    <string name="chat_login_add_chat_server_group">Tambahkan Grup Server</string>
+    <string name="chat_tip_add_server_group_success">Grup server berhasil ditambahkan, harap tunggu dan periksa hasilnya nanti…</string>
+    <string name="chat_tip_del_server_group_success">Grup server berhasil dihapus, harap tunggu dan periksa hasilnya nanti…</string>
+    <string name="chat_tip_edit_server_group_success">Grup server berhasil diubah, harap tunggu dan periksa hasilnya nanti…</string>
+    <string name="chat_tip_cant_del_default_server">Grup server default tidak dapat dihapus</string>
+    <string name="chat_tip_wrong_server_protocol">Protokol server harus http atau https</string>
+    <string name="chat_tip_wrong_server_port">Port server salah</string>
+    <string name="chat_tip_wrong_server_format">Format alamat server salah</string>
+    <string name="chat_tip_confirm_to_del_server_group">Yakin ingin menghapus grup server ini?</string>
+
+    <string name="chat_login_title_create_mnem">Cadangkan Frase Pemulihan</string>
+    <string name="chat_login_mnem_chinese">中文</string>
+    <string name="chat_login_mnem_english">English</string>
+    <string name="chat_login_tips_remember_mnem">Harap salin frase pemulihan, setelah dikonfirmasi akan dilakukan verifikasi</string>
+    <string name="chat_login_warn_secure_mnem">Peringatan: Jangan mengambil tangkapan layar! Jika orang lain mendapatkan frase pemulihan Anda, aset Anda akan langsung diambil! Harap salin frase pemulihan dan simpan di tempat yang aman, kami akan memverifikasinya di layar berikutnya.</string>
+    <string name="chat_login_change_mnem">Ganti Frase Pemulihan</string>
+    <string name="chat_login_backup_mnem">Mulai Cadangkan</string>
+    <string name="chat_login_backup_skip">Lewati Cadangan</string>
+    <string name="chat_login_validate_mnem">Verifikasi frase pemulihan yang Anda cadangkan</string>
+    <string name="chat_login_click_correct_order">Harap ketuk setiap kata sesuai urutan yang benar</string>
+    <string name="chat_login_mnem_wrong">Frase pemulihan tidak benar</string>
+    <string name="chat_login_mnem_backup_fail">Cadangan frase pemulihan gagal</string>
+    <string name="chat_login_mnem_backup_success">Cadangan frase pemulihan berhasil</string>
+
+    <string name="chat_login_title_import_account">Impor Akun</string>
+
+    <string name="chat_login_import_mnem_hint">Masukkan frase pemulihan</string>
+    <string name="chat_login_import_mnem_support_tips">Mendukung impor semua frase pemulihan yang dihasilkan sesuai standar BIP</string>
+    <string name="chat_login_import_private_key_chain">Rantai utama:</string>
+    <string name="chat_login_import_private_key_chain_bty">BTY</string>
+    <string name="chat_login_import_private_key_hint">Masukkan kunci privat atau pindai kode QR berisi kunci privat</string>
+
+    <string name="chat_login_start_import_account">Mulai Impor</string>
+    <string name="chat_login_mnem_import_fail">Impor frase pemulihan gagal</string>
+    <string name="chat_login_mnem_import_success">Impor frase pemulihan berhasil</string>
+    <string name="chat_login_mnem_recover_success">Pemulihan otomatis frase pemulihan berhasil, harap atur ulang kata sandi</string>
+
+    <!--首页-->
+    <string name="chat_home_action_scan">Pindai</string>
+    <string name="chat_home_action_create_group">Buat Grup</string>
+    <string name="chat_home_action_search">Tambah Teman/Grup</string>
+    <string name="chat_home_action_my_qr_code">Kode QR Saya</string>
+    <string name="chat_home_action_create_company">Buat Tim</string>
+    <string name="chat_home_action_okr">OKR</string>
+    <string name="chat_title_main_contact">Kontak</string>
+    <string name="chat_title_black_list">Daftar Hitam</string>
+    <string name="chat_title_friend_list">Teman</string>
+    <string name="chat_title_group_list">Grup</string>
+    <string name="chat_home_server_disconnect">Koneksi server tidak normal, ketuk untuk melihat</string>
+    <string name="chat_title_private_chat">Pribadi</string>
+    <string name="chat_title_group_chat">Grup</string>
+    <string name="chat_tips_unread_num">[%1$d pesan]%2$s</string>
+    <string name="chat_tips_sender_me">Saya: %1$s</string>
+
+    <!--空列表-->
+    <string name="chat_common_empty_list">Tidak ada data</string>
+    <string name="chat_black_list_empty">Belum ada daftar hitam</string>
+    <string name="chat_friend_list_empty">Belum ada teman</string>
+    <string name="chat_invite_friend">Undang Teman</string>
+    <string name="chat_friend_message_list_empty">Belum ada pesan teman</string>
+    <string name="chat_start_chat">Mulai Obrolan</string>
+    <string name="chat_room_list_empty">Belum ada grup</string>
+    <string name="chat_suggest_group">Grup Rekomendasi</string>
+    <string name="chat_room_message_list_empty">Belum ada pesan grup</string>
+    <string name="chat_contact_list_empty">Belum ada kontak</string>
+    <string name="chat_promote_list_empty">Belum ada catatan</string>
+
+    <!--扫一扫-->
+    <string name="chat_action_open_photo">Album</string>
+
+    <string name="chat_account_menu_wallet">Dompet Saya</string>
+    <string name="chat_account_menu_red_packet">Riwayat Angpao</string>
+    <string name="chat_account_menu_server">Server</string>
+    <string name="chat_account_menu_share">Unduh Aplikasi</string>
+    <string name="chat_account_menu_security">Manajemen Keamanan</string>
+    <string name="chat_account_menu_setting">Pusat Pengaturan</string>
+    <string name="chat_account_menu_feedback">Masukan Pengguna</string>
+    <string name="chat_account_menu_update">Periksa Pembaruan</string>
+    <string name="chat_action_logout">Keluar Akun</string>
+
+    <!--多语言-->
+    <string name="language_select_title">Multibahasa</string>
+    <string name="language_chinese">中文</string>
+    <string name="language_english">English</string>
+    <string name="chat_account_menu_language">Multibahasa</string>
+
+    <!--搜索选项-->
+    <string name="chat_action_search_scan">Pindai</string>
+    <string name="chat_action_search_scan_tips">Pindai kode QR kartu nama</string>
+    <string name="chat_action_search_import_friends">Impor Teman</string>
+    <string name="chat_action_search_import_friends_tips">Hanya mendukung teman dari akun yang pernah masuk di perangkat ini</string>
+
+    <!--修改昵称-->
+    <string name="chat_title_edit_nickname">Ubah Nama Panggilan</string>
+    <string name="chat_tip_nickname">Nama Panggilan</string>
+    <string name="chat_tip_nickname_edit_success">Nama panggilan berhasil diubah, harap tunggu dan periksa hasilnya nanti…</string>
+    <string name="chat_tip_nickname_empty">Nama panggilan tidak boleh kosong</string>
+    <string name="chat_tip_avatar">Foto Profil</string>
+    <string name="chat_tip_avatar_edit_success">Foto profil berhasil diubah, harap tunggu dan periksa hasilnya nanti…</string>
+
+    <!--安全管理-->
+    <string name="chat_title_security_setting">Manajemen Keamanan</string>
+    <string name="chat_tips_export_words">Ekspor Frase Pemulihan</string>
+    <string name="chat_tips_export_s2">Ekspor S2</string>
+    <string name="chat_tips_export_private">Ekspor Kunci Privat</string>
+    <string name="chat_tips_phone">Nomor HP</string>
+    <string name="chat_tips_email">Email</string>
+    <string name="chat_tips_encrypt_key">Kata Sandi Obrolan Rahasia</string>
+    <string name="chat_tips_action1">Ubah Kata Sandi</string>
+    <string name="chat_tips_action2">Atur Kata Sandi</string>
+    <string name="chat_tips_action3">Tautkan</string>
+    <string name="chat_security_setting_tip1">Frase pemulihan digunakan untuk mengenkripsi pesan obrolan dan file obrolan. Saat masuk di perangkat lain, Anda perlu mengimpor frase pemulihan yang sama untuk melihat pesan terenkripsi historis. Harap segera ekspor frase pemulihan dan simpan di tempat yang aman!</string>
+    <string name="chat_security_setting_tip2">Frase pemulihan dapat dienkripsi dan diunggah ke server resmi melalui nomor HP/email dan kata sandi obrolan rahasia, menyediakan layanan pemulihan frase pemulihan.</string>
+    <string name="chat_save_words_tip">Harap salin frase pemulihan dan simpan di tempat yang aman. Jika frase pemulihan hilang, saat menginstal ulang atau berpindah perangkat untuk masuk, Anda tidak akan dapat melihat pesan terenkripsi historis! Dan tidak dapat mengatur ulang kata sandi obrolan rahasia! Jika frase pemulihan diambil orang lain, informasi Anda dapat diakses!</string>
+    <string name="chat_save_words_tips2">Harap salin dan simpan di tempat yang aman!</string>
+    <string name="chat_tips_chat_pwd_error">Kata sandi obrolan rahasia salah</string>
+    <string name="chat_tips_mnem_export_fail">Ekspor frase pemulihan gagal</string>
+    <string name="chat_tips_private_export_fail">Ekspor kunci privat gagal</string>
+    <string name="chat_title_bind_phone">Tautkan Nomor HP</string>
+    <string name="chat_title_bind_email">Tautkan Email</string>
+    <string name="chat_tips_bind_phone_tips">Setelah menautkan nomor HP, Anda dapat masuk menggunakan nomor HP</string>
+    <string name="chat_tips_bind_email_tips">Setelah menautkan email, Anda dapat masuk menggunakan email</string>
+    <string name="chat_hint_input_phone">Masukkan nomor HP</string>
+    <string name="chat_hint_input_email">Masukkan email</string>
+    <string name="chat_action_bind_send_code">Dapatkan Kode Verifikasi</string>
+    <string name="chat_tips_bind_account_success">Penautan berhasil</string>
+    <string name="chat_action_unbind_and_rebind">Lepas Tautan dan Tautkan Ulang</string>
+    <string name="chat_action_unbind_phone_login">Masuk dengan Nomor HP</string>
+    <string name="chat_action_unbind_import_mnem">Impor Frase Pemulihan</string>
+    <string name="chat_tips_override_bind">Nomor HP/email telah ditautkan ke akun frase pemulihan lain. Apakah ingin melepas tautan asli dan menautkan ulang dengan akun frase pemulihan lokal?</string>
+    <string name="chat_tips_override_bind2">Jika akun asli memiliki aset, aset tersebut tidak dapat dipulihkan melalui nomor HP dan berisiko hilang. Harap berhati-hati saat melepas tautan!</string>
+    <string name="chat_tips_phone_forget_password">Lupa kata sandi obrolan rahasia tidak dapat memulihkan akun asli melalui nomor HP! Anda dapat:\n1. Impor frase pemulihan untuk masuk (dapat mengubah kata sandi);\n2. Lepas tautan asli, buat akun baru, dan tautkan dengan nomor HP ini.</string>
+    <string name="chat_tips_email_forget_password">Lupa kata sandi obrolan rahasia tidak dapat memulihkan akun asli melalui email! Anda dapat:\n1. Impor frase pemulihan untuk masuk (dapat mengubah kata sandi);\n2. Coba masuk dengan nomor HP untuk memulihkan, atau gunakan fitur lupa kata sandi saat masuk dengan nomor HP untuk melakukan operasi lepas tautan dan tautkan ulang</string>
+    <string name="chat_tips_override_forget_password2">Melepas tautan asli akan kehilangan informasi dan aset akun asli. Harap berhati-hati saat melepas tautan!</string>
+
+    <!--设置中心-->
+    <string name="chat_title_setting_center">Pusat Pengaturan</string>
+    <string name="chat_tips_app_notify_switch">Sakelar Notifikasi Aplikasi</string>
+    <string name="chat_tips_new_msg_notify">Terima Notifikasi Pesan Baru</string>
+    <string name="chat_tips_rtc_call_notify">Terima Notifikasi Undangan Panggilan Suara dan Video</string>
+    <string name="chat_tips_system_sound_and_vibrate">Suara dan Getaran Sistem</string>
+    <string name="chat_tips_new_msg_sys_notify">Notifikasi Sistem Pesan Baru</string>
+    <string name="chat_tips_rtc_call_sys_notify">Pengingat Panggilan Suara dan Video</string>
+    <string name="chat_tips_go_sys_notify_settings">Buka Pengaturan Sistem</string>
+
+    <string name="chat_set_chat_password">Harap atur kata sandi obrolan rahasia</string>
+    <string name="chat_input_chat_password">Masukkan kata sandi obrolan rahasia</string>
+    <string name="chat_encrypt_password_hint">Kombinasi 8–16 karakter angka, huruf, atau simbol</string>
+    <!--修改助记词密码-->
+    <string name="chat_title_set_encrypt_password">Atur Kata Sandi Obrolan Rahasia</string>
+    <string name="chat_title_encrypt_password">Ubah Kata Sandi Obrolan Rahasia</string>
+    <string name="chat_tips_old_encrypt_pwd">Kata Sandi Lama</string>
+    <string name="chat_tips_old_encrypt_pwd_hint">Masukkan kata sandi lama</string>
+    <string name="chat_tips_first_encrypt_pwd_hint">Harap atur kata sandi</string>
+    <string name="chat_tips_second_encrypt_pwd_hint">Masukkan kembali kata sandi</string>
+    <string name="chat_tips_forget_password">Lupa Kata Sandi</string>
+    <string name="chat_tips_new_encrypt_pwd">Kata Sandi Baru</string>
+    <string name="chat_tips_new_encrypt_pwd_hint">Masukkan kembali kata sandi baru</string>
+    <string name="chat_tips_update_encrypt_pwd1">Kata sandi obrolan rahasia berhasil diubah</string>
+    <string name="chat_tips_update_encrypt_pwd2">Kata sandi salah</string>
+    <string name="chat_tips_update_encrypt_pwd3">Masukkan 8–16 karakter</string>
+    <string name="chat_tips_update_encrypt_pwd4">Masukkan kombinasi angka, huruf, atau simbol</string>
+    <string name="chat_tips_update_encrypt_pwd5">Harap atur kombinasi 8–16 karakter angka, huruf, atau simbol</string>
+    <string name="chat_tips_update_encrypt_pwd6">Kedua kata sandi tidak sama</string>
+    <string name="chat_tips_update_encrypt_pwd7">Kata sandi obrolan rahasia berhasil diatur</string>
+
+    <!--联系人信息-->
+    <string name="chat_title_contact_info">Detail</string>
+    <string name="chat_action_send_msg">Kirim Pesan</string>
+    <string name="chat_action_transfer">Transfer</string>
+    <string name="chat_action_delete_friend">Hapus Teman</string>
+    <string name="chat_action_add_friend">Tambah Teman</string>
+    <string name="chat_tips_modify_group_success">Server berhasil diubah</string>
+    <string name="chat_tips_add_friend_success">Teman berhasil ditambahkan</string>
+    <string name="chat_tips_delete_friend_success">Teman berhasil dihapus</string>
+    <string name="chat_tips_nickname_placeholder">Nama Panggilan: %1$s</string>
+    <string name="chat_tips_group_nickname_placeholder">Nama Panggilan Grup: %1$s</string>
+    <string name="chat_tips_address_placeholder">Akun: %1$s</string>
+    <string name="chat_dialog_delete_friend">Setelah dihapus, pesan obrolan dengan kontak ini juga akan dihapus. Yakin menghapus kontak &lt;font color="%1$s"&gt;%2$s&lt;/font&gt;?</string>
+
+    <string name="chat_title_edit_group_name">Ubah Nama Grup</string>
+    <string name="chat_tip_group_name">Nama Grup Terenkripsi</string>
+    <string name="chat_tip_group_pub_name">Nama Grup Publik</string>
+    <string name="chat_title_edit_nickname_in_group">Nama Panggilan Saya di Grup Ini</string>
+    <string name="chat_tip_nickname_in_group">Nama Panggilan Grup</string>
+    <string name="chat_tip_group_name_empty">Nama grup tidak boleh kosong</string>
+    <string name="chat_tip_group_pub_name_empty">Nama grup publik tidak boleh kosong</string>
+    <string name="chat_tip_edit_group_name_success">Nama grup berhasil diubah</string>
+    <string name="chat_tip_edit_group_nickname_success">Nama panggilan dalam grup berhasil diubah</string>
+    <string name="chat_tip_group_avatar">Foto Profil Grup</string>
+    <string name="chat_tips_nickname_in_group">Nama Panggilan Saya di Grup Ini</string>
+    <string name="chat_log_in_chat_history">Cari Riwayat Obrolan</string>
+    <string name="chat_file_in_chat_history">File Obrolan</string>
+    <string name="chat_detail_no_disturb">Jangan Ganggu</string>
+    <string name="chat_detail_stick_top">Sematkan Obrolan</string>
+    <string name="chat_detail_group_type_tips">Jenis Grup</string>
+    <string name="chat_detail_group_type0">Grup Biasa</string>
+    <string name="chat_detail_group_type1">Grup Semua Anggota</string>
+    <string name="chat_detail_group_type2">Grup Departemen</string>
+    <string name="chat_detail_belong_server_group">Server yang menerima pesannya</string>
+    <string name="chat_detail_belong_server_group2">Server Induk</string>
+    <string name="chat_detail_choose_server_group">Pilih Server</string>
+    <string name="chat_detail_edit_server_group">Kelola</string>
+    <string name="chat_add_black_list">Tambahkan ke Daftar Hitam</string>
+    <string name="chat_remove_black_list">Keluarkan dari Daftar Hitam</string>
+    <string name="chat_user_black_message">Tidak lagi menerima pesan dari lawan bicara</string>
+    <string name="chat_add_black_warn">Setelah masuk daftar hitam, Anda tidak akan lagi menerima pesan dari lawan bicara. Yakin memindahkan kontak &lt;font color="%1$s"&gt;%2$s&lt;/font&gt; ke daftar hitam?</string>
+    <string name="chat_add_black_success">Lawan bicara telah ditambahkan ke daftar hitam!</string>
+    <string name="chat_add_black_fail">Gagal menambahkan ke daftar hitam!</string>
+    <string name="chat_remove_black_success">Lawan bicara telah dikeluarkan dari daftar hitam!</string>
+    <string name="chat_remove_black_fail">Gagal mengeluarkan dari daftar hitam!</string>
+    <string name="chat_group_mute_time">Bisukan</string>
+
+    <string name="chat_title_contact_remark">Informasi Catatan</string>
+    <string name="chat_tip_remark">Catatan</string>
+    <string name="chat_tip_remark_edit_success">Berhasil diubah</string>
+
+    <!--群信息-->
+    <string name="chat_action_exit_group">Keluar dari Grup</string>
+    <string name="chat_action_disband_group">Bubarkan Grup</string>
+
+    <!--本地搜索-->
+    <string name="chat_tips_search_history">Riwayat Pencarian</string>
+    <string name="chat_tips_search_clear_history">Bersihkan Riwayat</string>
+    <string name="chat_tips_search_hint">Cari teman, riwayat obrolan, dll.</string>
+    <string name="chat_tips_search_hint1">Cari Teman</string>
+    <string name="chat_tips_search_hint2">Cari Grup</string>
+    <string name="chat_tips_search_hint3">Cari Riwayat Obrolan</string>
+    <string name="chat_tips_search_type1">Kontak</string>
+    <string name="chat_tips_search_type2">Grup</string>
+    <string name="chat_tips_search_type3">Riwayat Obrolan</string>
+    <string name="chat_tips_search_result_more">Lihat Lebih Banyak</string>
+    <string name="chat_tips_search_log_target">Catatan \"%1$s\"</string>
+    <string name="chat_tips_search_log_count">%1$d catatan obrolan terkait</string>
+
+    <!-- 聊天-->
+    <string name="chat_tips_chat_operate1">Berhasil membatalkan bisu</string>
+    <string name="chat_tips_chat_operate2">Beralih ke mode earpiece</string>
+    <string name="chat_tips_chat_operate3">Beralih ke mode speaker</string>
+    <string name="chat_tips_chat_operate4">Disalin ke papan klip</string>
+    <string name="chat_tips_chat_operate5">Pesan non-teks tidak dapat disalin</string>
+    <string name="chat_tips_chat_operate6">Satu pesan telah ditarik kembali</string>
+    <string name="chat_top_operate">Sematkan Obrolan</string>
+    <string name="chat_top_cancel">Lepas Sematan</string>
+    <string name="chat_disturb_operate">Jangan Ganggu</string>
+    <string name="chat_disturb_cancel">Batalkan Jangan Ganggu</string>
+    <string name="chat_message_delete">Hapus Obrolan</string>
+    <string name="chat_dialog_delete_session">Yakin menghapus obrolan dengan &lt;font color="%1$s"&gt;%2$s&lt;/font&gt;?</string>
+    <string name="chat_dialog_delete_message">Yakin ingin menghapus pesan ini?</string>
+    <string name="chat_dialog_delete_messages">Yakin ingin menghapus pesan yang dipilih?</string>
+    <string name="chat_tips_servers_empty">Tidak dapat menemukan alamat server lawan bicara</string>
+    <string name="chat_tips_server_not_exist">Belum terhubung ke server obrolan grup saat ini, tidak dapat mengirim/menerima pesan</string>
+    <string name="chat_tips_add_group_chat_server">Tambahkan Server</string>
+
+    <string name="chat_popup_option_copy">Salin</string>
+    <string name="chat_popup_option_translate">Terjemahkan</string>
+    <string name="chat_popup_option_view_original">Lihat asli</string>
+    <string name="chat_popup_option_forward">Teruskan</string>
+    <string name="chat_popup_option_reference">Kutip</string>
+    <string name="chat_popup_option_focus">Ikuti</string>
+    <string name="chat_popup_option_revoke">Tarik Kembali</string>
+    <string name="chat_popup_option_delete">Hapus</string>
+    <string name="chat_popup_option_mute">Bisukan</string>
+    <string name="chat_popup_option_audio_channel_speaker">Putar Lewat Speaker</string>
+    <string name="chat_popup_option_audio_channel_receiver">Putar Lewat Earpiece</string>
+    <string name="chat_popup_option_multiple_choose">Pilih Banyak</string>
+
+    <string name="chat_tips_switch_to_speaker">Beralih ke pemutaran speaker</string>
+    <string name="chat_tips_switch_to_receiver">Beralih ke pemutaran earpiece</string>
+
+    <!--聊天输入框-->
+    <string name="chat_tips_input_msg1">Tidak dapat mengirim pesan kosong</string>
+    <string name="chat_tips_input_msg2">Pesan sistem hanya dapat mengirim teks</string>
+    <string name="chat_tips_input_msg3">Kartu SD tidak terdeteksi</string>
+
+    <string name="chat_tips_input_send">Kirim</string>
+    <string name="chat_tips_input_say_sth">Katakan sesuatu</string>
+    <string name="chat_tips_input_media">Gambar/Video</string>
+    <string name="chat_tips_input_shoot">Ambil Gambar</string>
+    <string name="chat_tips_input_snap_msg">Sekali Lihat</string>
+    <string name="chat_tips_input_file">File</string>
+    <string name="chat_tips_input_rtc">Panggilan Video</string>
+    <string name="chat_tips_input_red_packet">Angpao</string>
+    <string name="chat_tips_input_red_packet_only">Angpao Khusus</string>
+    <string name="chat_tips_input_text_packet">Pesan Angpao</string>
+    <string name="chat_tips_input_transfer">Transfer</string>
+    <string name="chat_tips_input_contact_card">Kartu Kontak</string>
+
+    <string name="chat_call_menu_voice">Panggilan suara</string>
+    <string name="chat_call_menu_video">Panggilan video</string>
+    <string name="chat_call_invite_title_voice">Panggilan suara</string>
+    <string name="chat_call_invite_title_video">Panggilan video</string>
+    <string name="chat_call_invite_desc">Ketuk untuk bergabung · Ruang %1$s</string>
+    <string name="chat_call_invite_text">Undangan obrolan suara, ketuk tautan untuk bergabung: %1$s</string>
+    <string name="chat_call_confirm_content">Ruang suara akan dibuat dan undangan dikirim ke pihak lain. Mulai obrolan suara?</string>
+    <string name="chat_call_creating">Membuat ruang panggilan…</string>
+    <string name="chat_call_create_failed">Gagal membuat panggilan, coba lagi nanti</string>
+    <string name="chat_call_busy_title">Pemberitahuan</string>
+    <string name="chat_call_busy_content">Anda sedang dalam panggilan. Akhiri dan mulai panggilan baru?</string>
+    <string name="chat_call_window_hangup">Akhiri</string>
+    <string name="chat_call_window_minimize">Minimalkan</string>
+    <string name="chat_call_window_expand">Layar penuh</string>
+    <string name="chat_call_window_minimized_tips">Panggilan diminimalkan. Ketuk jendela kecil untuk memulihkan</string>
+    <string name="chat_call_copy_link">Salin tautan panggilan</string>
+    <string name="chat_call_link_copied">Tautan panggilan disalin</string>
+    <string name="chat_call_webview_error">Gagal memuat halaman panggilan. Periksa jaringan dan coba lagi</string>
+
+    <string name="chat_record_state_prepared">Tahan untuk Berbicara</string>
+    <string name="chat_record_state_recording">Lepas untuk Mengakhiri</string>
+    <string name="chat_record_state_want_cancel">Lepaskan jari untuk membatalkan pengiriman</string>
+    <string name="chat_record_slide_to_cancel">Geser ke atas untuk membatalkan pengiriman</string>
+    <string name="chat_record_tips_too_short">Durasi rekaman terlalu singkat</string>
+    <string name="chat_speak_time_remain">Masih bisa berbicara %1$d detik</string>
+
+    <!--聊天消息-->
+    <string name="chat_unfold">Ciutkan</string>
+    <string name="chat_fold">Bentangkan</string>
+
+    <string name="chat_tips_num_3">%1$d/3</string>
+    <string name="chat_tips_num_15">%1$d/15</string>
+    <string name="chat_tips_num_20">%1$d/20</string>
+    <string name="chat_tips_num_50">%1$d/50</string>
+    <string name="chat_tips_num_400">%1$d/400</string>
+    <string name="chat_tips_num_500">%1$d/500</string>
+
+    <string name="chat_time_tips_yesterday">Kemarin %1$s</string>
+    <string name="chat_time_tips_week1">Minggu %1$s</string>
+    <string name="chat_time_tips_week2">Senin %1$s</string>
+    <string name="chat_time_tips_week3">Selasa %1$s</string>
+    <string name="chat_time_tips_week4">Rabu %1$s</string>
+    <string name="chat_time_tips_week5">Kamis %1$s</string>
+    <string name="chat_time_tips_week6">Jumat %1$s</string>
+    <string name="chat_time_tips_week7">Sabtu %1$s</string>
+
+    <string name="chat_file_size">File %1$s</string>
+    <string name="chat_find_ai_cs">Dukungan AI</string>
+    <string name="chat_tips_copy_message_content">Konten pesan telah disalin</string>
+    <string name="chat_tips_translate_failed">Terjemahan gagal, coba lagi nanti</string>
+
+    <string name="chat_message_system_msg_type">Pengumuman</string>
+    <string name="chat_message_unsupported_msg_type">Pesan ini belum didukung, harap perbarui ke versi terbaru</string>
+    <string name="chat_tips_file_not_exist">File tidak ada</string>
+
+    <string name="chat_tips_search_my_account">Akun Saya: %1$s</string>
+    <string name="chat_tips_search_type_user">Pengguna</string>
+    <string name="chat_title_my_qr_code">Kode QR Saya</string>
+    <string name="chat_tips_qr_code_friend">Pindai kode QR untuk menambahkan saya sebagai teman di %1$s</string>
+    <string name="chat_action_copy_address">Salin Akun</string>
+    <string name="chat_action_copy_group_num">Salin ID Grup</string>
+    <string name="chat_tips_copy_download_url">Tautan unduhan telah disalin ke papan klip</string>
+    <string name="chat_tips_copy_address">Telah disalin ke papan klip</string>
+    <string name="chat_tips_copy_group_num">ID grup telah disalin ke papan klip</string>
+    <string name="chat_tips_qr_share_chat">TanXin</string>
+    <string name="chat_tips_qr_save">Simpan</string>
+    <string name="chat_tips_img_saved">Gambar telah disimpan</string>
+    <string name="chat_tips_img_not_exist">Gambar tidak ada</string>
+    <string name="chat_tips_vid_not_exist">Video tidak ada</string>
+    <string name="chat_tips_img_zip_fail">Kompresi gambar gagal</string>
+    <string name="chat_tips_not_contain_qr_code">Kode QR tidak terdeteksi</string>
+    <string name="chat_action_recognize_qrcode">Kenali Kode QR pada Gambar</string>
+
+    <string name="chat_tips_start_download">Mulai mengunduh…</string>
+    <string name="chat_tips_is_downloading">Sedang mengunduh…</string>
+    <string name="chat_tips_image_download_to">Gambar telah diunduh ke %1$s</string>
+    <string name="chat_tips_video_download_to">Video telah diunduh ke %1$s</string>
+    <string name="chat_tips_file_download_to">File telah diunduh ke %1$s</string>
+    <string name="chat_tips_download_fail">Unduhan gagal, %1$s</string>
+
+    <!--文件详情页面-->
+    <string name="chat_tips_download_file">Terima File</string>
+    <string name="chat_tips_can_not_open">%1$s belum mendukung pembukaan file jenis ini, Anda dapat membukanya dengan aplikasi lain</string>
+    <string name="chat_tips_open_with">Buka dengan Aplikasi Lain</string>
+    <string name="chat_tips_select_open_type">Harap pilih aplikasi yang sesuai untuk membuka file ini</string>
+    <string name="chat_tips_unsupported_file_type">Jenis file tidak didukung</string>
+
+    <!--聊天文件管理-->
+    <string name="chat_title_file_management">File Obrolan</string>
+    <string name="chat_action_file_select">Pilih</string>
+    <string name="chat_title_chat_file">File</string>
+    <string name="chat_title_chat_media">Gambar/Video</string>
+    <string name="chat_file_empty">Belum ada file</string>
+    <string name="chat_media_empty">Belum ada gambar/video</string>
+    <string name="chat_file_search_hint">Masukkan nama file</string>
+    <string name="chat_action_file_download">Unduh</string>
+    <string name="chat_action_file_delete">Hapus</string>
+    <string name="chat_dialog_tips_delete_chat_files">Setelah dihapus tidak akan muncul di riwayat pesan Anda</string>
+
+    <!--删除私聊记录 / 自动删除-->
+    <string name="chat_contact_clean_private">Hapus Riwayat Obrolan</string>
+    <string name="chat_contact_auto_delete">Hapus Riwayat Obrolan Otomatis</string>
+    <string name="chat_private_clean_confirm_title">Hapus Riwayat Obrolan</string>
+    <string name="chat_private_clean_confirm_message">Pesan obrolan pribadi kedua belah pihak akan dihapus sesuai rentang waktu yang dipilih (berdasarkan server), lanjutkan?</string>
+    <string name="chat_private_clean_success">Operasi berhasil, server menghapus %1$d pesan</string>
+    <string name="chat_private_clean_custom_invalid">Waktu selesai tidak boleh lebih awal dari waktu mulai</string>
+    <string name="chat_private_clean_last_1d">1 Hari Terakhir</string>
+    <string name="chat_private_clean_last_3d">3 Hari Terakhir</string>
+    <string name="chat_private_clean_last_7d">7 Hari Terakhir</string>
+    <string name="chat_private_clean_last_30d">30 Hari Terakhir</string>
+    <string name="chat_private_clean_last_90d">90 Hari Terakhir</string>
+    <string name="chat_private_clean_last_180d">180 Hari Terakhir</string>
+    <string name="chat_private_clean_last_365d">365 Hari Terakhir</string>
+    <string name="chat_private_clean_all">Semua Riwayat</string>
+    <string name="chat_private_clean_custom">Tanggal Kustom…</string>
+    <string name="chat_private_clean_pick_start">Pilih Tanggal Mulai</string>
+    <string name="chat_private_clean_pick_end">Pilih Tanggal Selesai</string>
+    <string name="chat_private_auto_off">Nonaktif</string>
+    <string name="chat_private_auto_day_1">Lebih dari 1 Hari</string>
+    <string name="chat_private_auto_day_3">Lebih dari 3 Hari</string>
+    <string name="chat_private_auto_day_7">Lebih dari 7 Hari</string>
+    <string name="chat_private_auto_day_30">Lebih dari 30 Hari</string>
+    <string name="chat_private_auto_day_180">Lebih dari 180 Hari</string>
+    <string name="chat_private_auto_pick_title">Hapus Otomatis</string>
+
+    <!--登录-->
+    <string name="login_tips_login_success">Login berhasil</string>
+    <string name="login_tips_register_success">Pendaftaran berhasil</string>
+    <string name="login_tips_code_sent">Kode verifikasi berhasil dikirim</string>
+
+    <string name="login_tips_correct_email">Masukkan email yang benar</string>
+    <string name="login_tips_correct_phone">Masukkan nomor HP yang benar</string>
+    <string name="login_tips_correct_code">Masukkan kode verifikasi lengkap</string>
+    <string name="login_tips_code_count">Terkirim (%1$ds)</string>
+
+    <string name="login_tips_input_email">Masukkan email</string>
+    <string name="login_tips_input_phone">Masukkan nomor HP</string>
+    <string name="login_tips_input_code">Masukkan kode verifikasi</string>
+    <string name="login_tips_input_s2">Masukkan S2</string>
+    <string name="login_action_send_code">Dapatkan Kode Verifikasi</string>
+    <string name="login_action_login">Login</string>
+    <string name="login_use_email">Login dengan Email</string>
+    <string name="login_use_email_tips">Pulihkan sebagian frase pemulihan melalui email untuk login</string>
+    <string name="login_use_phone">Login dengan Nomor HP</string>
+    <string name="login_use_phone_tips">Nomor HP yang belum tertaut akun akan otomatis membuat akun</string>
+    <string name="login_tips_unbind_yet">Nomor HP/email belum ditautkan ke akun frase pemulihan, harap pilih cara lain untuk masuk ke obrolan.</string>
+
+    <string name="chat_dialog_action_take_photo">Ambil Foto</string>
+    <string name="chat_dialog_action_select_picture">Pilih dari Album</string>
+
+    <!--App更新对话框-->
+    <string name="chat_update_checking_update">Sedang memeriksa pembaruan…</string>
+    <string name="chat_update_latest_version">Sudah versi terbaru</string>
+    <string name="chat_update_title">Versi Baru Ditemukan</string>
+    <string name="chat_update_tips_version">V%1$s</string>
+    <string name="chat_update_downloading">Mengunduh…</string>
+    <string name="chat_update_begin_download">Menyiapkan unduhan…</string>
+    <string name="chat_update_download_success">Unduhan selesai, ketuk untuk menginstal</string>
+    <string name="chat_update_action_retry">Coba Lagi</string>
+    <string name="chat_update_action_install">Ketuk untuk Menginstal</string>
+    <string name="chat_update_action_update">Perbarui</string>
+    <string name="chat_update_action_ignore_update">Nanti Saja</string>
+
+    <!--群聊-->
+    <string name="chat_title_create_group">Buat Grup</string>
+    <string name="chat_title_invite_members_type">Pilih Anggota</string>
+    <string name="chat_title_invite_group_members">Tambahkan Anggota Baru</string>
+    <string name="chat_tips_group_members">Anggota Grup</string>
+    <string name="chat_title_create_group_select_server">Pilih Server</string>
+    <string name="chat_tips_create_group_manage_server">Kelola</string>
+    <string name="chat_tips_choose_group_server">Pilih server obrolan tempat grup berada</string>
+    <string name="chat_tips_invite_group_members">Pilih anggota grup</string>
+    <string name="chat_tips_group_members_friends">Pilih anggota dari daftar teman</string>
+    <string name="chat_tips_group_members_oa">Pilih anggota dari struktur organisasi</string>
+    <string name="chat_action_create_group">Buat</string>
+    <string name="chat_tips_somebody_create_group">Grup yang dibuat oleh %1$s</string>
+    <string name="chat_tips_group_member_num">Total %1$d orang</string>
+    <string name="chat_action_invite">Undang</string>
+    <string name="chat_action_remove">Hapus</string>
+    <string name="chat_action_group_copy_mark_id">Salin ID Grup</string>
+    <string name="chat_title_group_info">Detail Grup</string>
+    <string name="chat_title_group_qrcode">Kode QR Grup</string>
+    <string name="chat_tips_group_mark_id">ID Grup %1$s</string>
+    <string name="chat_tips_group_pub_name">Nama Grup Publik: %1$s</string>
+    <string name="chat_tips_group_qr_code">Pindai kode QR untuk bergabung dengan grup</string>
+    <string name="chat_tips_group_forbid_join">Grup ini melarang bergabung</string>
+    <string name="chat_tips_group_copy_mark_id">ID grup telah disalin ke papan klip</string>
+    <string name="chat_tips_group_join_invalid_qrcode">Kode QR bergabung grup telah kedaluwarsa</string>
+    <string name="tips_invite_group_members_success">Undangan berhasil</string>
+
+    <string name="chat_title_group_user">Anggota Grup</string>
+    <string name="chat_action_add_group_user">Tambahkan Anggota</string>
+    <string name="chat_action_del_group_user">Hapus Anggota</string>
+    <string name="chat_action_set_group_admin">Jadikan Admin</string>
+    <string name="chat_tips_set_nickname_in_group">Di sini Anda dapat mengatur nama panggilan Anda di &lt;font color="%1$s"&gt;%2$s&lt;/font&gt;, nama panggilan ini hanya akan tampil di grup ini</string>
+    <string name="chat_tips_search_group_friend_hint">Cari anggota grup</string>
+    <string name="chat_tips_member_type">Pemilik Grup, Admin</string>
+    <string name="chat_tips_member_type_owner">Pemilik Grup</string>
+    <string name="chat_tips_member_type_admin">Admin</string>
+    <string name="chat_tips_select_invite_users">Harap pilih teman untuk diundang</string>
+    <string name="chat_tips_select_delete_users">Harap pilih anggota grup untuk dihapus</string>
+    <string name="chat_dialog_tips_exit_group">Yakin keluar dari &lt;font color="%1$s"&gt;%2$s&lt;/font&gt;?</string>
+    <string name="chat_dialog_tips_disband_group">Yakin membubarkan &lt;font color="%1$s"&gt;%2$s&lt;/font&gt;?</string>
+
+    <string name="chat_group_admin_setting">Pengaturan Admin</string>
+    <string name="chat_group_owner_setting">Alihkan Kepemilikan Grup</string>
+    <string name="chat_group_join_limit">Batasan Bergabung Grup</string>
+    <string name="chat_group_add_limit">Batasan Menambah Teman</string>
+    <string name="chat_group_mute_all">Bisukan Semua</string>
+    <string name="chat_group_mute_list">Daftar Bisu</string>
+    <string name="chat_group_join_limit1">Tanpa Persetujuan</string>
+    <string name="chat_group_join_limit_sub1">Bergabung dengan grup tanpa persetujuan pemilik atau admin</string>
+    <string name="chat_group_join_limit2">Larang Bergabung</string>
+    <string name="chat_group_join_limit_sub2">Tidak mengizinkan siapa pun bergabung kecuali diundang oleh pemilik dan admin</string>
+    <string name="chat_group_join_limit3">Persetujuan pemilik</string>
+    <string name="chat_group_join_limit_sub3">Bergabung ke grup memerlukan persetujuan pemilik atau admin</string>
+    <string name="chat_group_apply_list">Permintaan bergabung</string>
+    <string name="chat_group_apply_title">Permintaan bergabung</string>
+    <string name="chat_group_apply_empty">Belum ada permintaan</string>
+    <string name="chat_tip_apply_num">%1$d permintaan</string>
+    <string name="chat_action_apply_accept">Terima</string>
+    <string name="chat_action_apply_reject">Tolak</string>
+    <string name="chat_tips_apply_accepted">Permintaan disetujui</string>
+    <string name="chat_tips_apply_rejected">Permintaan ditolak</string>
+    <string name="chat_action_apply_join_group">Ajukan bergabung</string>
+    <string name="chat_action_apply_join_pending">Sudah diajukan, menunggu tinjauan</string>
+    <string name="chat_tips_apply_join_submitted">Permintaan terkirim. Menunggu persetujuan</string>
+    <string name="chat_tips_invite_apply_submitted">Undangan terkirim. Menunggu persetujuan</string>
+    <string name="chat_tips_address_copied">Alamat disalin ke clipboard</string>
+    <string name="chat_group_add_limit1">Dapat Menambah Teman di Grup</string>
+    <string name="chat_group_add_limit2">Larang Menambah Teman di Grup</string>
+
+    <string name="chat_group_join_title">Detail</string>
+    <string name="chat_action_join_group">Masuk Obrolan Grup</string>
+    <string name="chat_action_can_not_join">Larang Bergabung</string>
+    <string name="chat_action_chat_message">Kirim ke Obrolan</string>
+    <string name="chat_tips_join_member_number">%1$d anggota grup</string>
+
+    <string name="chat_title_group_mute_list">Daftar Bisu</string>
+    <string name="chat_action_group_cancel_mute">Buka Bisu Semua</string>
+    <string name="chat_tip_no_group_user_muted">Tidak ada anggota grup yang perlu dibuka bisunya</string>
+    <string name="chat_tip_mute_forever">Bisu Permanen</string>
+    <string name="chat_tip_mute_to_time">Telah dibisukan hingga %1$s</string>
+    <string name="chat_tip_mute_user_num">%1$d anggota dibisukan</string>
+    <string name="chat_action_forbid_add_friend">Grup ini melarang menambah teman</string>
+    <string name="chat_tips_mute_state1">Dapat Berbicara</string>
+    <string name="chat_tips_mute_state2">Semua Dibisukan</string>
+    <string name="chat_tips_mute_state3">Sedang dibisukan&#160;%1$s</string>
+    <string name="chat_tips_mute_state4">Bisu Permanen</string>
+    <string name="chat_tips_can_not_mute">Admin atau pemilik grup tidak dapat dibisukan</string>
+
+    <string name="chat_confirm_mute">Yakin membisukan?</string>
+    <string name="chat_mute_cancel">Buka Bisu</string>
+    <string name="chat_select_mute_time">Pilih Durasi Bisu</string>
+    <string name="chat_change_mute_time">Ubah Durasi Bisu</string>
+    <string name="chat_forever">Selamanya</string>
+    <string name="chat_24_hour">24 Jam</string>
+    <string name="chat_10_hour">10 Jam</string>
+    <string name="chat_2_hour">2 Jam</string>
+    <string name="chat_30_minute">30 Menit</string>
+    <string name="chat_10_minute">10 Menit</string>
+
+    <string name="chat_title_admin_setting">Pengaturan Admin</string>
+    <string name="chat_title_change_owner">Alihkan Kepemilikan Grup</string>
+    <string name="chat_title_add_admin">Tambahkan Admin</string>
+    <string name="chat_tips_group_owner">Pemilik Grup</string>
+    <string name="chat_tips_group_admin_num">Admin (%1$d/10)</string>
+    <string name="chat_action_add_group_admin">Tambahkan Admin</string>
+    <string name="chat_tips_change_group_owner">Yakin mengalihkan kepemilikan grup kepada &lt;font color="%1$s"&gt;%2$s&lt;/font&gt;?</string>
+
+    <string name="chat_tips_new_msg">%1$s pesan baru</string>
+
+    <string name="chat_ait_default">[Ada yang @ saya]</string>
+
+    <!--转发-->
+    <string name="chat_forward_msg_summary">Riwayat Obrolan Total %1$d pesan</string>
+    <string name="chat_forward_source_tips">Teruskan: %1$s</string>
+    <string name="chat_forward_source_me_and_others">Obrolan antara saya dan [%1$s]</string>
+    <string name="chat_forward_source_others_and_others">Obrolan antara [%1$s] dan [%2$s]</string>
+    <string name="chat_forward_source_group">Obrolan grup [%1$s]</string>
+    <string name="chat_forward_title_others_and_others">Riwayat obrolan [%1$s] dan [%2$s]</string>
+    <string name="chat_forward_title_group">Riwayat obrolan grup</string>
+    <string name="chat_action_forward">Teruskan</string>
+    <string name="chat_action_forward_single">Teruskan Satu per Satu</string>
+    <string name="chat_action_forward_multiple">Teruskan Gabungan</string>
+    <string name="chat_action_msg_star">Favorit</string>
+    <string name="chat_action_msg_delete">Hapus</string>
+    <string name="chat_action_revoke">Tarik Kembali</string>
+    <string name="chat_dialog_revoke_messages">Yakin menarik kembali %d pesan yang dipilih?</string>
+    <string name="chat_tips_revoke_empty">Pesan yang dipilih tidak dapat ditarik kembali</string>
+    <string name="chat_tips_revoke_partial">Berhasil %1$d pesan, gagal %2$d pesan</string>
+    <string name="chat_title_contact_select">Pilih Kontak</string>
+    <string name="chat_tips_forward_contact_tag1">Obrolan Terbaru</string>
+    <string name="chat_tips_forward_contact_tag2">Kontak</string>
+    <string name="chat_tips_forward_contact_tag3">Grup</string>
+    <string name="chat_tips_search_contact">Cari teman, grup</string>
+    <string name="chat_tips_search_friends">Cari Teman</string>
+    <string name="chat_tips_search_groups">Cari Grup</string>
+    <string name="chat_tips_oa_select">Pilih anggota dari struktur organisasi</string>
+    <string name="chat_tips_selected_message_empty">Harap pilih pesan yang valid terlebih dahulu</string>
+    <string name="chat_tips_reach_max_msg_select_num">Maksimal hanya dapat memilih %1$d pesan</string>
+    <string name="chat_tips_forward_msg_empty">Pesan yang diteruskan kosong</string>
+    <string name="chat_tips_can_not_forward_group">Grup saat ini tidak dapat meneruskan!</string>
+    <string name="chat_tips_can_not_forward_self">Tidak dapat meneruskan ke diri sendiri</string>
+    <string name="chat_tips_can_not_forward_no_server">Tidak dapat menemukan server lawan bicara, tidak dapat meneruskan</string>
+    <string name="chat_tips_can_not_forward_group_no_server">Belum terhubung ke server obrolan grup saat ini, tidak dapat mengirim/menerima pesan</string>
+    <string name="cancel">Batal</string>
+    <string name="ok">OK</string>
+    <string name="explore_title">Pernyataan Tanggung Jawab</string>
+    <string name="explore_disclaimer">Anda akan menggunakan tautan pihak ketiga. Dengan mengonfirmasi, Anda menyetujui Kebijakan Privasi dan Perjanjian Pengguna pihak ketiga. Semua perilaku dan penggunaan Anda pada tautan ini menjadi tanggung jawab penyedia tautan tersebut.</string>
+    <string name="no_dotip">Jangan ingatkan lagi</string>
+    <string name="del_str">Hapus</string>
+    <string name="del_tip_str">Hapus?</string>
+    <string name="input_www">Masukkan URL</string>
+    <string name="wc_get_addr">Izinkan mengambil alamat dompet saat ini</string>
+    <string name="wc_sign_str">Izinkan permintaan tanda tangan dari dompet saat ini</string>
+    <string name="wc_at">Layanan ini didukung oleh protokol WalletConnect</string>
+    <string name="wc_w_addr">Alamat Dompet</string>
+    <string name="wc_cnet">Jaringan Saat Ini</string>
+    <string name="wc_dis">Putuskan Koneksi</string>
+    <string name="wc_pay_de">Detail Pembayaran</string>
+    <string name="wc_pay_me">Informasi Pembayaran</string>
+    <string name="wc_pay_address">Alamat Pembayaran</string>
+    <string name="wc_fee">Biaya Penambang</string>
+    <string name="wc_next">Langkah Berikutnya</string>
+    <string name="wc_con">WalletConnect sedang menghubungkan dompet Anda</string>
+    <string name="wc_coned">Telah terhubung dengan dompet berikut</string>
+    <string name="home_receipt_address">Alamat Penerima</string>
+    <string name="home_transfer">Transfer</string>
+    <string name="tip_fee_high">Biaya penambang yang Anda atur terlalu tinggi, harap pilih biaya penambang yang sesuai</string>
+    <string name="tip_init_fee">Sedang menginisialisasi biaya penambang...</string>
+    <string name="dapp_sign_re">Dapp mengirim permintaan tanda tangan</string>
+    <string name="signme">Informasi Tanda Tangan</string>
+    <string name="i_wallet">Dompet Saya</string>
+    <string name="my_wallet_detail_password">Masukkan kata sandi akun</string>
+    <string name="my_wallet_password_tips">Masukkan kata sandi</string>
+    <string name="pwd_fail_str">Kata sandi salah</string>
+    <string name="high_str">Tercepat</string>
+    <string name="standard_str">Standar</string>
+    <string name="low_str">Ekonomis</string>
+    <string name="custom_str">Kustom</string>
+    <string name="exp_str">Peramban</string>
+    <string name="send_suc_str">Terkirim!</string>
+    <string name="basic_error_send">Pengiriman gagal, coba lagi</string>
+    <string name="chat_send_fail_title">Gagal mengirim pesan</string>
+    <string name="chat_send_fail_network">Tidak ada jaringan, silakan periksa koneksi</string>
+    <string name="chat_send_fail_timeout">Koneksi jaringan habis waktu, pengiriman gagal</string>
+    <string name="chat_send_fail_connect">Tidak dapat terhubung ke server, periksa jaringan</string>
+    <string name="chat_send_fail_upload">Gagal mengunggah file, periksa jaringan</string>
+    <string name="chat_send_fail_server">Kesalahan server: %1$s</string>
+    <string name="chat_send_fail_server_empty">Kesalahan server, pengiriman gagal</string>
+    <string name="chat_send_fail_resend">Kirim ulang</string>
+
+
+
+
+    <string name="tian_str">Proposal</string>
+    <string name="tp_str">Pilih</string>
+    <string name="tp_error">Aktivitas terlalu ramai, coba lagi nanti</string>
+    <string name="fee_setting">Pengaturan Biaya Penambang</string>
+    <string name="enter_str">Silakan masukkan</string>
+    <string name="switch_account_str">Ganti Akun</string>
+    <string name="chat_no_nickname">Harap atur nama panggilan</string>
+    <string name="c_entrance">Akses Cepat</string>
+    <string name="n_yopen">Belum Tersedia</string>
+    <string name="save_suc">Tersimpan</string>
+    <string name="like_str">Favorit</string>
+    <string name="collect_suc_str">Berhasil difavoritkan!</string>
+    <string name="my_collect_str">Favorit Saya</string>
+    <string name="ref_str">Muat Ulang</string>
+    <string name="copy_url_str">Salin Tautan</string>
+    <string name="ex_open">Buka di Peramban</string>
+    <string name="exit_str">Keluar</string>
+    <string name="copy_success">Berhasil disalin</string>
+    <string name="dapp_approve">Otorisasi Kontrak</string>
+    <string name="dapp_out">Alamat Pengirim</string>
+    <string name="dapp_nonono">Otorisasi Token</string>
+    <string name="meta_approve">Otorisasi Penggunaan Token</string>
+    <string name="select_network_fee">Pilih Biaya Jaringan</string>
+    <string name="fee_fast">Cepat</string>
+    <string name="fee_recommended">Rekomendasi</string>
+    <string name="fee_slow">Lambat</string>
+    <string name="fee_custom">Kustom</string>
+    <string name="fee_estimated_time">Estimasi dalam %s</string>
+    <string name="estimated_fee">Biaya Perkiraan</string>
+
+    <!--安全设置相关硬编码-->
+    <string name="chat_hint_input_wechat">Masukkan ID WeChat</string>
+    <string name="chat_hint_input_xiaohongshu">Masukkan ID Xiaohongshu</string>
+    <string name="chat_hint_input_douyin">Masukkan ID Douyin</string>
+
+    <!--群相关硬编码-->
+    <string name="chat_group_type_all">Semua</string>
+    <string name="chat_group_type_dept">Departemen</string>
+    <string name="chat_group_qrcode_tips">Grup ini termasuk grup %1$s tim, hanya anggota internal organisasi yang dapat bergabung. Jika orang di luar organisasi ingin bergabung dengan grup, perlu mengajukan permohonan bergabung dengan organisasi tersebut terlebih dahulu</string>
+
+    <!--转发相关-->
+    <string name="chat_forward_multiple_messages">[Teruskan satu per satu] Total %1$d pesan</string>
+    <string name="chat_forward_sent_count">Diteruskan ke %1$d obrolan</string>
+
+    <!--私钥创建-->
+    <string name="chat_error_private_key_create">Pembuatan kunci privat gagal</string>
+
+    <!--编辑群头像-->
+    <string name="chat_error_crop_unknown">Pemotongan gagal, kesalahan tidak diketahui</string>
+
+    <!--Dapp相关-->
+    <string name="chat_dapp_error_password">Kata sandi salah</string>
+
+    <!--布局标签-->
+    <string name="chat_label_add_friend_msg">Pesan tambah teman</string>
+    <string name="chat_label_remark_other">Catatan Lawan Bicara</string>
+    <string name="chat_label_send">Kirim</string>
+    <string name="chat_label_account_manage">Manajemen Akun</string>
+    <string name="chat_label_audio_call">Panggilan Suara</string>
+    <string name="chat_label_video_call">Panggilan Video</string>
+    <string name="chat_label_create_wallet">Buat Dompet</string>
+    <string name="chat_label_customer_service">Layanan Pelanggan</string>
+    <string name="chat_label_scan_add_cs">Pindai kode QR untuk menambahkan layanan pelanggan sebagai teman</string>
+    <string name="chat_label_group_exit_tips">Grup semua anggota/grup departemen hanya dapat keluar dengan keluar dari organisasi/departemen. Keluar dari organisasi/departemen akan otomatis keluar dari grup terkait!</string>
+    <string name="chat_label_search">Cari</string>
+    <string name="chat_label_search_history">Riwayat Pencarian</string>
+    <string name="chat_label_phone">Nomor HP</string>
+    <string name="chat_label_wechat">WeChat</string>
+    <string name="chat_label_xiaohongshu">Xiaohongshu</string>
+    <string name="chat_label_douyin">Douyin</string>
+    <string name="chat_label_select_at">Pilih orang untuk di-@</string>
+    <string name="chat_label_everyone">Semua Orang</string>
+    <string name="chat_label_input_hint">Silakan masukkan</string>
+    <string name="chat_label_confirm">Konfirmasi</string>
+    <string name="chat_label_forgot_password">Lupa Kata Sandi</string>
+    <string name="chat_label_send_to">Kirim ke:</string>
+    <string name="chat_label_mnem_verify">Verifikasi Frase Pemulihan</string>
+    <string name="chat_label_phone_verify">Verifikasi Nomor HP</string>
+    <string name="chat_label_email_verify">Verifikasi Email</string>
+    <string name="chat_label_group_owner">Pemilik Grup</string>
+    <string name="chat_label_member_info">Info Anggota</string>
+    <string name="chat_label_name">Nama</string>
+    <string name="chat_label_team">Tim</string>
+    <string name="chat_label_short_number">Nomor Pendek</string>
+    <string name="chat_label_email">Email</string>
+    <string name="chat_label_dept">Departemen</string>
+    <string name="chat_label_position">Jabatan</string>
+    <string name="chat_label_personal_card">Kartu Kontak</string>
+    <string name="chat_label_red_packet_default">Semoga sukses dan sejahtera</string>
+    <string name="chat_label_exclusive_received">Angpao khusus telah diterima</string>
+    <string name="chat_label_tx_mismatch">Informasi transaksi tidak cocok, ketuk untuk melihat</string>
+    <string name="chat_label_my_qr">Kode QR Saya</string>
+    <string name="chat_label_scan_add_me">Pindai kode QR untuk menambahkan saya sebagai teman</string>
+    <string name="chat_label_scan_transfer_add">Pindai kode QR untuk mentransfer dan menambahkan saya sebagai teman</string>
+    <string name="chat_label_manage">Kelola</string>
+    <string name="chat_label_org_structure">Struktur Organisasi</string>
+    <string name="chat_label_current_account">Akun Saat Ini</string>
+    <string name="chat_add_friend_default_msg">Halo, saya %1$s, telah menambahkan Anda sebagai teman!</string>
+
+</resources>

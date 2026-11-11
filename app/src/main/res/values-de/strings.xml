@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TanXin</string>
+
+    <string name="app_tab_session">Nachrichten</string>
+    <string name="app_tab_contact">Kontakte</string>
+    <string name="app_tab_find">Entdecken</string>
+    <string name="app_tab_shop">Shop</string>
+    <string name="app_tab_wallet">Vermögen</string>
+    <string name="app_tab_account">Mein</string>
+
+    <string name="app_splash_tips">Multi-Center-Kollaborations-IM\nVerteilte Speicher-App</string>
+    <string name="app_skip_bind_tips">Sie haben Ihre Mnemonic-Phrase nicht gesichert. Sie können sie verschlüsselt über Telefon/E-Mail und das verschlüsselte Chat-Passwort auf den offiziellen Server hochladen, um den Wiederherstellungsservice zu nutzen. Sichern oder laden Sie Ihre Mnemonic-Phrase für die Sicherheit Ihres Kontos unbedingt selbst hoch. Sie können dies auch über [Sicherheitsverwaltung] tun.</string>
+    <string name="app_skip_bind_phone">Telefon binden</string>
+    <string name="app_skip_bind_email">E-Mail binden</string>
+
+    <string name="app_ai_qa">KI-Fragen</string>
+    <string name="app_ai_cs_entry">KI-Support</string>
+    <string name="app_close">Schließen</string>
+    <string name="app_back">Zurück</string>
+    <string name="app_send">Senden</string>
+    <string name="app_ai_qa_hint">Geben Sie Ihre Frage ein…</string>
+
+    <!--KI-Fragenkatalog-->
+    <string name="app_ai_question1">Wie sichere ich die Mnemonic-Phrase?</string>
+    <string name="app_ai_question2">Wie überweise ich an einen Freund?</string>
+    <string name="app_ai_question3">Was ist der Unterschied zwischen verschlüsseltem und normalem Chat?</string>
+    <string name="app_ai_question4">Wie erstelle ich eine Gruppe?</string>
+    <string name="app_ai_question5">Welche Coins unterstützt der rote Umschlag?</string>
+    <string name="app_ai_question6">Verschlüsseltes Chat-Passwort vergessen?</string>
+
+    <!--Freunde importieren-->
+    <string name="app_import_friends_title">Freunde importieren</string>
+    <string name="app_import_friends_content">Es wurden gesicherte Freunde des ursprünglichen Kontos auf diesem Gerät gefunden. Möchten Sie Freunde in das neue Konto importieren?</string>
+    <string name="app_message_empty">Der Nachrichteninhalt darf nicht leer sein</string>
+    <string name="app_import_success">Import erfolgreich</string>
+
+    <!--KI-Fehler-->
+    <string name="app_ai_unavailable">Entschuldigung, der KI-Dienst ist vorübergehend nicht verfügbar. Bitte versuchen Sie es später erneut.</string>
+    <string name="app_ai_system_prompt">Sie sind der intelligente Assistent "XiaoC" von ChatPro. Beantworten Sie Fragen zu Chat, Wallet, rotem Umschlag und anderen Funktionen auf prägnante und freundliche Weise.</string>
+    <string name="app_ai_network_error">Entschuldigung, die Netzwerkverbindung ist fehlgeschlagen. Bitte versuchen Sie es später erneut.</string>
+    <string name="app_ai_api_error">API-Fehler: %1$s</string>
+
+    <!--Layout-Beschriftungen-->
+    <string name="app_label_ask_me">Sie können mich fragen:</string>
+    <string name="app_label_refresh_questions">Andere Fragen ⟳</string>
+    <string name="app_label_import_old_account">Es wurden gesicherte Freunde des ursprünglichen Kontos auf diesem Gerät gefunden. In das neue Konto importieren?</string>
+    <string name="app_label_send_add_msg">Gleichzeitig Nachricht zum Hinzufügen des Freundes senden</string>
+
+</resources>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="red_packet_remote_remark_tips">Information is on-chain and can be queried on the blockchain</string>
+    <string name="red_packet_total_amount_tips">Normal red packets are evenly split. If the amount cannot be divided equally, the remainder will be randomly allocated.</string>
+    <string name="red_packet_empty_record_tips">No red packet records</string>
+    <string name="red_packet_id_format">Red Packet ID %1$s</string>
+    <string name="red_packet_withdraw_surplus">Request refund of remaining red packet</string>
+
+    <!--Red Packet Sending-->
+    <string name="red_packet_send_format">Sent a %1$s red packet</string>
+    <string name="red_packet_chain_require_android7">On-chain red packets require Android 7.0 or above</string>
+    <string name="red_packet_error_unknown">Unknown error</string>
+    <string name="red_packet_loading_query">Querying…</string>
+    <string name="red_packet_loading_receiving">Receiving red packet…</string>
+    <string name="red_packet_loading_chain_receiving">Receiving on-chain…</string>
+    <string name="red_packet_loading_asset_transfer">Transferring assets…</string>
+    <string name="red_packet_loading_on_chain">Uploading to chain…</string>
+    <string name="red_packet_send_target_empty">Red packet recipient cannot be empty</string>
+    <string name="red_packet_send_private_only_single">Private chat can only send single red packets</string>
+    <string name="red_packet_send_group_no_single">Group chat cannot send single red packets</string>
+    <string name="red_packet_single_amount">Single Amount</string>
+    <string name="red_packet_total_amount">Total Amount</string>
+    <string name="red_packet_group_member_count">%1$d members in this group</string>
+    <string name="red_packet_send_fail">Red packet sending failed</string>
+    <string name="red_packet_loading_connect_wallet">Connecting chain and unlocking wallet…</string>
+    <string name="red_packet_loading_verify_amount">Verifying red packet amount and precision…</string>
+    <string name="red_packet_loading_check_approve">Checking token authorization…</string>
+    <string name="red_packet_loading_approve_token">Authorizing token, waiting for on-chain confirmation…</string>
+    <string name="red_packet_loading_sign_send">Signing and sending create red packet…</string>
+    <string name="red_packet_loading_wait_confirm">Waiting for transaction confirmation…</string>
+    <string name="red_packet_loading_send_msg">Sending red packet message…</string>
+    <string name="red_packet_available_balance">Available %1$s %2$s</string>
+    <string name="red_packet_count_exceed">Red packet count cannot exceed %1$d</string>
+    <string name="red_packet_amount_below_min">Single red packet cannot be less than the minimum precision</string>
+    <string name="red_packet_default_remark">Wishing you prosperity and good fortune!</string>
+
+    <!--Designated receivers (group red packet whitelist)-->
+    <string name="red_packet_receivers_label">Designated receivers</string>
+    <string name="red_packet_receivers_all">Everyone</string>
+    <string name="red_packet_receivers_count">%1$d selected</string>
+    <string name="red_packet_receivers_title">Select Receivers</string>
+    <string name="red_packet_receivers_search_hint">Search name or address</string>
+    <string name="red_packet_receivers_empty">No members found</string>
+    <string name="red_packet_receivers_selected_tips">Only selected members can claim this red packet</string>
+    <string name="red_packet_receivers_missing_address">Member %1$s hasn\'t synced a wallet address, cannot be a receiver</string>
+    <string name="red_packet_receivers_resolve_fail">Failed to get receiver wallet addresses, please retry</string>
+    <string name="red_packet_loading_receivers">Resolving receiver wallet addresses…</string>
+
+    <!--Red Packet Receiving Status-->
+    <string name="red_packet_status_received">Red packet already received</string>
+    <string name="red_packet_status_expired">Red packet expired</string>
+    <string name="red_packet_status_finished">Red packet fully claimed</string>
+    <string name="red_packet_status_refunded">Red packet refunded</string>
+    <string name="red_packet_status_unknown">Unknown red packet status</string>
+    <string name="red_packet_query_fail">Red packet record query failed</string>
+    <string name="red_packet_receive_extract_fail">Red packet received successfully, but failed to extract to wallet: %1$s</string>
+    <string name="red_packet_chain_not_found">Red packet not found on chain</string>
+    <string name="red_packet_invalid_id">Invalid red packet ID</string>
+    <string name="red_packet_chain_query_fail">On-chain query failed</string>
+    <string name="red_packet_insufficient_refund">Insufficient refundable balance</string>
+    <string name="red_packet_mnemonic_fail">Mnemonic retrieval failed</string>
+    <string name="red_packet_contract_refund_fail">Contract refund failed</string>
+    <string name="red_packet_not_exist">Red packet does not exist</string>
+    <string name="red_packet_contract_receive_fail">Contract claim failed</string>
+
+    <!--Red Packet Detail Page-->
+    <string name="red_packet_asset_insufficient">Insufficient red packet assets</string>
+    <string name="red_packet_status_success">Success</string>
+    <string name="red_packet_status_failed_str">Failed</string>
+    <string name="red_packet_browser_empty">Blockchain explorer address is empty</string>
+    <string name="red_packet_browser_fail">Failed to get blockchain explorer address</string>
+    <string name="red_packet_browser_title">Blockchain Explorer</string>
+    <string name="red_packet_sender_format">%1$s\'s Red Packet</string>
+    <string name="red_packet_receiver_label">Receiver</string>
+    <string name="red_packet_receive_time_label">Time</string>
+    <string name="red_packet_receive_count">Received %1$d/%2$d, %3$d remaining</string>
+    <string name="red_packet_single_total">A red packet totaling %1$s%2$s</string>
+    <string name="red_packet_wait_receive">Waiting for recipient</string>
+    <string name="red_packet_filter_all_year">All Year</string>
+    <string name="red_packet_filter_all_coin">All</string>
+
+    <!--Layout Labels-->
+    <string name="red_packet_digital_asset">Digital Asset</string>
+    <string name="red_packet_count_label">Packet Count</string>
+    <string name="red_packet_count_unit">packets</string>
+    <string name="red_packet_remote_note_label">On-chain Note</string>
+    <string name="red_packet_confirm_send">Send Red Packet</string>
+    <string name="red_packet_refund_tips">Unclaimed red packets can be refunded after 24 hours</string>
+    <string name="red_packet_saved_to_wallet">Saved to wallet</string>
+    <string name="red_packet_all_label">All</string>
+    <string name="red_packet_lucky_label">Lucky</string>
+    <string name="red_packet_time_filter">Time</string>
+    <string name="red_packet_coin_filter">Coin</string>
+    <string name="red_packet_reset_btn">Reset</string>
+    <string name="red_packet_confirm_btn">Confirm</string>
+</resources>

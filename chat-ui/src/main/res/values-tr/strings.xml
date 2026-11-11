@@ -1,0 +1,978 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Yeni özellik metinleri (values/strings.xml ile aynı)-->
+    <string name="chat_chain_sync_fail">Hesap adresi eşitlenemedi, sonra tekrar deneyin</string>
+    <string name="chat_account_menu_chain_sync">Hesap adresi</string>
+    <string name="chat_chain_sync_success">Hesap adresi eşitlendi</string>
+    <string name="chat_chain_sync_pending">Hesap adresini eşitlemek için dokunun</string>
+    <string name="chat_chain_sync_failed">Eşitleme başarısız, tekrar denemek için dokunun</string>
+    <string name="chat_find_recent">Son ziyaret edilenler</string>
+    <string name="chat_find_empty_title">Henüz geçmiş yok</string>
+    <string name="chat_find_empty_sub">Başlamak için bir URL girin veya QR kodu tarayın</string>
+    <string name="chat_tips_input_burn_mode">Okunduktan sonra silme açık, mesajlar okunduktan sonra silinir</string>
+    <string name="chat_tips_burn_type_denied">Okunduktan sonra silme modunda desteklenmez</string>
+    <string name="chat_title_burn_detail">Okunduktan sonra sil</string>
+    <string name="chat_burn_placeholder_tips">Okunduktan sonra silinen mesajı görmek için dokunun</string>
+    <string name="chat_burn_detail_tips">Kapatınca otomatik silinir</string>
+    <string name="chat_burn_play">Sesi çal</string>
+    <string name="chat_burn_open">Dosyayı aç</string>
+    <string name="chat_burn_audio">Sesli mesaj</string>
+    <string name="qr_login_title">QR kod ile giriş</string>
+    <string name="qr_login_icon">💻</string>
+    <string name="qr_login_device_desc">Web sürümü hesabınıza giriş yapmak istiyor</string>
+    <string name="qr_login_session_hint">QR kod 5 dakika geçerlidir, lütfen hemen onaylayın</string>
+    <string name="qr_login_confirm">Girişi onayla</string>
+    <string name="qr_login_cancel">İptal</string>
+    <string name="qr_login_wrong_password">Parola hatalı</string>
+    <string name="qr_login_invalid_qr">Geçersiz giriş QR kodu</string>
+    <string name="qr_login_private_key_failed">Özel anahtar alınamadı</string>
+    <string name="qr_login_encrypt_failed">Şifreleme başarısız, tekrar deneyin</string>
+    <string name="qr_login_confirm_success">Onaylandı, bilgisayardan devam edin</string>
+    <string name="qr_login_risk_title">Risk Uyarısı</string>
+    <string name="qr_login_risk_warning">Hesabınızda varlık tespit edildi. Giriş yapmadan önce cihaz ortamının güvenli olduğundan emin olun.</string>
+    <string name="qr_login_risk_continue">Devam Et</string>
+    <string name="chat_label_current">Geçerli</string>
+    <string name="chat_title_square">Meydan</string>
+    <string name="square_filter_all">Tümü</string>
+    <string name="square_filter_person">Kişisel</string>
+    <string name="square_filter_official">Resmi</string>
+    <string name="square_action_publish">Paylaş</string>
+    <string name="square_action_delete">Sil</string>
+    <string name="square_action_edit">Düzenle</string>
+    <string name="square_action_share">Paylaş</string>
+    <string name="square_share_chooser">Şuraya paylaş</string>
+    <string name="square_share_card_slogan">Uçtan uca şifreli · Güvenli ve gizli</string>
+    <string name="square_share_card_footer">%1$s</string>
+    <string name="square_share_card_qr_tip">%1$s indir</string>
+    <string name="square_action_send">Gönder</string>
+    <string name="square_sending">Gönderiliyor…</string>
+    <string name="square_action_success">İşlem başarılı</string>
+    <string name="square_publish_title">Yeni gönderi</string>
+    <string name="square_publish_hint">Ne düşünüyorsun…</string>
+    <string name="square_md_bold">Kalın</string>
+    <string name="square_md_italic">İtalik</string>
+    <string name="square_md_strike">Üstü çizili</string>
+    <string name="square_md_heading">Başlık</string>
+    <string name="square_md_bullet_list">Madde listesi</string>
+    <string name="square_md_number_list">Numaralı liste</string>
+    <string name="square_md_quote">Alıntı</string>
+    <string name="square_md_code">Kod</string>
+    <string name="square_md_link">Bağlantı</string>
+    <string name="square_md_divider">Ayırıcı</string>
+    <string name="square_md_preview">Önizleme</string>
+    <string name="square_md_edit">Düzenle</string>
+    <string name="square_md_preview_empty">Önizlenecek içerik yok</string>
+    <string name="square_detail_title">Gönderi ayrıntıları</string>
+    <string name="square_edit_expired">Düzenleme süresi doldu</string>
+    <string name="square_edit_success">Güncellendi</string>
+    <string name="square_edit_title">Gönderiyi düzenle</string>
+    <string name="square_comments_title">Yorumlar</string>
+    <string name="square_comments_count">Yorumlar (%1$d)</string>
+    <string name="square_reply_label">Yanıtla</string>
+    <string name="square_reply_to">@%1$s kullanıcısına yanıt ver</string>
+    <string name="square_reply_cancel">İptal</string>
+    <string name="square_reply_more">%1$d yanıt daha göster</string>
+    <string name="square_reply_success">Yanıt gönderildi</string>
+    <string name="square_comment_deleted">Orijinal yorum silindi</string>
+    <string name="square_tips_reply_invalid">Bu yoruma yanıt verilemiyor</string>
+    <string name="square_inbox_title">Yorumlar</string>
+    <string name="square_inbox_empty">Henüz yorum veya yanıt yok</string>
+    <string name="square_inbox_all_read">Tümünü okundu olarak işaretle</string>
+    <string name="square_inbox_floor">gönderine yorum yaptı</string>
+    <string name="square_inbox_reply">sana yanıt verdi</string>
+    <string name="square_inbox_unavailable">Bu yorum artık görüntülenemiyor</string>
+    <string name="square_inbox_no_unread">Okunmamış mesaj yok</string>
+    <string name="square_comment_hint">Yorum yaz…</string>
+    <string name="square_no_comment">Henüz yorum yok</string>
+    <string name="square_comments_closed">Yorumlar kapalı</string>
+    <string name="square_allow_comment">Yorumlara izin ver</string>
+    <string name="square_cannot_post">Hesabınız şu anda gönderi paylaşamaz</string>
+    <string name="square_closed">Meydan kapatıldı</string>
+    <string name="square_official_tag">Resmi</string>
+    <string name="square_status_auditing">İnceleniyor</string>
+    <string name="square_status_rejected">Reddedildi</string>
+    <string name="square_tag_activity">Etkinlik</string>
+    <string name="square_tag_announcement">Duyuru</string>
+    <string name="square_tag_message">Mesajlar</string>
+    <string name="square_image_index">%1$d / %2$d</string>
+    <string name="square_time_just_now">Az önce</string>
+    <string name="square_time_minutes">%1$d dk önce</string>
+    <string name="square_time_hours">%1$d sa önce</string>
+    <string name="square_time_yesterday">Dün</string>
+    <string name="square_empty">Henüz bir şey yok, ilk paylaşan siz olun</string>
+    <string name="square_tips_pending">Gönderildi, onaydan sonra görünecek</string>
+    <string name="square_tips_rejected">İçerik kurallara aykırı</string>
+    <string name="square_tips_rate_limited">Çok fazla işlem, sonra tekrar deneyin</string>
+    <string name="square_tips_sign_invalid">İmza geçersiz veya süresi dolmuş, yeniden giriş yapın</string>
+    <string name="square_tips_param_error">Geçersiz parametreler</string>
+    <string name="square_tips_no_permission">Yetkiniz yok</string>
+    <string name="square_tips_not_found">İçerik yok veya silinmiş</string>
+    <string name="square_tips_banned">Bu resmi hesap yasaklandı, lütfen destekle iletişime geçin</string>
+    <string name="square_tips_comment_closed">Yorumlar kapalı</string>
+    <string name="square_tips_apply_pending">Bekleyen bir başvuru var, Resmi Hesabım bölümüne bakın</string>
+    <string name="square_tips_network">Ağ hatası, bağlantınızı kontrol edin</string>
+    <string name="square_tips_failed">İşlem başarısız, sonra tekrar deneyin</string>
+    <string name="square_tips_comment_pending">Yorum gönderildi, onaydan sonra görünecek</string>
+    <string name="square_publish_success">Paylaşıldı</string>
+    <string name="square_comment_success">Yorum yapıldı</string>
+    <string name="square_delete_confirm">Bu gönderi silinsin mi?</string>
+    <string name="square_delete_comment_confirm">Bu yorum silinsin mi?</string>
+    <string name="square_delete_success">Silindi</string>
+    <string name="square_upload_failed">Görsel yüklenemedi, tekrar deneyin</string>
+    <string name="square_content_empty">Lütfen içerik girin</string>
+    <string name="square_max_images">En fazla 9 görsel</string>
+    <string name="square_my_official">Resmi Hesabım</string>
+    <string name="square_my_profile">Profilim</string>
+    <string name="square_user_posts">Gönderiler</string>
+    <string name="square_user_empty">Henüz gönderi yok</string>
+    <string name="square_official_apply">Resmi hesap başvurusu yap</string>
+    <string name="square_official_state_none">Başvurulmadı</string>
+    <string name="square_official_state_pending">İnceleniyor</string>
+    <string name="square_official_state_approved">Doğrulandı</string>
+    <string name="square_official_state_rejected">Reddedildi</string>
+    <string name="square_official_state_banned">Yasaklandı</string>
+    <string name="square_official_tip_none">Onaydan sonra bu adresteki gönderiler resmi gönderi olarak görünür (ad gösterilir, yorumlar kapatılabilir).</string>
+    <string name="square_official_tip_pending">Başvurunuz inceleniyor, lütfen bekleyin.</string>
+    <string name="square_official_tip_approved">Doğrulanmış resmi hesap: %1$s. Gönderiler bu adı gösterecek.</string>
+    <string name="square_official_tip_rejected">Başvuru reddedildi, düzenleyip yeniden gönderebilirsiniz.</string>
+    <string name="square_official_tip_reason"> (Neden: %1$s)</string>
+    <string name="square_official_tip_banned">Bu resmi hesap yasaklandı. Paylaşım, yorum ve beğeni yapılamaz. Lütfen destekle iletişime geçin.</string>
+    <string name="square_official_avatar_hint">Avatar ayarlamak için dokunun (isteğe bağlı)</string>
+    <string name="square_official_avatar_change">Avatarı değiştirmek için dokunun</string>
+    <string name="square_official_avatar_clear">Avatarı kaldır</string>
+    <string name="square_official_save">Kaydet</string>
+    <string name="square_official_updated">Profil güncellendi</string>
+    <string name="square_pinned">Sabitlenmiş</string>
+    <string name="square_platform_official_tag">Platform</string>
+    <string name="square_official_avatar_set">Avatar yüklendi, değiştirmek için dokunun</string>
+    <string name="square_official_name_hint">Resmi hesap adı (zorunlu, en fazla 32 karakter)</string>
+    <string name="square_official_reapply">Yeniden başvur</string>
+    <string name="square_official_intro_hint">Açıklama (isteğe bağlı, en fazla 200 karakter)</string>
+    <string name="square_official_name_empty">Resmi hesap adını girin</string>
+    <string name="square_official_submit">Başvuruyu gönder</string>
+    <string name="square_official_applied">Başvuru gönderildi, incelemeyi bekleyin</string>
+    <string name="square_feed_latest">En yeni</string>
+    <string name="square_feed_hot">Popüler</string>
+    <string name="square_feed_following">Takip edilenler</string>
+    <string name="square_follow">Takip et</string>
+    <string name="square_followed">Takip ediliyor</string>
+    <string name="square_follow_success">Takip ediliyor</string>
+    <string name="square_unfollow_success">Takipten çıkıldı</string>
+    <string name="square_follow_tips_self">Kendinizi takip edemezsiniz</string>
+    <string name="square_my_follows">Takip ettiklerim</string>
+    <string name="square_my_followers">Takipçilerim</string>
+    <string name="square_user_follow_count">Takip %1$d</string>
+    <string name="square_user_follower_count">Takipçi %1$d</string>
+    <string name="square_user_followers_title">Takipçiler</string>
+    <string name="square_follow_empty">Henüz kimseyi takip etmiyorsunuz</string>
+    <string name="square_followers_empty">Henüz takipçi yok</string>
+    <string name="square_gold_empty">Altın resmi hesap yok</string>
+    <string name="square_gold_stat">%1$d takipçi · %2$d gönderi</string>
+    <string name="square_gold_title">Altın Resmi Hesaplar</string>
+    <string name="square_my_posts_title">Gönderilerim</string>
+    <string name="square_my_posts_traffic">Gönderi istatistiklerim</string>
+    <string name="square_traffic_posts">Gönderi</string>
+    <string name="square_traffic_views">Görüntüleme</string>
+    <string name="square_traffic_likes">Beğeni</string>
+    <string name="square_traffic_comments">Yorum</string>
+    <string name="square_report">Bildir</string>
+    <string name="square_report_content">Bildirilen içerik</string>
+    <string name="square_report_detail_counter">%1$d/%2$d</string>
+    <string name="square_report_detail_hint">Nedeni açıklayın (isteğe bağlı)</string>
+    <string name="square_report_detail_tip">İsteğe bağlı, en fazla 500 karakter</string>
+    <string name="square_report_title">Bildirim nedeni</string>
+    <string name="square_report_type">Bildirim türü</string>
+    <string name="square_report_type_required">Lütfen bir bildirim türü seçin</string>
+    <string name="square_report_reason_spam">Spam</string>
+    <string name="square_report_reason_porn">Müstehcenlik</string>
+    <string name="square_report_reason_scam">Dolandırıcılık</string>
+    <string name="square_report_reason_abuse">Hakaret</string>
+    <string name="square_report_reason_other">Diğer</string>
+    <string name="square_report_success">Bildirildi, geri bildiriminiz için teşekkürler</string>
+    <string name="square_report_reported">Zaten bildirildi</string>
+    <string name="square_report_select">Seçin</string>
+    <string name="square_report_submit">Bildirimi gönder</string>
+    <string name="square_report_submitting">Gönderiliyor…</string>
+
+    <!--登录相关-->
+    <string name="chat_login_choose_server">Sunucu Seç</string>
+    <string name="chat_login_chat_server_tips">1. Yeni kullanıcıların arkadaş sohbet mesajlarını almak için bir sunucuyu varsayılan sunucu olarak seçmesi veya eklemesi gerekir;\n2. Kayıtlı hesaplar mevcut varsayılan sunucuyu kullanmaya devam eder.</string>
+    <string name="chat_login_contract_server_tips">1. Hesap bilgilerini yüklemek ve almak için bir sunucuyu varsayılan blok zinciri düğümü olarak seçmeniz veya eklemeniz gerekir;\n2. [Benim]-[Sunucu] bölümünden geçiş yapabilirsiniz.</string>
+    <string name="chat_login_edit_chat_server">Sohbet Sunucusunu Düzenle</string>
+    <string name="chat_login_add_chat_server">Sohbet Sunucusu Ekle</string>
+    <string name="chat_login_edit_contract_server">Blok Zinciri Düğümünü Düzenle</string>
+    <string name="chat_login_add_contract_server">Blok Zinciri Düğümü Ekle</string>
+    <string name="chat_tips_edit_server_name">Sunucu Adı</string>
+    <string name="chat_hint_edit_server_name">Lütfen sunucu adını girin</string>
+    <string name="chat_tips_edit_server_address">Sunucu Adresi</string>
+    <string name="chat_hint_edit_server_address">Lütfen sunucu adresini girin</string>
+    <string name="chat_tip_add_server_success">Sunucu başarıyla eklendi</string>
+    <string name="chat_tip_edit_server_success">Sunucu başarıyla değiştirildi</string>
+    <string name="chat_tip_del_server_success">Sunucu başarıyla silindi</string>
+    <string name="chat_tip_confirm_to_del_server">Bu sunucuyu silmek istediğinize emin misiniz?</string>
+    <string name="chat_click_again_to_exit">Uygulamadan çıkmak için tekrar basın</string>
+
+    <string name="chat_login_type_words">Kurtarma İfadesi Hesabı</string>
+    <string name="chat_login_create_account">Hesap Oluştur</string>
+    <string name="chat_login_import_account">Hesap İçe Aktar</string>
+    <string name="chat_login_type_account">Telefon/E-posta</string>
+    <string name="chat_login_find_mnem_words">Kısmi Kurtarma İfadesiyle Kurtar</string>
+
+    <string name="chat_login_tips_agree_protocol">Lütfen önce sözleşmeyi onaylayın</string>
+    <string name="chat_login_tips_choose_server">Lütfen önce sunucu seçin</string>
+    <string name="chat_login_tips_agreement">TanXin Kullanıcı Hizmet Sözleşmesi\'ni okudum ve kabul ediyorum</string>
+
+    <string name="chat_login_tips_choose_chat_server">Sohbet mesajlarını alacak sunucuyu seçin</string>
+    <string name="chat_login_tips_choose_contract_server">Hesap bilgilerini yükleyecek blok zinciri düğümünü seçin</string>
+    <string name="chat_title_chat_server">Sunucu Adresi</string>
+    <string name="chat_title_contract_server">Blok Zinciri Düğümü</string>
+
+    <string name="chat_title_official_server">Resmi Adres</string>
+    <string name="chat_title_custom_server">Özel Adres</string>
+    <string name="chat_title_chat_server_group">Sohbet Hizmeti</string>
+    <string name="chat_login_edit_chat_server_group">Sunucu Grubunu Düzenle</string>
+    <string name="chat_login_add_chat_server_group">Sunucu Grubu Ekle</string>
+    <string name="chat_tip_add_server_group_success">Sunucu grubu başarıyla eklendi, lütfen sabırla bekleyin, sonucu daha sonra kontrol edin…</string>
+    <string name="chat_tip_del_server_group_success">Sunucu grubu başarıyla silindi, lütfen sabırla bekleyin, sonucu daha sonra kontrol edin…</string>
+    <string name="chat_tip_edit_server_group_success">Sunucu grubu başarıyla değiştirildi, lütfen sabırla bekleyin, sonucu daha sonra kontrol edin…</string>
+    <string name="chat_tip_cant_del_default_server">Varsayılan sunucu grubu silinemez</string>
+    <string name="chat_tip_wrong_server_protocol">Sunucu protokolü http veya https olmalıdır</string>
+    <string name="chat_tip_wrong_server_port">Sunucu portu hatalı</string>
+    <string name="chat_tip_wrong_server_format">Sunucu adresi biçimi hatalı</string>
+    <string name="chat_tip_confirm_to_del_server_group">Bu sunucu grubunu silmek istediğinize emin misiniz?</string>
+
+    <string name="chat_login_title_create_mnem">Kurtarma İfadesini Yedekle</string>
+    <string name="chat_login_mnem_chinese">中文</string>
+    <string name="chat_login_mnem_english">English</string>
+    <string name="chat_login_tips_remember_mnem">Lütfen kurtarma ifadesini not edin, onaylandıktan sonra doğrulama yapılacaktır</string>
+    <string name="chat_login_warn_secure_mnem">Uyarı: Ekran görüntüsü almayın! Birisi kurtarma ifadenizi ele geçirirse varlıklarınıza doğrudan erişebilir! Lütfen kurtarma ifadesini not edip güvenli bir yerde saklayın, bir sonraki ekranda doğrulama yapacağız.</string>
+    <string name="chat_login_change_mnem">Kurtarma İfadesini Değiştir</string>
+    <string name="chat_login_backup_mnem">Yedeklemeye Başla</string>
+    <string name="chat_login_backup_skip">Yedeklemeyi Atla</string>
+    <string name="chat_login_validate_mnem">Yedeklediğiniz kurtarma ifadesini doğrulayın</string>
+    <string name="chat_login_click_correct_order">Lütfen her kelimeye doğru sırayla dokunun</string>
+    <string name="chat_login_mnem_wrong">Kurtarma ifadesi hatalı</string>
+    <string name="chat_login_mnem_backup_fail">Kurtarma ifadesi yedekleme başarısız</string>
+    <string name="chat_login_mnem_backup_success">Kurtarma ifadesi yedekleme başarılı</string>
+
+    <string name="chat_login_title_import_account">Hesap İçe Aktar</string>
+
+    <string name="chat_login_import_mnem_hint">Lütfen kurtarma ifadesini girin</string>
+    <string name="chat_login_import_mnem_support_tips">BIP standardına uygun üretilen tüm kurtarma ifadelerinin içe aktarılmasını destekler</string>
+    <string name="chat_login_import_private_key_chain">Ana zincir:</string>
+    <string name="chat_login_import_private_key_chain_bty">BTY</string>
+    <string name="chat_login_import_private_key_hint">Lütfen özel anahtarı girin veya özel anahtarı içeren QR kodunu tarayın</string>
+
+    <string name="chat_login_start_import_account">İçe Aktarmaya Başla</string>
+    <string name="chat_login_mnem_import_fail">Kurtarma ifadesi içe aktarma başarısız</string>
+    <string name="chat_login_mnem_import_success">Kurtarma ifadesi içe aktarma başarılı</string>
+    <string name="chat_login_mnem_recover_success">Kurtarma ifadesi otomatik kurtarma başarılı, lütfen şifreyi yeniden ayarlayın</string>
+
+    <!--首页-->
+    <string name="chat_home_action_scan">Tara</string>
+    <string name="chat_home_action_create_group">Grup Oluştur</string>
+    <string name="chat_home_action_search">Arkadaş/Grup Ekle</string>
+    <string name="chat_home_action_my_qr_code">QR Kodum</string>
+    <string name="chat_home_action_create_company">Ekip Oluştur</string>
+    <string name="chat_home_action_okr">OKR</string>
+    <string name="chat_title_main_contact">Kişiler</string>
+    <string name="chat_title_black_list">Kara Liste</string>
+    <string name="chat_title_friend_list">Arkadaşlar</string>
+    <string name="chat_title_group_list">Gruplar</string>
+    <string name="chat_home_server_disconnect">Sunucu bağlantısı anormal, görüntülemek için dokunun</string>
+    <string name="chat_title_private_chat">Özel</string>
+    <string name="chat_title_group_chat">Gruplar</string>
+    <string name="chat_tips_unread_num">[%1$d mesaj]%2$s</string>
+    <string name="chat_tips_sender_me">Ben: %1$s</string>
+
+    <!--空列表-->
+    <string name="chat_common_empty_list">Veri yok</string>
+    <string name="chat_black_list_empty">Kara liste yok</string>
+    <string name="chat_friend_list_empty">Arkadaş yok</string>
+    <string name="chat_invite_friend">Arkadaş Davet Et</string>
+    <string name="chat_friend_message_list_empty">Arkadaş mesajı yok</string>
+    <string name="chat_start_chat">Sohbete Başla</string>
+    <string name="chat_room_list_empty">Grup yok</string>
+    <string name="chat_suggest_group">Önerilen Gruplar</string>
+    <string name="chat_room_message_list_empty">Grup mesajı yok</string>
+    <string name="chat_contact_list_empty">Kişi yok</string>
+    <string name="chat_promote_list_empty">Kayıt yok</string>
+
+    <!--扫一扫-->
+    <string name="chat_action_open_photo">Albüm</string>
+
+    <string name="chat_account_menu_wallet">Cüzdanım</string>
+    <string name="chat_account_menu_red_packet">Kırmızı Zarf Geçmişi</string>
+    <string name="chat_account_menu_server">Sunucu</string>
+    <string name="chat_account_menu_share">Uygulama İndir</string>
+    <string name="chat_account_menu_security">Güvenlik Yönetimi</string>
+    <string name="chat_account_menu_setting">Ayarlar Merkezi</string>
+    <string name="chat_account_menu_feedback">Kullanıcı Geri Bildirimi</string>
+    <string name="chat_account_menu_update">Güncellemeyi Kontrol Et</string>
+    <string name="chat_action_logout">Hesaptan Çık</string>
+
+    <!--多语言-->
+    <string name="language_select_title">Çoklu Dil</string>
+    <string name="language_chinese">中文</string>
+    <string name="language_english">English</string>
+    <string name="chat_account_menu_language">Çoklu Dil</string>
+
+    <!--搜索选项-->
+    <string name="chat_action_search_scan">Tara</string>
+    <string name="chat_action_search_scan_tips">QR kod kartvizitini tara</string>
+    <string name="chat_action_search_import_friends">Arkadaşları İçe Aktar</string>
+    <string name="chat_action_search_import_friends_tips">Yalnızca bu cihazda giriş yapılmış hesapların arkadaşlarını destekler</string>
+
+    <!--修改昵称-->
+    <string name="chat_title_edit_nickname">Takma Adı Düzenle</string>
+    <string name="chat_tip_nickname">Takma Ad</string>
+    <string name="chat_tip_nickname_edit_success">Takma ad başarıyla değiştirildi, lütfen sabırla bekleyin, sonucu daha sonra kontrol edin…</string>
+    <string name="chat_tip_nickname_empty">Takma ad boş olamaz</string>
+    <string name="chat_tip_avatar">Profil Fotoğrafı</string>
+    <string name="chat_tip_avatar_edit_success">Profil fotoğrafı başarıyla değiştirildi, lütfen sabırla bekleyin, sonucu daha sonra kontrol edin…</string>
+
+    <!--安全管理-->
+    <string name="chat_title_security_setting">Güvenlik Yönetimi</string>
+    <string name="chat_tips_export_words">Kurtarma İfadesini Dışa Aktar</string>
+    <string name="chat_tips_export_s2">S2 Dışa Aktar</string>
+    <string name="chat_tips_export_private">Özel Anahtarı Dışa Aktar</string>
+    <string name="chat_tips_phone">Telefon</string>
+    <string name="chat_tips_email">E-posta</string>
+    <string name="chat_tips_encrypt_key">Gizli Sohbet Şifresi</string>
+    <string name="chat_tips_action1">Şifreyi Değiştir</string>
+    <string name="chat_tips_action2">Şifre Belirle</string>
+    <string name="chat_tips_action3">Bağla</string>
+    <string name="chat_security_setting_tip1">Kurtarma ifadesi sohbet mesajlarını ve sohbet dosyalarını şifrelemek için kullanılır. Cihaz değiştirip giriş yaparken aynı kurtarma ifadesini içe aktarmanız gerekir, aksi takdirde geçmiş şifreli mesajları göremezsiniz. Lütfen kurtarma ifadesini zamanında dışa aktarıp güvenli bir yerde saklayın!</string>
+    <string name="chat_security_setting_tip2">Kurtarma ifadesi, telefon/e-posta ve gizli sohbet şifresi ile şifrelenerek resmi sunucuya yüklenebilir ve kurtarma ifadesi kurtarma hizmeti sağlar.</string>
+    <string name="chat_save_words_tip">Lütfen kurtarma ifadesini not edip güvenli bir yerde saklayın. Kurtarma ifadesi kaybolursa, yeniden kurulum veya cihaz değiştirerek giriş yaptığınızda geçmiş şifreli mesajları göremezsiniz! Gizli sohbet şifresi de sıfırlanamaz! Kurtarma ifadeniz başkalarının eline geçerse bilgilerinize ulaşılabilir!</string>
+    <string name="chat_save_words_tips2">Lütfen not edip güvenli bir yerde saklayın!</string>
+    <string name="chat_tips_chat_pwd_error">Gizli sohbet şifresi hatalı</string>
+    <string name="chat_tips_mnem_export_fail">Kurtarma ifadesi dışa aktarma başarısız</string>
+    <string name="chat_tips_private_export_fail">Özel anahtar dışa aktarma başarısız</string>
+    <string name="chat_title_bind_phone">Telefon Bağla</string>
+    <string name="chat_title_bind_email">E-posta Bağla</string>
+    <string name="chat_tips_bind_phone_tips">Telefon bağlandıktan sonra telefon ile giriş yapabilirsiniz</string>
+    <string name="chat_tips_bind_email_tips">E-posta bağlandıktan sonra e-posta ile giriş yapabilirsiniz</string>
+    <string name="chat_hint_input_phone">Lütfen telefon numarasını girin</string>
+    <string name="chat_hint_input_email">Lütfen e-posta girin</string>
+    <string name="chat_action_bind_send_code">Doğrulama Kodu Al</string>
+    <string name="chat_tips_bind_account_success">Bağlama başarılı</string>
+    <string name="chat_action_unbind_and_rebind">Bağlantıyı Kaldır ve Yeniden Bağla</string>
+    <string name="chat_action_unbind_phone_login">Telefon ile Giriş</string>
+    <string name="chat_action_unbind_import_mnem">Kurtarma İfadesini İçe Aktar</string>
+    <string name="chat_tips_override_bind">Telefon/e-posta başka bir kurtarma ifadesi hesabına bağlanmış. Orijinal bağlantıyı kaldırıp yerel kurtarma ifadesi hesabıyla yeniden bağlamak istiyor musunuz?</string>
+    <string name="chat_tips_override_bind2">Orijinal hesabın varlıkları varsa telefon ile kurtarılamaz, kayıp riski vardır. Lütfen bağlantıyı kaldırırken dikkatli olun!</string>
+    <string name="chat_tips_phone_forget_password">Gizli sohbet şifresini unutursanız orijinal hesap telefon ile kurtarılamaz! Şunları yapabilirsiniz:\n1. Giriş yapmak için kurtarma ifadesini içe aktarın (şifre değiştirilebilir);\n2. Orijinal bağlantıyı kaldırın, yeni bir hesap oluşturun ve bu telefona bağlayın.</string>
+    <string name="chat_tips_email_forget_password">Gizli sohbet şifresini unutursanız orijinal hesap e-posta ile kurtarılamaz! Şunları yapabilirsiniz:\n1. Giriş yapmak için kurtarma ifadesini içe aktarın (şifre değiştirilebilir);\n2. Kurtarmak için telefon ile giriş yapmayı deneyin veya telefon ile girişteki şifremi unuttum özelliğini kullanarak bağlantıyı kaldırıp yeniden bağlama işlemini gerçekleştirin</string>
+    <string name="chat_tips_override_forget_password2">Orijinal bağlantının kaldırılması orijinal hesabın bilgilerini ve varlıklarını kaybettirir, lütfen dikkatli olun!</string>
+
+    <!--设置中心-->
+    <string name="chat_title_setting_center">Ayarlar Merkezi</string>
+    <string name="chat_tips_app_notify_switch">Uygulama Bildirim Anahtarı</string>
+    <string name="chat_tips_new_msg_notify">Yeni Mesaj Bildirimlerini Al</string>
+    <string name="chat_tips_rtc_call_notify">Sesli ve Görüntülü Arama Davet Bildirimlerini Al</string>
+    <string name="chat_tips_system_sound_and_vibrate">Sistem Sesi ve Titreşim</string>
+    <string name="chat_tips_new_msg_sys_notify">Yeni Mesaj Sistem Bildirimi</string>
+    <string name="chat_tips_rtc_call_sys_notify">Sesli ve Görüntülü Arama Bildirimi</string>
+    <string name="chat_tips_go_sys_notify_settings">Sistem Ayarlarına Git</string>
+
+    <string name="chat_set_chat_password">Lütfen gizli sohbet şifresini belirleyin</string>
+    <string name="chat_input_chat_password">Lütfen gizli sohbet şifresini girin</string>
+    <string name="chat_encrypt_password_hint">8–16 haneli sayı, harf veya sembol kombinasyonu</string>
+    <!--修改助记词密码-->
+    <string name="chat_title_set_encrypt_password">Gizli Sohbet Şifresi Belirle</string>
+    <string name="chat_title_encrypt_password">Gizli Sohbet Şifresini Değiştir</string>
+    <string name="chat_tips_old_encrypt_pwd">Eski Şifre</string>
+    <string name="chat_tips_old_encrypt_pwd_hint">Lütfen eski şifreyi girin</string>
+    <string name="chat_tips_first_encrypt_pwd_hint">Lütfen şifre belirleyin</string>
+    <string name="chat_tips_second_encrypt_pwd_hint">Lütfen şifreyi tekrar girin</string>
+    <string name="chat_tips_forget_password">Şifremi Unuttum</string>
+    <string name="chat_tips_new_encrypt_pwd">Yeni Şifre</string>
+    <string name="chat_tips_new_encrypt_pwd_hint">Lütfen yeni şifreyi tekrar girin</string>
+    <string name="chat_tips_update_encrypt_pwd1">Gizli sohbet şifresi başarıyla değiştirildi</string>
+    <string name="chat_tips_update_encrypt_pwd2">Şifre hatalı</string>
+    <string name="chat_tips_update_encrypt_pwd3">Lütfen 8–16 karakter girin</string>
+    <string name="chat_tips_update_encrypt_pwd4">Lütfen sayı, harf veya sembol kombinasyonu girin</string>
+    <string name="chat_tips_update_encrypt_pwd5">Lütfen 8–16 haneli sayı, harf veya sembol kombinasyonu belirleyin</string>
+    <string name="chat_tips_update_encrypt_pwd6">Şifreler eşleşmiyor</string>
+    <string name="chat_tips_update_encrypt_pwd7">Gizli sohbet şifresi başarıyla belirlendi</string>
+
+    <!--联系人信息-->
+    <string name="chat_title_contact_info">Detaylar</string>
+    <string name="chat_action_send_msg">Mesaj Gönder</string>
+    <string name="chat_action_transfer">Transfer</string>
+    <string name="chat_action_delete_friend">Arkadaşı Sil</string>
+    <string name="chat_action_add_friend">Arkadaş Ekle</string>
+    <string name="chat_tips_modify_group_success">Sunucu başarıyla değiştirildi</string>
+    <string name="chat_tips_add_friend_success">Arkadaş başarıyla eklendi</string>
+    <string name="chat_tips_delete_friend_success">Arkadaş başarıyla silindi</string>
+    <string name="chat_tips_nickname_placeholder">Takma Ad: %1$s</string>
+    <string name="chat_tips_group_nickname_placeholder">Grup Takma Adı: %1$s</string>
+    <string name="chat_tips_address_placeholder">Hesap: %1$s</string>
+    <string name="chat_dialog_delete_friend">Silindikten sonra bu kişiyle olan sohbet mesajları da silinecektir. &lt;font color="%1$s"&gt;%2$s&lt;/font&gt; kişisini silmek istediğinize emin misiniz?</string>
+
+    <string name="chat_title_edit_group_name">Grup Adını Düzenle</string>
+    <string name="chat_tip_group_name">Şifreli Grup Adı</string>
+    <string name="chat_tip_group_pub_name">Genel Grup Adı</string>
+    <string name="chat_title_edit_nickname_in_group">Bu Gruptaki Takma Adım</string>
+    <string name="chat_tip_nickname_in_group">Grup Takma Adı</string>
+    <string name="chat_tip_group_name_empty">Grup adı boş olamaz</string>
+    <string name="chat_tip_group_pub_name_empty">Genel grup adı boş olamaz</string>
+    <string name="chat_tip_edit_group_name_success">Grup adı başarıyla değiştirildi</string>
+    <string name="chat_tip_edit_group_nickname_success">Grup içi takma ad başarıyla değiştirildi</string>
+    <string name="chat_tip_group_avatar">Grup Profil Fotoğrafı</string>
+    <string name="chat_tips_nickname_in_group">Bu Gruptaki Takma Adım</string>
+    <string name="chat_log_in_chat_history">Sohbet Geçmişini Ara</string>
+    <string name="chat_file_in_chat_history">Sohbet Dosyaları</string>
+    <string name="chat_detail_no_disturb">Rahatsız Etme</string>
+    <string name="chat_detail_stick_top">Sohbeti Sabitle</string>
+    <string name="chat_detail_group_type_tips">Grup Türü</string>
+    <string name="chat_detail_group_type0">Normal Grup</string>
+    <string name="chat_detail_group_type1">Tüm Üyeler Grubu</string>
+    <string name="chat_detail_group_type2">Departman Grubu</string>
+    <string name="chat_detail_belong_server_group">Mesajlarını alan sunucu</string>
+    <string name="chat_detail_belong_server_group2">Bağlı Sunucu</string>
+    <string name="chat_detail_choose_server_group">Sunucu Seç</string>
+    <string name="chat_detail_edit_server_group">Yönet</string>
+    <string name="chat_add_black_list">Kara Listeye Ekle</string>
+    <string name="chat_remove_black_list">Kara Listeden Çıkar</string>
+    <string name="chat_user_black_message">Karşı taraftan artık mesaj alınmıyor</string>
+    <string name="chat_add_black_warn">Kara listeye eklendikten sonra karşı taraftan mesaj almayacaksınız. &lt;font color="%1$s"&gt;%2$s&lt;/font&gt; kişisini kara listeye almak istediğinize emin misiniz?</string>
+    <string name="chat_add_black_success">Karşı taraf kara listeye eklendi!</string>
+    <string name="chat_add_black_fail">Kara listeye ekleme başarısız!</string>
+    <string name="chat_remove_black_success">Karşı taraf kara listeden çıkarıldı!</string>
+    <string name="chat_remove_black_fail">Kara listeden çıkarma başarısız!</string>
+    <string name="chat_group_mute_time">Sustur</string>
+
+    <string name="chat_title_contact_remark">Not Bilgileri</string>
+    <string name="chat_tip_remark">Not</string>
+    <string name="chat_tip_remark_edit_success">Başarıyla değiştirildi</string>
+
+    <!--群信息-->
+    <string name="chat_action_exit_group">Gruptan Ayrıl</string>
+    <string name="chat_action_disband_group">Grubu Dağıt</string>
+
+    <!--本地搜索-->
+    <string name="chat_tips_search_history">Arama Geçmişi</string>
+    <string name="chat_tips_search_clear_history">Geçmişi Temizle</string>
+    <string name="chat_tips_search_hint">Arkadaş, sohbet geçmişi vb. ara</string>
+    <string name="chat_tips_search_hint1">Arkadaş Ara</string>
+    <string name="chat_tips_search_hint2">Grup Ara</string>
+    <string name="chat_tips_search_hint3">Sohbet Geçmişi Ara</string>
+    <string name="chat_tips_search_type1">Kişiler</string>
+    <string name="chat_tips_search_type2">Gruplar</string>
+    <string name="chat_tips_search_type3">Sohbet Geçmişi</string>
+    <string name="chat_tips_search_result_more">Daha Fazla Gör</string>
+    <string name="chat_tips_search_log_target">\"%1$s\" kayıtları</string>
+    <string name="chat_tips_search_log_count">%1$d ilgili sohbet kaydı</string>
+
+    <!-- 聊天-->
+    <string name="chat_tips_chat_operate1">Susturma kaldırma başarılı</string>
+    <string name="chat_tips_chat_operate2">Kulaklık moduna geçildi</string>
+    <string name="chat_tips_chat_operate3">Hoparlör moduna geçildi</string>
+    <string name="chat_tips_chat_operate4">Panoya kopyalandı</string>
+    <string name="chat_tips_chat_operate5">Metin olmayan mesajlar kopyalanamaz</string>
+    <string name="chat_tips_chat_operate6">Bir mesaj geri çekildi</string>
+    <string name="chat_top_operate">Sohbeti Sabitle</string>
+    <string name="chat_top_cancel">Sabitlemeyi Kaldır</string>
+    <string name="chat_disturb_operate">Rahatsız Etme</string>
+    <string name="chat_disturb_cancel">Rahatsız Etmeyi İptal Et</string>
+    <string name="chat_message_delete">Sohbeti Sil</string>
+    <string name="chat_dialog_delete_session">&lt;font color="%1$s"&gt;%2$s&lt;/font&gt; ile sohbeti silmek istediğinize emin misiniz?</string>
+    <string name="chat_dialog_delete_message">Bu mesajı silmek istediğinize emin misiniz?</string>
+    <string name="chat_dialog_delete_messages">Seçili mesajları silmek istediğinize emin misiniz?</string>
+    <string name="chat_tips_servers_empty">Karşı tarafın sunucu adresi bulunamıyor</string>
+    <string name="chat_tips_server_not_exist">Mevcut grup sohbet sunucusuna bağlı değil, mesaj gönderilemiyor/alınamıyor</string>
+    <string name="chat_tips_add_group_chat_server">Sunucu Ekle</string>
+
+    <string name="chat_popup_option_copy">Kopyala</string>
+    <string name="chat_popup_option_translate">Çevir</string>
+    <string name="chat_popup_option_view_original">Orijinali gör</string>
+    <string name="chat_popup_option_forward">İlet</string>
+    <string name="chat_popup_option_reference">Alıntıla</string>
+    <string name="chat_popup_option_focus">Takip Et</string>
+    <string name="chat_popup_option_revoke">Geri Çek</string>
+    <string name="chat_popup_option_delete">Sil</string>
+    <string name="chat_popup_option_mute">Sustur</string>
+    <string name="chat_popup_option_audio_channel_speaker">Hoparlörden Çal</string>
+    <string name="chat_popup_option_audio_channel_receiver">Kulaklıktan Çal</string>
+    <string name="chat_popup_option_multiple_choose">Çoklu Seçim</string>
+
+    <string name="chat_tips_switch_to_speaker">Hoparlörden çalmaya geçildi</string>
+    <string name="chat_tips_switch_to_receiver">Kulaklıktan çalmaya geçildi</string>
+
+    <!--聊天输入框-->
+    <string name="chat_tips_input_msg1">Boş mesaj gönderilemez</string>
+    <string name="chat_tips_input_msg2">Sistem mesajları yalnızca metin gönderebilir</string>
+    <string name="chat_tips_input_msg3">SD kart algılanmadı</string>
+
+    <string name="chat_tips_input_send">Gönder</string>
+    <string name="chat_tips_input_say_sth">Bir şeyler söyle</string>
+    <string name="chat_tips_input_media">Resim/Video</string>
+    <string name="chat_tips_input_shoot">Çek</string>
+    <string name="chat_tips_input_snap_msg">Okunduktan Sonra Yok Ol</string>
+    <string name="chat_tips_input_file">Dosya</string>
+    <string name="chat_tips_input_rtc">Görüntülü Arama</string>
+    <string name="chat_tips_input_red_packet">Kırmızı Zarf</string>
+    <string name="chat_tips_input_red_packet_only">Özel Kırmızı Zarf</string>
+    <string name="chat_tips_input_text_packet">Kırmızı Zarf Mesajı</string>
+    <string name="chat_tips_input_transfer">Transfer</string>
+    <string name="chat_tips_input_contact_card">Kartvizit</string>
+
+    <string name="chat_call_menu_voice">Sesli arama</string>
+    <string name="chat_call_menu_video">Görüntülü arama</string>
+    <string name="chat_call_invite_title_voice">Sesli arama</string>
+    <string name="chat_call_invite_title_video">Görüntülü arama</string>
+    <string name="chat_call_invite_desc">Katılmak için dokunun · Oda %1$s</string>
+    <string name="chat_call_invite_text">Sesli sohbet daveti, katılmak için bağlantıya dokunun: %1$s</string>
+    <string name="chat_call_confirm_content">Bir sesli oda oluşturulacak ve karşı tarafa davet gönderilecek. Sesli sohbet başlatılsın mı?</string>
+    <string name="chat_call_creating">Arama odası oluşturuluyor…</string>
+    <string name="chat_call_create_failed">Arama oluşturulamadı, lütfen daha sonra tekrar deneyin</string>
+    <string name="chat_call_busy_title">Bildirim</string>
+    <string name="chat_call_busy_content">Şu anda aramadasınız. Mevcut aramayı bitirip yeni bir arama başlatılsın mı?</string>
+    <string name="chat_call_window_hangup">Kapat</string>
+    <string name="chat_call_window_minimize">Simge durumuna küçült</string>
+    <string name="chat_call_window_expand">Tam ekran</string>
+    <string name="chat_call_window_minimized_tips">Arama simge durumuna küçültüldü. Geri yüklemek için küçük pencereye dokunun</string>
+    <string name="chat_call_copy_link">Arama bağlantısını kopyala</string>
+    <string name="chat_call_link_copied">Arama bağlantısı kopyalandı</string>
+    <string name="chat_call_webview_error">Arama sayfası yüklenemedi. Ağı kontrol edip tekrar deneyin</string>
+
+    <string name="chat_record_state_prepared">Konuşmak için Basılı Tutun</string>
+    <string name="chat_record_state_recording">Bitirmek için Bırakın</string>
+    <string name="chat_record_state_want_cancel">Parmağınızı bırakın, gönderimi iptal edin</string>
+    <string name="chat_record_slide_to_cancel">Gönderimi iptal etmek için yukarı kaydırın</string>
+    <string name="chat_record_tips_too_short">Kayıt süresi çok kısa</string>
+    <string name="chat_speak_time_remain">%1$d saniye daha konuşabilirsiniz</string>
+
+    <!--聊天消息-->
+    <string name="chat_unfold">Daralt</string>
+    <string name="chat_fold">Genişlet</string>
+
+    <string name="chat_tips_num_3">%1$d/3</string>
+    <string name="chat_tips_num_15">%1$d/15</string>
+    <string name="chat_tips_num_20">%1$d/20</string>
+    <string name="chat_tips_num_50">%1$d/50</string>
+    <string name="chat_tips_num_400">%1$d/400</string>
+    <string name="chat_tips_num_500">%1$d/500</string>
+
+    <string name="chat_time_tips_yesterday">Dün %1$s</string>
+    <string name="chat_time_tips_week1">Pazar %1$s</string>
+    <string name="chat_time_tips_week2">Pazartesi %1$s</string>
+    <string name="chat_time_tips_week3">Salı %1$s</string>
+    <string name="chat_time_tips_week4">Çarşamba %1$s</string>
+    <string name="chat_time_tips_week5">Perşembe %1$s</string>
+    <string name="chat_time_tips_week6">Cuma %1$s</string>
+    <string name="chat_time_tips_week7">Cumartesi %1$s</string>
+
+    <string name="chat_file_size">Dosya %1$s</string>
+    <string name="chat_find_ai_cs">AI Destek</string>
+    <string name="chat_tips_copy_message_content">Mesaj içeriği kopyalandı</string>
+    <string name="chat_tips_translate_failed">Çeviri başarısız, lütfen daha sonra tekrar deneyin</string>
+
+    <string name="chat_message_system_msg_type">Duyuru</string>
+    <string name="chat_message_unsupported_msg_type">Bu mesaj henüz desteklenmiyor, lütfen en son sürüme güncelleyin</string>
+    <string name="chat_tips_file_not_exist">Dosya mevcut değil</string>
+
+    <string name="chat_tips_search_my_account">Hesabım: %1$s</string>
+    <string name="chat_tips_search_type_user">Kullanıcı</string>
+    <string name="chat_title_my_qr_code">QR Kodum</string>
+    <string name="chat_tips_qr_code_friend">Beni %1$s üzerinde arkadaş olarak eklemek için QR kodu tarayın</string>
+    <string name="chat_action_copy_address">Hesabı Kopyala</string>
+    <string name="chat_action_copy_group_num">Grup Numarasını Kopyala</string>
+    <string name="chat_tips_copy_download_url">İndirme bağlantısı panoya kopyalandı</string>
+    <string name="chat_tips_copy_address">Panoya kopyalandı</string>
+    <string name="chat_tips_copy_group_num">Grup numarası panoya kopyalandı</string>
+    <string name="chat_tips_qr_share_chat">TanXin</string>
+    <string name="chat_tips_qr_save">Kaydet</string>
+    <string name="chat_tips_img_saved">Resim kaydedildi</string>
+    <string name="chat_tips_img_not_exist">Resim mevcut değil</string>
+    <string name="chat_tips_vid_not_exist">Video mevcut değil</string>
+    <string name="chat_tips_img_zip_fail">Resim sıkıştırma başarısız</string>
+    <string name="chat_tips_not_contain_qr_code">QR kod algılanmadı</string>
+    <string name="chat_action_recognize_qrcode">Resimdeki QR Kodu Tanı</string>
+
+    <string name="chat_tips_start_download">İndirme başlıyor…</string>
+    <string name="chat_tips_is_downloading">İndiriliyor…</string>
+    <string name="chat_tips_image_download_to">Resim %1$s konumuna indirildi</string>
+    <string name="chat_tips_video_download_to">Video %1$s konumuna indirildi</string>
+    <string name="chat_tips_file_download_to">Dosya %1$s konumuna indirildi</string>
+    <string name="chat_tips_download_fail">İndirme başarısız, %1$s</string>
+
+    <!--文件详情页面-->
+    <string name="chat_tips_download_file">Dosyayı Al</string>
+    <string name="chat_tips_can_not_open">%1$s bu tür dosyaları açmayı desteklemiyor, başka bir uygulama ile açabilirsiniz</string>
+    <string name="chat_tips_open_with">Başka Uygulamayla Aç</string>
+    <string name="chat_tips_select_open_type">Lütfen bu dosyayı açmak için uygun uygulamayı seçin</string>
+    <string name="chat_tips_unsupported_file_type">Desteklenmeyen dosya türü</string>
+
+    <!--聊天文件管理-->
+    <string name="chat_title_file_management">Sohbet Dosyaları</string>
+    <string name="chat_action_file_select">Seç</string>
+    <string name="chat_title_chat_file">Dosyalar</string>
+    <string name="chat_title_chat_media">Resimler/Videolar</string>
+    <string name="chat_file_empty">Dosya yok</string>
+    <string name="chat_media_empty">Resim/video yok</string>
+    <string name="chat_file_search_hint">Dosya adını girin</string>
+    <string name="chat_action_file_download">İndir</string>
+    <string name="chat_action_file_delete">Sil</string>
+    <string name="chat_dialog_tips_delete_chat_files">Silindikten sonra mesaj geçmişinizde görünmez</string>
+
+    <!--删除私聊记录 / 自动删除-->
+    <string name="chat_contact_clean_private">Sohbet Geçmişini Sil</string>
+    <string name="chat_contact_auto_delete">Sohbet Geçmişini Otomatik Sil</string>
+    <string name="chat_private_clean_confirm_title">Sohbet Geçmişini Sil</string>
+    <string name="chat_private_clean_confirm_message">İki tarafın özel sohbet mesajları seçilen zaman aralığına göre silinecek (sunucu esaslıdır), devam edilsin mi?</string>
+    <string name="chat_private_clean_success">İşlem başarılı, sunucu %1$d mesaj sildi</string>
+    <string name="chat_private_clean_custom_invalid">Bitiş zamanı başlangıç zamanından önce olamaz</string>
+    <string name="chat_private_clean_last_1d">Son 1 Gün</string>
+    <string name="chat_private_clean_last_3d">Son 3 Gün</string>
+    <string name="chat_private_clean_last_7d">Son 7 Gün</string>
+    <string name="chat_private_clean_last_30d">Son 30 Gün</string>
+    <string name="chat_private_clean_last_90d">Son 90 Gün</string>
+    <string name="chat_private_clean_last_180d">Son 180 Gün</string>
+    <string name="chat_private_clean_last_365d">Son 365 Gün</string>
+    <string name="chat_private_clean_all">Tüm Geçmiş</string>
+    <string name="chat_private_clean_custom">Özel Tarih…</string>
+    <string name="chat_private_clean_pick_start">Başlangıç Tarihini Seç</string>
+    <string name="chat_private_clean_pick_end">Bitiş Tarihini Seç</string>
+    <string name="chat_private_auto_off">Kapalı</string>
+    <string name="chat_private_auto_day_1">1 Günden Fazla</string>
+    <string name="chat_private_auto_day_3">3 Günden Fazla</string>
+    <string name="chat_private_auto_day_7">7 Günden Fazla</string>
+    <string name="chat_private_auto_day_30">30 Günden Fazla</string>
+    <string name="chat_private_auto_day_180">180 Günden Fazla</string>
+    <string name="chat_private_auto_pick_title">Otomatik Sil</string>
+
+    <!--登录-->
+    <string name="login_tips_login_success">Giriş başarılı</string>
+    <string name="login_tips_register_success">Kayıt başarılı</string>
+    <string name="login_tips_code_sent">Doğrulama kodu gönderildi</string>
+
+    <string name="login_tips_correct_email">Lütfen geçerli bir e-posta girin</string>
+    <string name="login_tips_correct_phone">Lütfen geçerli bir telefon numarası girin</string>
+    <string name="login_tips_correct_code">Lütfen eksiksiz doğrulama kodunu girin</string>
+    <string name="login_tips_code_count">Gönderildi (%1$ds)</string>
+
+    <string name="login_tips_input_email">Lütfen e-posta girin</string>
+    <string name="login_tips_input_phone">Lütfen telefon numarası girin</string>
+    <string name="login_tips_input_code">Lütfen doğrulama kodunu girin</string>
+    <string name="login_tips_input_s2">Lütfen S2 girin</string>
+    <string name="login_action_send_code">Doğrulama Kodu Al</string>
+    <string name="login_action_login">Giriş</string>
+    <string name="login_use_email">E-posta ile Giriş</string>
+    <string name="login_use_email_tips">E-posta ile kısmi kurtarma ifadesi kurtarıp giriş yapın</string>
+    <string name="login_use_phone">Telefon ile Giriş</string>
+    <string name="login_use_phone_tips">Hesaba bağlanmamış telefon numarası otomatik olarak hesap oluşturur</string>
+    <string name="login_tips_unbind_yet">Telefon/e-posta henüz bir kurtarma ifadesi hesabına bağlanmamış, lütfen sohbete girmek için başka bir yöntem seçin.</string>
+
+    <string name="chat_dialog_action_take_photo">Fotoğraf Çek</string>
+    <string name="chat_dialog_action_select_picture">Albümden Seç</string>
+
+    <!--App更新对话框-->
+    <string name="chat_update_checking_update">Güncelleme kontrol ediliyor…</string>
+    <string name="chat_update_latest_version">Zaten en son sürüm</string>
+    <string name="chat_update_title">Yeni Sürüm Bulundu</string>
+    <string name="chat_update_tips_version">V%1$s</string>
+    <string name="chat_update_downloading">İndiriliyor…</string>
+    <string name="chat_update_begin_download">İndirme hazırlanıyor…</string>
+    <string name="chat_update_download_success">İndirme tamamlandı, kurmak için dokunun</string>
+    <string name="chat_update_action_retry">Yeniden Dene</string>
+    <string name="chat_update_action_install">Kurmak için Dokun</string>
+    <string name="chat_update_action_update">Güncelle</string>
+    <string name="chat_update_action_ignore_update">Şimdi Değil</string>
+
+    <!--群聊-->
+    <string name="chat_title_create_group">Grup Oluştur</string>
+    <string name="chat_title_invite_members_type">Üye Seç</string>
+    <string name="chat_title_invite_group_members">Yeni Üye Ekle</string>
+    <string name="chat_tips_group_members">Grup Üyeleri</string>
+    <string name="chat_title_create_group_select_server">Sunucu Seç</string>
+    <string name="chat_tips_create_group_manage_server">Yönet</string>
+    <string name="chat_tips_choose_group_server">Grubun bağlı olduğu sohbet sunucusunu seçin</string>
+    <string name="chat_tips_invite_group_members">Grup üyelerini seçin</string>
+    <string name="chat_tips_group_members_friends">Arkadaş listesinden üye seçin</string>
+    <string name="chat_tips_group_members_oa">Organizasyon yapısından üye seçin</string>
+    <string name="chat_action_create_group">Oluştur</string>
+    <string name="chat_tips_somebody_create_group">%1$s tarafından oluşturulan grup</string>
+    <string name="chat_tips_group_member_num">Toplam %1$d kişi</string>
+    <string name="chat_action_invite">Davet Et</string>
+    <string name="chat_action_remove">Kaldır</string>
+    <string name="chat_action_group_copy_mark_id">Grup Numarasını Kopyala</string>
+    <string name="chat_title_group_info">Grup Detayları</string>
+    <string name="chat_title_group_qrcode">Grup QR Kodu</string>
+    <string name="chat_tips_group_mark_id">Grup No: %1$s</string>
+    <string name="chat_tips_group_pub_name">Genel Grup Adı: %1$s</string>
+    <string name="chat_tips_group_qr_code">Gruba katılmak için QR kodu tarayın</string>
+    <string name="chat_tips_group_forbid_join">Bu gruba katılmak yasak</string>
+    <string name="chat_tips_group_copy_mark_id">Grup numarası panoya kopyalandı</string>
+    <string name="chat_tips_group_join_invalid_qrcode">Gruba katılma QR kodu süresi doldu</string>
+    <string name="tips_invite_group_members_success">Davet başarılı</string>
+
+    <string name="chat_title_group_user">Grup Üyeleri</string>
+    <string name="chat_action_add_group_user">Üye Ekle</string>
+    <string name="chat_action_del_group_user">Üye Sil</string>
+    <string name="chat_action_set_group_admin">Yönetici Yap</string>
+    <string name="chat_tips_set_nickname_in_group">Burada &lt;font color="%1$s"&gt;%2$s&lt;/font&gt; içindeki takma adınızı ayarlayabilirsiniz, bu takma ad yalnızca bu grupta görüntülenir</string>
+    <string name="chat_tips_search_group_friend_hint">Grup üyelerini ara</string>
+    <string name="chat_tips_member_type">Grup Sahibi, Yönetici</string>
+    <string name="chat_tips_member_type_owner">Grup Sahibi</string>
+    <string name="chat_tips_member_type_admin">Yönetici</string>
+    <string name="chat_tips_select_invite_users">Lütfen davet edilecek arkadaşları seçin</string>
+    <string name="chat_tips_select_delete_users">Lütfen silinecek grup üyelerini seçin</string>
+    <string name="chat_dialog_tips_exit_group">&lt;font color="%1$s"&gt;%2$s&lt;/font&gt; grubundan ayrılmak istediğinize emin misiniz?</string>
+    <string name="chat_dialog_tips_disband_group">&lt;font color="%1$s"&gt;%2$s&lt;/font&gt; grubunu dağıtmak istediğinize emin misiniz?</string>
+
+    <string name="chat_group_admin_setting">Yönetici Ayarları</string>
+    <string name="chat_group_owner_setting">Sahipliği Devret</string>
+    <string name="chat_group_join_limit">Gruba Katılma Kısıtlamaları</string>
+    <string name="chat_group_add_limit">Arkadaş Ekleme Kısıtlamaları</string>
+    <string name="chat_group_mute_all">Herkese Sustur</string>
+    <string name="chat_group_mute_list">Susturma Listesi</string>
+    <string name="chat_group_join_limit1">Onay Gerekmez</string>
+    <string name="chat_group_join_limit_sub1">Gruba katılmak için grup sahibi veya yönetici onayı gerekmez</string>
+    <string name="chat_group_join_limit2">Katılım Yasak</string>
+    <string name="chat_group_join_limit_sub2">Grup sahibi ve yönetici daveti dışında kimsenin gruba katılmasına izin verilmez</string>
+    <string name="chat_group_join_limit3">Grup sahibi onayı</string>
+    <string name="chat_group_join_limit_sub3">Gruba katılmak için grup sahibi veya yönetici onayı gerekir</string>
+    <string name="chat_group_apply_list">Katılma istekleri</string>
+    <string name="chat_group_apply_title">Katılma istekleri</string>
+    <string name="chat_group_apply_empty">Katılma isteği yok</string>
+    <string name="chat_tip_apply_num">%1$d istek</string>
+    <string name="chat_action_apply_accept">Kabul et</string>
+    <string name="chat_action_apply_reject">Reddet</string>
+    <string name="chat_tips_apply_accepted">Katılma isteği kabul edildi</string>
+    <string name="chat_tips_apply_rejected">İstek reddedildi</string>
+    <string name="chat_action_apply_join_group">Katılma isteği gönder</string>
+    <string name="chat_action_apply_join_pending">Başvuruldu, onay bekleniyor</string>
+    <string name="chat_tips_apply_join_submitted">İstek gönderildi. Onay bekleniyor</string>
+    <string name="chat_tips_invite_apply_submitted">Davet gönderildi. Onay bekleniyor</string>
+    <string name="chat_tips_address_copied">Adres panoya kopyalandı</string>
+    <string name="chat_group_add_limit1">Grupta Arkadaş Eklenebilir</string>
+    <string name="chat_group_add_limit2">Grupta Arkadaş Eklemek Yasak</string>
+
+    <string name="chat_group_join_title">Detaylar</string>
+    <string name="chat_action_join_group">Grup Sohbetine Gir</string>
+    <string name="chat_action_can_not_join">Katılım Yasak</string>
+    <string name="chat_action_chat_message">Sohbete Gönder</string>
+    <string name="chat_tips_join_member_number">%1$d grup üyesi</string>
+
+    <string name="chat_title_group_mute_list">Susturma Listesi</string>
+    <string name="chat_action_group_cancel_mute">Tümünün Susturmasını Kaldır</string>
+    <string name="chat_tip_no_group_user_muted">Susturması kaldırılacak grup üyesi yok</string>
+    <string name="chat_tip_mute_forever">Kalıcı Susturma</string>
+    <string name="chat_tip_mute_to_time">%1$s tarihine kadar susturuldu</string>
+    <string name="chat_tip_mute_user_num">%1$d üye susturuldu</string>
+    <string name="chat_action_forbid_add_friend">Bu grupta arkadaş eklemek yasak</string>
+    <string name="chat_tips_mute_state1">Konuşabilir</string>
+    <string name="chat_tips_mute_state2">Herkes Susturuldu</string>
+    <string name="chat_tips_mute_state3">Susturuldu&#160;%1$s</string>
+    <string name="chat_tips_mute_state4">Kalıcı Susturma</string>
+    <string name="chat_tips_can_not_mute">Yönetici veya grup sahibi susturulamaz</string>
+
+    <string name="chat_confirm_mute">Susturulmak istendiğine emin misiniz?</string>
+    <string name="chat_mute_cancel">Susturmayı Kaldır</string>
+    <string name="chat_select_mute_time">Susturma Süresi Seç</string>
+    <string name="chat_change_mute_time">Susturma Süresini Değiştir</string>
+    <string name="chat_forever">Sonsuza Kadar</string>
+    <string name="chat_24_hour">24 Saat</string>
+    <string name="chat_10_hour">10 Saat</string>
+    <string name="chat_2_hour">2 Saat</string>
+    <string name="chat_30_minute">30 Dakika</string>
+    <string name="chat_10_minute">10 Dakika</string>
+
+    <string name="chat_title_admin_setting">Yönetici Ayarları</string>
+    <string name="chat_title_change_owner">Sahipliği Devret</string>
+    <string name="chat_title_add_admin">Yönetici Ekle</string>
+    <string name="chat_tips_group_owner">Grup Sahibi</string>
+    <string name="chat_tips_group_admin_num">Yönetici (%1$d/10)</string>
+    <string name="chat_action_add_group_admin">Yönetici Ekle</string>
+    <string name="chat_tips_change_group_owner">Grup sahipliğini &lt;font color="%1$s"&gt;%2$s&lt;/font&gt; kişisine devretmek istediğinize emin misiniz?</string>
+
+    <string name="chat_tips_new_msg">%1$s yeni mesaj</string>
+
+    <string name="chat_ait_default">[Biri bana @ attı]</string>
+
+    <!--转发-->
+    <string name="chat_forward_msg_summary">Sohbet Geçmişi Toplam %1$d mesaj</string>
+    <string name="chat_forward_source_tips">İlet: %1$s</string>
+    <string name="chat_forward_source_me_and_others">Benim ile [%1$s] arasındaki sohbet</string>
+    <string name="chat_forward_source_others_and_others">[%1$s] ile [%2$s] arasındaki sohbet</string>
+    <string name="chat_forward_source_group">Grup [%1$s] sohbeti</string>
+    <string name="chat_forward_title_others_and_others">[%1$s] ve [%2$s] sohbet geçmişi</string>
+    <string name="chat_forward_title_group">Grup sohbet geçmişi</string>
+    <string name="chat_action_forward">İlet</string>
+    <string name="chat_action_forward_single">Tek Tek İlet</string>
+    <string name="chat_action_forward_multiple">Birleştirilmiş İlet</string>
+    <string name="chat_action_msg_star">Favorilere Ekle</string>
+    <string name="chat_action_msg_delete">Sil</string>
+    <string name="chat_action_revoke">Geri Çek</string>
+    <string name="chat_dialog_revoke_messages">Seçili %d mesajı geri çekmek istediğinize emin misiniz?</string>
+    <string name="chat_tips_revoke_empty">Seçili mesajlar geri çekilemiyor</string>
+    <string name="chat_tips_revoke_partial">%1$d mesaj başarılı, %2$d mesaj başarısız</string>
+    <string name="chat_title_contact_select">Kişi Seç</string>
+    <string name="chat_tips_forward_contact_tag1">Son Sohbetler</string>
+    <string name="chat_tips_forward_contact_tag2">Kişiler</string>
+    <string name="chat_tips_forward_contact_tag3">Gruplar</string>
+    <string name="chat_tips_search_contact">Arkadaş, grup ara</string>
+    <string name="chat_tips_search_friends">Arkadaş Ara</string>
+    <string name="chat_tips_search_groups">Grup Ara</string>
+    <string name="chat_tips_oa_select">Organizasyon yapısından üye seçin</string>
+    <string name="chat_tips_selected_message_empty">Lütfen önce geçerli mesajları seçin</string>
+    <string name="chat_tips_reach_max_msg_select_num">En fazla %1$d mesaj seçilebilir</string>
+    <string name="chat_tips_forward_msg_empty">İletilecek mesaj boş</string>
+    <string name="chat_tips_can_not_forward_group">Mevcut grup sohbeti iletilemiyor!</string>
+    <string name="chat_tips_can_not_forward_self">Kendinize iletemezsiniz</string>
+    <string name="chat_tips_can_not_forward_no_server">Karşı tarafın sunucusu bulunamıyor, iletilemiyor</string>
+    <string name="chat_tips_can_not_forward_group_no_server">Mevcut grup sohbet sunucusuna bağlı değil, mesaj gönderilemiyor/alınamıyor</string>
+    <string name="cancel">İptal</string>
+    <string name="ok">Tamam</string>
+    <string name="explore_title">Sorumluluk Beyanı</string>
+    <string name="explore_disclaimer">Üçüncü taraf bir bağlantı kullanmak üzeresiniz. Onaylamak, üçüncü tarafın Gizlilik Politikası\'nı ve Kullanıcı Sözleşmesi\'ni kabul ettiğiniz anlamına gelir. Bu bağlantıdaki tüm davranışlarınız ve kullanımlarınızdan bağlantının sağlayıcısı sorumludur.</string>
+    <string name="no_dotip">Tekrar hatırlatma</string>
+    <string name="del_str">Sil</string>
+    <string name="del_tip_str">Silinsin mi?</string>
+    <string name="input_www">Lütfen web adresi girin</string>
+    <string name="wc_get_addr">Mevcut cüzdan adresine erişime izin ver</string>
+    <string name="wc_sign_str">Mevcut cüzdandan imza isteğine izin ver</string>
+    <string name="wc_at">Bu hizmet WalletConnect protokolü tarafından desteklenmektedir</string>
+    <string name="wc_w_addr">Cüzdan Adresi</string>
+    <string name="wc_cnet">Mevcut Ağ</string>
+    <string name="wc_dis">Bağlantıyı Kes</string>
+    <string name="wc_pay_de">Ödeme Detayları</string>
+    <string name="wc_pay_me">Ödeme Bilgileri</string>
+    <string name="wc_pay_address">Ödeme Adresi</string>
+    <string name="wc_fee">Madenci Ücreti</string>
+    <string name="wc_next">Sonraki Adım</string>
+    <string name="wc_con">WalletConnect cüzdanınıza bağlanıyor</string>
+    <string name="wc_coned">Aşağıdaki cüzdanlarla bağlantı kuruldu</string>
+    <string name="home_receipt_address">Alıcı Adresi</string>
+    <string name="home_transfer">Transfer</string>
+    <string name="tip_fee_high">Ayarladığınız madenci ücreti çok yüksek, lütfen uygun bir madenci ücreti seçin</string>
+    <string name="tip_init_fee">Madenci ücreti başlatılıyor...</string>
+    <string name="dapp_sign_re">Dapp imza isteği gönderdi</string>
+    <string name="signme">İmza Bilgileri</string>
+    <string name="i_wallet">Cüzdanım</string>
+    <string name="my_wallet_detail_password">Lütfen hesap şifresini girin</string>
+    <string name="my_wallet_password_tips">Lütfen şifre girin</string>
+    <string name="pwd_fail_str">Şifre hatalı</string>
+    <string name="high_str">En Hızlı</string>
+    <string name="standard_str">Standart</string>
+    <string name="low_str">Ekonomik</string>
+    <string name="custom_str">Özel</string>
+    <string name="exp_str">Tarayıcı</string>
+    <string name="send_suc_str">Gönderildi!</string>
+    <string name="basic_error_send">Gönderim başarısız, lütfen tekrar deneyin</string>
+    <string name="chat_send_fail_title">Mesaj gönderilemedi</string>
+    <string name="chat_send_fail_network">Ağ kullanılamıyor, lütfen bağlantınızı kontrol edin</string>
+    <string name="chat_send_fail_timeout">Ağ zaman aşımı, gönderim başarısız</string>
+    <string name="chat_send_fail_connect">Sunucuya bağlanılamıyor, lütfen ağı kontrol edin</string>
+    <string name="chat_send_fail_upload">Dosya yüklenemedi, lütfen ağı kontrol edin</string>
+    <string name="chat_send_fail_server">Sunucu hatası: %1$s</string>
+    <string name="chat_send_fail_server_empty">Sunucu hatası, gönderim başarısız</string>
+    <string name="chat_send_fail_resend">Yeniden gönder</string>
+
+
+
+
+    <string name="tian_str">Teklif</string>
+    <string name="tp_str">Oy</string>
+    <string name="tp_error">Etkinlik çok yoğun, lütfen daha sonra tekrar deneyin</string>
+    <string name="fee_setting">Madenci Ücreti Ayarları</string>
+    <string name="enter_str">Lütfen girin</string>
+    <string name="switch_account_str">Hesap Değiştir</string>
+    <string name="chat_no_nickname">Lütfen takma ad belirleyin</string>
+    <string name="c_entrance">Hızlı Giriş</string>
+    <string name="n_yopen">Henüz Açılmadı</string>
+    <string name="save_suc">Kaydedildi</string>
+    <string name="like_str">Favorilere Ekle</string>
+    <string name="collect_suc_str">Favorilere eklendi!</string>
+    <string name="my_collect_str">Favorilerim</string>
+    <string name="ref_str">Yenile</string>
+    <string name="copy_url_str">Bağlantıyı Kopyala</string>
+    <string name="ex_open">Tarayıcıda Aç</string>
+    <string name="exit_str">Çıkış</string>
+    <string name="copy_success">Kopyalandı</string>
+    <string name="dapp_approve">Sözleşmeyi Yetkilendir</string>
+    <string name="dapp_out">Başlatan Adres</string>
+    <string name="dapp_nonono">Token Yetkilendirmesi</string>
+    <string name="meta_approve">Token Kullanımını Yetkilendir</string>
+    <string name="select_network_fee">Ağ Ücreti Seç</string>
+    <string name="fee_fast">Hızlı</string>
+    <string name="fee_recommended">Önerilen</string>
+    <string name="fee_slow">Yavaş</string>
+    <string name="fee_custom">Özel</string>
+    <string name="fee_estimated_time">%s içinde tahmini</string>
+    <string name="estimated_fee">Tahmini Ücret</string>
+
+    <!--安全设置相关硬编码-->
+    <string name="chat_hint_input_wechat">Lütfen WeChat numarası girin</string>
+    <string name="chat_hint_input_xiaohongshu">Lütfen Xiaohongshu numarası girin</string>
+    <string name="chat_hint_input_douyin">Lütfen Douyin numarası girin</string>
+
+    <!--群相关硬编码-->
+    <string name="chat_group_type_all">Tümü</string>
+    <string name="chat_group_type_dept">Departman</string>
+    <string name="chat_group_qrcode_tips">Bu grup %1$s ekibinin grubudur, yalnızca organizasyon içi üyeler katılabilir. Organizasyon dışındaki kişiler gruba katılmak isterse önce organizasyona katılma başvurusu yapmalıdır</string>
+
+    <!--转发相关-->
+    <string name="chat_forward_multiple_messages">[Tek tek ilet] Toplam %1$d mesaj</string>
+    <string name="chat_forward_sent_count">%1$d sohbete iletildi</string>
+
+    <!--私钥创建-->
+    <string name="chat_error_private_key_create">Özel anahtar oluşturma başarısız</string>
+
+    <!--编辑群头像-->
+    <string name="chat_error_crop_unknown">Kırpma başarısız, bilinmeyen hata</string>
+
+    <!--Dapp相关-->
+    <string name="chat_dapp_error_password">Şifre hatalı</string>
+
+    <!--布局标签-->
+    <string name="chat_label_add_friend_msg">Arkadaş ekleme mesajı</string>
+    <string name="chat_label_remark_other">Karşı Tarafın Notu</string>
+    <string name="chat_label_send">Gönder</string>
+    <string name="chat_label_account_manage">Hesap Yönetimi</string>
+    <string name="chat_label_audio_call">Sesli Arama</string>
+    <string name="chat_label_video_call">Görüntülü Arama</string>
+    <string name="chat_label_create_wallet">Cüzdan Oluştur</string>
+    <string name="chat_label_customer_service">Müşteri Hizmetleri</string>
+    <string name="chat_label_scan_add_cs">Müşteri hizmetlerini arkadaş olarak eklemek için QR kodu tarayın</string>
+    <string name="chat_label_group_exit_tips">Tüm üyeler/departman gruplarından yalnızca organizasyon/departmandan ayrılarak çıkılabilir. Organizasyon/departmandan ayrılmak ilgili gruptan otomatik olarak çıkış yaptırır!</string>
+    <string name="chat_label_search">Ara</string>
+    <string name="chat_label_search_history">Arama Geçmişi</string>
+    <string name="chat_label_phone">Telefon Numarası</string>
+    <string name="chat_label_wechat">WeChat</string>
+    <string name="chat_label_xiaohongshu">Xiaohongshu</string>
+    <string name="chat_label_douyin">Douyin</string>
+    <string name="chat_label_select_at">@ yapılacak kişileri seçin</string>
+    <string name="chat_label_everyone">Herkese</string>
+    <string name="chat_label_input_hint">Lütfen girin</string>
+    <string name="chat_label_confirm">Onayla</string>
+    <string name="chat_label_forgot_password">Şifremi Unuttum</string>
+    <string name="chat_label_send_to">Gönder:</string>
+    <string name="chat_label_mnem_verify">Kurtarma İfadesi Doğrulama</string>
+    <string name="chat_label_phone_verify">Telefon Doğrulama</string>
+    <string name="chat_label_email_verify">E-posta Doğrulama</string>
+    <string name="chat_label_group_owner">Grup Sahibi</string>
+    <string name="chat_label_member_info">Üye Bilgileri</string>
+    <string name="chat_label_name">Ad Soyad</string>
+    <string name="chat_label_team">Ekip</string>
+    <string name="chat_label_short_number">Kısa Numara</string>
+    <string name="chat_label_email">E-posta</string>
+    <string name="chat_label_dept">Departman</string>
+    <string name="chat_label_position">Pozisyon</string>
+    <string name="chat_label_personal_card">Kişisel Kartvizit</string>
+    <string name="chat_label_red_packet_default">Bol şans ve bereket</string>
+    <string name="chat_label_exclusive_received">Özel kırmızı zarf alındı</string>
+    <string name="chat_label_tx_mismatch">İşlem bilgisi uyuşmuyor, görüntülemek için dokunun</string>
+    <string name="chat_label_my_qr">QR Kodum</string>
+    <string name="chat_label_scan_add_me">Beni arkadaş olarak eklemek için QR kodu tarayın</string>
+    <string name="chat_label_scan_transfer_add">Bana transfer yapmak ve arkadaş eklemek için QR kodu tarayın</string>
+    <string name="chat_label_manage">Yönet</string>
+    <string name="chat_label_org_structure">Organizasyon Yapısı</string>
+    <string name="chat_label_current_account">Mevcut Hesap</string>
+    <string name="chat_add_friend_default_msg">Merhaba, ben %1$s, sizi arkadaş olarak ekledim!</string>
+
+</resources>

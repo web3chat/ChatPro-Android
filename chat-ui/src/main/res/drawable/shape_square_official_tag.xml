@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 公众号标识（渐变圆角胶囊，比原来更醒目） -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <gradient
+        android:angle="0"
+        android:endColor="#1B8FE3"
+        android:startColor="#32B2F7"
+        android:type="linear" />
+    <corners android:radius="9dp" />
+</shape>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="permission_not_granted">Permission not granted</string>
+    <string name="open_setting_to_grant_permission">Go to settings to enable permissions to continue</string>
+    <string name="widget_tips_tips">Tips</string>
+    <string name="widget_confirm">Confirm</string>
+    <string name="widget_cancel">Cancel</string>
+
+    <string name="widget_error_receive_message">Not receiving SMS? Try voice verification</string>
+    <string name="widget_warn_receive_radio_phone">Please be ready to answer the voice verification call</string>
+    <string name="widget_send_code_success_tip">SMS verification code has been sent, please wait patiently</string>
+    <string name="widget_input_phone_code">Verification Code</string>
+    <string name="widget_send_code">Get Code</string>
+    <string name="widget_send_code_to">Verification code sent to %1$s</string>
+    <string name="widget_send_code_timer">Sent %1$ds</string>
+
+    <!--WebView-->
+    <string name="widget_take_photo">Take Photo</string>
+    <string name="widget_choose_from_album">Choose from Album</string>
+    <string name="widget_default_layout_text">Please add a layout first</string>
+</resources>

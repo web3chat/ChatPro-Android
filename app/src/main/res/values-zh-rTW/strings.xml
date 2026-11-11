@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">談信</string>
+
+    <string name="app_tab_session">訊息</string>
+    <string name="app_tab_contact">通訊錄</string>
+    <string name="app_tab_find">發現</string>
+    <string name="app_tab_shop">商城</string>
+    <string name="app_tab_wallet">資產</string>
+    <string name="app_tab_account">我的</string>
+
+    <string name="app_splash_tips">多中心協作即時通訊\n分散式儲存應用</string>
+    <string name="app_skip_bind_tips">您沒有備份助記詞，可透過綁定手機/信箱和密聊密碼加密上傳至官方伺服器，提供助記詞找回服務。 為了您的帳戶安全，請務必自行備份或加密上傳助記詞，也可前往【安全管理】進行操作。</string>
+    <string name="app_skip_bind_phone">綁定手機</string>
+    <string name="app_skip_bind_email">綁定信箱</string>
+
+    <string name="app_ai_qa">AI問答</string>
+    <string name="app_ai_cs_entry">AI 客服</string>
+    <string name="app_close">關閉</string>
+    <string name="app_back">返回</string>
+    <string name="app_send">傳送</string>
+    <string name="app_ai_qa_hint">輸入你的問題…</string>
+
+    <!--AI問題庫-->
+    <string name="app_ai_question1">如何備份助記詞？</string>
+    <string name="app_ai_question2">怎麼給好友轉帳？</string>
+    <string name="app_ai_question3">密聊和普通聊天有什麼區別？</string>
+    <string name="app_ai_question4">如何建立群聊？</string>
+    <string name="app_ai_question5">紅包支援哪些幣種？</string>
+    <string name="app_ai_question6">忘記密聊密碼怎麼辦？</string>
+
+    <!--好友匯入-->
+    <string name="app_import_friends_title">匯入好友</string>
+    <string name="app_import_friends_content">偵測到原帳號在本裝置有備份的好友，是否匯入好友至新帳號？</string>
+    <string name="app_message_empty">訊息內容不能為空</string>
+    <string name="app_import_success">匯入成功</string>
+
+    <!--AI錯誤-->
+    <string name="app_ai_unavailable">抱歉，AI服務暫時不可用，請稍後重試。</string>
+    <string name="app_ai_system_prompt">你是 ChatPro 的智慧助手「小C」，請用簡潔、友善的方式回答使用者關於聊天、錢包、紅包等功能的疑問。</string>
+    <string name="app_ai_network_error">抱歉，網路連線失敗，請稍後重試。</string>
+    <string name="app_ai_api_error">API錯誤: %1$s</string>
+
+    <!--佈局標籤-->
+    <string name="app_label_ask_me">你可以問我：</string>
+    <string name="app_label_refresh_questions">換一批問題 ⟳</string>
+    <string name="app_label_import_old_account">偵測到原帳號在本裝置有備份的好友，是否匯入好友至新帳號？</string>
+    <string name="app_label_send_add_msg">同時傳送新增好友訊息</string>
+
+</resources>

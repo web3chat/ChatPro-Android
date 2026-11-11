@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_ai_panel"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#80000000"
+    android:clickable="true"
+    android:visibility="gone">
+
+    <!-- 半透明背景点击关闭 -->
+    <View
+        android:id="@+id/v_mask"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent" />
+
+    <!-- AI Q&A 面板 -->
+    <RelativeLayout
+        android:id="@+id/rl_ai_content"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/shape_ai_panel_bg"
+        android:paddingBottom="8dp">
+
+        <!-- 顶部标题栏 -->
+        <LinearLayout
+            android:id="@+id/ll_ai_header"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/shape_ai_header_bg"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="16dp"
+            android:paddingEnd="8dp">
+
+            <!-- 返回按钮（有聊天记录时显示） -->
+            <ImageView
+                android:id="@+id/iv_ai_back"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:contentDescription="@string/app_back"
+                android:padding="8dp"
+                android:src="@drawable/biz_ic_back_white"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/iv_ai_icon"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:src="@drawable/ic_ai_qa"
+                android:contentDescription="@string/app_ai_qa" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:text="@string/app_ai_qa"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <!-- AI 客服入口：打开 BTY 智能客服 H5 -->
+            <TextView
+                android:id="@+id/tv_ai_cs_entry"
+                android:layout_width="wrap_content"
+                android:layout_height="28dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/bg_ai_cs_entry"
+                android:gravity="center"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:text="@string/app_ai_cs_entry"
+                android:textColor="#FFFFFF"
+                android:textSize="13sp" />
+
+            <ImageView
+                android:id="@+id/iv_ai_close"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="4dp"
+                android:background="@drawable/bg_ai_close"
+                android:contentDescription="@string/app_close"
+                android:padding="5dp"
+                android:src="@drawable/ic_ai_close" />
+        </LinearLayout>
+
+        <!-- 分割线 -->
+        <View
+            android:id="@+id/v_divider"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_below="@id/ll_ai_header"
+            android:background="#26FFFFFF" />
+
+        <!-- 聊天消息区域 -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_ai_messages"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/ll_ai_input"
+            android:layout_below="@id/v_divider"
+            android:background="@color/biz_color_primary_dark"
+            android:clipToPadding="false"
+            android:padding="12dp"
+            android:scrollbars="vertical" />
+
+        <!-- 默认问题提示（在消息列表为空时显示） -->
+        <LinearLayout
+            android:id="@+id/ll_default_questions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/ll_ai_input"
+            android:layout_below="@id/v_divider"
+            android:layout_marginTop="40dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_label_ask_me"
+                android:textColor="@color/biz_text_grey_light"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_default_q1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/shape_ai_question_bg"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingStart="16dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="10dp"
+                android:text="@string/app_ai_question1"
+                android:textColor="@color/biz_text_grey_dark"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_default_q2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/shape_ai_question_bg"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingStart="16dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="10dp"
+                android:text="@string/app_ai_question2"
+                android:textColor="@color/biz_text_grey_dark"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_refresh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="@string/app_label_refresh_questions"
+                android:textColor="@color/biz_color_accent"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <!-- 底部输入区域 -->
+        <LinearLayout
+            android:id="@+id/ll_ai_input"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_alignParentBottom="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="12dp"
+            android:paddingEnd="8dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp">
+
+            <EditText
+                android:id="@+id/et_ai_input"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/shape_ai_input_bg"
+                android:hint="输入你的问题..."
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:singleLine="true"
+                android:textColor="@color/biz_text_grey_dark"
+                android:textColorHint="#B4BCC6"
+                android:textCursorDrawable="@drawable/ic_cursor_accent"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/iv_ai_send"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/shape_ai_send_bg"
+                android:contentDescription="@string/app_send"
+                android:padding="8dp"
+                android:src="@drawable/ic_ai_send" />
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

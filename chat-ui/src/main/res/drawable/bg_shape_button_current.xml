@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 底部和右侧的浅色边，模拟光照面 -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#8EAAFF" />
+            <corners android:radius="6dp" />
+        </shape>
+    </item>
+    <!-- 向右下偏移，露出底部浅色边，形成凹陷内阴影 -->
+    <item
+        android:bottom="0dp"
+        android:left="1.5dp"
+        android:right="0dp"
+        android:top="1.5dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#3348A8" />
+            <corners android:radius="6dp" />
+        </shape>
+    </item>
+    <!-- 最内层主体，再缩进一点 -->
+    <item
+        android:bottom="1dp"
+        android:left="2dp"
+        android:right="1dp"
+        android:top="2dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#3B54C0" />
+            <corners android:radius="5dp" />
+        </shape>
+    </item>
+</layer-list>

@@ -1,0 +1,975 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Тексты новых функций (как в values/strings.xml)-->
+    <string name="chat_chain_sync_fail">Не удалось синхронизировать адрес аккаунта, повторите позже</string>
+    <string name="chat_account_menu_chain_sync">Адрес аккаунта</string>
+    <string name="chat_chain_sync_success">Адрес аккаунта синхронизирован</string>
+    <string name="chat_chain_sync_pending">Нажмите, чтобы синхронизировать адрес</string>
+    <string name="chat_chain_sync_failed">Ошибка синхронизации, нажмите для повтора</string>
+    <string name="chat_find_recent">Недавние посещения</string>
+    <string name="chat_find_empty_title">Нет истории посещений</string>
+    <string name="chat_find_empty_sub">Введите адрес или отсканируйте QR-код, чтобы начать</string>
+    <string name="chat_tips_input_burn_mode">Режим самоуничтожения включён, сообщения удаляются после прочтения</string>
+    <string name="chat_tips_burn_type_denied">В режиме самоуничтожения это недоступно</string>
+    <string name="chat_title_burn_detail">Исчезающие сообщения</string>
+    <string name="chat_burn_placeholder_tips">Нажмите, чтобы посмотреть исчезающее сообщение</string>
+    <string name="chat_burn_detail_tips">Будет удалено после закрытия</string>
+    <string name="chat_burn_play">Воспроизвести голосовое</string>
+    <string name="chat_burn_open">Открыть файл</string>
+    <string name="chat_burn_audio">Голосовое сообщение</string>
+    <string name="qr_login_title">Вход по QR-коду</string>
+    <string name="qr_login_icon">💻</string>
+    <string name="qr_login_device_desc">Веб-версия запрашивает вход в ваш аккаунт</string>
+    <string name="qr_login_session_hint">QR-код действителен 5 минут, подтвердите скорее</string>
+    <string name="qr_login_confirm">Подтвердить вход</string>
+    <string name="qr_login_cancel">Отмена</string>
+    <string name="qr_login_wrong_password">Неверный пароль</string>
+    <string name="qr_login_invalid_qr">Недействительный QR-код входа</string>
+    <string name="qr_login_private_key_failed">Не удалось получить приватный ключ</string>
+    <string name="qr_login_encrypt_failed">Ошибка шифрования, повторите</string>
+    <string name="qr_login_confirm_success">Подтверждено, продолжите на компьютере</string>
+    <string name="qr_login_risk_title">Предупреждение о риске</string>
+    <string name="qr_login_risk_warning">В вашем аккаунте обнаружены активы. Перед входом убедитесь, что среда устройства безопасна.</string>
+    <string name="qr_login_risk_continue">Продолжить</string>
+    <string name="chat_label_current">Текущий</string>
+    <string name="chat_title_square">Площадь</string>
+    <string name="square_filter_all">Все</string>
+    <string name="square_filter_person">Личные</string>
+    <string name="square_filter_official">Официальные</string>
+    <string name="square_action_publish">Опубликовать</string>
+    <string name="square_action_delete">Удалить</string>
+    <string name="square_action_edit">Изменить</string>
+    <string name="square_action_share">Поделиться</string>
+    <string name="square_share_chooser">Поделиться</string>
+    <string name="square_share_card_slogan">Сквозное шифрование · Безопасно и приватно</string>
+    <string name="square_share_card_footer">Из %1$s</string>
+    <string name="square_share_card_qr_tip">Скачать %1$s</string>
+    <string name="square_action_send">Отправить</string>
+    <string name="square_sending">Отправка…</string>
+    <string name="square_action_success">Готово</string>
+    <string name="square_publish_title">Новая публикация</string>
+    <string name="square_publish_hint">О чём вы думаете…</string>
+    <string name="square_md_bold">Полужирный</string>
+    <string name="square_md_italic">Курсив</string>
+    <string name="square_md_strike">Зачёркнутый</string>
+    <string name="square_md_heading">Заголовок</string>
+    <string name="square_md_bullet_list">Маркированный список</string>
+    <string name="square_md_number_list">Нумерованный список</string>
+    <string name="square_md_quote">Цитата</string>
+    <string name="square_md_code">Код</string>
+    <string name="square_md_link">Ссылка</string>
+    <string name="square_md_divider">Разделитель</string>
+    <string name="square_md_preview">Предпросмотр</string>
+    <string name="square_md_edit">Редактировать</string>
+    <string name="square_md_preview_empty">Нет содержимого для просмотра</string>
+    <string name="square_detail_title">Детали публикации</string>
+    <string name="square_edit_expired">Время редактирования истекло</string>
+    <string name="square_edit_success">Изменено</string>
+    <string name="square_edit_title">Редактировать пост</string>
+    <string name="square_comments_title">Комментарии</string>
+    <string name="square_comments_count">Комментарии (%1$d)</string>
+    <string name="square_reply_label">Ответить</string>
+    <string name="square_reply_to">Ответить @%1$s</string>
+    <string name="square_reply_cancel">Отмена</string>
+    <string name="square_reply_more">Показать ещё %1$d ответов</string>
+    <string name="square_reply_success">Ответ отправлен</string>
+    <string name="square_comment_deleted">Исходный комментарий удалён</string>
+    <string name="square_tips_reply_invalid">Нельзя ответить на этот комментарий</string>
+    <string name="square_inbox_title">Комментарии</string>
+    <string name="square_inbox_empty">Пока нет комментариев или ответов</string>
+    <string name="square_inbox_all_read">Отметить всё как прочитанное</string>
+    <string name="square_inbox_floor">прокомментировал(а) вашу публикацию</string>
+    <string name="square_inbox_reply">ответил(а) вам</string>
+    <string name="square_inbox_unavailable">Этот комментарий больше недоступен</string>
+    <string name="square_inbox_no_unread">Нет непрочитанных сообщений</string>
+    <string name="square_comment_hint">Написать комментарий…</string>
+    <string name="square_no_comment">Комментариев пока нет</string>
+    <string name="square_comments_closed">Комментарии отключены</string>
+    <string name="square_allow_comment">Разрешить комментарии</string>
+    <string name="square_cannot_post">Ваш аккаунт не может публиковать</string>
+    <string name="square_closed">Площадь закрыта</string>
+    <string name="square_official_tag">Официальный</string>
+    <string name="square_status_auditing">На проверке</string>
+    <string name="square_status_rejected">Отклонено</string>
+    <string name="square_tag_activity">Событие</string>
+    <string name="square_tag_announcement">Объявление</string>
+    <string name="square_tag_message">Сообщения</string>
+    <string name="square_image_index">%1$d / %2$d</string>
+    <string name="square_time_just_now">Только что</string>
+    <string name="square_time_minutes">%1$d мин назад</string>
+    <string name="square_time_hours">%1$d ч назад</string>
+    <string name="square_time_yesterday">Вчера</string>
+    <string name="square_empty">Пока ничего нет, опубликуйте первым</string>
+    <string name="square_tips_pending">Отправлено, появится после проверки</string>
+    <string name="square_tips_rejected">Контент не соответствует правилам</string>
+    <string name="square_tips_rate_limited">Слишком много действий, попробуйте позже</string>
+    <string name="square_tips_sign_invalid">Подпись недействительна или истекла, войдите снова</string>
+    <string name="square_tips_param_error">Неверные параметры</string>
+    <string name="square_tips_no_permission">Нет прав</string>
+    <string name="square_tips_not_found">Контент не найден или удалён</string>
+    <string name="square_tips_banned">Официальный аккаунт заблокирован, обратитесь в поддержку</string>
+    <string name="square_tips_comment_closed">Комментарии отключены</string>
+    <string name="square_tips_apply_pending">Есть заявка на проверке, откройте Мой официальный аккаунт</string>
+    <string name="square_tips_network">Ошибка сети, проверьте подключение</string>
+    <string name="square_tips_failed">Не удалось выполнить, попробуйте позже</string>
+    <string name="square_tips_comment_pending">Комментарий отправлен, появится после проверки</string>
+    <string name="square_publish_success">Опубликовано</string>
+    <string name="square_comment_success">Комментарий добавлен</string>
+    <string name="square_delete_confirm">Удалить эту публикацию?</string>
+    <string name="square_delete_comment_confirm">Удалить этот комментарий?</string>
+    <string name="square_delete_success">Удалено</string>
+    <string name="square_upload_failed">Не удалось загрузить изображение, повторите</string>
+    <string name="square_content_empty">Введите текст</string>
+    <string name="square_max_images">Не более 9 изображений</string>
+    <string name="square_my_official">Мой официальный аккаунт</string>
+    <string name="square_my_profile">Мой профиль</string>
+    <string name="square_user_posts">Публикации</string>
+    <string name="square_user_empty">Публикаций пока нет</string>
+    <string name="square_official_apply">Подать заявку на официальный аккаунт</string>
+    <string name="square_official_state_none">Заявка не подана</string>
+    <string name="square_official_state_pending">На проверке</string>
+    <string name="square_official_state_approved">Подтверждён</string>
+    <string name="square_official_state_rejected">Отклонено</string>
+    <string name="square_official_state_banned">Заблокирован</string>
+    <string name="square_official_tip_none">После одобрения публикации с этого адреса станут официальными (с именем, комментарии можно отключить).</string>
+    <string name="square_official_tip_pending">Заявка на проверке, пожалуйста, подождите.</string>
+    <string name="square_official_tip_approved">Подтверждённый официальный аккаунт: %1$s. Публикации будут показывать это имя.</string>
+    <string name="square_official_tip_rejected">Заявка отклонена, можно изменить и отправить снова.</string>
+    <string name="square_official_tip_reason"> (Причина: %1$s)</string>
+    <string name="square_official_tip_banned">Официальный аккаунт заблокирован. Публикация, комментарии и лайки недоступны. Обратитесь в поддержку.</string>
+    <string name="square_official_avatar_hint">Нажмите, чтобы задать аватар (необязательно)</string>
+    <string name="square_official_avatar_change">Нажмите, чтобы изменить аватар</string>
+    <string name="square_official_avatar_clear">Удалить аватар</string>
+    <string name="square_official_save">Сохранить</string>
+    <string name="square_official_updated">Профиль обновлён</string>
+    <string name="square_pinned">Закреплено</string>
+    <string name="square_platform_official_tag">Платформа</string>
+    <string name="square_official_avatar_set">Аватар загружен, нажмите для изменения</string>
+    <string name="square_official_name_hint">Название официального аккаунта (обязательно, до 32 символов)</string>
+    <string name="square_official_reapply">Подать заявку снова</string>
+    <string name="square_official_intro_hint">Описание (необязательно, до 200 символов)</string>
+    <string name="square_official_name_empty">Введите название аккаунта</string>
+    <string name="square_official_submit">Отправить заявку</string>
+    <string name="square_official_applied">Заявка отправлена, ожидайте проверки</string>
+    <string name="square_feed_latest">Новые</string>
+    <string name="square_feed_hot">Популярное</string>
+    <string name="square_feed_following">Подписки</string>
+    <string name="square_follow">Подписаться</string>
+    <string name="square_followed">Вы подписаны</string>
+    <string name="square_follow_success">Вы подписались</string>
+    <string name="square_unfollow_success">Подписка отменена</string>
+    <string name="square_follow_tips_self">Нельзя подписаться на себя</string>
+    <string name="square_my_follows">Мои подписки</string>
+    <string name="square_my_followers">Мои подписчики</string>
+    <string name="square_user_follow_count">Подписки %1$d</string>
+    <string name="square_user_follower_count">Подписчики %1$d</string>
+    <string name="square_user_followers_title">Подписчики</string>
+    <string name="square_follow_empty">Вы пока ни на кого не подписаны</string>
+    <string name="square_followers_empty">Подписчиков пока нет</string>
+    <string name="square_gold_empty">Нет золотых офиц. аккаунтов</string>
+    <string name="square_gold_stat">%1$d подписчиков · %2$d постов</string>
+    <string name="square_gold_title">Золотые офиц. аккаунты</string>
+    <string name="square_my_posts_title">Мои записи</string>
+    <string name="square_my_posts_traffic">Статистика моих записей</string>
+    <string name="square_traffic_posts">Записи</string>
+    <string name="square_traffic_views">Просмотры</string>
+    <string name="square_traffic_likes">Лайки</string>
+    <string name="square_traffic_comments">Комментарии</string>
+    <string name="square_report">Пожаловаться</string>
+    <string name="square_report_content">Обжалуемый контент</string>
+    <string name="square_report_detail_counter">%1$d/%2$d</string>
+    <string name="square_report_detail_hint">Опишите причину (необязательно)</string>
+    <string name="square_report_detail_tip">Необязательно, до 500 символов</string>
+    <string name="square_report_title">Причина жалобы</string>
+    <string name="square_report_type">Тип жалобы</string>
+    <string name="square_report_type_required">Выберите тип жалобы</string>
+    <string name="square_report_reason_spam">Спам</string>
+    <string name="square_report_reason_porn">Порнография</string>
+    <string name="square_report_reason_scam">Мошенничество</string>
+    <string name="square_report_reason_abuse">Оскорбления</string>
+    <string name="square_report_reason_other">Другое</string>
+    <string name="square_report_success">Жалоба отправлена, спасибо</string>
+    <string name="square_report_reported">Уже отправлено</string>
+    <string name="square_report_select">Выберите</string>
+    <string name="square_report_submit">Отправить жалобу</string>
+    <string name="square_report_submitting">Отправка…</string>
+
+    <!--登录相关-->
+    <string name="chat_login_choose_server">Выбрать сервер</string>
+    <string name="chat_login_chat_server_tips">1. Новым пользователям необходимо выбрать или добавить сервер в качестве сервера по умолчанию для получения сообщений друзей;\n2. Для зарегистрированных аккаунтов будет использоваться прежний сервер по умолчанию.</string>
+    <string name="chat_login_contract_server_tips">1. Необходимо выбрать или добавить сервер в качестве узла блокчейна по умолчанию для загрузки и получения информации об аккаунте;\n2. Вы можете переключить его в [Я]-[Сервер].</string>
+    <string name="chat_login_edit_chat_server">Изменить чат-сервер</string>
+    <string name="chat_login_add_chat_server">Добавить чат-сервер</string>
+    <string name="chat_login_edit_contract_server">Изменить узел блокчейна</string>
+    <string name="chat_login_add_contract_server">Добавить узел блокчейна</string>
+    <string name="chat_tips_edit_server_name">Название сервера</string>
+    <string name="chat_hint_edit_server_name">Введите название сервера</string>
+    <string name="chat_tips_edit_server_address">Адрес сервера</string>
+    <string name="chat_hint_edit_server_address">Введите адрес сервера</string>
+    <string name="chat_tip_add_server_success">Сервер успешно добавлен</string>
+    <string name="chat_tip_edit_server_success">Сервер успешно изменен</string>
+    <string name="chat_tip_del_server_success">Сервер успешно удален</string>
+    <string name="chat_tip_confirm_to_del_server">Вы уверены, что хотите удалить этот сервер?</string>
+    <string name="chat_click_again_to_exit">Нажмите еще раз, чтобы выйти</string>
+
+    <string name="chat_login_type_words">Аккаунт с мнемонической фразой</string>
+    <string name="chat_login_create_account">Создать аккаунт</string>
+    <string name="chat_login_import_account">Импортировать аккаунт</string>
+    <string name="chat_login_type_account">Телефон/Email</string>
+    <string name="chat_login_find_mnem_words">Восстановить с частичной мнемонической фразой</string>
+
+    <string name="chat_login_tips_agree_protocol">Сначала примите условия</string>
+    <string name="chat_login_tips_choose_server">Сначала выберите сервер</string>
+    <string name="chat_login_tips_agreement">Я прочитал(а) и согласен(на) с Пользовательским соглашением TanXin</string>
+
+    <string name="chat_login_tips_choose_chat_server">Выберите сервер для получения сообщений чата</string>
+    <string name="chat_login_tips_choose_contract_server">Выберите узел блокчейна для загрузки информации об аккаунте</string>
+    <string name="chat_title_chat_server">Адрес сервера</string>
+    <string name="chat_title_contract_server">Узел блокчейна</string>
+
+    <string name="chat_title_official_server">Официальный адрес</string>
+    <string name="chat_title_custom_server">Пользовательский адрес</string>
+    <string name="chat_title_chat_server_group">Чат-сервис</string>
+    <string name="chat_login_edit_chat_server_group">Изменить группу серверов</string>
+    <string name="chat_login_add_chat_server_group">Добавить группу серверов</string>
+    <string name="chat_tip_add_server_group_success">Группа серверов успешно добавлена. Подождите, результаты появятся позже…</string>
+    <string name="chat_tip_del_server_group_success">Группа серверов успешно удалена. Подождите, результаты появятся позже…</string>
+    <string name="chat_tip_edit_server_group_success">Группа серверов успешно изменена. Подождите, результаты появятся позже…</string>
+    <string name="chat_tip_cant_del_default_server">Группу серверов по умолчанию нельзя удалить</string>
+    <string name="chat_tip_wrong_server_protocol">Протокол сервера должен быть http или https</string>
+    <string name="chat_tip_wrong_server_port">Неверный порт сервера</string>
+    <string name="chat_tip_wrong_server_format">Неверный формат адреса сервера</string>
+    <string name="chat_tip_confirm_to_del_server_group">Вы уверены, что хотите удалить эту группу серверов?</string>
+
+    <string name="chat_login_title_create_mnem">Сохранить мнемоническую фразу</string>
+    <string name="chat_login_mnem_chinese">中文</string>
+    <string name="chat_login_mnem_english">English</string>
+    <string name="chat_login_tips_remember_mnem">Обязательно запишите мнемоническую фразу; после подтверждения она будет проверена</string>
+    <string name="chat_login_warn_secure_mnem">Внимание: Не делайте скриншоты! Если кто-то получит вашу мнемоническую фразу, он получит прямой доступ к вашим активам! Запишите мнемоническую фразу и храните ее в безопасном месте; мы проверим ее на следующем экране.</string>
+    <string name="chat_login_change_mnem">Изменить мнемоническую фразу</string>
+    <string name="chat_login_backup_mnem">Начать резервное копирование</string>
+    <string name="chat_login_backup_skip">Пропустить резервное копирование</string>
+    <string name="chat_login_validate_mnem">Проверьте вашу сохраненную мнемоническую фразу</string>
+    <string name="chat_login_click_correct_order">Нажмите на каждое слово в правильном порядке</string>
+    <string name="chat_login_mnem_wrong">Неверная мнемоническая фраза</string>
+    <string name="chat_login_mnem_backup_fail">Не удалось сохранить мнемоническую фразу</string>
+    <string name="chat_login_mnem_backup_success">Мнемоническая фраза успешно сохранена</string>
+
+    <string name="chat_login_title_import_account">Импортировать аккаунт</string>
+
+    <string name="chat_login_import_mnem_hint">Введите мнемоническую фразу</string>
+    <string name="chat_login_import_mnem_support_tips">Поддерживается импорт всех мнемонических фраз, созданных по стандарту BIP</string>
+    <string name="chat_login_import_private_key_chain">Основная цепочка:</string>
+    <string name="chat_login_import_private_key_chain_bty">BTY</string>
+    <string name="chat_login_import_private_key_hint">Введите закрытый ключ или отсканируйте QR-код, созданный закрытым ключом</string>
+
+    <string name="chat_login_start_import_account">Начать импорт</string>
+    <string name="chat_login_mnem_import_fail">Не удалось импортировать мнемоническую фразу</string>
+    <string name="chat_login_mnem_import_success">Мнемоническая фраза успешно импортирована</string>
+    <string name="chat_login_mnem_recover_success">Автоматическое восстановление мнемонической фразы выполнено успешно. Установите новый пароль</string>
+
+    <!--首页-->
+    <string name="chat_home_action_scan">Сканировать</string>
+    <string name="chat_home_action_create_group">Создать группу</string>
+    <string name="chat_home_action_search">Добавить друга/группу</string>
+    <string name="chat_home_action_my_qr_code">Мой QR-код</string>
+    <string name="chat_home_action_create_company">Создать команду</string>
+    <string name="chat_home_action_okr">OKR</string>
+    <string name="chat_title_main_contact">Контакты</string>
+    <string name="chat_title_black_list">Черный список</string>
+    <string name="chat_title_friend_list">Друзья</string>
+    <string name="chat_title_group_list">Группы</string>
+    <string name="chat_home_server_disconnect">Проблема с подключением к серверу, нажмите для просмотра</string>
+    <string name="chat_title_private_chat">Личные</string>
+    <string name="chat_title_group_chat">Группы</string>
+    <string name="chat_tips_unread_num">[%1$d]%2$s</string>
+    <string name="chat_tips_sender_me">Я:%1$s</string>
+
+    <!--空列表-->
+    <string name="chat_common_empty_list">Нет данных</string>
+    <string name="chat_black_list_empty">Нет черного списка</string>
+    <string name="chat_friend_list_empty">Нет друзей</string>
+    <string name="chat_invite_friend">Пригласить друзей</string>
+    <string name="chat_friend_message_list_empty">Нет сообщений от друзей</string>
+    <string name="chat_start_chat">Начать чат</string>
+    <string name="chat_room_list_empty">Нет групп</string>
+    <string name="chat_suggest_group">Рекомендуемые группы</string>
+    <string name="chat_room_message_list_empty">Нет сообщений группы</string>
+    <string name="chat_contact_list_empty">Нет контактов</string>
+    <string name="chat_promote_list_empty">Нет записей</string>
+
+    <!--扫一扫-->
+    <string name="chat_action_open_photo">Альбом</string>
+
+    <string name="chat_account_menu_wallet">Мой кошелек</string>
+    <string name="chat_account_menu_red_packet">История красных конвертов</string>
+    <string name="chat_account_menu_server">Сервер</string>
+    <string name="chat_account_menu_share">Скачать приложение</string>
+    <string name="chat_account_menu_security">Управление безопасностью</string>
+    <string name="chat_account_menu_setting">Центр настроек</string>
+    <string name="chat_account_menu_feedback">Обратная связь</string>
+    <string name="chat_account_menu_update">Проверить обновления</string>
+    <string name="chat_action_logout">Выйти</string>
+
+    <!--多语言-->
+    <string name="language_select_title">Язык</string>
+    <string name="language_chinese">中文</string>
+    <string name="language_english">English</string>
+    <string name="chat_account_menu_language">Язык</string>
+
+    <!--搜索选项-->
+    <string name="chat_action_search_scan">Сканировать</string>
+    <string name="chat_action_search_scan_tips">Сканировать QR-код визитной карточки</string>
+    <string name="chat_action_search_import_friends">Импортировать друзей</string>
+    <string name="chat_action_search_import_friends_tips">Поддерживаются только друзья аккаунтов, входивших на этом устройстве</string>
+
+    <!--修改昵称-->
+    <string name="chat_title_edit_nickname">Изменить никнейм</string>
+    <string name="chat_tip_nickname">Никнейм</string>
+    <string name="chat_tip_nickname_edit_success">Никнейм успешно изменен. Подождите, результаты появятся позже…</string>
+    <string name="chat_tip_nickname_empty">Никнейм не может быть пустым</string>
+    <string name="chat_tip_avatar">Аватар</string>
+    <string name="chat_tip_avatar_edit_success">Аватар успешно изменен. Подождите, результаты появятся позже…</string>
+
+    <!--安全管理-->
+    <string name="chat_title_security_setting">Управление безопасностью</string>
+    <string name="chat_tips_export_words">Экспортировать мнемоническую фразу</string>
+    <string name="chat_tips_export_s2">Экспортировать S2</string>
+    <string name="chat_tips_export_private">Экспортировать закрытый ключ</string>
+    <string name="chat_tips_phone">Телефон</string>
+    <string name="chat_tips_email">Email</string>
+    <string name="chat_tips_encrypt_key">Пароль секретного чата</string>
+    <string name="chat_tips_action1">Изменить пароль</string>
+    <string name="chat_tips_action2">Установить пароль</string>
+    <string name="chat_tips_action3">Привязать</string>
+    <string name="chat_security_setting_tip1">Мнемоническая фраза используется для шифрования сообщений и файлов чата. При входе на другом устройстве необходимо импортировать ту же мнемоническую фразу, чтобы просматривать исторические зашифрованные сообщения. Экспортируйте мнемоническую фразу и храните ее в безопасном месте!</string>
+    <string name="chat_security_setting_tip2">Мнемоническую фразу можно зашифровать и загрузить на официальный сервер через телефон/email и пароль секретного чата, что обеспечивает услугу восстановления мнемонической фразы.</string>
+    <string name="chat_save_words_tip">Обязательно запишите мнемоническую фразу и храните ее в безопасном месте. Если она будет потеряна, при переустановке или смене устройства вы не сможете просматривать исторические зашифрованные сообщения! И не сможете сбросить пароль секретного чата! Если кто-то получит мнемоническую фразу, он сможет получить доступ к вашей информации!</string>
+    <string name="chat_save_words_tips2">Обязательно запишите и храните в безопасном месте!</string>
+    <string name="chat_tips_chat_pwd_error">Неверный пароль секретного чата</string>
+    <string name="chat_tips_mnem_export_fail">Не удалось экспортировать мнемоническую фразу</string>
+    <string name="chat_tips_private_export_fail">Не удалось экспортировать закрытый ключ</string>
+    <string name="chat_title_bind_phone">Привязать телефон</string>
+    <string name="chat_title_bind_email">Привязать email</string>
+    <string name="chat_tips_bind_phone_tips">После привязки телефона вы сможете входить по телефону</string>
+    <string name="chat_tips_bind_email_tips">После привязки email вы сможете входить по email</string>
+    <string name="chat_hint_input_phone">Введите номер телефона</string>
+    <string name="chat_hint_input_email">Введите email</string>
+    <string name="chat_action_bind_send_code">Получить код подтверждения</string>
+    <string name="chat_tips_bind_account_success">Привязка выполнена успешно</string>
+    <string name="chat_action_unbind_and_rebind">Отвязать и привязать</string>
+    <string name="chat_action_unbind_phone_login">Войти по телефону</string>
+    <string name="chat_action_unbind_import_mnem">Импортировать мнемоническую фразу</string>
+    <string name="chat_tips_override_bind">Этот телефон/email уже привязан к другому аккаунту с мнемонической фразой. Отвязать исходную привязку и привязать локальный аккаунт с мнемонической фразой?</string>
+    <string name="chat_tips_override_bind2">Если у исходного аккаунта есть активы, их нельзя будет восстановить по телефону. Есть риск потери. Отвязывайте с осторожностью!</string>
+    <string name="chat_tips_phone_forget_password">Если вы забудете пароль секретного чата, вы не сможете восстановить исходный аккаунт по телефону! Вы можете:\n1. Импортировать мнемоническую фразу для входа (можно изменить пароль);\n2. Отвязать исходную привязку, создать новый аккаунт и привязать этот номер телефона.</string>
+    <string name="chat_tips_email_forget_password">Если вы забудете пароль секретного чата, вы не сможете восстановить исходный аккаунт по email! Вы можете:\n1. Импортировать мнемоническую фразу для входа (можно изменить пароль);\n2. Попробовать восстановить, войдя по телефону, или при забытом пароле входа по телефону выполнить операцию "отвязать и привязать".</string>
+    <string name="chat_tips_override_forget_password2">Отвязка исходной привязки приведет к потере информации и активов исходного аккаунта. Отвязывайте с осторожностью!</string>
+
+    <!--设置中心-->
+    <string name="chat_title_setting_center">Центр настроек</string>
+    <string name="chat_tips_app_notify_switch">Переключатель уведомлений приложения</string>
+    <string name="chat_tips_new_msg_notify">Получать уведомления о новых сообщениях</string>
+    <string name="chat_tips_rtc_call_notify">Получать уведомления о приглашениях на голосовые и видеозвонки</string>
+    <string name="chat_tips_system_sound_and_vibrate">Системный звук и вибрация</string>
+    <string name="chat_tips_new_msg_sys_notify">Системное уведомление о новых сообщениях</string>
+    <string name="chat_tips_rtc_call_sys_notify">Уведомление о голосовых и видеозвонках</string>
+    <string name="chat_tips_go_sys_notify_settings">Перейти к системным настройкам</string>
+
+    <string name="chat_set_chat_password">Установите пароль секретного чата</string>
+    <string name="chat_input_chat_password">Введите пароль секретного чата</string>
+    <string name="chat_encrypt_password_hint">Комбинация из 8–16 цифр, букв или символов</string>
+    <!--修改助记词密码-->
+    <string name="chat_title_set_encrypt_password">Установить пароль секретного чата</string>
+    <string name="chat_title_encrypt_password">Изменить пароль секретного чата</string>
+    <string name="chat_tips_old_encrypt_pwd">Старый пароль</string>
+    <string name="chat_tips_old_encrypt_pwd_hint">Введите старый пароль</string>
+    <string name="chat_tips_first_encrypt_pwd_hint">Установите пароль</string>
+    <string name="chat_tips_second_encrypt_pwd_hint">Введите пароль еще раз</string>
+    <string name="chat_tips_forget_password">Забыли пароль</string>
+    <string name="chat_tips_new_encrypt_pwd">Новый пароль</string>
+    <string name="chat_tips_new_encrypt_pwd_hint">Введите новый пароль еще раз</string>
+    <string name="chat_tips_update_encrypt_pwd1">Пароль секретного чата успешно изменен</string>
+    <string name="chat_tips_update_encrypt_pwd2">Неверный пароль</string>
+    <string name="chat_tips_update_encrypt_pwd3">Введите от 8 до 16 символов</string>
+    <string name="chat_tips_update_encrypt_pwd4">Введите комбинацию цифр, букв или символов</string>
+    <string name="chat_tips_update_encrypt_pwd5">Установите комбинацию из 8–16 цифр, букв или символов</string>
+    <string name="chat_tips_update_encrypt_pwd6">Пароли не совпадают</string>
+    <string name="chat_tips_update_encrypt_pwd7">Пароль секретного чата успешно установлен</string>
+
+    <!--联系人信息-->
+    <string name="chat_title_contact_info">Подробности</string>
+    <string name="chat_action_send_msg">Отправить сообщение</string>
+    <string name="chat_action_transfer">Перевести</string>
+    <string name="chat_action_delete_friend">Удалить друга</string>
+    <string name="chat_action_add_friend">Добавить друга</string>
+    <string name="chat_tips_modify_group_success">Сервер успешно изменен</string>
+    <string name="chat_tips_add_friend_success">Друг успешно добавлен</string>
+    <string name="chat_tips_delete_friend_success">Друг успешно удален</string>
+    <string name="chat_tips_nickname_placeholder">Никнейм: %1$s</string>
+    <string name="chat_tips_group_nickname_placeholder">Никнейм в группе: %1$s</string>
+    <string name="chat_tips_address_placeholder">Аккаунт: %1$s</string>
+    <string name="chat_dialog_delete_friend">После удаления также будут удалены сообщения чата с этим контактом. Вы уверены, что хотите удалить контакт &lt;font color="%1$s"&gt;%2$s&lt;/font&gt;?</string>
+
+    <string name="chat_title_edit_group_name">Изменить название группы</string>
+    <string name="chat_tip_group_name">Зашифрованное название группы</string>
+    <string name="chat_tip_group_pub_name">Публичное название группы</string>
+    <string name="chat_title_edit_nickname_in_group">Мой никнейм в этой группе</string>
+    <string name="chat_tip_nickname_in_group">Никнейм в группе</string>
+    <string name="chat_tip_group_name_empty">Название группы не может быть пустым</string>
+    <string name="chat_tip_group_pub_name_empty">Публичное название группы не может быть пустым</string>
+    <string name="chat_tip_edit_group_name_success">Название группы успешно изменено</string>
+    <string name="chat_tip_edit_group_nickname_success">Никнейм в группе успешно изменен</string>
+    <string name="chat_tip_group_avatar">Аватар группы</string>
+    <string name="chat_tips_nickname_in_group">Мой никнейм в этой группе</string>
+    <string name="chat_log_in_chat_history">Найти историю чата</string>
+    <string name="chat_file_in_chat_history">Файлы чата</string>
+    <string name="chat_detail_no_disturb">Не беспокоить</string>
+    <string name="chat_detail_stick_top">Закрепить чат</string>
+    <string name="chat_detail_group_type_tips">Тип группы</string>
+    <string name="chat_detail_group_type0">Обычная группа</string>
+    <string name="chat_detail_group_type1">Группа всех</string>
+    <string name="chat_detail_group_type2">Группа отдела</string>
+    <string name="chat_detail_belong_server_group">Сервер для получения его сообщений</string>
+    <string name="chat_detail_belong_server_group2">Сервер принадлежности</string>
+    <string name="chat_detail_choose_server_group">Выбрать сервер</string>
+    <string name="chat_detail_edit_server_group">Управлять</string>
+    <string name="chat_add_black_list">Добавить в черный список</string>
+    <string name="chat_remove_black_list">Убрать из черного списка</string>
+    <string name="chat_user_black_message">Вы больше не получаете его сообщения</string>
+    <string name="chat_add_black_warn">После добавления в черный список вы больше не будете получать его сообщения. Вы уверены, что хотите переместить контакт &lt;font color="%1$s"&gt;%2$s&lt;/font&gt; в черный список?</string>
+    <string name="chat_add_black_success">Добавлено в черный список!</string>
+    <string name="chat_add_black_fail">Не удалось добавить в черный список!</string>
+    <string name="chat_remove_black_success">Убрано из черного списка!</string>
+    <string name="chat_remove_black_fail">Не удалось убрать из черного списка!</string>
+    <string name="chat_group_mute_time">Заглушить</string>
+
+    <string name="chat_title_contact_remark">Информация о заметке</string>
+    <string name="chat_tip_remark">Заметка</string>
+    <string name="chat_tip_remark_edit_success">Успешно изменено</string>
+
+    <!--群信息-->
+    <string name="chat_action_exit_group">Покинуть группу</string>
+    <string name="chat_action_disband_group">Расформировать группу</string>
+
+    <!--本地搜索-->
+    <string name="chat_tips_search_history">История поиска</string>
+    <string name="chat_tips_search_clear_history">Очистить историю</string>
+    <string name="chat_tips_search_hint">Искать друзей, историю чата и т.д.</string>
+    <string name="chat_tips_search_hint1">Искать друзей</string>
+    <string name="chat_tips_search_hint2">Искать группы</string>
+    <string name="chat_tips_search_hint3">Искать историю чата</string>
+    <string name="chat_tips_search_type1">Контакты</string>
+    <string name="chat_tips_search_type2">Группы</string>
+    <string name="chat_tips_search_type3">История чата</string>
+    <string name="chat_tips_search_result_more">Показать больше</string>
+    <string name="chat_tips_search_log_target">Записи \"%1$s\"</string>
+    <string name="chat_tips_search_log_count">%1$d связанных записей чата</string>
+
+    <!-- 聊天-->
+    <string name="chat_tips_chat_operate1">Заглушка успешно снята</string>
+    <string name="chat_tips_chat_operate2">Переключено в режим наушника</string>
+    <string name="chat_tips_chat_operate3">Переключено в режим динамика</string>
+    <string name="chat_tips_chat_operate4">Скопировано в буфер обмена</string>
+    <string name="chat_tips_chat_operate5">Нетекстовые сообщения нельзя скопировать</string>
+    <string name="chat_tips_chat_operate6">Сообщение было отозвано</string>
+    <string name="chat_top_operate">Закрепить чат</string>
+    <string name="chat_top_cancel">Открепить</string>
+    <string name="chat_disturb_operate">Не беспокоить</string>
+    <string name="chat_disturb_cancel">Отменить не беспокоить</string>
+    <string name="chat_message_delete">Удалить чат</string>
+    <string name="chat_dialog_delete_session">Вы уверены, что хотите удалить чат с &lt;font color="%1$s"&gt;%2$s&lt;/font&gt;?</string>
+    <string name="chat_dialog_delete_message">Вы уверены, что хотите удалить это сообщение?</string>
+    <string name="chat_dialog_delete_messages">Вы уверены, что хотите удалить выбранные сообщения?</string>
+    <string name="chat_tips_servers_empty">Не удается найти адрес сервера другой стороны</string>
+    <string name="chat_tips_server_not_exist">Нет подключения к серверу текущей группы, невозможно отправлять и получать сообщения</string>
+    <string name="chat_tips_add_group_chat_server">Добавить сервер</string>
+
+    <string name="chat_popup_option_copy">Копировать</string>
+    <string name="chat_popup_option_translate">Перевести</string>
+    <string name="chat_popup_option_view_original">Показать оригинал</string>
+    <string name="chat_popup_option_forward">Переслать</string>
+    <string name="chat_popup_option_reference">Цитировать</string>
+    <string name="chat_popup_option_focus">Подписаться</string>
+    <string name="chat_popup_option_revoke">Отозвать</string>
+    <string name="chat_popup_option_delete">Удалить</string>
+    <string name="chat_popup_option_mute">Заглушить</string>
+    <string name="chat_popup_option_audio_channel_speaker">Воспроизвести через динамик</string>
+    <string name="chat_popup_option_audio_channel_receiver">Воспроизвести через наушник</string>
+    <string name="chat_popup_option_multiple_choose">Множественный выбор</string>
+
+    <string name="chat_tips_switch_to_speaker">Переключено на воспроизведение через динамик</string>
+    <string name="chat_tips_switch_to_receiver">Переключено на воспроизведение через наушник</string>
+
+    <!--聊天输入框-->
+    <string name="chat_tips_input_msg1">Нельзя отправлять пустое сообщение</string>
+    <string name="chat_tips_input_msg2">Системные сообщения могут быть только текстовыми</string>
+    <string name="chat_tips_input_msg3">SD-карта не обнаружена</string>
+
+    <string name="chat_tips_input_send">Отправить</string>
+    <string name="chat_tips_input_say_sth">Напишите что-нибудь</string>
+    <string name="chat_tips_input_media">Изображение/Видео</string>
+    <string name="chat_tips_input_shoot">Снять</string>
+    <string name="chat_tips_input_snap_msg">Прочитать и удалить</string>
+    <string name="chat_tips_input_file">Файл</string>
+    <string name="chat_tips_input_rtc">Видеозвонок</string>
+    <string name="chat_tips_input_red_packet">Красный конверт</string>
+    <string name="chat_tips_input_red_packet_only">Эксклюзивный красный конверт</string>
+    <string name="chat_tips_input_text_packet">Сообщение с красным конвертом</string>
+    <string name="chat_tips_input_transfer">Перевести</string>
+    <string name="chat_tips_input_contact_card">Визитная карточка</string>
+
+    <string name="chat_call_menu_voice">Голосовой вызов</string>
+    <string name="chat_call_menu_video">Видеовызов</string>
+    <string name="chat_call_invite_title_voice">Голосовой вызов</string>
+    <string name="chat_call_invite_title_video">Видеовызов</string>
+    <string name="chat_call_invite_desc">Нажмите, чтобы присоединиться · Комната %1$s</string>
+    <string name="chat_call_invite_text">Приглашение в голосовой чат, нажмите на ссылку, чтобы присоединиться: %1$s</string>
+    <string name="chat_call_confirm_content">Будет создана голосовая комната и отправлено приглашение собеседнику. Начать голосовой чат?</string>
+    <string name="chat_call_creating">Создание комнаты вызова…</string>
+    <string name="chat_call_create_failed">Не удалось создать вызов, повторите попытку позже</string>
+    <string name="chat_call_busy_title">Подсказка</string>
+    <string name="chat_call_busy_content">Идёт вызов. Завершить его и начать новый?</string>
+    <string name="chat_call_window_hangup">Завершить</string>
+    <string name="chat_call_window_minimize">Свернуть</string>
+    <string name="chat_call_window_expand">Полный экран</string>
+    <string name="chat_call_window_minimized_tips">Вызов свёрнут. Нажмите на мини-окно, чтобы развернуть</string>
+    <string name="chat_call_copy_link">Копировать ссылку на вызов</string>
+    <string name="chat_call_link_copied">Ссылка на вызов скопирована</string>
+    <string name="chat_call_webview_error">Не удалось загрузить страницу вызова. Проверьте сеть и повторите попытку</string>
+
+    <string name="chat_record_state_prepared">Удерживайте, чтобы говорить</string>
+    <string name="chat_record_state_recording">Отпустите, чтобы отправить</string>
+    <string name="chat_record_state_want_cancel">Отпустите, чтобы отменить отправку</string>
+    <string name="chat_record_slide_to_cancel">Проведите вверх, чтобы отменить отправку</string>
+    <string name="chat_record_tips_too_short">Слишком короткая запись</string>
+    <string name="chat_speak_time_remain">Можно говорить еще %1$d секунд</string>
+
+    <!--聊天消息-->
+    <string name="chat_unfold">Свернуть</string>
+    <string name="chat_fold">Развернуть</string>
+
+    <string name="chat_tips_num_3">%1$d/3</string>
+    <string name="chat_tips_num_15">%1$d/15</string>
+    <string name="chat_tips_num_20">%1$d/20</string>
+    <string name="chat_tips_num_50">%1$d/50</string>
+    <string name="chat_tips_num_400">%1$d/400</string>
+    <string name="chat_tips_num_500">%1$d/500</string>
+
+    <string name="chat_time_tips_yesterday">Вчера %1$s</string>
+    <string name="chat_time_tips_week1">Воскресенье %1$s</string>
+    <string name="chat_time_tips_week2">Понедельник %1$s</string>
+    <string name="chat_time_tips_week3">Вторник %1$s</string>
+    <string name="chat_time_tips_week4">Среда %1$s</string>
+    <string name="chat_time_tips_week5">Четверг %1$s</string>
+    <string name="chat_time_tips_week6">Пятница %1$s</string>
+    <string name="chat_time_tips_week7">Суббота %1$s</string>
+
+    <string name="chat_file_size">Файл %1$s</string>
+    <string name="chat_find_ai_cs">ИИ-поддержка</string>
+    <string name="chat_tips_copy_message_content">Содержимое сообщения скопировано</string>
+    <string name="chat_tips_translate_failed">Не удалось перевести, попробуйте позже</string>
+
+    <string name="chat_message_system_msg_type">Объявление</string>
+    <string name="chat_message_unsupported_msg_type">Этот тип сообщения пока не поддерживается. Обновите до последней версии</string>
+    <string name="chat_tips_file_not_exist">Файл не существует</string>
+
+    <string name="chat_tips_search_my_account">Мой аккаунт: %1$s</string>
+    <string name="chat_tips_search_type_user">Пользователь</string>
+    <string name="chat_title_my_qr_code">Мой QR-код</string>
+    <string name="chat_tips_qr_code_friend">Отсканируйте QR-код, чтобы добавить меня в %1$s в друзья</string>
+    <string name="chat_action_copy_address">Скопировать аккаунт</string>
+    <string name="chat_action_copy_group_num">Скопировать ID группы</string>
+    <string name="chat_tips_copy_download_url">Ссылка для скачивания скопирована в буфер обмена</string>
+    <string name="chat_tips_copy_address">Скопировано в буфер обмена</string>
+    <string name="chat_tips_copy_group_num">ID группы скопирован в буфер обмена</string>
+    <string name="chat_tips_qr_share_chat">TanXin</string>
+    <string name="chat_tips_qr_save">Сохранить</string>
+    <string name="chat_tips_img_saved">Изображение сохранено</string>
+    <string name="chat_tips_img_not_exist">Изображение не существует</string>
+    <string name="chat_tips_vid_not_exist">Видео не существует</string>
+    <string name="chat_tips_img_zip_fail">Не удалось сжать изображение</string>
+    <string name="chat_tips_not_contain_qr_code">QR-код не обнаружен</string>
+    <string name="chat_action_recognize_qrcode">Распознать QR-код на изображении</string>
+
+    <string name="chat_tips_start_download">Начало загрузки…</string>
+    <string name="chat_tips_is_downloading">Загрузка…</string>
+    <string name="chat_tips_image_download_to">Изображение загружено в %1$s</string>
+    <string name="chat_tips_video_download_to">Видео загружено в %1$s</string>
+    <string name="chat_tips_file_download_to">Файл загружен в %1$s</string>
+    <string name="chat_tips_download_fail">Ошибка загрузки, %1$s</string>
+
+    <!--文件详情页面-->
+    <string name="chat_tips_download_file">Получить файл</string>
+    <string name="chat_tips_can_not_open">%1$s пока не поддерживает открытие таких файлов. Вы можете открыть их с помощью других приложений</string>
+    <string name="chat_tips_open_with">Открыть с помощью другого приложения</string>
+    <string name="chat_tips_select_open_type">Выберите соответствующее приложение для открытия файла</string>
+    <string name="chat_tips_unsupported_file_type">Неподдерживаемый тип файла</string>
+
+    <!--聊天文件管理-->
+    <string name="chat_title_file_management">Файлы чата</string>
+    <string name="chat_action_file_select">Выбрать</string>
+    <string name="chat_title_chat_file">Файлы</string>
+    <string name="chat_title_chat_media">Изображения/Видео</string>
+    <string name="chat_file_empty">Нет файлов</string>
+    <string name="chat_media_empty">Нет изображений/видео</string>
+    <string name="chat_file_search_hint">Введите имя файла</string>
+    <string name="chat_action_file_download">Скачать</string>
+    <string name="chat_action_file_delete">Удалить</string>
+    <string name="chat_dialog_tips_delete_chat_files">Удаленные файлы не будут отображаться в вашей истории сообщений</string>
+
+    <!--删除私聊记录 / 自动删除-->
+    <string name="chat_contact_clean_private">Удалить историю чата</string>
+    <string name="chat_contact_auto_delete">Автоматически удалять историю чата</string>
+    <string name="chat_private_clean_confirm_title">Удалить историю чата</string>
+    <string name="chat_private_clean_confirm_message">Личные сообщения обеих сторон будут удалены в соответствии с выбранным диапазоном времени (на основе сервера). Продолжить?</string>
+    <string name="chat_private_clean_success">Операция выполнена успешно, %1$d сообщений удалено на сервере</string>
+    <string name="chat_private_clean_custom_invalid">Время окончания не может быть раньше времени начала</string>
+    <string name="chat_private_clean_last_1d">Последний 1 день</string>
+    <string name="chat_private_clean_last_3d">Последние 3 дня</string>
+    <string name="chat_private_clean_last_7d">Последние 7 дней</string>
+    <string name="chat_private_clean_last_30d">Последние 30 дней</string>
+    <string name="chat_private_clean_last_90d">Последние 90 дней</string>
+    <string name="chat_private_clean_last_180d">Последние 180 дней</string>
+    <string name="chat_private_clean_last_365d">Последние 365 дней</string>
+    <string name="chat_private_clean_all">Вся история</string>
+    <string name="chat_private_clean_custom">Пользовательская дата…</string>
+    <string name="chat_private_clean_pick_start">Выбрать дату начала</string>
+    <string name="chat_private_clean_pick_end">Выбрать дату окончания</string>
+    <string name="chat_private_auto_off">Выключить</string>
+    <string name="chat_private_auto_day_1">Более 1 дня</string>
+    <string name="chat_private_auto_day_3">Более 3 дней</string>
+    <string name="chat_private_auto_day_7">Более 7 дней</string>
+    <string name="chat_private_auto_day_30">Более 30 дней</string>
+    <string name="chat_private_auto_day_180">Более 180 дней</string>
+    <string name="chat_private_auto_pick_title">Автоматическое удаление</string>
+
+    <!--登录-->
+    <string name="login_tips_login_success">Вход выполнен успешно</string>
+    <string name="login_tips_register_success">Регистрация выполнена успешно</string>
+    <string name="login_tips_code_sent">Код подтверждения отправлен</string>
+
+    <string name="login_tips_correct_email">Введите корректный email</string>
+    <string name="login_tips_correct_phone">Введите корректный номер телефона</string>
+    <string name="login_tips_correct_code">Введите полный код подтверждения</string>
+    <string name="login_tips_code_count">Отправлено(%1$ds)</string>
+    <string name="login_tips_input_email">Введите email</string>
+    <string name="login_tips_input_phone">Введите номер телефона</string>
+    <string name="login_tips_input_code">Введите код подтверждения</string>
+    <string name="login_tips_input_s2">Введите S2</string>
+    <string name="login_action_send_code">Получить код подтверждения</string>
+    <string name="login_action_login">Войти</string>
+    <string name="login_use_email">Войти по email</string>
+    <string name="login_use_email_tips">Email восстанавливает часть мнемонической фразы для входа</string>
+    <string name="login_use_phone">Войти по телефону</string>
+    <string name="login_use_phone_tips">Если номер телефона не привязан к аккаунту, будет автоматически создан аккаунт</string>
+    <string name="login_tips_unbind_yet">Телефон/email еще не привязан к аккаунту с мнемонической фразой. Выберите другой способ входа в чат.</string>
+
+    <string name="chat_dialog_action_take_photo">Сфотографировать</string>
+    <string name="chat_dialog_action_select_picture">Выбрать из альбома</string>
+
+    <!--App更新对话框-->
+    <string name="chat_update_checking_update">Проверка обновлений…</string>
+    <string name="chat_update_latest_version">У вас последняя версия</string>
+    <string name="chat_update_title">Доступна новая версия</string>
+    <string name="chat_update_tips_version">V%1$s</string>
+    <string name="chat_update_downloading">Загрузка…</string>
+    <string name="chat_update_begin_download">Подготовка загрузки…</string>
+    <string name="chat_update_download_success">Загрузка завершена, нажмите для установки</string>
+    <string name="chat_update_action_retry">Повторить</string>
+    <string name="chat_update_action_install">Нажмите для установки</string>
+    <string name="chat_update_action_update">Обновить</string>
+    <string name="chat_update_action_ignore_update">Позже</string>
+
+    <!--群聊-->
+    <string name="chat_title_create_group">Создать группу</string>
+    <string name="chat_title_invite_members_type">Выбрать участников</string>
+    <string name="chat_title_invite_group_members">Добавить новых участников</string>
+    <string name="chat_tips_group_members">Участники группы</string>
+    <string name="chat_title_create_group_select_server">Выбрать сервер</string>
+    <string name="chat_tips_create_group_manage_server">Управлять</string>
+    <string name="chat_tips_choose_group_server">Выберите чат-сервер, к которому относится группа</string>
+    <string name="chat_tips_invite_group_members">Выберите участников группы</string>
+    <string name="chat_tips_group_members_friends">Выбрать участников из списка друзей</string>
+    <string name="chat_tips_group_members_oa">Выбрать участников из организационной структуры</string>
+    <string name="chat_action_create_group">Создать</string>
+    <string name="chat_tips_somebody_create_group">Группа, созданная %1$s</string>
+    <string name="chat_tips_group_member_num">Всего %1$d человек</string>
+    <string name="chat_action_invite">Пригласить</string>
+    <string name="chat_action_remove">Удалить</string>
+    <string name="chat_action_group_copy_mark_id">Скопировать ID группы</string>
+    <string name="chat_title_group_info">Информация о группе</string>
+    <string name="chat_title_group_qrcode">QR-код группы</string>
+    <string name="chat_tips_group_mark_id">ID группы %1$s</string>
+    <string name="chat_tips_group_pub_name">Публичное название группы: %1$s</string>
+    <string name="chat_tips_group_qr_code">Отсканируйте QR-код, чтобы присоединиться к группе</string>
+    <string name="chat_tips_group_forbid_join">Вход в эту группу запрещен</string>
+    <string name="chat_tips_group_copy_mark_id">ID группы скопирован в буфер обмена</string>
+    <string name="chat_tips_group_join_invalid_qrcode">Срок действия QR-кода входа в группу истек</string>
+    <string name="tips_invite_group_members_success">Приглашение отправлено успешно</string>
+
+    <string name="chat_title_group_user">Участники группы</string>
+    <string name="chat_action_add_group_user">Добавить участников</string>
+    <string name="chat_action_del_group_user">Удалить участников</string>
+    <string name="chat_action_set_group_admin">Назначить администратора</string>
+    <string name="chat_tips_set_nickname_in_group">Здесь вы можете установить свой никнейм в &lt;font color="%1$s"&gt;%2$s&lt;/font&gt;. Этот никнейм будет отображаться только в этой группе</string>
+    <string name="chat_tips_search_group_friend_hint">Искать участников группы</string>
+    <string name="chat_tips_member_type">Владелец, администратор</string>
+    <string name="chat_tips_member_type_owner">Владелец</string>
+    <string name="chat_tips_member_type_admin">Администратор</string>
+    <string name="chat_tips_select_invite_users">Выберите друзей, которых хотите пригласить</string>
+    <string name="chat_tips_select_delete_users">Выберите участников группы для удаления</string>
+    <string name="chat_dialog_tips_exit_group">Вы уверены, что хотите покинуть &lt;font color="%1$s"&gt;%2$s&lt;/font&gt;?</string>
+    <string name="chat_dialog_tips_disband_group">Вы уверены, что хотите расформировать &lt;font color="%1$s"&gt;%2$s&lt;/font&gt;?</string>
+
+    <string name="chat_group_admin_setting">Настройка администраторов</string>
+    <string name="chat_group_owner_setting">Передать права владельца</string>
+    <string name="chat_group_join_limit">Ограничение входа в группу</string>
+    <string name="chat_group_add_limit">Ограничение добавления друзей</string>
+    <string name="chat_group_mute_all">Заглушить всех</string>
+    <string name="chat_group_mute_list">Список заглушенных</string>
+    <string name="chat_group_join_limit1">Без одобрения</string>
+    <string name="chat_group_join_limit_sub1">Вход в группу не требует одобрения владельца или администратора</string>
+    <string name="chat_group_join_limit2">Запретить вход в группу</string>
+    <string name="chat_group_join_limit_sub2">Никто не может войти в группу, кроме как по приглашению владельца или администратора</string>
+    <string name="chat_group_join_limit3">Одобрение владельца</string>
+    <string name="chat_group_join_limit_sub3">Для присоединения к группе требуется одобрение владельца или администратора</string>
+    <string name="chat_group_apply_list">Заявки на вступление</string>
+    <string name="chat_group_apply_title">Заявки на вступление</string>
+    <string name="chat_group_apply_empty">Нет заявок на вступление</string>
+    <string name="chat_tip_apply_num">Заявок: %1$d</string>
+    <string name="chat_action_apply_accept">Принять</string>
+    <string name="chat_action_apply_reject">Отклонить</string>
+    <string name="chat_tips_apply_accepted">Заявка одобрена</string>
+    <string name="chat_tips_apply_rejected">Заявка отклонена</string>
+    <string name="chat_action_apply_join_group">Подать заявку</string>
+    <string name="chat_action_apply_join_pending">Заявка отправлена, ожидает проверки</string>
+    <string name="chat_tips_apply_join_submitted">Заявка отправлена. Ожидайте одобрения</string>
+    <string name="chat_tips_invite_apply_submitted">Приглашение отправлено. Ожидайте одобрения</string>
+    <string name="chat_tips_address_copied">Адрес скопирован</string>
+    <string name="chat_group_add_limit1">Можно добавлять друзей в группе</string>
+    <string name="chat_group_add_limit2">Запрещено добавлять друзей в группе</string>
+
+    <string name="chat_group_join_title">Подробности</string>
+    <string name="chat_action_join_group">Войти в группу</string>
+    <string name="chat_action_can_not_join">Вход в группу запрещен</string>
+    <string name="chat_action_chat_message">Отправить в чат</string>
+    <string name="chat_tips_join_member_number">%1$d участников группы</string>
+
+    <string name="chat_title_group_mute_list">Список заглушенных</string>
+    <string name="chat_action_group_cancel_mute">Снять заглушку со всех</string>
+    <string name="chat_tip_no_group_user_muted">Нет участников группы, с которых нужно снять заглушку</string>
+    <string name="chat_tip_mute_forever">Заглушить навсегда</string>
+    <string name="chat_tip_mute_to_time">Заглушено до %1$s</string>
+    <string name="chat_tip_mute_user_num">%1$d участников заглушены</string>
+    <string name="chat_action_forbid_add_friend">В этой группе запрещено добавлять друзей</string>
+    <string name="chat_tips_mute_state1">Можно говорить</string>
+    <string name="chat_tips_mute_state2">Все заглушены</string>
+    <string name="chat_tips_mute_state3">Заглушено&#160;%1$s</string>
+    <string name="chat_tips_mute_state4">Заглушено навсегда</string>
+    <string name="chat_tips_can_not_mute">Администраторов или владельца нельзя заглушить</string>
+
+    <string name="chat_confirm_mute">Вы уверены, что хотите заглушить?</string>
+    <string name="chat_mute_cancel">Снять заглушку</string>
+    <string name="chat_select_mute_time">Выбрать время заглушки</string>
+    <string name="chat_change_mute_time">Изменить время заглушки</string>
+    <string name="chat_forever">Навсегда</string>
+    <string name="chat_24_hour">24 часа</string>
+    <string name="chat_10_hour">10 часов</string>
+    <string name="chat_2_hour">2 часа</string>
+    <string name="chat_30_minute">30 минут</string>
+    <string name="chat_10_minute">10 минут</string>
+
+    <string name="chat_title_admin_setting">Настройка администраторов</string>
+    <string name="chat_title_change_owner">Передать права владельца</string>
+    <string name="chat_title_add_admin">Добавить администратора</string>
+    <string name="chat_tips_group_owner">Владелец</string>
+    <string name="chat_tips_group_admin_num">Администраторы (%1$d/10)</string>
+    <string name="chat_action_add_group_admin">Добавить администратора</string>
+    <string name="chat_tips_change_group_owner">Вы уверены, что хотите передать права владельца группы &lt;font color="%1$s"&gt;%2$s&lt;/font&gt;?</string>
+    <string name="chat_tips_new_msg">%1$s новых сообщений</string>
+
+    <string name="chat_ait_default">[Кто-то упомянул меня]</string>
+
+    <!--转发-->
+    <string name="chat_forward_msg_summary">История чата, всего %1$d</string>
+    <string name="chat_forward_source_tips">Переслать: %1$s</string>
+    <string name="chat_forward_source_me_and_others">Мой чат с [%1$s]</string>
+    <string name="chat_forward_source_others_and_others">Чат [%1$s] и [%2$s]</string>
+    <string name="chat_forward_source_group">Чат группы [%1$s]</string>
+    <string name="chat_forward_title_others_and_others">История чата [%1$s] и [%2$s]</string>
+    <string name="chat_forward_title_group">История чата группы</string>
+    <string name="chat_action_forward">Переслать</string>
+    <string name="chat_action_forward_single">Переслать по одному</string>
+    <string name="chat_action_forward_multiple">Переслать объединенно</string>
+    <string name="chat_action_msg_star">В избранное</string>
+    <string name="chat_action_msg_delete">Удалить</string>
+    <string name="chat_action_revoke">Отозвать</string>
+    <string name="chat_dialog_revoke_messages">Вы уверены, что хотите отозвать выбранные %d сообщений?</string>
+    <string name="chat_tips_revoke_empty">Выбранные сообщения нельзя отозвать</string>
+    <string name="chat_tips_revoke_partial">Успешно %1$d, не удалось %2$d</string>
+    <string name="chat_title_contact_select">Выбрать контакты</string>
+    <string name="chat_tips_forward_contact_tag1">Недавние чаты</string>
+    <string name="chat_tips_forward_contact_tag2">Контакты</string>
+    <string name="chat_tips_forward_contact_tag3">Группы</string>
+    <string name="chat_tips_search_contact">Искать друзей, группы</string>
+    <string name="chat_tips_search_friends">Искать друзей</string>
+    <string name="chat_tips_search_groups">Искать группы</string>
+    <string name="chat_tips_oa_select">Выбрать участников из организационной структуры</string>
+    <string name="chat_tips_selected_message_empty">Сначала выберите корректные сообщения</string>
+    <string name="chat_tips_reach_max_msg_select_num">Можно выбрать не более %1$d сообщений</string>
+    <string name="chat_tips_forward_msg_empty">Сообщения для пересылки пусты</string>
+    <string name="chat_tips_can_not_forward_group">Текущую группу нельзя переслать!</string>
+    <string name="chat_tips_can_not_forward_self">Нельзя переслать себе</string>
+    <string name="chat_tips_can_not_forward_no_server">Не удается найти сервер другой стороны, невозможно переслать</string>
+    <string name="chat_tips_can_not_forward_group_no_server">Нет подключения к серверу текущей группы, невозможно отправлять и получать сообщения</string>
+    <string name="cancel">Отмена</string>
+    <string name="ok">ОК</string>
+    <string name="explore_title">Заявление об ответственности</string>
+    <string name="explore_disclaimer">Вы собираетесь использовать стороннюю ссылку. Подтверждая, вы соглашаетесь с Политикой конфиденциальности и Пользовательским соглашением третьей стороны. Все ваши действия и использование по этой ссылке являются ответственностью поставщика ссылки.</string>
+    <string name="no_dotip">Больше не напоминать</string>
+    <string name="del_str">Удалить</string>
+    <string name="del_tip_str">Удалить?</string>
+    <string name="input_www">Введите URL</string>
+    <string name="wc_get_addr">Разрешить получить адрес текущего кошелька</string>
+    <string name="wc_sign_str">Разрешить запросить подпись у текущего кошелька</string>
+    <string name="wc_at">Этот сервис поддерживается протоколом WalletConnect</string>
+    <string name="wc_w_addr">Адрес кошелька</string>
+    <string name="wc_cnet">Текущая сеть</string>
+    <string name="wc_dis">Отключить</string>
+    <string name="wc_pay_de">Детали платежа</string>
+    <string name="wc_pay_me">Информация о платеже</string>
+    <string name="wc_pay_address">Адрес платежа</string>
+    <string name="wc_fee">Комиссия майнера</string>
+    <string name="wc_next">Далее</string>
+    <string name="wc_con">WalletConnect подключается к вашему кошельку</string>
+    <string name="wc_coned">Установлено соединение со следующими кошельками</string>
+    <string name="home_receipt_address">Адрес получения</string>
+    <string name="home_transfer">Перевести</string>
+    <string name="tip_fee_high">Установленная комиссия майнера слишком высока. Выберите подходящую комиссию</string>
+    <string name="tip_init_fee">Инициализация комиссии майнера...</string>
+    <string name="dapp_sign_re">Dapp запросил подпись</string>
+    <string name="signme">Информация о подписи</string>
+    <string name="i_wallet">Мой кошелек</string>
+    <string name="my_wallet_detail_password">Введите пароль аккаунта</string>
+    <string name="my_wallet_password_tips">Введите пароль</string>
+    <string name="pwd_fail_str">Неверный пароль</string>
+    <string name="high_str">Быстрейший</string>
+    <string name="standard_str">Стандарт</string>
+    <string name="low_str">Экономный</string>
+    <string name="custom_str">Пользовательский</string>
+    <string name="exp_str">Браузер</string>
+    <string name="send_suc_str">Отправлено успешно!</string>
+    <string name="basic_error_send">Не удалось отправить, попробуйте еще раз</string>
+    <string name="chat_send_fail_title">Не удалось отправить сообщение</string>
+    <string name="chat_send_fail_network">Сеть недоступна, проверьте подключение</string>
+    <string name="chat_send_fail_timeout">Тайм-аут сети, отправка не удалась</string>
+    <string name="chat_send_fail_connect">Не удается подключиться к серверу, проверьте сеть</string>
+    <string name="chat_send_fail_upload">Не удалось загрузить файл, проверьте сеть</string>
+    <string name="chat_send_fail_server">Ошибка сервера: %1$s</string>
+    <string name="chat_send_fail_server_empty">Ошибка сервера, отправка не удалась</string>
+    <string name="chat_send_fail_resend">Отправить снова</string>
+
+
+
+    <string name="tian_str">Предложение</string>
+    <string name="tp_str">Голосовать</string>
+    <string name="tp_error">Слишком много активности, попробуйте позже</string>
+    <string name="fee_setting">Настройка комиссии майнера</string>
+    <string name="enter_str">Введите</string>
+    <string name="switch_account_str">Сменить аккаунт</string>
+    <string name="chat_no_nickname">Установите никнейм</string>
+    <string name="c_entrance">Быстрый доступ</string>
+    <string name="n_yopen">Пока недоступно</string>
+    <string name="save_suc">Сохранено успешно</string>
+    <string name="like_str">В избранное</string>
+    <string name="collect_suc_str">Добавлено в избранное!</string>
+    <string name="my_collect_str">Мое избранное</string>
+    <string name="ref_str">Обновить</string>
+    <string name="copy_url_str">Скопировать ссылку</string>
+    <string name="ex_open">Открыть в браузере</string>
+    <string name="exit_str">Выйти</string>
+    <string name="copy_success">Скопировано успешно</string>
+    <string name="dapp_approve">Авторизовать контракт</string>
+    <string name="dapp_out">Адрес отправителя</string>
+    <string name="dapp_nonono">Авторизация токенов</string>
+    <string name="meta_approve">Авторизовать использование токенов</string>
+    <string name="select_network_fee">Выбрать сетевую комиссию</string>
+    <string name="fee_fast">Быстро</string>
+    <string name="fee_recommended">Рекомендуется</string>
+    <string name="fee_slow">Медленно</string>
+    <string name="fee_custom">Пользовательский</string>
+    <string name="fee_estimated_time">Ориентировочно в течение %s</string>
+    <string name="estimated_fee">Ориентировочная комиссия</string>
+
+    <!--安全设置相关硬编码-->
+    <string name="chat_hint_input_wechat">Введите ID WeChat</string>
+    <string name="chat_hint_input_xiaohongshu">Введите ID Xiaohongshu</string>
+    <string name="chat_hint_input_douyin">Введите ID Douyin</string>
+
+    <!--群相关硬编码-->
+    <string name="chat_group_type_all">Все</string>
+    <string name="chat_group_type_dept">Отдел</string>
+    <string name="chat_group_qrcode_tips">Эта группа принадлежит группе %1$s команды. Присоединиться могут только внутренние члены организации. Если внешний человек хочет присоединиться, ему сначала нужно подать заявку на вступление в организацию</string>
+
+    <!--转发相关-->
+    <string name="chat_forward_multiple_messages">[Переслано по одному] всего %1$d сообщений</string>
+    <string name="chat_forward_sent_count">Переслано в %1$d чатов</string>
+
+    <!--私钥创建-->
+    <string name="chat_error_private_key_create">Не удалось создать закрытый ключ</string>
+
+    <!--编辑群头像-->
+    <string name="chat_error_crop_unknown">Ошибка обрезки, неизвестная ошибка</string>
+
+    <!--Dapp相关-->
+    <string name="chat_dapp_error_password">Неверный пароль</string>
+
+    <!--布局标签-->
+    <string name="chat_label_add_friend_msg">Сообщение о добавлении друга</string>
+    <string name="chat_label_remark_other">Заметка другой стороны</string>
+    <string name="chat_label_send">Отправить</string>
+    <string name="chat_label_account_manage">Управление аккаунтами</string>
+    <string name="chat_label_audio_call">Голосовой звонок</string>
+    <string name="chat_label_video_call">Видеозвонок</string>
+    <string name="chat_label_create_wallet">Создать кошелек</string>
+    <string name="chat_label_customer_service">Служба поддержки</string>
+    <string name="chat_label_scan_add_cs">Отсканируйте QR-код, чтобы добавить поддержку в друзья</string>
+    <string name="chat_label_group_exit_tips">Группы всех/отдела можно покинуть только через выход из организации/отдела. При выходе из организации/отдела вы автоматически покинете соответствующие группы!</string>
+    <string name="chat_label_search">Поиск</string>
+    <string name="chat_label_search_history">История поиска</string>
+    <string name="chat_label_phone">Телефон</string>
+    <string name="chat_label_wechat">WeChat</string>
+    <string name="chat_label_xiaohongshu">Xiaohongshu</string>
+    <string name="chat_label_douyin">Douyin</string>
+    <string name="chat_label_select_at">Выберите, кого упомянуть</string>
+    <string name="chat_label_everyone">Все</string>
+    <string name="chat_label_input_hint">Введите</string>
+    <string name="chat_label_confirm">ОК</string>
+    <string name="chat_label_forgot_password">Забыли пароль</string>
+    <string name="chat_label_send_to">Отправить:</string>
+    <string name="chat_label_mnem_verify">Проверка мнемонической фразы</string>
+    <string name="chat_label_phone_verify">Проверка по телефону</string>
+    <string name="chat_label_email_verify">Проверка по email</string>
+    <string name="chat_label_group_owner">Владелец</string>
+    <string name="chat_label_member_info">Информация об участнике</string>
+    <string name="chat_label_name">Имя</string>
+    <string name="chat_label_team">Команда</string>
+    <string name="chat_label_short_number">Короткий номер</string>
+    <string name="chat_label_email">Email</string>
+    <string name="chat_label_dept">Отдел</string>
+    <string name="chat_label_position">Должность</string>
+    <string name="chat_label_personal_card">Личная визитная карточка</string>
+    <string name="chat_label_red_packet_default">Поздравляю, желаю удачи</string>
+    <string name="chat_label_exclusive_received">Эксклюзивный красный конверт получен</string>
+    <string name="chat_label_tx_mismatch">Информация о транзакции не совпадает, нажмите для просмотра</string>
+    <string name="chat_label_my_qr">Мой QR-код</string>
+    <string name="chat_label_scan_add_me">Отсканируйте QR-код, чтобы добавить меня в друзья</string>
+    <string name="chat_label_scan_transfer_add">Отсканируйте QR-код, чтобы перевести мне или добавить меня в друзья</string>
+    <string name="chat_label_manage">Управлять</string>
+    <string name="chat_label_org_structure">Организационная структура</string>
+    <string name="chat_label_current_account">Текущий аккаунт</string>
+    <string name="chat_add_friend_default_msg">Здравствуйте, я %1$s, добавил вас в друзья!</string>
+
+</resources>

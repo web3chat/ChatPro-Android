@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="rtc_dialog_confirm_hangup">确定要结束通话吗？</string>
+    <string name="rtc_tips_waiting_for_answer">正在等待对方接受邀请…</string>
+    <string name="rtc_tips_audio_call_incoming">邀请你语音通话…</string>
+    <string name="rtc_tips_video_call_incoming">邀请你视频通话…</string>
+
+    <string name="rtc_action_hangup">挂断</string>
+    <string name="rtc_action_accept">接听</string>
+    <string name="rtc_action_reject">拒绝</string>
+    <string name="rtc_action_mic_mute">静音</string>
+    <string name="rtc_action_hands_free">免提</string>
+    <string name="rtc_action_switch_audio">切到语音通话</string>
+    <string name="rtc_action_switch_camera">转换摄像头</string>
+
+    <!--通话状态-->
+    <string name="rtc_status_call_ended">通话结束</string>
+    <string name="rtc_status_connecting">连接中…</string>
+    <string name="rtc_status_connected">已接通</string>
+    <string name="rtc_status_rejected">对方已拒绝</string>
+    <string name="rtc_status_hangup">对方已挂断，通话结束</string>
+    <string name="rtc_status_no_response">对方未响应</string>
+    <string name="rtc_status_busy">对方正忙</string>
+    <string name="rtc_status_cancelled">通话取消</string>
+    <string name="rtc_status_timeout">通话超时</string>
+
+    <!--通知文案-->
+    <string name="rtc_type_video">视频</string>
+    <string name="rtc_type_audio">语音</string>
+    <string name="rtc_notify_invite">邀请你%1$s通话</string>
+    <string name="rtc_notify_ongoing">%1$s通话中，点击返回</string>
+
+    <!--错误-->
+    <string name="rtc_error_room_assign">房间分配失败</string>
+    <string name="rtc_error_answer_fail">接听失败</string>
+
+</resources>
