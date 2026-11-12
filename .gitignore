@@ -40,8 +40,7 @@ captures/
 *.apk
 *.aab
 *.log
-# 私有钱包 SDK（82 MB）：不随仓库分发，构建前自行放入 chat-core/libs/
-chat-core/libs/walletapi.aar
+# 私有钱包 SDK（82 MB）随仓库提供，不再忽略
 /app/build/
 /chat-oss/build
 /rtc/build
@@ -69,11 +68,9 @@ _bak/
 # 默认不提交 .md（doc/ 下的对接文档含服务器地址与 IP，
 # douyin.md / contract-api.md / AGENTS.md 等含内部信息）
 *.md
-# 只放行仓库门面 README.md
+# 放行仓库门面与配置指南（这两份是给克隆者看的）
 !README.md
-
-# SECURITY.md：说明哪些配置不入库、哪些凭据已泄露，只留本机，不进仓库也不进历史
-SECURITY.md
+!SECURITY.md
 
 # ---------- 8. 构建产物：多渠道 release 输出元数据 ----------
 app/*/release/

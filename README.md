@@ -1,13 +1,13 @@
 # 去中心化版本 Chat33Pro
 
 > ⚠️ **开源说明**：本仓库不包含任何服务端地址、私钥、签名库与第三方密钥。
-> 这些配置只保留在本机，首次构建前请从各模块的 `*.example.properties` 模板
-> 生成本地真实配置文件。
+> 这些配置只保留在本机，首次构建前请按 [SECURITY.md](SECURITY.md) 从各模块的
+> `*.example.properties` 模板生成本地真实配置文件。
 
 ## 构建
 
 1. 安装 **JDK 11**（更高版本会报 AGP / Groovy 错误）
-2. 按各模块 `assets` 下的 `*.example.properties` 模板生成本地配置（如 `chat-pro.properties`）
+2. 按 [SECURITY.md](SECURITY.md) 生成各模块的本地配置
 3. 将 `walletapi.aar`（约 82 MB 的钱包 SDK）放入 `chat-core/libs/` 目录，仓库不包含该文件
 4. 编译：`./gradlew :app:compileChat33proDebugKotlin`
 
