@@ -17,7 +17,7 @@
 
 | 要创建的文件 | 模板 | 关键项 |
 |---|---|---|
-| `chat-core/src/main/assets/chat-pro.properties` | `chat-pro.example.properties` | `BASE_URL`、`GO_URL`、`CENTRALIZED_SERVER`、`SQUARE_SERVER` 等各服务地址；`NO_BALANCE_PRIVATE_KEY`（代扣私钥，留空则不启用代扣） |
+| `chat-core/src/main/assets/chat-pro.properties` | `chat-pro.example.properties` | `BASE_URL`、`GO_URL`、`CENTRALIZED_SERVER`、`SQUARE_SERVER` 等各服务地址；`NO_BALANCE_PRIVATE_KEY`（代扣私钥） |
 | `business/src/main/assets/base.properties` | `base.example.properties` | App 名称、官网域名 |
 | `redpacket/src/main/assets/redPacket-*.properties` | `redPacket-*.example.properties` | 红包合约地址、RPC 节点 |
 | `oss/oss-chat/src/main/assets/oss-base.properties` | `oss-base.example.properties` | OSS 服务 appId |
@@ -43,8 +43,4 @@
 |---|---|---|
 | `local.secrets.properties` | `local.secrets.example.properties` | Bugly mapping 上传的 appid / appkey（不配则打包时跳过上传）；`DEFAULT_CIPHER_PASSWORD` 为本地加密默认口令（不配则使用占位值） |
 
-### 5. 二进制依赖
 
-| 文件 | 说明 |
-|---|---|
-| `chat-core/libs/walletapi.aar` | 私有钱包 SDK（约 82 MB），**已随仓库提供**，无需额外下载 |
