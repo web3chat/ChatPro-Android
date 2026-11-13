@@ -251,7 +251,12 @@ object MessageRepository {
                     Msg.NotificationType.JoinGroup -> {
                         val msg = Msg.NotificationJoinGroup.parseFrom(notification.body)
                         val inviter = contactManager.getGroupUserInfo(msg.group.toString(), msg.inviter)
-                        if (msg.membersCount > 0) {
+                        // 扫码/链接自助进群：邀请人就是唯一进群的那个人（自己扫自己的码时
+                        // 服务端记录的 inviter 就是扫码者本人），此时不能说"X 邀请了 X"，改为"通过扫码加入"
+                        val onlyMemberAddr = if (msg.membersCount == 1) msg.membersList[0] else null
+                        val selfJoin = onlyMemberAddr != null &&
+                                (msg.inviter.isNullOrEmpty() || msg.inviter == onlyMemberAddr)
+                        if (msg.membersCount > 0 && !selfJoin) {
                             val members = mutableListOf<Contact>()
                             // 最多显示5个人的昵称
                             val suffix = if (msg.membersCount > 5) "等${msg.membersCount}人进入群聊" else "进入群聊"
@@ -267,6 +272,16 @@ object MessageRepository {
                             }
                             builder.append(suffix)
                             builder.toString()
+                        } else if (selfJoin) {
+                            val memberAddr = onlyMemberAddr!!
+                            val member = contactManager.getGroupUserInfo(
+                                msg.group.toString(), memberAddr
+                            )
+                            if (memberAddr == delegate.getAddress()) {
+                                "你通过扫码加入了群聊"
+                            } else {
+                                "${member.getDisplayName()} 通过扫码加入了群聊"
+                            }
                         } else {
                             // 邀请人为空，则表示自己创建了群聊
                             "${inviter.getDisplayName()} 创建了群聊"
