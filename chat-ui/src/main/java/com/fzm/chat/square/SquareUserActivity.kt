@@ -88,14 +88,6 @@ class SquareUserActivity : BizActivity() {
     /** 关注/取关请求进行中，避免连点 */
     private var following = false
 
-    /** 该用户的关注数 / 粉丝数（GET /follows、/followers 的 total） */
-    private var followNum = 0
-
-    private var followerNum = 0
-
-    /** 计数是否已成功拉取（失败时不展示，避免显示 0 误导） */
-    private var countsLoaded = false
-
     override val root: View
         get() = binding.root
 
@@ -131,19 +123,8 @@ class SquareUserActivity : BizActivity() {
         binding.refresh.setOnRefreshListener { loadPosts(1) }
         binding.refresh.setOnLoadMoreListener { loadPosts(page + 1, more = true) }
         binding.tvFollow.setOnClickListener { toggleFollow() }
-        // 粉丝数可点：进入「TA 的粉丝」列表（自己的主页进「我的粉丝」）
-        binding.tvFollowerCount.setOnClickListener {
-            startActivity(
-                SquareFollowActivity.intent(
-                    this,
-                    SquareFollowActivity.TYPE_FOLLOWERS,
-                    address.takeIf { !isSelf() }
-                )
-            )
-        }
         loadAvatar()
         loadFollowState()
-        loadCounts()
     }
 
     override fun initData() {
@@ -208,32 +189,6 @@ class SquareUserActivity : BizActivity() {
                 }
             }
         }
-    }
-
-    /**
-     * 关注数 / 粉丝数
-     *
-     * 列表接口的 `total` 就是总数，这里各取 1 条（pageSize=1）只为拿计数，不拉全量。
-     * 两个请求都失败时不显示计数行，避免把「拿不到」显示成 0。
-     */
-    private fun loadCounts() {
-        lifecycleScope.launch {
-            val follows = SquareApi.follows(1, 1, address)
-            val followers = SquareApi.followers(1, 1, address)
-            if (!follows.isSuccess && !followers.isSuccess) return@launch
-            if (follows.isSuccess) followNum = follows.data?.totalNum ?: 0
-            if (followers.isSuccess) followerNum = followers.data?.totalNum ?: 0
-            countsLoaded = true
-            renderStats()
-        }
-    }
-
-    private fun renderStats() {
-        if (!countsLoaded) return
-        binding.llStats.isVisible = true
-        binding.tvFollowCount.text = getString(R.string.square_user_follow_count, followNum)
-        binding.tvFollowerCount.text =
-            getString(R.string.square_user_follower_count, followerNum)
     }
 
     private fun loadAvatar() {
@@ -308,11 +263,7 @@ class SquareUserActivity : BizActivity() {
                 followed = resp.data?.isFollowed ?: !followed
                 SquareFollowCache.markFollowed(address, followed)
                 renderFollowButton()
-                // 我关注 / 取关 TA 会改变 TA 的粉丝数，页头计数同步 ±1
-                if (countsLoaded) {
-                    followerNum = (followerNum + if (followed) 1 else -1).coerceAtLeast(0)
-                    renderStats()
-                }
+                // 我关注 / 取关 TA 会改变 TA 的粉丝数；页头已不展示计数（等后端接口），这里不再同步
                 toast(
                     if (followed) R.string.square_follow_success
                     else R.string.square_unfollow_success

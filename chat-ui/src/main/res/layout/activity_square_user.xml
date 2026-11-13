@@ -106,39 +106,6 @@
                     android:padding="2dp"
                     android:src="@drawable/ic_copy" />
             </LinearLayout>
-
-            <!--关注数 / 粉丝数（粉丝可点进去看列表；计数未回来前整行隐藏）-->
-            <LinearLayout
-                android:id="@+id/ll_stats"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:visibility="gone"
-                tools:visibility="visible">
-
-                <TextView
-                    android:id="@+id/tv_follow_count"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/color_8E92A3"
-                    android:textSize="12sp"
-                    tools:text="关注 12" />
-
-                <TextView
-                    android:id="@+id/tv_follower_count"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="14dp"
-                    android:background="?android:attr/selectableItemBackground"
-                    android:paddingTop="2dp"
-                    android:paddingEnd="4dp"
-                    android:paddingBottom="2dp"
-                    android:textColor="@color/color_8E92A3"
-                    android:textSize="12sp"
-                    tools:text="粉丝 34" />
-            </LinearLayout>
         </LinearLayout>
 
         <!--关注 / 已关注（自己的主页不显示）-->

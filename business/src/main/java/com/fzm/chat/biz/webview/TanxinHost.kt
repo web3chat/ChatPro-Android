@@ -4,6 +4,7 @@ import android.Manifest
 import android.content.Context
 import android.content.ContextWrapper
 import android.content.pm.PackageManager
+import android.graphics.BitmapFactory
 import android.os.Build
 import android.util.Base64
 import android.util.Log
@@ -29,6 +30,7 @@ import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.launch
 import org.json.JSONObject
 import java.io.ByteArrayOutputStream
+import java.io.File
 import java.util.Locale
 import java.util.TreeMap
 
@@ -59,8 +61,14 @@ object TanxinHost {
     /** 宿主平台名（逐字，文档要求） */
     const val PLATFORM = "tanxin-android"
 
+    /** 分享图片到广场时，传给发帖页的图片本地路径 extra（与 PublishSquareActivity 约定） */
+    const val EXTRA_SHARE_IMAGE = "shareImagePath"
+
     /** 单张图片上限（分片累计），防止异常页面把内存打满 */
     private const val MAX_IMAGE_BYTES = 64 * 1024 * 1024L
+
+    /** 分享载荷里 imageBase64 的字符上限（约 12MB 原始字节，base64 膨胀 4/3） */
+    private const val MAX_SHARE_IMAGE_CHARS = 16 * 1024 * 1024
 
     private val scope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
 
@@ -131,6 +139,17 @@ object TanxinHost {
                 host.shareCard = host.share;
                 host.shareToChat = host.share;
                 host.shareToSquare = host.shareSquare;
+                // 直接把一张图分享出去（与「保存图片」用的是同一份 base64）
+                host.shareImage = function (base64, filename) {
+                  try {
+                    window.$NATIVE_NAME.shareImage(String(base64 || ''), String(filename || ''));
+                  } catch (e) {}
+                };
+                host.shareSquareImage = function (base64, filename) {
+                  try {
+                    window.$NATIVE_NAME.shareSquareImage(String(base64 || ''), String(filename || ''));
+                  } catch (e) {}
+                };
                 host.saveImage = function (base64, filename) {
                   try {
                     window.$NATIVE_NAME.saveImage(String(base64 || ''), String(filename || ''));
@@ -150,7 +169,8 @@ object TanxinHost {
                   try { window.$NATIVE_NAME.saveImageEnd(); } catch (e) {}
                 };
                 host.actions = ['openChat', 'back', 'share', 'shareCard', 'shareToChat',
-                               'shareSquare', 'shareToSquare', 'saveImage'];
+                               'shareSquare', 'shareToSquare', 'shareImage', 'shareSquareImage',
+                               'saveImage'];
               } catch (e) {}
             })();
         """.trimIndent()
@@ -218,7 +238,9 @@ object TanxinHost {
         val description: String,
         val iconUrl: String,
         val url: String,
-        val source: String
+        val source: String,
+        /** 分享图片（base64，可选）：H5 传了就按图片分享，不传按文本卡片分享 */
+        val imageBase64: String
     )
 
     /**
@@ -255,7 +277,11 @@ object TanxinHost {
             description = description.take(300),
             iconUrl = iconUrl,
             url = url,
-            source = json.optString("source").trim().take(60)
+            source = json.optString("source").trim().take(60),
+            // 兼容 imageBase64 / image 两种写法；data:image/...;base64, 前缀由 decodeBase64 处理
+            imageBase64 = json.optString("imageBase64").trim()
+                .ifEmpty { json.optString("image").trim() }
+                .take(MAX_SHARE_IMAGE_CHARS)
         )
     }
 
@@ -358,6 +384,14 @@ object TanxinHost {
         @JavascriptInterface
         fun share(payload: String?) {
             val card = TanxinHost.parseSharePayload(payload) ?: return
+            // H5 传了 imageBase64：按图片消息分享（与「保存图片」用的是同一张图）
+            if (card.imageBase64.isNotEmpty()) {
+                val bytes = TanxinHost.decodeBase64(card.imageBase64)
+                if (bytes != null && bytes.isNotEmpty()) {
+                    shareImageMessage(bytes, "share_${System.currentTimeMillis()}.png")
+                    return
+                }
+            }
             val text = buildString {
                 append(card.title)
                 if (card.description.isNotEmpty()) append("\n\n").append(card.description)
@@ -370,14 +404,7 @@ object TanxinHost {
                         MessageContent.text(text),
                         null
                     )
-                    val postcard = ARouter.getInstance().build(MainModule.CONTACT_SELECT)
-                        .withSerializable("preSend", params)
-                    val activity = try {
-                        activityProvider?.invoke()
-                    } catch (e: Exception) {
-                        null
-                    }
-                    if (activity != null) postcard.navigation(activity) else postcard.navigation()
+                    navigateContactSelect(params)
                 } catch (e: Exception) {
                     Log.w(TanxinHost.TAG, "share failed: ${e.javaClass.simpleName}")
                 }
@@ -387,6 +414,13 @@ object TanxinHost {
         @JavascriptInterface
         fun shareSquare(payload: String?) {
             val card = TanxinHost.parseSharePayload(payload) ?: return
+            val imagePath = if (card.imageBase64.isNotEmpty()) {
+                TanxinHost.decodeBase64(card.imageBase64)?.let {
+                    saveShareImage(it, "square_${System.currentTimeMillis()}.png")
+                }
+            } else {
+                null
+            }
             webView.post {
                 try {
                     // 打开广场发帖页并预填内容（用户确认后发布，避免 H5 静默代发）
@@ -396,6 +430,9 @@ object TanxinHost {
                         .withString("shareUrl", card.url)
                         .withString("shareSource", card.source)
                         .withString("shareIconUrl", card.iconUrl)
+                    if (!imagePath.isNullOrEmpty()) {
+                        postcard.withString(TanxinHost.EXTRA_SHARE_IMAGE, imagePath)
+                    }
                     val activity = try {
                         activityProvider?.invoke()
                     } catch (e: Exception) {
@@ -406,6 +443,87 @@ object TanxinHost {
                     Log.w(TanxinHost.TAG, "shareSquare failed: ${e.javaClass.simpleName}")
                 }
             }
+        }
+
+        /** 直接分享一张图片到聊天（H5 传 base64） */
+        @JavascriptInterface
+        fun shareImage(base64: String?, filename: String?) {
+            val bytes = TanxinHost.decodeBase64(base64) ?: return
+            shareImageMessage(bytes, filename)
+        }
+
+        /** 直接分享一张图片到广场发帖页（H5 传 base64） */
+        @JavascriptInterface
+        fun shareSquareImage(base64: String?, filename: String?) {
+            val bytes = TanxinHost.decodeBase64(base64) ?: return
+            val path = saveShareImage(bytes, filename) ?: return
+            webView.post {
+                try {
+                    val postcard = ARouter.getInstance().build(MainModule.SQUARE_SHARE)
+                        .withString(TanxinHost.EXTRA_SHARE_IMAGE, path)
+                    val activity = try {
+                        activityProvider?.invoke()
+                    } catch (e: Exception) {
+                        null
+                    }
+                    if (activity != null) postcard.navigation(activity) else postcard.navigation()
+                } catch (e: Exception) {
+                    Log.w(TanxinHost.TAG, "shareSquareImage failed: ${e.javaClass.simpleName}")
+                }
+            }
+        }
+
+        /** 把本地图片作为图片消息发给聊天对象：先落到缓存目录，再进选择会话页 */
+        private fun shareImageMessage(bytes: ByteArray, filename: String?) {
+            val path = saveShareImage(bytes, filename) ?: run {
+                webView.post { context.toast(R.string.biz_tips_image_save_fail) }
+                return
+            }
+            val size = imageSizeOf(path)
+            webView.post {
+                try {
+                    val params = PreSendParams(
+                        Biz.MsgType.Image_VALUE,
+                        MessageContent.image(null, path, size),
+                        null
+                    )
+                    navigateContactSelect(params)
+                } catch (e: Exception) {
+                    Log.w(TanxinHost.TAG, "shareImage failed: ${e.javaClass.simpleName}")
+                }
+            }
+        }
+
+        private fun navigateContactSelect(params: PreSendParams) {
+            val postcard = ARouter.getInstance().build(MainModule.CONTACT_SELECT)
+                .withSerializable("preSend", params)
+            val activity = try {
+                activityProvider?.invoke()
+            } catch (e: Exception) {
+                null
+            }
+            if (activity != null) postcard.navigation(activity) else postcard.navigation()
+        }
+
+        /** 写入应用缓存目录（不占相册、不需要存储权限） */
+        private fun saveShareImage(bytes: ByteArray, filename: String?): String? {
+            if (bytes.isEmpty()) return null
+            return try {
+                val dir = File(context.cacheDir, "shared").apply { mkdirs() }
+                val name = filename?.takeIf { it.isNotBlank() } ?: "share_${System.currentTimeMillis()}.png"
+                val file = File(dir, name)
+                file.writeBytes(bytes)
+                file.absolutePath
+            } catch (e: Exception) {
+                Log.w(TanxinHost.TAG, "saveShareImage failed: ${e.javaClass.simpleName}")
+                null
+            }
+        }
+
+        private fun imageSizeOf(path: String): IntArray {
+            val options = BitmapFactory.Options().apply { inJustDecodeBounds = true }
+            BitmapFactory.decodeFile(path, options)
+            return intArrayOf(options.outWidth.coerceAtLeast(1), options.outHeight.coerceAtLeast(1))
         }
 
         @JavascriptInterface

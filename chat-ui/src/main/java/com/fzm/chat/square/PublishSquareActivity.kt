@@ -63,6 +63,9 @@ class PublishSquareActivity : BizActivity() {
         private const val EXTRA_SHARE_DESCRIPTION = "shareDescription"
         private const val EXTRA_SHARE_URL = "shareUrl"
 
+        /** H5 分享图片到广场：图片已由 TanxinHost 落到缓存目录，这里传路径 */
+        const val EXTRA_SHARE_IMAGE = "shareImagePath"
+
         /** 最多 9 张图片 */
         private const val MAX_IMAGE = 9
 
@@ -135,6 +138,10 @@ class PublishSquareActivity : BizActivity() {
             commentsEnabled = intent?.getBooleanExtra(EXTRA_COMMENTS, true) ?: true
         } else {
             prefillSharedContent()
+            // H5 分享图片到广场：把缓存的图片加入已选列表
+            intent?.getStringExtra(EXTRA_SHARE_IMAGE)
+                ?.takeIf { it.isNotBlank() && java.io.File(it).exists() }
+                ?.let { path -> if (selected.size < MAX_IMAGE) selected.add(path) }
         }
         binding.llCommentSwitch.isVisible = isOfficial
         binding.svComment.isOpened = if (editPostId > 0) commentsEnabled else true
