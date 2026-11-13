@@ -176,8 +176,11 @@ class ForwardSelectFragment : ContactSelectFragment() {
     override fun setEvent() {
         super.setEvent()
         // 默认多选：单击 = 勾选/取消
+        // 必须用 Adapter 自己的数据取对象：contactList 只是初始空列表，
+        // 用 contactList[position] 会在列表刷新/搜索后索引错位，导致"选一个、另一个被取消"。
         mAdapter.setOnItemClickListener { _, _, position ->
-            toggleContactSelected(contactList[position].contact)
+            val item = mAdapter.data.getOrNull(position) ?: return@setOnItemClickListener
+            toggleContactSelected(item.contact)
         }
 
         binding.ctlSelectOa.root.setOnClickListener {

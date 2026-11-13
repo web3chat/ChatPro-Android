@@ -79,21 +79,28 @@ abstract class ContactSelectFragment : BizFragment() {
             contactList
         ) {
             override fun convert(holder: BaseViewHolder, item: ForwardContact) {
-                val position = contactList.indexOf(item)
+                // 注意：不能用 contactList.indexOf(item)。Adapter 的数据是 setList() 换进来的新列表，
+                // contactList 只是构造时的初始空列表，两边索引会错位。
+                val position = holder.layoutPosition
                 // 多选模式勾选框（子类提供选中状态；null 表示非多选）
                 val checked = multiSelection?.invoke(item)
                 val cbSelect = holder.getView<CheckBox>(R.id.cb_select)
+                // 勾选框只负责展示，不消费点击：否则点到勾选框时只会切换它自己的勾选状态，
+                // 不会触发 item 点击，已选数量不增加，底部「转发」按钮始终是灰的。
+                cbSelect.isClickable = false
+                cbSelect.isFocusable = false
+                cbSelect.isFocusableInTouchMode = false
                 if (checked != null) {
                     cbSelect.visible()
                     cbSelect.isChecked = checked
                 } else {
                     cbSelect.gone()
                 }
-                if (position == 0) {
+                if (position <= 0) {
                     holder.setGone(R.id.tag, false)
                     holder.setText(R.id.tag, item.getListTag())
                 } else {
-                    val last = contactList[position - 1].channel
+                    val last = mAdapter.data.getOrNull(position - 1)?.channel
                     val current = item.channel
                     if (last == current) {
                         holder.setGone(R.id.tag, true)
