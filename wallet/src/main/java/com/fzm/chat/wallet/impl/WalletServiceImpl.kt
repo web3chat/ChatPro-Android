@@ -232,27 +232,6 @@ private val chat33proCoins = listOf(
         platform = "bty"
         treaty = "1"
     },
-    Coin().apply {
-        chain = "ETH"
-        name = "MTX"
-        netId = "760"
-        platform = "bty"
-        treaty = "1"
-    },
-    Coin().apply {
-        chain = "ETH"
-        name = "ZYZ"
-        netId = "761"
-        platform = "btyerc"
-        treaty = "1"
-    },
-    Coin().apply {
-        chain = "ETH"
-        name = "PMM"
-        netId = "762"
-        platform = "btyerc"
-        treaty = "1"
-    },
 
     )
 private val cipCoins = listOf(
