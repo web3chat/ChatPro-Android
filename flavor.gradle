@@ -39,12 +39,14 @@ android {
         release {
             signingConfig signingConfigs.release
             zipAlignEnabled true
-            //启用代码压缩，混淆，优化
-            /*if (isIndependent()) {
-                //启用资源压缩
+            //启用代码压缩、混淆、优化（R8）
+            //注意：只对 app 模块开启；库模块若也开启，会先用 R8 裁剪 AAR，
+            //     把只在运行时反射使用的类裁掉，反而导致 App 崩溃
+            minifyEnabled project.name == "app"
+            //资源压缩只支持 application 模块，库模块设置会报错
+            if (project.name == "app") {
                 shrinkResources true
-            }*/
-            minifyEnabled false
+            }
             //ProGuard规则文件
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             consumerProguardFiles 'consumer-rules.pro'
