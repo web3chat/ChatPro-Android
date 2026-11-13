@@ -82,6 +82,7 @@ class EditAvatarActivity : BizActivity() {
     override fun initData() {
         viewModel.loading.observe(this) { setupLoading(it) }
         viewModel.avatarResult.observe(this) {
+            dismiss()
             toast(R.string.chat_tip_avatar_edit_success)
             binding.pvImage.load(it, R.drawable.default_avatar_big)
         }

@@ -37,6 +37,8 @@ class EditInfoActivity : BizActivity() {
             binding.tvNameCount.text = getString(R.string.chat_tips_num_20, name.length)
         }
         viewModel.nicknameResult.observe(this) {
+            // 先关掉 loading 再 finish，否则 Dialog 还挂在窗口上会报 WindowLeaked
+            dismiss()
             toast(R.string.chat_tip_nickname_edit_success)
             finish()
         }

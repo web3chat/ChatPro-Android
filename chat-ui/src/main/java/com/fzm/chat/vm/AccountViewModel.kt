@@ -35,6 +35,8 @@ class AccountViewModel(
         get() = _avatarResult
 
     fun setAvatar(path: String) {
+        // 上传成功后的远程 url（onSuccess 里用它更新本地缓存）
+        var uploadedUrl: String? = null
         request<String> {
             onRequest {
                 val url = uploadMedia(path, MediaType.PICTURE)
@@ -42,11 +44,15 @@ class AccountViewModel(
                     logE("头像上传失败：uploadMedia 返回空 url（path=$path）")
                     Result.Error(ApiException("upload fail"))
                 } else {
+                    uploadedUrl = url
                     logI("头像上传成功，开始更新用户资料：url=$url")
                     setUserInfo(listOf(Field(ChatConst.UserField.AVATAR, url, 1)))
                 }
             }
             onSuccess {
+                // 链上更新成功后同步本地缓存，否则「我的」页仍是旧头像，
+                // 只有重新登录（走 getUserInfo 拉链上资料）才会刷新。
+                uploadedUrl?.let { url -> updateInfo { avatar = url } }
                 _avatarResult.value = path
             }
         }

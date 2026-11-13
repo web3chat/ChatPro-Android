@@ -1,5 +1,6 @@
 package com.fzm.chat.core.net.source
 
+import android.util.Log
 import com.fzm.chat.core.data.ChatConfig
 import com.fzm.chat.core.data.ChatConst
 import com.fzm.chat.core.data.bean.SendTxParams
@@ -201,6 +202,12 @@ class TransactionSource(
                 it
             }
         }.collect {
+            // 关键链路日志：改昵称/头像、发红包等都走这里，失败时要能看到断在哪一步
+            if (it.isSucceed()) {
+                Log.d("ChainSync", "交易已发送: ${it.data().take(24)}…")
+            } else {
+                Log.e("ChainSync", "交易失败: ${it.error().message}")
+            }
             channel.send(it)
         }
         return channel.receive()
