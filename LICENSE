@@ -1,5 +1,6 @@
 MIT License
 
+Copyright (c) txchat
 Copyright (c) 2026 web3chat
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -19,3 +20,14 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+---
+
+## 第三方组件说明（非许可证正文）
+
+本仓库还包含由第三方提供的组件、SDK 与二进制文件（例如 `chat-core/libs/walletapi.aar`、
+`chat-ui/libs/wallet-core-3.2.18.aar`、`utils/buglyqq-upload-symbol.jar`、
+`chat-core/libs/pinyin4j-2.5.0.jar` 以及 Gradle 依赖中的各类库）。
+
+上述第三方内容**不适用本许可证**，其使用、复制与分发受各自权利人的许可协议约束。
+本许可证仅覆盖本项目作者拥有著作权的原创代码与文档。
