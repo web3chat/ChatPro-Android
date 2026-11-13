@@ -39,20 +39,17 @@ class MessageAdapter : BaseProviderMultiAdapter<ChatMessage>(), LoadMoreModule {
         }
 
         override fun onChatLayoutClick(view: View, message: ChatMessage, item: ChatBaseItem) {
-            when (Biz.MsgType.forNumber(message.msgType)) {
-                Biz.MsgType.File -> {
-                    if (message.msg.localUrl.isNullOrEmpty()) {
-
-                    }
-                }
-                Biz.MsgType.ContactCard->{
-                    val content = message.msg.contactName
-                    ARouter.getInstance()
-                        .build(RedPacketModule.RED_DETAIL)
-                        .withString(RedPacketModule.PARAM_RED_CONTENT,content)
-                        .navigation()
-                }
-
+            // 只有「红包链接卡片」才进红包详情：contactType = -1 的消息由 sendGroupSystem()
+            // 创建（contactId 固定 -1），普通个人名片(1)/群名片(2)/团队名片(3) 不能走这里，
+            // 否则会先弹红包详情页，再被 ChatActivity 的分发逻辑跳去名片页。
+            if (Biz.MsgType.forNumber(message.msgType) == Biz.MsgType.ContactCard &&
+                message.msg.contactType == -1
+            ) {
+                ARouter.getInstance()
+                    .build(RedPacketModule.RED_DETAIL)
+                    .withString(RedPacketModule.PARAM_RED_CONTENT, message.msg.contactName)
+                    .navigation()
+                return
             }
             messageEventListener?.onChatLayoutClick(view, message, item)
         }
