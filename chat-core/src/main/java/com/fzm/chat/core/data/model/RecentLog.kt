@@ -77,7 +77,7 @@ fun RecentLog.getContent(): String {
     }
     return when (Biz.MsgType.forNumber(msgType)) {
         Biz.MsgType.System -> context.getString(R.string.core_msg_type1) + msg.content
-        Biz.MsgType.Text -> msg.content ?: ""
+        Biz.MsgType.Text -> LinkCard.previewText(msg.content)
         Biz.MsgType.Audio -> context.getString(R.string.core_msg_type2)
         Biz.MsgType.Image -> context.getString(R.string.core_msg_type3)
         Biz.MsgType.Video -> context.getString(R.string.core_msg_type5)

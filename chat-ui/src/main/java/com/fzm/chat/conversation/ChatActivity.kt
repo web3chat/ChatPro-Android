@@ -87,6 +87,7 @@ import com.fzm.chat.ui.MediaGalleryActivity
 import com.fzm.chat.utils.ForwardHelper
 import com.fzm.chat.utils.GlideEngine
 import com.fzm.chat.utils.StringUtils
+import com.fzm.chat.utils.VideoCompressor
 import com.fzm.chat.widget.*
 import com.fzm.widget.dialog.EasyDialog
 import com.google.android.material.transition.platform.MaterialContainerTransform
@@ -121,6 +122,10 @@ class ChatActivity : BizActivity(), KeyboardHeightObserver, ChatInputView.IChatI
 
     companion object {
         private const val REQUEST_CODE_CAPTURE = 100
+
+        /** 视频发送前限制：只限制源文件大小 1GB；压缩目标 500MB 以内（不限时长） */
+        private const val MAX_VIDEO_SOURCE_SIZE = 1024L * 1024 * 1024
+        private const val MAX_VIDEO_COMPRESSED_SIZE = 500L * 1024 * 1024
     }
 
     @JvmField
@@ -463,35 +468,44 @@ class ChatActivity : BizActivity(), KeyboardHeightObserver, ChatInputView.IChatI
         }
         viewModel.locatePosition.observe(this) {
             binding.rvMessage.scrollToPosition(it)
-            binding.rvMessage.post {
+            // 等这一帧布局完成后再取 holder；否则 findViewHolderForAdapterPosition 返回 null，
+            // 高亮动画就不会执行（表现就是"跳过去了但没定位感"）
+            binding.rvMessage.postDelayed({
                 val holder = binding.rvMessage.findViewHolderForAdapterPosition(it)
-                ObjectAnimator.ofInt(
-                    holder?.itemView,
-                    "backgroundColor",
-                    resources.getColor(R.color.biz_color_primary_dark),
-                    resources.getColor(R.color.biz_color_accent)
-                ).apply {
-                    duration = 500
-                    repeatCount = 3
-                    repeatMode = ValueAnimator.REVERSE
-                    setEvaluator(ArgbEvaluator())
-                    start()
+                if (holder != null) {
+                    ObjectAnimator.ofInt(
+                        holder.itemView,
+                        "backgroundColor",
+                        resources.getColor(R.color.biz_color_primary_dark),
+                        resources.getColor(R.color.biz_color_accent)
+                    ).apply {
+                        duration = 500
+                        repeatCount = 3
+                        repeatMode = ValueAnimator.REVERSE
+                        setEvaluator(ArgbEvaluator())
+                        start()
+                    }
                 }
-            }
+            }, 120)
         }
 
+        // 视频发送上传进度（MessageSender 上传时回调），刷新对应消息的百分比进度条
+        com.fzm.chat.core.logic.VideoTransferProgress.events.observe(this) { (msgId, progress) ->
+            val index = mAdapter.data.indexOfFirst { it.msgId == msgId }
+            if (index >= 0) {
+                val msg = mAdapter.data[index]
+                msg.progress = progress
+                mAdapter.notifyItemChanged(
+                    index,
+                    bundleOf(ChatMessage.MSG_PROGRESS to progress)
+                )
+            }
+        }
         viewModel.latestMessage.observe(this) {
             mAdapter.addData(it.toMutableList())
             mAdapter.loadMoreModule.loadMoreComplete()
-            it.filter { video -> video.msgType == Biz.MsgType.Video_VALUE }.forEach { msg ->
-                DownloadManager2.downloadToApp(msg).observe(this) { result ->
-                    msg.progress = result.progress()
-                    mAdapter.notifyItemChanged(
-                        mAdapter.data.indexOf(msg),
-                        bundleOf(ChatMessage.MSG_PROGRESS to msg.progress)
-                    )
-                }
-            }
+            // 打开会话/翻页时，历史记录里的视频也自动下载
+            it.forEach { msg -> autoDownloadVideo(msg) }
         }
         viewModel.loadMoreState.observe(this) { state ->
             when (state) {
@@ -662,6 +676,7 @@ class ChatActivity : BizActivity(), KeyboardHeightObserver, ChatInputView.IChatI
                         mAdapter.setData(index, message)
                         layoutManager.scrollToPosition(0)
                         clearMsgState()
+                        autoDownloadVideo(message)
                     }
                 }
                 Option.REMOVE_MSG -> {
@@ -772,8 +787,8 @@ class ChatActivity : BizActivity(), KeyboardHeightObserver, ChatInputView.IChatI
             // 从服务端加载最近消息（默认100条），后续下滑分页
             viewModel.loadMessagesFromServer(address ?: "", channelType)
         } else {
-            // 跳转到指定logId消息（暂保持本地查询）
-            viewModel.getMessageHistoryLocal(address ?: "", channelType, needScroll = true)
+            // 搜索结果：加载目标消息前后各一页并定位，而不是停在会话末尾
+            viewModel.getMessageHistoryAroundMsgId(address ?: "", channelType, fromMsgId!!)
         }
         viewModel.getUnreadCount(address ?: "", channelType)
         MediaManager.setOnPlayStateChangedListener(this) { playing ->
@@ -801,12 +816,44 @@ class ChatActivity : BizActivity(), KeyboardHeightObserver, ChatInputView.IChatI
         val index = findNewMessageIndex(message)
         if (index != -1) {
             mAdapter.addData(index, message)
+            // 收到视频立即自动下载，用户点开时直接播本地
+            autoDownloadVideo(message)
             if (canShowNewMsg) {
                 showNewMoreMessage()
             } else {
                 layoutManager.scrollToPosition(0)
             }
             clearMsgState()
+        }
+    }
+
+    /**
+     * 收到视频消息后自动下载到 App 私有目录，避免用户点开时才现下载。
+     * 已下载/自己发送的/没有远端地址的直接跳过；同一视频重复调用会复用已有下载任务。
+     */
+    private fun autoDownloadVideo(message: ChatMessage) {
+        if (message.msgType != Biz.MsgType.Video_VALUE) return
+        if (message.isSendType) return
+        if (message.localExists()) return
+        val mediaUrl = message.msg.mediaUrl
+        if (mediaUrl.isNullOrEmpty()) return
+        android.util.Log.d("VideoFlow", "[auto] 开始自动下载视频 msgId=${message.msgId} url=$mediaUrl")
+        DownloadManager2.downloadToApp(message).observe(this) { result ->
+            message.progress = result.progress()
+            val index = mAdapter.data.indexOf(message)
+            if (index != -1) {
+                mAdapter.notifyItemChanged(
+                    index,
+                    bundleOf(ChatMessage.MSG_PROGRESS to message.progress)
+                )
+            }
+            result.dataOrNull()?.let { file ->
+                val size = runCatching { java.io.File(file.absolutePath).length() }.getOrDefault(0L)
+                android.util.Log.d(
+                    "VideoFlow",
+                    "[auto] 视频下载完成 msgId=${message.msgId} size=${size}B"
+                )
+            }
         }
     }
 
@@ -1830,25 +1877,213 @@ class ChatActivity : BizActivity(), KeyboardHeightObserver, ChatInputView.IChatI
     }
 
     private fun onVideoSelected(list: List<LocalMedia>) {
-        list.forEach {
-            if (it.path.isNullOrEmpty()) {
-                toast(R.string.chat_tips_vid_not_exist)
-                return
-            }
-            val message = ChatMessage.create(
-                viewModel.getAddress(),
-                address,
-                channelType,
-                Biz.MsgType.Video,
-                MessageContent.video(
-                    null,
-                    it.path,
-                    intArrayOf(it.height, it.width),
-                    (it.duration / 1000).toInt()
-                )
-            )
-            viewModel.sendMessage(url, message)
+        val videos = list.filter { !it.path.isNullOrEmpty() }
+        if (videos.isEmpty()) {
+            toast(R.string.chat_tips_vid_not_exist)
+            return
         }
+        // 发送前限制：只限制源文件大小（1GB），不限时长
+        val invalid = videos.firstOrNull { !validateVideoBeforeSend(it.path!!) }
+        if (invalid != null) return
+        askVideoSendMode { original ->
+            if (original) {
+                videos.forEach {
+                    sendVideoMessage(
+                        it.path!!,
+                        it.width,
+                        it.height,
+                        (it.duration / 1000).toInt()
+                    )
+                }
+            } else {
+                compressAndSendVideos(videos)
+            }
+        }
+    }
+
+    /**
+     * 发送前校验视频大小。
+     *
+     * @return true=通过，false=已弹框拦截
+     */
+    private fun validateVideoBeforeSend(path: String): Boolean {
+        val size = videoSizeBytes(path)
+        if (size > MAX_VIDEO_SOURCE_SIZE) {
+            showVideoLimitDialog(getString(R.string.chat_video_limit_size))
+            return false
+        }
+        return true
+    }
+
+    /** 压缩后仍超过 500MB 则拦截 */
+    private fun validateCompressedVideo(path: String): Boolean {
+        val size = runCatching { java.io.File(path).length() }.getOrDefault(0L)
+        if (size > MAX_VIDEO_COMPRESSED_SIZE) {
+            showVideoLimitDialog(getString(R.string.chat_video_limit_compressed))
+            return false
+        }
+        return true
+    }
+
+    private fun showVideoLimitDialog(message: String) {
+        android.app.AlertDialog.Builder(this)
+            .setTitle(R.string.chat_video_limit_title)
+            .setMessage(message)
+            .setPositiveButton(R.string.chat_video_limit_ok, null)
+            .show()
+    }
+
+    /** content:// 或普通文件路径的视频大小（字节） */
+    private fun videoSizeBytes(path: String): Long {
+        return runCatching {
+            if (path.startsWith("content://", ignoreCase = true)) {
+                contentResolver.query(
+                    android.net.Uri.parse(path),
+                    arrayOf(android.provider.OpenableColumns.SIZE),
+                    null, null, null
+                )?.use { cursor ->
+                    if (cursor.moveToFirst()) {
+                        cursor.getLong(
+                            cursor.getColumnIndexOrThrow(android.provider.OpenableColumns.SIZE)
+                        )
+                    } else 0L
+                } ?: 0L
+            } else {
+                java.io.File(path).length()
+            }
+        }.getOrDefault(0L)
+    }
+
+    /** 视频发送方式：默认压缩，允许用户选择原视频 */
+    private fun askVideoSendMode(onChoose: (original: Boolean) -> Unit) {
+        val dialog = android.app.AlertDialog.Builder(this)
+            .setTitle(R.string.chat_video_send_title)
+            .setItems(
+                arrayOf(
+                    getString(R.string.chat_video_send_compress),
+                    getString(R.string.chat_video_send_original)
+                )
+            ) { _, which ->
+                onChoose(which == 1)
+            }
+            .setNegativeButton(R.string.biz_cancel, null)
+            .create()
+        // 点空白处不消失，避免误触；返回键仍可取消
+        dialog.setCanceledOnTouchOutside(false)
+        dialog.show()
+    }
+
+    private fun compressAndSendVideos(videos: List<LocalMedia>) {
+        val (dialog, progressBar, percentText) = createVideoCompressDialog()
+        videoCompressJob = lifecycleScope.launch {
+            try {
+                videos.forEach { media ->
+                    val path = media.path ?: return@forEach
+                    val result = VideoCompressor.compress(this@ChatActivity, path) { percent ->
+                        runOnUiThread {
+                            progressBar.progress = percent
+                            percentText.text = "$percent%"
+                        }
+                    }
+                    if (result != null) {
+                        // 压缩后仍超过 500MB：拦截并清理产物
+                        if (!validateCompressedVideo(result.path)) {
+                            runCatching { java.io.File(result.path).delete() }
+                            return@launch
+                        }
+                        sendVideoMessage(
+                            result.path,
+                            result.width,
+                            result.height,
+                            result.durationSec
+                        )
+                    } else {
+                        toast(R.string.chat_video_compress_failed)
+                        sendVideoMessage(
+                            path,
+                            media.width,
+                            media.height,
+                            (media.duration / 1000).toInt()
+                        )
+                    }
+                }
+            } catch (e: kotlinx.coroutines.CancellationException) {
+                android.util.Log.d("VideoFlow", "[compress] cancelled by user")
+            } finally {
+                dialog.dismiss()
+                videoCompressDialog = null
+                videoCompressJob = null
+            }
+        }
+    }
+
+    /** 单个视频压缩后发送（拍摄场景） */
+    private fun compressAndSendVideo(path: String, width: Int, height: Int, durationMs: Long) {
+        val (dialog, progressBar, percentText) = createVideoCompressDialog()
+        videoCompressJob = lifecycleScope.launch {
+            try {
+                val result = VideoCompressor.compress(this@ChatActivity, path) { percent ->
+                    runOnUiThread {
+                        progressBar.progress = percent
+                        percentText.text = "$percent%"
+                    }
+                }
+                if (result != null) {
+                    if (!validateCompressedVideo(result.path)) {
+                        runCatching { java.io.File(result.path).delete() }
+                        return@launch
+                    }
+                    sendVideoMessage(result.path, result.width, result.height, result.durationSec)
+                } else {
+                    toast(R.string.chat_video_compress_failed)
+                    sendVideoMessage(path, width, height, (durationMs / 1000).toInt())
+                }
+            } catch (e: kotlinx.coroutines.CancellationException) {
+                android.util.Log.d("VideoFlow", "[compress] cancelled by user")
+            } finally {
+                dialog.dismiss()
+                videoCompressDialog = null
+                videoCompressJob = null
+            }
+        }
+    }
+
+    /** 压缩进度弹窗：返回 dialog + 进度条 + 百分比文本 */
+    private fun createVideoCompressDialog(): Triple<
+        android.app.Dialog, android.widget.ProgressBar, android.widget.TextView> {
+        val view = layoutInflater.inflate(R.layout.dialog_video_compress, null)
+        val progressBar = view.findViewById<android.widget.ProgressBar>(R.id.pb_progress)
+        val percentText = view.findViewById<android.widget.TextView>(R.id.tv_percent)
+        val dialog = android.app.Dialog(this).apply {
+            setContentView(view)
+            setCancelable(false)
+            setCanceledOnTouchOutside(false)
+            window?.setBackgroundDrawableResource(android.R.color.transparent)
+        }
+        view.findViewById<View>(R.id.btn_cancel).setOnClickListener {
+            videoCompressJob?.cancel()
+            dialog.dismiss()
+        }
+        dialog.show()
+        videoCompressDialog = dialog
+        return Triple(dialog, progressBar, percentText)
+    }
+
+    private var videoCompressDialog: android.app.Dialog? = null
+    private var videoCompressJob: kotlinx.coroutines.Job? = null
+
+    private fun sendVideoMessage(path: String, width: Int, height: Int, durationSec: Int) {
+        val content = MessageContent.video(null, path, intArrayOf(height, width), durationSec)
+        // 把视频大小写入消息内容，接收方无需 HEAD 就能显示总大小
+        content.size = runCatching { java.io.File(path).length() }.getOrDefault(0L)
+        val message = ChatMessage.create(
+            viewModel.getAddress(),
+            address,
+            channelType,
+            Biz.MsgType.Video,
+            content
+        )
+        viewModel.sendMessage(url, message)
     }
 
     private fun onFileSelected(list: List<LocalMedia>) {
@@ -1924,17 +2159,17 @@ class ChatActivity : BizActivity(), KeyboardHeightObserver, ChatInputView.IChatI
     }
 
     private fun onCaptureVideo(data: Intent) {
-        val path = data.getStringExtra("video")
+        val path = data.getStringExtra("video") ?: return
         val duration = data.getLongExtra("duration", 0L)
         val size = Utils.getVideoSize2(this, path)
-        val message = ChatMessage.create(
-            viewModel.getAddress(),
-            address,
-            channelType,
-            Biz.MsgType.Video,
-            MessageContent.video(null, path, intArrayOf(size[0], size[1]), duration.toInt() / 1000)
-        )
-        viewModel.sendMessage(url, message)
+        if (!validateVideoBeforeSend(path)) return
+        askVideoSendMode { original ->
+            if (original) {
+                sendVideoMessage(path, size[1], size[0], (duration / 1000).toInt())
+            } else {
+                compressAndSendVideo(path, size[1], size[0], duration)
+            }
+        }
     }
 
     override fun onActivityReenter(resultCode: Int, data: Intent?) {
@@ -2160,19 +2395,7 @@ class ChatActivity : BizActivity(), KeyboardHeightObserver, ChatInputView.IChatI
         }
 
         override fun onChatLayoutDoubleTap(view: View, message: ChatMessage) {
-            if (!message.isSendType && !message.hasFocused && message.logId != 0L) {
-                if (message.msgType == Biz.MsgType.Text_VALUE ||
-                    message.msgType == Biz.MsgType.Audio_VALUE ||
-                    message.msgType == Biz.MsgType.Image_VALUE ||
-                    message.msgType == Biz.MsgType.Video_VALUE ||
-                    message.msgType == Biz.MsgType.File_VALUE ||
-                    message.msgType == Biz.MsgType.Forward_VALUE ||
-                    message.msgType == Biz.MsgType.ContactCard_VALUE
-                ) {
-                    // 关注消息
-                    viewModel.requestFocus(message)
-                }
-            }
+            // 双击关注消息功能已下线
         }
 
         override fun onChatLayoutLongClick(view: View, message: ChatMessage, item: ChatBaseItem): Boolean {

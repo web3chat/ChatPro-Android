@@ -69,7 +69,7 @@ class SquareUserActivity : BizActivity() {
             onDeleteClick = { confirmDeletePost(it) }
             onReportClick = { SquareReportActivity.start(this@SquareUserActivity, it) }
             onContentClick = { openDetail(it) }
-            onShareClick = { shareSquarePost(it, lifecycleScope) }
+            onShareClick = { showSquareShareOptions(it, lifecycleScope) }
         }
     }
 

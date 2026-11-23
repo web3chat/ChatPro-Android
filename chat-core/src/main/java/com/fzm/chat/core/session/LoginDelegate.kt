@@ -271,8 +271,12 @@ class LoginDelegateImpl(
                 return@runCatching
             }
             val ret = walletService?.updateChainAddress(null)
-            if (ret != null && ret != "ok") {
-                logE("收款地址同步失败：$ret（将由主界面/我的页兜底重试）")
+            when {
+                ret == null -> logE("收款地址同步失败：walletService 未就绪（将由主界面兜底重试）")
+                ret == "ok" -> Unit
+                // 刚登录时钱包币种可能尚未加载完，不是网络失败，交由主界面 5 秒后快速重试
+                ret == "local_empty" -> logE("收款地址同步：钱包尚未就绪（local_empty），交由主界面重试")
+                else -> logE("收款地址同步失败：$ret（将由主界面/我的页兜底重试）")
             }
         }
     }

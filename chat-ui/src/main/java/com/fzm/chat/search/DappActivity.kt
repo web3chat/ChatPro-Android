@@ -1,5 +1,6 @@
 package com.fzm.chat.search
 
+import com.fzm.chat.core.net.HttpLogging
 import android.Manifest
 import android.app.Dialog
 import android.content.Context
@@ -137,6 +138,7 @@ class DappActivity : AppCompatActivity() {
     // 当前链：只支持 2999(BTY) 和 56(BSC)，默认 2999
     private var currentChainId: String = "2999"
 
+    val WEB3_ETH_NODE = "https://eth.drpc.org"
     val WEB3_BNB_NODE = "https://bsc.publicnode.com"
     val WEB3_BTY_NODE = "https://mainnet.bityuan.com/eth"
     private var currentRpcUrl: String = ""
@@ -1600,7 +1602,7 @@ class DappActivity : AppCompatActivity() {
                     }
 
                     // 2. 发送请求到你的 RPC 节点 (例如：https://polygon-rpc.com)
-                    val client = OkHttpClient()
+                    val client = OkHttpClient.Builder().addInterceptor(HttpLogging.interceptor()).build()
                     val request = Request.Builder()
                         .url(currentRpcUrl) // 必须和你的 eth_chainId 匹配
                         .post(
@@ -1639,7 +1641,7 @@ class DappActivity : AppCompatActivity() {
         }
 
 
-        private val client = OkHttpClient()
+        private val client = OkHttpClient.Builder().addInterceptor(HttpLogging.interceptor()).build()
         private val JSON_TYPE = "application/json; charset=utf-8".toMediaType()
 
         /**

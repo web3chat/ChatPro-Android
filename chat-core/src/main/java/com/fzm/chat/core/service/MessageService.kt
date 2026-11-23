@@ -61,6 +61,14 @@ class MessageService : Service(), ActivityUtils.OnAppStateChangedListener {
         return START_STICKY
     }
 
+    /**
+     * 提升为前台服务。
+     *
+     * Android 12（API 31）起，后台应用不允许调用 startForeground()，
+     * 否则抛 ForegroundServiceStartNotAllowedException。
+     * 例如锁屏收到 ACTION_SCREEN_OFF 时应用已在后台，这里如果再抛异常会直接导致
+     * 「Error receiving broadcast」崩溃，因此必须兜底。
+     */
     private fun startForeground() {
         val builder = NotificationCompat.Builder(this, "notification")
         builder.setSmallIcon(R.drawable.ic_notification)
@@ -74,7 +82,16 @@ class MessageService : Service(), ActivityUtils.OnAppStateChangedListener {
         )
         builder.setContentIntent(contentIntent)
         builder.setAutoCancel(true)
-        startForeground(NOTICE_ID, builder.build())
+        try {
+            startForeground(NOTICE_ID, builder.build())
+        } catch (e: Exception) {
+            // Android 12+ 后台禁止提升前台服务；忽略即可，服务本身仍在运行，
+            // 等下次回到前台再提升。不能让它冒泡到 onReceive 造成崩溃。
+            logV(
+                "MessageService",
+                "startForeground ignored: ${e.javaClass.simpleName}: ${e.message}"
+            )
+        }
     }
 
     override fun onDestroy() {
@@ -91,22 +108,30 @@ class MessageService : Service(), ActivityUtils.OnAppStateChangedListener {
     private val mScreenReceiver: BroadcastReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context, intent: Intent) {
             val action = intent.action
-            when {
-                Intent.ACTION_SCREEN_OFF == action -> {
-                    // 息屏
-                    logV("MessageService", "startForeground")
-                    startForeground()
+            // 广播里任何异常都会变成「Error receiving broadcast」直接崩溃，这里统一兜底
+            try {
+                when {
+                    Intent.ACTION_SCREEN_OFF == action -> {
+                        // 息屏
+                        logV("MessageService", "startForeground")
+                        startForeground()
+                    }
+                    Intent.ACTION_SCREEN_ON == action -> {
+                        // 亮屏
+                        logV("MessageService", "stopForeground")
+                        stopForeground(true)
+                    }
+                    Intent.ACTION_USER_PRESENT == action -> {
+                        // 解锁
+                        logV("MessageService", "stopForeground")
+                        stopForeground(true)
+                    }
                 }
-                Intent.ACTION_SCREEN_ON == action -> {
-                    // 亮屏
-                    logV("MessageService", "stopForeground")
-                    stopForeground(true)
-                }
-                Intent.ACTION_USER_PRESENT == action -> {
-                    // 解锁
-                    logV("MessageService", "stopForeground")
-                    stopForeground(true)
-                }
+            } catch (e: Exception) {
+                logV(
+                    "MessageService",
+                    "screen receiver error: action=$action, ${e.javaClass.simpleName}: ${e.message}"
+                )
             }
         }
     }

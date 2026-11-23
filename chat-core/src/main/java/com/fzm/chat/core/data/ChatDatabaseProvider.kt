@@ -42,5 +42,15 @@ class ChatDatabaseProvider {
             }
             return sInstance!!
         }
+
+        /**
+         * 关闭当前数据库实例（删除账户、切换账号前调用，保证数据库文件可被删除）
+         */
+        fun close() {
+            synchronized(this) {
+                runCatching { sInstance?.close() }
+                sInstance = null
+            }
+        }
     }
 }

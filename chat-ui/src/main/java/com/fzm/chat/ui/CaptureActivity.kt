@@ -51,6 +51,18 @@ class CaptureActivity : BizActivity() {
         BarUtils.setStatusBarLightMode(this, false)
     }
 
+    override fun onResume() {
+        super.onResume()
+        // 必须手动同步相机生命周期，否则页面恢复/切换后预览状态异常，
+        // 部分机型 takePicture 会抛 "takePicture failed"
+        binding.cameraView.onResume()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        binding.cameraView.onPause()
+    }
+
     override fun initView() {
         ARouter.getInstance().inject(this)
         binding.cameraView.setSaveVideoPath(getVideoPath().absolutePath)
@@ -73,7 +85,7 @@ class CaptureActivity : BizActivity() {
         binding.cameraView.setErrorLisenter(object : ErrorListener {
             override fun onError() {
                 //打开Camera失败回调
-                toast("open camera error")
+                toast("相机异常，请重试")
             }
 
             override fun AudioPermissionError() {

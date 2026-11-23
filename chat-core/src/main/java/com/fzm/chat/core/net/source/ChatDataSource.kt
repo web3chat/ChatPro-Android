@@ -64,8 +64,9 @@ interface ChatDataSource {
     /**
      * 阅后即焚确认：收方看过正文后调用
      *
-     * @param targetId 对端 uid（消息发送者）
+     * @param targetId 私聊为对端 uid，群聊为群 id
      * @param logId    消息 mid
+     * @param type     0 私聊（默认）/ 1 群聊；群聊必须显式传 1
      */
-    suspend fun burnConfirm(targetId: String, logId: Long): Result<BurnConfirmResp>
+    suspend fun burnConfirm(targetId: String, logId: Long, type: Int = 0): Result<BurnConfirmResp>
 }

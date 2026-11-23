@@ -1,11 +1,13 @@
 package com.fzm.chat.core.net.source.impl
 
-import com.fzm.chat.core.data.bean.UserAddress
-import com.fzm.chat.core.data.bean.UserResult
+import com.fzm.chat.core.data.AppPreference
 import com.fzm.chat.core.data.bean.ChatQuery
 import com.fzm.chat.core.data.bean.ServerGroupInfo
+import com.fzm.chat.core.data.bean.UserAddress
+import com.fzm.chat.core.data.bean.UserResult
 import com.fzm.chat.core.data.contract.ContractRequest
 import com.fzm.chat.core.data.contract.apiCall2
+import com.fzm.chat.core.net.ApiLog
 import com.fzm.chat.core.net.api.ContractService
 import com.fzm.chat.core.net.source.ContractDataSource
 import com.zjy.architecture.data.Result
@@ -21,22 +23,23 @@ class NetContractDataSource(
 
     override suspend fun getUser(query: ChatQuery): Result<UserResult> {
         val request = ContractRequest.createQuery(query)
-        return apiCall2 { service.getUser(request) }
+        return call("chat.GetUser", request) { apiCall2 { service.getUser(request) } }
     }
 
     override suspend fun getFriendList(query: ChatQuery): Result<UserAddress.Wrapper> {
         val request = ContractRequest.createQuery(query)
-        return apiCall2 { service.getFriendList(request) }
+        return call("chat.GetFriends", request) { apiCall2 { service.getFriendList(request) } }
     }
 
     override suspend fun getBlockList(query: ChatQuery): Result<UserAddress.Wrapper> {
         val request = ContractRequest.createQuery(query)
-        return apiCall2 { service.getBlockList(request) }
+        return call("chat.GetBlackList", request) { apiCall2 { service.getBlockList(request) } }
     }
 
     override suspend fun getServerGroup(query: ChatQuery): Result<ServerGroupInfo.Wrapper> {
         val request = ContractRequest.createQuery(query)
-        return apiCall2 { service.getServerGroup(request) }
+        // 原始响应 JSON 由 HttpLogging 打印（TAG=HttpLog，response=...）
+        return call("chat.GetServerGroup", request) { apiCall2 { service.getServerGroup(request) } }
     }
 
     override suspend fun modifyFriend(address: List<String?>, type: Int, groups: List<String>): Result<String> {
@@ -47,7 +50,9 @@ class NetContractDataSource(
             "chat.CreateRawUpdateFriendTx",
             mapOf("friends" to friendAddress)
         )
-        return apiCall2 { service.modifyFriend(request) }
+        return call("chat.CreateRawUpdateFriendTx", request) {
+            apiCall2 { service.modifyFriend(request) }
+        }
     }
 
     override suspend fun modifyBlock(address: List<String?>, type: Int): Result<String> {
@@ -58,7 +63,9 @@ class NetContractDataSource(
             "chat.CreateRawUpdateBlackTx",
             mapOf("list" to friendAddress)
         )
-        return apiCall2 { service.modifyBlock(request) }
+        return call("chat.CreateRawUpdateBlackTx", request) {
+            apiCall2 { service.modifyBlock(request) }
+        }
     }
 
     override suspend fun modifyServerGroup(groupInfo: List<ServerGroupInfo>): Result<String> {
@@ -69,6 +76,23 @@ class NetContractDataSource(
             "chat.CreateRawUpdateServerGroupTx",
             mapOf("groups" to groups)
         )
-        return apiCall2 { service.modifyServerGroup(request) }
+        return call("chat.CreateRawUpdateServerGroupTx", request) {
+            apiCall2 { service.modifyServerGroup(request) }
+        }
+    }
+
+    /**
+     * 统一打印「完整 URL + Body + 结果」，与 getServerGroup 的日志格式一致。
+     * 仅在 debug 包输出（[ApiLog.enabled]）。
+     */
+    private suspend fun <T> call(
+        api: String,
+        request: ContractRequest,
+        block: suspend () -> Result<T>
+    ): Result<T> {
+        ApiLog.request(api, AppPreference.CONTRACT_URL, request)
+        val result = block()
+        ApiLog.result(api, result)
+        return result
     }
 }

@@ -43,7 +43,11 @@ class ProgressResponseBody(
                 val bytesRead = super.read(sink, byteCount)
                 totalBytesRead += if (bytesRead != -1L) bytesRead else 0
                 if (bytesRead != -1L && totalBytesRead != 0L) {
-                    callback?.onProgress(tag, totalBytesRead.toFloat() / contentLength())
+                    val total = contentLength()
+                    val progress = if (total > 0) {
+                        totalBytesRead.toFloat() / total
+                    } else 0f
+                    callback?.onProgress(tag, progress, totalBytesRead, total)
                 }
 
                 return bytesRead
@@ -52,6 +56,6 @@ class ProgressResponseBody(
     }
 
     interface Callback {
-        fun onProgress(tag: Any?, progress: Float)
+        fun onProgress(tag: Any?, progress: Float, bytesRead: Long, totalBytes: Long)
     }
 }

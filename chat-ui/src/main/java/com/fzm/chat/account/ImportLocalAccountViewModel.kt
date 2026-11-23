@@ -54,7 +54,7 @@ class ImportLocalAccountViewModel(
     suspend fun sendCodeSuspend(account: String, accountType: Int, codeType: CodeType): Boolean {
         val result = try {
             if (accountType == ChatConst.PHONE) {
-                repository.sendPhoneCodeV2(account, codeType)
+                repository.newSendPhoneCode(account, codeType)
             } else {
                 repository.sendEmailCodeV2(account, codeType)
             }

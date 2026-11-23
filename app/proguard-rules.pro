@@ -202,3 +202,12 @@
 -dontwarn javax.naming.NamingEnumeration
 -dontwarn javax.naming.NamingException
 -dontwarn javax.naming.directory.**
+
+# ---------- release 不输出版本调试日志 ----------
+# v/d/i 全部在 R8 阶段裁掉（含参数），w/e 保留用于线上崩溃/异常排查。
+# 注意：debug 包不受影响（不混淆/不裁剪）。
+-assumenosideeffects class android.util.Log {
+    public static int v(...);
+    public static int d(...);
+    public static int i(...);
+}

@@ -65,6 +65,10 @@ class AccountManagerAdapter(
                     if (isCurrent) View.VISIBLE else View.GONE
 
                 holder.itemView.setOnClickListener { clickListener(position) }
+                holder.itemView.setOnLongClickListener {
+                    longClickListener?.invoke(position)
+                    longClickListener != null
+                }
             }
         }
     }
@@ -75,8 +79,14 @@ class AccountManagerAdapter(
 
     lateinit var clickListener: (Int) -> Unit
 
+    private var longClickListener: ((Int) -> Unit)? = null
+
     fun setOnItemClickListener(listener: (Int) -> Unit) {
         this.clickListener = listener
+    }
+
+    fun setOnItemLongClickListener(listener: (Int) -> Unit) {
+        this.longClickListener = listener
     }
 
     inner class ViewHolder(val binding: ItemAccountManagerBinding) :

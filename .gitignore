@@ -71,6 +71,12 @@ _bak/
 # 放行仓库门面与配置指南（这两份是给克隆者看的）
 !README.md
 !SECURITY.md
+# 放行对外接口文档（docs/ 下只放不含内部地址/IP 的对接文档）
+!docs/
+!docs/*.md
 
 # ---------- 8. 构建产物：多渠道 release 输出元数据 ----------
 app/*/release/
+
+# 安全评估复核文档（含敏感结论，仅本地保留）
+docs/security-review*.md

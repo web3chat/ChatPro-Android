@@ -19,13 +19,13 @@ class BusinessRepository(
         if (result.isSucceed()) {
             if (!ServerManager.hasChatServer()) {
                 // 自动设置默认聊天服务器
-                result.data().servers.firstOrNull()?.also { node ->
+                result.data().servers.orEmpty().firstOrNull { it.address.isNotEmpty() }?.also { node ->
                     ServerManager.changeLocalChatServer(node.address)
                 }
             }
             if (!ServerManager.hasContractServer()) {
                 // 自动设置默认合约服务器
-                result.data().nodes.firstOrNull()?.also { node ->
+                result.data().nodes.orEmpty().firstOrNull { it.address.isNotEmpty() }?.also { node ->
                     ServerManager.changeContractServer(node.address)
                 }
             }

@@ -68,6 +68,9 @@ import com.fzm.chat.core.data.ChatDatabase
 import com.fzm.chat.core.data.ChatDatabaseProvider
 import com.fzm.chat.core.data.bean.Contact
 import com.fzm.chat.core.data.model.ChatMessage
+import com.fzm.chat.core.data.model.isSendType
+import com.fzm.chat.core.data.model.localExists
+import com.fzm.chat.core.media.DownloadManager2
 import com.fzm.chat.core.data.po.FriendUser
 import com.fzm.chat.core.data.po.MessageContent
 import com.fzm.chat.core.logic.MessageSender
@@ -402,6 +405,89 @@ class MainActivity : BizActivity() {
         enableAiFabDrag()
     }
 
+    /**
+     * 清理 7 天前的本地聊天记录（服务端同样只保留 7 天）。
+     *
+     * 只清理本地数据库，不动服务端数据；Room 的删除会触发会话列表 LiveData 刷新。
+     */
+    private fun cleanExpiredLocalMessages() {
+        if (localMessageCleanupDone || !delegate.isLogin()) return
+        localMessageCleanupDone = true
+        lifecycleScope.launch {
+            try {
+                val cutoff = System.currentTimeMillis() - 7L * 24 * 60 * 60 * 1000
+                // 先取出待删除消息，连带删除它们引用的本地图片/视频/文件，再删数据库记录
+                val expired = database.messageDao().getMessagesBefore(cutoff)
+                var files = 0
+                expired.forEach { files += deleteLocalMediaOf(it) }
+                val messages = database.messageDao().deleteBefore(cutoff)
+                val focus = database.messageDao().deleteOrphanFocus()
+                android.util.Log.d(
+                    "MsgClean",
+                    "已清理 7 天前本地聊天记录: messages=$messages, media=$files, focus=$focus"
+                )
+            } catch (e: Exception) {
+                android.util.Log.e("MsgClean", "清理本地聊天记录失败: ${e.message}", e)
+            }
+        }
+    }
+
+    /**
+     * 主界面启动时补下载最近 7 天的视频（离线期间收到的视频，进程重启后也能自动加载）
+     */
+    private fun autoDownloadRecentVideos() {
+        if (recentVideoScanDone || !delegate.isLogin()) return
+        recentVideoScanDone = true
+        lifecycleScope.launch {
+            try {
+                val cutoff = System.currentTimeMillis() - 7L * 24 * 60 * 60 * 1000
+                val list = database.messageDao()
+                    .getRecentMessagesByType(Biz.MsgType.Video_VALUE, cutoff, 30)
+                var count = 0
+                list.forEach { message ->
+                    if (!message.isSendType && !message.localExists() &&
+                        !message.msg.mediaUrl.isNullOrEmpty()
+                    ) {
+                        DownloadManager2.downloadToApp(message)
+                        count++
+                    }
+                }
+                android.util.Log.d("VideoFlow", "[auto] 主界面启动扫描，待下载视频 count=$count")
+            } catch (e: Exception) {
+                android.util.Log.e("VideoFlow", "[auto] 主界面扫描视频失败: ${e.message}", e)
+            }
+        }
+    }
+
+    /**
+     * 删除一条消息引用的本地媒体文件（只删 App 私有目录下的副本，不动相册/用户原文件）
+     */
+    private fun deleteLocalMediaOf(message: com.fzm.chat.core.data.model.ChatMessage): Int {
+        val paths = mutableListOf<String>()
+        message.msg.localUrl?.takeIf { it.isNotBlank() }?.let { paths.add(it) }
+        message.msg.forwardLogs.forEach { forward ->
+            forward.msg.localUrl?.takeIf { it.isNotBlank() }?.let { paths.add(it) }
+        }
+        if (paths.isEmpty()) return 0
+        val roots = listOfNotNull(
+            getExternalFilesDir(null)?.absolutePath,
+            filesDir?.absolutePath,
+            cacheDir?.absolutePath,
+            externalCacheDir?.absolutePath
+        )
+        var deleted = 0
+        paths.forEach { path ->
+            if (roots.any { path.startsWith(it) }) {
+                val file = java.io.File(path)
+                if (file.exists() && file.delete()) deleted++
+            }
+        }
+        return deleted
+    }
+
+    private var localMessageCleanupDone = false
+    private var recentVideoScanDone = false
+
     override fun onNewIntent(intent: Intent?) {
         super.onNewIntent(intent)
         importAddress = intent?.getStringExtra("importAddress")
@@ -426,6 +512,9 @@ class MainActivity : BizActivity() {
     }
 
     override fun initData() {
+        // 服务端只保留 7 天聊天记录，本地同步清理，避免本地无限增长
+        cleanExpiredLocalMessages()
+        autoDownloadRecentVideos()
         LiveDataBus.of(BusEvent::class.java).unreadMessageNum().observe(this) {
             BadgeUtil.setBadgeCount(this, it)
             showMsgBadge(it)
@@ -681,6 +770,9 @@ class MainActivity : BizActivity() {
         coreService?.checkService()
         setCustomDensity(this)
         importLocalAccount()
+        // 登录完成后补一次本地 7 天清理（initData 执行时可能还未登录）
+        cleanExpiredLocalMessages()
+        autoDownloadRecentVideos()
         // 首次进入主界面预请求存储（相册）权限，避免进聊天页点「图片/视频」时才首次申请
         requestStoragePermissionOnce()
         // 首次启动（含进程重建）进入主界面后延迟检查更新。
@@ -743,6 +835,7 @@ class MainActivity : BizActivity() {
      * 失败的尝试不占用成功节流额度，避免弱网/冷启动时白白错过后续重试时机。
      */
     private fun retryWalletSync() {
+        if (!delegate.isLogin()) return
         val now = System.currentTimeMillis()
         val interval = if (walletSyncSucceed) walletSyncRetryInterval else walletSyncFailRetryInterval
         if (now - lastWalletSyncAttempt < interval) return
@@ -750,13 +843,30 @@ class MainActivity : BizActivity() {
         lifecycleScope.launch {
             val ret = runCatching { walletService?.updateChainAddress(null) }.getOrNull()
             walletSyncSucceed = ret == "ok"
+            when {
+                ret == "ok" -> Unit
+                ret == "local_empty" -> {
+                    // 钱包尚未就绪（冷启动/刚登录时币种还没加载完），不是真正的失败，稍后快速重试
+                    Log.w("ChainSync", "钱包尚未就绪（local_empty），5 秒后重试")
+                }
+                else -> {
+                    Log.e(
+                        "ChainSync",
+                        "收款地址同步失败：$ret 将在下次回到主界面、网络恢复或 30 秒后自动重试"
+                    )
+                }
+            }
             if (!walletSyncSucceed) {
-                Log.e("ChainSync", "收款地址同步失败：$ret 将在下次回到主界面、网络恢复或 30 秒后自动重试")
                 // 失败后安排一次自动重试（只排队一次），成功即停
                 if (!walletSyncRetryScheduled) {
                     walletSyncRetryScheduled = true
                     lifecycleScope.launch {
-                        delay(walletSyncFailRetryInterval + 5_000L)
+                        val delayMs = if (ret == "local_empty") {
+                            5_000L
+                        } else {
+                            walletSyncFailRetryInterval + 5_000L
+                        }
+                        delay(delayMs)
                         walletSyncRetryScheduled = false
                         retryWalletSync()
                     }

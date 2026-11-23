@@ -21,26 +21,6 @@ object QrLoginCrypto {
     private const val TAG = "QrLoginCrypto"
 
     /**
-     * AES-256-GCM 加密私钥
-     *
-     * 输出：hex(ciphertext || authTag(16))，与 PC 端 js-crypto-aes 输出一致。
-     * JCA 中 AES/GCM/NoPadding 的 doFinal 输出即为「密文 + 认证标签」。
-     */
-    fun aesGcmEncrypt(privateKeyHex: String, keyHex: String, ivHex: String): String? {
-        return try {
-            val key = hexToBytes(keyHex)
-            val iv = hexToBytes(ivHex)
-            val cipher = Cipher.getInstance("AES/GCM/NoPadding")
-            cipher.init(Cipher.ENCRYPT_MODE, SecretKeySpec(key, "AES"), GCMParameterSpec(128, iv))
-            val encrypted = cipher.doFinal(privateKeyHex.toByteArray(Charsets.UTF_8))
-            bytesToHex(encrypted)
-        } catch (e: Exception) {
-            Log.e(TAG, "aesGcmEncrypt failed", e)
-            null
-        }
-    }
-
-    /**
      * 扫码登录 v2（ECDH）加密私钥
      *
      * 1. 生成临时密钥对 b/B（secp256k1，B 为 33 字节压缩公钥）

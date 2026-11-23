@@ -92,6 +92,10 @@ class EditServerGroupActivity : BizActivity() {
         }
         viewModel.chatList.observe(this) {
             adapter.setData(it)
+            if (pendingHistoryPopup && it.isNotEmpty()) {
+                pendingHistoryPopup = false
+                showHistoryPopup()
+            }
         }
     }
 
@@ -123,17 +127,21 @@ class EditServerGroupActivity : BizActivity() {
                 binding.tvNameCount.text = getString(R.string.chat_tips_num_15, it.length)
             }
         }
-        binding.ivHistory.setOnClickListener {
-            viewModel.fetchServerList()
-            val popup = ListPopup(this, adapter)
-            popup.create(binding.slAddress.measuredWidth, 200.dp) { _, _, position, _ ->
-                val node = adapter.getItem(position) as ServerNode.Node
-                binding.etAddress.setText(node.address)
-                binding.etAddress.setSelection(node.address.length)
-                popup.dismiss()
+        binding.etAddress.addTextChangedListener {
+            // 手动输入/粘贴地址时，如果和历史服务器完全匹配，名称同步改成对应名称
+            val address = it?.toString()?.trim().orEmpty()
+            if (address.isNotEmpty()) {
+                adapter.find(address)?.let { node -> applyServerNode(node, updateAddress = false) }
             }
-            popup.setPositionOffsetYWhenBottom((-10).dp)
-            popup.show(binding.slAddress)
+        }
+        binding.ivHistory.setOnClickListener {
+            if (adapter.count > 0) {
+                showHistoryPopup()
+            } else {
+                // 首次点击时列表还没拉到，等数据回来再弹
+                pendingHistoryPopup = true
+                viewModel.fetchServerList()
+            }
         }
         binding.tvSubmit.setOnClickListener {
             val name = binding.etName.text.toString().trim()
@@ -161,7 +169,47 @@ class EditServerGroupActivity : BizActivity() {
 
     private val adapter by lazy { HistoryAdapter(this) }
 
+    /** 首次点击历史按钮时，等服务器列表回来再弹下拉 */
+    private var pendingHistoryPopup = false
+
+    /**
+     * 弹出服务器历史下拉；选中后同时回填地址和名称。
+     *
+     * 名称只在输入框为空时自动填，避免覆盖用户已经输入的自定义名称。
+     */
+    private fun showHistoryPopup() {
+        val popup = ListPopup(this, adapter)
+        popup.create(binding.slAddress.measuredWidth, 200.dp) { _, _, position, _ ->
+            val node = adapter.getItem(position) as ServerNode.Node
+            applyServerNode(node)
+            popup.dismiss()
+        }
+        popup.setPositionOffsetYWhenBottom((-10).dp)
+        popup.show(binding.slAddress)
+    }
+
+    /**
+     * 把服务器节点回填到表单。
+     *
+     * 切换服务器时名称要和地址一起变；只在用户手动输入地址命中历史记录时
+     * 才跳过地址回填（避免打断输入）。
+     */
+    private fun applyServerNode(node: ServerNode.Node, updateAddress: Boolean = true) {
+        if (updateAddress && binding.etAddress.text.toString() != node.address) {
+            binding.etAddress.setText(node.address)
+            binding.etAddress.setSelection(node.address.length)
+        }
+        if (node.name.isNotBlank() && binding.etName.text.toString() != node.name) {
+            binding.etName.setText(node.name)
+            binding.etName.setSelection(node.name.length)
+        }
+    }
+
     private class HistoryAdapter(private val context: Context) : BaseAdapter() {
+
+        /** 按地址精确匹配（手动输入地址时同步名称用） */
+        fun find(address: String): ServerNode.Node? =
+            data.firstOrNull { it.address.equals(address, ignoreCase = true) }
 
         fun setData(list: List<ServerNode.Node>) {
             data.clear()

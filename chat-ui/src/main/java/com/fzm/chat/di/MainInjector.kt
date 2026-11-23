@@ -108,8 +108,6 @@ class MainInjector : Injector, IProvider {
                 val payload = QrLoginPayload.parse(result) ?: return false
                 ARouter.getInstance().build(MainModule.QR_LOGIN)
                     .withString("sessionId", payload.sessionId)
-                    .withString("key", payload.key)
-                    .withString("iv", payload.iv)
                     .withString("pubKey", payload.pubKey)
                     .navigation(context)
                 return true

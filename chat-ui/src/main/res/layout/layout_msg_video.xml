@@ -20,6 +20,24 @@
         app:cornerRadius="5dp" />
 
     <TextView
+        android:id="@+id/tv_video_load_size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/iv_image"
+        android:layout_alignEnd="@id/iv_image"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="6dp"
+        android:background="@drawable/bg_video_size_tip"
+        android:paddingStart="6dp"
+        android:paddingTop="2dp"
+        android:paddingEnd="6dp"
+        android:paddingBottom="2dp"
+        android:textColor="@android:color/white"
+        android:textSize="9sp"
+        android:visibility="gone"
+        tools:text="320KB/5.6M" />
+
+    <TextView
         android:id="@+id/tv_duration"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -46,6 +64,35 @@
             app:qmui_progress_color="@color/biz_color_progress"
             app:qmui_stroke_width="25dp"
             app:qmui_type="type_circle" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:visibility="gone"
+                tools:text="45%" />
+
+            <TextView
+                android:id="@+id/tv_progress_size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:maxLines="1"
+                android:textColor="@android:color/white"
+                android:textSize="9sp"
+                android:visibility="gone"
+                tools:text="320KB/5.6MB" />
+        </LinearLayout>
 
         <ImageView
             android:id="@+id/iv_state"

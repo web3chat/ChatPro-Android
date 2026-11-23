@@ -55,7 +55,8 @@ class ChatServerListFragment : BizFragment() {
     override fun initView(view: View, savedInstanceState: Bundle?) {
         selectable = arguments?.getBoolean("selectable")?:false
         binding.refresh.setColorSchemeColors(resources.getColor(R.color.biz_color_accent))
-        binding.refresh.isEnabled = !selectable
+        // 选择模式下同样允许下拉刷新：刷新只重新拉分组列表，不会影响已选项
+        binding.refresh.isEnabled = true
         binding.refresh.setOnRefreshListener {
             viewModel.getServerGroupList()
         }
@@ -108,6 +109,8 @@ class ChatServerListFragment : BizFragment() {
         if (selectable) {
             // 选择模式下需要服务器分组的id，因此需要从接口直接获取
             viewModel.serverGroups.observe(this) { servers ->
+                // 数据回来就结束下拉刷新动画（不依赖 loading 是否发出）
+                binding.refresh.isRefreshing = false
                 val name = viewModel.companyUser.value?.company?.name
                 val server = viewModel.companyUser.value?.company?.imServer
                 if (!server.isNullOrEmpty()) {
@@ -122,6 +125,7 @@ class ChatServerListFragment : BizFragment() {
             }
         } else {
             viewModel.current.observe(this) { info ->
+                binding.refresh.isRefreshing = false
                 val list = info.servers.map { ServerGroupInfo(it.id, 0, it.name, it.address) }
                 mAdapter.setList(list)
             }

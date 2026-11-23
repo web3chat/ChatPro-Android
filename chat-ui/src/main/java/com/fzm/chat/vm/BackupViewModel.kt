@@ -8,6 +8,7 @@ import androidx.lifecycle.viewModelScope
 import com.fzm.chat.R
 import com.fzm.chat.bean.mnem.CreateMnem
 import com.fzm.chat.core.backup.LocalAccountManager
+import com.fzm.chat.core.backup.PhoneShardStore
 import com.fzm.chat.core.backup.LocalAccountType
 import com.fzm.chat.core.data.ChatConst
 import com.fzm.chat.core.data.bean.BackupMnemonic
@@ -279,7 +280,8 @@ class BackupViewModel(
     suspend fun sendCodeSuspend(account: String, loginType: Int, codeType: CodeType): Boolean {
         val result = try {
             if (loginType == ChatConst.PHONE) {
-                repository.sendPhoneCodeV2(account, codeType)
+                // 旧 /backup/v2/phone-send 已废弃，统一走 /api/v1/send-code
+                repository.newSendPhoneCode(account, codeType)
             } else {
                 repository.sendEmailCodeV2(account, codeType)
             }
@@ -424,12 +426,80 @@ class BackupViewModel(
         _importResult.value = account
     }
 
+    /**
+     * 查询手机号当前绑定的 chatAddress（未绑定/查询失败返回 null，不弹全局错误）
+     */
+    suspend fun queryBoundAddress(phone: String): String? {
+        return runCatching {
+            repository.queryChataddress(phone).dataOrNull()?.chataddress
+        }.getOrNull()?.takeIf { it.isNotEmpty() }
+    }
+
+    /**
+     * 手机号是否已存在 shard（用于识别历史绑定，避免静默覆盖）
+     */
+    suspend fun hasShard(phone: String): Boolean {
+        return runCatching {
+            repository.checkShardExists(phone).dataOrNull()?.exists == true
+        }.getOrDefault(false)
+    }
+
+    /**
+     * 账户管理绑定手机号：与手机号登录保持同一套分片逻辑。
+     *
+     * 1. 用户输入密码，解密本地助记词
+     * 2. 拆成 S1/S2：S1 上传服务器（store-shard），S2 存本地（PhoneShardStore）
+     * 3. 电话登录时用服务器 S1 + 本地 S2 还原助记词；换设备则让用户输入 S2
+     */
+    fun bindPhoneWithShard(
+        account: String,
+        code: String,
+        password: String,
+        forceRebind: Boolean = false
+    ) {
+        request<Any> {
+            onRequest {
+                val enc = preference.MNEMONIC_WORDS
+                val mnemonic = CipherUtils.decryptMnemonicString(enc, password)
+                    ?: throw ApiException("密码错误，无法解密助记词")
+                val split = Walletapi.spliteMnemonic(mnemonic)
+                val address = getAddress() ?: ""
+                val s1 = split.shareKey1
+                val stored = repository.storeShard(account, code, address, s1)
+                val result = when {
+                    stored.isSucceed() -> stored
+                    // 只有用户明确确认「解绑并绑定」后才覆盖原账号的 shard
+                    forceRebind -> repository.resetShard(account, code, address, s1)
+                    else -> stored
+                }
+                if (result.isSucceed()) {
+                    // 保存 S2 到本地，供同设备手机号登录直接使用
+                    PhoneShardStore.save(account, split.shareKey2)
+                }
+                result
+            }
+            onSuccess {
+                updateInfo { phone = account }
+                _bindResult.value = account
+            }
+        }
+    }
+
     fun bindAccount(account: String, code: String, bindType: Int) {
         request<Any> {
             onRequest {
                 val enc = preference.MNEMONIC_WORDS
                 if (bindType == ChatConst.PHONE) {
-                    repository.bindPhoneV2(account, code, enc)
+                    // 新接口：/api/v1/store-shard（旧的 /backup/v2/phone-binding 已废弃）
+                    // shard_key 存当前账号的加密助记词，手机号登录时可直接解密登录。
+                    // 若 shard 已存在（换绑/重复绑定），失败后改用 reset-shard 覆盖。
+                    val address = getAddress() ?: ""
+                    val stored = repository.storeShard(account, code, address, enc)
+                    if (stored.isSucceed()) {
+                        stored
+                    } else {
+                        repository.resetShard(account, code, address, enc)
+                    }
                 } else {
                     repository.bindEmailV2(account, code, enc)
                 }

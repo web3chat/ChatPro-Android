@@ -246,6 +246,9 @@
             android:name=".ui.FileDetailActivity"
             android:screenOrientation="portrait" />
         <activity
+            android:name=".preview.DocumentPreviewActivity"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".ui.BurnDetailActivity"
             android:screenOrientation="portrait" />
         <activity

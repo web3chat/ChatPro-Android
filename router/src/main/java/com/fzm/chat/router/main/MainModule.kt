@@ -113,6 +113,11 @@ object MainModule {
 
     const val FILE_MANAGEMENT = "$GROUP/file_management"
     const val FILE_DETAIL = "$GROUP/file_detail"
+
+    /**
+     * 文档预览（Word / Excel / PPT / PDF / 文本）
+     */
+    const val DOC_PREVIEW = "$GROUP/doc_preview"
     @Deprecated("暂时没有用到")
     const val VIDEO_PLAYER = "$GROUP/video_player"
     const val MEDIA_GALLERY = "$GROUP/image_gallery"

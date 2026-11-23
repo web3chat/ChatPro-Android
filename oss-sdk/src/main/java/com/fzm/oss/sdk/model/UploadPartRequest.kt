@@ -22,4 +22,5 @@ class UploadPartRequest(
      * 上传文件的二进制
      */
     val uploadData: ByteArray,
-) : OSSRequest()
+    endPoint: String? = null,
+) : OSSRequest(endPoint)

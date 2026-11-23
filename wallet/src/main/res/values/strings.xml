@@ -110,4 +110,5 @@
     <string name="wallet_cus_decimal_hint">如：18</string>
     <string name="wallet_cus_contract_warn">请确认合约地址准确无误，添加错误的代币合约可能造成资产损失</string>
 
+    <string name="wallet_cus_contract_lookup_failed">无法自动识别代币信息，请手动填写 Symbol 和精度</string>
 </resources>

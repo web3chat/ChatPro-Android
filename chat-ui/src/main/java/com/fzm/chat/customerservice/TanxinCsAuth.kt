@@ -1,5 +1,6 @@
 package com.fzm.chat.customerservice
 
+import com.fzm.chat.core.net.HttpLogging
 import android.os.SystemClock
 import android.util.Log
 import com.fzm.chat.core.session.data.UserPreference
@@ -46,7 +47,7 @@ object TanxinCsAuth {
     private const val PATH_NONCE = "/api/auth/nonce"
     private const val PATH_LOGIN = "/api/auth/login/user"
 
-    private val client = OkHttpClient.Builder()
+    private val client = OkHttpClient.Builder().addInterceptor(HttpLogging.interceptor())
         .connectTimeout(4, TimeUnit.SECONDS)
         .readTimeout(5, TimeUnit.SECONDS)
         .writeTimeout(4, TimeUnit.SECONDS)

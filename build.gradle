@@ -27,6 +27,8 @@ buildscript {
 
 allprojects {
     repositories {
+        // 本地修复版依赖（camera:1.1.9-patched 修 takePicture 崩溃），优先于远程仓库
+        maven { url uri("$rootDir/repo") }
         maven { url 'https://jitpack.io' }
         google()
         maven { url 'https://maven.aliyun.com/repository/public' } //添加

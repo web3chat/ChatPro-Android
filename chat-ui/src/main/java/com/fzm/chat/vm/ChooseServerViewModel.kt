@@ -61,6 +61,7 @@ class ChooseServerViewModel(
     fun fetchServerList(refreshState: Boolean = true) {
         request<ServerNode> {
             onRequest {
+                // 接口请求/结果由 NetBusinessDataSource 的 ApiLog 打印，这里不再重复
                 val result = repository.fetchServerList()
                 val chat = database.serverHistoryDao().getChatServerHistory().map {
                     ServerNode.Node(it.name, it.address).apply { id = it.id }
@@ -70,8 +71,9 @@ class ChooseServerViewModel(
                 }
                 if (result.isSucceed()) {
                     val data = result.data()
-                    Result.Success(ServerNode(data.servers + chat, data.nodes + contract))
+                    Result.Success(ServerNode(data.servers.orEmpty() + chat, data.nodes.orEmpty() + contract))
                 } else {
+                    // 接口失败时退回本地历史
                     _serverFetchFail.postValue(result.error().message)
                     Result.Success(ServerNode(chat, contract))
                 }

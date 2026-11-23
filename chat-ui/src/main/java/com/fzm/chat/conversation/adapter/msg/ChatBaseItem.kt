@@ -331,20 +331,8 @@ abstract class ChatBaseItem(
     }
 
     private fun updateFocus(helper: BaseViewHolder, item: ChatMessage) {
-        if (item.focusUserNum == 0) {
-            helper.setGone(R.id.tv_focus, true)
-        } else {
-            if (item.isGroup) {
-                helper.setText(R.id.tv_focus, "${item.focusUserNum}人已关注")
-            } else {
-                if (item.isSendType) {
-                    helper.setText(R.id.tv_focus, "对方已关注")
-                } else {
-                    helper.setText(R.id.tv_focus, "我已关注")
-                }
-            }
-            helper.setGone(R.id.tv_focus, false)
-        }
+        // 「我已关注 / 对方已关注」功能已下线，始终隐藏关注标签
+        helper.setGone(R.id.tv_focus, true)
     }
 
     private fun setMsgStateAttachListener(state: MsgStateView, item: ChatMessage) {

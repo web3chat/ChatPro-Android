@@ -139,7 +139,7 @@ class SquareDetailActivity : BizActivity() {
         binding.tvReplyCancel.setOnClickListener { cancelReply() }
         binding.llLike.setOnClickListener { toggleLike() }
         // 分享到微信等外部 App（生成分享图片，失败退回文本）
-        binding.llShare.setOnClickListener { post?.let { shareSquarePost(it, lifecycleScope) } }
+        binding.llShare.setOnClickListener { post?.let { showSquareShareOptions(it, lifecycleScope) } }
         // 详情页直接关注作者（与用户主页同一套逻辑）
         binding.tvFollow.setOnClickListener { toggleFollow() }
         binding.svComment.setOnStateChangedListener(object : SwitchView.OnStateChangedListener {

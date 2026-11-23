@@ -1,6 +1,7 @@
 package com.fzm.chat.wallet.impl
 
 import android.util.Log
+import com.fzm.chat.core.data.ChatConfig
 import com.fzm.chat.core.data.ChatConst
 import com.fzm.chat.core.utils.MMkvUtil
 import com.fzm.chat.core.data.bean.Field
@@ -20,6 +21,7 @@ import com.fzm.wallet.sdk.db.entity.Coin
 import com.fzm.wallet.sdk.db.entity.ContractBalance
 import com.fzm.wallet.sdk.db.entity.CreateRaw
 import com.fzm.wallet.sdk.net.HttpResult
+import com.google.gson.Gson
 import com.fzm.wallet.sdk.net.apiCall
 import com.fzm.wallet.sdk.net.goCall
 import com.zjy.architecture.data.Result
@@ -42,6 +44,10 @@ class NetWalletDataSource(
     private val userSource: UserDataSource,
     private val service: WalletService
 ) : WalletDataSource {
+
+    private companion object {
+        const val TAG = "WalletContract"
+    }
 
     /** 串行化链地址同步，避免并发产生重复交易 */
     private val chainAddressMutex = Mutex()
@@ -66,11 +72,27 @@ class NetWalletDataSource(
         address: String,
         extend_info: ExtendInfo,
     ): Result<ContractBean> {
-        val request = ContractRequest.create(
-            "Wallet.GetContractorInfo",
-            GetContractParams.createContractParams(cointype, address,extend_info)
+        val params = GetContractParams.createContractParams(cointype, address, extend_info)
+        val request = ContractRequest.create("Wallet.GetContractorInfo", params)
+        // 自定义代币识别排障日志：请求参数 + 实际 body + 返回结果
+        Log.d(
+            TAG,
+            "getContract → cointype=$cointype, address=$address, execer=${extend_info.Execer}, " +
+                "baseUrl=${ChatConfig.GO_URL}"
         )
-        return apiCall2 { service.getContract(request) }
+        Log.d(TAG, "getContract body=${Gson().toJson(request)}")
+        val result = apiCall2 { service.getContract(request) }
+        if (result.isSucceed()) {
+            val bean = result.data()
+            Log.d(
+                TAG,
+                "getContract ← symbol=${bean.symbol}, decimals=${bean.decimals}, " +
+                    "contractAddr=${bean.contractAddr}"
+            )
+        } else {
+            Log.e(TAG, "getContract ← 失败: ${result.error().message}")
+        }
+        return result
     }
 
     override suspend fun transfer(
@@ -176,14 +198,19 @@ class NetWalletDataSource(
                     }
                 }
                 MMkvUtil.encode(syncKey, true)
-                return@repeat
+                // 成功必须直接返回；只 return@repeat 会继续下一次重试，
+                // 成功后走到底部 last.error() 会抛
+                // ClassCastException: Result$Success cannot be cast to Result$Error
+                return@withLock last
             }
-            Log.w("ChainSync", "第${attempt + 1}次上传失败：${last.error()?.message ?: last}")
+            val reason = (last as? Result.Error)?.e?.message ?: last.toString()
+            Log.w("ChainSync", "第${attempt + 1}次上传失败：$reason")
             if (attempt < 2) delay((attempt + 1) * 2000L)
         }
         // 记录失败状态，供“我的”页展示与手动重试
         MMkvUtil.encode(syncKey, false)
-        Log.e("ChainSync", "重试3次后收款地址同步仍失败：${last.error()?.message ?: last}")
+        val reason = (last as? Result.Error)?.e?.message ?: last.toString()
+        Log.e("ChainSync", "重试3次后收款地址同步仍失败：$reason")
         last
     }
 

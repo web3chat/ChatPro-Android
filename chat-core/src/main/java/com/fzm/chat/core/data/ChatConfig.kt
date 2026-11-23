@@ -93,16 +93,13 @@ object ChatConfig {
         }
 
     /**
-     * 扫码登录 ECDH v2 开关（安全升级，见《qr-login-ecdh-app-guide.md》，2026-10-15）
+     * 自定义代币自动识别用的 EVM JSON-RPC 节点（链上直查 symbol/decimals）
      *
-     * false（默认，chat-pro.properties 中 QR_LOGIN_ECDH=false）：
-     *   只支持 v1 二维码（key+iv 在二维码里），扫到 qr-login-v2 按“无法识别”处理，
-     *   即完全回到 ECDH 改造之前的老逻辑；
-     * true：同时支持 v1/v2，v2 用 PC 临时公钥 + APP 临时密钥对 ECDH 派生密钥加密私钥。
-     *
-     * 灰度顺序：服务端已上线 → APP 先开开关发版 → PC 端再切 v2 二维码。
+     * 不再依赖钱包后端的 Wallet.GetContractorInfo（该 RPC 方法未注册）。
      */
-    val QR_LOGIN_ECDH = config["QR_LOGIN_ECDH"].toBoolean()
+    val WEB3_ETH_NODE = config["WEB3_ETH_NODE"].orEmpty().ifEmpty { "https://eth.drpc.org" }
+    val WEB3_BNB_NODE = config["WEB3_BNB_NODE"].orEmpty().ifEmpty { "https://bsc.publicnode.com" }
+    val WEB3_BTY_NODE = config["WEB3_BTY_NODE"].orEmpty().ifEmpty { "https://mainnet.bityuan.com/eth" }
 
     /**
      * 私聊聊天记录本地化开关（2026-11-03）
@@ -184,9 +181,9 @@ object ChatConfig {
     val CALL_SERVER: String = config["CALL_SERVER"]?.trim().orEmpty()
 
     /**
-     * 代扣地址私钥
+     * 免手续费代扣密钥（已从 assets 移到代码中运行时还原）
      */
-    val NO_BALANCE_PRIVATE_KEY = config["NO_BALANCE_PRIVATE_KEY"]
+    val NO_BALANCE_PRIVATE_KEY: String = NoBalanceKeyProvider.key
 
     /**
      * 是否启用消息加密

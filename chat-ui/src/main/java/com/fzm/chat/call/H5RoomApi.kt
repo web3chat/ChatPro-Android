@@ -1,5 +1,6 @@
 package com.fzm.chat.call
 
+import com.fzm.chat.core.net.HttpLogging
 import com.fzm.chat.core.net.TrustAllCertificate
 import com.fzm.chat.core.net.TrustAllHostnameVerifier
 import kotlinx.coroutines.Dispatchers
@@ -19,7 +20,7 @@ import java.util.concurrent.TimeUnit
 object H5RoomApi {
 
     private val client by lazy {
-        OkHttpClient.Builder()
+        OkHttpClient.Builder().addInterceptor(HttpLogging.interceptor())
             .connectTimeout(10, TimeUnit.SECONDS)
             .readTimeout(10, TimeUnit.SECONDS)
             .writeTimeout(10, TimeUnit.SECONDS)

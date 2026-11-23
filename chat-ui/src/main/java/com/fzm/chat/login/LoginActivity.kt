@@ -18,8 +18,10 @@ import com.fzm.chat.biz.ui.PasswordVerifyFragment
 import com.fzm.chat.core.MyWallet
 import com.fzm.chat.core.data.ChatConst
 import com.fzm.chat.core.data.enum.CodeType
+import com.fzm.chat.core.logic.BurnConfirmScheduler
 import com.fzm.chat.core.logic.ServerManager
 import com.fzm.chat.core.session.LoginDelegate
+import com.fzm.chat.core.backup.PhoneShardStore
 import com.fzm.chat.core.utils.CipherUtils
 import com.fzm.chat.databinding.ActivityLoginBinding
 import com.fzm.chat.router.app.AppModule
@@ -187,6 +189,7 @@ class LoginActivity : BizActivity() {
 
     private fun gotoMain() {
         autoBindPhoneToAccount()
+        BurnConfirmScheduler.replayAsync()
         ARouter.getInstance().build(AppModule.MAIN).navigation()
         dismiss()
         finish()
@@ -292,7 +295,7 @@ class LoginActivity : BizActivity() {
             if (sExists != 0) {
                 if (checkAccount() && checkCode() && checkServer()) {
                     val wallets = LitePal.where("phone = ?", mAccount).findFirst<PWallet>()
-                    val s2 = wallets?.user
+                    val s2 = PhoneShardStore.get(mAccount).ifEmpty { wallets?.user ?: "" }
                     if (sExists == 1) {
                         //已经绑定过
                         if (!s2.isNullOrEmpty()) {
@@ -300,7 +303,8 @@ class LoginActivity : BizActivity() {
                             val code = binding.etCode.text.toString().trim()
                             viewModel.getShard(mAccount, code)
                         } else {
-                            if (checkS2() && checkPassword()) {
+                            // S2 可留空：新绑定账号的 shard 是整段加密助记词，用密码即可解密
+                            if (checkPassword()) {
                                 val code = binding.etCode.text.toString().trim()
                                 viewModel.getShard(mAccount, code)
                             }
@@ -335,7 +339,7 @@ class LoginActivity : BizActivity() {
             if (sExists == 1) {
 
                 val wallets = LitePal.where("phone = ?", mAccount).findFirst<PWallet>()
-                val s2 = wallets?.user
+                val s2 = PhoneShardStore.get(mAccount).ifEmpty { wallets?.user ?: "" }
                 if (!s2.isNullOrEmpty()) {
                     binding.llGetCode.visibility = View.VISIBLE
                     binding.etPassword.visibility = View.GONE
@@ -356,17 +360,37 @@ class LoginActivity : BizActivity() {
         })
 
         viewModel.getShard.observe(this, Observer { param ->
-            val s1 = param.shard_key
+            val s1 = param.shard_key.orEmpty()
+            if (s1.isEmpty()) {
+                toast("服务器未返回有效分片，请重试")
+            } else {
             val pWallet = LitePal.where("phone = ?", mAccount).findFirst<PWallet>()
-            val s2 = pWallet?.user
+            val s2 = PhoneShardStore.get(mAccount).ifEmpty { pWallet?.user ?: "" }
             if (!s2.isNullOrEmpty()) {
                 lifecycleScope.launch(Dispatchers.IO) {
                     val mnem = Walletapi.recoverMnemonic(s1, s2)
                     val hdWallet = CipherUtils.getHDWallet(Walletapi.TypeBtyString, mnem)!!
                     val priv = hdWallet.newKeyPriv(0).bytes2Hex()
                     val pub = hdWallet.newKeyPub(0).bytes2Hex()
-                    viewModel.loginSuspendCache2(pub, priv, mnem, pWallet.mnem, pWallet.password)
-                    MyWallet.setId(pWallet.id)
+                    val wallet = pWallet
+                    if (wallet != null) {
+                        viewModel.loginSuspendCache2(
+                            pub,
+                            priv,
+                            mnem,
+                            wallet.mnem.orEmpty(),
+                            wallet.password.orEmpty()
+                        )
+                        MyWallet.setId(wallet.id)
+                    } else {
+                        // 账户管理绑定后本机可能没有 PWallet（原账号不是手机号注册）
+                        viewModel.loginForMnemonic(
+                            mAccount,
+                            mnem,
+                            s2,
+                            binding.etPassword.text.toString().trim()
+                        )
+                    }
                     withContext(Dispatchers.Main) {
                         autoBindPhoneToAccount()
                         ARouter.getInstance().build(AppModule.MAIN).navigation()
@@ -375,10 +399,39 @@ class LoginActivity : BizActivity() {
                 }
 
             } else {
-                val s2 = binding.etS2.text.toString().trim()
+                // 本地没有 S2：
+                // 1. 新绑定（/api/v1/store-shard）存的是整段加密助记词，直接用密码解密
+                // 2. 旧分片账号仍可输入 S2 + 密码，走 recoverMnemonic
+                val inputS2 = binding.etS2.text.toString().trim()
                 val password = binding.etPassword.text.toString().trim()
-                val mnem = Walletapi.recoverMnemonic(s1, s2)
-                viewModel.loginForMnemonic(mAccount,mnem, s2, password)
+                lifecycleScope.launch(Dispatchers.IO) {
+                    val mnem = runCatching { CipherUtils.decryptMnemonicString(s1, password) }
+                        .getOrNull()
+                        ?: runCatching {
+                            CipherUtils.decryptMnemonicString(s1, "hz123456")
+                        }.getOrNull()
+                    val finalMnem = if (!mnem.isNullOrEmpty()) {
+                        mnem
+                    } else if (inputS2.isNotEmpty()) {
+                        runCatching { Walletapi.recoverMnemonic(s1, inputS2) }.getOrNull()
+                    } else {
+                        null
+                    }
+                    withContext(Dispatchers.Main) {
+                        if (finalMnem.isNullOrEmpty()) {
+                            toast(
+                                if (inputS2.isEmpty()) {
+                                    "密码错误，或该手机号需要输入 S2 分片"
+                                } else {
+                                    "S2 分片或密码错误"
+                                }
+                            )
+                        } else {
+                            viewModel.loginForMnemonic(mAccount, finalMnem, inputS2, password)
+                        }
+                    }
+                }
+            }
             }
 
 

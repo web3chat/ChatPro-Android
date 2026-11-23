@@ -51,6 +51,7 @@ class ServerManageViewModel(
     fun getServerGroupList() {
         request<Unit> {
             onRequest {
+                // 接口与分组明细由 ApiLog 统一打印，这里只更新数据
                 val list = repository.getServerGroup()
                 _serverGroups.value = list
                 Result.Success(Unit)
@@ -59,6 +60,11 @@ class ServerManageViewModel(
     }
 
     fun addServerGroup(name: String, address: String) {
+        // 排障日志：添加服务器分组的入参（type=1 新增）
+        android.util.Log.d(
+            "ServerGroup",
+            "addServerGroup: name=$name, address=$address, group=(id=\"\", type=1)"
+        )
         request<String> {
             onRequest {
                 database.serverHistoryDao().insert(ServerHistory(name = name, address = address, type = ChatConst.CHAT_SERVER))
@@ -84,6 +90,10 @@ class ServerManageViewModel(
     }
 
     fun editServerGroup(id: String, name: String, address: String) {
+        android.util.Log.d(
+            "ServerGroup",
+            "editServerGroup: id=$id, name=$name, address=$address, group=(type=3)"
+        )
         request<String> {
             onRequest {
                 database.serverHistoryDao().insert(ServerHistory(name = name, address = address, type = ChatConst.CHAT_SERVER))

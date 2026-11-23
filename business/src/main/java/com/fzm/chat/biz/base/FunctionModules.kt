@@ -62,7 +62,7 @@ object FunctionModules {
                     // 模块未启用则启用
                     if (moduleFlags and config.flag == 0) {
                         moduleFlags = moduleFlags or config.flag
-                        config.action?.invoke(it.endPoints)
+                        config.action?.invoke(it.endPoints.orEmpty())
                         moduleFlagLiveData.value = moduleFlags
                     }
                 } else {

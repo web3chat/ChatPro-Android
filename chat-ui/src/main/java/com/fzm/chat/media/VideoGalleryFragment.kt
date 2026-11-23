@@ -28,6 +28,7 @@ import com.fzm.chat.core.data.po.toFriendUser
 import com.fzm.chat.core.session.LoginDelegate
 import com.fzm.chat.core.utils.Utils
 import com.fzm.chat.databinding.FragmentVideoGalleryBinding
+import com.danikula.videocache.HttpProxyCacheServer
 import com.fzm.chat.core.media.DownloadManager2
 import com.fzm.chat.router.main.MainModule
 import com.fzm.chat.utils.ForwardHelper
@@ -39,6 +40,7 @@ import com.zjy.architecture.ext.load
 import com.zjy.architecture.ext.toast
 import com.zjy.architecture.ext.visible
 import dtalk.biz.Biz
+import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
 import org.koin.android.ext.android.inject
 import xyz.doikki.videoplayer.controller.BaseVideoController
@@ -76,8 +78,24 @@ class VideoGalleryFragment : BizFragment() {
     private var paused = false
     private var controller: BaseVideoController? = null
 
+    /** 开始加载视频的时间，用于计算首帧/缓冲耗时 */
+    private var playStartedAt = 0L
+
+    /** 是否已经打过「加载结束」日志，避免重复 */
+    private var loadLogged = false
+
+    /** 视频加载大小展示：已加载字节 / 总大小 */
+    private var sizeUrl: String? = null
+    private var sizeTotalBytes = 0L
+    private var sizeLocalExists = false
+    private var sizeLastLoaded = -1L
+    private var sizePollingJob: kotlinx.coroutines.Job? = null
+
     private val delegate by inject<LoginDelegate>()
     private val contactManager by inject<ContactManager>()
+
+    /** 视频播放走本地代理缓存：远端地址首次边下边播，第二次直接读缓存 */
+    private val proxy by inject<HttpProxyCacheServer>()
 
     private val binding by init<FragmentVideoGalleryBinding>()
 
@@ -115,9 +133,7 @@ class VideoGalleryFragment : BizFragment() {
     }
 
     private fun start() {
-        if (!fileExist()) {
-            saveMedia(null)
-        }
+        // 不再等待整包下载：本地有就播本地，没有就流式播放远端地址
         if (binding.flThumb.isVisible) {
             binding.flThumb.gone()
         }
@@ -125,10 +141,114 @@ class VideoGalleryFragment : BizFragment() {
             binding.videoPlayer.visible()
         }
         binding.videoPlayer.start()
+        startVideoSizePolling()
+    }
+
+    // ==================== 视频加载大小展示 ====================
+
+    private fun setupVideoSize(url: String?, localExists: Boolean, localSize: Long) {
+        sizeUrl = url
+        sizeLocalExists = localExists
+        sizeTotalBytes = if (localExists) localSize else 0L
+        sizeLastLoaded = -1L
+        if (url.isNullOrEmpty()) {
+            binding.tvVideoSize.gone()
+            return
+        }
+        binding.tvVideoSize.visible()
+        binding.tvVideoSize.bringToFront()
+        binding.tvVideoSize.post { binding.tvVideoSize.bringToFront() }
+        updateVideoSizeText(if (localExists) localSize else 0L)
+        android.util.Log.d(
+            "VideoFlow",
+            "[size] visible=${binding.tvVideoSize.visibility} text=${binding.tvVideoSize.text} " +
+                "local=$localExists size=$localSize"
+        )
+        if (!localExists) {
+            // HEAD 拿远端总大小；失败则只显示已加载 KB
+            lifecycleScope.launch {
+                val length = fetchRemoteSize(url)
+                if (length > 0) {
+                    sizeTotalBytes = length
+                    updateVideoSizeText(currentLoadedBytes())
+                }
+            }
+        }
+    }
+
+    private fun startVideoSizePolling() {
+        if (sizeUrl.isNullOrEmpty() || sizeLocalExists) return
+        sizePollingJob?.cancel()
+        sizePollingJob = lifecycleScope.launch {
+            while (isActive) {
+                val loaded = currentLoadedBytes()
+                if (loaded != sizeLastLoaded) {
+                    updateVideoSizeText(loaded)
+                }
+                if (sizeTotalBytes > 0 && loaded >= sizeTotalBytes) break
+                kotlinx.coroutines.delay(500L)
+            }
+        }
+    }
+
+    private fun stopVideoSizePolling() {
+        sizePollingJob?.cancel()
+        sizePollingJob = null
+    }
+
+    private fun currentLoadedBytes(): Long {
+        val url = sizeUrl ?: return 0L
+        if (sizeLocalExists) return sizeTotalBytes
+        return runCatching {
+            // 下载中文件是 xxx.download，完成后才重命名为正式文件
+            val full = proxy.getCacheFile(url)
+            val temp = proxy.getTempCacheFile(url)
+            when {
+                full.exists() -> full.length()
+                temp.exists() -> temp.length()
+                else -> 0L
+            }
+        }.getOrDefault(0L)
+    }
+
+    private fun updateVideoSizeText(loaded: Long) {
+        if (!isAdded) return
+        sizeLastLoaded = loaded
+        binding.tvVideoSize.text = if (sizeTotalBytes > 0) {
+            getString(
+                R.string.chat_video_size_loading,
+                formatVideoSizeMb(loaded),
+                formatVideoSizeMb(sizeTotalBytes)
+            )
+        } else {
+            getString(R.string.chat_video_size_loading_unknown, formatVideoSizeMb(loaded))
+        }
+    }
+
+    private fun formatVideoSizeMb(bytes: Long): String {
+        return String.format(java.util.Locale.US, "%.1fM", bytes / 1024f / 1024f)
+    }
+
+    /** HEAD 请求获取远端视频 Content-Length */
+    private suspend fun fetchRemoteSize(url: String): Long {
+        return kotlinx.coroutines.withContext(kotlinx.coroutines.Dispatchers.IO) {
+            runCatching {
+                val conn = java.net.URL(url).openConnection() as java.net.HttpURLConnection
+                conn.requestMethod = "HEAD"
+                conn.connectTimeout = 5_000
+                conn.readTimeout = 5_000
+                conn.instanceFollowRedirects = true
+                conn.connect()
+                val length = conn.contentLengthLong
+                conn.disconnect()
+                length
+            }.getOrDefault(0L)
+        }
     }
 
     override fun onPause() {
         super.onPause()
+        stopVideoSizePolling()
         if (binding.videoPlayer.isPlaying) {
             binding.videoPlayer.pause()
             paused = true
@@ -142,14 +262,91 @@ class VideoGalleryFragment : BizFragment() {
 
     override fun onDestroy() {
         super.onDestroy()
+        stopVideoSizePolling()
         binding.videoPlayer.release()
     }
 
     private fun setupVideoPlayer(player: VideoView<*>) {
-        if (message != null && forwardPos == -1) {
-            player.setUrl(message!!.msg.localUrl)
+        playStartedAt = android.os.SystemClock.elapsedRealtime()
+        player.setOnStateChangeListener(object : VideoView.SimpleOnStateChangeListener() {
+            override fun onPlayStateChanged(playState: Int) {
+                val cost = android.os.SystemClock.elapsedRealtime() - playStartedAt
+                when (playState) {
+                    VideoView.STATE_PLAYING -> {
+                        if (!loadLogged) {
+                            loadLogged = true
+                            android.util.Log.d(
+                                "VideoFlow",
+                                "[play] 加载结束：总耗时=${cost}ms 已缓冲=${player.bufferedPercentage}%"
+                            )
+                        }
+                    }
+                    VideoView.STATE_ERROR -> android.util.Log.e(
+                        "VideoFlow",
+                        "[play] 加载失败：cost=${cost}ms buffered=${player.bufferedPercentage}%"
+                    )
+                }
+            }
+        })
+        val local = if (message != null && forwardPos == -1) {
+            message!!.msg.localUrl
         } else {
-            player.setUrl(forward?.msg?.localUrl ?: url)
+            forward?.msg?.localUrl
+        }
+        val remote = if (message != null && forwardPos == -1) {
+            message!!.msg.mediaUrl
+        } else {
+            url
+        }
+        val localFile = local?.let { java.io.File(it) }
+        val localExists = localFile?.exists() == true
+        // 进程被杀后重新进聊天：消息里的 localUrl 可能丢失，但代理缓存文件还在。
+        // 已完整缓存时直接播缓存文件，避免重新从 0 加载。
+        val remoteCachedFile = if (!localExists && !remote.isNullOrEmpty() &&
+            runCatching { proxy.isCached(remote) }.getOrDefault(false)
+        ) {
+            runCatching { proxy.getCacheFile(remote) }.getOrNull()
+        } else {
+            null
+        }
+        val playLocalPath = when {
+            localExists -> local
+            remoteCachedFile?.exists() == true -> remoteCachedFile.absolutePath
+            else -> null
+        }
+        val playLocalExists = !playLocalPath.isNullOrEmpty() &&
+            java.io.File(playLocalPath).exists()
+        val localSize = if (playLocalExists) {
+            java.io.File(playLocalPath!!).length()
+        } else 0L
+        // 本地/缓存已存在就直接播本地；没有则用远端地址边下边播
+        val playUrl = if (playLocalExists) {
+            playLocalPath
+        } else {
+            remote ?: local
+        }
+        setupVideoSize(playUrl, playLocalExists, localSize)
+        if (!playUrl.isNullOrEmpty()) {
+            // 远端地址走代理缓存，避免每次打开都重新拉流
+            val cached = runCatching { proxy.isCached(playUrl) }.getOrDefault(false)
+            val realUrl = if (playUrl.startsWith("http", ignoreCase = true)) {
+                runCatching { proxy.getProxyUrl(playUrl) }.getOrDefault(playUrl)
+            } else {
+                playUrl
+            }
+            player.setUrl(realUrl)
+            android.util.Log.d(
+                "VideoFlow",
+                "[play] 开始加载视频：msgId=${message?.msgId} " +
+                    "视频大小=${if (localSize > 0) "${localSize}B" else "未知(远端)"} " +
+                    "localExists=$localExists cached=$cached " +
+                    "src=${if (realUrl == playUrl) "direct" else "proxy"} url=$realUrl"
+            )
+        } else {
+            android.util.Log.e(
+                "VideoFlow",
+                "[play] no url msgId=${message?.msgId} local=$local remote=$remote"
+            )
         }
         controller = StandardVideoController(requireContext())
 

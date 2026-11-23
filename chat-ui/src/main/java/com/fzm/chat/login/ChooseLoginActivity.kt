@@ -119,11 +119,16 @@ class ChooseLoginActivity : BizActivity(), View.OnClickListener {
                 ds.isUnderlineText = false
             }
         }
-        val start = text.indexOfFirst { it == '《' }
-        val end = text.indexOfFirst { it == '》' } + 1
-        val colorSpan = ForegroundColorSpan(resources.getColor(R.color.biz_color_accent))
-        ssb.setSpan(protocol, start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
-        ssb.setSpan(colorSpan, start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+        // 英文/其他语言没有《》，直接 indexOf 会得到 -1，setSpan(-1, 0) 会崩溃
+        val left = text.indexOf('《')
+        val right = text.indexOf('》')
+        val start = if (left >= 0) left else 0
+        val end = if (left >= 0 && right > left) right + 1 else text.length
+        if (end > start) {
+            val colorSpan = ForegroundColorSpan(resources.getColor(R.color.biz_color_accent))
+            ssb.setSpan(protocol, start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+            ssb.setSpan(colorSpan, start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+        }
         //binding.tvProtocol.movementMethod = LinkMovementMethod.getInstance()
         //binding.tvProtocol.text = ssb
     }

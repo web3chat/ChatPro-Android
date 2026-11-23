@@ -29,7 +29,7 @@ interface WalletService {
     @POST(".")
     suspend fun transfer(@Body request: ContractRequest): ContractResponse<String>
     @Headers(value = [RetrofitUrlManager.DOMAIN_NAME_HEADER + ChatConst.WALLET_DOMAIN])
-    //@POST("https://190.92.231.38:58083")
+    @POST(".")
     suspend fun getContract(@Body request: ContractRequest): ContractResponse<ContractBean>
     @Headers(value = [RetrofitUrlManager.DOMAIN_NAME_HEADER + ChatConst.WALLET_DOMAIN])
     @POST("/")

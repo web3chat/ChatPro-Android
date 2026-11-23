@@ -33,6 +33,9 @@ class JoinGroupInfoActivity : BizActivity(), View.OnClickListener {
 
     private var groupInfo: GroupInfoTO? = null
 
+    /** 提交申请后需要复查群信息（判断是否已进群 / 仍是待审批） */
+    private var pendingApplyCheck = false
+
     private val viewModel by viewModel<GroupViewModel>()
 
     private val binding by init { ActivityJoinGroupInfoBinding.inflate(layoutInflater) }
@@ -46,16 +49,27 @@ class JoinGroupInfoActivity : BizActivity(), View.OnClickListener {
         ARouter.getInstance().inject(this)
         viewModel.loading.observe(this) { setupLoading(it) }
         viewModel.groupPubResult.observe(this) {
+            if (pendingApplyCheck) {
+                // 申请/回退 join-group 之后复查：已进群就直接进会话，否则按"待审批"处理
+                pendingApplyCheck = false
+                if (it.person != null) {
+                    toGroupChat()
+                    return@observe
+                }
+                toast(R.string.chat_tips_apply_join_submitted)
+                binding.btnJoinGroup.isEnabled = false
+                binding.btnJoinGroup.setText(R.string.chat_action_apply_join_pending)
+                return@observe
+            }
             setupGroupInfo(it)
         }
         viewModel.groupJoinResult.observe(this) {
             toGroupChat()
         }
-        // 需审批的群：申请提交成功（文档：按钮改为「已申请，等待审核」，不要进会话）
+        // 申请提交成功后复查群信息，兼容服务端未部署申请接口、退回 join-group 的情况
         viewModel.createApplyResult.observe(this) {
-            toast(R.string.chat_tips_apply_join_submitted)
-            binding.btnJoinGroup.isEnabled = false
-            binding.btnJoinGroup.setText(R.string.chat_action_apply_join_pending)
+            pendingApplyCheck = true
+            viewModel.getGroupPubInfo(groupId, server)
         }
     }
 
@@ -113,8 +127,8 @@ class JoinGroupInfoActivity : BizActivity(), View.OnClickListener {
                     when {
                         it.person != null -> toGroupChat()
                         it.joinType == GroupInfo.NEED_APPROVE_GROUP ->
-                            // 文档：joinType=2 不要调 join-group，改调 create-group-apply（不带邀请人）
-                            viewModel.createGroupApply(groupId, server)
+                            // 优先调用入群申请接口；服务端未部署（404）时自动退回 join-group
+                            viewModel.applyJoinGroup(groupId, server, inviterId)
 
                         else -> viewModel.joinGroup(groupId, server, inviterId)
                     }

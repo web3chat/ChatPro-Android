@@ -27,9 +27,8 @@ import org.koin.android.ext.android.inject
  *
  * 流程：扫码 → 弹确认页 → 二次验证（密码）→ 加密私钥 + 签名 → confirm
  *
- * 二维码灰度支持两种格式（见 [QrLoginPayload]）：
- * - v1：二维码自带 key/iv，直接 AES-GCM；
- * - v2（ECDH）：二维码只含 PC 临时公钥，APP 生成临时密钥对派生共享密钥后加密。
+ * 只支持 v2（ECDH）：二维码只含 PC 临时公钥，APP 生成临时密钥对派生共享密钥后加密。
+ * 旧的 v1（二维码自带 key/iv，AES 密钥随码传播）已下线，扫到按无法识别处理。
  */
 @Route(path = MainModule.QR_LOGIN)
 class QrLoginActivity : BizActivity() {
@@ -46,20 +45,15 @@ class QrLoginActivity : BizActivity() {
         get() = binding.root
 
     private var sessionId: String? = null
-    private var key: String? = null
-    private var iv: String? = null
 
-    /** v2（ECDH）：二维码里的 PC 临时公钥；v1 为空 */
+    /** 二维码里的 PC 临时公钥（v2 / ECDH） */
     private var pubKey: String? = null
 
     override fun initView() {
         // 防截屏/录屏
         window.addFlags(WindowManager.LayoutParams.FLAG_SECURE)
         sessionId = intent?.getStringExtra("sessionId")
-        key = intent?.getStringExtra("key")
-        iv = intent?.getStringExtra("iv")
-        // ECDH v2 开关默认关闭：关闭时忽略 pubKey，按老逻辑（必须带 key+iv）校验
-        pubKey = if (ChatConfig.QR_LOGIN_ECDH) intent?.getStringExtra("pubKey") else null
+        pubKey = intent?.getStringExtra("pubKey")
         binding.tvDevice.text = getString(R.string.qr_login_device_desc)
         binding.tvSessionHint.text = getString(R.string.qr_login_session_hint)
     }
@@ -78,9 +72,8 @@ class QrLoginActivity : BizActivity() {
     }
 
     private fun onConfirm() {
-        // v1 需要 key+iv；v2 需要 pubKey
-        val missingSecret = pubKey.isNullOrEmpty() && (key.isNullOrEmpty() || iv.isNullOrEmpty())
-        if (sessionId.isNullOrEmpty() || missingSecret) {
+        // 只支持 v2（ECDH）：必须带 pubKey
+        if (sessionId.isNullOrEmpty() || pubKey.isNullOrEmpty()) {
             toast(R.string.qr_login_invalid_qr)
             finish()
             return
@@ -158,18 +151,12 @@ class QrLoginActivity : BizActivity() {
         }
         binding.btnConfirm.isEnabled = false
         lifecycleScope.launch {
-            // v2（ECDH）：临时密钥对 + 共享密钥加密；v1：二维码自带的 key/iv 直接 AES-GCM
-            var encrypted: String? = null
-            var phonePubKey: String? = null
-            if (!pubKey.isNullOrEmpty()) {
-                val ecdh = QrLoginCrypto.ecdhEncryptPrivateKey(privateKey, pubKey!!)
-                encrypted = ecdh?.first
-                phonePubKey = ecdh?.second
-            } else {
-                encrypted = QrLoginCrypto.aesGcmEncrypt(privateKey, key!!, iv!!)
-            }
+            // v2（ECDH）：临时密钥对 + 共享密钥加密
+            val ecdh = QrLoginCrypto.ecdhEncryptPrivateKey(privateKey, pubKey!!)
+            val encrypted: String? = ecdh?.first
+            val phonePubKey: String? = ecdh?.second
             val accountPubKey = QrLoginCrypto.compressedPublicKeyHex(privateKey)
-            if (encrypted == null || accountPubKey == null) {
+            if (encrypted == null || phonePubKey == null || accountPubKey == null) {
                 toast(R.string.qr_login_encrypt_failed)
                 binding.btnConfirm.isEnabled = true
                 return@launch
@@ -177,7 +164,7 @@ class QrLoginActivity : BizActivity() {
             // 打印要传给前端（scan-node / PC 端）的参数
             Log.i(
                 TAG,
-                "confirm 参数: sessionId=$sessionId, address=$address, ecdh=${!pubKey.isNullOrEmpty()}, " +
+                "confirm 参数: sessionId=$sessionId, address=$address, " +
                         "encryptedPrivateKey=$encrypted, publicKey=$accountPubKey, phonePubKey=$phonePubKey"
             )
             val result = QrLoginApi.confirm(

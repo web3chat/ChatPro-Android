@@ -145,6 +145,16 @@
 
     <!--安全管理-->
     <string name="chat_title_security_setting">账户管理</string>
+    <string name="chat_account_section_security">账号安全</string>
+    <string name="chat_phone_conflict_title">手机号已绑定其他账号</string>
+    <string name="chat_phone_conflict_message">该手机号已绑定账号 %1$s。\n继续绑定将解绑原账号，原账号将无法再用该手机号登录（仍可通过助记词或本地账号切换登录）。</string>
+    <string name="chat_phone_conflict_message_unknown">该手机号已有绑定记录，可能属于其他账号。\n继续绑定将覆盖原绑定，原账号将无法再用该手机号登录。</string>
+    <string name="chat_phone_conflict_confirm">确认解绑并绑定</string>
+    <string name="chat_phone_conflict_cancel">取消</string>
+
+    <string name="chat_account_section_bind">账号绑定</string>
+    <string name="chat_account_section_other">其他</string>
+
     <string name="chat_tips_export_words">导出助记词</string>
     <string name="chat_tips_export_s2">导出S2</string>
     <string name="chat_tips_export_private">导出私钥</string>
@@ -415,6 +425,20 @@
     <string name="chat_tips_img_saved">图片已保存</string>
     <string name="chat_tips_img_not_exist">图片不存在</string>
     <string name="chat_tips_vid_not_exist">视频不存在</string>
+    <string name="chat_video_send_title">视频发送方式</string>
+    <string name="chat_video_send_compress">压缩后发送（推荐）</string>
+    <string name="chat_video_send_original">发送原视频</string>
+    <string name="chat_video_compress_failed">压缩失败，已发送原视频</string>
+    <string name="chat_video_compressing">视频压缩中…</string>
+    <string name="chat_video_size_loading">已加载 %1$s / %2$s</string>
+    <string name="chat_video_size_loading_unknown">已加载 %1$s</string>
+
+    <string name="chat_video_limit_title">提示</string>
+    <string name="chat_video_limit_duration">视频时长不能超过 30 分钟，请剪辑后再发送</string>
+    <string name="chat_video_limit_size">视频文件不能超过 1GB，请压缩或剪辑后再发送</string>
+    <string name="chat_video_limit_compressed">压缩后仍超过 500MB，请剪辑后再发送</string>
+    <string name="chat_video_limit_ok">知道了</string>
+
     <string name="chat_tips_img_zip_fail">图片压缩失败</string>
     <string name="chat_tips_not_contain_qr_code">未识别到二维码</string>
     <string name="chat_action_recognize_qrcode">识别图中二维码</string>
@@ -726,6 +750,9 @@
     <string name="fee_setting">矿工费设置</string>
     <string name="enter_str">请输入</string>
     <string name="switch_account_str">切换账号</string>
+    <string name="account_delete_title">删除账户</string>
+    <string name="account_delete_tips">删除后本地将不再保留该账户，该账号的本地聊天记录（含图片、视频等）也会一并清空，只能通过助记词恢复。确定删除？</string>
+    <string name="account_delete_success">账户已删除</string>
     <string name="chat_no_nickname">请设置昵称</string>
     <string name="c_entrance">便捷入口</string>
     <string name="n_yopen">暂未开放</string>
@@ -829,6 +856,12 @@
     <string name="square_action_delete">删除</string>
     <string name="square_action_edit">编辑</string>
     <string name="square_action_share">分享</string>
+    <string name="square_share_to_app">分享到其他应用</string>
+    <string name="square_share_to_app_desc">生成海报图片，分享给好友</string>
+    <string name="square_share_link_to_chat">分享帖子链接到聊天</string>
+    <string name="square_share_link_to_chat_desc">只能发到聊天，对方点开直达帖子详情</string>
+    <string name="square_card_from">谈信广场</string>
+    <string name="square_card_view_detail">查看详情</string>
     <string name="square_share_chooser">分享到</string>
     <string name="square_share_card_slogan">端到端加密 · 安全私密</string>
     <string name="square_share_card_footer">来自「%1$s」</string>
@@ -984,5 +1017,7 @@
     <string name="square_report_select">请选择</string>
     <string name="square_report_submit">提交举报</string>
     <string name="square_report_submitting">提交中…</string>
-
+    <string name="doc_preview_title">文档预览</string>
+    <string name="doc_preview_failed">无法解析该文档，可点击右上角用其他应用打开</string>
+    <string name="doc_preview_pdf_failed">无法打开该 PDF，可点击右上角用其他应用打开</string>
 </resources>

@@ -35,12 +35,18 @@ class ContractRepository(
 
     suspend fun getServerGroup(): List<ServerGroupInfo> {
         val query = ChatQuery.serverGroupQuery(preference.ADDRESS, "", preference.getKeyPair())
-        return dataSource.getServerGroup(query).dataOrNull()?.groups?.also { list ->
+        // 请求 URL/Body/结果/分组明细都由 NetContractDataSource 的 ApiLog 输出
+        val result = dataSource.getServerGroup(query)
+        if (!result.isSucceed()) {
+            return listOf()
+        }
+        val groups = result.data().groups
+        return groups.also { list ->
             updateInfo {
                 servers.clear()
                 servers.addAll(list.map { Server(it.id, it.name, it.value) }.toMutableList())
             }
-        } ?: listOf()
+        }
     }
 
     suspend fun getFriendUser(address: String, saveFlag: Int = 0, save: Boolean = false, remark: String = ""): Result<FriendUser> {

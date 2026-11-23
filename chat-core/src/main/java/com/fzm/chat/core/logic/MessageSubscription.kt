@@ -12,7 +12,9 @@ import com.fzm.chat.core.data.model.ChatMessage
 import com.fzm.chat.core.data.model.contact
 import com.fzm.chat.core.data.model.isCallInvite
 import com.fzm.chat.core.data.model.isSendType
+import com.fzm.chat.core.data.model.localExists
 import com.fzm.chat.core.data.msg.MsgConfirmResult
+import com.fzm.chat.core.media.DownloadManager2
 import com.fzm.chat.core.session.LoginDelegate
 import com.zjy.architecture.di.rootScope
 import com.zjy.architecture.util.ActivityUtils
@@ -63,6 +65,8 @@ object MessageSubscription : OnMessageConfirmCallback {
                     channels.forEach { it.value.trySend(msg) }
                     subscribers.forEach { it.value(msg) }
                     if (msg.option == Option.ADD_MSG) {
+                        // 收到视频立即在后台下载，不依赖聊天页/用户点击
+                        autoDownloadVideo(msg.message)
                         val main = ActivityUtils.isActivityTop(context, "com.fzm.chat.app.MainActivity")
                         val invisible = ActivityUtils.isBackground || (!main && msg.message.contact != ChatConfig.CURRENT_TARGET)
                         if (invisible &&
@@ -98,6 +102,24 @@ object MessageSubscription : OnMessageConfirmCallback {
      */
     suspend fun onReceiveMessage(message: ChatMessage) {
         channel.send(MessageOption(Option.ADD_MSG, message))
+    }
+
+    /**
+     * 视频消息自动下载（全局）：
+     * App 在任意页面（含主界面、后台）收到视频后立即下载到 App 私有目录，
+     * 这样用户点开会话时本地已存在，直接播放。
+     */
+    private fun autoDownloadVideo(message: ChatMessage) {
+        if (message.msgType != Biz.MsgType.Video_VALUE) return
+        if (message.isSendType) return
+        if (message.localExists()) return
+        if (message.msg.mediaUrl.isNullOrEmpty()) return
+        logD(
+            "VideoFlow",
+            "[auto] 收到视频，全局自动下载 msgId=${message.msgId} url=${message.msg.mediaUrl}"
+        )
+        // 只触发下载，结果写入消息 localUrl，聊天页打开时自然显示本地视频
+        DownloadManager2.downloadToApp(message)
     }
 
     /**

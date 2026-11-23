@@ -1,5 +1,6 @@
 package com.fzm.chat.biz.ai
 
+import com.fzm.chat.core.net.HttpLogging
 import android.content.Context
 import com.fzm.chat.core.data.ChatConfig as AppConfig
 import com.google.gson.Gson
@@ -35,7 +36,7 @@ object DeepSeekClient {
     private val gson = Gson()
     private val JSON = "application/json; charset=utf-8".toMediaType()
 
-    private val client = OkHttpClient.Builder()
+    private val client = OkHttpClient.Builder().addInterceptor(HttpLogging.interceptor())
         .connectTimeout(30, TimeUnit.SECONDS)
         .readTimeout(120, TimeUnit.SECONDS)  // 流式输出需要更长超时
         .writeTimeout(30, TimeUnit.SECONDS)

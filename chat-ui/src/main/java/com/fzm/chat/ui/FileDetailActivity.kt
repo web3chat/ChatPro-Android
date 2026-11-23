@@ -28,6 +28,7 @@ import com.fzm.chat.core.utils.Utils
 import com.fzm.chat.databinding.ActivityFileDetailBinding
 import com.fzm.chat.router.main.MainModule
 import com.fzm.chat.utils.FileOpenHelper
+import com.fzm.chat.utils.DocumentTextExtractor
 import com.fzm.chat.utils.ForwardHelper
 import com.fzm.chat.widget.BottomListDialog
 import com.permissionx.guolindev.PermissionX
@@ -94,7 +95,9 @@ class FileDetailActivity : BizActivity() {
         adapter.setData(listOf(
             DialogOption("转发") { lifecycleScope.launch { forwardFile() } },
             DialogOption("分享") { shareFile(file?.path) },
-            DialogOption("保存到手机") { saveFile() }
+            DialogOption("保存到手机") { saveFile() },
+            // 内置预览只做内容展示，需要保留原始排版时仍可交给 WPS / Office 等应用
+            DialogOption("用其他应用打开") { FileOpenHelper.open(this, file?.path, file?.name) }
         ))
         lifecycleScope.launch {
             val msg = message ?: return@launch
@@ -177,7 +180,16 @@ class FileDetailActivity : BizActivity() {
         binding.ctbTitle.setOnLeftClickListener { finish() }
         binding.ctbTitle.setOnRightClickListener { openMenu() }
         binding.tvOpen.setOnClickListener {
-            FileOpenHelper.open(this, file?.path, file?.name)
+            // Word / Excel / PPT / PDF / 文本：优先用内置预览打开，其余交给第三方应用
+            val ext = FileUtils.getExtension(file?.name).orEmpty().lowercase()
+            if (DocumentTextExtractor.isSupported(ext) && !file?.path.isNullOrEmpty()) {
+                ARouter.getInstance().build(MainModule.DOC_PREVIEW)
+                    .withString("path", file?.path)
+                    .withString("name", file?.name)
+                    .navigation()
+            } else {
+                FileOpenHelper.open(this, file?.path, file?.name)
+            }
         }
         binding.tvDownload.singleClick {
             val msg = message ?: return@singleClick

@@ -105,7 +105,7 @@ class LanguageSelectActivity : BizActivity(), View.OnClickListener {
      * 刷新各语言行的选中状态
      */
     private fun updateSelection() {
-        val current = LocaleUtils.getSavedLanguage(this)
+        val current = LocaleUtils.getEffectiveLanguage(this)
         for (i in 0 until binding.llLanguageList.childCount) {
             val child = binding.llLanguageList.getChildAt(i)
             val code = child.tag as? String ?: continue
@@ -121,7 +121,7 @@ class LanguageSelectActivity : BizActivity(), View.OnClickListener {
 
     override fun onClick(v: View?) {
         val code = v?.tag as? String ?: return
-        if (LocaleUtils.getSavedLanguage(this) != code) {
+        if (LocaleUtils.getEffectiveLanguage(this) != code) {
             LocaleUtils.changeLanguage(this, code)
             updateSelection()
             // 重启当前Activity以应用语言

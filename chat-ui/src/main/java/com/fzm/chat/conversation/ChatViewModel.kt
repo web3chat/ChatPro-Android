@@ -189,8 +189,10 @@ class ChatViewModel(
     fun isBurnMode(): Boolean = burnMode
 
     fun sendMessage(url: String, message: ChatMessage) {
-        // 唯一打标点：阅后即焚模式 + 私聊 + 允许类型才打 burn 标记
-        if (burnMode && message.channelType == ChatConst.PRIVATE_CHANNEL && message.canBurnType) {
+        // 唯一打标点：阅后即焚模式 + 私聊/群聊 + 允许类型才打 burn 标记
+        val burnChannel = message.channelType == ChatConst.PRIVATE_CHANNEL ||
+                message.channelType == ChatConst.GROUP_CHANNEL
+        if (burnMode && burnChannel && message.canBurnType) {
             message.source = MessageSource.burnOnly(message.channelType)
         }
         android.util.Log.d("BurnFlow", "[send] burnMode=$burnMode channel=${message.channelType} type=${message.msgType} canBurn=${message.canBurnType} sourceBurn=${message.source?.burn}")
@@ -238,6 +240,7 @@ class ChatViewModel(
                     for (record in data.records) {
                         record.toChatMessage(channelType)?.let { messages.add(it) }
                     }
+                    mergeLocalMedia(messages)
                     resolveSenders(messages, channelType)
                     _latestMessage.value = messages
                     serverHasMore = data.recordCount >= 100
@@ -288,6 +291,7 @@ class ChatViewModel(
                     for (record in data.records) {
                         record.toChatMessage(channelType)?.let { messages.add(it) }
                     }
+                    mergeLocalMedia(messages)
                     resolveSenders(messages, channelType)
                     _latestMessage.value = messages
                     serverHasMore = data.recordCount >= 100
@@ -327,6 +331,44 @@ class ChatViewModel(
             if (needScroll) {
                 _scrollPosition.value = loadCount
             }
+        }
+    }
+
+    /**
+     * 搜索结果定位：加载「目标消息前后各一页」，并把目标消息定位到屏幕上。
+     *
+     * 之前搜索点击只传了 fromMsgId，但这里仍按最新一页加载，导致只停在会话末尾。
+     */
+    fun getMessageHistoryAroundMsgId(target: String, channelType: Int, msgId: String) {
+        launch {
+            val dao = database.messageDao()
+            val anchor = try {
+                dao.findMessageByMsgId(msgId)
+            } catch (e: Exception) {
+                null
+            }
+            if (anchor == null) {
+                // 本地没有这条（已被清理等），退回普通加载
+                getMessageHistoryLocal(target, channelType)
+                return@launch
+            }
+            val count = ChatConfig.PAGE_SIZE
+            val older = MessageRepository.getMessageByTime(
+                target, channelType, anchor.datetime + 1, count
+            )
+            val newer = try {
+                dao.getMessageAfter(target, channelType, anchor.datetime, count) ?: emptyList()
+            } catch (e: Exception) {
+                emptyList()
+            }
+            val merged = (older + anchor + newer)
+                .distinctBy { it.msgId }
+                .sortedByDescending { it.datetime }
+            localCursor = merged.minOfOrNull { it.datetime }
+            _latestMessage.value = merged
+            initLoadReady.compareAndSet(false, true)
+            val index = merged.indexOfFirst { it.msgId == msgId }
+            _locatePosition.value = if (index >= 0) index else 0
         }
     }
 
@@ -995,6 +1037,27 @@ class ChatViewModel(
             resp.failedCount == 0 -> "已撤回 ${resp.successCount} 条消息"
             resp.successCount == 0 -> "撤回失败"
             else -> "成功 ${resp.successCount} 条，失败 ${resp.failedCount} 条"
+        }
+    }
+
+    /**
+     * 服务端历史消息不含 localUrl；如果本地 DB 已有下载好的文件则回填，
+     * 避免 App 进程被杀后重新打开聊天又从 0 加载/重复下载视频。
+     */
+    private suspend fun mergeLocalMedia(messages: List<ChatMessage>) {
+        messages.forEach { msg ->
+            if (msg.msgType != Biz.MsgType.Video_VALUE &&
+                msg.msgType != Biz.MsgType.Image_VALUE
+            ) {
+                return@forEach
+            }
+            if (!msg.msg.localUrl.isNullOrEmpty()) return@forEach
+            val local = runCatching {
+                database.messageDao().findMessageByMsgId(msg.msgId)?.msg?.localUrl
+            }.getOrNull()
+            if (!local.isNullOrEmpty() && java.io.File(local).exists()) {
+                msg.msg.localUrl = local
+            }
         }
     }
 

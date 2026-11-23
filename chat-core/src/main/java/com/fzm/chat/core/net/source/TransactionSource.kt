@@ -170,7 +170,12 @@ class TransactionSource(
             emit(action())
         }.map {
             if (it.isSucceed()) {
-                createNoBalanceTx(ChatConfig.NO_BALANCE_PRIVATE_KEY, it.data())
+                val key = ChatConfig.NO_BALANCE_PRIVATE_KEY
+                if (key.isBlank()) {
+                    Result.Error(ApiException("免手续费暂不可用，请确保有足够主币支付手续费"))
+                } else {
+                    createNoBalanceTx(key, it.data())
+                }
             } else {
                 it
             }
@@ -237,7 +242,12 @@ class TransactionSource(
             emit(action())
         }.map {
             if (it.isSucceed()) {
-                createNoBalanceTx(ChatConfig.NO_BALANCE_PRIVATE_KEY, it.data())
+                val key = ChatConfig.NO_BALANCE_PRIVATE_KEY
+                if (key.isBlank()) {
+                    Result.Error(ApiException("免手续费暂不可用，请确保有足够主币支付手续费"))
+                } else {
+                    createNoBalanceTx(key, it.data())
+                }
             } else {
                 it
             }

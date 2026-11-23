@@ -1,12 +1,13 @@
 package com.fzm.chat.core.session.data
 
-import android.util.Log
+import com.fzm.chat.core.data.AppPreference
 import com.fzm.chat.core.data.ChatConst
 import com.fzm.chat.core.data.bean.Field
 import com.fzm.chat.core.data.bean.ChatQuery
 import com.fzm.chat.core.data.bean.ServerGroupInfo
 import com.fzm.chat.core.data.contract.ContractRequest
 import com.fzm.chat.core.data.contract.apiCall2
+import com.fzm.chat.core.net.ApiLog
 import com.fzm.chat.core.net.source.TransactionSource
 import com.fzm.chat.core.session.UserDataSource
 import com.fzm.chat.core.session.UserInfo
@@ -23,8 +24,15 @@ class NetUserDataSource(
     private val transaction: TransactionSource
 ) : UserDataSource {
 
+    private companion object {
+        const val TAG = "ServerGroup"
+    }
+
     override suspend fun getUserInfo(address: String, publicKey: String, query: ChatQuery): Result<UserInfo> {
-        val result = apiCall2 { service.getUser(ContractRequest.createQuery(query)) }
+        val request = ContractRequest.createQuery(query)
+        ApiLog.request("chat.GetUser", AppPreference.CONTRACT_URL, request)
+        val result = apiCall2 { service.getUser(request) }
+        ApiLog.result("chat.GetUser", result)
         return if (result.isSucceed()) {
             val user = result.data()
             val builder = UserInfo.Builder(address).setServers(user.chatServers.sortedBy { it.id.toInt() }.toMutableList())
@@ -55,11 +63,10 @@ class NetUserDataSource(
     override suspend fun setUserInfo(fields: List<Field>): Result<String> {
         return transaction.handle {
             val request = ContractRequest.create("chat.CreateRawUpdateUserTx", mapOf("fields" to fields))
-            Log.d("ChainSync", "createRawUpdateUserTx 请求 fields=${fields.map { "${it.name}=${it.value}" }}")
+            ApiLog.request("chat.CreateRawUpdateUserTx", AppPreference.CONTRACT_URL, request)
             val result = apiCall2 { service.updateUser(request) }
-            Log.d("ChainSync", "createRawUpdateUserTx 返回 result=$result")
+            ApiLog.result("chat.CreateRawUpdateUserTx", result)
             result
-
         }
     }
 
@@ -72,7 +79,10 @@ class NetUserDataSource(
                 "chat.CreateRawUpdateServerGroupTx",
                 mapOf("groups" to groups)
             )
-            apiCall2 { service.modifyServerGroup(request) }
+            ApiLog.request("chat.CreateRawUpdateServerGroupTx", AppPreference.CONTRACT_URL, request)
+            val result = apiCall2 { service.modifyServerGroup(request) }
+            ApiLog.result("chat.CreateRawUpdateServerGroupTx", result)
+            result
         }
     }
 

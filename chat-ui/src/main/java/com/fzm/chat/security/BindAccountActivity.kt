@@ -9,19 +9,24 @@ import android.text.style.ForegroundColorSpan
 import android.text.style.StyleSpan
 import android.util.Patterns
 import android.view.View
+import androidx.core.os.bundleOf
 import androidx.core.widget.addTextChangedListener
 import com.alibaba.android.arouter.facade.annotation.Autowired
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.alibaba.android.arouter.launcher.ARouter
 import com.fzm.chat.R
 import com.fzm.chat.biz.base.BizActivity
+import com.fzm.chat.biz.ui.PasswordVerifyFragment
+import com.fzm.chat.core.MyWallet
 import com.fzm.chat.core.backup.LocalAccountType
 import com.fzm.chat.core.data.ChatConst
 import com.fzm.chat.core.data.enum.CodeType
 import com.fzm.chat.databinding.ActivityBindAccountBinding
 import com.fzm.chat.login.LoginActivity
 import com.fzm.chat.router.app.AppModule
+import com.fzm.chat.router.biz.PasswordVerifier
 import com.fzm.chat.router.main.MainModule
+import com.fzm.chat.router.route
 import com.fzm.chat.vm.BackupViewModel
 import com.fzm.widget.dialog.EasyDialog
 import com.fzm.widget.verify.CodeLength
@@ -54,6 +59,7 @@ class BindAccountActivity : BizActivity() {
      * 是否覆盖绑定
      */
     private var overrideBind = false
+    private var pendingPassword: String? = null
 
     private val binding by init<ActivityBindAccountBinding>()
 
@@ -131,6 +137,18 @@ class BindAccountActivity : BizActivity() {
     private fun toMainPage(bindType: Int, account: String, address: String?) {
         if (bindType == ChatConst.PHONE) {
             viewModel.updateInfo { phone = account }
+            // 双写：备份服务绑定成功后，同步写入「手机号 -> chatAddress」映射，
+            // 保证手机号登录/账号查询都能找到该账号。overrideBind 时以导入的地址为准。
+            val finalAddress = if (!address.isNullOrEmpty()) address else viewModel.getAddress()
+            if (!finalAddress.isNullOrEmpty()) {
+                android.util.Log.d(
+                    "BindSync",
+                    "backup bind ok, sync bind-account phone=$account address=$finalAddress"
+                )
+                viewModel.bindAccount(account, "", "", "", finalAddress)
+            } else {
+                android.util.Log.w("BindSync", "backup bind ok, but address is empty, skip mapping")
+            }
             ARouter.getInstance().build(AppModule.MAIN)
                 .apply {
                     if (overrideBind) {
@@ -153,14 +171,38 @@ class BindAccountActivity : BizActivity() {
     }
 
     private fun showSendCodeDialog() {
+        // 手机号绑定与手机号登录统一：先校验密码解密助记词，再拆 S1/S2
+        if (bindType == ChatConst.PHONE && pendingPassword == null) {
+            val dialog by route<PasswordVerifyFragment>(
+                MainModule.VERIFY_ENC_PWD,
+                bundleOf("type" to 0, "waletId" to MyWallet.getID())
+            )
+            dialog?.setOnPasswordVerifyListener(object : PasswordVerifier.OnPasswordVerifyListener {
+                override fun onSuccess(password: String) {
+                    pendingPassword = password
+                    showSendCodeDialog()
+                }
+            })
+            dialog?.show(supportFragmentManager, "BIND_ACCOUNT_PASSWORD")
+            return
+        }
         verifyDialog = VerifyCodeDialog.Builder(this, this, CodeLength.MEDIUM)
             .setPhone(account)
             .setAutoSend(true)
             .setOnSendCodeListenerSuspend {
-                viewModel.sendCodeSuspend(account, bindType, CodeType.BIND)
+                viewModel.sendCodeSuspend(account, bindType, if (bindType == ChatConst.PHONE) CodeType.BACKUP else CodeType.BIND)
             }
             .setOnCodeCompleteListener { _, _, code ->
-                viewModel.bindAccount(account, code, bindType)
+                if (bindType == ChatConst.PHONE) {
+                    viewModel.bindPhoneWithShard(
+                        account,
+                        code,
+                        pendingPassword ?: "",
+                        forceRebind = overrideBind
+                    )
+                } else {
+                    viewModel.bindAccount(account, code, bindType)
+                }
             }
             .build()
         verifyDialog?.show()

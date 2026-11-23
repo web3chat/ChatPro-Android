@@ -183,13 +183,42 @@ class GlideEngine private constructor() : ImageEngine {
      */
     override fun loadGridImage(context: Context, url: String, imageView: ImageView) {
         Glide.with(context)
-                .load(url)
-                .apply(RequestOptions
-                    .overrideOf(200, 200)
-                    .centerCrop()
-                    .placeholder(R.drawable.picture_image_placeholder)
-                )
-                .into(imageView)
+            .asBitmap()
+            .load(url)
+            .apply(RequestOptions
+                .overrideOf(200, 200)
+                .centerCrop()
+                .placeholder(R.drawable.picture_image_placeholder)
+            )
+            .into(object : BitmapImageViewTarget(imageView) {
+                override fun onLoadFailed(errorDrawable: Drawable?) {
+                    super.onLoadFailed(errorDrawable)
+                    // 个别截图（PNG/特殊编码）Glide 解码失败时，用 BitmapFactory 兜底
+                    loadFallbackBitmap(context, url, imageView)
+                }
+            })
+    }
+
+    /** Glide 失败后的兜底解码（降采样，避免大截图 OOM） */
+    private fun loadFallbackBitmap(context: Context, url: String, imageView: ImageView) {
+        Thread {
+            val bitmap = runCatching {
+                val options = android.graphics.BitmapFactory.Options().apply {
+                    inSampleSize = 4
+                }
+                val input = if (url.startsWith("content://", ignoreCase = true)) {
+                    context.contentResolver.openInputStream(android.net.Uri.parse(url))
+                } else {
+                    java.io.FileInputStream(url)
+                }
+                input?.use {
+                    android.graphics.BitmapFactory.decodeStream(it, null, options)
+                }
+            }.getOrNull()
+            if (bitmap != null) {
+                imageView.post { imageView.setImageBitmap(bitmap) }
+            }
+        }.apply { isDaemon = true }.start()
     }
 
     companion object {

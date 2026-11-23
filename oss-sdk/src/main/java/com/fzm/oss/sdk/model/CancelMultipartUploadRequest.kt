@@ -14,4 +14,5 @@ class CancelMultipartUploadRequest(
      * 文件名（包含路径）
      */
     val objectKey: String,
-) : OSSRequest()
+    endPoint: String? = null,
+) : OSSRequest(endPoint)

@@ -73,6 +73,67 @@ object LocaleUtils {
     }
 
     /**
+     * 是否已经由用户主动选择过语言。
+     * 没选过时，首次启动应跟随系统语言，而不是强制中文。
+     */
+    fun hasSavedLanguage(context: Context): Boolean {
+        return context.getSharedPreferences(SP_NAME, Context.MODE_PRIVATE)
+            .contains(KEY_LANGUAGE)
+    }
+
+    /**
+     * 当前实际生效的语言：
+     * - 用户选过语言 → 用用户选择
+     * - 用户没选过 → 跟随系统语言
+     */
+    fun getEffectiveLanguage(context: Context): String {
+        val sp = context.getSharedPreferences(SP_NAME, Context.MODE_PRIVATE)
+        if (sp.contains(KEY_LANGUAGE)) {
+            return sp.getString(KEY_LANGUAGE, LANG_CHINESE) ?: LANG_CHINESE
+        }
+        return mapSystemLanguage(context)
+    }
+
+    /**
+     * 把系统语言映射到 App 支持的语言，不支持的语言回退英文。
+     */
+    @Suppress("DEPRECATION")
+    private fun mapSystemLanguage(context: Context): String {
+        val configuration = context.resources.configuration
+        val locale = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            val list = configuration.locales
+            if (list.size() > 0) list[0] else Locale.getDefault()
+        } else {
+            configuration.locale
+        }
+        return when (locale.language.lowercase(Locale.ROOT)) {
+            "zh" -> {
+                val country = locale.country.uppercase(Locale.ROOT)
+                val script = locale.script
+                if (script == "Hant" || country == "TW" || country == "HK" || country == "MO") {
+                    LANG_TRADITIONAL
+                } else {
+                    LANG_CHINESE
+                }
+            }
+            "en" -> LANG_ENGLISH
+            "ja" -> LANG_JAPANESE
+            "ko" -> LANG_KOREAN
+            "de" -> LANG_GERMAN
+            "fr" -> LANG_FRENCH
+            "es" -> LANG_SPANISH
+            "pt" -> LANG_PORTUGUESE
+            "it" -> LANG_ITALIAN
+            "ru" -> LANG_RUSSIAN
+            "th" -> LANG_THAI
+            "vi" -> LANG_VIETNAMESE
+            "id", "in" -> LANG_INDONESIAN
+            "tr" -> LANG_TURKISH
+            else -> LANG_ENGLISH
+        }
+    }
+
+    /**
      * 保存语言设置
      */
     fun saveLanguage(context: Context, language: String) {
@@ -84,7 +145,7 @@ object LocaleUtils {
      * 获取当前显示语言的原生名称
      */
     fun getCurrentLanguageName(context: Context): String {
-        return supportedLanguages[getSavedLanguage(context)] ?: "简体中文"
+        return supportedLanguages[getEffectiveLanguage(context)] ?: "简体中文"
     }
 
     /**
@@ -100,7 +161,7 @@ object LocaleUtils {
      * 应用语言设置（通常在 Application 或 BaseActivity 中调用）
      */
     fun applyLanguage(context: Context): Context {
-        val language = getSavedLanguage(context)
+        val language = getEffectiveLanguage(context)
         return updateConfiguration(context, language)
     }
 
@@ -150,13 +211,13 @@ object LocaleUtils {
      * 检查是否为英文
      */
     fun isEnglish(context: Context): Boolean {
-        return getSavedLanguage(context) == LANG_ENGLISH
+        return getEffectiveLanguage(context) == LANG_ENGLISH
     }
 
     /**
      * 检查是否为简体中文
      */
     fun isChinese(context: Context): Boolean {
-        return getSavedLanguage(context) == LANG_CHINESE
+        return getEffectiveLanguage(context) == LANG_CHINESE
     }
 }

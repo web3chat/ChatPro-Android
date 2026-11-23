@@ -45,7 +45,10 @@ dependencies {
     // 图片选择
 //    implementation 'com.github.LuckSiege.PictureSelector:picture_library:v2.6.0'
     // 视频拍摄
-    implementation 'cjt.library.wheel:camera:1.1.9'
+    // 视频拍摄：1.1.9 官方 AAR 的 CameraInterface.takePicture 未捕获 RuntimeException
+    // （华为等机型会抛 "takePicture failed" 直接崩溃），改用本地仓库中的修复版：
+    // repo/cjt/library/wheel/camera/1.1.9-patched（takePicture 包 try/catch，异常转 ErrorListener）
+    implementation 'cjt.library.wheel:camera:1.1.9-patched'
 
     // 必选，内部默认使用系统mediaplayer进行解码
     implementation 'xyz.doikki.android.dkplayer:dkplayer-java:3.3.3'
@@ -57,6 +60,9 @@ dependencies {
     implementation 'xyz.doikki.android.dkplayer:player-ijk:3.3.3'
     // 可选，如需要缓存或者抖音预加载功能请引入此库
     implementation 'xyz.doikki.android.dkplayer:videocache:3.3.3'
+
+    // 视频压缩（mobile-ffmpeg，min-gpl 含 x264；支持 minSdk 16）
+    implementation 'com.arthenica:mobile-ffmpeg-min-gpl:4.4.LTS'
 
     // 文件选择
     implementation 'me.rosuh:AndroidFilePicker:0.7.1'

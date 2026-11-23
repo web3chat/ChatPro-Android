@@ -50,7 +50,7 @@ class SquareFragment : BizFragment() {
             showReport = false
             onAuthorClick = { openUserPage(it) }
             onContentClick = { openDetail(it) }
-            onShareClick = { requireContext().shareSquarePost(it, this@SquareFragment.lifecycleScope) }
+            onShareClick = { requireContext().showSquareShareOptions(it, this@SquareFragment.lifecycleScope) }
             onLikeClick = { toggleLike(it) }
             onCommentClick = { openDetail(it) }
             onDeleteClick = { confirmDeletePost(it) }

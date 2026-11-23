@@ -19,6 +19,7 @@ import com.fzm.chat.biz.utils.ImageUtils
 import com.fzm.chat.core.data.ChatConst
 import com.fzm.chat.core.data.ChatDatabaseProvider
 import com.fzm.chat.core.data.bean.PreSendParams
+import com.fzm.chat.core.data.model.LinkCard
 import com.fzm.chat.core.data.po.MessageContent
 import com.fzm.chat.router.main.MainModule
 import com.permissionx.guolindev.PermissionX
@@ -392,11 +393,14 @@ object TanxinHost {
                     return
                 }
             }
-            val text = buildString {
-                append(card.title)
-                if (card.description.isNotEmpty()) append("\n\n").append(card.description)
-                append("\n\n").append(card.url)
-            }
+            // 文本卡片：正文三行 + [[LINK_CARD]] 标记 + JSON，客户端（新版本）渲染成卡片
+            val text = LinkCard.encode(
+                title = card.title,
+                description = card.description,
+                url = card.url,
+                image = card.iconUrl,
+                source = card.source
+            )
             webView.post {
                 try {
                     val params = PreSendParams(

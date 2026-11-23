@@ -72,6 +72,17 @@ class WalletServiceImpl : WalletService {
         } else {
             BWallet.get().changeWallet(wallet)
         }
+        // 钱包导入/切换完成后本地币种已就绪：用户信息也就绪时立即补一次收款地址同步，
+        // 不必等主界面 onResume 的 5 秒轮询（登录流程也会再兜底一次）
+        if (delegate.current.value != null) {
+            runCatching { updateChainAddress(null) }
+                .onSuccess { Log.d("ChainSync", "importMnem 后主动同步收款地址：$it") }
+                .onFailure {
+                    Log.e("ChainSync", "importMnem 后主动同步收款地址异常：${it.message}", it)
+                }
+        } else {
+            Log.d("ChainSync", "importMnem 完成，用户信息未就绪，交由登录流程/主界面同步")
+        }
     }
 
     override suspend fun closeWallet() {
@@ -138,18 +149,34 @@ class WalletServiceImpl : WalletService {
     }
 
     override suspend fun updateChainAddress(address: Map<String, String>?): String {
-        val map = if (address.isNullOrEmpty()) {
+        var coinsError: String? = null
+        val coins = if (address.isNullOrEmpty()) {
             runCatching { BWallet.get().getAllCoins() }.getOrElse {
-                Log.e("ChainSync", "读取本地钱包币种失败：${it.message}")
-                emptyList()
-            }.associate { Pair(it.chain, it.address) }
+                coinsError = "${it.javaClass.simpleName}: ${it.message}"
+                Log.e("ChainSync", "读取本地钱包币种失败：$coinsError", it)
+                emptyList<Coin>()
+            }
+        } else {
+            emptyList()
+        }
+        val map = if (address.isNullOrEmpty()) {
+            coins.associate { Pair(it.chain, it.address) }
         } else {
             address
         }
         Log.d("ChainSync", "上传收款地址，本地待传 map = $map")
         if (map.isEmpty()) {
             // 钱包未就绪（本地暂无币种）时不要误报成功，返回明确状态供上层稍后重试
-            Log.w("ChainSync", "本地钱包暂无待同步的链地址，等待下次重试")
+            // 附带诊断信息：是「币种为空」还是「SDK 异常 / 当前钱包未设置」
+            val walletId = runCatching { MyWallet.getID() }.getOrNull()
+            val currentWallet = runCatching { BWallet.get().getCurrentWallet()?.id }.getOrNull()
+            val allCoins = runCatching { BWallet.get().getAllCoins()?.size }.getOrNull()
+            Log.w(
+                "ChainSync",
+                "本地钱包暂无待同步的链地址：coins=${coins.size}, allCoins=$allCoins, " +
+                    "walletId=$walletId, currentWallet=$currentWallet, " +
+                    "error=$coinsError, loggedIn=${delegate.getAddress() != null}"
+            )
             return "local_empty"
         }
         val result = repository.setChainAddress(map)

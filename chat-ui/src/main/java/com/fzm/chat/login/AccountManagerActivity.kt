@@ -13,6 +13,8 @@ import com.fzm.chat.adapter.AccountManagerAdapter
 import com.fzm.chat.biz.base.BizActivity
 import com.fzm.chat.biz.ui.PasswordVerifyFragment
 import com.fzm.chat.core.MyWallet
+import com.fzm.chat.core.data.ChatDatabaseProvider
+import com.fzm.chat.core.backup.LocalAccountManager
 import com.fzm.chat.core.service.MessageService
 import com.fzm.chat.core.session.LoginDelegate
 import com.fzm.chat.core.session.data.UserPreference
@@ -26,6 +28,7 @@ import com.fzm.chat.router.route
 import com.fzm.chat.router.wallet.WalletModule
 import com.fzm.chat.router.wallet.WalletService
 import com.fzm.chat.utils.AccountProfileCache
+import com.fzm.widget.dialog.EasyDialog
 import com.fzm.wallet.sdk.BWallet
 import com.fzm.wallet.sdk.MnemonicManager
 import com.fzm.wallet.sdk.db.entity.Coin
@@ -55,6 +58,7 @@ class AccountManagerActivity : BizActivity() {
     private val binding by init { ActivityAccountManagerBinding.inflate(layoutInflater) }
     private val loginDelegate by inject<LoginDelegate>()
     private val walletService by route<WalletService>(WalletModule.SERVICE)
+    private val localAccountManager by inject<LocalAccountManager>()
     override val root: View
         get() = binding.root
 
@@ -93,6 +97,10 @@ class AccountManagerActivity : BizActivity() {
         adapter.setData(pWallets)
         binding.rvList.layoutManager = LinearLayoutManager(this)
         binding.rvList.adapter = adapter
+        // 长按账户：删除本地账户（需二次确认 + 密码校验）
+        adapter.setOnItemLongClickListener { position ->
+            pWallets.getOrNull(position)?.let { showDeleteAccountDialog(it) }
+        }
         adapter.setOnItemClickListener { p ->
             val pWallet = pWallets[p]
             if (pWallet.id == currentWalletId && loginDelegate.isLogin()) {
@@ -146,6 +154,88 @@ class AccountManagerActivity : BizActivity() {
     }
 
     override fun initData() {
+    }
+
+    /**
+     * 删除账户二次确认：提示只能用助记词找回
+     */
+    private fun showDeleteAccountDialog(pWallet: PWallet) {
+        EasyDialog.Builder()
+            .setHeaderTitle(getString(R.string.account_delete_title))
+            .setContent(getString(R.string.account_delete_tips))
+            .setBottomLeftText(getString(R.string.biz_cancel))
+            .setBottomRightText(getString(R.string.biz_confirm))
+            .setBottomLeftClickListener { dialog -> dialog.dismiss() }
+            .setBottomRightClickListener { dialog ->
+                dialog.dismiss()
+                verifyPasswordForDelete(pWallet)
+            }
+            .create(this)
+            .show()
+    }
+
+    /**
+     * 输入钱包密码校验通过后删除
+     */
+    private fun verifyPasswordForDelete(pWallet: PWallet) {
+        val dialog by route<PasswordVerifyFragment>(
+            MainModule.VERIFY_ENC_PWD,
+            bundleOf("type" to 0, "waletId" to pWallet.id)
+        )
+        dialog?.setOnPasswordVerifyListener(object : PasswordVerifier.OnPasswordVerifyListener {
+            override fun onSuccess(password: String) {
+                deleteAccount(pWallet)
+            }
+        })
+        dialog?.show(supportFragmentManager, "ACCOUNT_DELETE_PWD")
+    }
+
+    /**
+     * 删除本地钱包账户：钱包记录 + 币种记录 + 本地账户缓存
+     *
+     * 注意：只删本地，服务端账户仍在，重新导入助记词即可找回。
+     */
+    private fun deleteAccount(pWallet: PWallet) {
+        lifecycleScope.launch {
+            loading(true)
+            try {
+                val isCurrent = try {
+                    MyWallet.getID() == pWallet.id
+                } catch (e: Exception) {
+                    false
+                }
+                val chatAddr = pWallet.user.orEmpty()
+                if (isCurrent) {
+                    loginDelegate.logoutSuspend()
+                }
+                withContext(Dispatchers.IO) {
+                    LitePal.deleteAll(Coin::class.java, "pwallet_id = ?", pWallet.id.toString())
+                    LitePal.delete(PWallet::class.java, pWallet.id)
+                }
+                if (chatAddr.isNotBlank()) {
+                    AccountProfileCache.clear(chatAddr)
+                    runCatching { localAccountManager.deleteLocalAccount(chatAddr) }
+                    // 清空该账号的本地聊天库（数据库按聊天地址命名：<address>.db）
+                    runCatching {
+                        if (isCurrent) ChatDatabaseProvider.close()
+                        deleteDatabase("$chatAddr.db")
+                    }
+                }
+                toast(getString(R.string.account_delete_success))
+                if (isCurrent) {
+                    ARouter.getInstance().build(MainModule.CHOOSE_LOGIN)
+                        .withFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
+                        .navigation()
+                    finish()
+                } else {
+                    recreate()
+                }
+            } catch (e: Exception) {
+                toast(e.message ?: "操作失败")
+            } finally {
+                dismiss()
+            }
+        }
     }
 
     override fun setEvent() {

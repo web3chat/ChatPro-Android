@@ -13,6 +13,7 @@ import androidx.core.os.bundleOf
 import androidx.lifecycle.lifecycleScope
 import com.alibaba.android.arouter.launcher.ARouter
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.load.resource.gif.GifDrawable
 import com.bumptech.glide.request.RequestOptions
 import com.bumptech.glide.request.target.DrawableImageViewTarget
@@ -115,6 +116,8 @@ class ImageGalleryFragment : BizFragment(), View.OnClickListener {
 
         val options = RequestOptions()
             .centerInside()
+            // 已加载过的图片直接走磁盘缓存，避免每次进图库都重新下载原图
+            .diskCacheStrategy(DiskCacheStrategy.ALL)
 //            .apply {
 //                if (placeholder != 0) {
 //                    placeholder(placeholder)
@@ -190,15 +193,15 @@ class ImageGalleryFragment : BizFragment(), View.OnClickListener {
         }
         when {
             forward != null -> {
-                Glide.with(this).load(ForwardModel(forward!!, message!!.contact))
+                Glide.with(this).load(ForwardModel(forward!!, message!!.contact)).thumbnail(0.15f)
                         .apply(options)
                         .into(target)
             }
             message != null -> {
-                Glide.with(this).load(message).apply(options).into(target)
+                Glide.with(this).load(message).thumbnail(0.15f).apply(options).into(target)
             }
             url != null -> {
-                Glide.with(this).load(url).apply(options.placeholder(placeholder)).into(target)
+                Glide.with(this).load(url).thumbnail(0.15f).apply(options.placeholder(placeholder)).into(target)
             }
         }
     }

@@ -79,23 +79,14 @@ class ChatMessagePopup(
                     if (canRef) {
                         list.add(reference(message))
                     }
-                    if (!canFocus) {
-                        list.add(focus(message))
-                    }
                 }
                 Biz.MsgType.Audio -> {
                     list.add(audioChannel())
-                    if (!canFocus) {
-                        list.add(focus(message))
-                    }
                 }
                 Biz.MsgType.Image -> {
                     list.add(forward(message))
                     if (canRef) {
                         list.add(reference(message))
-                    }
-                    if (!canFocus) {
-                        list.add(focus(message))
                     }
                 }
                 Biz.MsgType.Video -> {
@@ -103,30 +94,18 @@ class ChatMessagePopup(
                     if (canRef) {
                         list.add(reference(message))
                     }
-                    if (!canFocus) {
-                        list.add(focus(message))
-                    }
                 }
                 Biz.MsgType.File -> {
                     list.add(forward(message))
                     if (canRef) {
                         list.add(reference(message))
                     }
-                    if (!canFocus) {
-                        list.add(focus(message))
-                    }
                 }
                 Biz.MsgType.Forward -> {
                     list.add(forward(message))
-                    if (!canFocus) {
-                        list.add(focus(message))
-                    }
                 }
                 Biz.MsgType.ContactCard -> {
                     list.add(forward(message))
-                    if (!canFocus) {
-                        list.add(focus(message))
-                    }
                 }
                 Biz.MsgType.RTCCall -> {
                     // 通话房间邀请卡片：支持复制链接到外部浏览器打开

@@ -358,7 +358,7 @@ fun ChatMessage.getContent(context: Context): String {
     }
     return when (Biz.MsgType.forNumber(msgType)) {
         Biz.MsgType.System -> context.getString(R.string.core_msg_type1) + msg.content
-        Biz.MsgType.Text -> msg.content ?: ""
+        Biz.MsgType.Text -> LinkCard.previewText(msg.content)
         Biz.MsgType.Audio -> context.getString(R.string.core_msg_type2)
         Biz.MsgType.Image -> context.getString(R.string.core_msg_type3)
         Biz.MsgType.Video -> context.getString(R.string.core_msg_type5)
@@ -406,12 +406,13 @@ fun ChatMessage.getSourceText(context: Context): String {
 }
 
 fun Iterable<ChatMessage>.filterMedia() = filter {
-    it.msgType == Biz.MsgType.Image_VALUE || it.msgType == Biz.MsgType.Video_VALUE
+    (it.msgType == Biz.MsgType.Image_VALUE || it.msgType == Biz.MsgType.Video_VALUE) && !it.isBurnMessage
 }
 
 fun Iterable<ChatMessage>.filterFile() = filter {
-    it.msgType == Biz.MsgType.Audio_VALUE || it.msgType == Biz.MsgType.Image_VALUE ||
-            it.msgType == Biz.MsgType.Video_VALUE || it.msgType == Biz.MsgType.File_VALUE
+    (it.msgType == Biz.MsgType.Audio_VALUE || it.msgType == Biz.MsgType.Image_VALUE ||
+            it.msgType == Biz.MsgType.Video_VALUE || it.msgType == Biz.MsgType.File_VALUE) &&
+            !it.isBurnMessage
 }
 
 val ChatMessage.isFileType: Boolean

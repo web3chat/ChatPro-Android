@@ -81,13 +81,15 @@ class ChatInputView : LinearLayout, View.OnClickListener, AtTextChangeListener {
                     R.mipmap.icon_chat_call_voice,
                     R.string.chat_tips_input_voice_call
                 ) { mIChatInputView?.onStartVoiceCall(it) })
-            if (channelType == ChatConst.PRIVATE_CHANNEL) {
-                // 阅后即焚（仅私聊入口）：整块贴片图标，与左边“文件”同尺寸同风格（火色）
+            if (channelType == ChatConst.PRIVATE_CHANNEL || channelType == ChatConst.GROUP_CHANNEL) {
+                // 阅后即焚入口：私聊 + 群聊（群聊由本期《群聊阅后即焚》对接文档定义）
                 add(
                     MsgTypeItem(
                         R.drawable.icon_chat_snap_tile,
                         R.string.chat_tips_input_snap_msg
                     ) { mIChatInputView?.onSnapChat(it) })
+            }
+            if (channelType == ChatConst.PRIVATE_CHANNEL) {
                 //add(MsgTypeItem(R.mipmap.icon_chat_rtc, R.string.chat_tips_input_rtc) { mIChatInputView?.onStartRtc(it) })
                 if (FunctionModules.enableRedPacket) {
                     add(

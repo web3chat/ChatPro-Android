@@ -136,6 +136,14 @@ class LocalAccountManager(
     }
 
     /**
+     * 删除本地账户记录（删除钱包账户时同步清理）
+     */
+    suspend fun deleteLocalAccount(address: String) {
+        if (address.isBlank()) return
+        coreDatabase.localAccountDao().deleteByAddress(address)
+    }
+
+    /**
      * 获取本地所有账户信息(隐藏地址信息)
      */
     suspend fun getLocalAccountList(predicate: ((LocalAccount) -> Boolean)? = null): List<LocalAccount> {

@@ -26,10 +26,16 @@ import com.fzm.chat.R
 import com.fzm.chat.call.CallInviteLink
 import com.fzm.chat.call.CallLauncher
 import com.fzm.chat.core.data.model.ChatMessage
+import com.fzm.chat.core.data.model.LinkCard
 import com.fzm.chat.core.data.model.isSendType
 import com.fzm.chat.databinding.LayoutMsgTextBinding
 import com.fzm.chat.router.main.MainModule
+import com.fzm.chat.square.SquareCardMessage
+import com.fzm.chat.square.SquareDetailActivity
+import com.fzm.chat.square.SquareTime
+import com.fzm.chat.square.SquarePostLink
 import com.zjy.architecture.ext.gone
+import com.zjy.architecture.ext.load
 import com.zjy.architecture.ext.visible
 import dtalk.biz.Biz
 
@@ -51,33 +57,111 @@ class ChatText(listener: ChatMessageClickListener) : ChatBaseItem(listener) {
             binding.root.setBackgroundResource(R.drawable.img_chat_receive)
             binding.tvTranslation.setBackgroundResource(R.drawable.bg_translate_block_receive)
         }
-        // 文本消息里的链接检测：http(s) / www / 裸域名 → 可点击跳转
-        if (adapter?.selectable == true) {
-            // 多选模式下不打断选择操作
-            binding.tvMessage.text = item.msg.content
-            binding.tvMessage.movementMethod = null
-            binding.tvMessage.isClickable = false
-            binding.tvMessage.isLongClickable = false
+        // 广场帖子卡片：正文里带 [[SQUARE_CARD]] 标记时，用卡片替换正文
+        val squareCard = if (adapter?.selectable == true) null else SquareCardMessage.parse(item.msg.content)
+        // 链接卡片：正文里带 [[LINK_CARD]] 标记时，用卡片替换正文
+        val linkCard = if (squareCard == null && adapter?.selectable != true) {
+            LinkCard.parse(item.msg.content)
         } else {
-            val linkColor = ContextCompat.getColor(context, R.color.biz_color_accent_strong)
-            binding.tvMessage.text = buildLinkText(item.msg.content, linkColor)
-            binding.tvMessage.movementMethod = ChatLinkMovementMethod { event ->
-                // 长按链接：弹出与气泡一致的长按菜单（复制/转发/翻译等）
-                val layout = chatLayout(holder) ?: return@ChatLinkMovementMethod
-                layout.performHapticFeedback(HapticFeedbackConstants.LONG_PRESS)
-                if (event != null) {
-                    // 记录按压坐标，供长按菜单定位（与气泡长按保持一致）
-                    listener.onTouchChatMainView(layout, event)
-                }
-                listener.onChatLayoutLongClick(layout, item, this@ChatText)
-            }
-            // 不能吃掉非链接区域的触摸：否则长按消息菜单/点击气泡会失效
-            binding.tvMessage.isClickable = false
-            binding.tvMessage.isLongClickable = false
+            null
         }
-        // 微信样式：原文下方显示译文块（浅色背景），点击译文收起
+        if (squareCard != null) {
+            binding.tvMessage.gone()
+            binding.llLinkCard.gone()
+            binding.llSquareCard.visible()
+            // 卡片自带白色圆角背景，去掉气泡底图
+            binding.root.setBackgroundResource(0)
+            binding.tvSquareName.text = squareCard.name
+            binding.tvSquareTime.text = SquareTime.display(context, squareCard.time)
+            binding.tvSquareContent.text = squareCard.content
+
+            if (squareCard.image.isNotEmpty()) {
+                binding.ivSquareImage.visible()
+                binding.ivSquareImage.load(squareCard.image)
+            } else {
+                binding.ivSquareImage.gone()
+                binding.ivSquareImage.setImageDrawable(null)
+            }
+            binding.llSquareCard.setOnClickListener {
+                try {
+                    val intent = SquareDetailActivity.intent(context, squareCard.postId, false)
+                    if (context !is Activity) {
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                    }
+                    context.startActivity(intent)
+                } catch (e: Exception) {
+                    android.util.Log.e("ChatText", "打开帖子详情失败：${e.message}", e)
+                }
+            }
+            binding.llSquareCard.setOnLongClickListener { view ->
+                view.performHapticFeedback(HapticFeedbackConstants.LONG_PRESS)
+                listener.onChatLayoutLongClick(view, item, this@ChatText)
+            }
+        } else {
+            binding.llSquareCard.gone()
+            binding.llSquareCard.setOnClickListener(null)
+            binding.llSquareCard.setOnLongClickListener(null)
+            if (linkCard != null) {
+                binding.tvMessage.gone()
+                binding.llLinkCard.visible()
+                // 卡片自带白色圆角背景，去掉气泡底图
+                binding.root.setBackgroundResource(0)
+                binding.tvCardTitle.text = linkCard.title
+                if (linkCard.description.isNotEmpty()) {
+                    binding.tvCardDesc.visible()
+                    binding.tvCardDesc.text = linkCard.description
+                } else {
+                    binding.tvCardDesc.gone()
+                }
+                if (linkCard.image.isNotEmpty()) {
+                    binding.ivCardThumb.load(linkCard.image, R.drawable.square_ic_md_link)
+                } else {
+                    binding.ivCardThumb.setImageResource(R.drawable.square_ic_md_link)
+                }
+                if (linkCard.source.isNotEmpty()) {
+                    binding.viewCardDivider.visible()
+                    binding.llCardSource.visible()
+                    binding.tvCardSource.text = linkCard.source
+                } else {
+                    binding.viewCardDivider.gone()
+                    binding.llCardSource.gone()
+                }
+                binding.llLinkCard.setOnClickListener { openWebUrl(context, linkCard.url) }
+                binding.llLinkCard.setOnLongClickListener { view ->
+                    view.performHapticFeedback(HapticFeedbackConstants.LONG_PRESS)
+                    listener.onChatLayoutLongClick(view, item, this@ChatText)
+                }
+            } else {
+                binding.llLinkCard.gone()
+                binding.llLinkCard.setOnClickListener(null)
+                binding.llLinkCard.setOnLongClickListener(null)
+                binding.tvMessage.visible()
+                if (adapter?.selectable == true) {
+                    // 多选模式下不打断选择操作
+                    binding.tvMessage.text = item.msg.content
+                    binding.tvMessage.movementMethod = null
+                    binding.tvMessage.isClickable = false
+                    binding.tvMessage.isLongClickable = false
+                } else {
+                    val linkColor = ContextCompat.getColor(context, R.color.biz_color_accent_strong)
+                    binding.tvMessage.text = buildLinkText(item.msg.content, linkColor)
+                    binding.tvMessage.movementMethod = ChatLinkMovementMethod { event ->
+                        // 长按链接：弹出与气泡一致的长按菜单
+                        val layout = chatLayout(holder) ?: return@ChatLinkMovementMethod
+                        layout.performHapticFeedback(HapticFeedbackConstants.LONG_PRESS)
+                        if (event != null) {
+                            listener.onTouchChatMainView(layout, event)
+                        }
+                        listener.onChatLayoutLongClick(layout, item, this@ChatText)
+                    }
+                    binding.tvMessage.isClickable = false
+                    binding.tvMessage.isLongClickable = false
+                }
+            }
+        }
+        // 微信样式：原文下方显示译文块（链接卡片不显示译文）
         val translated = item.translatedText
-        if (translated.isNullOrBlank()) {
+        if (translated.isNullOrBlank() || linkCard != null || squareCard != null) {
             binding.llTranslate.gone()
         } else {
             binding.llTranslate.visible()
@@ -88,7 +172,6 @@ class ChatText(listener: ChatMessageClickListener) : ChatBaseItem(listener) {
             }
         }
     }
-
     override fun chatLayout(holder: BaseViewHolder): View? {
         return getOrCreateBinding<LayoutMsgTextBinding>(holder).root
     }
@@ -139,6 +222,20 @@ class ChatText(listener: ChatMessageClickListener) : ChatBaseItem(listener) {
         }
 
         private fun openWebUrl(context: Context, url: String) {
+            // 广场帖子链接：只在聊天里分享，点击直接进帖子详情，不打开浏览器
+            val squarePostId = SquarePostLink.parse(url)
+            if (squarePostId != null) {
+                try {
+                    val intent = SquareDetailActivity.intent(context, squarePostId, false)
+                    if (context !is Activity) {
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                    }
+                    context.startActivity(intent)
+                    return
+                } catch (e: Exception) {
+                    android.util.Log.e("ChatText", "打开帖子详情失败：${e.message}", e)
+                }
+            }
             // 通话房间链接：交给通话页处理（会注入 H5Wallet 并追加当前用户昵称后加载 H5）
             val invite = CallInviteLink.parse(url)
             val activity = context as? FragmentActivity

@@ -63,7 +63,9 @@ class ChatRepository(private val service: ChatService) : ChatDataSource {
         return apiCall { service.getPriChatRecord(body) }
     }
 
-    override suspend fun burnConfirm(targetId: String, logId: Long): Result<BurnConfirmResp> {
-        return apiCall { service.burnConfirm(mapOf("targetId" to targetId, "logId" to logId)) }
+    override suspend fun burnConfirm(targetId: String, logId: Long, type: Int): Result<BurnConfirmResp> {
+        // 群聊必须带 type=1；私聊传 0（等价于不传）
+        val body = mapOf("type" to type, "targetId" to targetId, "logId" to logId)
+        return apiCall { service.burnConfirm(body) }
     }
 }

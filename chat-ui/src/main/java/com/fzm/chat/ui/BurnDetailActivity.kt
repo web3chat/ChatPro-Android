@@ -10,6 +10,7 @@ import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
 import com.fzm.chat.R
 import com.fzm.chat.biz.base.BizActivity
+import com.fzm.chat.core.data.ChatConst
 import com.fzm.chat.core.data.model.ChatMessage
 import com.fzm.chat.core.data.model.contact
 import com.fzm.chat.core.data.model.isSendType
@@ -63,7 +64,7 @@ class BurnDetailActivity : BizActivity() {
         if (!msg.isSendType) {
             android.util.Log.d("BurnFlow", "BurnDetail open: logId=${msg.logId} targetId=${msg.contact} from=${msg.from} isSend=${msg.isSendType}")
             lifecycleScope.launch {
-                BurnConfirmScheduler.markOpened(msg.logId, msg.contact)
+                BurnConfirmScheduler.markOpened(msg.logId, msg.contact, burnType(msg))
             }
         } else {
             android.util.Log.d("BurnFlow", "BurnDetail open (sender, no confirm): logId=${msg.logId}")
@@ -104,7 +105,15 @@ class BurnDetailActivity : BizActivity() {
         if (msg.isSendType || confirmStarted) return
         confirmStarted = true
         android.util.Log.d("BurnFlow", "tryConfirm: logId=${msg.logId} targetId=${msg.contact}")
-        BurnConfirmScheduler.confirmAsync(msg.logId, msg.contact)
+        BurnConfirmScheduler.confirmAsync(msg.logId, msg.contact, burnType(msg))
+    }
+
+    /**
+     * burn-confirm 的 type：群聊 1，私聊 0。
+     * 群聊的 targetId 是群 id（ChatMessage.contact 在群会话里即群地址）。
+     */
+    private fun burnType(msg: ChatMessage): Int {
+        return if (msg.channelType == ChatConst.GROUP_CHANNEL) 1 else 0
     }
 
     private fun render(msg: ChatMessage) {

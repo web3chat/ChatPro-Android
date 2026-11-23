@@ -41,7 +41,7 @@ class SquareMyPostsActivity : BizActivity() {
             onDeleteClick = { confirmDeletePost(it) }
             onEditClick = { openEdit(it) }
             onContentClick = { openDetail(it) }
-            onShareClick = { shareSquarePost(it, lifecycleScope) }
+            onShareClick = { showSquareShareOptions(it, lifecycleScope) }
         }
     }
 

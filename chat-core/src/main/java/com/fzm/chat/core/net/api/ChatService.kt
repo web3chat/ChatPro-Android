@@ -62,13 +62,6 @@ interface ChatService {
     @POST("/app/record/auto-delete/get")
     suspend fun getAutoDeletePrivate(@Body map: Map<String, Any>): HttpResult<AutoDeleteSettingData>
 
-    /**
-     * 阅后即焚确认：收方看过正文后调用
-     *
-     * @param map targetId：对端 uid（消息发送者）
-     *            logId：消息 mid
-     */
-    @Headers(value = [RetrofitUrlManager.DOMAIN_NAME_HEADER + ChatConst.CHAT_DOMAIN])
     @POST("/app/record/burn-confirm")
     suspend fun burnConfirm(@Body map: Map<String, Any>): HttpResult<BurnConfirmResp>
 

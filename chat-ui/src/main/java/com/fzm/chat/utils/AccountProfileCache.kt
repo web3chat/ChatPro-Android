@@ -25,4 +25,13 @@ object AccountProfileCache {
     fun getNickname(address: String): String {
         return MMkvUtil.decodeString(KEY_NICKNAME_PREFIX + address)
     }
+
+    /**
+     * 删除账号时清理本地缓存的头像/昵称
+     */
+    fun clear(address: String) {
+        if (address.isBlank()) return
+        MMkvUtil.removeKey(KEY_AVATAR_PREFIX + address)
+        MMkvUtil.removeKey(KEY_NICKNAME_PREFIX + address)
+    }
 }

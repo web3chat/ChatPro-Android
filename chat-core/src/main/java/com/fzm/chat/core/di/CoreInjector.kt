@@ -36,6 +36,8 @@ import com.fzm.chat.core.logic.ServerManager
 import com.fzm.chat.core.logic.SocketSender
 import com.fzm.chat.core.logic.BurnConfirmScheduler
 import com.fzm.chat.core.net.ChatInterceptor
+import com.fzm.chat.core.net.HttpLogging
+import com.fzm.chat.core.net.HttpErrorInterceptor
 import com.fzm.chat.core.net.DecryptInterceptor
 import com.fzm.chat.core.net.TrustAllCertificate
 import com.fzm.chat.core.net.TrustAllHostnameVerifier
@@ -71,7 +73,6 @@ import dtalk.biz.Biz
 import me.jessyan.retrofiturlmanager.RetrofitUrlManager
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
-import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.core.module.Module
 import org.koin.core.qualifier.named
 import org.koin.dsl.module
@@ -219,10 +220,13 @@ class CoreInjector : Injector, IProvider {
             createRetrofit(get(contract), get(), "https://0.0.0.0")
         }
         single(socket) {
-            OkHttpClient.Builder().connectTimeout(5, TimeUnit.SECONDS).build()
+            OkHttpClient.Builder()
+                .addInterceptor(HttpLogging.interceptor())
+                .connectTimeout(5, TimeUnit.SECONDS).build()
         }
         single(crypto) {
             OkHttpClient.Builder()
+                .addInterceptor(HttpLogging.interceptor())
                 .connectTimeout(20L, TimeUnit.SECONDS)
                 .readTimeout(20L, TimeUnit.SECONDS)
                 .writeTimeout(20L, TimeUnit.SECONDS)
@@ -367,11 +371,10 @@ class CoreInjector : Injector, IProvider {
             .addSSLSocketFactory(sslFactory, trustManager)
             .addInterceptors(*interceptor)
             .addChangeUrlInterceptor(manager)
-        if (Arch.debug) {
-            val loggingInterceptor = HttpLoggingInterceptor()
-            loggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
-            builder.addNetworkInterceptor(loggingInterceptor)
-        }
+        // HTTP 非 2xx：把服务端 message 透传给 UI（避免只显示「网络请求失败」）
+        builder.addInterceptor(HttpErrorInterceptor.interceptor())
+        // 全局请求日志：仅 debug 包输出（HttpLogging.enabled = BuildConfig.DEBUG）
+        builder.addInterceptor(HttpLogging.interceptor())
         return builder.build()
     }
 

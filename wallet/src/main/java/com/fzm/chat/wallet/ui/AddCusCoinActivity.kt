@@ -16,6 +16,7 @@ import com.fzm.chat.core.MyWallet
 import com.fzm.chat.router.wallet.WalletModule
 import com.fzm.chat.wallet.R
 import com.fzm.chat.wallet.data.WalletRepository
+import com.fzm.chat.wallet.data.ContractInfoResolver
 import com.fzm.chat.wallet.data.bean.ExtendInfo
 import com.fzm.chat.wallet.databinding.ActivityAddCusCoinBinding
 import com.fzm.wallet.sdk.db.entity.Coin
@@ -23,6 +24,8 @@ import com.fzm.wallet.sdk.db.entity.PWallet
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.zjy.architecture.di.rootScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import org.jetbrains.anko.toast
@@ -48,6 +51,10 @@ class AddCusCoinActivity : BizActivity() {
 
     private var curChain = ""
     private var curChainUI = ""
+
+    /** 合约地址 → symbol/decimals 的查询任务（输入变化时取消上一次） */
+    private var contractLookupJob: Job? = null
+
     override val root: View
         get() = binding.root
 
@@ -130,29 +137,46 @@ class AddCusCoinActivity : BizActivity() {
             bd.show()
         }
         binding.etContractAddress.addTextChangedListener { text ->
-            Log.v("cat", "=====$text")
-            lifecycleScope.launch(Dispatchers.IO) {
+            val address = text?.toString()?.trim().orEmpty()
+            // 地址没输完不请求（避免每敲一个字符就打一次接口）
+            if (address.length < MIN_CONTRACT_ADDRESS_LENGTH) {
+                return@addTextChangedListener
+            }
+            // 取消上一次请求，防止旧响应把新地址的 symbol 覆盖
+            contractLookupJob?.cancel()
+            contractLookupJob = lifecycleScope.launch(Dispatchers.IO) {
+                delay(CONTRACT_LOOKUP_DEBOUNCE)
                 try {
-                    val res = repository.getContract(curChain, "", ExtendInfo(text.toString()))
-                    val data = res.data()
+                    Log.i(TAG, "发起合约查询: chainUI=$curChainUI, chain=$curChain, address=$address")
+                    // 直接链上查（钱包后端的 Wallet.GetContractorInfo 未注册）
+                    val info = ContractInfoResolver.resolve(curChainUI, address)
+                    if (info == null) {
+                        Log.w(TAG, "链上识别失败: address=$address")
+                        // 自动识别失败时不要卡住流程：提示用户手动填写 Symbol / 精度
+                        withContext(Dispatchers.Main) {
+                            binding.etSymbol.isEnabled = true
+                            binding.etDecimal.isEnabled = true
+                            toast(getString(R.string.wallet_cus_contract_lookup_failed))
+                        }
+                        return@launch
+                    }
+                    Log.d(TAG, "链上识别成功: address=$address, symbol=${info.symbol}, decimals=${info.decimals}")
                     withContext(Dispatchers.Main) {
-                        binding.etSymbol.setText(data.symbol)
-                        binding.etDecimal.setText(data.decimals)
-                        binding.etSymbol.isEnabled = false
+                        binding.etSymbol.setText(info.symbol)
+                        binding.etDecimal.setText(info.decimals)
+                        // Symbol 保持可编辑：链上返回的是英文缩写，允许用户改成中文名
                         binding.etDecimal.isEnabled = false
                     }
                 } catch (e: Exception) {
-                    e.printStackTrace()
+                    Log.e(TAG, "getContract 异常: address=$address", e)
                 }
-
-
             }
         }
 
 
         binding.btnOkAdd.setOnClickListener {
             val contractAddress = binding.etContractAddress.text.toString()
-            val symbol = binding.etSymbol.text.toString()
+            val symbol = binding.etSymbol.text.toString().trim()
             val decimal = binding.etDecimal.text.toString()
             if (contractAddress.isEmpty()) {
                 toast(getString(R.string.wallet_hint_input_contract_address))
@@ -170,7 +194,7 @@ class AddCusCoinActivity : BizActivity() {
                 toast(getString(R.string.wallet_error_contract_address_format))
                 return@setOnClickListener
             }
-            if (!isEnglishLetters(symbol)) {
+            if (!isValidSymbol(symbol)) {
                 toast(getString(R.string.wallet_error_symbol_format))
                 return@setOnClickListener
             }
@@ -204,8 +228,16 @@ class AddCusCoinActivity : BizActivity() {
         }
     }
 
-    fun isEnglishLetters(str: String): Boolean {
-        return Regex("^[a-zA-Z]+$").matches(str)
+    /**
+     * 代币名称校验：允许中文、英文、数字以及下划线/中划线。
+     *
+     * 原实现只允许 [a-zA-Z]，自定义代币无法使用中文名（如「测试币」）；
+     * \p{L} 是 Unicode 字母类，同时覆盖中文/日文/韩文与拉丁字母。
+     */
+    fun isValidSymbol(str: String): Boolean {
+        val s = str.trim()
+        if (s.isEmpty() || s.length > MAX_SYMBOL_LENGTH) return false
+        return Regex("^[\\p{L}\\p{N}_-]+$").matches(s)
     }
 
     fun isNumeric(str: String): Boolean {
@@ -226,5 +258,17 @@ class AddCusCoinActivity : BizActivity() {
         binding.tvChain.setTextColor(binding.tvChain.context.getColor(R.color.biz_text_grey_dark))
     }
 
+    private companion object {
+        const val TAG = "AddCusCoin"
+
+        /** 代币名称最大长度（汉字按 1 个字符计） */
+        const val MAX_SYMBOL_LENGTH = 20
+
+        /** 合约地址至少这么长才发起查询（避免输一半就打接口） */
+        const val MIN_CONTRACT_ADDRESS_LENGTH = 20
+
+        /** 输入防抖，毫秒 */
+        const val CONTRACT_LOOKUP_DEBOUNCE = 500L
+    }
 
 }

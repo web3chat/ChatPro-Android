@@ -266,14 +266,4 @@ class JsWCApi(
         }
     }
 
-
-    fun test1() {
-        val address = "1LNEyigJ4TDrcQpgCoUJbBJB3SS9Rk3NF3"
-        val privateKey = "bdb98f77cd069fa1f5bf37e11abd15a3efd630e9445a0d1f20d0b78fb44dc4d0"
-        val content = "123123"
-
-        val signature: String = sign(content, privateKey)
-        println(signature)
-    }
-
 }

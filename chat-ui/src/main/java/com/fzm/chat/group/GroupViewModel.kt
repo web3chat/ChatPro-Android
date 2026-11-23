@@ -242,6 +242,26 @@ class GroupViewModel(
     }
 
     /**
+     * 申请加入需要审批的群（joinType=2）。
+     *
+     * 先调入群申请接口；部分环境尚未部署 `/group/app/create-group-apply`（返回 404，
+     * 客户端只能显示「网络请求错误」），此时退回 join-group，由服务端按群设置决定
+     * 是直接进群还是生成一条待审批的申请。
+     */
+    fun applyJoinGroup(gid: Long, url: String?, inviterId: String?, applyNote: String? = null) {
+        request<Any>(true) {
+            onRequest {
+                val apply = repository.createGroupApply(url, gid, applyNote)
+                if (apply.isSucceed()) apply else repository.joinGroup(url, gid, inviterId)
+            }
+
+            onSuccess {
+                _createApplyResult.value = it
+            }
+        }
+    }
+
+    /**
      * 提交入群申请（joinType=2 时群外申请加入）
      */
     fun createGroupApply(gid: Long, url: String?, applyNote: String? = null) {

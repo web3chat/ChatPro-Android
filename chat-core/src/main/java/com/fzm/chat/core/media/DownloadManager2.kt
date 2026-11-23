@@ -52,10 +52,20 @@ object DownloadManager2 : CoroutineScope {
                 val original = it.proceed(it.request())
                 return@Interceptor original.newBuilder()
                     .body(ProgressResponseBody(it.request().tag(), original.body, object : ProgressResponseBody.Callback {
-                        var oldProgress = 0f
-                        override fun onProgress(tag: Any?, progress: Float) {
-                            if (progress != oldProgress) {
-                                oldProgress = progress
+                        var lastPercent = -1
+                        override fun onProgress(
+                            tag: Any?,
+                            progress: Float,
+                            bytesRead: Long,
+                            totalBytes: Long
+                        ) {
+                            val key = tag?.toString() ?: return
+                            downloadedBytesMap[key] = bytesRead
+                            if (totalBytes > 0) downloadTotalMap[key] = totalBytes
+                            // UI 只按整数百分比刷新，避免每个 8KB 读包都 post 到主线程
+                            val percent = (progress * 100).toInt().coerceIn(0, 100)
+                            if (percent != lastPercent) {
+                                lastPercent = percent
                                 runningTask[tag]?.liveData?.postValue(Result.Loading(progress))
                             }
                         }
@@ -63,6 +73,20 @@ object DownloadManager2 : CoroutineScope {
                     .build()
             })
             .build()
+    }
+
+    /** 实际已下载字节数 / 总字节数（按消息 logId 记录，供聊天页展示） */
+    private val downloadedBytesMap =
+        java.util.concurrent.ConcurrentHashMap<String, Long>()
+    private val downloadTotalMap =
+        java.util.concurrent.ConcurrentHashMap<String, Long>()
+
+    fun downloadedBytes(message: ChatMessage): Long {
+        return downloadedBytesMap[message.logId.toString()] ?: 0L
+    }
+
+    fun downloadTotalBytes(message: ChatMessage): Long {
+        return downloadTotalMap[message.logId.toString()] ?: 0L
     }
 
     private val context by rootScope.inject<Context>()

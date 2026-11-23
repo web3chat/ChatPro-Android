@@ -1,5 +1,6 @@
 package com.fzm.chat.square
 
+import com.fzm.chat.core.net.HttpLogging
 import android.util.Log
 import com.fzm.chat.core.data.ChatConfig
 import com.fzm.chat.router.core.CoreModule
@@ -37,7 +38,7 @@ object SquareApi {
 
     private val coreService by route<CoreService>(CoreModule.SERVICE)
 
-    private val client = OkHttpClient.Builder()
+    private val client = OkHttpClient.Builder().addInterceptor(HttpLogging.interceptor())
         .connectTimeout(15, TimeUnit.SECONDS)
         .readTimeout(20, TimeUnit.SECONDS)
         .writeTimeout(20, TimeUnit.SECONDS)

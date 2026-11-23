@@ -1,5 +1,6 @@
 package com.fzm.chat.qrlogin
 
+import com.fzm.chat.core.net.HttpLogging
 import android.util.Log
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -26,7 +27,7 @@ object QrLoginApi {
 
     private const val TAG = "QrLoginApi"
 
-    private val client = OkHttpClient.Builder()
+    private val client = OkHttpClient.Builder().addInterceptor(HttpLogging.interceptor())
         .connectTimeout(10, TimeUnit.SECONDS)
         .readTimeout(15, TimeUnit.SECONDS)
         .build()
@@ -39,10 +40,10 @@ object QrLoginApi {
      * @param host               服务器地址（不含末尾斜杠）
      * @param sessionId          二维码中的 sessionId
      * @param address            当前登录账号的链上地址
-     * @param encryptedPrivateKey 加密后的私钥（v1：hex(密文||tag)；v2：hex(iv||密文||tag)）
+     * @param encryptedPrivateKey 加密后的私钥（v2：hex(iv||密文||tag)）
      * @param privateKeyHex      当前账号私钥（仅用于本地签名，不出网）
      * @param publicKeyHex       当前账号压缩公钥（hex）
-     * @param phonePubKey        v2 必传：APP 临时公钥（33 字节压缩 hex），由后端校验并透传给 PC；v1 传 null
+     * @param phonePubKey        APP 临时公钥（33 字节压缩 hex），后端校验后透传给 PC
      */
     suspend fun confirm(
         host: String,
@@ -51,7 +52,7 @@ object QrLoginApi {
         encryptedPrivateKey: String,
         privateKeyHex: String,
         publicKeyHex: String,
-        phonePubKey: String? = null
+        phonePubKey: String
     ): QrLoginApiResult {
         val signature = QrLoginCrypto.makeFzmSignature(privateKeyHex, publicKeyHex)
             ?: return QrLoginApiResult(false, "签名失败")
@@ -59,10 +60,7 @@ object QrLoginApi {
             put("sessionId", sessionId)
             put("address", address)
             put("encryptedPrivateKey", encryptedPrivateKey)
-            // v2（ECDH）：透传 APP 临时公钥；v1 不带此字段
-            if (!phonePubKey.isNullOrEmpty()) {
-                put("phonePubKey", phonePubKey)
-            }
+            put("phonePubKey", phonePubKey)
         }.toString()
         Log.i(TAG, "confirm 请求体: $body")
         Log.i(TAG, "confirm FZM-SIGNATURE 头: $signature")

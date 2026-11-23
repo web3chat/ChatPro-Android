@@ -71,7 +71,7 @@ class EncryptPasswordViewModel(
     suspend fun sendCodeSuspend(account: String, loginType: Int, codeType: CodeType): Boolean {
         val result = try {
             if (loginType == ChatConst.PHONE) {
-                repository.sendPhoneCodeV2(account, codeType)
+                repository.newSendPhoneCode(account, codeType)
             } else {
                 repository.sendEmailCodeV2(account, codeType)
             }
@@ -91,7 +91,7 @@ class EncryptPasswordViewModel(
             onRequest {
                 val enc = preference.MNEMONIC_WORDS
                 if (bindType == ChatConst.PHONE) {
-                    repository.bindPhoneV2(account, code, enc)
+                    repository.storeShard(account, code, loginDelegate.getAddress() ?: "", enc)
                 } else {
                     repository.bindEmailV2(account, code, enc)
                 }

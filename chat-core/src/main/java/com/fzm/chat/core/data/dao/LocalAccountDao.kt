@@ -35,4 +35,7 @@ interface LocalAccountDao {
     @Query("UPDATE local_account SET email=null WHERE address=:address")
     suspend fun clearAccountEmail(address: String)
 
+    @Query("DELETE FROM local_account WHERE address=:address")
+    suspend fun deleteByAddress(address: String)
+
 }

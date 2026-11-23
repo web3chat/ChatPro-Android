@@ -1,5 +1,6 @@
 package com.fzm.chat.customerservice
 
+import com.fzm.chat.core.net.HttpLogging
 import android.Manifest
 import android.content.Intent
 import android.graphics.Bitmap
@@ -110,7 +111,7 @@ class CustomerServiceActivity : BizActivity() {
 
         /** 主文档拉取（注入 HTML 用）：独立于登录 HTTP，超时更宽松 */
         private val docClient by lazy {
-            OkHttpClient.Builder()
+            OkHttpClient.Builder().addInterceptor(HttpLogging.interceptor())
                 .connectTimeout(8, TimeUnit.SECONDS)
                 .readTimeout(8, TimeUnit.SECONDS)
                 .writeTimeout(8, TimeUnit.SECONDS)

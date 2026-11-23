@@ -92,6 +92,10 @@ class GroupSignalProcessor(
                     it.msgType != Biz.MsgType.Notification_VALUE
                 }
                 android.util.Log.d("BurnFlow", "[signal] Revoke: logId=${revoke.logId} reason=${revoke.reason} burned=$burned found=${found.size} operator=${revoke.operator}")
+                // 即使本地消息已被清理，burned 信令本身也足以让待确认队列出队
+                if (burned) {
+                    BurnConfirmScheduler.drop(revoke.logId)
+                }
                 found.forEach {
                     val name = when {
                         revoke.operator == delegate.getAddress() -> "你"
@@ -130,12 +134,11 @@ class GroupSignalProcessor(
                             Msg.NotificationType.RevokeMessage_VALUE
                         )
                     }
-                    // 阅后即焚：删除本地媒体文件 + 清待确认队列
+                    // 阅后即焚：删除本地媒体文件（队列已在上方按信令出队）
                     if (burned) {
                         it.msg.localUrl?.takeIf { path -> path.isNotEmpty() }?.let { path ->
                             java.io.File(path).delete()
                         }
-                        BurnConfirmScheduler.drop(it.logId)
                     }
                     // 直接复用被撤回的消息数据，只修改消息类型和消息内容
                     val msg = it.clone().apply {

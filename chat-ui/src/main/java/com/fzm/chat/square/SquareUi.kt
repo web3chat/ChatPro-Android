@@ -1,25 +1,35 @@
 package com.fzm.chat.square
 
+import android.app.Dialog
 import android.content.Context
 import android.content.Intent
 import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.SystemClock
 import android.text.Layout
 import android.util.TypedValue
+import android.view.Gravity
+import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.View
 import android.view.ViewConfiguration
 import android.view.ViewGroup
+import android.view.Window
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.core.view.doOnLayout
 import androidx.core.view.isVisible
+import com.alibaba.android.arouter.launcher.ARouter
 import com.fzm.chat.R
+import com.fzm.chat.core.data.bean.PreSendParams
 import com.fzm.chat.core.data.local.ContactManager
+import com.fzm.chat.core.data.po.MessageContent
+import com.fzm.chat.router.main.MainModule
 import com.zjy.architecture.ext.load
 import com.zjy.architecture.ext.toast
+import dtalk.biz.Biz
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -158,6 +168,78 @@ private fun Context.shareSquarePostText(post: SquarePost) {
     } catch (e: Exception) {
         toast(R.string.square_tips_failed)
     }
+}
+
+/**
+ * 广场帖子链接（App 内专用）。
+ *
+ * 只在聊天里点击时会被识别并跳转帖子详情；发到外部 App 打开只会是普通网页。
+ * 改域名时同步修改 [PREFIX] 即可。
+ */
+object SquarePostLink {
+
+    /** 帖子链接前缀 */
+    const val PREFIX = "https://chat.3syxin.com/square/post/"
+
+    fun of(postId: Long): String = PREFIX + postId
+
+    /** 解析帖子 id；不是帖子链接返回 null（兼容 http/https、带查询参数） */
+    fun parse(url: String?): Long? {
+        if (url.isNullOrBlank()) return null
+        val marker = "/square/post/"
+        val index = url.lowercase().indexOf(marker)
+        if (index < 0) return null
+        val tail = url.substring(index + marker.length)
+        val id = tail.takeWhile { it.isDigit() }
+        return id.toLongOrNull()?.takeIf { it > 0 }
+    }
+}
+
+/**
+ * 分享按钮：底部操作面板（参考 iOS 分享弹窗）
+ *
+ * 1. 分享到其他应用（原有分享图片/文本能力）
+ * 2. 分享帖子链接到聊天（以卡片消息发送，点开直达帖子详情）
+ */
+fun Context.showSquareShareOptions(post: SquarePost, scope: CoroutineScope) {
+    val view = LayoutInflater.from(this).inflate(R.layout.dialog_square_share, null)
+    val dialog = Dialog(this)
+    dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+    dialog.setContentView(view)
+    dialog.setCanceledOnTouchOutside(true)
+    dialog.window?.apply {
+        setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        setGravity(Gravity.BOTTOM)
+        setLayout(
+            ViewGroup.LayoutParams.MATCH_PARENT,
+            ViewGroup.LayoutParams.WRAP_CONTENT
+        )
+    }
+    view.findViewById<View>(R.id.ll_share_app).setOnClickListener {
+        dialog.dismiss()
+        shareSquarePost(post, scope)
+    }
+    view.findViewById<View>(R.id.ll_share_link).setOnClickListener {
+        dialog.dismiss()
+        shareSquarePostLinkToChat(post)
+    }
+    view.findViewById<View>(R.id.tv_cancel).setOnClickListener { dialog.dismiss() }
+    dialog.show()
+}
+
+/**
+ * 把帖子以卡片消息发到聊天：走「选择聊天」页，选中后发送
+ * [SquareCardMessage] 格式的文本消息，聊天里渲染成帖子卡片，点击进入详情。
+ */
+fun Context.shareSquarePostLinkToChat(post: SquarePost) {
+    val params = PreSendParams(
+        msgType = Biz.MsgType.Text_VALUE,
+        msg = MessageContent.text(SquareCardMessage.encode(post)),
+        source = null
+    )
+    ARouter.getInstance().build(MainModule.CONTACT_SELECT)
+        .withSerializable("preSend", params)
+        .navigation(this)
 }
 
 /**

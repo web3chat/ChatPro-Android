@@ -11,348 +11,482 @@
         android:id="@+id/ctb_title"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:background="@android:color/white"
+        android:elevation="0.5dp"
         app:left_icon="@drawable/biz_ic_back_dark"
-        app:title_text="@string/chat_title_security_setting" />
+        app:title_text="@string/chat_title_security_setting"
+        app:title_text_size="18sp" />
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:fillViewport="true"
+        android:paddingBottom="24dp"
+        android:scrollbars="none">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <!-- ==================== 账号安全 ==================== -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="26dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/chat_account_section_security"
+                android:textColor="@color/biz_text_grey_light"
+                android:textSize="13sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:layout_marginEnd="14dp"
+                android:background="@drawable/bg_account_card"
+                android:elevation="1dp"
+                android:orientation="vertical">
 
                 <LinearLayout
                     android:id="@+id/ll_mnem"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:background="@color/white"
+                    android:layout_height="58dp"
+                    android:background="?android:attr/selectableItemBackground"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="12dp">
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:src="@drawable/ic_account_mnemonic" />
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="15dp"
+                        android:layout_marginStart="14dp"
                         android:layout_weight="1"
                         android:text="@string/chat_tips_export_words"
                         android:textColor="@color/biz_text_grey_dark"
-                        android:textSize="16sp" />
+                        android:textSize="15sp" />
 
                     <TextView
                         android:id="@+id/tv_mnem_tips"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/biz_text_grey_light"
-                        android:textSize="14sp" />
+                        android:textSize="13sp" />
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="6dp"
-                        android:layout_marginEnd="15dp"
-                        android:src="@drawable/ic_item_operation_grey" />
+                        android:layout_width="14dp"
+                        android:layout_height="14dp"
+                        android:layout_marginStart="8dp"
+                        android:src="@drawable/ic_account_chevron" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/ll_s2"
-                    android:visibility="gone"
-                    android:layout_marginTop="10dp"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:background="@color/white"
+                    android:layout_height="58dp"
+                    android:background="?android:attr/selectableItemBackground"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="12dp"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:src="@drawable/ic_account_mnemonic" />
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="15dp"
+                        android:layout_marginStart="14dp"
                         android:layout_weight="1"
                         android:text="@string/chat_tips_export_s2"
                         android:textColor="@color/biz_text_grey_dark"
-                        android:textSize="16sp" />
-
+                        android:textSize="15sp" />
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="6dp"
-                        android:layout_marginEnd="15dp"
-                        android:src="@drawable/ic_item_operation_grey" />
+                        android:layout_width="14dp"
+                        android:layout_height="14dp"
+                        android:layout_marginStart="8dp"
+                        android:src="@drawable/ic_account_chevron" />
                 </LinearLayout>
 
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginStart="52dp"
+                    android:background="#F0F2F5" />
+
+                <LinearLayout
+                    android:id="@+id/ll_encrypted_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="58dp"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="12dp">
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:src="@drawable/ic_account_lock" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="14dp"
+                        android:layout_weight="1"
+                        android:text="@string/chat_tips_encrypt_key"
+                        android:textColor="@color/biz_text_grey_dark"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/tv_encrypted_password_tips"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/chat_tips_action2"
+                        android:textColor="@color/biz_text_grey_light"
+                        android:textSize="13sp" />
+
+                    <ImageView
+                        android:layout_width="14dp"
+                        android:layout_height="14dp"
+                        android:layout_marginStart="8dp"
+                        android:src="@drawable/ic_account_chevron" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- ==================== 账号绑定 ==================== -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="26dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/chat_account_section_bind"
+                android:textColor="@color/biz_text_grey_light"
+                android:textSize="13sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:layout_marginEnd="14dp"
+                android:background="@drawable/bg_account_card"
+                android:elevation="1dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/ll_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="58dp"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="12dp">
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:src="@drawable/ic_account_phone" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="14dp"
+                        android:layout_weight="1"
+                        android:text="@string/chat_label_phone"
+                        android:textColor="@color/biz_text_grey_dark"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/tv_phone_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/chat_tips_action3"
+                        android:textColor="@color/biz_text_grey_light"
+                        android:textSize="13sp" />
+
+                    <ImageView
+                        android:layout_width="14dp"
+                        android:layout_height="14dp"
+                        android:layout_marginStart="8dp"
+                        android:src="@drawable/ic_account_chevron" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginStart="52dp"
+                    android:background="#F0F2F5" />
+
+                <LinearLayout
+                    android:id="@+id/ll_wechat"
+                    android:layout_width="match_parent"
+                    android:layout_height="58dp"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="12dp">
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:src="@drawable/ic_account_wechat" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="14dp"
+                        android:layout_weight="1"
+                        android:text="@string/chat_label_wechat"
+                        android:textColor="@color/biz_text_grey_dark"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/tv_wechat_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/chat_tips_action3"
+                        android:textColor="@color/biz_text_grey_light"
+                        android:textSize="13sp" />
+
+                    <ImageView
+                        android:layout_width="14dp"
+                        android:layout_height="14dp"
+                        android:layout_marginStart="8dp"
+                        android:src="@drawable/ic_account_chevron" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginStart="52dp"
+                    android:background="#F0F2F5" />
+
+                <LinearLayout
+                    android:id="@+id/ll_xhs"
+                    android:layout_width="match_parent"
+                    android:layout_height="58dp"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="12dp">
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:src="@drawable/ic_account_xhs" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="14dp"
+                        android:layout_weight="1"
+                        android:text="@string/chat_label_xiaohongshu"
+                        android:textColor="@color/biz_text_grey_dark"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/tv_xhs_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/chat_tips_action3"
+                        android:textColor="@color/biz_text_grey_light"
+                        android:textSize="13sp" />
+
+                    <ImageView
+                        android:layout_width="14dp"
+                        android:layout_height="14dp"
+                        android:layout_marginStart="8dp"
+                        android:src="@drawable/ic_account_chevron" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginStart="52dp"
+                    android:background="#F0F2F5" />
+
+                <LinearLayout
+                    android:id="@+id/ll_douyin"
+                    android:layout_width="match_parent"
+                    android:layout_height="58dp"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="12dp">
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:src="@drawable/ic_account_douyin" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="14dp"
+                        android:layout_weight="1"
+                        android:text="@string/chat_label_douyin"
+                        android:textColor="@color/biz_text_grey_dark"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/tv_douyin_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/chat_tips_action3"
+                        android:textColor="@color/biz_text_grey_light"
+                        android:textSize="13sp" />
+
+                    <ImageView
+                        android:layout_width="14dp"
+                        android:layout_height="14dp"
+                        android:layout_marginStart="8dp"
+                        android:src="@drawable/ic_account_chevron" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="58dp"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="12dp"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:src="@drawable/ic_account_email" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="14dp"
+                        android:layout_weight="1"
+                        android:text="@string/chat_tips_email"
+                        android:textColor="@color/biz_text_grey_dark"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/tv_email_tips"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/chat_tips_action3"
+                        android:textColor="@color/biz_text_grey_light"
+                        android:textSize="13sp" />
+
+                    <ImageView
+                        android:layout_width="14dp"
+                        android:layout_height="14dp"
+                        android:layout_marginStart="8dp"
+                        android:src="@drawable/ic_account_chevron" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- ==================== 其他 ==================== -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="26dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/chat_account_section_other"
+                android:textColor="@color/biz_text_grey_light"
+                android:textSize="13sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:layout_marginEnd="14dp"
+                android:background="@drawable/bg_account_card"
+                android:elevation="1dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/ll_chain_sync"
+                    android:layout_width="match_parent"
+                    android:layout_height="58dp"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="12dp">
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:src="@drawable/ic_account_sync" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="14dp"
+                        android:layout_weight="1"
+                        android:text="@string/chat_account_menu_chain_sync"
+                        android:textColor="@color/biz_text_grey_dark"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/tv_chain_sync_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/chat_chain_sync_pending"
+                        android:textColor="@color/biz_text_grey_light"
+                        android:textSize="13sp" />
+
+                    <ImageView
+                        android:layout_width="14dp"
+                        android:layout_height="14dp"
+                        android:layout_marginStart="8dp"
+                        android:src="@drawable/ic_account_chevron" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- 兼容原隐藏提示，保持代码/数据不变 -->
             <TextView
                 android:layout_width="match_parent"
-                android:visibility="gone"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
+                android:layout_marginStart="26dp"
                 android:layout_marginTop="5dp"
-                android:layout_marginEnd="15dp"
+                android:layout_marginEnd="26dp"
                 android:layout_marginBottom="10dp"
                 android:lineSpacingExtra="4dp"
                 android:text="@string/chat_security_setting_tip1"
-                android:textColor="@color/biz_text_grey_light" />
-
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:orientation="vertical">
-
-                    <LinearLayout
-                        android:id="@+id/ll_phone"
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:background="@color/white"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="15dp"
-                            android:layout_weight="1"
-                            android:text="@string/chat_label_phone"
-                            android:textColor="@color/biz_text_grey_dark"
-                            android:textSize="16sp" />
-
-                        <TextView
-                            android:id="@+id/tv_phone_value"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/chat_tips_action3"
-                            android:textColor="@color/biz_text_grey_light"
-                            android:textSize="14sp" />
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="6dp"
-                            android:layout_marginEnd="15dp"
-                            android:src="@drawable/ic_item_operation_grey" />
-                    </LinearLayout>
-                    <LinearLayout
-                        android:id="@+id/ll_wechat"
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:background="@color/white"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="15dp"
-                            android:layout_weight="1"
-                            android:text="@string/chat_label_wechat"
-                            android:textColor="@color/biz_text_grey_dark"
-                            android:textSize="16sp" />
-
-                        <TextView
-                            android:id="@+id/tv_wechat_value"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/chat_tips_action3"
-                            android:textColor="@color/biz_text_grey_light"
-                            android:textSize="14sp" />
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="6dp"
-                            android:layout_marginEnd="15dp"
-                            android:src="@drawable/ic_item_operation_grey" />
-                    </LinearLayout>
-                    <LinearLayout
-                        android:id="@+id/ll_xhs"
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:background="@color/white"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="15dp"
-                            android:layout_weight="1"
-                            android:text="@string/chat_label_xiaohongshu"
-                            android:textColor="@color/biz_text_grey_dark"
-                            android:textSize="16sp" />
-
-                        <TextView
-                            android:id="@+id/tv_xhs_value"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/chat_tips_action3"
-                            android:textColor="@color/biz_text_grey_light"
-                            android:textSize="14sp" />
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="6dp"
-                            android:layout_marginEnd="15dp"
-                            android:src="@drawable/ic_item_operation_grey" />
-                    </LinearLayout>
-                    <LinearLayout
-                        android:id="@+id/ll_douyin"
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:background="@color/white"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="15dp"
-                            android:layout_weight="1"
-                            android:text="@string/chat_label_douyin"
-                            android:textColor="@color/biz_text_grey_dark"
-                            android:textSize="16sp" />
-
-                        <TextView
-                            android:id="@+id/tv_douyin_value"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/chat_tips_action3"
-                            android:textColor="@color/biz_text_grey_light"
-                            android:textSize="14sp" />
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="6dp"
-                            android:layout_marginEnd="15dp"
-                            android:src="@drawable/ic_item_operation_grey" />
-                    </LinearLayout>
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="0.5dp"
-                        android:background="@color/biz_color_divider" />
-
-                    <LinearLayout
-                        android:id="@+id/ll_email"
-                        android:visibility="gone"
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:background="?android:attr/selectableItemBackground"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="15dp"
-                            android:layout_weight="1"
-                            android:text="@string/chat_tips_email"
-                            android:textColor="@color/biz_text_grey_dark"
-                            android:textSize="16sp" />
-
-                        <TextView
-                            android:id="@+id/tv_email_tips"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/chat_tips_action3"
-                            android:textColor="@color/biz_text_grey_light"
-                            android:textSize="14sp" />
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="6dp"
-                            android:layout_marginEnd="15dp"
-                            android:src="@drawable/ic_item_operation_grey" />
-                    </LinearLayout>
-
-
-                    <LinearLayout
-                        android:id="@+id/ll_encrypted_password"
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@color/white"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="15dp"
-                            android:layout_weight="1"
-                            android:text="@string/chat_tips_encrypt_key"
-                            android:textColor="@color/biz_text_grey_dark"
-                            android:textSize="16sp" />
-
-                        <TextView
-                            android:id="@+id/tv_encrypted_password_tips"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/chat_tips_action2"
-                            android:textColor="@color/biz_text_grey_light"
-                            android:textSize="14sp" />
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="6dp"
-                            android:layout_marginEnd="15dp"
-                            android:src="@drawable/ic_item_operation_grey" />
-                    </LinearLayout>
-                </LinearLayout>
-
-            <!-- 收款地址同步（入口从“我的”页移入） -->
-            <LinearLayout
-                android:id="@+id/ll_chain_sync"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="10dp"
-                android:background="@color/white"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="15dp"
-                    android:layout_weight="1"
-                    android:text="@string/chat_account_menu_chain_sync"
-                    android:textColor="@color/biz_text_grey_dark"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:id="@+id/tv_chain_sync_value"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/chat_chain_sync_pending"
-                    android:textColor="@color/biz_text_grey_light"
-                    android:textSize="14sp" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="6dp"
-                    android:layout_marginEnd="15dp"
-                    android:src="@drawable/ic_item_operation_grey" />
-            </LinearLayout>
+                android:textColor="@color/biz_text_grey_light"
+                android:textSize="12sp"
+                android:visibility="gone" />
 
             <TextView
                 android:layout_width="match_parent"
-                android:visibility="gone"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
+                android:layout_marginStart="26dp"
                 android:layout_marginTop="5dp"
-                android:layout_marginEnd="15dp"
+                android:layout_marginEnd="26dp"
                 android:layout_marginBottom="10dp"
                 android:lineSpacingExtra="4dp"
                 android:text="@string/chat_security_setting_tip2"
-                android:textColor="@color/biz_text_grey_light" />
+                android:textColor="@color/biz_text_grey_light"
+                android:textSize="12sp"
+                android:visibility="gone" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

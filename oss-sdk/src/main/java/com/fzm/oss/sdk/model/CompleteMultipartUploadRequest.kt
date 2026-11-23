@@ -20,7 +20,8 @@ class CompleteMultipartUploadRequest(
      * 分段信息
      */
     val parts: List<Part>,
-) : OSSRequest() {
+    endPoint: String? = null,
+) : OSSRequest(endPoint) {
 
     data class Part(
         val Etag: String,

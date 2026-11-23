@@ -76,7 +76,7 @@ abstract class ChatDatabase : RoomDatabase() {
         /**
          * 数据库的版本号
          */
-        const val BIZ_DB_VERSION = 12
+        const val BIZ_DB_VERSION = 13
 
         /**
          * 数据库名
@@ -96,7 +96,7 @@ abstract class ChatDatabase : RoomDatabase() {
                 .addMigrations(
                     MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4, MIGRATION_4_5, MIGRATION_5_6,
                     MIGRATION_6_7, MIGRATION_7_8, MIGRATION_8_9, MIGRATION_9_10, MIGRATION_10_11,
-                    MIGRATION_11_12
+                    MIGRATION_11_12, MIGRATION_12_13
                 )
                 .addCallback(CALL_BACK)
                 .build()
@@ -253,6 +253,36 @@ abstract class ChatDatabase : RoomDatabase() {
                 }
                 // 阅后即焚待确认队列
                 database.execSQL("CREATE TABLE IF NOT EXISTS `burn_pending_confirm` (`logId` INTEGER NOT NULL, `targetId` TEXT NOT NULL, `openedAt` INTEGER NOT NULL, PRIMARY KEY(`logId`))")
+            }
+        }
+
+        /**
+         * 12 -> 13
+         *
+         * 群聊阅后即焚：待确认记录新增 type 列（0 私聊 / 1 群聊），
+         * 启动补发时必须带上 type=1，否则服务端会按私聊处理。
+         */
+        private val MIGRATION_12_13 = object : Migration(12, 13) {
+            override fun migrate(database: SupportSQLiteDatabase) {
+                var hasType = false
+                database.query("PRAGMA table_info(`burn_pending_confirm`)").use { cursor ->
+                    val nameIndex = cursor.getColumnIndex("name")
+                    while (cursor.moveToNext()) {
+                        if (cursor.getString(nameIndex) == "type") {
+                            hasType = true
+                            break
+                        }
+                    }
+                }
+                if (!hasType) {
+                    database.execSQL("ALTER TABLE `burn_pending_confirm` ADD COLUMN `type` INTEGER NOT NULL DEFAULT 0")
+                }
+                // 升级前已入队的老记录没有 type：按本地消息的会话类型纠正群聊记录
+                database.execSQL(
+                    "UPDATE `burn_pending_confirm` SET `type` = 1 " +
+                        "WHERE `type` = 0 AND `logId` IN " +
+                        "(SELECT `logId` FROM `chat_message` WHERE `channelType` = 1)"
+                )
             }
         }
     }

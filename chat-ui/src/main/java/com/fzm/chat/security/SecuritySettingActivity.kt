@@ -5,7 +5,6 @@ import android.content.Intent
 import android.graphics.drawable.BitmapDrawable
 import android.view.LayoutInflater
 import android.view.View
-import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.core.content.ContextCompat
@@ -22,11 +21,15 @@ import com.fzm.chat.WConfig
 import com.fzm.chat.biz.base.AppConfig
 import com.fzm.chat.biz.base.BizActivity
 import com.fzm.chat.biz.base.shareCode
+import com.fzm.chat.biz.ui.PasswordVerifyFragment
 import com.fzm.chat.core.MyWallet
+import com.fzm.chat.core.backup.PhoneShardStore
 import com.fzm.chat.core.data.ChatConst
+import com.fzm.chat.core.data.enum.CodeType
 import com.fzm.chat.core.session.LoginDelegate
 import com.fzm.chat.core.utils.MMkvUtil
 import com.fzm.chat.databinding.ActivitySecuritySettingBinding
+import com.fzm.chat.router.biz.PasswordVerifier
 import com.fzm.chat.router.main.MainModule
 import com.fzm.chat.router.route
 import com.fzm.chat.router.wallet.WalletModule
@@ -34,6 +37,9 @@ import com.fzm.chat.router.wallet.WalletService
 import com.fzm.chat.vm.BackupViewModel
 import com.fzm.chat.vm.SecuritySettingViewModel
 import com.fzm.chat.widget.ExportWordsDialog
+import com.fzm.widget.dialog.EasyDialog
+import com.fzm.widget.verify.CodeLength
+import com.fzm.widget.verify.VerifyCodeDialog
 import com.google.android.material.textfield.TextInputEditText
 import com.king.zxing.util.CodeUtils
 import com.zjy.architecture.ext.load
@@ -67,6 +73,12 @@ class SecuritySettingActivity : BizActivity(), View.OnClickListener {
     private val viewModel by viewModel<SecuritySettingViewModel>()
     private var phone = ""
     private var email = ""
+
+    /** 手机号绑定：等待备份服务绑定成功的手机号（成功后补写 phone -> chatAddress） */
+    private var pendingBindPhone: String? = null
+    private var pendingBindPassword: String? = null
+    private var pendingForceRebind = false
+    private var phoneVerifyDialog: VerifyCodeDialog? = null
 
     private val binding by init { ActivitySecuritySettingBinding.inflate(layoutInflater) }
 
@@ -139,6 +151,35 @@ class SecuritySettingActivity : BizActivity(), View.OnClickListener {
             binding.tvXhsValue.text = "${bindAccount.xiaohongshu_id}"
             binding.tvDouyinValue.text = "${bindAccount.douyin_id}"
 
+        })
+
+        // 双写第 2 步：新绑定接口（/api/v1/store-shard）绑定成功后，
+        // 再写「手机号 -> chatAddress」映射（/api/v1/bind-account），手机号登录才能找到本账号
+        backViewModel.bindResult.observe(this, Observer { account ->
+            val bindPhone = pendingBindPhone
+            if (!bindPhone.isNullOrEmpty() && account == bindPhone) {
+                pendingBindPhone = null
+                pendingBindPassword = null
+                pendingForceRebind = false
+                phoneVerifyDialog?.dismiss()
+                // 展示 S2 分片，换设备手机号登录时需要用户输入
+                val s2 = PhoneShardStore.get(bindPhone)
+                if (s2.isNotEmpty()) {
+                    ExportWordsDialog(this, s2, 3).show()
+                }
+                val address = myAddress.ifEmpty { loginDelegate.getAddress() ?: "" }
+                if (address.isEmpty()) {
+                    android.util.Log.w("BindSync", "phone binding ok, but address empty, skip mapping")
+                } else {
+                    android.util.Log.d(
+                        "BindSync",
+                        "phone binding ok, sync bind-account phone=$bindPhone address=$address"
+                    )
+                    backViewModel.bindAccount(bindPhone, "", "", "", address)
+                    backViewModel.updateInfo { this.phone = bindPhone }
+                }
+                toast(R.string.chat_tips_bind_account_success)
+            }
         })
     }
 
@@ -312,14 +353,18 @@ class SecuritySettingActivity : BizActivity(), View.OnClickListener {
 
     private fun showInputDialog(type: Int) {
         val dialogView = LayoutInflater.from(this).inflate(R.layout.dialog_binds, null)
+        val tvTitle: TextView = dialogView.findViewById(R.id.tv_title)
         val tvHint: TextView = dialogView.findViewById(R.id.tv_hint)
         val etInput: EditText = dialogView.findViewById(R.id.et_input)
-        val btnConfirm: Button = dialogView.findViewById(R.id.btn_confirm)
+        val btnConfirm: TextView = dialogView.findViewById(R.id.btn_confirm)
+        val btnCancel: TextView = dialogView.findViewById(R.id.btn_cancel)
 
         val unbindText = getString(R.string.chat_tips_action3)
         when (type) {
             BIND_PHONE -> {
-                tvHint.text = "请输入手机号"
+                tvTitle.text = getString(R.string.chat_label_phone)
+                tvHint.text = getString(R.string.chat_hint_input_phone)
+                etInput.hint = getString(R.string.chat_hint_input_phone)
                 val current = binding.tvPhoneValue.text.toString().trim()
                 if (current.isNotEmpty() && current != unbindText) {
                     etInput.setText(current)
@@ -328,7 +373,9 @@ class SecuritySettingActivity : BizActivity(), View.OnClickListener {
             }
 
             BIND_WECHAT -> {
-                tvHint.text = "请输入微信号"
+                tvTitle.text = getString(R.string.chat_label_wechat)
+                tvHint.text = getString(R.string.chat_hint_input_wechat)
+                etInput.hint = getString(R.string.chat_hint_input_wechat)
                 val current = binding.tvWechatValue.text.toString().trim()
                 if (current.isNotEmpty() && current != unbindText) {
                     etInput.setText(current)
@@ -337,7 +384,9 @@ class SecuritySettingActivity : BizActivity(), View.OnClickListener {
             }
 
             BIND_XHS -> {
-                tvHint.text = "请输入小红书号"
+                tvTitle.text = getString(R.string.chat_label_xiaohongshu)
+                tvHint.text = getString(R.string.chat_hint_input_xiaohongshu)
+                etInput.hint = getString(R.string.chat_hint_input_xiaohongshu)
                 val current = binding.tvXhsValue.text.toString().trim()
                 if (current.isNotEmpty() && current != unbindText) {
                     etInput.setText(current)
@@ -346,7 +395,9 @@ class SecuritySettingActivity : BizActivity(), View.OnClickListener {
             }
 
             BIND_DOUYIN -> {
-                tvHint.text = "请输入抖音号"
+                tvTitle.text = getString(R.string.chat_label_douyin)
+                tvHint.text = getString(R.string.chat_hint_input_douyin)
+                etInput.hint = getString(R.string.chat_hint_input_douyin)
                 val current = binding.tvDouyinValue.text.toString().trim()
                 if (current.isNotEmpty() && current != unbindText) {
                     etInput.setText(current)
@@ -358,32 +409,146 @@ class SecuritySettingActivity : BizActivity(), View.OnClickListener {
 
         // 去除弹窗默认的背景（避免圆角被覆盖）
         dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
+        btnCancel.setOnClickListener { dialog.dismiss() }
         btnConfirm.setOnClickListener {
             val input = etInput.text.toString().trim()
-            if (input.isNotEmpty()) {
-                when (type) {
-                    BIND_PHONE -> {
-                        backViewModel.bindAccount(input, "", "", "", myAddress)
-                    }
-
-                    BIND_WECHAT -> {
-                        backViewModel.bindAccount("", input, "", "", myAddress)
-                    }
-
-                    BIND_XHS -> {
-                        backViewModel.bindAccount("", "", input, "", myAddress)
-                    }
-
-                    BIND_DOUYIN -> {
-                        backViewModel.bindAccount("", "", "", input, myAddress)
-                    }
+            if (input.isEmpty()) return@setOnClickListener
+            dialog.dismiss()
+            when (type) {
+                BIND_PHONE -> {
+                    // 先检查手机号是否已绑定其他账号，确认后才允许解绑重绑
+                    checkPhoneConflictThenBind(input)
                 }
-                dialog.dismiss()
+                BIND_WECHAT -> {
+                    backViewModel.bindAccount("", input, "", "", myAddress)
+                }
+                BIND_XHS -> {
+                    backViewModel.bindAccount("", "", input, "", myAddress)
+                }
+                BIND_DOUYIN -> {
+                    backViewModel.bindAccount("", "", "", input, myAddress)
+                }
             }
-
         }
 
-        // 5. 显示弹窗
+        // 弹窗展示后自动聚焦并弹出键盘
+        dialog.setOnShowListener {
+            etInput.requestFocus()
+            val imm = getSystemService(android.content.Context.INPUT_METHOD_SERVICE)
+                    as? android.view.inputmethod.InputMethodManager
+            imm?.showSoftInput(etInput, android.view.inputmethod.InputMethodManager.SHOW_IMPLICIT)
+        }
         dialog.show()
+    }
+
+    /**
+     * 绑定手机号第 0 步：检查该手机号是否已绑定其他账号。
+     * 已绑定其他账号时必须用户明确确认「解绑并绑定」，避免静默覆盖原账号。
+     */
+    private fun checkPhoneConflictThenBind(bindPhone: String) {
+        lifecycleScope.launch {
+            val current = myAddress.ifEmpty { loginDelegate.getAddress() ?: "" }
+            val bound = backViewModel.queryBoundAddress(bindPhone)
+            val hasShard = backViewModel.hasShard(bindPhone)
+            when {
+                !bound.isNullOrEmpty() && bound != current -> {
+                    showPhoneConflictDialog(bindPhone, bound)
+                }
+                bound.isNullOrEmpty() && hasShard -> {
+                    showPhoneConflictDialog(bindPhone, "")
+                }
+                else -> startBindPhone(
+                    bindPhone,
+                    // 已绑定当前账号时允许覆盖自己的 shard（幂等重绑）
+                    forceRebind = !bound.isNullOrEmpty() && bound == current
+                )
+            }
+        }
+    }
+
+    private fun startBindPhone(bindPhone: String, forceRebind: Boolean) {
+        pendingForceRebind = forceRebind
+        showBindPasswordDialog(bindPhone)
+    }
+
+    private fun showPhoneConflictDialog(bindPhone: String, boundAddress: String) {
+        val message = if (boundAddress.isEmpty()) {
+            getString(R.string.chat_phone_conflict_message_unknown)
+        } else {
+            getString(R.string.chat_phone_conflict_message, maskAddress(boundAddress))
+        }
+        EasyDialog.Builder()
+            .setHeaderTitle(getString(R.string.chat_phone_conflict_title))
+            .setContent(message)
+            .setBottomLeftText(getString(R.string.chat_phone_conflict_cancel))
+            .setBottomRightText(getString(R.string.chat_phone_conflict_confirm))
+            .setBottomLeftClickListener { it.dismiss() }
+            .setBottomRightClickListener {
+                it.dismiss()
+                startBindPhone(bindPhone, forceRebind = true)
+            }
+            .create(this)
+            .show()
+    }
+
+    private fun maskAddress(address: String): String {
+        return if (address.length > 12) {
+            "${address.take(6)}…${address.takeLast(4)}"
+        } else {
+            address
+        }
+    }
+
+    /**
+     * 绑定手机号第 1 步：校验聊天密码（用于解密本地助记词）。
+     * 与手机号登录/助记词导入使用的是同一个密码。
+     */
+    private fun showBindPasswordDialog(bindPhone: String) {
+        pendingBindPhone = bindPhone
+        val dialog by route<PasswordVerifyFragment>(
+            MainModule.VERIFY_ENC_PWD,
+            bundleOf("type" to 0, "waletId" to MyWallet.getID())
+        )
+        dialog?.setOnPasswordVerifyListener(object : PasswordVerifier.OnPasswordVerifyListener {
+            override fun onSuccess(password: String) {
+                pendingBindPassword = password
+                showPhoneBindVerifyDialog(bindPhone)
+            }
+
+            override fun onFail() {
+                pendingBindPhone = null
+                pendingBindPassword = null
+            }
+        })
+        dialog?.show(supportFragmentManager, "BIND_PHONE_PASSWORD")
+    }
+
+    /**
+     * 绑定手机号：短信验证 -> /api/v1/store-shard 写入 S1。
+     * 成功后 bindResult 观察者里展示 S2、补写 /api/v1/bind-account 映射。
+     */
+    private fun showPhoneBindVerifyDialog(bindPhone: String) {
+        phoneVerifyDialog = VerifyCodeDialog.Builder(this, this, CodeLength.MEDIUM)
+            .setPhone(bindPhone)
+            .setAutoSend(true)
+            .setOnSendCodeListenerSuspend {
+                backViewModel.sendCodeSuspend(bindPhone, ChatConst.PHONE, CodeType.BACKUP)
+            }
+            .setOnCodeCompleteListener { _, _, code ->
+                backViewModel.bindPhoneWithShard(
+                    bindPhone,
+                    code,
+                    pendingBindPassword ?: "",
+                    forceRebind = pendingForceRebind
+                )
+            }
+            .setOnDismissListener {
+                // 用户取消/关闭验证码弹窗时清掉待绑定信息，避免影响下一次绑定
+                if (pendingBindPhone == bindPhone) pendingBindPhone = null
+                pendingBindPassword = null
+                phoneVerifyDialog = null
+            }
+            .build()
+        phoneVerifyDialog?.show()
     }
 }

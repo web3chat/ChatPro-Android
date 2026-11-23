@@ -297,6 +297,16 @@ class MessageSender(
             else -> -1
         }
         if (type != -1 && message.msg.mediaUrl.isNullOrEmpty()) {
+            val isVideo = message.msgType == Biz.MsgType.Video_VALUE
+            val videoPath = message.msg.localUrl
+            val videoSize = if (isVideo) mediaSize(videoPath) else 0L
+            if (isVideo) {
+                logD(
+                    "VideoFlow",
+                    "[send] start msgId=${message.msgId} duration=${message.msg.duration}s " +
+                        "size=${videoSize}B path=$videoPath"
+                )
+            }
             try {
                 val start = System.currentTimeMillis()
                 if (ChatConfig.FILE_ENCRYPT) {
@@ -310,12 +320,29 @@ class MessageSender(
                     "[send] upload file msgId=${message.msgId} type=$type " +
                         "mediaUrl=${message.msg.mediaUrl} cost=${System.currentTimeMillis() - start}ms"
                 )
+                if (isVideo) {
+                    val cost = (System.currentTimeMillis() - start).coerceAtLeast(1L)
+                    val speed = videoSize / 1024f / 1024f / (cost / 1000f)
+                    logD(
+                        "VideoFlow",
+                        "[send] upload done msgId=${message.msgId} cost=${cost}ms " +
+                            "size=${videoSize}B speed=%.2fMB/s url=${message.msg.mediaUrl}"
+                                .format(speed)
+                    )
+                }
             } catch (e: Exception) {
                 logE(
                     "MsgFlow",
                     "[send] upload file exception msgId=${message.msgId} type=$type: " +
                         Log.getStackTraceString(e)
                 )
+                if (isVideo) {
+                    logE(
+                        "VideoFlow",
+                        "[send] upload failed msgId=${message.msgId} size=${videoSize}B: " +
+                            "${e.javaClass.simpleName}: ${e.message}"
+                    )
+                }
                 message.failReason = SendFailReason.UPLOAD_FAILED
                 message.failDetail = e.message ?: e.javaClass.simpleName
                 return false
@@ -404,10 +431,19 @@ class MessageSender(
         message: ChatMessage? = null
     ): String {
         return try {
-            if (path.isContent()) {
-                ossService?.uploadMedia(url, path?.toUri(), type) ?: ""
+            val service = ossService ?: return ""
+            if (type == MediaType.VIDEO && message != null) {
+                // 视频：带进度上传，聊天页显示百分比
+                message.progress = 0f
+                VideoTransferProgress.update(message.msgId, 0f)
+                service.uploadMediaWithProgress(url, path, type) { progress ->
+                    message.progress = progress
+                    VideoTransferProgress.update(message.msgId, progress)
+                }
+            } else if (path.isContent()) {
+                service.uploadMedia(url, path?.toUri(), type) ?: ""
             } else {
-                ossService?.uploadMedia(url, path, type) ?: ""
+                service.uploadMedia(url, path, type) ?: ""
             }
         } catch (e: Exception) {
             logE("MsgFlow", "[send] uploadMedia exception type=$type path=$path: ${Log.getStackTraceString(e)}")
@@ -418,6 +454,20 @@ class MessageSender(
             // CrashReport.postCatchedException(Exception("文件上传失败", e))
             if (throws) throw e
             ""
+        }
+    }
+
+    /** 媒体文件大小（用于视频发送日志/速度计算） */
+    private fun mediaSize(path: String?): Long {
+        if (path.isNullOrEmpty()) return 0L
+        return try {
+            if (path.startsWith("content://")) {
+                context.contentResolver.openFileDescriptor(path.toUri(), "r")?.use { it.statSize } ?: 0L
+            } else {
+                java.io.File(path).length()
+            }
+        } catch (e: Exception) {
+            0L
         }
     }
 

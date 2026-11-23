@@ -20,5 +20,9 @@ data class BurnPendingConfirm(
     /**
      * 打开详情时间（Unix 毫秒）
      */
-    val openedAt: Long
+    val openedAt: Long,
+    /**
+     * burn-confirm 的 type：0 私聊 / 1 群聊
+     */
+    val type: Int = 0
 )

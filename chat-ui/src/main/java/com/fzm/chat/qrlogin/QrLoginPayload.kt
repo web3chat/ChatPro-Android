@@ -1,44 +1,34 @@
 package com.fzm.chat.qrlogin
 
-import com.fzm.chat.core.data.ChatConfig
 import org.json.JSONObject
 
 /**
- * PC 网页版扫码登录的二维码内容
+ * PC 网页版扫码登录的二维码内容。
  *
- * v1（AES-GCM 直接用二维码里的密钥）：
- * {
- *   "type": "qr-login",
- *   "sessionId": "...",
- *   "key": "...",   // 64 位 hex，32 字节 AES-GCM 密钥
- *   "iv": "..."     // 24 位 hex，12 字节 GCM 向量
- * }
+ * 只支持 v2（ECDH，2026-10-15 起）：二维码只含 PC 临时公钥，不含任何密钥材料。
  *
- * v2（ECDH，2026-10-15 新增；二维码只含 PC 临时公钥，无任何秘密）：
+ * ```json
  * {
  *   "type": "qr-login-v2",
  *   "sessionId": "...",
- *   "pubKey": "..." // PC 临时公钥，secp256k1 33 字节压缩格式 hex（02/03 开头）
+ *   "pubKey": "..."   // PC 临时公钥，secp256k1 33 字节压缩格式 hex（02/03 开头）
  * }
+ * ```
+ *
+ * 旧的 v1 格式（`type=qr-login`，二维码里直接带 AES key/iv，明文风险）已下线，
+ * 扫到 v1 一律按「无法识别」处理。
  */
 data class QrLoginPayload(
     val sessionId: String,
-    /** v1：AES-GCM 密钥 hex；v2 为空 */
-    val key: String? = null,
-    /** v1：GCM iv hex；v2 为空 */
-    val iv: String? = null,
-    /** v2：PC 临时公钥 hex；v1 为空 */
-    val pubKey: String? = null
+    /** PC 临时公钥 hex（33 字节压缩格式） */
+    val pubKey: String
 ) {
     companion object {
 
-        const val TYPE_V1 = "qr-login"
         const val TYPE_V2 = "qr-login-v2"
 
         /**
-         * 解析二维码内容；非扫码登录类型或字段不完整时返回 null
-         *
-         * 灰度期间 v1/v2 两种二维码都会出现，必须同时支持。
+         * 解析二维码内容；非扫码登录类型、v1 旧格式或字段不完整时返回 null。
          */
         fun parse(raw: String?): QrLoginPayload? {
             if (raw.isNullOrBlank()) return null
@@ -46,28 +36,10 @@ data class QrLoginPayload(
                 val json = JSONObject(raw)
                 val sessionId = json.optString("sessionId")
                 if (sessionId.isEmpty()) return null
-                when (json.optString("type")) {
-                    TYPE_V1 -> {
-                        val key = json.optString("key")
-                        val iv = json.optString("iv")
-                        if (key.isEmpty() || iv.isEmpty()) {
-                            null
-                        } else {
-                            QrLoginPayload(sessionId, key, iv)
-                        }
-                    }
-                    TYPE_V2 -> {
-                        // 灰度开关默认关闭：未开启时不识别 v2 二维码，行为与 ECDH 改造前一致
-                        if (!ChatConfig.QR_LOGIN_ECDH) return null
-                        val pubKey = json.optString("pubKey")
-                        if (pubKey.isEmpty()) {
-                            null
-                        } else {
-                            QrLoginPayload(sessionId, pubKey = pubKey)
-                        }
-                    }
-                    else -> null
-                }
+                if (json.optString("type") != TYPE_V2) return null
+                val pubKey = json.optString("pubKey")
+                if (pubKey.isEmpty()) return null
+                QrLoginPayload(sessionId, pubKey)
             } catch (e: Exception) {
                 null
             }

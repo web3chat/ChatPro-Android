@@ -1,6 +1,7 @@
 package com.fzm.chat.search.web3;
 
 
+import com.fzm.chat.core.net.HttpLogging;
 import static com.fzm.chat.search.web3.Utils.loadFile;
 
 import android.content.Context;
@@ -220,7 +221,7 @@ public class JsInjectorClient {
     }
 
     private OkHttpClient createHttpClient() {
-        return new OkHttpClient.Builder()
+        return new OkHttpClient.Builder().addInterceptor(HttpLogging.INSTANCE.interceptor())
                 .cookieJar(new WebViewCookieJar())
                 .build();
     }
