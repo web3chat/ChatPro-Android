@@ -10,6 +10,7 @@ import com.alibaba.android.arouter.facade.annotation.Autowired
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.alibaba.android.arouter.launcher.ARouter
 import com.fzm.chat.R
+import com.fzm.chat.W
 import com.fzm.chat.biz.base.BizActivity
 import com.fzm.chat.core.logic.ServerManager
 import com.fzm.chat.core.session.data.UserPreference
@@ -50,6 +51,12 @@ class ChooseLoginActivity : BizActivity(), View.OnClickListener {
         viewModel.serverFetchFail.observe(this) { toast(it) }
         if (expired) {
             toast("登录失效，请重新登录")
+        }
+        if (W.PHONE_LOGIN_ONLY) {
+            // 手机号登录版本：首页不展示创建/导入助记词，也不展示本地钱包账号管理
+            binding.llMnemonic.visibility = View.GONE
+            binding.tvAccountManager.visibility = View.GONE
+            binding.tvLoginHint.text = getString(R.string.login_use_phone)
         }
     }
 

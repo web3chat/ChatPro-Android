@@ -5,6 +5,7 @@ data class CheckSE(
     val exists: Boolean,
     val is_updated: Boolean?,
     val phone: String,
-    val version: Int?
+    val version: Int?,
+    val shard_missing: Boolean? = null
 )
 

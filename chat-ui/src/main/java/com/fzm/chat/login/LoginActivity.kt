@@ -13,6 +13,7 @@ import androidx.lifecycle.lifecycleScope
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.alibaba.android.arouter.launcher.ARouter
 import com.fzm.chat.R
+import com.fzm.chat.W
 import com.fzm.chat.biz.base.BizActivity
 import com.fzm.chat.biz.ui.PasswordVerifyFragment
 import com.fzm.chat.core.MyWallet
@@ -101,6 +102,10 @@ class LoginActivity : BizActivity() {
             }
         }
         viewModel.fetchResult.observe(this) {
+            if (W.PHONE_LOGIN_ONLY && it.mnemonic.isNullOrEmpty()) {
+                toast("该账号未备份，请使用原设备登录")
+                return@observe
+            }
             if (it.mnemonic.isNullOrEmpty()) {
                 // 正常情况下不会进入这里，因为fetch之前已经确认过存在备份的助记词
                 val dialog = EasyDialog.Builder()
@@ -182,6 +187,20 @@ class LoginActivity : BizActivity() {
             gotoMain()
         }
         viewModel.error.observe(this) { toast(it) }
+
+        if (W.PHONE_LOGIN_ONLY) {
+            // 手机号登录版本：不展示邮箱登录，也不展示 S2 私钥分片导入入口
+            binding.ctbTitle.setRightText("")
+            binding.ctbTitle.setOnRightClickListener { }
+            binding.etEmail.gone()
+            binding.etPhone.visible()
+            binding.llArea.visible()
+            binding.llGetS2.visibility = View.GONE
+            binding.etS2.visibility = View.GONE
+            binding.ivScan.visibility = View.GONE
+            binding.tvTitle.setText(R.string.login_use_phone)
+            binding.tvSubTitle.setText(R.string.login_use_phone_tips)
+        }
     }
 
 
@@ -227,6 +246,7 @@ class LoginActivity : BizActivity() {
         }
         binding.ctbTitle.setOnLeftClickListener { finish() }
         binding.ctbTitle.setOnRightClickListener {
+            if (W.PHONE_LOGIN_ONLY) return@setOnRightClickListener
             viewModel.cancelCount()
             if (loginType == PHONE_LOGIN) {
                 loginType = EMAIL_LOGIN
@@ -300,6 +320,10 @@ class LoginActivity : BizActivity() {
                             val code = binding.etCode.text.toString().trim()
                             viewModel.getShard(mAccount, code)
                         } else {
+                            if (W.PHONE_LOGIN_ONLY) {
+                                toast("该手机号已绑定账号，请使用原设备登录")
+                                return@setOnClickListener
+                            }
                             if (checkS2() && checkPassword()) {
                                 val code = binding.etCode.text.toString().trim()
                                 viewModel.getShard(mAccount, code)
@@ -330,6 +354,11 @@ class LoginActivity : BizActivity() {
         }
 
         viewModel.checkShardExists.observe(this, Observer { checkSE ->
+            if (W.PHONE_LOGIN_ONLY && checkSE.shard_missing == true) {
+                sExists = 0
+                toast("该手机号已绑定账号，请使用原设备登录，或联系客服处理")
+                return@Observer
+            }
             sExists = if (checkSE.exists) 1 else -1
             Log.v("cc", "checkShardExists sExists =$sExists")
             if (sExists == 1) {
@@ -343,8 +372,13 @@ class LoginActivity : BizActivity() {
 
                 } else {
                     binding.llGetCode.visibility = View.VISIBLE
-                    binding.llGetS2.visibility = View.VISIBLE
-                    binding.etPassword.visibility = View.VISIBLE
+                    if (W.PHONE_LOGIN_ONLY) {
+                        binding.llGetS2.visibility = View.GONE
+                        binding.etPassword.visibility = View.GONE
+                    } else {
+                        binding.llGetS2.visibility = View.VISIBLE
+                        binding.etPassword.visibility = View.VISIBLE
+                    }
                 }
 
             } else {
@@ -375,6 +409,10 @@ class LoginActivity : BizActivity() {
                 }
 
             } else {
+                if (W.PHONE_LOGIN_ONLY) {
+                    toast("该手机号已绑定账号，请使用原设备登录")
+                    return@Observer
+                }
                 val s2 = binding.etS2.text.toString().trim()
                 val password = binding.etPassword.text.toString().trim()
                 val mnem = Walletapi.recoverMnemonic(s1, s2)

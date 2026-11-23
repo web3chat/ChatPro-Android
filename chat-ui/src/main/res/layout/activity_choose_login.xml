@@ -70,6 +70,7 @@
 
 
             <TextView
+                android:id="@+id/tv_login_hint"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="18dp"
@@ -97,6 +98,7 @@
             android:textStyle="bold" />
 
         <FrameLayout
+            android:id="@+id/ll_mnemonic"
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:layout_marginTop="15dp">
