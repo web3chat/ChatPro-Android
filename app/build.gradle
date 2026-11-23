@@ -31,8 +31,8 @@ android {
             applicationId "com.fzm.chatpro"
         }
         chatphone {
-            versionCode 3350000
-            versionName "3.3.5"
+            versionCode 1
+            versionName "1.0"
             dimension "version"
             applicationId "com.phone.chatpro"
         }
