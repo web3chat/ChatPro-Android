@@ -20,11 +20,17 @@ class ChatDatabaseProvider {
         init {
             // 保证在主线程执行
             Handler(Looper.getMainLooper()).post {
-                AppPreference.address.observeForever {
-                    if (it.isNullOrEmpty()) {
-                        // address不同时重置数据库
-                        sInstance?.close()
-                        sInstance = null
+                AppPreference.address.observeForever { address ->
+                    // 地址变化（包括空 -> 非空、A -> B）必须换库；
+                    // 只在 address 为空时重置，会残留上一个账号/".db" 实例，导致聊天记录空白。
+                    val expected = "${address}.db"
+                    if (sInstance != null && ChatDatabase.dbName != expected) {
+                        synchronized(this) {
+                            if (sInstance != null && ChatDatabase.dbName != expected) {
+                                runCatching { sInstance?.close() }
+                                sInstance = null
+                            }
+                        }
                     }
                 }
             }
@@ -33,10 +39,17 @@ class ChatDatabaseProvider {
         private val context = rootScope.get<Context>()
 
         fun provide(): ChatDatabase {
-            if (sInstance == null || ChatDatabase.dbName.isEmpty()) {
+            val address = AppPreference.ADDRESS
+            val expected = "${address}.db"
+            if (sInstance == null || ChatDatabase.dbName != expected) {
                 synchronized(this) {
-                    if (sInstance == null || ChatDatabase.dbName.isEmpty()) {
-                        sInstance = ChatDatabase.build(context, AppPreference.ADDRESS)
+                    if (sInstance == null || ChatDatabase.dbName != expected) {
+                        runCatching { sInstance?.close() }
+                        sInstance = ChatDatabase.build(context, address)
+                        android.util.Log.d(
+                            "ChatDB",
+                            "provide address=$address db=${ChatDatabase.dbName}"
+                        )
                     }
                 }
             }

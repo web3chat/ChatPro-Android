@@ -320,7 +320,17 @@ class ChatViewModel(
             if (loadCount % ChatConfig.PAGE_SIZE != 0) {
                 pageCount = (loadCount / ChatConfig.PAGE_SIZE + 1) * ChatConfig.PAGE_SIZE
             }
-            val list = MessageRepository.getMessageByTime(target, channelType, datetime, pageCount)
+            var list = MessageRepository.getMessageByTime(target, channelType, datetime, pageCount)
+            if (list.isEmpty()) {
+                // 新消息刚写入会话预览、chat_message 事务尚未提交时，立即查可能为空；短暂重试一次
+                delay(300)
+                list = MessageRepository.getMessageByTime(target, channelType, datetime, pageCount)
+            }
+            android.util.Log.d(
+                "ChatDB",
+                "local history target=$target channel=$channelType " +
+                    "db=${com.fzm.chat.core.data.ChatDatabase.dbName} size=${list.size}"
+            )
             // 记录本地分页游标：下次继续往前翻页时以最早一条消息的时间为准
             localCursor = list.minOfOrNull { it.datetime }
             _latestMessage.value = list

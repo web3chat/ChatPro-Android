@@ -62,6 +62,7 @@ interface ChatService {
     @POST("/app/record/auto-delete/get")
     suspend fun getAutoDeletePrivate(@Body map: Map<String, Any>): HttpResult<AutoDeleteSettingData>
 
+    @Headers(value = [RetrofitUrlManager.DOMAIN_NAME_HEADER + ChatConst.CHAT_DOMAIN])
     @POST("/app/record/burn-confirm")
     suspend fun burnConfirm(@Body map: Map<String, Any>): HttpResult<BurnConfirmResp>
 

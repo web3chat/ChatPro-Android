@@ -1745,6 +1745,8 @@ class ChatActivity : BizActivity(), KeyboardHeightObserver, ChatInputView.IChatI
         setCustomDensity(this)
         clearMsgState()
         ChatConfig.CURRENT_TARGET = address
+        // 回到会话时补发未完成的 burn-confirm（网络失败/退到后台期间）
+        BurnConfirmScheduler.replayAsync()
     }
 
     override fun onPause() {

@@ -73,6 +73,7 @@ import com.fzm.chat.core.data.model.localExists
 import com.fzm.chat.core.media.DownloadManager2
 import com.fzm.chat.core.data.po.FriendUser
 import com.fzm.chat.core.data.po.MessageContent
+import com.fzm.chat.core.logic.BurnConfirmScheduler
 import com.fzm.chat.core.logic.MessageSender
 import com.fzm.chat.core.logic.MessageSubscription
 import com.fzm.chat.core.session.LoginDelegate
@@ -515,6 +516,8 @@ class MainActivity : BizActivity() {
         // 服务端只保留 7 天聊天记录，本地同步清理，避免本地无限增长
         cleanExpiredLocalMessages()
         autoDownloadRecentVideos()
+        // 回到前台时补发未完成的 burn-confirm
+        BurnConfirmScheduler.replayAsync()
         LiveDataBus.of(BusEvent::class.java).unreadMessageNum().observe(this) {
             BadgeUtil.setBadgeCount(this, it)
             showMsgBadge(it)
@@ -773,6 +776,8 @@ class MainActivity : BizActivity() {
         // 登录完成后补一次本地 7 天清理（initData 执行时可能还未登录）
         cleanExpiredLocalMessages()
         autoDownloadRecentVideos()
+        // 回到前台时补发未完成的 burn-confirm
+        BurnConfirmScheduler.replayAsync()
         // 首次进入主界面预请求存储（相册）权限，避免进聊天页点「图片/视频」时才首次申请
         requestStoragePermissionOnce()
         // 首次启动（含进程重建）进入主界面后延迟检查更新。
