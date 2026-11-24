@@ -64,6 +64,7 @@ import com.fzm.chat.core.data.bean.*
 import com.fzm.chat.core.data.model.*
 import com.fzm.chat.core.data.msg.MsgState
 import com.fzm.chat.core.data.po.*
+import com.fzm.chat.core.logic.BurnConfirmScheduler
 import com.fzm.chat.core.logic.MessageSubscription
 import com.fzm.chat.core.logic.ServerManager
 import com.fzm.chat.core.media.DownloadManager2
