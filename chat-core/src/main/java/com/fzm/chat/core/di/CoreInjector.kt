@@ -114,7 +114,15 @@ class CoreInjector : Injector, IProvider {
             // 另外监听 ServerManager.chatServerChanged：用户在登录/服务器页切换后立即重建连接。
             val serverList = MediatorLiveData<List<String>>().apply {
                 fun applySelected(servers: List<Server>?) {
-                    value = pickSelectedServer(servers.orEmpty())
+                    val picked = pickSelectedServer(servers.orEmpty())
+                    // 手机号登录版本可能还没有可用的链节点（用户信息/服务器分组查不到），
+                    // 此时直接用登录页选中的聊天服务器建连，避免 IM 长连接一直为空。
+                    value = if (picked.isNotEmpty()) {
+                        picked
+                    } else {
+                        val fallback = ServerManager.defaultChatUrl
+                        if (fallback.isNotEmpty()) listOf(fallback) else emptyList()
+                    }
                 }
                 addSource(delegate.servers) { applySelected(it) }
                 addSource(ServerManager.chatServerChanged) {
